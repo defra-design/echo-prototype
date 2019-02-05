@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block pageTitle %}
+  Upload your Export Health Certificate (EHC)
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" id="form" class="form">
+
+      <h2 class="govuk-heading-l">
+        Upload your Export Health Certificate (EHC)
+      </h2>
+
+      <p>
+        You can only upload one Export Health Certificate (EHC). It must:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>be a PDF</li>
+        <li>be less than 10 megabytes (10MB)</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        The total size of the files you upload must be 25 megabytes (25MB) or less.
+      </div>
+
+      <table class="govuk-table" style="margin-bottom: 60px;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header govuk-!-width-two-thirds" scope="col">File name</th>
+            <th class="govuk-table__header" scope="col">Action</th>
+            <th class="govuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">EHC1234.pdf</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="deleteA.html" class="govuk-link">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="submit" class="govuk-button">
+        Save and continue
+      </button>
+
+      <p>
+        <a href="dashboard.html">
+          Save and continue later
+        </a>
+      </p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is the country of destination?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is the country of destination?
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+              <label class="govuk-label" for="country-of-destination">
+                Country of Destination
+              </label>
+              <input class="govuk-input" id="country-of-destination" name="country-of-destination" type="text">
+            </div>         
+        </fieldset>
+      </div>
+
+      <a href="countries_of_transit_en_route.html" role="button" class="govuk-button">
+        Save and continue
+      </a>
+
+   	  <p>
+        <a href="dashboard.html">
+          Save and continue later
+        </a>
+      </p>
+    
+    </div>
+</div>
+
+{% endblock %}
