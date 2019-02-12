@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <div style="padding: 15px 0; border-bottom: 1px solid #bfc1c3;">
+    <a href="#" class="govuk-link govuk-link--no-visited-state" style="padding: 10px 0; text-decoration: none; color: #000; font-weight: bold;">[Organisation name]</a>
+    <a href="#" class="govuk-link govuk-link--no-visited-state" style="padding: 10px 0 10px 30px; text-decoration: none;">Switch organisation</a>
+    <a href="#" class="govuk-link govuk-link--no-visited-state" style="float: right; padding-left: 30px; text-decoration: none;">Sign out</a>
+    <a href="#" class="govuk-link govuk-link--no-visited-state" style="float: right; padding-left: 30px; text-decoration: none;">Manage account</a>
+    <a href="#" class="govuk-link govuk-link--no-visited-state" style="float: right; text-decoration: none;">Jane Doe</a>
+  </div>
+{% endblock %}
+
+{% block pageTitle %}
+  Your applications
+{% endblock %}
+
+{% block content %}
+
+      <form method="post" id="form" class="form">
+
+      <h1 class="govuk-heading-l">
+        Your applications
+      </h1>
+
+      <table class="govuk-table" style="margin-bottom: 30px;">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row" style="border: none;">
+              <button type="submit" class="govuk-button" style="margin-bottom: 0; float: left;">
+                Start a new application
+              </button>
+              <p style="float: left; margin: 9px 6px; padding-left: 30px;">
+                <a href="dashboardSearchAndFilter" class="govuk-link govuk-link--no-visited-state">Search</a>
+              </p>
+            </td>
+            <td class="govuk-table__cell" scope="row" style="border: none; float: right;">
+              <select class="govuk-select">
+                <option value="option">Sort by</option>
+                <option value="option">Commodity</option>
+                <option value="option">Destination</option>
+                <option value="option">Date</option>
+                <option value="option">Status</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table" style="margin-bottom: 60px;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Application #</th>
+            <th class="govuk-table__header" scope="col">EHC</th>
+            <th class="govuk-table__header" scope="col">Commodity</th>
+            <th class="govuk-table__header" scope="col">Destination</th>
+            <th class="govuk-table__header" scope="col">Submitted</th>
+            <th class="govuk-table__header" scope="col">Status</th>
+            <th class="govuk-table__header" scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row" style="line-height: 39px;">
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">154349627718</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">2849EHC</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">Horses</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">UAE</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row" style="text-transform: uppercase; font-weight: bold; padding: 10px 20px 8px 0;"><span style="background-color: #005ea5; color: #fff; font-size: 15px; padding: 6px 9px 4px;">Processing</span></td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 0 8px 0;">
+              <a href="#" class="govuk-link">View</a>
+              <a href="deleteA.html" class="govuk-link" style="padding-left: 20px;">Delete</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" style="line-height: 39px;">
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">154349627718</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">2849EHC</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">Dairy</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">Australia</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row" style="text-transform: uppercase; font-weight: bold; padding: 10px 20px 8px 0;"><span style="background-color: #f47738; color: #fff; font-size: 15px; padding: 6px 9px 4px;">Draft</span></td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 0 8px 0;">
+              <a href="#" class="govuk-link">View</a>
+              <a href="deleteA.html" class="govuk-link" style="padding-left: 20px;">Delete</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" style="line-height: 39px;">
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">154349627718</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">2849EHC</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">Canada</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row" style="text-transform: uppercase; font-weight: bold; padding: 10px 20px 8px 0;"><span style="background-color: #006435; color: #fff; font-size: 15px; padding: 6px 9px 4px;">EHC issued</span></td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 0 8px 0;">
+              <a href="#" class="govuk-link">View</a>
+              <a href="deleteA.html" class="govuk-link" style="padding-left: 20px;">Delete</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" style="line-height: 39px;">
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">154349627718</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">2849EHC</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">Canada</td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 20px 8px 0;">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row" style="text-transform: uppercase; font-weight: bold; padding: 10px 20px 8px 0;"><span style="background-color: #df3034; color: #fff; font-size: 15px; padding: 6px 9px 4px;">Declined</span></td>
+            <td class="govuk-table__cell" scope="row" style="padding: 12px 0 8px 0;">
+              <a href="#" class="govuk-link">View</a>
+              <a href="deleteA.html" class="govuk-link" style="padding-left: 20px;">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      </form>
+
+{% endblock %}

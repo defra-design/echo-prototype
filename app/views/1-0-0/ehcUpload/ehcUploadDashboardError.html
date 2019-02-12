@@ -15,6 +15,19 @@
 
       <form method="post" id="form" class="form">
 
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#dob-error">You must upload an Export Health Certificate (EHC) to continue your application</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <h2 class="govuk-heading-l">
         Upload your Export Health Certificate (EHC)
       </h2>
@@ -32,8 +45,11 @@
         The total size of the file you upload must be 10 megabytes (10MB) or less.
       </div>
 
-      <div class="govuk-form-group">
-        <button type="submit" class="govuk-button" style="background-color: #dee0e2; color: #0b0c0c; box-shadow: 0 2px 0 #0b0c0c;">
+      <div class="govuk-form-group govuk-form-group--error" style="margin-bottom: 62px;">
+        <span id="file-upload-1-error" class="govuk-error-message">
+          You must upload an Export Health Certificate (EHC)
+        </span>
+        <button type="submit" class="govuk-button" style="background-color: #dee0e2; color: #0b0c0c; box-shadow: 0 2px 0 #0b0c0c; margin-bottom: 5px;">
           Choose file
         </button>
       </div>
