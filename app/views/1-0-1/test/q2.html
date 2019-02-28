@@ -1,0 +1,109 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply for an Export Health Certificate (EHC)
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        2849EHC
+      </span>
+      <h2 class="govuk-heading-l">
+        Information about the horse
+      </h2>
+
+      <fieldset class="govuk-fieldset">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            What is the name of the horse?
+          </label>
+          <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            What is the sex of the horse?
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Select</option>
+            <option value="published">Mare</option>
+            <option value="updated">Stallion</option>
+            <option value="views">Colt</option>
+            <option value="comments">Filly</option>
+            <option value="comments">Gelding</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            What is the age of the horse?
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published" selected>Select</option>
+            <option value="published">1</option>
+            <option value="updated">2</option>
+            <option value="views">3</option>
+            <option value="comments">4</option>
+            <option value="comments">5</option>
+            <option value="published">6</option>
+            <option value="updated">7</option>
+            <option value="views">8</option>
+            <option value="comments">9</option>
+            <option value="comments">10</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            What is the colour of the horse?
+          </label>
+          <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            What is the breed of the horse?
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="Select" selected>Select</option>
+            <option value="Altai">Altai</option>
+            <option value="Appaloosa">Appaloosa</option>
+            <option value="Balikun">Balikun</option>
+            <option value="Calabrese">Calabrese</option>
+            <option value="Danish">Danish</option>
+            <option value="Estonian">Estonian</option>
+            <option value="Karabair">Karabair</option>
+            <option value="Paso Fino">Paso Fino</option>
+            <option value="Taishu">Taishu</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Where was the horse examined?
+          </label>
+          <input class="govuk-input" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+      </fieldset>
+
+      <a href="intro.html" role="button" class="govuk-button">
+        Save and continue
+      </a>
+
+   	  <p>
+        <a href="#">
+          Save and continue later
+        </a>
+      </p>
+    
+    </div>
+</div>
+
+{% endblock %}

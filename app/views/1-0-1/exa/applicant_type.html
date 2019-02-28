@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What type of applicant are you?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<span class="govuk-caption-l">
+        2849EHC
+      </span>
+      <h2 class="govuk-heading-l">
+        What type of applicant are you?
+      </h2>-->
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What type of applicant are you?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="applicant-type-1" name="applicant-type" type="radio" value="I am the exporter">
+              <label class="govuk-label govuk-radios__label" for="applicant-type-1">
+                I am the exporter
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="applicant-type-2" name="applicant-type" type="radio" value="I am the agent of the exporter">
+              <label class="govuk-label govuk-radios__label" for="applicant-type-2">
+                I am the agent of the exporter
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <a href="#" role="button" class="govuk-button">
+        Save and continue
+      </a>
+
+   	  <p>
+        <a href="dashboard.html">
+          Save and continue later
+        </a>
+      </p>
+    
+    </div>
+</div>
+
+{% endblock %}
