@@ -1,0 +1,243 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" id="form" class="form">
+
+      <span class="govuk-caption-l">Section 4: Health information</span>
+      <h1 class="govuk-heading-l" style="margin-bottom: 20px;">Declaration</h1>
+
+      <p>
+        I, the undersigned, certify that the [animal/s] described above meets the following 
+      </p>
+
+      <p>
+        a) on [vaccinationDate], being within 24 hours of export, I examined the said
+      </p>
+
+      <p>
+        b) the said [animal/s] is not intended for slaughter under a national programme to control or eradicate a contagious or infectious disease;
+      </p>
+
+      <p>
+        c)
+      </p>
+
+      <p>
+        i) the said [animal/s] does not come from the territory or part of the territory of a Member State which is the subject of restrictions for reasons of African horse sickness; <strong>AND</strong>
+      </p>
+
+      <p>
+        ii) as far as can be ascertained and based on a written declaration from the:
+      </p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changed-name-1">
+                Owner
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                Agent of the owner
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <p>
+        Was/were the said [animal/s] vaccinated against African horse sickness
+      </p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  On what date was/were the [animal/s] vaccinated?
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <p>
+        d) the said [animal/s] has not come from a holding which was subject to prohibition for animal health reasons, nor in so far as can be determined had contact with equidae from a holding which was subject to prohibition for animal health reasons, for the following periods;
+      </p>
+
+      <p style="padding-left: 20px;">
+        i) during six months in the case of eqidae suspected of having contracted dourine, beginning on the date of the last actual or possible contact with a sick animal. However, in the case of a stallion, the prohibition shall sapply until the animal is castrated;
+      </p>
+      <p style="padding-left: 20px;">
+        ii) during six months in the case of glanders or equide encephalomyelitis, beginning on the day on which the equidae suffering from the disease in question are slaughtered;
+      </p>
+
+      <p style="padding-left: 20px;">
+        iii) in the case of infectious anaemia, until the date on which, the infected animals having been slaughtered, the remaining animals have shwon a negative reaction to two Coggins tests carried out three months apart;
+      </p>  
+
+      <p style="padding-left: 20px;">
+        iv) during six months from the last case, in the case of vesicular stomatitis;
+      </p>   
+
+      <p style="padding-left: 20px;">
+        v) during one month from the last case, in the case of rabies;
+      </p>  
+
+      <p style="padding-left: 20px;">
+        vi) during 15 days from the last case, in the case of anthrax;
+      </p>  
+
+      <p>
+        if all the animals of species susceptible to the disease located on the holding have been slaughtered and the premises disinfected, the period of prohibition shall be 30 days, beginning on the day on which the animals were destroyed and the premises disinfected, except in the case of anthrax, where the period of prohibition is 15 days;
+      </p>
+
+      <p>
+        e) as far as can be ascertained and based on a written declaration from the [ownerOrAgentOfTheOwner], the said animal has been resident on premises under veterinary supervision for the 15 days immediately prior to export, and during that time has not been in contact with equidae suffering from any infectious or contagious disease;
+      </p>
+
+      <p>
+        f) as far as can be ascertained and based on a written declaration from the [ownerOrAgentOfTheOwner], the said animal has been resident in the European Union for at least the 30 days immediately prior to export;
+      </p>
+
+      <p>
+        g) on [vaccinationDate], being within 30 days of export, and, if imported into the EU, at least 14 days after the date of entry, blood samples were taken from the said [animal/s] and sent to the Veterinary Laboaratories Agency laboratory, Weybridge where they were submitted to the following tests with negative results in each case:
+      </p>
+
+      <p style="padding-left: 20px;">
+        i) the complement fixation test for <strong>dourine</strong> at a dilution of 1:10;
+      </p>  
+
+      <p style="padding-left: 20px;">
+        ii) the complement fixation test for <strong>glanders</strong> at a dilution of 1:10;
+      </p>
+
+      <p>
+        h) on [vaccinationDate], being within 30 days of export, and, if imported into the EU, at least 14 days after the date of entry, a blood sample was taken from the said [animal/s] and sent to the Veterinary Laboaratories Agency laboratory, Weybridge where it was submitted to the agar gel immunoduffusion (Coggins) test for <strong>equine infectious anaemia</strong>, with a negative result;
+      </p>
+
+      <p>
+        <strong>FOR ENTIRE MALES OLDER THAN 180 DAYS*</strong>
+      </p>
+
+      <p>
+        Please select which statement is most accurate:
+      </p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changed-name-1">
+                <strong>EITHER (i)</strong> on [vaccinationDate], being within 30 days of export, and, if imported into the EU, at least 14 days after the date of entry, a blood sample was taken from the said [animal/s] and sent to the Veterinary Laboaratories Agency laboratory, Weybridge where it was submitted to a virus neutralisation test for <strong>equine viral arteritis</strong> with negative results at a dilution of 1 in 4;
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                <strong>OR (ii)</strong> on [vaccinationDate], being within 30 days of export, and, if imported into the EU, at least 14 days after the date of entry, an aliquot of entire semen was submitted to the Veterinary Laboaratories Agency laboratory, Weybridge for a virus isolation test for <strong>equine viral arteritis</strong> with negative results after 3 passages in tissue culture;
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-3" name="changed-name" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changed-name-3">
+                <strong>OR (iii)</strong> the animal was vaccinated on [vaccinationDate], against <strong>equine viral arteritis</strong> under official veterinary supervision with a vaccine approved by the competent authority, according to one of the following programmes for initial vaccination and has been re-vaccinated at regular intervals in accordance with manufacturers instructions:
+                <br><br>
+                i) vaccination was carried out on the day a blood sample was taken that subsequently proved negative in a virus neutralisation test at a dilution of 1 in 4;
+                <br><br>
+                ii) vaccination was carried out during a period of isolation of not more than 15 days under official veterinary supervision, commencing on the day a blood sample was taken that was tested with a negative result in a virus neutralisation test at a dilution of 1 in 4;
+                <br><br>
+                iii) vaccination was carried out when the animal was at an age of 180 to 270 days, during a period of isolation under official veterinary supervision. During the isolation period two blood samples taken at least 10 days apart proved a stable or declining anitbody titre in a virus neutralisation test for <strong>equine viral arteritis</strong>;
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <p>
+        k) being within 60 days but not less than 14 days immediately prior to export, the animal was vaccinated against equine influenza as follows:
+      </p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                <strong>EITHER i)</strong> a primary course consisting in two doses of the same vaccine given between 21 to 42 days apart;
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  On what date was/were the [animal/s] vaccinated?
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                <strong>OR ii)</strong> a booster vaccination given within 12 months of a certified primary course, or within 12 months of a certified booster vaccination where it, and any other previous booster vaccinations, had been administered annually within a regular 12-month period since the primary course;
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  On what date/s was/were the booster vaccination/s administered?
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <a href="q4b.html" class="govuk-button">
+        Save and continue
+      </a>
+
+      <p>
+        <a href="dashboard.html">
+          Save and continue later
+        </a>
+      </p>
+
+      </form>
+    
+    </div>
+</div>
+
+{% endblock %}

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Details of Horse 1
+  Details of Horse 2
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
       <form method="post" id="form" class="form">
 
       <span class="govuk-caption-l">Section 1: Identification of the animal</span>
-      <h1 class="govuk-heading-l">Animal 1</h1>
+      <h1 class="govuk-heading-l">Details of Horse 2</h1>
 
       <!--<p>
         Please answer the following questions about Horse 1.
@@ -26,51 +26,51 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-1">
-            Name
+            What is the horse's name?
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text" value="Ian">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-town">
-            Breed
+            What breed is the horse?
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" value="Campolina">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-county">
-            Age
+            How old is the horse?
           </label>
           <!--<span id="national-insurance-number-hint" class="govuk-hint">
             Text.
           </span>-->
-          <input class="govuk-input govuk-input--width-2" id="address-county" name="address-county" type="text">
+          <input class="govuk-input govuk-input--width-2" id="address-county" name="address-county" type="text" value="9">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-postcode">
-            Colour
+            What colour is the horse?
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text" value="Orange">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
-            Sex
+            What sex is the horse?
           </label>
           <select class="govuk-select" id="sort" name="sort">
-            <option value="select" selected>Select</option>
-            <option value="male" >Male</option>
+            <option value="select">Select</option>
+            <option value="male" selected>Male</option>
             <option value="female">Female</option>
           </select>
         </div>
 
       </fieldset>
 
-      <button type="submit" class="govuk-button">
+      <a href="q1a-Review.html" class="govuk-button">
         Save and continue
-      </button>
+      </a>
 
       <p>
         <a href="dashboard.html">
