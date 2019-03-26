@@ -40,8 +40,8 @@
                 Start a new application
               </a>
             </td>
-            <td style="padding: 0; vertical-align: top; text-align: right;">
-              <!--<select class="govuk-select">
+            <td style="padding: 0; vertical-align: top;">
+              <select class="govuk-select" style="float: right;">
                 <option value="option">Sort by</option>
                 <option value="option">Commodity (ascending)</option>
                 <option value="option">Commodity (descending)</option>
@@ -52,17 +52,14 @@
                 <option value="option">Status (ascending)</option>
                 <option value="option">Status (descending)</option>
               </select>
-              <a href="https://www.gov.uk/export-health-certificates" class="govuk-button" style="margin-bottom: 0; margin-left: 6px; background-color: #005ea5;">
-                Apply
-              </a>-->
             </td>
           </tr>
         </tbody>
       </table>
 
-      <!--<div style="padding: 30px 10px 0; background-color: #dee0e2; margin-bottom: 30px;">
+      <div style="padding: 17px 10px 20px; background-color: #dee0e2; margin-bottom: 30px;">
         <table style="border-spacing: 0; width: 100%;">
-          <tbody style="border-spacing: 0;">-->
+          <tbody style="border-spacing: 0;">
             <!--<tr style="border-spacing: 0;">
               <td style="padding: 0 0 0 10px; vertical-align: top; width: 33.33%;">
                 <h2 class="govuk-heading-m">
@@ -70,64 +67,22 @@
                 </h2>
               </td>
             </tr>-->
-            <!--<tr style="border-spacing: 0;">
-              <td style="padding: 0 10px; vertical-align: top;">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="name" style="font-weight: bold;">
-                    Application or EHC number
-                  </label>-->
-                  <!--<span id="national-insurance-number-hint" class="govuk-hint" style="font-size: 16px; color: #0b0c0c;">
-                    Enter full or partial details
-                  </span>-->
-                  <!--<input class="govuk-input" id="name" name="name" type="text"">
-                </div>
-              </td>
-              <td style="padding: 0 10px; vertical-align: top; top; width: 33.33%;">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="name" style="font-weight: bold;">
-                    Commodity type
-                  </label>-->
-                  <!--<span id="national-insurance-number-hint" class="govuk-hint" style="font-size: 16px; color: #0b0c0c;">
-                    Select a commodity type
-                  </span>-->
-                  <!--<select class="govuk-select" style="width: 100%;">
-                    <option value="option">All</option>
-                    <option value="option">Equine</option>
-                    <option value="option">Fish</option>
-                    <option value="option">Germplasm</option>
-                    <option value="option">Livestock</option>
-                  </select>
-                </div>
-              </td>
-              <td style="padding: 0 10px; vertical-align: top; top; width: 33.33%;">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="name" style="font-weight: bold;">
-                    Destination country
-                  </label>-->
-                  <!--<span id="national-insurance-number-hint" class="govuk-hint" style="font-size: 16px; color: #0b0c0c;">
-                    Select a destination country
-                  </span>-->
-                  <!--<select class="govuk-select" style="width: 100%;">
-                    <option value="option">All</option>
-                    <option value="option">Afghanistan</option>
-                    <option value="option">Albania</option>
-                    <option value="option">Algeria</option>
-                    <option value="option">Andean Community of Peru, Bolivia, Colombia, Ecuador</option>
-                  </select>
-                </div>
-              </td>
-            </tr>
             <tr style="border-spacing: 0;">
-              <td style="padding: 0 10px; vertical-align: top;">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="name" style="font-weight: bold;">
+              <!--<td style="padding: 0 10px; vertical-align: top; width: 25%;">
+                <div class="govuk-form-group" style="margin-bottom: 20px;">
+                  <label class="govuk-label" for="name" style="font-size: 16px;">
+                    Application or EHC
+                  </label>
+                  <input class="govuk-input" id="name" name="name" type="text" style="font-size: 16px;">
+                </div>
+              </td>-->
+              <td style="padding: 0 10px; vertical-align: top; top; width: 25%;">
+                <div class="govuk-form-group" style="margin-bottom: 0;">
+                  <label class="govuk-label" for="name" style="font-size: 16px;">
                     Certificate status
-                  </label>-->
-                  <!--<span id="national-insurance-number-hint" class="govuk-hint" style="font-size: 16px; color: #0b0c0c;">
-                    Select a certificate status
-                  </span>-->
-                  <!--<select class="govuk-select" style="width: 100%;">
-                    <option value="option">All</option>
+                  </label>
+                  <select class="govuk-select" style="width: 100%; border-bottom-left-radius: 0;">
+                    <option value="option">Select...</option>
                     <option value="option">Draft</option>
                     <option value="option">Processing</option>
                     <option value="option">On hold</option>
@@ -135,50 +90,112 @@
                   </select>
                 </div>
               </td>
-              <td style="padding: 0 10px; vertical-align: top;">
+              <td style="padding: 0 10px; vertical-align: top; top; width: 25%;">
                 <div class="govuk-form-group" style="margin-bottom: 20px;">
-                  <label class="govuk-label" for="name" style="font-weight: bold;">
-                    Start date
-                  </label>-->
-                  <!--<span id="national-insurance-number-hint" class="govuk-hint" style="font-size: 16px; color: #0b0c0c;">
-                    Select a start date
-                  </span>-->
-                  <!--<input class="govuk-input" id="name" name="name" type="text">
+                  <label class="govuk-label" for="name" style="font-size: 16px;">
+                    Destination country
+                  </label>
+                  <select class="govuk-select" style="width: 100%; font-size: 16px;">
+                    <option value="option">Select...</option>
+                    <option value="option">Afghanistan</option>
+                    <option value="option">Albania</option>
+                    <option value="option">Algeria</option>
+                    <option value="option">Andean Community of Peru, Bolivia, Colombia, Ecuador</option>
+                  </select>
                 </div>
               </td>
-              <td style="padding: 0 10px; vertical-align: top;">
+              <td style="padding: 0 10px; vertical-align: top; width: 25%;">
                 <div class="govuk-form-group" style="margin-bottom: 20px;">
-                  <label class="govuk-label" for="name" style="font-weight: bold;">
-                    End date
-                  </label>-->
-                  <!--<span id="national-insurance-number-hint" class="govuk-hint" style="font-size: 16px; color: #0b0c0c;">
-                    Select an end date
-                  </span>-->
-                  <!--<input class="govuk-input" id="name" name="name" type="text">
+                  <label class="govuk-label" for="name" style="font-size: 16px;">
+                    Commodity type
+                  </label>
+                  <select class="govuk-select" style="width: 100%; font-size: 16px;">
+                    <option value="option">Select...</option>
+                    <option value="option">Equine</option>
+                    <option value="option">Fish</option>
+                    <option value="option">Germplasm</option>
+                    <option value="option">Livestock</option>
+                  </select>
+                </div>
+              </td>
+              <td style="padding: 0 10px; vertical-align: top; width: 25%;">
+                <div class="govuk-form-group" style="margin-bottom: 20px;">
+                  <label class="govuk-label" for="name" style="font-size: 16px;">
+                    Commodity type
+                  </label>
+                  <select class="govuk-select" style="width: 100%; font-size: 16px;">
+                    <option value="option">Select...</option>
+                    <option value="option">Equine</option>
+                    <option value="option">Fish</option>
+                    <option value="option">Germplasm</option>
+                    <option value="option">Livestock</option>
+                  </select>
                 </div>
               </td>
             </tr>
             <tr style="border-spacing: 0;">
               <td style="padding: 0 10px; vertical-align: top;">
-                <a href="#" class="govuk-button" style="width: 100%;">
-                  Filter
-                </a> 
-              </td> 
-              <td style="padding: 0 10px; vertical-align: top;">
-                <a href="#" class="govuk-link govuk-link--no-visited-state" style="line-height: 19px; padding: 11px 0 8px; display: inline-block; font-size: 19px;">
-                  Clear filter
-                </a> 
+                <div class="govuk-form-group" style="margin-bottom: 0;">
+                  <label class="govuk-label" for="name" style="font-size: 16px;">
+                    Certificate status
+                  </label>
+                  <select class="govuk-select" style="width: 100%; border-bottom-left-radius: 0;">
+                    <option value="option">Select...</option>
+                    <option value="option">Draft</option>
+                    <option value="option">Processing</option>
+                    <option value="option">On hold</option>
+                    <option value="option">EHC issued</option>
+                  </select>
+                </div>
+              </td>
+              <td style="padding: 0 10px; vertical-align: top;" colspan="2">
+                <div class="govuk-form-group" style="margin-bottom: 0;">
+                    <div class="govuk-date-input" id="passport-issued">
+                      <div class="govuk-date-input__item" style="width: 274px;">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                            Start date
+                          </label>
+                          <input class="govuk-input govuk-date-input__input" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item" style="width: 19px;">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                            
+                          </label>
+                          <p style="margin-bottom: 0; line-height: 40px; text-align: center;">to</p>
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item" style="margin-right: 0; width: 274px;">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                            End date
+                          </label>
+                          <input class="govuk-input govuk-date-input__input" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-spacing: 0;">
+              <td style="padding: 0 10px; vertical-align: top; width: 25%;">
+                <a href="https://www.gov.uk/export-health-certificates" class="govuk-button" style="margin-bottom: 0; float: left;">
+                  Start a new application
+                </a>                
               </td>
             </tr>
           </tbody>
         </table>
-      </div>-->
+      </div>
 
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col">Application</th>
-            <!--<th class="govuk-table__header" scope="col">EHC</th>-->
+            <th class="govuk-table__header" scope="col">EHC</th>
             <th class="govuk-table__header" scope="col">Commodity</th>
             <th class="govuk-table__header" scope="col">Destination</th>
             <th class="govuk-table__header" scope="col">Submitted</th>
@@ -189,43 +206,11 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dairy</td>
-            <td class="govuk-table__cell" scope="row">Australia</td>
-            <td class="govuk-table__cell" scope="row"></td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #f47738; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                Draft
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <a href="deleteA.html" class="govuk-link" style="padding-left: 20px;">Delete</a>
-            </td>
-          </tr>  
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dairy</td>
-            <td class="govuk-table__cell" scope="row">Australia</td>
-            <td class="govuk-table__cell" scope="row"></td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #f47738; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                Draft
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <a href="deleteA.html" class="govuk-link" style="padding-left: 20px;">Delete</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Horses</td>
             <td class="govuk-table__cell" scope="row">UAE</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #005ea5; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 Processing
               </span>
@@ -237,11 +222,27 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dairy</td>
+            <td class="govuk-table__cell" scope="row">Australia</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #f47738; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                Draft
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <a href="deleteA.html" class="govuk-link" style="padding-left: 20px;">Delete</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Dogs and cats</td>
             <td class="govuk-table__cell" scope="row">Canada</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 EHC issued
               </span>
@@ -253,11 +254,27 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #df3034; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                Declined
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Horses</td>
             <td class="govuk-table__cell" scope="row">UAE</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #005ea5; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 Processing
               </span>
@@ -269,43 +286,27 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
-            <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                EHC issued
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
-            <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                EHC issued
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Dairy</td>
             <td class="govuk-table__cell" scope="row">Australia</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #f47738; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                Draft
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <a href="deleteA.html" class="govuk-link" style="padding-left: 20px;">Delete</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 EHC issued
               </span>
@@ -317,11 +318,11 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Dogs and cats</td>
             <td class="govuk-table__cell" scope="row">Canada</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 EHC issued
               </span>
@@ -333,11 +334,11 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dairy</td>
+            <td class="govuk-table__cell" scope="row">Australia</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 EHC issued
               </span>
@@ -349,11 +350,11 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Dogs and cats</td>
             <td class="govuk-table__cell" scope="row">Canada</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 EHC issued
               </span>
@@ -365,11 +366,123 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Dogs and cats</td>
             <td class="govuk-table__cell" scope="row">Canada</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                EHC issued
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                EHC issued
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                EHC issued
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                EHC issued
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                EHC issued
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                EHC issued
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
+                EHC issued
+              </span>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link">View</a>
+              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">154349627718</td>
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
+            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
+            <td class="govuk-table__cell" scope="row">Canada</td>
+            <td class="govuk-table__cell" scope="row">09/01/2019</td>
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #df3034; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 Declined
               </span>
@@ -381,11 +494,11 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Dogs and cats</td>
             <td class="govuk-table__cell" scope="row">Canada</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
+            <td class="govuk-table__cell" scope="row">
               <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 EHC issued
               </span>
@@ -397,107 +510,11 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
+            <td class="govuk-table__cell" scope="row">2849EHC</td>
             <td class="govuk-table__cell" scope="row">Dogs and cats</td>
             <td class="govuk-table__cell" scope="row">Canada</td>
             <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                EHC issued
-              </span>
-            </td>
             <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
-            <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                EHC issued
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
-            <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                EHC issued
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
-            <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                EHC issued
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
-            <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #df3034; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                Declined
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
-            <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
-              <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
-                EHC issued
-              </span>
-            </td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link">View</a>
-              <!--<a href="#" class="govuk-link" style="padding-left: 20px;">Delete</a>-->
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">154349627718</td>
-            <!--<td class="govuk-table__cell" scope="row">2849EHC</td>-->
-            <td class="govuk-table__cell" scope="row">Dogs and cats</td>
-            <td class="govuk-table__cell" scope="row">Canada</td>
-            <td class="govuk-table__cell" scope="row">09/01/2019</td>
-            <td class="govuk-table__cell" scope="row" style="padding-right: 30px;">
               <span style="background-color: #006435; color: #fff; font-size: 15px; text-transform: uppercase; font-weight: bold; width: 100%; display: block; text-align: center; padding: 5px 0;">
                 EHC issued
               </span>

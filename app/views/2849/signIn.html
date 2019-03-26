@@ -1,0 +1,68 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in using Government Gateway
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">
+        Sign in
+      </h2>
+
+      <p>
+        Enter your Government Gateway credentials to sign in. You received these when you created your HMRC online account.
+      </p>
+
+      <fieldset class="govuk-fieldset">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-county">
+            User ID
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-county" name="address-county" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Password
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+      </fieldset>
+
+      <a href="start.html" role="button" class="govuk-button">
+        Sign in
+      </a>
+
+      <h3 class="govuk-heading-m">
+        Problems signing in
+      </h3>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Trying to file Self Assessment using GOV.UK Verify?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Don’t have a Government Gateway account</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Forgotten user ID</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Forgotten password</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Get help from HMRC’s automated assistant</a>
+        </li>
+      </ul>
+
+    </div>
+</div>
+
+{% endblock %}

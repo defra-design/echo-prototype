@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block pageTitle %}
+    How many European Union countries of transit will there be for this consignment?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" id="form" class="form">
+
+      <span class="govuk-caption-l">Section 2: Details of European Union transit</span>
+      <h1 class="govuk-heading-l">How many European Union countries of transit will there be for this consignment?</h1>
+
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <input class="govuk-input" id="number-of-countries-of-transit" name="number-of-countries-of-transit" type="number">
+        </div>
+      </fieldset>
+
+      <a href="q2c.html" class="govuk-button">
+        Save and continue
+      </a>
+
+      <p>
+        <a href="../dashboard/dashboard.html">
+          Save and continue later
+        </a>
+      </p>
+
+      </form>
+    
+    </div>
+</div>
+
+{% endblock %}

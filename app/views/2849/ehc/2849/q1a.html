@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block pageTitle %}
+  How many horses would you like to export to the United Arab Emirates?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" id="form" class="form">
+
+      <span class="govuk-caption-l">Section 1: Identification of the animal</span>
+      <h1 class="govuk-heading-l">How many horses would you like to export to the United Arab Emirates?</h1>
+
+        <fieldset class="govuk-fieldset">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="width-10">
+              Quantity
+            </label>
+            <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+          </div>     
+            
+        </fieldset>
+
+      <a href="q1a-1.html" class="govuk-button">
+        Save and continue
+      </a>
+
+      <p>
+        <a href="dashboard.html">
+          Save and continue later
+        </a>
+      </p>
+
+      </form>
+    
+    </div>
+</div>
+
+{% endblock %}

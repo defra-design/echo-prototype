@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block pageTitle %}
+    Will the consignment transit the European Union and require an Intra Trade Animal Health Certificate?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" id="form" class="form">
+
+      <span class="govuk-caption-l">Section 2: Details of European Union transit</span>
+      <h1 class="govuk-heading-l">Will the consignment transit the European Union and require an Intra Trade Animal Health Certificate?</h1>
+
+      <div class="govuk-form-group">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changed-name-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <a href="q2b.html" class="govuk-button">
+        Save and continue
+      </a>
+
+      <p>
+        <a href="../dashboard/dashboard.html">
+          Save and continue later
+        </a>
+      </p>
+
+      </form>
+    
+    </div>
+</div>
+
+{% endblock %}
