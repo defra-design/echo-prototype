@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Upload your supporting documents
+  Supporting documents
 {% endblock %}
 
 {% block content %}
@@ -16,8 +16,12 @@
       <form method="post" id="form" class="form">
 
       <h2 class="govuk-heading-l">
-        Upload your supporting documents
+        Supporting documents
       </h2>
+
+      <p>
+        If you wish to attach any supporting documents to your application, you can upload them here. Otherwise, please click 'Save and continue' to skip this section.
+      </p>
 
       <p>
     		You can only upload one at a time. Each file must:
@@ -43,7 +47,8 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" scope="row">Document-1.pdf</td>
             <td class="govuk-table__cell" scope="row">
-              <a href="deleteA.html" class="govuk-link">Delete</a>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="deleteA.html" class="govuk-link govuk-link--no-visited-state">Delete</a>
             </td>
           </tr>
         </tbody>

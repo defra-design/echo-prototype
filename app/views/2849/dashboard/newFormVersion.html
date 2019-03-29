@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Form updated
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" id="form" class="form">
+
+      <h2 class="govuk-heading-l">
+        Form updated
+      </h2>
+
+      <div class="govuk-form-group">
+        <p>
+          This form has been updated since you last used it.
+        </p>
+        <p>
+          The information you have supplied has been adapted to fit the new form. However, [EHC XXXX Version X] may contain extra fields and modified questions.
+        </p>
+        <p> 
+          Please go back through the form and check all required information has been supplied.
+        </p>
+      </div>
+
+      <a href="dashboardApplicationDraft.html" class="govuk-button">
+        Continue
+      </a>
+
+      <p>
+        <a href="javascript:history.back()">
+          Cancel and go back
+        </a>
+      </p>
+
+      </form>
+  
+    </div>
+  </div>
+
+{% endblock %}

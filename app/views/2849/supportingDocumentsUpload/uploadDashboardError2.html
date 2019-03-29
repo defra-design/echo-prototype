@@ -15,6 +15,19 @@
 
       <form method="post" id="form" class="form">
 
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#file-type-error">The upload was unsuccessful because the file type isn't supported. Each supporting document must be in PDF, Word, Excel or JPEG format</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <h2 class="govuk-heading-l">
         Supporting documents
       </h2>
@@ -36,8 +49,11 @@
         The total size of the files you upload must be 25 megabytes (25MB) or less.
       </div>-->
 
-      <div class="govuk-form-group">
-        <button type="submit" class="govuk-button" style="background-color: #dee0e2; color: #0b0c0c; box-shadow: 0 2px 0 #0b0c0c;">
+      <div class="govuk-form-group govuk-form-group--error" style="margin-bottom: 62px;">
+        <span id="file-type-error" class="govuk-error-message">
+          The upload was unsuccessful because the file type isn't supported. Each supporting document must be in PDF, Word, Excel or JPEG format
+        </span>
+        <button type="submit" class="govuk-button" style="background-color: #dee0e2; color: #0b0c0c; box-shadow: 0 2px 0 #0b0c0c; margin-bottom: 5px;">
           Choose file
         </button>
       </div>
@@ -45,6 +61,10 @@
       <button type="submit" class="govuk-button">
         Save and continue
       </button>
+
+      <!--<button href="countries_of_transit_en_route.html" type="submit" class="govuk-button">
+        Save and continue
+      </button>-->
 
       <p>
         <a href="../dashboard.html">

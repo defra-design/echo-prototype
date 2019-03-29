@@ -15,6 +15,19 @@
 
       <form method="post" id="form" class="form">
 
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#file-virus-error">The upload was unsuccessful because the file failed an anti-virus check. Each supporting document must be virus-free</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <h2 class="govuk-heading-l">
         Supporting documents
       </h2>
@@ -36,46 +49,31 @@
         The total size of the files you upload must be 25 megabytes (25MB) or less.
       </div>-->
 
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header govuk-!-width-two-thirds" scope="col">File name</th>
-            <th class="govuk-table__header" scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" scope="row">Document-2.jpeg</td>
-            <td class="govuk-table__cell" scope="row">
-              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
-              <a href="deleteD.html" class="govuk-link govuk-link--no-visited-state">Delete</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="govuk-form-group">
-        <a href="uploadDashboard2.html" class="govuk-button" style="background-color: #dee0e2; color: #0b0c0c;">
+      <div class="govuk-form-group govuk-form-group--error" style="margin-bottom: 62px;">
+        <span id="file-virus-error" class="govuk-error-message">
+          The upload was unsuccessful because the file failed an anti-virus check. Each supporting document must be virus-free
+        </span>
+        <button type="submit" class="govuk-button" style="background-color: #dee0e2; color: #0b0c0c; box-shadow: 0 2px 0 #0b0c0c; margin-bottom: 5px;">
           Choose file
-        </a>
+        </button>
       </div>
-
-      <!--<button type="submit" disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled">
-        Save and continue
-      </button>-->
 
       <button type="submit" class="govuk-button">
         Save and continue
       </button>
 
+      <!--<button href="countries_of_transit_en_route.html" type="submit" class="govuk-button">
+        Save and continue
+      </button>-->
+
       <p>
-        <a href="dashboard.html">
+        <a href="../dashboard.html">
           Save and continue later
         </a>
       </p>
 
       </form>
-
+  
     </div>
   </div>
 
