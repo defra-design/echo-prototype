@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Form updated
+  Are you sure you want to clone this application?
 {% endblock %}
 
 {% block content %}
@@ -12,22 +12,19 @@
       <form method="post" id="form" class="form">
 
       <h2 class="govuk-heading-l">
-        Form updated
+        Are you sure you want to clone this application?
       </h2>
 
       <div class="govuk-form-group">
-        <p>
-          This form has been updated since you last used it.
+        <p class="govuk-body">
+          This will create a clone of Application number 1651965956600. The cloned application will be Application number 1651965956601.
         </p>
-        <p>
-          We’ve adapted the information you previously supplied to fit the new form, but there may be new or changed questions.
-        </p>
-        <p> 
-          You’ll need to go back through the form and make sure you’ve provided all the information we need before you submit your application.
+        <p class="govuk-body">
+          As this is a multiples application, the above applications will be grouped under {multiplesNumber}.
         </p>
       </div>
 
-      <a href="dashboardApplicationDraft.html" class="govuk-button">
+      <a href="dashboardMultiples.html" class="govuk-button">
         Continue
       </a>
 

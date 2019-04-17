@@ -46,26 +46,33 @@
         <li>have a unique, meaningful filename</li>
       </ul>
 
-      <!--<div class="govuk-inset-text">
-        The total size of the files you upload must be 25 megabytes (25MB) or less.
-      </div>-->
-
-      <div class="govuk-form-group govuk-form-group--error" style="margin-bottom: 62px;">
-        <span id="file-virus-error" class="govuk-error-message">
-          The selected file contains a virus
-        </span>
-        <button type="submit" class="govuk-button" style="background-color: #dee0e2; color: #0b0c0c; box-shadow: 0 2px 0 #0b0c0c; margin-bottom: 5px;">
-          Choose file
-        </button>
-      </div>
+      <table class="govuk-table" style="margin-bottom: 60px;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header govuk-!-width-two-thirds" scope="col">File name</th>
+            <th class="govuk-table__header" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">
+              <div class="govuk-form-group govuk-form-group--error" style="margin-bottom: 0;">
+                <span id="file-virus-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> The selected file contains a virus
+                </span>
+                <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
+              </div>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="uploadDashboard1.html" class="govuk-link govuk-link--no-visited-state">Upload</a>
+             </td>
+          </tr>
+        </tbody>
+      </table>
 
       <button type="submit" class="govuk-button">
         Save and continue
       </button>
-
-      <!--<button href="countries_of_transit_en_route.html" type="submit" class="govuk-button">
-        Save and continue
-      </button>-->
 
       <p>
         <a href="../dashboard.html">

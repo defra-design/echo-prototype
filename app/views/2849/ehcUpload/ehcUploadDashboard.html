@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Upload your Export Health Certificate (EHC)
+  Upload export health certificate
 {% endblock %}
 
 {% block content %}
@@ -16,27 +16,36 @@
       <form method="post" id="form" class="form">
 
       <h2 class="govuk-heading-l">
-        Upload your Export Health Certificate (EHC)
+        Upload export health certificate
       </h2>
 
       <p>
-    		You can only upload one Export Health Certificate (EHC). It must:
+        You can only upload one certificate. It must be:
       </p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>be a PDF</li>
-        <li>be less than 10 megabytes (10MB)</li>
+        <li>a PDF</li>
+        <li>less than 10MB</li>
       </ul>
 
-      <div class="govuk-inset-text">
-        The total size of the file you upload must be 10 megabytes (10MB) or less.
-      </div>
-
-      <div class="govuk-form-group">
-        <button type="submit" class="govuk-button" style="background-color: #dee0e2; color: #0b0c0c; box-shadow: 0 2px 0 #0b0c0c;">
-          Choose file
-        </button>
-      </div>
+      <table class="govuk-table" style="margin-bottom: 60px;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header govuk-!-width-two-thirds" scope="col">File name</th>
+            <th class="govuk-table__header" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">
+              <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            </td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="ehcUploadDashboard1" class="govuk-link govuk-link--no-visited-state">Upload</a>
+             </td>
+          </tr>
+        </tbody>
+      </table>
 
       <button type="submit" class="govuk-button">
         Save and continue

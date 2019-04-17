@@ -1,0 +1,296 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <table style="border-spacing: 0; width: 100%; border-bottom: 1px solid #bfc1c3;">
+    <tbody style="border-spacing: 0;">
+      <tr style="border-spacing: 0;">
+        <!--<td style="padding: 15px 0 10px; width: 129px;">
+          <a href="#" class="govuk-link govuk-link--no-visited-state" style="text-decoration: none; color: #000; font-weight: bold; font-size: 19px;">Sainsbury's</a>
+        </td>-->
+        <td style="padding: 15px 0 10px; width: 200px;">
+          <a href="#" class="govuk-link govuk-link--no-visited-state" style="text-decoration: none;">&nbsp;<!--Switch organisation--></a>
+        </td>
+        <td style="padding-top: 5px;">
+          <a href="#" class="govuk-link govuk-link--no-visited-state" style="float: right; padding-left: 10px; margin-left: 10px; text-decoration: none; border-left: 1px solid #bfc1c3;">Sign out</a>
+          <a href="#" class="govuk-link govuk-link--no-visited-state" style="float: right; padding-left: 10px; margin-left: 10px; text-decoration: none; border-left: 1px solid #bfc1c3;">Manage account</a>
+          <a style="float: right; text-decoration: none;">Test User</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block pageTitle %}
+  Your applications
+{% endblock %}
+
+{% block content %}
+
+      <form method="post" id="form" class="form">
+      
+      <!--<span class="govuk-caption-l">Organisation 1</span>-->
+      <h1 class="govuk-heading-l">
+        Your applications
+      </h1>
+
+      <table style="border-spacing: 0; width: 100%; margin-bottom: 40px;">
+        <tbody style="border-spacing: 0;">
+          <tr style="border-spacing: 0;">
+            <td style="padding: 0; vertical-align: top;">
+              <a href="https://www.gov.uk/export-health-certificates" class="govuk-button" style="margin-bottom: 0; float: left;">
+                Start a new application
+              </a>
+            </td>
+            <td style="padding: 0; vertical-align: top;">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table" style="margin-bottom: 60px;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Application number</th>
+            <th class="govuk-table__header" scope="col">Submission date</th>
+            <th class="govuk-table__header" scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">{blocksNumber}</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="dashboardBlocksGroup.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">Delete</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" scope="row">1651965956600</td>
+            <td class="govuk-table__cell" scope="row">29/05/2019</td>
+            <td class="govuk-table__cell" scope="row">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">View</a>
+              <a href="clone.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Clone</a>
+              <!--<a href="edit.html" class="govuk-link govuk-link--no-visited-state" style="margin-right: 20px;">Edit</a>
+              <a href="delete.html" class="govuk-link govuk-link--no-visited-state">Delete</a>-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div id="pager" class="pager" style="text-align: center; margin-bottom: 60px;">
+        <div class="pager-controls">
+          <ul class="pager-items" style="display: inline-block; list-style-type: none; font-size: 16px; margin: 0; padding: 0;">
+            <li style="display: inline-block; font-family: nta,Arial,sans-serif; padding: 7.5px 10px;">
+            <strong>1</strong>
+            </li>
+            <li style="display: inline-block; padding: 7.5px 10px;">
+            <a href="#">2</a>
+            </li>
+            <li style="display: inline-block; padding: 7.5px 10px;">
+            <a href="#">3</a>
+            </li>
+            <li style="display: inline-block; padding: 7.5px 10px;">
+            <a href="#">4</a>
+            </li>
+            <li style="display: inline-block; padding: 7.5px 10px;">
+            <a href="#">5</a>
+            </li>
+            <li style="display: inline-block; padding: 7.5px 10px;">...
+            </li>
+            <li style="display: inline-block; padding: 7.5px 10px;">
+            <a href="#">9</a>
+            </li>
+            <li style="display: inline-block; padding: 7.5px 10px;">
+            <a href="#">10</a>
+            </li>
+          </ul>
+          <a class="pager-next" href="https://findajob.dwp.gov.uk/search?cat=28&amp;loc=86383&amp;page=2">next
+          »</a>
+        </div>
+      </div>
+
+      </form>
+
+{% endblock %}
