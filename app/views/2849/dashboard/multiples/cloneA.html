@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you sure you want to clone this application?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" id="form" class="form">
+
+      <h2 class="govuk-heading-l">
+        Are you sure you want to clone this application?
+      </h2>
+
+      <div class="govuk-form-group">
+        <p class="govuk-body">
+          This will create a clone of Application number 1651965956619. The cloned application will be Application number 1651965956620.
+        </p>
+      </div>
+
+      <a href="dashboardMultiplesA.html" class="govuk-button">
+        Continue
+      </a>
+
+      <p>
+        <a href="javascript:history.back()">
+          Cancel and go back
+        </a>
+      </p>
+
+      </form>
+  
+    </div>
+  </div>
+
+{% endblock %}

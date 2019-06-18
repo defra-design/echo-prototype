@@ -10,12 +10,26 @@
 
 {% block content %}
 
+  <style type="text/css">
+    
+    .govuk-button--secondary {
+    background-color: #dee0e2;
+    -webkit-box-shadow: 0 2px 0 #858688;
+    box-shadow: 0 2px 0 #858688;
+    }
+
+    .govuk-button--secondary:hover, .govuk-button--secondary:focus {
+    background-color: #c8cacb;
+    }
+
+  </style>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <form method="post" id="form" class="form">
 
-      <span class="govuk-caption-l">Section 1: Identification of the animal</span>
+      <!--<span class="govuk-caption-l">Section 1: Identification of the animal</span>-->
       <h1 class="govuk-heading-l">Details of Horse 1</h1>
 
       <!--<p>
@@ -68,8 +82,12 @@
 
       </fieldset>
 
-      <a href="q1a-2.html" class="govuk-button">
+      <a href="q1a-2.html" class="govuk-button" style="margin-right: 11px">
         Save and continue
+      </a>
+
+      <a href="q1a-review-1.html" class="govuk-button govuk-button--secondary" style="color: #0b0c0c;">
+        Save and review
       </a>
 
       <p>

@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Is this application for a block of certificates?
+  Number of certificates
 {% endblock %}
 
 {% block content %}
@@ -23,14 +23,14 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#error-1">Select yes or no</a>
+              <a href="#error-1">Enter the number of certificates required</a>
             </li>
           </ul>
         </div>
       </div>
 
       <!--<span class="govuk-caption-l"></span>-->
-      <h1 class="govuk-heading-l">Is this application for a block of certificates?</h1>
+      <h1 class="govuk-heading-l">Number of certificates</h1>
 
       <p>
         You can apply for a block of up to 100 certificates for frequent and regular consignments to the same country.
@@ -38,33 +38,15 @@
 
       <fieldset class="govuk-fieldset">
 
-      <div class="govuk-form-group govuk-form-group--error">
-        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+        <div class="govuk-form-group govuk-form-group--error">
           <span id="error-1" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select yes or no
+            <span class="govuk-visually-hidden">Error:</span> Enter the number of certificates required
           </span>          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
-            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="blockCertificateQuanity">
-                Number of certificates required
-              </label>
-              <input class="govuk-input govuk-input--width-2" id="blockCertificateQuanity" name="blockCertificateQuanity" type="number" pattern="[0-9]*">
-            </div>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-              No
-            </label>
-          </div>
+          <label class="govuk-label" for="block-certificate-quanity">
+            Number of certificates required
+          </label>
+          <input class="govuk-input govuk-input--width-3" id="block-certificate-quanity" name="block-certificate-quanity" type="number">
         </div>
-      </div>
           
       </fieldset>
 
