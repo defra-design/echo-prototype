@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+       2849EHC
+      </h1>
+
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                What is the horse called? (optional)
+            </label>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                What is the breed of the horse? (optional)
+            </label>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+        </div>
+
+        <a href="2" type="submit" class="govuk-button govuk-!-margin-bottom-5">
+            Add a horse
+        </a>
+        <br>
+<a href="1">Save and continue later</a><br>
+        <br>
+<a href="/">Return to the previous page</a>
+    </div>
+</div>
+
+{% endblock %}
