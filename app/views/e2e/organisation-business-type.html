@@ -1,0 +1,209 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="org-type" onsubmit="return myFunction()" method="post">
+
+
+                <script>
+                    const form = document.querySelector('.org-type')
+
+                    function myFunction() {
+                        const checked = document.querySelector('[name="businessType"]:checked')
+                        const checkedValue = checked.value
+
+                        switch(checkedValue){
+                            case 'Sole trader':
+                                form.action = '/new-user-reg/sole-trader/task-list-page-account?flowType=task'
+
+                                break;
+                            case 'Limited company':
+                                form.action = '/new-user-reg/limited-company/task-list-page-account?flowType=task'
+
+                                break;
+                            case 'Public limited company':
+                                form.action = '/new-user-reg/limited-company/task-list-page-account?flowType=task'
+                                break;
+
+                                break;
+                            case 'Limited liability partnership':
+                                form.action = '/new-user-reg/limited-company/task-list-page-account?flowType=task'
+                                break;
+
+                            case 'Non-UK organisation':
+                                form.action = '/new-user-reg/non-uk-org/task-list-page-account?flowType=task'
+                                break;
+
+                            case 'Charity':
+                                form.action = '/new-user-reg/charity/task-list-page-account?flowType=task'
+                                break;
+
+                            default:
+                                form.action = '/new-user-reg/organisation-business-coming-soon?flowType=task'
+                        }
+                        return true
+                    }
+                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+                            <h1 class="govuk-fieldset__heading">
+                                What type of business or organisation do you represent?
+                            </h1>
+
+                        </legend>
+
+
+                        <div class="govuk-radios">
+
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="businessType-1" name="businessType" type="radio" value="Sole trader">
+                                <label class="govuk-label govuk-radios__label" for="businessType-1">
+                                    Sole trader
+                                </label>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="businessType-2" name="businessType" type="radio" value="Limited company">
+                                <label class="govuk-label govuk-radios__label" for="businessType-2">
+                                    Limited company
+                                </label>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="businessType-3" name="businessType" type="radio" value="Public limited company">
+                                <label class="govuk-label govuk-radios__label" for="businessType-3">
+                                    Public limited company
+                                </label>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="businessType-4" name="businessType" type="radio" value="Limited liability partnership">
+                                <label class="govuk-label govuk-radios__label" for="businessType-4">
+                                    Limited liability partnership
+                                </label>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="businessType-5" name="businessType" type="radio" value="Non-UK organisation">
+                                <label class="govuk-label govuk-radios__label" for="businessType-5">
+                                    Organisation that is not registered in the UK
+                                </label>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="businessType-6" name="businessType" type="radio" value="Charity">
+                                <label class="govuk-label govuk-radios__label" for="businessType-6">
+                                    Charity
+                                </label>
+                            </div>
+
+
+
+                        </div>
+                    </fieldset>
+
+
+                </div>
+
+
+                <details class="govuk-details" role="group">
+                    <summary class="govuk-details__summary" role="button" aria-controls="details-content-84e19359-03fa-4398-9820-599437bbf4f7" aria-expanded="false">
+          <span class="govuk-details__summary-text">
+            Can't see your business or organisation type?
+          </span>
+                    </summary>
+                    <div class="govuk-details__text" id="details-content-84e19359-03fa-4398-9820-599437bbf4f7" aria-hidden="true">
+                        If you can't see your business or organisation type please contact the service for more information.
+                    </div>
+                    <div class="govuk-details__text">
+                        Comply with REACH IT - [telephone number]
+                    </div>
+                </details>
+
+
+
+
+
+
+                <button type="submit" class="govuk-button">
+                    Continue
+                </button>
+
+
+            </form>
+
+        </div>
+    </div>
+
+
+</main>
+
+{% endblock %}
