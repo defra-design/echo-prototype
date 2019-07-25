@@ -98,3 +98,73 @@ $govuk-global-styles: true;
     padding-right: 0;
   }
 }
+
+
+// 7006 ehc
+
+.govuk-radios.govuk-radios--small.govuk-radios--inline {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.link-button {
+  background: none !important;
+  color: #005ea5;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+  border-bottom: 1px solid #005ea5;
+  cursor: pointer;
+}
+
+.govuk-radios__input {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 0;
+  opacity: 0;
+}
+
+.govuk-radios__input + .govuk-radios__label::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.govuk-radios__label {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 15px 5px!important;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.margin-top-45 {
+  margin-top: 45px;
+}
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.icon-file-download {
+  width: 30px;
+  height: 39px;
+  background-image: url(/public/images/icon-file-download.png);
+}
+.icon {
+  display: inline-block;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
