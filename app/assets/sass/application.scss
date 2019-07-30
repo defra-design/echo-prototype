@@ -358,3 +358,24 @@ button.blue-button:hover {
 
 .no-decoration {
   text-decoration: none; }
+
+
+.govuk-radios__hint {
+  display: block;
+  padding-right: 15px;
+  padding-left: 0;
+}
+
+@media (min-width: 40.0625em){
+.gem-c-pagination__link-text {
+  font-size: 19px;
+  line-height: 1.3157894737;
+
+  font-weight: 600;
+}
+}
+.gem-c-pagination__link-label {padding-left: 20px;text-decoration: underline}
+a.gem-c-pagination__link {
+text-decoration:none}
+
+.govuk-fieldset__legend--m {font-weight: normal}

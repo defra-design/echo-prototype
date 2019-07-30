@@ -28,13 +28,7 @@
                     <input type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
                     <input type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
                     <div class="govuk-form-group">
-                        <h1 class="govuk-heading-l">Now select the address where your OV will process your EHC</h1>
-                        <span class="govuk-caption-l">Organisation name</span>
-
-                        <p class="govuk-body govuk-fieldset__legend--m">
-                            <span id="certificate-delivery-address-line-1">ADM ACCOUNTING LIMITED</span><br>
-                        </p>
-
+                        <h1 class="govuk-heading-l">ADM ACCOUNTING LIMITED<br/>Hornbeam House CW12 3ER</h1>
                         <span class="govuk-caption-l">Address</span>
                         <p class="govuk-body govuk-fieldset__legend--m">
                             <span id="certificate-delivery-address-line-1">Hornbeam House</span><br>
@@ -52,16 +46,17 @@
                             <div class="govuk-radios ">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="default-address-option" name="address-option" type="radio" value="default" {{ checked("address-option", "default") }}>
-                                    <label id="default-address-option-label" class="govuk-label govuk-radios__label" for="default-address-option">
+                                    <label id="default-address-option-label" class="govuk-label govuk-radios__label govuk-label--s" for="default-address-option">
                                         Same as above
                                     </label>
                                 </div>
                                <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="manual-address-option" name="address-option" type="radio" value="manual" aria-describedby="manual-address-option-hint" {{ checked("address-option", "manual") }}>
-                                    <label id="manual-address-option-label" class="govuk-label govuk-radios__label" for="manual-address-option">
+                                    <label id="manual-address-option-label" class="govuk-label govuk-radios__label govuk-label--s" for="manual-address-option">
                                         Use different address
                                     </label>
-                  <span id="manual-address-option-hint" class="govuk-hint govuk-radios__hint" style="padding-left: 15px">
+                  <span id="manual-address-option-hint" class="govuk-hint govuk-radios__hint">
+                      Enter manually
                     </span>
                                 </div>
                             </div>
@@ -82,7 +77,7 @@
 <script>
 
 document.getElementById("manual-address-option").onclick=function(e) {
-	document.getElementById("addr-form").action="postcode-lookup";
+	document.getElementById("addr-form").action="certificate-delivery-address-manual";
 	document.getElementById("addr-form").submit();
 }
 

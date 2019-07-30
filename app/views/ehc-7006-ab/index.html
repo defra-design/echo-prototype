@@ -7,7 +7,93 @@ GOV.UK Prototype Kit
 
 {% block content %}
 
+<style>
 
+
+    #filter-cert-org #filter-container {
+        bottom: 0px;
+        color: rgb(255, 255, 255);
+        height: 40px;
+        left: 0px;
+        position: relative;
+        right: 0px;
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        top: 0px;
+        width: 300px;
+        column-rule-color: rgb(255, 255, 255);
+        perspective-origin: 150px 20px;
+        transform-origin: 150px 20px;
+        caret-color: rgb(255, 255, 255);
+        background: rgb(0, 94, 165) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='white'%3E%3C/path%3E%3C/svg%3E") no-repeat scroll 0% 0% / 40px 40px padding-box border-box;
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#filter-container*/
+
+    #filter-cert-org #filter-container:after {
+        color: rgb(255, 255, 255);
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        column-rule-color: rgb(255, 255, 255);
+        caret-color: rgb(255, 255, 255);
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#DIV_4:after*/
+
+    #filter-cert-org #filter-container:before {
+        color: rgb(255, 255, 255);
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        column-rule-color: rgb(255, 255, 255);
+        caret-color: rgb(255, 255, 255);
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#DIV_4:before*/
+
+
+    #filter-cert-org #filter-input {
+        bottom: 0px;
+        height: 22px;
+        left: 0px;
+        position: relative;
+        right: 0px;
+        text-size-adjust: 100%;
+        top: 0px;
+        width: 260px;
+        perspective-origin: 130px 20px;
+        transform-origin: 130px 20px;
+        border: 2px solid rgb(255, 255, 255);
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+        margin: 0px 0px 0px 40px;
+        padding: 9px 10px 5px;
+        border: solid 2px #000;
+        outline: none;
+    }/*#filter-input*/
+
+    #filter-cert-org #filter-input:focus {
+        border: solid 2px #ffbf47;
+        outline: none;
+    }/*#filter-input*/
+
+    #filter-cert-org #filter-input:after {
+        text-size-adjust: 100%;
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+    }/*#filter-input:after*/
+
+    #filter-cert-org #filter-input:before {
+        text-size-adjust: 100%;
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+    }/*#filter-input:before*/
+
+
+
+
+
+
+</style>
 
 <div class="govuk-width-container">
 
@@ -15,44 +101,32 @@ GOV.UK Prototype Kit
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <div>
-                    <h1 id="questionPageHeading" class="govuk-heading-l">Exports</h1>
+                    <h1 id="questionPageHeading" class="govuk-heading-l">About your official vet or certifier</h1>
+
+                    <span id="manual-address-option-hint" class="govuk-hint govuk-radios__hint">
+                     All EHC applications require an official vet.
+                    </span>
+
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <label class="govuk-label govuk-!-font-weight-bold">What specific commodity are you exporting?</label>
+                        <label class="govuk-label">Find your OV practice </label>
                     </legend>
+                    <form action="1" method="POST" enctype="">
+                    <div id="filter-cert-org">
+                        <div id="filter-container">
+                            <input id="filter-input" name="input-autocomplete" placeholder="Choose OV practice" type="text" onclick="location.href='1.html';">
+                        </div>
+                    </div>
+                        </form>
+
+
                     <p>
-                    </p><form action="1" method="POST" enctype="">
-                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
-
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                <h1 class="govuk-fieldset__heading">
-                                    MEAT
-                                </h1>
-                            </legend>
-                            <div class="govuk-radios govuk-radios--small govuk-radios--inline">
-
-                                <div class="govuk-radios__item">
+                    </p>
 
 
 
-                                    <input class="govuk-radios__input" id="commodityName-c9e9214f-50c7-4a1c-99e3-ced26332cac2" name="selectedCommodityNameOrCommodityType" type="radio" value="PORCINE">
-                                    <label class="govuk-label govuk-radios__label" for="commodityName-c9e9214f-50c7-4a1c-99e3-ced26332cac2">
-                                        PORCINE
-                                    </label>
-                                </div>
-                            </div>
 
 
-                        </fieldset>
-                    </div>
-
-
-                    <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
-                        <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
-                    </div>
-
-                    <div class="govuk-grid-row">
+                    <div class="govuk-grid-row margin-top-45">
                         <div class="govuk-grid-column-full govuk-body">
                             <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
                         </div>

@@ -2,133 +2,145 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-
-
-
-
-
-
-
-
+<a href="5" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
 
 <div class="govuk-width-container">
 
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <div>
-                    <h1 id="questionPageHeading" class="govuk-heading-l">Product details</h1>
-                    <p>
-                    </p><form action="6" method="POST" enctype="application/x-www-form-urlencoded">
-                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div>
+                <h1 id="questionPageHeading" class="govuk-heading-l">About your dates</h1>
+                <p>
+                </p><form action="6" method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
-                    <!-- @formatter:off -->
-                    <div class="govuk-form-group " id="checkboxes" data-qa-id="7006EHC-0">
-                        <label class="govuk-label govuk-!-font-weight-bold" for="7006EHC-0">What is the origin of the raw materials?</label>
-                        <div class="govuk-hint">Select all that apply</div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="7006EHC-0_1" name="origin" type="checkbox" data-qa-id="7006EHC-0_1" value="Great Britain" {{ checked("origin", "Great Britain") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_1">
-                                Great Britain
-                            </label>
+                <!-- @formatter:off -->
+                <div class="govuk-form-group ">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <label class="govuk-label ">What is the planned date of certification?</label>
+                            <span class="govuk-hint">This date must be on or before the export date</span>
+                        </legend>
+                        <div class="govuk-date-input">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="7006EHC-0-day">Day</label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-0-day" name="certification-day" value="{{ data['certification-day'] }}" data-qa-id="Question-7006EHC-0-Day" autofocus="autofocus" type="number" pattern="^[0-9]{2}$">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="7006EHC-0-month">Month</label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-0-month" name="certification-month" value="{{ data['certification-month'] }}" data-qa-id="Question-7006EHC-0-Month" type="number" pattern="^[0-9]{2}$">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="7006EHC-0-year">Year</label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="7006EHC-0-year" name="certification-year" value="{{ data['certification-year'] }}" data-qa-id="Question-7006EHC-0-Year" type="number" pattern="^[0-9]{4}$">
+                                </div>
+                            </div>
                         </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="7006EHC-0_2" name="origin" type="checkbox" data-qa-id="7006EHC-0_2" value="Northern Ireland" {{ checked("origin", "Northern Ireland") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_2">
-                                Northern Ireland
-                            </label>
+                    </fieldset>
+                </div>
+                <input type="hidden" name="0-formQuestionId" value="42">
+                <input type="hidden" name="0-questionId" value="5">
+                <input type="hidden" name="0-formName" value="exa07---meat">
+                <input type="hidden" name="0-questionText" value="What is the planned date of certification?">
+                <input type="hidden" name="0-questionType" value="date">
+                <input type="hidden" name="0-questionOrder" value="3">
+                <input type="hidden" name="0-questionScope" value="APPLICANT">
+                <input type="hidden" name="questionSequence-42" value="0"><div class="govuk-form-group ">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label">What is the planned export date?</label>
+                    </legend>
+                    <div class="govuk-date-input">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="7006EHC-1-day">Day</label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-1-day" name="consignment-day" value="{{ data['consignment-day'] }}" data-qa-id="Question-7006EHC-1-Day" type="number" pattern="^[0-9]{2}$">
+                            </div>
                         </div>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="7006EHC-0_3" name="origin" type="checkbox" data-qa-id="7006EHC-0_3" value="Outside the UK"  {{ checked("origin", "Outside the UK") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_3">
-                                Outside the UK
-                            </label>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="7006EHC-1-month">Month</label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-1-month" name="consignment-month" value="{{ data['consignment-month'] }}" data-qa-id="Question-7006EHC-1-Month" type="number" pattern="^[0-9]{2}$">
+                            </div>
                         </div>
-                    </div>
-                    <input type="hidden" name="0-formQuestionId" value="44">
-                    <input type="hidden" name="0-questionId" value="8">
-                    <input type="hidden" name="0-formName" value="exa07---meat">
-                    <input type="hidden" name="0-questionText" value="What is the origin of the raw materials?">
-                    <input type="hidden" name="0-questionType" value="multi_select">
-                    <input type="hidden" name="0-questionOrder" value="1">
-                    <input type="hidden" name="0-questionScope" value="APPLICANT">
-                    <input type="hidden" name="questionSequence-44" value="0"><div class="govuk-form-group ">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="7006EHC-1">What are the dates of processing of the product?</label>
-                    <div class="govuk-hint">Enter a single date or a range as applicable</div>
-                    <input class="govuk-input form-control-3-4" id="7006EHC-1" name="processing-date" value="{{ data['processing-date'] }}" type="text" data-qa-id="Question-7006EHC-1">
-                </div>
-                    <input type="hidden" name="1-formQuestionId" value="46">
-                    <input type="hidden" name="1-questionId" value="11">
-                    <input type="hidden" name="1-formName" value="exa07---meat">
-                    <input type="hidden" name="1-questionText" value="What are the dates of processing of the product?">
-                    <input type="hidden" name="1-questionType" value="text">
-                    <input type="hidden" name="1-questionOrder" value="2">
-                    <input type="hidden" name="1-questionScope" value="APPLICANT">
-                    <input type="hidden" name="questionSequence-46" value="1"><div class="govuk-form-group ">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="7006EHC-2">When were the animals slaughtered?</label>
-                    <div class="govuk-hint">Enter a single date or a range as applicable</div>
-                    <input class="govuk-input form-control-3-4" id="7006EHC-2" name="when-slaughtered" value="{{ data['when-slaughtered'] }}" type="text" data-qa-id="Question-7006EHC-2">
-                </div>
-                    <input type="hidden" name="2-formQuestionId" value="45">
-                    <input type="hidden" name="2-questionId" value="13">
-                    <input type="hidden" name="2-formName" value="exa07---meat">
-                    <input type="hidden" name="2-questionText" value="When were the animals slaughtered?">
-                    <input type="hidden" name="2-questionType" value="text">
-                    <input type="hidden" name="2-questionOrder" value="3">
-                    <input type="hidden" name="2-questionScope" value="APPLICANT">
-                    <input type="hidden" name="questionSequence-45" value="2"><div class="govuk-form-group " id="checkboxes" data-qa-id="7006EHC-3">
-                    <label class="govuk-label govuk-!-font-weight-bold" for="7006EHC-3">Where were the animals slaughtered?</label>
-                    <div class="govuk-hint">Select all that apply</div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-3_1" name="where-slaughtered" type="checkbox" data-qa-id="7006EHC-3_1" value="Great Britain"  {{ checked("where-slaughtered", "Great Britain") }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-3_1">
-                            Great Britain
-                        </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-3_2" name="where-slaughtered" type="checkbox" data-qa-id="7006EHC-3_2" value="Northern Ireland"  {{ checked("where-slaughtered", "Northern Ireland") }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-3_2">
-                            Northern Ireland
-                        </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-3_3" name="where-slaughtered" type="checkbox" data-qa-id="7006EHC-3_3" value="Outside the UK"  {{ checked("where-slaughtered", "Outside the UK") }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-3_3">
-                            Outside the UK
-                        </label>
-                    </div>
-                </div>
-                    <input type="hidden" name="3-formQuestionId" value="47">
-                    <input type="hidden" name="3-questionId" value="12">
-                    <input type="hidden" name="3-formName" value="exa07---meat">
-                    <input type="hidden" name="3-questionText" value="Where were the animals slaughtered?">
-                    <input type="hidden" name="3-questionType" value="multi_select">
-                    <input type="hidden" name="3-questionOrder" value="4">
-                    <input type="hidden" name="3-questionScope" value="APPLICANT">
-                    <input type="hidden" name="questionSequence-47" value="3">            <!-- @formatter:on -->
-                    <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="4">
-                    <div class="govuk-grid-row margin-top-30"></div>
-                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
-                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
-                    </div>
-
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-full govuk-body">
-                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="7006EHC-1-year">Year</label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="7006EHC-1-year" name="consignment-year" value="{{ data['consignment-year'] }}" data-qa-id="Question-7006EHC-1-Year" type="number" pattern="^[0-9]{4}$">
+                            </div>
                         </div>
                     </div>
+                </fieldset>
+            </div>
+                <input type="hidden" name="1-formQuestionId" value="43">
+                <input type="hidden" name="1-questionId" value="3">
+                <input type="hidden" name="1-formName" value="exa07---meat">
+                <input type="hidden" name="1-questionText" value="What is the planned export date of the consignment?">
+                <input type="hidden" name="1-questionType" value="date">
+                <input type="hidden" name="1-questionOrder" value="4">
+                <input type="hidden" name="1-questionScope" value="APPLICANT">
+                <input type="hidden" name="questionSequence-43" value="1">            <!-- @formatter:on -->
+                <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="2">
 
-                </form>
 
-                    <p></p>
+                    <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
+                        Important date information
+                    </h2>
+
+                <div class="govuk-inset-text">
+                <p>
+
+                    The animal(s) described above was/were examined on
+                    ..................(date), being not more than 48 hours prior to
+                    the proposed date of export, and was/were found to be free from
+                    clinical signs of infectious or contagious disease including: (in
+                    the case of dogs) rabies, distemper, parvo virus infection,
+                    leptospirosis, Infectious Canine Hepatitis, Aujeszky’s disease and
+                    Leishmaniosis; and (in the case of cats) rabies, feline enteritis,
+                    feline pan leukopenia, leptospirosis, distemper, scabies,
+                    Aujeszky’s disease and Toxoplasmosis;
+
+
+                </p>
                 </div>
+
+
+                <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                    <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                </div>
+
+
+
+
+
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full govuk-body">
+                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                    </div>
+                </div>
+
+            </form>
+
+                <p></p>
             </div>
         </div>
+    </div>
 </div>
+
+
+
+
 
 
 

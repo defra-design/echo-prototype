@@ -12,22 +12,45 @@
 <div class="govuk-width-container">
     <main class="govuk-main-wrapper" id="main-content" role="main" data-qa-page="Page-Organisation-Search" data-qa-id="Question-Page-Form-Question-1">
 
-
-        <div class="" id="Form-Organisation">
+	<a href="index" class="govuk-back-link govuk-!-margin-bottom-8 govuk-!-margin-top-0">Back</a>
+	
+        <div class="govuk-form-group " id="Form-Organisation">
             <fieldset class="govuk-fieldset">
-                <h1 id="questionPageHeading" class="govuk-heading-l">About your official vet or certifier</h1>
- <span id="manual-address-option-hint" class="govuk-hint govuk-radios__hint">
-                     All EHC applications require an official vet.
-                    </span>
-
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Select certifying organisation
+                    </h1>
+                </legend>
+        <span id="Hint-CertifierOrganisation" class="govuk-hint">
+          Select the certifier practice to include with your application
+        </span>
             </fieldset>
-
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <label class="govuk-label">Find your OV practice </label>
-            </legend>
         </div>
 
+        <!--<form name="search-form" action="" method="GET">
+            <div class="border-box govuk-grid-column-full">
 
+
+                <div class="govuk-grid-column-one-half govuk-form-group">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-font-weight-bold" for="filter">Filter</label>
+                        <input class="govuk-input" id="filter" type="text" name="filter" data-qa-id="TextField-filter" value="" placeholder="">
+                    </div>
+                </div>
+
+                <div class="govuk-form-group govuk-grid-column-one-quarter">
+                    <div class="govuk-label margin-top-45">
+                        <button type="submit" name="name" value="" class="link-button" id="Button-Search" data-qa-id="Button-Search">
+                            Search
+                        </button>
+                        <button type="submit" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">
+                            Clear
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </form>-->
 		
 <style>
 
@@ -116,20 +139,12 @@
 
 
 </style>
-
+	
 	<div id="filter-cert-org">
 	<div id="filter-container">
-
-
-
-		<input id="filter-input" name="input-autocomplete" placeholder="CE12 3ER" type="text" />
+		<input id="filter-input" name="input-autocomplete" placeholder="Filter" type="text" />
 	</div>
 	</div>
-
-
-            <h1 class="govuk-heading-m govuk-!-margin-top-9 govuk-!-margin-bottom-0">Search results for "CE12 3ER"</h1>
-
-
 
         <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER">
             <thead class="govuk-table__head">
@@ -217,28 +232,7 @@
             </tr>			
             </tbody>
         </table>
-
-
-        <div id="js-pagination">
-            <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
-                        <a href="#" class="gem-c-pagination__link" rel="next" data-track-category="contentsClicked" data-track-action="next" data-track-label="/search/all?keywords=test&amp;order=relevance&amp;page=2" data-track-dimension="next" data-track-dimension-index="29">
-          <span class="gem-c-pagination__link-title">
-            <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
-                <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-            </svg>
-            <span class="gem-c-pagination__link-text">
-              Next page<span class="gem-c-pagination__link-divider visually-hidden">:</span>
-            </span>
-          </span><br>
-
-                            <span class="gem-c-pagination__link-label">2 of 1424</span>
-                        </a>
-
-            </nav>
-
-        </div>
-
-
+    </main>
     </main>
 </div>
 

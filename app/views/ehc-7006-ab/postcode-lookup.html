@@ -10,7 +10,7 @@
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <form action="3" method="POST">
+            <form action="certificate-delivery-address-manual" method="POST">
                 <input type="hidden" name="crumb_csrf_token" value="-OFEIl7HkGmNi3ZbrlI4BeayEl-1-jTpR6CRsveyix5">
                 <input type="hidden" name="ehcNumber" value="7006EHC">
                 <input type="hidden" name="applicationFormId" value="1721147986165">
@@ -23,36 +23,18 @@
                             What is your delivery address?
                         </h1>
                     </legend>
-                    <div class="govuk-form-group ">
-                        <label class="govuk-label" for="certifier-address-line-1">
-                            Building and street
-                            <span class="govuk-visually-hidden">line 1 of 2</span>
-                        </label>
-                        <input class="govuk-input" id="certifier-address-line-1" name="address1" type="text" value="123 Address Line1">
-                    </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="certifier-address-line-2">
-                            <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
-                        </label>
-                        <input class="govuk-input" id="certifier-address-line-2" name="address2" type="text" value="1">
-                    </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="certifier-address-town">
-                            Town or city
-                        </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="city" name="town" type="text" value="">
-                    </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="certifier-address-county">
-                            County
-                        </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="county" name="county" type="text" value="">
-                    </div>
-                    <div class="govuk-form-group ">
-                        <label class="govuk-label" for="certifier-address-postcode">
+                        <label class="govuk-label" for="address-postcode">
                             Postcode
                         </label>
-                        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" value="POSTCODE" type="text">
+  <span id="" class="">
+  </span>
+                        <input class="govuk-input govuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" value="" aria-describedby="address-postcode-error">
+                    </div>
+
+
+                    <div class=" govuk-body">
+                        <input class="govuk-button" type="submit" value="Find address" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
                     </div>
                 </fieldset>
                 <br>
