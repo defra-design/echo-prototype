@@ -127,22 +127,35 @@
 	</div>
 
 
-            <h1 class="govuk-heading-m govuk-!-margin-top-9 govuk-!-margin-bottom-0">Search results for "CE12 3ER"</h1>
+            <h1 class="govuk-heading-m govuk-!-margin-top-9 govuk-!-margin-bottom-3">Search results for "CE12 3ER"</h1>
 
 
 
         <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER">
             <thead class="govuk-table__head">
             <tr class="govuk-table__row">
+                <th class="govuk-table__header">Select your OV</th>
                 <th class="govuk-table__header">Name</th>
                 <th class="govuk-table__header">Address</th>
                 <th class="govuk-table__header">Area</th>
                 <th class="govuk-table__header">Category of certification</th>
-                <th class="govuk-table__header">Actions</th>
+
             </tr>
             </thead>
             <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
+
+                <td class="govuk-table__cell">
+                <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+
+                        </label>
+                    </div>
+                </div>
+                </td>
+
                 <td class="govuk-table__cell">
                     Amsa 123 Address Line1  POSTCODE
                 </td>
@@ -161,7 +174,7 @@
                 </td>
                 <td class="govuk-table__cell">
                     <form action="2" method="POST">
-					
+
 						<input type="hidden" name="address1" value="123 Address Line1">
 						<input type="hidden" name="address2" value="1">
 						<input type="hidden" name="city" value="1">
@@ -176,11 +189,23 @@
 
                         <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
                         <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
-                        <input class="link-button" type="submit" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-0" data-qa-id="Button-SaveAndContinue">
+
                     </form>
                 </td>
             </tr>
             <tr class="govuk-table__row">
+
+                <td class="govuk-table__cell">
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+
+                            </label>
+                        </div>
+                    </div>
+                </td>
+
                 <td class="govuk-table__cell">
                     ADM ACCOUNTING LIMITED Hornbeam House CW12 3ER
                 </td>
@@ -196,6 +221,8 @@
                 </td>
                 <td class="govuk-table__cell">
                     <form action="2" method="POST">
+
+
 					
 						<input type="hidden" name="address1" value="Hornbeam House">
 						<input type="hidden" name="address2" value="Electra Way">
@@ -211,15 +238,15 @@
 
                         <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
                         <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
-                        <input class="link-button" type="submit" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-0" data-qa-id="Button-SaveAndContinue">
-                    </form>
+
                 </td>
-            </tr>			
+            </tr>
             </tbody>
         </table>
 
+                        <div class="govuk-grid-row margin-top-30"></div>
 
-        <div id="js-pagination">
+        <div id="js-pagination" style="float: right">
             <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
                         <a href="#" class="gem-c-pagination__link" rel="next" data-track-category="contentsClicked" data-track-action="next" data-track-label="/search/all?keywords=test&amp;order=relevance&amp;page=2" data-track-dimension="next" data-track-dimension-index="29">
           <span class="gem-c-pagination__link-title">
@@ -237,6 +264,20 @@
             </nav>
 
         </div>
+
+
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0" style="margin-top: 70px">
+            <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-body">
+                <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+            </div>
+        </div>
+
+
+                    </form>
 
 
     </main>
