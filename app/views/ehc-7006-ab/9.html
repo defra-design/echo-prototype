@@ -2,60 +2,162 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-
 <a href="8" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
-
 <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div>
+                <h1 id="questionPageHeading" class="govuk-heading-l">Cutting plant details</h1>
+                <p>
+                </p><form action="10" method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <div>
-                    <h1 id="questionPageHeading" class="govuk-heading-l">Cold store details</h1>
-                    <p>
-                    </p><form action="10" method="POST" enctype="application/x-www-form-urlencoded">
-                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                <!-- @formatter:off -->
+                <div class="govuk-form-group ">
+                    <label class="govuk-label " for="7006EHC-0">What are the details of the cutting plant of origin?</label>
+                    <div class="govuk-hint">Provide the name and Veterinary Approval number</div>
 
-                    <!-- @formatter:off -->
-                    <div class="govuk-form-group ">
-                        <label class="govuk-label " for="7006EHC-0">What are the details of the cold store? (optional)</label>
-                        <div class="govuk-hint">Provide name, address and Veterinary Approval number</div>
-                        <textarea class="govuk-textarea" id="7006EHC-0" name="cold-store" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{{ data['cold-store'] }}</textarea>
-                    </div>
-                    <input type="hidden" name="0-formQuestionId" value="227">
-                    <input type="hidden" name="0-questionId" value="53">
-                    <input type="hidden" name="0-formName" value="7006EHC">
-                    <input type="hidden" name="0-questionText" value="What are the details of the cold store? (optional)">
-                    <input type="hidden" name="0-questionType" value="textarea">
-                    <input type="hidden" name="0-questionOrder" value="5">
-                    <input type="hidden" name="0-questionScope" value="BOTH">
-                    <input type="hidden" name="questionSequence-227" value="0">            <!-- @formatter:on -->
-                    <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="1">
-                    <div class="govuk-grid-row margin-top-30"></div>
-                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
-                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="full-name">
+                            Cutting plant name
+                        </label>
+                        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
                     </div>
 
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-full govuk-body">
-                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="full-name">
+                            Veterinary approval number
+                        </label>
+                        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+                    </div>
+
+
+                </div>
+
+
+
+                <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
+                    Cutting dates
+                </h2>
+
+
+                <!-- @formatter:off -->
+                <div class="govuk-form-group ">
+                    <label class="govuk-label " for="7006EHC-0">What is the range of cutting dates?</label>
+                    <div class="govuk-hint">From earliest to latest</div>
+                </div>
+                <div class="govuk-form-group" {{ data['production-dates'] }}>
+                <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+    <span id="passport-issued-hint" class="govuk-hint">
+      From date
+    </span>
+                    <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                            </div>
                         </div>
                     </div>
+                </fieldset>
+            </div>
 
-                </form>
 
-                    <p></p>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+    <span id="passport-issued-hint" class="govuk-hint">
+      To date
+    </span>
+                    <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+
+
+
+
+            <div class="govuk-grid-row margin-top-30"></div>
+            <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+            </div>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-body">
+                    <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+            </form>
+
+            <p></p>
         </div>
+    </div>
+</div>
 </div>
 
 
-        
+
 
 
 
