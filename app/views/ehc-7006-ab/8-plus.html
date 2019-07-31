@@ -1,0 +1,80 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="7" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="">
+
+
+<h1 class="govuk-heading-l">The slaughterhouse details</h1>
+
+                    <form action="9" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header ">Name</th>
+                                <th scope="col" class="govuk-table__header ">Approval number</th>
+                                <th scope="col" class="govuk-table__header ">From date</th>
+                                <th scope="col" class="govuk-table__header ">To date</th>
+                                <th scope="col" class="govuk-table__header govuk-!-width-one-half">Address</th>
+                            </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">Bolton animal plant</th>
+                                <td class="govuk-table__cell">649887200</td>
+                                <td class="govuk-table__cell">22 11 2019</td>
+                                <td class="govuk-table__cell">23 11 2019</td>
+                                <td class="govuk-table__cell">27 Square caste road, BO10 8NY, Bolton </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <form action="7" method="POST" enctype="application/x-www-form-urlencoded">
+                        <button type="button" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                            Add another slaughterhouse
+                        </button>
+                        </form>
+
+                        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                            <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                        </div>
+
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full govuk-body">
+                                <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                            </div>
+                        </div>
+
+
+                        </form>
+
+
+
+            </div>
+        </div>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
