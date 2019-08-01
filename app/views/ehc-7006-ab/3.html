@@ -101,9 +101,35 @@
                     <div id='show-me2' style='display:none'>
 
                     <div class="govuk-form-group ">
-                        <label class="govuk-label" for="7006EHC-0">Provide exporter details</label>
-                        <input class="govuk-input form-control-3-4" id="7006EHC-0" name="exporter" value="" type="text" autofocus="autofocus" data-qa-id="Question-7006EHC-0"><br><br>
-                        <input class="govuk-input form-control-3-4" id="7006EHC-0" name="exporter" value="" type="text" autofocus="autofocus" data-qa-id="Question-7006EHC-0">
+                        <h2 class="govuk-label form-label-bold govuk-\!-font-weight-bold govuk-!-font-weight-bold" for="7006EHC-0">Provide exporter details</h2>
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="full-name">
+                                Full name
+                            </label>
+                            <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+                        </div>
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="email">
+                                Email address
+                            </label>
+  <span id="email-hint" class="govuk-hint">
+    We’ll only use this to send you a receipt
+  </span>
+                            <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="telephone-number">
+                                UK telephone number
+                            </label>
+                            <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+                        </div>
+
+
                     </div>
 
 

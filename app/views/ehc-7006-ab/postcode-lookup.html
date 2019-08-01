@@ -10,7 +10,7 @@
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <form action="certificate-delivery-address-manual" method="POST">
+            <form action="address" method="POST">
                 <input type="hidden" name="crumb_csrf_token" value="-OFEIl7HkGmNi3ZbrlI4BeayEl-1-jTpR6CRsveyix5">
                 <input type="hidden" name="ehcNumber" value="7006EHC">
                 <input type="hidden" name="applicationFormId" value="1721147986165">
@@ -31,20 +31,32 @@
   </span>
                         <input class="govuk-input govuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" value="" aria-describedby="address-postcode-error">
                     </div>
+                    <!--<a href="7" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                        Find address
+                    </a>-->
+<div class="govuk-link">
+                    <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="certificate-delivery-address-manual">Enter my address manually</a>
+</div>
 
-
-                    <div class=" govuk-body">
-                        <input class="govuk-button" type="submit" value="Find address" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
-                    </div>
                 </fieldset>
                 <br>
                 <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
                 </div>
+
+
+
+                <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
+                    <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-CertificateDeliveryAddressSaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                </div>
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-full govuk-body">
-                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
                     </div>
                 </div>
+
+
+
+
             </form>
         </div>
     </div>
