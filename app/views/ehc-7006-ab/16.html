@@ -1,4 +1,3 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -17,7 +16,10 @@ GOV.UK Prototype Kit
             <div class="govuk-width-container">
                 <div class="govuk-body">
                     <div id="paragraph" class="margin-top-20">
-                        <p>If you wish to attach any supporting documents to your application, you can upload them here. Otherwise, please click 'Save and continue' to skip this section.</p>
+                        <p>
+                            In some instances it is helpful to upload supporting documents with your application, and you can do that here. If you have not been asked for supporting documents, please skip this section.
+
+                        </p>
                     </div>
                     <div class="margin-top-20">
                         <label id="subTitle" class="govuk-label">You can only upload one at a time. Each file must: </label>
@@ -73,74 +75,21 @@ GOV.UK Prototype Kit
 
 
 
-                    <div class="govuk-form-group ">
-                        <!-- @formatter:off -->
-                        <fieldset id="7006EHC-1" class="govuk-fieldset">
-                            <!-- @formatter:on -->
-                            <legend class="govuk-fieldset__legend" for="7006EHC-1">
-                                <label class="govuk-label govuk-!-font-weight-bold">The paper certificate will be sent to your nominated address for certification. How would you like the certificate to be delivered?</label>
-                            </legend>
-
-                            <div class="govuk-hint">The paper certificate will be sent to your nominated address for certification. How would you like the certificate to be delivered?   Special delivery and courier charges to be arranged and paid for by the applicant</div>
-
-                            <div class="govuk-radios govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input type="radio" class="govuk-radios__input" id="First class post" value="First class post" name="certificate" data-qa-id="Question-radio-">
-                                    <label class="govuk-label govuk-radios__label" for="First class post">First class post</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input type="radio" class="govuk-radios__input" id="Special delivery" value="Special delivery" name="certificate" data-qa-id="Question-radio-">
-                                    <label class="govuk-label govuk-radios__label" for="Special delivery">Special delivery</label>
-                                </div>
-                                <p class="form-block">or</p>
-                                <div class="govuk-radios__item">
-                                    <input type="radio" class="govuk-radios__input" id="Courier" value="Courier" name="certificate" data-qa-id="Question-radio-">
-                                    <label class="govuk-label govuk-radios__label" for="Courier">Courier</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-
-
-
-                    <div class="govuk-form-group ">
-                        <!-- @formatter:off -->
-                        <fieldset id="7006EHC-2" class="govuk-fieldset">
-                            <!-- @formatter:on -->
-                            <legend class="govuk-fieldset__legend" for="7006EHC-2">
-                                <label class="govuk-label govuk-!-font-weight-bold">In which region will the certification take place?</label>
-                            </legend>
-
-
-                            <div class="govuk-radios govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input type="radio" class="govuk-radios__input" id="England" value="England" name="region" data-qa-id="Question-radio-">
-                                    <label class="govuk-label govuk-radios__label" for="England">England</label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input type="radio" class="govuk-radios__input" id="Scotland" value="Scotland" name="region" data-qa-id="Question-radio-">
-                                    <label class="govuk-label govuk-radios__label" for="Scotland">Scotland</label>
-                                </div>
-                                <p class="form-block">or</p>
-                                <div class="govuk-radios__item">
-                                    <input type="radio" class="govuk-radios__input" id="Wales" value="Wales" name="region" data-qa-id="Question-radio-">
-                                    <label class="govuk-label govuk-radios__label" for="Wales">Wales</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-
-
-
-
-
                     <div class="govuk-grid-row margin-top-30">
                         <div class="govuk-grid-column-one-quarter">
                             <div class="govuk-grid-row">
-                                <form action="check-your-answers" method="GET">
+                                <form action="17" method="GET">
                                     <input class="govuk-button" type="submit" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
 
                                 </form>
+
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-full govuk-body">
+                                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>

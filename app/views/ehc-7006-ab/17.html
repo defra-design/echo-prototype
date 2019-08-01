@@ -1,65 +1,109 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
+
 <a href="16" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
 
 <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
 
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <div>
-                    <h1 id="questionPageHeading" class="govuk-heading-l">Batch numbers</h1>
-                    <p>
-                    </p><form action="18" method="POST" enctype="application/x-www-form-urlencoded">
-                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
-                    <!-- @formatter:off -->
-                    <div class="govuk-form-group ">
-                        <label class="govuk-label " for="7006EHC-0">What are the batch numbers? (optional)</label>
-                        <div class="govuk-hint">enter the range of batch codes/lot numbers (first to last) for each category of product</div>
-                        <textarea class="govuk-textarea" id="7006EHC-0" name="batch-numbers" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{{ data['batch-numbers'] }}</textarea>
-                    </div>
-                    <input type="hidden" name="0-formQuestionId" value="243">
-                    <input type="hidden" name="0-questionId" value="23">
-                    <input type="hidden" name="0-formName" value="7006EHC">
-                    <input type="hidden" name="0-questionText" value="What are the batch numbers? (optional)">
-                    <input type="hidden" name="0-questionType" value="textarea">
-                    <input type="hidden" name="0-questionOrder" value="15">
-                    <input type="hidden" name="0-questionScope" value="BOTH">
-                    <input type="hidden" name="questionSequence-243" value="0">            <!-- @formatter:on -->
-                    <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="1">
-                    <div class="govuk-grid-row margin-top-30"></div>
-                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
-                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+
+
+
+
+
+
+
+            <div class="govuk-form-group ">
+                <!-- @formatter:off -->
+                <fieldset id="7006EHC-1" class="govuk-fieldset">
+                    <!-- @formatter:on -->
+                    <legend class="govuk-fieldset__legend" for="7006EHC-1">
+                        <label class="govuk-label govuk-!-font-weight-bold">The paper certificate will be sent to your nominated address for certification. How would you like the certificate to be delivered?</label>
+                    </legend>
+
+                    <div class="govuk-hint">
+                        The paper certificate will be sent free of charge to your nominated OV by first class post. However, if would you like to arrange a Special Delivery or Courier, mark your choice here. C charges to be arranged and paid for by the applicant
                     </div>
 
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-full govuk-body">
-                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                    <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="First class post" value="First class post" name="certificate" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="First class post">First class post</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Special delivery" value="Special delivery" name="certificate" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Special delivery">Special delivery</label>
+                        </div>
+                        <p class="form-block">or</p>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Courier" value="Courier" name="certificate" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Courier">Courier</label>
                         </div>
                     </div>
+                </fieldset>
+            </div>
+
+
+
+            <div class="govuk-form-group ">
+                <!-- @formatter:off -->
+                <fieldset id="7006EHC-2" class="govuk-fieldset">
+                    <!-- @formatter:on -->
+                    <legend class="govuk-fieldset__legend" for="7006EHC-2">
+                        <label class="govuk-label govuk-!-font-weight-bold">In which region will the certification take place?</label>
+                    </legend>
+
+
+                    <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="England" value="England" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="England">England</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Scotland" value="Scotland" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Scotland">Scotland</label>
+                        </div>
+                        <p class="form-block">or</p>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Wales" value="Wales" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Wales">Wales</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="govuk-grid-row">
+                <form action="check-your-answers" method="GET">
+                    <input class="govuk-button" type="submit" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
 
                 </form>
 
-                    <p></p>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full govuk-body">
+                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                    </div>
                 </div>
+
+
             </div>
+
+
+
+
+
         </div>
+    </div>
 </div>
-
-
-
-
-        
-
-
-
 
 
 
