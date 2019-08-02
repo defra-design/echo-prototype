@@ -8,7 +8,7 @@ GOV.UK Prototype Kit
 {% block content %}
 
 
-<a href="14" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<a href="15" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
 
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
@@ -17,7 +17,7 @@ GOV.UK Prototype Kit
 
                 <h1 class="govuk-heading-l">Name and address of the organisation receiving your export</h1>
 
-                <form action="15-plus" method="POST" enctype="application/x-www-form-urlencoded">
+                <form action="16" method="POST" enctype="application/x-www-form-urlencoded">
                     <fieldset class="govuk-fieldset">
 
 
@@ -36,20 +36,48 @@ GOV.UK Prototype Kit
 
 
 
+                        <p class="govuk-body">
+                            Postcode:
+                            <span class="govuk-!-font-weight-bold">BS1 5AH</span>&nbsp;&nbsp;
+                            <a href="15" class="govuk-link">Change<span class="govuk-visually-hidden"> postcode</span>
+                            </a>
+                        </p>
                         <div class="govuk-form-group">
-                            <label class="govuk-label" for="address-postcode">
-                                Postcode
-                            </label>
-                            <input class="govuk-input govuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" value="" aria-describedby="address-postcode-error">
-                        </div>
-                        <a href="15-plus" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-                            Find address
-                        </a>
 
-                        <div class="govuk-link">
-                            <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="#">Enter my address manually</a>
+
+
+                            <select class="govuk-select" id="addressList" name="addressList">
+
+                                <option value="" selected="">15 addresses found</option>
+
+                                <option value="1,3">Flat 1, 3, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="2,3">Flat 2, 3, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="5">Flat 5, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="7">7, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="9">9, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="11">11, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="15">15, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="17">17, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="19">19, Grange Road, Bristol, BS1 5AH</option>
+
+                                <option value="21">21, Grange Road, Bristol, BS1 5AH</option>
+
+                            </select>
                         </div>
 
+                        <p class="govuk-body">
+                            <a href="#">
+                                I cannot find the address in the list
+                            </a>
+                        </p>
 
 
 
