@@ -52,7 +52,7 @@
 
 
                     <div id='show-me' style='display:none'>
-                    <label class="govuk-label" for="event-name">
+                    <label class="govuk-label" for="event-name"     {{ data['ref-number'] }}>
                         Enter reference here (maximum 30 character)
                     </label>
 
@@ -105,7 +105,7 @@
 
 
                         <div class="govuk-form-group">
-                            <label class="govuk-label" for="full-name">
+                            <label class="govuk-label" for="full-name" {{ data['exporter'] }}>
                                 Full name
                             </label>
                             <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
@@ -113,7 +113,7 @@
 
 
                         <div class="govuk-form-group">
-                            <label class="govuk-label" for="email">
+                            <label class="govuk-label" for="email" {{ data['exporter'] }}>
                                 Email address
                             </label>
   <span id="email-hint" class="govuk-hint">
