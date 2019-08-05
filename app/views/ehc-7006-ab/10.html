@@ -113,8 +113,12 @@ GOV.UK Prototype Kit
                 <div class="govuk-form-group" {{ data['production-dates'] }}>
                 <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
 
-    <span id="passport-issued-hint" class="govuk-hint">
-      From date
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        From date
+                    </label>
+
+                         <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2007
     </span>
                     <div class="govuk-date-input" id="passport-issued">
                         <div class="govuk-date-input__item">
@@ -149,10 +153,13 @@ GOV.UK Prototype Kit
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
 
-    <span id="passport-issued-hint" class="govuk-hint">
-      To date
-    </span>
-                    <div class="govuk-date-input" id="passport-issued">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        To date
+                    </label>
+
+                         <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 4 2007
+    </span>        <div class="govuk-date-input" id="passport-issued">
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
