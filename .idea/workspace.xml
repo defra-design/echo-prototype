@@ -82,7 +82,7 @@
       <file leaf-file-name="dashboard.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/e2e/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="76" selection-start="358" selection-end="358" vertical-scroll-proportion="0.2006689" vertical-offset="180" max-vertical-offset="2625">
+            <state line="17" column="296" selection-start="660" selection-end="660" vertical-scroll-proportion="0.25083613" vertical-offset="180" max-vertical-offset="2625">
               <folding />
             </state>
           </provider>
@@ -528,7 +528,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/e2e/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="76" selection-start="358" selection-end="358" vertical-scroll-proportion="0.2006689" vertical-offset="180" max-vertical-offset="2625">
+        <state line="17" column="296" selection-start="660" selection-end="660" vertical-scroll-proportion="0.25083613" vertical-offset="180" max-vertical-offset="2625">
           <folding />
         </state>
       </provider>
