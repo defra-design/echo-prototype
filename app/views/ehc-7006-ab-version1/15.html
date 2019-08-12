@@ -17,7 +17,7 @@ GOV.UK Prototype Kit
 
                 <h1 class="govuk-heading-l">Name and address of the organisation receiving your export</h1>
 
-                <form action="15-plus" method="POST" enctype="application/x-www-form-urlencoded">
+                <form action="check-your-answers" method="POST" enctype="application/x-www-form-urlencoded">
                     <fieldset class="govuk-fieldset">
 
 
@@ -36,19 +36,35 @@ GOV.UK Prototype Kit
 
 
 
-                        <div class="govuk-form-group">
-                            <label class="govuk-label" for="address-postcode">
-                                Postcode
-                            </label>
-                            <input class="govuk-input govuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" value="" aria-describedby="address-postcode-error">
-                        </div>
-                        <a href="15-plus" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-                            Find address
-                        </a>
-
-                        <div class="govuk-link">
-                            <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="#">Enter my address manually</a>
-                        </div>
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-form-group ">
+                                <label class="govuk-label" for="certifier-address-line-1">
+                                    Building and street
+                                    <span class="govuk-visually-hidden">line 1 of 2</span>
+                                </label>
+                                <input class="govuk-input" id="certifier-address-line-1" name="address1" type="text" value="">
+                            </div>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="certifier-address-line-2">
+                                    <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                                </label>
+                                <input class="govuk-input" id="certifier-address-line-2" name="address2" type="text" value="">
+                            </div>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="certifier-address-town">
+                                    Town or city
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="city" name="town" type="text" value="">
+                            </div>
+                            <div class="govuk-form-group">
+                            </div>
+                            <div class="govuk-form-group ">
+                                <label class="govuk-label" for="certifier-address-postcode">
+                                    Postcode
+                                </label>
+                                <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" value="" type="text">
+                            </div>
+                        </fieldset>
 
 
 
