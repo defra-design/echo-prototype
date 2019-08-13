@@ -25,11 +25,21 @@ GOV.UK Prototype Kit
                 <input type="hidden" name="0-questionOrder" value="18">
                 <input type="hidden" name="0-questionScope" value="BOTH">
                 <input type="hidden" name="questionSequence-247" value="0"><div class="govuk-form-group ">
-                <label class="govuk-label " for="7006EHC-1">What is the port(s) of departure? </label>
-                <div class="govuk-hint">In cases where two UK ports are involved prior to the consignment leaving the UK, then both ports are to be entered in the certificate alongside the respective dates of sailing. e.g. Belfast (23/03/2018) / Southampton (29/03/2018)</div>
+                <label class="govuk-label " for="7006EHC-1">What is the port of departure?</label>
+                <div class="govuk-hint">
+
+                    This means where the consignment will leave the UK.<br>
+
+                    If two ports are involved e.g. Belfast, then Southampton, the first port is the initial port of departure, and the second port is the final port of departure.
+
+                </div>
+
+
+
 
 
                 <div class="govuk-form-group">
+                    <p>Select initial port of departure</p>
                     <label class="govuk-label" for="sort">
                         Select port
                     </label>
@@ -48,7 +58,7 @@ GOV.UK Prototype Kit
                     <details class="govuk-details" data-module="govuk-details">
                         <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-    Port or border crossing not in the list?
+  Add a port or border crossing not in the list?
     </span>
                         </summary>
                         <div class="govuk-details__text">
@@ -103,12 +113,17 @@ GOV.UK Prototype Kit
                     </fieldset>
                 </div>
 
+                <div class="govuk-form-group">
 
-                <a href="#" type="submit" class="margin-top-30 govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-                    Add another port
+                <span id="event-name-hint" class="govuk-hint">
+
+                    Use this button to add final port of departure, if required.</span>
+
+                <a href="#" type="submit" class=" govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                    Add a second port
                 </a>
 
-
+                </div>
 
             </div>
                 <input type="hidden" name="1-formQuestionId" value="249">
@@ -119,8 +134,12 @@ GOV.UK Prototype Kit
                 <input type="hidden" name="1-questionOrder" value="19">
                 <input type="hidden" name="1-questionScope" value="BOTH">
                 <input type="hidden" name="questionSequence-249" value="1"><div class="govuk-form-group ">
-                <label class="govuk-label " for="7006EHC-2">What is the port(s) of entry in China? </label>
-                <div class="govuk-hint">Where two ports are involved on arrival to China, i.e. transhipment at initial port of arrival in China for internal travel to the final port of entry where the final import clearance will be carried out, then both ports need to be entered</div>
+                <label class="govuk-label " for="7006EHC-2">What is the port of entry into China?
+                </label>
+                <div class="govuk-hint">
+                    If two ports are involved on arrival to China, i.e. transhipment at initial port of arrival in China for internal travel to the final port of entry where the final import clearance will be carried out, then both ports need to be entered.
+
+                </div>
 
 
 
@@ -142,7 +161,7 @@ GOV.UK Prototype Kit
 
 
 
-                    <details class="govuk-details" data-module="govuk-details">
+                    <details class="govuk-details margin-top-30" data-module="govuk-details">
                         <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
     Port or border crossing not in the list?
@@ -161,52 +180,19 @@ GOV.UK Prototype Kit
 
                         </div>
                     </details>
-
-
-
                     <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
-                            <label class="govuk-label" for="sort">
-                                Select date
-                            </label>
-    <span id="passport-issued-hint" class="govuk-hint">
-      For example, 27 3 2007
-    </span>
-                            <div class="govuk-date-input" id="passport-issued">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                                            Day
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                                            Month
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                            Year
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
+                <span id="event-name-hint" class="govuk-hint">
 
 
-                    <a href="#" type="submit" class="margin-top-30 govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-                        Add another port
+                    Use this button to add final port of departure, if required.
+
+</span>
+                    <a href="#" type="submit" class=" govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                        Add a second port
                     </a>
 
 
+            </div>
             </div>
                 <input type="hidden" name="2-formQuestionId" value="251">
                 <input type="hidden" name="2-questionId" value="29">

@@ -539,19 +539,24 @@
 
 
             <div class="govuk-form-group margin-top-30">
-                <img src="/public/images/specimen.jpg" style="width: 400px"><br>
+                <img src="/public/images/specimen.jpg" style="width: 400px; margin-bottom: 20px"><br>
 
 
 
-                <span class="govuk-!-font-weight-bold"> Email me the specimen certificate (optional)</span>
+                <strong class="govuk-body govuk-!-font-weight-regular margin-top-45"><a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">   Download your specimen cerificate </a></strong>
 
 
+
+
+                <!--<span class="govuk-!-font-weight-bold"> Email me the specimen certificate (optional)</span>
+
+                Download your specimen cerificate
 
 
                 <label class="govuk-label" for="email">
                     Email address
                 </label>
-                <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+                <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">-->
             </div>
 
 
@@ -566,7 +571,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div>
-            <form action="specimen" method="POST">
+            <form action="review" method="POST">
                 <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
                 <input type="hidden" name="applicationFormStatus" value="">
                 <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue" data-qa-id="Button-Continue">
