@@ -6,16 +6,16 @@
 {% endblock %}
 
 {% block content %}
-<a href="2" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<a href="postcode-lookup" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <form action="3" method="POST">
+            <form action="16" method="POST">
                 <input type="hidden" name="crumb_csrf_token" value="-OFEIl7HkGmNi3ZbrlI4BeayEl-1-jTpR6CRsveyix5">
                 <input type="hidden" name="ehcNumber" value="7006EHC">
                 <input type="hidden" name="applicationFormId" value="1721147986165">
                 <input type="hidden" name="pageSequence" value="1">
-                <input type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
+                <input type="hidden" name="certifierName" value=" ">
                 <input type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -28,13 +28,13 @@
                             Building and street
                             <span class="govuk-visually-hidden">line 1 of 2</span>
                         </label>
-                        <input class="govuk-input" id="certifier-address-line-1" name="address1" type="text" value="123 Address Line1">
+                        <input class="govuk-input" id="certifier-address-line-1" name="address1" type="text" value="">
                     </div>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="certifier-address-line-2">
                             <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
                         </label>
-                        <input class="govuk-input" id="certifier-address-line-2" name="address2" type="text" value="1">
+                        <input class="govuk-input" id="certifier-address-line-2" name="address2" type="text" value="">
                     </div>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="certifier-address-town">
@@ -52,7 +52,7 @@
                         <label class="govuk-label" for="certifier-address-postcode">
                             Postcode
                         </label>
-                        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" value="POSTCODE" type="text">
+                        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" value="" type="text">
                     </div>
                 </fieldset>
                 <br>

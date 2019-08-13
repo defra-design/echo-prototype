@@ -46,20 +46,18 @@
                     <br>
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                <h1 class="govuk-fieldset__heading">Select certificate delivery address</h1>
-                            </legend>
+
                             <div class="govuk-radios ">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="default-address-option" name="address-option" type="radio" value="default" {{ checked("address-option", "default") }}>
                                     <label id="default-address-option-label" class="govuk-label govuk-radios__label" for="default-address-option">
-                                      Yes
+                                        Yes, use this address
                                     </label>
                                 </div>
                                <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="manual-address-option" name="address-option" type="radio" value="manual" aria-describedby="manual-address-option-hint" {{ ("address-option", "manual") }}>
                                     <label id="manual-address-option-label" class="govuk-label govuk-radios__label" for="manual-address-option">
-                                       No, the OV will be based at a different address
+                                        No, the OV is based at a different address
                                     </label>
                   <span id="manual-address-option-hint" class="govuk-hint govuk-radios__hint" style="padding-left: 15px">
                     </span>
