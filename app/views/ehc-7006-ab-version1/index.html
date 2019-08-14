@@ -45,30 +45,89 @@
 <p><strong>A1 Export, Coventry</strong><br>Telephone: 0207 586 2837<br>Email: coldroom@a1export.com </p>
 
 
-                    <div class="govuk-form-group margin-top-45">
-                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                            <div class="govuk-radios govuk-radios--inline">
-                                <label class="govuk-label" for="7006EHC-1"></label>
- <span id="event-name-hint" class="govuk-hint">
-
-</span>
 
 
+
+
+
+                    <!--radio start-->
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+                            </legend>
+    <span id="how-contacted-conditional-hint" class="govuk-hint">
+      Select one option.
+    </span>
+                            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="" name="changed-name" type="radio" value="yes">
-                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                    <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                                         Yes
                                     </label>
                                 </div>
+
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="watch-me" name="changed-name" type="radio" value="no">
-                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                                         No
                                     </label>
                                 </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+
+
+
+                                    <div class="govuk-form-group">
+
+                                        <h2 class="govuk-label form-label-bold govuk-\!-font-weight-bold govuk-!-font-weight-bold" for="7006EHC-0">Provide exporter details</h2>
+
+
+                                        <label class="govuk-label" for="full-name">
+                                            Full name
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+
+
+                                        <label class="govuk-label" for="email" style="    margin-top:15px;">
+                                            Email address
+                                        </label>
+                                        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+
+                                        <label class="govuk-label" for="telephone-number" style="    margin-top:15px;">
+                                            UK telephone number
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+
+
                             </div>
                         </fieldset>
                     </div>
+
+                    <!--radio end-->
+
+
+
+
+
+
+
+
 
 
 
@@ -93,7 +152,7 @@
   <span id="email-hint" class="govuk-hint">
     We’ll only use this to send you a receipt
   </span>
-                                <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+                                <input class="govuk-input govuk-input--width-30" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
                             </div>
 
                             <div class="govuk-form-group">
@@ -184,6 +243,9 @@
 
             }
         </script>
+
+<script src="https://design-system.service.gov.uk/javascripts/govuk-frontend-18ad095a4c6c0d308c7672cf1e8d04d8.js"></script>
+<script src="https://design-system.service.gov.uk/javascripts/example-aed4a541bd2d7a731e08f3e64294f90d.js"></script>
 
 
 {% endblock %}

@@ -7,14 +7,14 @@
 
 {% block content %}
 
-<a href="11-minus" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
 
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
             <div>
                 <h1 id="questionPageHeading" class="govuk-heading-l">About your finished product</h1>
                 <p>
-                </p><form action="check-your-progress3" method="POST" enctype="application/x-www-form-urlencoded">
+                </p><form action="check-your-progress6" method="POST" enctype="application/x-www-form-urlencoded">
                 <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
 
@@ -31,7 +31,7 @@
                         <th scope="col" class="govuk-table__header "></th>
                         <th scope="col" class="govuk-table__header "></th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
-                        <th scope="col" class="govuk-table__header"><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></th>
+                        <th scope="col" class="govuk-table__header"><a href="7">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></th>
                     </tr>
                     </thead>
 
@@ -112,7 +112,7 @@
                 </table>
 
 
-
+<!--
                 <table class="govuk-table">
 
 
@@ -123,7 +123,7 @@
                         <th scope="col" class="govuk-table__header "></th>
                         <th scope="col" class="govuk-table__header "></th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-half"></th>
-                        <th scope="col" class="govuk-table__header"><a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></th>
+                        <th scope="col" class="govuk-table__header"><a href="7">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></th>
                     </tr>
                     </thead>
 
@@ -205,8 +205,7 @@
 
                 </table>
 
-
-
+-->
 
                 <a href="7" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
                     Add another product
