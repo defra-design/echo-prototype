@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/1.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/dashboard.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/declaration.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/declaration.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/e2e/form-finder-form-start.html" afterPath="$PROJECT_DIR$/app/views/e2e/form-finder-form-start.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/index.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/e2e/search.html" afterPath="$PROJECT_DIR$/app/views/e2e/search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/e2e/confirmation.html" afterPath="$PROJECT_DIR$/app/views/e2e/confirmation.html" />
     </list>
     <ignored path="defra-exports-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="1.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="1.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="30" selection-start="3526" selection-end="3526" vertical-scroll-proportion="0.4485437" vertical-offset="849" max-vertical-offset="1830">
+            <state line="72" column="30" selection-start="3526" selection-end="3526" vertical-scroll-proportion="-4.62" vertical-offset="849" max-vertical-offset="1830">
               <folding />
             </state>
           </provider>
@@ -44,6 +38,15 @@
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="201" column="7" selection-start="8239" selection-end="8239" vertical-scroll-proportion="-5.22" vertical-offset="2754" max-vertical-offset="3945">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirmation.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/e2e/confirmation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="62" selection-start="445" selection-end="445" vertical-scroll-proportion="0.42057762" vertical-offset="22" max-vertical-offset="600">
               <folding />
             </state>
           </provider>
@@ -74,7 +77,6 @@
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/check-your-answers.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/3.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/16.html" />
-        <option value="$PROJECT_DIR$/app/views/e2e/confirmation.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/6.html" />
         <option value="$PROJECT_DIR$/app/views/e2e/form-finder-form-start.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab/declaration.html" />
@@ -83,11 +85,13 @@
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/index.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/declaration.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/1.html" />
+        <option value="$PROJECT_DIR$/app/views/e2e/confirmation.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="52" />
+    <option name="y" value="48" />
     <option name="width" value="1274" />
     <option name="height" value="701" />
   </component>
@@ -370,7 +374,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1274" height="701" extended-state="6" />
+    <frame x="52" y="48" width="1274" height="701" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -429,13 +433,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/16.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="196" selection-start="732" selection-end="732" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1845">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/e2e/confirmation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="34" selection-start="763" selection-end="763" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="600">
           <folding />
         </state>
       </provider>
@@ -510,7 +507,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="30" selection-start="3526" selection-end="3526" vertical-scroll-proportion="0.4485437" vertical-offset="849" max-vertical-offset="1830">
+        <state line="72" column="30" selection-start="3526" selection-end="3526" vertical-scroll-proportion="-4.62" vertical-offset="849" max-vertical-offset="1830">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/e2e/confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="62" selection-start="445" selection-end="445" vertical-scroll-proportion="0.42057762" vertical-offset="22" max-vertical-offset="600">
           <folding />
         </state>
       </provider>
