@@ -10,24 +10,49 @@
 
 
 
-    <div class="govuk-width-container">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                    <div class="govuk-panel govuk-panel--confirmation">
-                        <h1 class="govuk-panel__title">
-                            Your registration to use Exporter online services is complete
-                        </h1>
-                       <!-- <div class="govuk-panel__body">
-                            Your reference number<br><strong>HDJ2123F</strong>
-                        </div>-->
-                    </div>
 
-                </div>
+<div class="govuk-width-container">
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div>
+                <h1 class="govuk-heading-xl margin-bottom-0">Terms & Conditions</h1>
             </div>
+            <div class="margin-top-30">
+                <p class="govuk-body" lang="en">
+                    By completing the registration form, you are agreeing that to <a href="terms-conditions" target="_blank"> Terms and Conditions</a>.
+                    You
+                    will
+                    comply with the legal requirements of UK law, including payment for official controls
+                    (veterinary checks), repossession of any consignment rejected after transit from the UK
+                    to
+                    another country or costs of destruction if necessary.
+                </p>
+            </div>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <form class="review-form" action="confirmation1" method="POST">
+                <div class="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" type="checkbox" autofocus="autofocus" name="confirm" id="confirm">
+                        <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="confirm">
+                            I confirm to agree to the Terms and Conditions
+                        </label>
+                    </div>
+                </div>
+                <input type="hidden" name="crumb_csrf_token" value="-OFEIl7HkGmNi3ZbrlI4BeayEl-1-jTpR6CRsveyix5">
+                <input name="submissionDate" type="hidden" value="25th July 2019">
+                <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-SubmitApplication">
+            </form>
+        </div>
     </div>
+</div>
 
 
-    <a href="/ehc-7006-ab-version1/" class="govuk-button">Continue</a>
+
+
 
 
 

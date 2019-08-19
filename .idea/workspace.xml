@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/review.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/review.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/e2e/confirmation.html" afterPath="$PROJECT_DIR$/app/views/e2e/confirmation.html" />
     </list>
     <ignored path="defra-exports-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +25,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="confirmation.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="confirmation.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/e2e/confirmation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="27" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="600">
+            <state line="35" column="59" selection-start="1115" selection-end="1115" vertical-scroll-proportion="-3.75" vertical-offset="435" max-vertical-offset="975">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="6-plus.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/6-plus.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="113" selection-end="227" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="1620">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="terms-conditions.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/e2e/terms-conditions.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="260" column="51" selection-start="14396" selection-end="14396" vertical-scroll-proportion="-78.0" vertical-offset="0" max-vertical-offset="4110">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cookie-policy.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/e2e/cookie-policy.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="53" selection-start="2037" selection-end="2037" vertical-scroll-proportion="0.8888889" vertical-offset="105" max-vertical-offset="4440">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#2;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#2;n#div#0;n#div#2;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,8 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/15c.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/13.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/14.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/check-your-answers.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/3.html" />
@@ -67,8 +98,10 @@
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/index.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/declaration.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/1.html" />
-        <option value="$PROJECT_DIR$/app/views/e2e/confirmation.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version1/review.html" />
+        <option value="$PROJECT_DIR$/app/views/e2e/terms-conditions.html" />
+        <option value="$PROJECT_DIR$/app/views/e2e/confirmation.html" />
+        <option value="$PROJECT_DIR$/app/views/e2e/cookie-policy.html" />
       </list>
     </option>
   </component>
@@ -391,21 +424,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/check-your-answers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="153" selection-end="153" vertical-scroll-proportion="0.34951457" vertical-offset="0" max-vertical-offset="9075" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="0" selection-start="4978" selection-end="4978" vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="4935" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/16.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="196" selection-start="732" selection-end="732" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1845" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/6.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="0" selection-start="516" selection-end="516" vertical-scroll-proportion="-18.125" vertical-offset="0" max-vertical-offset="1485" />
@@ -476,8 +494,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/e2e/confirmation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="27" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="600">
+        <state line="35" column="59" selection-start="1115" selection-end="1115" vertical-scroll-proportion="-3.75" vertical-offset="435" max-vertical-offset="975">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version1/6-plus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="113" selection-end="227" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="1620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/e2e/terms-conditions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="260" column="51" selection-start="14396" selection-end="14396" vertical-scroll-proportion="-78.0" vertical-offset="0" max-vertical-offset="4110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/e2e/cookie-policy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="53" selection-start="2037" selection-end="2037" vertical-scroll-proportion="0.8888889" vertical-offset="105" max-vertical-offset="4440">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#2;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#div#0;n#div#2;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
