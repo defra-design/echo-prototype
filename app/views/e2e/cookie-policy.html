@@ -10,7 +10,7 @@
 
 <div id="global-cookie-message" class="gem-c-cookie-banner" data-module="cookie-banner" role="region" aria-label="cookie banner" style="display: block;">
     <div class="gem-c-cookie-banner__wrapper govuk-width-container">
-        <p class="gem-c-cookie-banner__message">GOV.UK uses cookies to make the site simpler.</p>
+        <p class="gem-c-cookie-banner__message">DEFRA uses cookies to make the site simpler.</p>
         <div class="gem-c-cookie-banner__buttons">
             <div class="gem-c-cookie-banner__button gem-c-cookie-banner__button-accept">
 
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="gem-c-cookie-banner__confirmation govuk-width-container" tabindex="-1">
+    <div class="gem-c-cookie-banner__confirmation govuk-width-container" tabindex="-1" style="display: none">
         <p class="gem-c-cookie-banner__confirmation-message">
             You’ve accepted all cookies. You can <a class="govuk-link" href="/help/cookies" data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner settings clicked from confirmation">change your cookie settings</a> at any time.
         </p>
@@ -38,7 +38,95 @@
 
         <style>.govuk-header {position: relative;top:70px}
         .gem-c-cookie-banner{position: absolute;top:0}
+main{margin-top: 90px}
 
+
+
+
+        .gem-c-cookie-banner__message {
+
+            display: inline-block;
+            margin-bottom: 5px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            color: #00823b;
+
+        }
+        #global-header-bar, #global-cookie-message p, #footer .footer-wrapper {
+
+            max-width: 960px;
+            margin: 0 15px;
+
+        }
+        #global-header-bar, #global-cookie-message p, #footer .footer-wrapper {
+
+            margin: 0 30px;
+
+        }
+        #global-cookie-message p {
+
+            font-family: "nta", Arial, sans-serif;
+            font-weight: 400;
+            text-transform: none;
+            font-size: 14px;
+            line-height: 1.14286;
+            margin-top: 0;
+            margin-bottom: 0;
+
+        }
+        #global-cookie-message p {
+
+            font-size: 16px;
+            line-height: 1.25;
+
+        }
+        .gem-c-cookie-banner#global-cookie-message p {
+
+            margin: 0;
+
+        }
+        .gem-c-cookie-banner#global-cookie-message .gem-c-cookie-banner__message, .gem-c-cookie-banner#global-cookie-message .gem-c-cookie-banner__buttons, .gem-c-cookie-banner#global-cookie-message .gem-c-cookie-banner__confirmation, .gem-c-cookie-banner#global-cookie-message .gem-c-cookie-banner__confirmation-message {
+
+            font-family: "nta", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.25;}
+        .gem-c-cookie-banner#global-cookie-message .gem-c-cookie-banner__message, .gem-c-cookie-banner#global-cookie-message .gem-c-cookie-banner__buttons, .gem-c-cookie-banner#global-cookie-message .gem-c-cookie-banner__confirmation, .gem-c-cookie-banner#global-cookie-message .gem-c-cookie-banner__confirmation-message {
+
+            font-size: 19px;
+            line-height: 1.3157894737;
+
+        }
+        .gem-c-button--secondary {
+
+            padding: 8px 10px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-color: #00823b;
+            color: #00823b;
+            background-color: #ffffff;
+            box-shadow: none;
+
+        }
+        .gem-c-cookie-banner__button {
+
+            width: auto;
+
+        }
+        .js-enabled .gem-c-cookie-banner__button-accept {
+
+            display: inline-block;
+
+        }
+        .gem-c-cookie-banner#global-cookie-message {
+
+            background-color: #ffffff;
+            padding: 20px 0;
+            box-sizing: border-box;
+
+        }
         </style>
 
 
