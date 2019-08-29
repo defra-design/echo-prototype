@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+
+
+<h1 class="govuk-heading-l">
+    How would you like the paperwork to be delivered?
+
+</h1>
+
+          <p>Paperwork is sent to your nominated Official Vet free of charge by first class post. </p>
+          <p>However, you may prefer to arrange and pay for a Special Delivery or Courier service. If this is the case, please mark your choice here. You will need to <a href="#">contact APHA </a> before making these arrangements.</p>
+            <div class="govuk-form-group ">
+                <!-- @formatter:off -->
+                <fieldset id="7006EHC-1" class="govuk-fieldset">
+
+
+                    <div class="govuk-hint">
+
+
+                    </div>
+
+                    <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="First class post" value="First class post" name="certificate" data-qa-id="Question-radio-" checked>
+                            <label class="govuk-label govuk-radios__label" for="First class post">First class post</label>
+                        </div>
+
+                        <p class="form-block" style="padding-left:10px">or</p>
+
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Special delivery" value="Special delivery" name="certificate" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Special delivery">Special delivery</label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Courier" value="Courier" name="certificate" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Courier">Courier</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+            <div class="govuk-form-group ">
+                <!-- @formatter:off -->
+                <fieldset id="7006EHC-2" class="govuk-fieldset">
+                    <!-- @formatter:on -->
+                    <legend class="govuk-fieldset__legend" for="7006EHC-2">
+                        <label class="govuk-label govuk-!-font-weight-bold">In which region will the certification take place?</label>
+                    </legend>
+
+
+                    <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="England" value="England" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="England">England</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Scotland" value="Scotland" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Scotland">Scotland</label>
+                        </div>
+                        <p class="form-block" style="padding-left:10px">or</p>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Wales" value="Wales" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Wales">Wales</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="govuk-grid-row">
+                <form action="check-your-progress3" method="GET">
+                    <input class="govuk-button" type="submit" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+                </form>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full govuk-body">
+                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
