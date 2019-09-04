@@ -443,6 +443,7 @@ text-decoration:none}
   text-align: center;
   display: inline-block;
   font-size: 12px;
+  font-size: 0.875rem;
 }
 .govuk-button--secondary, .govuk-button--secondary:link, .govuk-button--secondary:visited, .govuk-button--secondary:active, .govuk-button--secondary:hover {
   color: #0b0c0c;
@@ -490,3 +491,5 @@ text-decoration:none}
 }
 .in-progress{background:#71767e}
 .not-started{background:white;color:#141414;border: solid 1px #cbcbcb }
+
+.turquoise-tag{background:#28a197;font-size: 0.875rem; }

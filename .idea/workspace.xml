@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/sass/application.scss" afterPath="$PROJECT_DIR$/app/assets/sass/application.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/dashboard.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/e2e/form-finder-form-start.html" afterPath="$PROJECT_DIR$/app/views/e2e/form-finder-form-start.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.html" afterPath="$PROJECT_DIR$/app/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/index.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/index.html" />
     </list>
     <ignored path="defra-exports-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,29 +30,23 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/index.html">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="31" selection-start="2477" selection-end="2477" vertical-scroll-proportion="-27.166666" vertical-offset="968" max-vertical-offset="2100">
+            <state line="214" column="9" selection-start="0" selection-end="12209" vertical-scroll-proportion="-2.5" vertical-offset="3150" max-vertical-offset="4410">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="producer-error.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-4316/producer-error.html">
+      <file leaf-file-name="dashboard.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="111" selection-start="457" selection-end="457" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="480">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-4316/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="129" selection-start="669" selection-end="669" vertical-scroll-proportion="0.40772533" vertical-offset="0" max-vertical-offset="699">
+            <state line="288" column="0" selection-start="9543" selection-end="9543" vertical-scroll-proportion="7.4226804" vertical-offset="0" max-vertical-offset="4410">
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#1563#1925#1" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,30 +70,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/check-your-progress7.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/check-your-progress8.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/check-your-progress9.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/check-your-progress5.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/check-your-answers.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/search.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/1-minus.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/index.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/16.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/6.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/specimen.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/declaration.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/dashboard.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-4316/producer-error.html" />
-        <option value="$PROJECT_DIR$/app/views/index.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-4316/index.html" />
+        <option value="$PROJECT_DIR$/app/views/index.html" />
+        <option value="$PROJECT_DIR$/app/views/e2e/form-finder-form-start.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/index.html" />
+        <option value="$PROJECT_DIR$/app/assets/sass/application.scss" />
+        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version2/dashboard.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1369" />
-    <option name="y" value="96" />
-    <option name="width" value="1606" />
-    <option name="height" value="859" />
+    <option name="x" value="1557" />
+    <option name="y" value="133" />
+    <option name="width" value="1200" />
+    <option name="height" value="742" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -239,29 +236,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ehc-4316" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="defra-exports-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="defra-exports-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
+              <option name="myItemId" value="ehc-7006-ab-version2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,14 +330,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1369" y="96" width="1606" height="859" extended-state="0" />
+    <frame x="1557" y="133" width="1200" height="742" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20547946" sideWeight="0.8085809" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.275" sideWeight="0.8085809" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19209039" sideWeight="0.50031036" order="8" side_tool="true" content_ui="tabs" />
@@ -389,16 +364,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/check-your-progress8.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="0" selection-start="4215" selection-end="4215" vertical-scroll-proportion="1.0235294" vertical-offset="1485" max-vertical-offset="2760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/check-your-progress9.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="16" selection-start="5005" selection-end="5005" vertical-scroll-proportion="0.91764706" vertical-offset="1875" max-vertical-offset="2820" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/check-your-progress5.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="124" column="21" selection-start="4175" selection-end="4175" vertical-scroll-proportion="-17.5" vertical-offset="1440" max-vertical-offset="2745" />
@@ -439,16 +404,6 @@
         <state line="52" column="31" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.27896994" vertical-offset="585" max-vertical-offset="1920" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="0" selection-start="0" selection-end="12456" vertical-scroll-proportion="0.17830609" vertical-offset="1620" max-vertical-offset="4440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="18" selection-start="9031" selection-end="9031" vertical-scroll-proportion="0.3748212" vertical-offset="3668" max-vertical-offset="4440" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/specimen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="0" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.75107294" vertical-offset="105" max-vertical-offset="1245" />
@@ -456,23 +411,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-4316/producer-error.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="111" selection-start="457" selection-end="457" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="31" selection-start="2477" selection-end="2477" vertical-scroll-proportion="-27.166666" vertical-offset="968" max-vertical-offset="2100">
+        <state line="16" column="111" selection-start="457" selection-end="457" vertical-scroll-proportion="0.41237113" vertical-offset="0" max-vertical-offset="582">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-4316/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="129" selection-start="669" selection-end="669" vertical-scroll-proportion="0.40772533" vertical-offset="0" max-vertical-offset="699">
+        <state line="19" column="129" selection-start="669" selection-end="669" vertical-scroll-proportion="0.48969072" vertical-offset="0" max-vertical-offset="582">
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="40" selection-start="251" selection-end="251" vertical-scroll-proportion="0.30252102" vertical-offset="0" max-vertical-offset="2205">
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/e2e/form-finder-form-start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="247" column="0" selection-start="10449" selection-end="10449" vertical-scroll-proportion="-15.0" vertical-offset="3345" max-vertical-offset="4470">
+          <folding>
+            <element signature="n#style#0;n#label#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#main#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/sass/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="445" column="22" selection-start="9607" selection-end="9607" vertical-scroll-proportion="-5.244898" vertical-offset="6418" max-vertical-offset="7500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="214" column="9" selection-start="0" selection-end="12209" vertical-scroll-proportion="-2.5" vertical-offset="3150" max-vertical-offset="4410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version2/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="288" column="0" selection-start="9543" selection-end="9543" vertical-scroll-proportion="7.4226804" vertical-offset="0" max-vertical-offset="4410">
+          <folding>
+            <element signature="e#1563#1925#1" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
