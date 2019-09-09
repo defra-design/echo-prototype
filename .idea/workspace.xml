@@ -37,11 +37,11 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="190" selection-start="3088" selection-end="3088" vertical-scroll-proportion="0.58762884" vertical-offset="1593" max-vertical-offset="2295">
+            <state line="153" column="45" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.55637705" vertical-offset="1994" max-vertical-offset="2790">
               <folding>
-                <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -86,10 +86,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1557" />
-    <option name="y" value="132" />
+    <option name="x" value="1455" />
+    <option name="y" value="57" />
     <option name="width" value="1200" />
-    <option name="height" value="742" />
+    <option name="height" value="701" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -304,7 +304,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1557" y="132" width="1200" height="742" extended-state="0" />
+    <frame x="1455" y="57" width="1200" height="701" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -426,11 +426,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="190" selection-start="3088" selection-end="3088" vertical-scroll-proportion="0.58762884" vertical-offset="1593" max-vertical-offset="2295">
+        <state line="153" column="45" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.55637705" vertical-offset="1994" max-vertical-offset="2790">
           <folding>
-            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
