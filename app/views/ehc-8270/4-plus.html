@@ -47,119 +47,70 @@ GOV.UK Prototype Kit
             </div>
 
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+           <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h2 class="govuk-heading-m margin-top-45 govuk-\!-margin-bottom-1">
                     About the processing of your commodity
                 </h2>
             </legend>
-
-                <input type="hidden" name="1-formQuestionId" value="46">
-                <input type="hidden" name="1-questionId" value="11">
-                <input type="hidden" name="1-formName" value="exa07---meat">
-                <input type="hidden" name="1-questionText" value="What are the dates of processing of the product?">
-                <input type="hidden" name="1-questionType" value="text">
-                <input type="hidden" name="1-questionOrder" value="2">
-                <input type="hidden" name="1-questionScope" value="APPLICANT">
-                <input type="hidden" name="questionSequence-46" value="1"><div class="govuk-form-group ">
-                <label class="govuk-label govuk-\!-margin-bottom-8" for="7006EHC-2" style="margin-bottom: 20px">When were the animals slaughtered?</label>
+-->
 
 
 
 
 
 
-
-
-            <div class="govuk-form-group" value="{{ data['when-slaughtered'] }}">
-                <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
-
-
-
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                        From date
-                    </label>
-
-                         <span id="passport-issued-hint" class="govuk-hint">
-      For example, 27 3 2007
-    </span>
-
-
-                    <div class="govuk-date-input" id="passport-issued">
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                                    Day
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
-                            </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                                    Month
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
-                            </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                    Year
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="event-name">
+                    Commodity code
+                </label>
+  <span id="event-name-hint" class="govuk-hint">
+ You can use the trade tariff search on GOV.UK to find this. This code is between 4 and 10 digits, for example 0308305000
+  </span>
+                <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
             </div>
 
 
-                <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
 
 
-
-
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                            To date
-                        </label>
-
-                         <span id="passport-issued-hint" class="govuk-hint">
-      For example, 27 4 2007
-    </span>
-
-
-                        <div class="govuk-date-input" id="passport-issued">
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
-                                </div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
-                                </div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="event-name">
+                    Description of commodity
+                </label>
+  <span id="event-name-hint" class="govuk-hint">
+For example, frozen Atlantic salmon
+  </span>
+                <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
             </div>
 
 
+
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="event-name">
+                    Production area for frozen or processed bivalve molluscs
+                </label>
+  <span id="event-name-hint" class="govuk-hint">
+For example, Loch Fyne. If not applicable, leave blank.
+  </span>
+                <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
             </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="event-name">
+                    Net and gross weight of consignment
+                </label>
+  <span id="event-name-hint" class="govuk-hint">
+Provide the number and the units of measurement. For example, 500 kg (528 kg)
+  </span>
+                <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+            </div>
+
+
+
+
+
+
 
 
 
