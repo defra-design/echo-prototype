@@ -17,7 +17,7 @@
                 <div class="app-content__header">
 
         <span class="govuk-caption-xl">
-          Step 2 of 3
+          Step 3 of 3
         </span>
 
                     <h1 class="govuk-heading-xl">
@@ -31,13 +31,8 @@
 
 
 
-                <h1 id="questionPageHeading" class="govuk-heading-l">Do you want to create your own reference number?</h1>
-<span id="changed-name-hint" class="govuk-hint">
-      You can add your own reference number or name such as a Purchase Order number or Container number, you can do that here.
-    </span>
 
-
-                <form action="3-plus-plus" method="POST" enctype="application/x-www-form-urlencoded">
+                <form action="check-your-progress1" method="POST" enctype="application/x-www-form-urlencoded">
                     <!-- @formatter:off -->
 
 
@@ -46,7 +41,16 @@
 
 
 
-                    <!--radio start-->
+
+
+
+                    <h1 id="questionPageHeading" class="govuk-heading-l">     The exporter details we have for this application are:
+</h1>
+
+                    <hr>
+                    <p> A1 Export <br>Telephone: 0207 586 2837<br>Email: coldroom@a1export.com </p>
+                    <hr>
+                    <h3 id="questionPageHeading" class="govuk-heading-m">   Are the Exporter details correct?</h3>
 
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
@@ -56,24 +60,42 @@
 
                             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                                    <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                                         Yes
                                     </label>
                                 </div>
 
-
-
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" aria-controls="conditional-how-contacted-conditional-2" aria-expanded="false">
+                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                                        No
+                                    </label>
+                                </div>
                                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
 
 
 
                                     <div class="govuk-form-group">
 
-                                        <label class="govuk-label" for="7006EHC-1"> If yes, enter your reference number here (maximum 20 character)</label>
-                                        <input class="govuk-input form-control-3-4 govuk-input--width-20" id="7006EHC-1" name="ref-number" value="{{ data['ref-number'] }}" type="text" data-qa-id="Question-7006EHC-1">
+                                        <h2 class="govuk-label form-label-bold govuk-\!-font-weight-bold govuk-!-font-weight-bold" for="7006EHC-0">Provide exporter details</h2>
 
 
+                                        <label class="govuk-label" for="full-name">
+                                            Full name
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+
+
+                                        <label class="govuk-label" for="email" style="    margin-top:15px;">
+                                            Email address
+                                        </label>
+                                        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+
+                                        <label class="govuk-label" for="telephone-number" style="    margin-top:15px;">
+                                            UK telephone number
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
                                     </div>
 
 
@@ -91,22 +113,9 @@
                                 </div>
 
 
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
-                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-                                        No
-                                    </label>
-                                </div>
-
-
                             </div>
                         </fieldset>
                     </div>
-
-                    <!--radio end-->
-
-
-
 
 
 
