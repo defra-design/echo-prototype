@@ -1,0 +1,220 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            New Application
+        </h1>
+
+        <h2 class="govuk-heading-m" style="font-weight: 300">Export frozen raw pork from England, Scotland or Wales to the People's Republic of China.
+
+            Export Health Certificate 7006GB</h2>
+
+
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                If this is not correct, <a href="index" style="font-weight: 300">find another Export Health Certificate</a>
+            </strong>
+        </div>
+
+
+        <hr>
+
+
+        <h2 class="govuk-heading-l" style="margin-top: 20px">Fill in each section of the application</h2>
+
+        <ol class="app-task-list">
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> About your application
+                </h2>
+                <ul class="app-task-list__items">
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="2" aria-describedby="eligibility-completed">
+                    Confirm exporter and application reference
+                </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    </li>
+
+
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="9" aria-describedby="read-declaration-completed">
+                    Your commodity
+                </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    </li>
+
+
+
+
+
+
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="4" aria-describedby="eligibility-completed">
+                    Confirm your vet
+                </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    </li>
+
+
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="15c" aria-describedby="read-declaration-completed">
+                    Confirm where to send your certificate
+                </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+
+                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. </span> About your product
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  <a href="6" aria-describedby="company-information-completed">
+                      Product details
+                  </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    </li>
+
+
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="11" aria-describedby="medical-information-completed">
+                    Cold store details
+                </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong></li>
+
+
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                     <a href="13" aria-describedby="medical-information-completed">
+                         Transport details
+                     </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong></li>
+
+
+
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                   <a href="15" aria-describedby="medical-information-completed">
+                       Importer details
+                   </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    </li>
+
+
+
+
+
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                      <a href="5" aria-describedby="read-declaration-completed">
+                          The timings of your certification and export
+                      </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    </li>
+
+
+
+
+
+
+                </ul>
+            </li>
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. </span> Check and submit your EHC information
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                   Check your answers
+
+              </span>
+
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+    </div>
+</div>
+
+
+
+<form action="6" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+        </div>
+    </div>
+
+
+</form>
+
+
+{% endblock %}

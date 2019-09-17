@@ -1,0 +1,175 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <div class="app-content__header">
+
+        <span class="govuk-caption-xl">
+          Step 3 of 3
+        </span>
+
+                    <h1 class="govuk-heading-xl">
+                        About this application
+
+
+
+                    </h1>
+                </div>
+
+
+
+
+
+                <form action="check-your-progress1" method="POST" enctype="application/x-www-form-urlencoded">
+                    <!-- @formatter:off -->
+
+
+
+
+
+
+
+
+
+
+                    <h1 id="questionPageHeading" class="govuk-heading-l">     The exporter details we have for this application are:
+</h1>
+
+                    <hr>
+                    <p> A1 Export <br>Telephone: 0207 586 2837<br>Email: coldroom@a1export.com </p>
+                    <hr>
+                    <h3 id="questionPageHeading" class="govuk-heading-m">   Are the Exporter details correct?</h3>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+                            </legend>
+
+                            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                        Yes
+                                    </label>
+                                </div>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" aria-controls="conditional-how-contacted-conditional-2" aria-expanded="false">
+                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                                        No
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+
+
+
+                                    <div class="govuk-form-group">
+
+                                        <h2 class="govuk-label form-label-bold govuk-\!-font-weight-bold govuk-!-font-weight-bold" for="7006EHC-0">Provide exporter details</h2>
+
+
+                                        <label class="govuk-label" for="full-name">
+                                            Full name
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+
+
+                                        <label class="govuk-label" for="email" style="    margin-top:15px;">
+                                            Email address
+                                        </label>
+                                        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+
+                                        <label class="govuk-label" for="telephone-number" style="    margin-top:15px;">
+                                            UK telephone number
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+
+
+                            </div>
+                        </fieldset>
+                    </div>
+
+
+
+
+
+
+                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+                </form>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+                        </div>
+                    </div>
+
+
+
+                    <p></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+        <script>
+
+            window.onload = function(){
+          $(document).ready(function () {
+                $("#watch-me").click(function() {
+                    $("#show-me:hidden").show('slow');
+                });
+                $("#watch-me").click(function(){
+                    if($('watch-me').prop('checked')===false) {
+                        $('#show-me').hide();}
+                });
+            });
+
+
+
+                $(document).ready(function () {
+                    $("#watch-me2").click(function() {
+                        $("#show-me2:hidden").show('slow');
+                    });
+                    $("#watch-me2").click(function(){
+                        if($('watch-me2').prop('checked')===false) {
+                            $('#show-me2').hide();}
+                    });
+                });
+
+
+
+            }
+        </script>
+
+
+{% endblock %}
