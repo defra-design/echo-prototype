@@ -108,37 +108,40 @@ GOV.UK Prototype Kit
 
 
 </style>
-<div style="float: right">
 
 
 
-    <div id="filter-cert-org" style="margin-top: 55px;margin-right: 30px">
-        <div id="filter-container">
 
 
 
-            <input id="filter-input" name="input-autocomplete" placeholder="Search applications" type="text">
-        </div>
-    </div>
+<h1 class="govuk-heading-xl heading" style="margin-bottom: 25px">Dashboard</h1>
 
 
 
-</div>
-<h1 class="govuk-heading-l heading">Your Applications</h1>
 
 
 
-<a id="link-startNewApplicationLink" href="index" class="govuk-button_no_margin_bottom">
+<a id="link-startNewApplicationLink" href="index" class="govuk-button" style="margin-bottom: 20px">
     Start a new application
 
 </a>
 
+<p></p>
 
 
 
+    <div style="float: right">
+        <div id="filter-cert-org" style="margin-right: 30px">
+            <div id="filter-container">
+                <input id="filter-input" name="input-autocomplete" placeholder="Search applications" type="text">
+            </div>
+        </div>
+    </div>
+    <h1 class="govuk-heading-l heading" style="margin-bottom: 0px">Your Applications</h1>
 
-<div style="margin-top: 30px">
-    <hr>
+<div style="clear: both">
+    <hr style="    top: 10px;
+    position: relative;">
     <table class="govuk-table">
         <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -149,7 +152,7 @@ GOV.UK Prototype Kit
                 <div class="applicationRef-column">Application</div>
             </th>
             <th class="govuk-table__header">Status</th>
-            <th class="govuk-table__header govuk-table__header govuk-table__header--numeric">Actions</th>
+            <th class="govuk-table__header">Actions</th>
 
         </tr>
         </thead>
@@ -172,14 +175,19 @@ GOV.UK Prototype Kit
 
 
             <td id="1721147986456-status" class="govuk-table__cell" scope="row">
-                    <div class="green-tag">
+                    <div class="blue-tag" style="width: auto">
                         SUBMITTED
                 </div>
             </td>
 
-            <td class="govuk-table__cell actions-column govuk-table__header--numeric">
-                <a id="1721147986456-editLink" class="govuk-link" href="#">View</a>
-                <a id="1721147986456-cloneLink" class="govuk-link" href="#">Clone</a>
+            <td class="govuk-table__cell actions-column">
+
+
+
+
+             <a href="7" style="font-weight: 300">View</a>&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;<a href="#" style="font-weight: 300">Clone</a>
+
+
             </td>
 
 

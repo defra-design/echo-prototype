@@ -15,17 +15,19 @@ GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
             <div>
 
-                <h1 class="govuk-heading-l">What is the final destination of this consignment?</h1>
+                <h1 class="govuk-heading-l">Which Border Inspection Post (BIP) will the consignment arrive at?</h1>
 
-                <form action="14-plus" method="POST" enctype="application/x-www-form-urlencoded">
+                <form action="check-your-progress8" method="POST" enctype="application/x-www-form-urlencoded">
+
 
 
 
 
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="event-name">
-                        Destination country
+                            Name of the BIP
                         </label>
+
                         <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
                     </div>
 
@@ -35,22 +37,11 @@ GOV.UK Prototype Kit
 
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="event-name">
-                            ISO code of destination country
+                            BIP unit number
                         </label>
-  <span id="event-name-hint" class="govuk-hint">
-   This is the 2 digit code according to the ISO 3166 standard. For example, FR, DE, etc
+                          <span id="event-name-hint" class="govuk-hint">
+You can find this on the European Commission's approved list of BIPs
   </span>
-                        <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-                    </div>
-
-
-
-
-
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="event-name">
-                            Region within the destination country
-                        </label>
                         <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
                     </div>
 
