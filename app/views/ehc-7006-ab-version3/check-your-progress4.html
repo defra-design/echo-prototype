@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -12,41 +12,47 @@
 
 <div class="govuk-grid-row">
 
-<div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-        Your Application tasklist
-    </h1>
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            New Application
+        </h1>
 
-    <ol class="app-task-list">
-        <li>
-            <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">1. </span> Certifier information
-            </h2>
-            <ul class="app-task-list__items">
+        <h2 class="govuk-heading-m" style="font-weight: 300">Export pig meat from Great Britain to China: certificate 7006GB</h2>
 
 
-                <li class="app-task-list__item">
+        <p>
+            <span class="govuk-warning-text__assistive">Warning</span>
+            If this is not correct, <a href="index" style="font-weight: 300">find another Export Health Certificate</a>
+        </p>
+
+
+        <hr>
+
+
+        <h2 class="govuk-heading-l" style="margin-top: 20px">Fill in each section of the application</h2>
+
+        <ol class="app-task-list">
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. </span> About your application
+                </h2>
+                <ul class="app-task-list__items">
+
+                    <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="3-plus-plus" aria-describedby="eligibility-completed">
+                    Confirm exporter
+                </a>
+              </span>
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    </li>
+                    <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="3" aria-describedby="eligibility-completed">
-                    About your OV
+                    Confirm application reference
                 </a>
               </span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-                </li>
-
-
-
-                <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="15c" aria-describedby="read-declaration-completed">
-                    Where to send your certificate
-                </a>
-              </span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-                </li>
-
-
-
+                        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong></li>
 
 
 
