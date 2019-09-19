@@ -2,38 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/1-minus.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/1-minus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/10-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/10-plus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/10.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/10.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/1-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/1-plus.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/11-minus.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/11-minus.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/11.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/12.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/13.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/14.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15-plus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15b.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15b.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15c.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15c.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/16.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/17.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/17.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/18.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/18.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/19.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/19.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/20.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/20.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/21.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/21.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/22.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/22.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/23.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/23.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/24.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/24.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/4.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/5.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/6-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/6-plus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/3-plus-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/3-plus-plus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/3-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/3-plus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/3-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/3-plus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/3.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/4-plus-plus-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/4-plus-plus-plus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/4.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/4.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/7.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/8-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/8-plus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/8.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/8.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/9.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/certificate-delivery-address-manual.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/certificate-delivery-address-manual.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/check-your-answers.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/check-your-answers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/postcode-lookup.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/postcode-lookup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress-with-product-links.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress-with-product-links.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1-plus.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1-plus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress10.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress10.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress2.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress3.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress4.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress5.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress6.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress8.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress9.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress9.html" />
     </list>
     <ignored path="defra-exports-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,92 +47,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="check-your-progress4.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress4.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="71" selection-start="2037" selection-end="2037" vertical-scroll-proportion="-38.75" vertical-offset="180" max-vertical-offset="2685">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check-your-progress5.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress5.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="25" selection-start="1825" selection-end="1825" vertical-scroll-proportion="-19.375" vertical-offset="405" max-vertical-offset="3555">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="check-your-progress6.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/check-your-progress6.html">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress6.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3555">
+            <state line="58" column="25" selection-start="1825" selection-end="1825" vertical-scroll-proportion="-19.375" vertical-offset="405" max-vertical-offset="3450">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check-your-progress8.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress8.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="25" selection-start="1824" selection-end="1824" vertical-scroll-proportion="-19.375" vertical-offset="390" max-vertical-offset="3420">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check-your-progress9.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress9.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="25" selection-start="1825" selection-end="1825" vertical-scroll-proportion="-19.375" vertical-offset="405" max-vertical-offset="3450">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check-your-progress10.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress10.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="25" selection-start="1824" selection-end="1824" vertical-scroll-proportion="-19.375" vertical-offset="390" max-vertical-offset="3765">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="4-plus-plus-plus.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/4-plus-plus-plus.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="27" selection-start="0" selection-end="16974" vertical-scroll-proportion="-5.0" vertical-offset="225" max-vertical-offset="6975">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="check-your-progress-plus.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/check-your-progress-plus.html">
+      <file leaf-file-name="4.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3315">
+            <state line="459" column="0" selection-start="15171" selection-end="15171" vertical-scroll-proportion="-19.375" vertical-offset="6420" max-vertical-offset="6975">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="confirmation.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/confirmation.html">
+      <file leaf-file-name="3-plus.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/3-plus.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="630">
+            <state line="0" column="0" selection-start="0" selection-end="6380" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3030">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/dashboard.html">
+      <file leaf-file-name="3-plus.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/3-plus.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="62.5" vertical-offset="1500" max-vertical-offset="4425">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="declaration.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/declaration.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2010">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form-finder-form-start.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/form-finder-form-start.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="4470">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="16.875" vertical-offset="405" max-vertical-offset="9135">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="postcode-lookup.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/postcode-lookup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="51" selection-start="1102" selection-end="1102" vertical-scroll-proportion="-2.54" vertical-offset="188" max-vertical-offset="1095">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="review.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/review.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1230">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="specimen.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/specimen.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
-              <folding />
+            <state line="196" column="0" selection-start="6294" selection-end="6294" vertical-scroll-proportion="0.96718144" vertical-offset="2439" max-vertical-offset="3030">
+              <folding>
+                <element signature="e#2597#2959#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,22 +167,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/14.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15-plus.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15b.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/15c.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/16.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/17.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/18.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/19.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/20.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/21.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/22.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/23.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/24.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/certificate-delivery-address-manual.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/postcode-lookup.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress-with-product-links.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/3-plus-plus.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/3.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1-plus-plus.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1-plus.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress2.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress3.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress5.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress6.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress8.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress9.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/check-your-progress10.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/4.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-8270/3-plus.html" />
       </list>
     </option>
   </component>
@@ -371,7 +374,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/ehc-7006-ab-version3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/ehc-8270" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
@@ -442,17 +445,17 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4290429" sideWeight="0.49890432" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2828125" sideWeight="0.8547855" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2828125" sideWeight="0.5709571" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14521453" sideWeight="0.5010957" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14521453" sideWeight="0.5010957" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14521453" sideWeight="0.49890432" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -470,115 +473,135 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/23.html">
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="71" selection-start="427" selection-end="427" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="1110">
+        <state line="63" column="0" selection-start="1848" selection-end="1848" vertical-scroll-proportion="-9.833333" vertical-offset="709" max-vertical-offset="3285">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="60" selection-start="833" selection-end="833" vertical-scroll-proportion="-6.875" vertical-offset="330" max-vertical-offset="2490">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/24.html">
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1-plus-plus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="71" selection-start="398" selection-end="398" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="1515">
+        <state line="40" column="16" selection-start="998" selection-end="1827" vertical-scroll-proportion="-4.375" vertical-offset="495" max-vertical-offset="3315">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/_15a.html">
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress1-plus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="15.0" vertical-offset="360" max-vertical-offset="2325">
+        <state line="58" column="25" selection-start="1825" selection-end="1825" vertical-scroll-proportion="-19.375" vertical-offset="405" max-vertical-offset="3210">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="25" selection-start="1929" selection-end="1929" vertical-scroll-proportion="-18.875" vertical-offset="402" max-vertical-offset="3135">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="25" selection-start="1825" selection-end="1825" vertical-scroll-proportion="-19.375" vertical-offset="405" max-vertical-offset="3420">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="71" selection-start="2037" selection-end="2037" vertical-scroll-proportion="-38.75" vertical-offset="180" max-vertical-offset="2685">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/address.html">
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress5.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
+        <state line="58" column="25" selection-start="1825" selection-end="1825" vertical-scroll-proportion="-19.375" vertical-offset="405" max-vertical-offset="3555">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress6.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="25" selection-start="1825" selection-end="1825" vertical-scroll-proportion="-19.375" vertical-offset="405" max-vertical-offset="3450">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="25" selection-start="1824" selection-end="1824" vertical-scroll-proportion="-19.375" vertical-offset="390" max-vertical-offset="3420">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress9.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="25" selection-start="1825" selection-end="1825" vertical-scroll-proportion="-19.375" vertical-offset="405" max-vertical-offset="3450">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/check-your-progress10.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="25" selection-start="1824" selection-end="1824" vertical-scroll-proportion="-19.375" vertical-offset="390" max-vertical-offset="3765">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/4-plus-plus-plus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="27" selection-start="0" selection-end="16974" vertical-scroll-proportion="-5.0" vertical-offset="225" max-vertical-offset="6975">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/certificate-delivery-address-manual.html">
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/4.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="51" selection-start="1064" selection-end="1064" vertical-scroll-proportion="-3.125" vertical-offset="240" max-vertical-offset="1200">
+        <state line="459" column="0" selection-start="15171" selection-end="15171" vertical-scroll-proportion="-19.375" vertical-offset="6420" max-vertical-offset="6975">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/check-your-answers.html">
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/3-plus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="7.5" vertical-offset="180" max-vertical-offset="9075">
+        <state line="0" column="0" selection-start="0" selection-end="6380" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3030">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/check-your-progress6.html">
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-8270/3-plus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/check-your-progress-plus.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/confirmation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="62.5" vertical-offset="1500" max-vertical-offset="4425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/declaration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2010">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/form-finder-form-start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4470">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="16.875" vertical-offset="405" max-vertical-offset="9135">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/postcode-lookup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="51" selection-start="1102" selection-end="1102" vertical-scroll-proportion="-2.54" vertical-offset="188" max-vertical-offset="1095">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version3/specimen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
-          <folding />
+        <state line="196" column="0" selection-start="6294" selection-end="6294" vertical-scroll-proportion="0.96718144" vertical-offset="2439" max-vertical-offset="3030">
+          <folding>
+            <element signature="e#2597#2959#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -15,18 +15,16 @@
 
 
 
-    <!--start-->
+<!--start-->
 
 
-    <div class="govuk-width-container">
+<div class="govuk-width-container">
 
 
     <div class="" id="Form-Organisation">
         <fieldset class="govuk-fieldset">
-            <h1 id="questionPageHeading" class="govuk-heading-xl">About the Official Vet or Certifier you will be working with</h1>
+            <h1 id="questionPageHeading" class="govuk-heading-xl">Alert your OV or certifier you have begun this application?</h1>
 
-
-            <h1 class="govuk-heading-m govuk-!-margin-top-9 govuk-!-margin-bottom-3">We can inform your OV or certifier and they will help you to complete your application</h1>
 
 
         </fieldset>
@@ -35,33 +33,35 @@
     </div>
 
 
-        <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
-
-                <div class="govuk-radios">
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
-                        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in">
-                            Yes
-                        </label>
-        <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          We will inform your OV or certifier immediately
-        </span>
-                    </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
-                        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
-                         No
-                        </label>
-        <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-         We will inform your OV or certifier only after you submit the form
-        </span>
-                    </div>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                        Yes
+                    </label>
                 </div>
-            </fieldset>
-        </div>
 
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                        No
+                    </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                    <div class="govuk-form-group">
+
+                        <p>Your OV or certifier will be alerted when you submit this application.</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </fieldset>
+    </div>
 
 
     <style>
@@ -156,7 +156,6 @@
 
     <form action="check-your-progress2" method="POST">
 
-    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0" style="margin-top: 70px">
 
         <!--<p> OR</p><p>
             You can add, remove or update the Certifiers you work with on your account <a href="#">dashboard</a>.</p>
@@ -165,23 +164,22 @@
 
 
         <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue-0" data-qa-id="Button-SaveAndContinue">
-    </div>
 
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full govuk-body">
-            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-body">
+                <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+            </div>
         </div>
-    </div>
 
-</form>
-
-
-
-    </div>
+    </form>
 
 
 
-    <!-- HERE --->
+</div>
+
+
+
+<!-- HERE --->
 
 
 

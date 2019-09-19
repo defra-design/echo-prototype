@@ -12,9 +12,15 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <div>
-                    <h1 id="questionPageHeading" class="govuk-heading-xl">About the slaughterhouse(s) you used</h1>
-                    <p>
-                    </p><form action="9" method="POST" enctype="application/x-www-form-urlencoded">
+<span class="govuk-caption-xl">
+       Adding a product step 1 of 3
+        </span>
+
+
+                    <h1 id="questionPageHeading" style="margin-bottom: 10px" class="govuk-heading-xl">Slaughterhouse details</h1>
+                    <h2 style="font-weight: 300" class="govuk-heading-m">What are the details of the slaughterhouse of origin?</h2>
+
+                        <form action="9" method="POST" enctype="application/x-www-form-urlencoded">
                     <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
                     <!-- @formatter:off -->
@@ -25,7 +31,7 @@
 
 
 
-                        <label class="govuk-label " for="7006EHC-0">What are the details of the slaughterhouse of origin?</label>
+
 <br>
                         <div class="govuk-form-group">
                             <label class="govuk-label" for="full-name">
@@ -39,7 +45,7 @@
 
 
                         <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
-                            Provide slaughterhouse address
+                            Slaughterhouse address
                         </h2>
                         <div class="govuk-form-group">
                             <label class="govuk-label" for="address-postcode">
@@ -47,7 +53,7 @@
                             </label>
                             <input class="govuk-input govuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" value="" aria-describedby="address-postcode-error">
                         </div>
-                        <a href="8" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                        <a href="#" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
                             Find address
                         </a>
 
@@ -79,15 +85,14 @@
 
 
 
-                    <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
-                        Slaughter dates
+                    <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px;margin-bottom:0px">
+                        What are the range of slaughter dates?
                     </h2>
-
+                            <div class="govuk-hint">From earliest to latest</div>
 
                     <!-- @formatter:off -->
                     <div class="govuk-form-group ">
-                        <label class="govuk-label " for="7006EHC-0">What is the range of slaughter dates?</label>
-                        <div class="govuk-hint">From earliest to latest</div>
+
                     </div>
                     <div class="govuk-form-group" {{ data['production-dates'] }}>
                     <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
