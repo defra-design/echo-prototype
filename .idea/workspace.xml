@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/dashboard.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version3/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/dashboard.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-8270/specimen.html" afterPath="$PROJECT_DIR$/app/views/ehc-8270/specimen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="" />
     <ignored path="defra-exports-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
