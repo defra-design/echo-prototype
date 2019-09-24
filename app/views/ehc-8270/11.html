@@ -19,7 +19,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-                <h1 class="govuk-heading-xl">Export destinations
+                <h1 class="govuk-heading-xl">Export route to destination
                 </h1>
 
                 <form action="13" method="POST" enctype="application/x-www-form-urlencoded">
@@ -29,7 +29,7 @@
 
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="event-name">
-                            Within the economic bloc, what is the first country your export will enter?
+                            Within the economic community, what is the first country your export will enter?
                         </label>
   <span id="event-name-hint" class="govuk-hint">
     Select one of the following
@@ -70,7 +70,7 @@
 
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="event-name">
-                            What country of the selected economic community does the certificate relate to?
+                            Within the economic community, what is the final destination country?
                         </label>
   <span id="event-name-hint" class="govuk-hint">
     Select one of the following
@@ -105,6 +105,32 @@
                             <option value="comments">Sweden</option>
                         </select>
                     </div>
+
+
+
+
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="event-name">
+                            ISO code of destination country
+                        </label>
+  <span id="event-name-hint" class="govuk-hint">
+   This is the 2 digit code according to the ISO 3166 standard. For example, FR, DE, etc
+  </span>
+                        <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+                    </div>
+
+
+
+
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="event-name">
+                            Region within the destination country
+                        </label>
+                        <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+                    </div>
+
 
 
 
