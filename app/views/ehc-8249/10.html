@@ -1,0 +1,100 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <style>.govuk-radios__item {
+
+            margin-bottom: 10px!important;
+
+        }</style>
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl">Number of certificates
+                </h1>
+
+                <form action="16" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+
+
+
+
+
+                  <p>  You can apply for blocks of up to 100 certificates for frequent or regular consignments to the same country.
+                  </p>
+
+
+
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Number of certificates required
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+                </form>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+                        </div>
+                    </div>
+
+
+
+                    <p></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+        <script>
+
+            window.onload = function(){
+          $(document).ready(function () {
+                $("#watch-me").click(function() {
+                    $("#show-me:hidden").show('slow');
+                });
+                $("#watch-me").click(function(){
+                    if($('watch-me').prop('checked')===false) {
+                        $('#show-me').hide();}
+                });
+            });
+
+
+
+                $(document).ready(function () {
+                    $("#watch-me2").click(function() {
+                        $("#show-me2:hidden").show('slow');
+                    });
+                    $("#watch-me2").click(function(){
+                        if($('watch-me2').prop('checked')===false) {
+                            $('#show-me2').hide();}
+                    });
+                });
+
+
+
+            }
+        </script>
+
+
+{% endblock %}

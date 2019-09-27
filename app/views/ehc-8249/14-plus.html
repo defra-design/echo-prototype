@@ -1,0 +1,82 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div>
+
+                <h1 class="govuk-heading-l">Which Border Inspection Post (BIP) will the consignment arrive at?</h1>
+
+                <form action="check-your-progress8" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+
+
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="event-name">
+                            Name of the BIP
+                        </label>
+
+                        <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+                    </div>
+
+
+
+
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="event-name">
+                            BIP unit number
+                        </label>
+                          <span id="event-name-hint" class="govuk-hint">
+You can find this on the European Commission's approved list of BIPs
+  </span>
+                        <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+                    </div>
+
+
+
+
+
+                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                        </div>
+                    </div>
+
+
+                </form>
+
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

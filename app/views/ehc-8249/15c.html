@@ -15,7 +15,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-                <form action="16" method="POST" id="addr-form">
+                <form action="10" method="POST" id="addr-form">
                     <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
                     <input type="hidden" name="ehcNumber" value="7006EHC">
                     <input type="hidden" name="applicationFormId" value="1721147986171">
@@ -28,13 +28,7 @@
                     <input type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
                     <input type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
                     <div class="govuk-form-group">
-
-
-                        <span class="govuk-caption-xl">
-          Step 1 of 2
-        </span>
-
-                        <h1 class="govuk-heading-xl">Confirm where to send your certificate</h1>
+                        <h1 class="govuk-heading-l">Is this the address where we can contact your official vet or certifier?</h1>
                         <span class="govuk-caption-l">Organisation name</span>
 
                         <p class="govuk-body govuk-fieldset__legend--m">
@@ -50,55 +44,27 @@
                         </p>
                     </div>
                     <br>
-
-
-
                     <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" style="">
-                                <h1 class="govuk-fieldset__heading">Do you want to send the certificate to the above address?</h1>
-                            </legend>
+                        <fieldset class="govuk-fieldset">
 
-                            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                            <div class="govuk-radios ">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
-                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                    <input class="govuk-radios__input" id="default-address-option" name="address-option" type="radio" value="default" {{ checked("address-option", "default") }}>
+                                    <label id="default-address-option-label" class="govuk-label govuk-radios__label" for="default-address-option">
                                         Yes, use this address
                                     </label>
                                 </div>
-
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                               <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="manual-address-option" name="address-option" type="radio" value="manual" aria-describedby="manual-address-option-hint" {{ ("address-option", "manual") }}>
+                                    <label id="manual-address-option-label" class="govuk-label govuk-radios__label" for="manual-address-option">
                                         No, the OV is based at a different address
                                     </label>
+                  <span id="manual-address-option-hint" class="govuk-hint govuk-radios__hint" style="padding-left: 15px">
+                    </span>
                                 </div>
-                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-                                    <div class="govuk-form-group">
-                                            <p>
-                                                You can arrange to send certificates to an address other than the main address of your OV or EHO practice. To get an alternative address agreed, your OV or EHO must complete an authorising declaration form. This form is available from the <a href="#">Centre for International Trade, Carlisle</a>.
-                                                Alternatively you can contact APHA telephone helpline: 03000 200 301</p>
-
-                                    </div>
-
-                                </div>
-
-
                             </div>
                         </fieldset>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
                         <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-CertificateDeliveryAddressSaveAndContinue" data-qa-id="Button-SaveAndContinue">
                     </div>
