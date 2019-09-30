@@ -1,0 +1,237 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div>
+                <h1 id="questionPageHeading" class="govuk-heading-xl">About this commodity type: Animal products including food
+                </h1>
+                <p>
+                </p><form action="check-your-progress1-plus" method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+
+                <!-- @formatter:off -->
+                <div class="govuk-form-group " id="checkboxes" data-qa-id="7006EHC-0">
+                    <label class="govuk-label" for="7006EHC-0">What is the origin of the raw materials?</label>
+                    <div class="govuk-hint">Where were the animals reared?</div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="7006EHC-0_1" name="origin" type="checkbox" data-qa-id="7006EHC-0_1" value="Great Britain" {{ checked("origin", "Great Britain") }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_1">
+                            Great Britain
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="7006EHC-0_2" name="origin" type="checkbox" data-qa-id="7006EHC-0_2" value="Northern Ireland" {{ checked("origin", "Northern Ireland") }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_2">
+                            Northern Ireland
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="7006EHC-0_3" name="origin" type="checkbox" data-qa-id="7006EHC-0_3" value="Outside the UK"  {{ checked("origin", "Outside the UK") }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_3">
+                            Outside the UK
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h2 class="govuk-heading-m margin-top-45 govuk-\!-margin-bottom-1">
+                    About the processing of your commodity
+                </h2>
+            </legend>
+
+                <input type="hidden" name="1-formQuestionId" value="46">
+                <input type="hidden" name="1-questionId" value="11">
+                <input type="hidden" name="1-formName" value="exa07---meat">
+                <input type="hidden" name="1-questionText" value="What are the dates of processing of the product?">
+                <input type="hidden" name="1-questionType" value="text">
+                <input type="hidden" name="1-questionOrder" value="2">
+                <input type="hidden" name="1-questionScope" value="APPLICANT">
+                <input type="hidden" name="questionSequence-46" value="1"><div class="govuk-form-group ">
+
+
+
+
+
+
+
+
+            <div class="govuk-form-group" value="{{ data['when-slaughtered'] }}">
+                <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+
+
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        From date
+                    </label>
+
+                         <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2007
+    </span>
+
+
+                    <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+
+
+
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                            To date
+                        </label>
+
+                         <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 4 2007
+    </span>
+
+
+                        <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+            </div>
+
+
+            </div>
+
+
+
+
+
+
+
+                <input type="hidden" name="2-formQuestionId" value="45">
+                <input type="hidden" name="2-questionId" value="13">
+                <input type="hidden" name="2-formName" value="exa07---meat">
+                <input type="hidden" name="2-questionText" value="When were the animals slaughtered?">
+                <input type="hidden" name="2-questionType" value="text">
+                <input type="hidden" name="2-questionOrder" value="3">
+                <input type="hidden" name="2-questionScope" value="APPLICANT">
+                <input type="hidden" name="questionSequence-45" value="2"><div class="govuk-form-group " id="checkboxes" data-qa-id="7006EHC-3">
+                <label class="govuk-label" for="7006EHC-3">Where has the product been processed?</label>
+                <div class="govuk-hint">Select all that apply</div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="7006EHC-3_1" name="where-slaughtered" type="checkbox" data-qa-id="7006EHC-3_1" value="Great Britain"  {{ checked("where-slaughtered", "Great Britain") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="7006EHC-3_1">
+                        Great Britain
+                    </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="7006EHC-3_2" name="where-slaughtered" type="checkbox" data-qa-id="7006EHC-3_2" value="Northern Ireland"  {{ checked("where-slaughtered", "Northern Ireland") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="7006EHC-3_2">
+                        Northern Ireland
+                    </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="7006EHC-3_3" name="where-slaughtered" type="checkbox" data-qa-id="7006EHC-3_3" value="Outside the UK"  {{ checked("where-slaughtered", "Outside the UK") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="7006EHC-3_3">
+                        Outside the UK
+                    </label>
+                </div>
+            </div>
+                <input type="hidden" name="3-formQuestionId" value="47">
+                <input type="hidden" name="3-questionId" value="12">
+                <input type="hidden" name="3-formName" value="exa07---meat">
+                <input type="hidden" name="3-questionText" value="Where were the animals slaughtered?">
+                <input type="hidden" name="3-questionType" value="multi_select">
+                <input type="hidden" name="3-questionOrder" value="4">
+                <input type="hidden" name="3-questionScope" value="APPLICANT">
+                <input type="hidden" name="questionSequence-47" value="3">            <!-- @formatter:on -->
+                <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="4">
+                <div class="govuk-grid-row margin-top-30"></div>
+                <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                    <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                </div>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full govuk-body">
+                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                    </div>
+                </div>
+
+            </form>
+
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

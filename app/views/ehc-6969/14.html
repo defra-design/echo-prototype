@@ -1,0 +1,281 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div>
+            <span class="govuk-caption-xl">
+          Step 2 of 2
+        </span>
+                <h1 id="questionPageHeading" class="govuk-heading-xl">Transport details</h1>
+                <p>
+                </p><form action="check-your-progress8" method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                <input type="hidden" name="0-formQuestionId" value="247">
+                <input type="hidden" name="0-questionId" value="22">
+                <input type="hidden" name="0-formName" value="7006EHC">
+                <input type="hidden" name="0-questionText" value="What is the date of despatch? ">
+                <input type="hidden" name="0-questionType" value="date">
+                <input type="hidden" name="0-questionOrder" value="18">
+                <input type="hidden" name="0-questionScope" value="BOTH">
+                <input type="hidden" name="questionSequence-247" value="0"><div class="govuk-form-group ">
+                <label class="govuk-label " for="7006EHC-1">What is the port of departure?</label>
+                <div class="govuk-hint">
+
+                    This means where the consignment will leave the UK.<br>
+
+                    If two ports are involved e.g. Belfast, then Southampton, the first port is the initial port of departure, and the second port is the final port of departure.
+
+                </div>
+
+
+
+
+
+                <div class="govuk-form-group">
+                    <p>Select initial port of departure</p>
+                    <label class="govuk-label" for="sort">
+                        Select port
+                    </label>
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="published">Southampton</option>
+                        <option value="updated" selected>Belfast</option>
+                        <option value="views">Dundee</option>
+                        <option value="comments">Fleetwood</option>
+                        <option value="comments">Holyhead Port</option>
+                        <option value="comments">Felixstove</option>
+                        <option value="comments">Troon</option>
+                        <option value="comments">Wick Harbour</option>
+                    </select>
+                </div>
+
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+  Add a port or border crossing not in the list?
+    </span>
+                        </summary>
+                        <div class="govuk-details__text">
+
+
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="more-detail">
+                                  Enter port name
+                                </label>
+                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="1" aria-describedby="more-detail-hint"></textarea>
+                            </div>
+
+                        </div>
+                    </details>
+
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+                        <label class="govuk-label" for="sort">
+                            Select date
+                        </label>
+    <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2007
+    </span>
+                        <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+
+                <span id="event-name-hint" class="govuk-hint">
+
+                    Use this button to add final port of departure, if required.</span>
+
+                <a href="#" type="submit" class=" govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                    Add a second port
+                </a>
+
+                </div>
+
+            </div>
+                <input type="hidden" name="1-formQuestionId" value="249">
+                <input type="hidden" name="1-questionId" value="30">
+                <input type="hidden" name="1-formName" value="7006EHC">
+                <input type="hidden" name="1-questionText" value="What is the port(s) of departure? ">
+                <input type="hidden" name="1-questionType" value="textarea">
+                <input type="hidden" name="1-questionOrder" value="19">
+                <input type="hidden" name="1-questionScope" value="BOTH">
+                <input type="hidden" name="questionSequence-249" value="1"><div class="govuk-form-group ">
+                <label class="govuk-label " for="7006EHC-2">What is the port of entry into China?
+                </label>
+                <div class="govuk-hint">
+                    If two ports are involved on arrival to China, i.e. transhipment at initial port of arrival in China for internal travel to the final port of entry where the final import clearance will be carried out, then both ports need to be entered.
+
+                </div>
+
+
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="sort">
+                            Select port
+                        </label>
+                        <select class="govuk-select" id="sort" name="sort">
+                            <option value="published">Dalian</option>
+                            <option value="updated" selected>Tianjin</option>
+                            <option value="views">Yingkou</option>
+                            <option value="comments">Qinhuangdao</option>
+                            <option value="comments">Yantai</option>
+                            <option value="comments">Weihai</option>
+                            <option value="comments">Qingdao</option>
+                            <option value="comments">Rizhao</option>
+                        </select>
+                    </div>
+
+
+
+                    <details class="govuk-details margin-top-30" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    Port or border crossing not in the list?
+    </span>
+                        </summary>
+                        <div class="govuk-details__text">
+
+
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="more-detail">
+                                    Enter port name
+                                </label>
+                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="1" aria-describedby="more-detail-hint"></textarea>
+                            </div>
+
+                        </div>
+                    </details>
+                    <div class="govuk-form-group">
+                <span id="event-name-hint" class="govuk-hint">
+
+
+                    Use this button to add final port of departure, if required.
+
+</span>
+                    <a href="#" type="submit" class=" govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                        Add a second port
+                    </a>
+
+
+            </div>
+            </div>
+                <input type="hidden" name="2-formQuestionId" value="251">
+                <input type="hidden" name="2-questionId" value="29">
+                <input type="hidden" name="2-formName" value="7006EHC">
+                <input type="hidden" name="2-questionText" value="What is the port(s) of entry in China? ">
+                <input type="hidden" name="2-questionType" value="textarea">
+                <input type="hidden" name="2-questionOrder" value="20">
+                <input type="hidden" name="2-questionScope" value="BOTH">
+                <input type="hidden" name="questionSequence-251" value="2"><div class="govuk-form-group ">
+                <label class="govuk-label " for="7006EHC-3">What is the means of transport? </label>
+                <div class="govuk-hint">In the majority of cases the means of transport should be entered as ‘Refrigerated Container by Sea’. The name of the ship need not be entered in this section.</div>
+                <input class="govuk-input form-control-3-4" id="7006EHC-3" name="transport-means" value="{{ data['transport-means'] }}" type="text" data-qa-id="Question-7006EHC-3">
+            </div>
+                <input type="hidden" name="3-formQuestionId" value="254">
+                <input type="hidden" name="3-questionId" value="24">
+                <input type="hidden" name="3-formName" value="7006EHC">
+                <input type="hidden" name="3-questionText" value="What is the means of transport? ">
+                <input type="hidden" name="3-questionType" value="text">
+                <input type="hidden" name="3-questionOrder" value="21">
+                <input type="hidden" name="3-questionScope" value="BOTH">
+                <input type="hidden" name="questionSequence-254" value="3"><div class="govuk-form-group ">
+                <label class="govuk-label " for="7006EHC-4">What is the container number? </label>
+                <input class="govuk-input form-control-3-4" id="7006EHC-4" name="container-number" value="{{ data['container-number'] }}" type="text" data-qa-id="Question-7006EHC-4">
+            </div>
+                <input type="hidden" name="4-formQuestionId" value="255">
+                <input type="hidden" name="4-questionId" value="55">
+                <input type="hidden" name="4-formName" value="7006EHC">
+                <input type="hidden" name="4-questionText" value="What is the container number? ">
+                <input type="hidden" name="4-questionType" value="text">
+                <input type="hidden" name="4-questionOrder" value="22">
+                <input type="hidden" name="4-questionScope" value="BOTH">
+                <input type="hidden" name="questionSequence-255" value="4"><div class="govuk-form-group ">
+                <label class="govuk-label " for="7006EHC-5">What is the seal number? </label>
+                <input class="govuk-input form-control-3-4" id="7006EHC-5" name="seal-number" value="{{ data['seal-number'] }}" type="text" data-qa-id="Question-7006EHC-5">
+            </div>
+                <input type="hidden" name="5-formQuestionId" value="256">
+                <input type="hidden" name="5-questionId" value="56">
+                <input type="hidden" name="5-formName" value="7006EHC">
+                <input type="hidden" name="5-questionText" value="What is the seal number? ">
+                <input type="hidden" name="5-questionType" value="text">
+                <input type="hidden" name="5-questionOrder" value="23">
+                <input type="hidden" name="5-questionScope" value="BOTH">
+                <input type="hidden" name="questionSequence-256" value="5">            <!-- @formatter:on -->
+                <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="6">
+
+
+
+
+
+
+                <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                    <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                </div>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full govuk-body">
+                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                    </div>
+                </div>
+
+            </form>
+
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
