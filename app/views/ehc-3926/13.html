@@ -1,0 +1,117 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div>
+
+                <h1 class="govuk-heading-l">About the shipment</h1>
+
+                <form action="14-plus" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+
+
+
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label" for="7006EHC-0">Type and number of packages? </label>
+                        <div class="govuk-hint">Enter the number and type of packages of this product.</div>
+                        <input class="govuk-textarea" id="7006EHC-0" name="packages" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                    </div>
+
+
+
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label " for="7006EHC-0">What is the place of loading </label>
+                        <div class="govuk-hint">Provide the name and location of the establishment</div>
+                        <textarea class="govuk-textarea" id="7006EHC-0" name="batch-numbers" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                    </div>
+
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label " for="7006EHC-0">Approval number of the place of loading</label>
+                        <input class="govuk-textarea" id="7006EHC-0" name="shipping-marks" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                    </div>
+
+
+
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label " for="7006EHC-0">Name of establishment of dispatch </label>
+                        <input class="govuk-textarea" id="7006EHC-0" name="temperature" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                    </div>
+
+
+
+                    <fieldset class="govuk-fieldset">
+                        <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 20px">
+
+                            Address of establishment of dispatch
+
+                        </h2>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="address-postcode">
+                                Postcode
+                            </label>
+  <span id="" class="">
+  </span>
+                            <input class="govuk-input govuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" value="" aria-describedby="address-postcode-error">
+                        </div>
+                        <!--<a href="7" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                            Find address
+                        </a>-->
+                        <div class="govuk-link">
+                            <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="#ß">Or enter my address manually</a>
+                        </div>
+
+                    </fieldset>
+
+
+                    <div class="govuk-form-group " style="margin-top: 25px">
+                        <label class="govuk-label " for="7006EHC-0">Approval number of the establishment of dispatch</label>
+                        <input class="govuk-textarea" id="7006EHC-0" name="temperature" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                    </div>
+
+
+
+
+
+                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                        </div>
+                    </div>
+
+
+                </form>
+
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
