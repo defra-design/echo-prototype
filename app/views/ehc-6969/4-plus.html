@@ -47,9 +47,127 @@ GOV.UK Prototype Kit
             </div>
 
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h2 class="govuk-heading-m margin-top-45 govuk-\!-margin-bottom-1">
-                    About the processing of your commodity
+
+
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-\!-margin-bottom-0" style="margin-bottom: 0;margin-top: 20px">
+                <h2 class="govuk-heading-m  govuk-\!-margin-bottom-0">
+                    What are the dates of collection of the raw materials?
+                </h2>
+            </legend>
+
+
+
+
+
+
+            <div class="govuk-form-group" value="{{ data['when-slaughtered'] }}">
+                <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+
+
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        From date
+                    </label>
+
+                         <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2007
+    </span>
+
+
+                    <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+
+
+
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        To date
+                    </label>
+
+                         <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 4 2007
+    </span>
+
+
+                    <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-\!-margin-bottom-0" style="margin-bottom: 0;margin-top: 20px">
+                <h2 class="govuk-heading-m  govuk-\!-margin-bottom-0">
+                    What are the dates of processing of the product?
                 </h2>
             </legend>
 
@@ -173,7 +291,11 @@ GOV.UK Prototype Kit
                 <input type="hidden" name="2-questionType" value="text">
                 <input type="hidden" name="2-questionOrder" value="3">
                 <input type="hidden" name="2-questionScope" value="APPLICANT">
-                <input type="hidden" name="questionSequence-45" value="2"><div class="govuk-form-group " id="checkboxes" data-qa-id="7006EHC-3">
+                <input type="hidden" name="questionSequence-45" value="2">
+
+
+
+            <div class="govuk-form-group " id="checkboxes" data-qa-id="7006EHC-3" style="margin-top: 40px">
                 <label class="govuk-label" for="7006EHC-3">Where has the product been processed?</label>
                 <div class="govuk-hint">Select all that apply</div>
                 <div class="govuk-checkboxes__item">
@@ -205,6 +327,43 @@ GOV.UK Prototype Kit
                 <input type="hidden" name="questionSequence-47" value="3">            <!-- @formatter:on -->
                 <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="4">
                 <div class="govuk-grid-row margin-top-30"></div>
+
+
+
+
+
+
+            <div class="govuk-form-group " style="margin-top: 40px">
+                <!-- @formatter:off -->
+                <fieldset id="6969EHC-4" class="govuk-fieldset">
+                    <!-- @formatter:on -->
+                    <legend class="govuk-fieldset__legend" for="6969EHC-4">
+                        <label class="govuk-label  ">In which region will the certification take place?</label>
+                    </legend>
+
+
+                    <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="6969EHC-4" value="England" name="4" data-qa-id="Question-radio-England" checked="">
+                            <label class="govuk-label govuk-radios__label" for="6969EHC-4">England</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="6969EHC-4" value="Scotland" name="4" data-qa-id="Question-radio-Scotland">
+                            <label class="govuk-label govuk-radios__label" for="6969EHC-4">Scotland</label>
+                        </div>
+                        <p class="form-block" style="padding-left:10px ">or</p>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="6969EHC-4" value="Wales" name="4" data-qa-id="Question-radio-Wales">
+                            <label class="govuk-label govuk-radios__label" for="6969EHC-4">Wales</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+
+
                 <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
                     <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
                 </div>

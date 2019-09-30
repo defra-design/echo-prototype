@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div>
+
+                    <h1 class="govuk-heading-xl">Establishments</h1>
+
+                    <form action="check-your-progress7" method="POST" enctype="application/x-www-form-urlencoded">
+
+                    <div class="govuk-form-group ">
+
+
+
+
+
+
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label " for="6969EHC-0">What is the name, location and authorised approval/registration number for each establishment where the raw milk was processed?  </label>
+                            <textarea class="govuk-textarea" id="6969EHC-0" name="0" rows="3" autofocus="autofocus" data-qa-id="Question-6969EHC-0" spellcheck="false"></textarea>
+                        </div>
+
+
+
+
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label " for="6969EHC-1">What is the name, location and authorised approval/registration number for each establishment where the export product was processed? </label>
+                            <textarea class="govuk-textarea" id="6969EHC-1" name="1" rows="3" data-qa-id="Question-6969EHC-1"></textarea>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                        </div>
+                    </div>
+
+                </form>
+
+                    <p></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
