@@ -17,7 +17,44 @@ GOV.UK Prototype Kit
                 <h1 id="questionPageHeading" class="govuk-heading-l">The timings of your certification and export
                 </h1>
                 <p>
-                </p><form action="check-your-progress5" method="POST" enctype="application/x-www-form-urlencoded">
+                </p>
+
+
+                <div class="govuk-form-group ">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <label class="govuk-label ">What is the planned date of certification? </label>
+                            <span class="govuk-hint">This date must be on or before the export date</span>
+                        </legend>
+                        <div class="govuk-date-input">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="3926EHC-1-day">Day</label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="3926EHC-1-day" name="1-day" value="NaN" data-qa-id="Question-3926EHC-1-Day" type="number" pattern="^[0-9]{2}$">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="3926EHC-1-month">Month</label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="3926EHC-1-month" name="1-month" value="NaN" data-qa-id="Question-3926EHC-1-Month" type="number" pattern="^[0-9]{2}$">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="3926EHC-1-year">Year</label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="3926EHC-1-year" name="1-year" value="NaN" data-qa-id="Question-3926EHC-1-Year" type="number" pattern="^[0-9]{4}$">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+
+
+
+
+                <form action="check-your-progress5" method="POST" enctype="application/x-www-form-urlencoded">
                 <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
                 <!-- @formatter:off -->
@@ -70,104 +107,7 @@ GOV.UK Prototype Kit
 
 
 
-                <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
 
-
-
-
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                            <label class="govuk-label">Means of transport to the BIP</label>
-
-
-
-                        </legend>
-
-
-    <span id="waste-hint" class="govuk-hint">
-      Select all that apply.
-    </span>
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                                <label class="govuk-label govuk-checkboxes__label" for="waste">
-                                    Aeroplane
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                                    Ship
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                            Railway wagon
-                                </label>
-                            </div>
-
-
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                                   Road vehicle
-                                </label>
-                            </div>
-
-
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                                  Other
-                                </label>
-                            </div>
-
-
-                        </div>
-                    </fieldset>
-                </div>
-
-
-
-
-
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="event-name">
-
-
-
-                        Identification of the transport
-                    </label>
-  <span id="event-name-hint" class="govuk-hint">
-   Provide the flight number, the ship name or vehicle registration number(s)
-  </span>
-                    <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-                </div>
-
-
-
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="event-name">
-                        Documentary reference number for the transport
-                    </label>
-  <span id="event-name-hint" class="govuk-hint">
-   For example, number of  the airline bill or bill of lading
-  </span>
-                    <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-                </div>
-
-
-
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="event-name">
-                        Container and seal numbers
-                    </label>
-  <span id="event-name-hint" class="govuk-hint">
-   If this is not known at the time of application, leave blank
-  </span>
-                    <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-                </div>
 
 
 

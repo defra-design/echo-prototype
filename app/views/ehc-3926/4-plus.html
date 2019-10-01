@@ -15,96 +15,45 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <div>
-                <h1 id="questionPageHeading" class="govuk-heading-l">About this commodity type: Animal products including food
+                <h1 id="questionPageHeading" class="govuk-heading-l">About the animals
                 </h1>
                 <p>
-                </p><form action="check-your-progress1-plus" method="POST" enctype="application/x-www-form-urlencoded">
-                <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                </p>
 
-                <!-- @formatter:off -->
-                <div class="govuk-form-group " id="checkboxes" data-qa-id="7006EHC-0">
-                    <label class="govuk-label" for="7006EHC-0">Where are the farms of origin for this commodity?</label>
-                    <div class="govuk-hint">Where were the animals reared?</div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-0_1" name="origin" type="checkbox" data-qa-id="7006EHC-0_1" value="Great Britain" {{ checked("origin", "Great Britain") }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_1">
-                            Great Britain
-                        </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-0_2" name="origin" type="checkbox" data-qa-id="7006EHC-0_2" value="Northern Ireland" {{ checked("origin", "Northern Ireland") }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_2">
-                            Northern Ireland
-                        </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-0_3" name="origin" type="checkbox" data-qa-id="7006EHC-0_3" value="Outside the UK"  {{ checked("origin", "Outside the UK") }}>
-                        <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_3">
-                            Outside the UK
-                        </label>
-                    </div>
+
+                <div class="govuk-form-group ">
+                    <label class="govuk-label  " for="3926EHC-0">What is the name of the animal?</label>
+                    <input class="govuk-input form-control-3-4" id="3926EHC-0" name="0" value="" type="text" autofocus="autofocus" data-qa-id="Question-3926EHC-0">
                 </div>
-            </div>
-
-
-           <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h2 class="govuk-heading-m margin-top-45 govuk-\!-margin-bottom-1">
-                    About the processing of your commodity
-                </h2>
-            </legend>
--->
 
 
 
+                <form action="check-your-progress1-plus" method="POST" enctype="application/x-www-form-urlencoded">
 
 
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="event-name">
-                    Commodity code
-                </label>
-  <span id="event-name-hint" class="govuk-hint">
- You can use the trade tariff search on GOV.UK to find this. This code is between 4 and 10 digits, for example 0308305000
-  </span>
-                <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-            </div>
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label  " for="3926EHC-0">What is the age/date of birth of the animal?  </label>
+                        <input class="govuk-input form-control-3-4" id="3926EHC-0" name="0" value="" type="text" autofocus="autofocus" data-qa-id="Question-3926EHC-0">
+                    </div>
 
 
 
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label " for="3926EHC-1">What is the breed of the animal?  </label>
+                        <input class="govuk-input form-control-3-4" id="3926EHC-1" name="1" value="" type="text" data-qa-id="Question-3926EHC-1">
+                    </div>
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label " for="3926EHC-2">What sex is the animal? </label>
+                        <input class="govuk-input form-control-3-4" id="3926EHC-2" name="2" value="" type="text" data-qa-id="Question-3926EHC-2">
+                    </div>
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="event-name">
-                    Description of commodity
-                </label>
-  <span id="event-name-hint" class="govuk-hint">
-For example, frozen Atlantic salmon
-  </span>
-                <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-            </div>
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label  " for="3926EHC-3">What is the colour and any distinguishing features of the animal?  </label>
+                        <input class="govuk-input form-control-3-4" id="3926EHC-3" name="3" value="" type="text" data-qa-id="Question-3926EHC-3">
+                    </div>
 
 
-
-
-
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="event-name">
-                    Production area for frozen or processed bivalve molluscs
-                </label>
-  <span id="event-name-hint" class="govuk-hint">
-For example, Loch Fyne. If not applicable, leave blank.
-  </span>
-                <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-            </div>
-
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="event-name">
-                    Net and gross weight of consignment
-                </label>
-  <span id="event-name-hint" class="govuk-hint">
-Provide the number and the units of measurement. For example, 500 kg (528 kg)
-  </span>
-                <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-            </div>
 
 
 
