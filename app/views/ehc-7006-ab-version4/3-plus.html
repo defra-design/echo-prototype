@@ -41,6 +41,11 @@
 
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                     <div class="govuk-radios__item">
+
+
+
+
+
                         <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
                         <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                             Yes
@@ -157,7 +162,16 @@
 
 
 
-    <form action="check-your-progress2" method="POST">
+
+
+
+
+        <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST" enctype="application/x-www-form-urlencoded">
+        <!-- @formatter:off -->
+
+
+
+
 
 
         <!--<p> OR</p><p>

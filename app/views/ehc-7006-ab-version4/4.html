@@ -18,7 +18,12 @@ GOV.UK Prototype Kit
                 <h1 id="questionPageHeading" class="govuk-heading-xl">About this commodity type: Animal products including food
                 </h1>
                 <p>
-                </p><form action="check-your-progress1-plus" method="POST" enctype="application/x-www-form-urlencoded">
+                </p>
+
+
+                <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST" enctype="application/x-www-form-urlencoded">
+
+
                 <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
                 <!-- @formatter:off -->
@@ -26,19 +31,19 @@ GOV.UK Prototype Kit
                     <label class="govuk-label" for="7006EHC-0">Where are the farms of origin for this commodity?</label>
                     <div class="govuk-hint">Where were the animals reared?</div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-0_1" name="origin" type="checkbox" data-qa-id="7006EHC-0_1" value="Great Britain" {{ checked("origin", "Great Britain") }}>
+                        <input {% if data.origin == "great_britain" %}checked="checked"{% endif %} class="govuk-checkboxes__input" id="7006EHC-0_1" name="origin" type="checkbox" data-qa-id="7006EHC-0_1" value="great_britain" {{ checked("origin", "Great Britain") }}>
                         <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_1">
                             Great Britain
                         </label>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-0_2" name="origin" type="checkbox" data-qa-id="7006EHC-0_2" value="Northern Ireland" {{ checked("origin", "Northern Ireland") }}>
+                        <input {% if data.origin == "n_i" %}checked="checked"{% endif %} class="govuk-checkboxes__input" id="7006EHC-0_2" name="origin" type="checkbox" data-qa-id="7006EHC-0_2" value="n_i" {{ checked("origin", "Northern Ireland") }}>
                         <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_2">
                             Northern Ireland
                         </label>
                     </div>
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="7006EHC-0_3" name="origin" type="checkbox" data-qa-id="7006EHC-0_3" value="Outside the UK"  {{ checked("origin", "Outside the UK") }}>
+                        <input {% if data.origin == "outside_uk" %}checked="checked"{% endif %} class="govuk-checkboxes__input" id="7006EHC-0_3" name="origin" type="checkbox" data-qa-id="7006EHC-0_3" value="outside_uk"  {{ checked("origin", "Outside the UK") }}>
                         <label class="govuk-label govuk-checkboxes__label" for="7006EHC-0_3">
                             Outside the UK
                         </label>

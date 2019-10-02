@@ -8,29 +8,79 @@
 {% block content %}
 
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Sign in using Government Gateway
+        </h1>
+
+        <form method="post" action="confirmation">
+            <input type="hidden" value="yourname@email.com" name="scpEmail">
 
 
-    <div class="govuk-width-container">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                    <div class="govuk-panel govuk-panel--confirmation">
-                        <h1 class="govuk-panel__title">
-                            Your registration to use Exporter online services is complete
-                        </h1>
-                       <!-- <div class="govuk-panel__body">
-                            Your reference number<br><strong>HDJ2123F</strong>
-                        </div>-->
-                    </div>
 
-                </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="userId">
+                    Government Gateway user ID
+                </label>
+
+
+
+  <span id="userId-hint" class="govuk-hint">
+    This could be up to 12 characters.
+  </span>
+
+
+                <input class="govuk-input govuk-input--width-10" id="userId" name="userId" type="text" aria-describedby="userId-hint">
             </div>
+
+
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="password">
+                    Password
+                </label>
+
+
+                <input class="govuk-input govuk-input--width-10" id="password" name="password" type="text">
+            </div>
+
+
+
+
+
+
+
+            <button type="submit" class="govuk-button">
+                Sign in
+            </button>
+
+
+            <p class="govuk-body"><a href="#" class="govuk-link">Create sign in details</a></p>
+            <br>
+            <br>
+            <h2 class="govuk-heading-m">Problems signing in</h2>
+
+
+            <ul class="govuk-list">
+                <li><a href="#" class="govuk-link">I have forgotten my password</a></li>
+                <li><a href="credential-recovery-enter-csid" class="govuk-link">I have forgotten my Government Gateway user ID</a></li>
+                <li><a href="credential-recovery-enter-csid" class="govuk-link">I have forgotten my Government Gateway user ID and password</a></li>
+                <br>
+            </ul>
+
+            <p class="govuk-body"><a href="#">Get help with this page</a></p>
+
+
+
+
+
+        </form>
     </div>
-
-
-        <p>You are now registered with Defra account and Exporter services. </p>
-
-    <a href="check-your-progress" class="govuk-button">Continue to your application</a>
-
+</div>
 
 
 {% endblock %}

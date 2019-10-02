@@ -33,8 +33,11 @@
     </span>
 
 
-                <form action="check-your-progress1" method="POST" enctype="application/x-www-form-urlencoded">
-                    <!-- @formatter:off -->
+
+
+                <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST" enctype="application/x-www-form-urlencoded">
+                <!-- @formatter:off -->
+
 
 
 
@@ -52,13 +55,11 @@
 
                             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                                    <input {% if data.reference_number == "yes" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional-2" name="reference_number" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional-2">
                                     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                                         Yes
                                     </label>
                                 </div>
-
-
 
                                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
 
@@ -72,23 +73,11 @@
 
                                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
                                 </div>
 
 
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                                    <input {% if data.reference_number == "no" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional" name="reference_number" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional">
                                     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                                         No
                                     </label>

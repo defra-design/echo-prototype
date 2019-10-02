@@ -89,7 +89,7 @@
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="50-question">Are you the exporter or the agent of the exporter?
     </td>
-    <td class="govuk-table__cell" scope="row" id="2-answer">{{ data['agent-exporter'] }}
+    <td class="govuk-table__cell" scope="row" id="2-answer">{{ data['exporter_correct'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
         <a class="govuk-link" href="3-plus-plus?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Edit</a>
@@ -99,10 +99,10 @@
     <td class="govuk-table__header" scope="row" id="41-question">You can give your application a reference number to allow you to easily identify it. If you would like to do so, enter it here.
     </td>
     <td class="govuk-table__cell" scope="row" id="3-answer">
-        {{ data['ref-number'] }}
+        {{ data['reference_number'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="1" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-3">Edit</a>
+        <a class="govuk-link" href="3?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-3">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">

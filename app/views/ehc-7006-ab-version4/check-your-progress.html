@@ -44,7 +44,7 @@
                 </a>
               </span>
 
-                    {% if not data.exporter_crorrect %}
+                    {% if not data.exporter_correct %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
                     {% else %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
@@ -60,7 +60,14 @@
                     Confirm application reference
                 </a>
               </span>
-                    <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+
+        {% if not data.reference_number %}
+        <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+        {% else %}
+        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+        {% endif %}
+
+
                 </li>
 
 
@@ -71,7 +78,20 @@
                     Your commodity
                 </a>
               </span>
+
+
+
+
+                    {% if not data.great_britain or not data.n_i or not data.outside_uk %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+
+                    {% elseif data.great_britain or data.n_i or data.outside_uk %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+                    {% endif %}
+
+
                 </li>
 
 
@@ -136,7 +156,7 @@
               </span>
 
 
-                    {% if not data.slaughterhouse_name and not data.address_postcode and not data.data.veterinary_approval_number %}
+                    {% if not data.slaughterhouse_name and not data.address_postcode and not data.veterinary_approval_number %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
                     {% elseif data.slaughterhouse_name and data.address_postcode and data.veterinary_approval_number %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
