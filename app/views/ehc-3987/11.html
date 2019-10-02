@@ -1,0 +1,110 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div>
+
+                    <h1 class="govuk-heading-xl">Origin addresses</h1>
+
+                    <form action="check-your-progress7" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+
+
+                        <div class="govuk-form-group ">
+                            <!-- @formatter:off -->
+                            <fieldset id="3987EHC%20-1" class="govuk-fieldset">
+                                <!-- @formatter:on -->
+                                <legend class="govuk-fieldset__legend" for="3987EHC%20-1">
+                                    <label class="govuk-label govuk-!-font-weiht-bld">Has the horse been resident at the premises of origin for the last 60 days?</label>
+                                </legend>
+
+
+                                <div class="govuk-radios govuk-radios--inline">
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="3987EHC%20-1" value="Yes" name="1" data-qa-id="Question-radio-Yes">
+                                        <label class="govuk-label govuk-radios__label" for="3987EHC%20-1">Yes</label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="3987EHC%20-1" value="No" name="1" data-qa-id="Question-radio-No">
+                                        <label class="govuk-label govuk-radios__label" for="3987EHC%20-1">No</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label govuk-!-font-weight-bld" for="3987EHC%20-2">What are the premises on which the horse has been resident in the last 60 days?</label>
+                            <div class="govuk-hint">List all addresses</div>
+                            <textarea class="govuk-textarea" id="3987EHC%20-2" name="2" rows="3" data-qa-id="Question-3987EHC%20-2"></textarea>
+                        </div>
+
+
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label govuk-!-font-weight-bld" for="3987EHC%20-3">Name of the premises of loading</label>
+                            <input class="govuk-input form-control-3-4" id="3987EHC%20-3" name="3" value="" type="text" data-qa-id="Question-3987EHC%20-3">
+                        </div>
+
+
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label govuk-!-font-weigh-bold" for="3987EHC%20-1">Where was the animal examined? </label>
+                            <div class="govuk-hint">Enter the address of the premises</div>
+                            <textarea class="govuk-textarea" id="3987EHC%20-1" name="1" rows="3" data-qa-id="Question-3987EHC%20-1"></textarea>
+                        </div>
+
+
+
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label govuk-!-font-weighbold" for="3987EHC%20-1">Where was the animal examined? </label>
+                            <div class="govuk-hint">Enter the address of the premises</div>
+                            <textarea class="govuk-textarea" id="3987EHC%20-1" name="1" rows="3" data-qa-id="Question-3987EHC%20-1"></textarea>
+                        </div>
+
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label govuk-!-font-weigh-bold" for="3987EHC%20-2">What is the owner's name and address? </label>
+                            <textarea class="govuk-textarea" id="3987EHC%20-2" name="2" rows="3" data-qa-id="Question-3987EHC%20-2"></textarea>
+                        </div>
+
+
+
+                        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                        </div>
+                    </div>
+
+                </form>
+
+                    <p></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
