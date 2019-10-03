@@ -169,17 +169,17 @@
 
 
 
-
-            <input name="keywords" value="CE12 3ER" class="gem-c-input govuk-input gem-c-input--search-icon" id="finder-keyword-search" type="search" aria-controls="js-search-results-info">
-
-
-
+    <form method="GET">
+            <input name="keywords" value="{{query.keywords or ''}}" class="gem-c-input govuk-input gem-c-input--search-icon" id="finder-keyword-search" type="search" aria-controls="js-search-results-info">
+          </form>
 
 
 
 
 
-    <p style="margin-top: 25px;font-size: 1.8rem">Search results for <span style="font-weight: 700"> "CE12 3ER"</span></p>
+
+    {% if query.keywords %}
+    <p style="margin-top: 25px;font-size: 1.8rem">Search results for <span style="font-weight: 700"> "{{query.keywords}}"</span></p>
 
 
 
@@ -251,49 +251,34 @@
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
                         <label class="govuk-label govuk-radios__label" for="changed-name">
-
                         </label>
                     </div>
                 </div>
             </td>
-
             <td class="govuk-table__cell">
                 ADM exports Ltd.
             </td>
             <td class="govuk-table__cell wrap">
                 <span>Hornbeam House Electra Way Crewe CE12 3ER</span>
-
             </td>
             <td class="govuk-table__cell">
-
             </td>
-
             <td class="govuk-table__cell">
                 <form action="15c" method="POST">
-
-
-
                     <input type="hidden" name="address1" value="Hornbeam House">
                     <input type="hidden" name="address2" value="Electra Way">
                     <input type="hidden" name="city" value="Crewe">
                     <input type="hidden" name="county" value="">
                     <input type="hidden" name="postcode" value="CW12 3ER">
-
                     <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
                     <input type="hidden" name="ehcNumber" value="7006EHC">
                     <input type="hidden" name="applicationFormId" value="1721147986171">
                     <input type="hidden" name="pageSequence" value="1">
                     <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
-
                     <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
                     <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
-
                 </form></td>
         </tr>
-
-
-
-
         <tr class="govuk-table__row">
 
             <td class="govuk-table__cell">
@@ -442,7 +427,7 @@
 
 </form>
 
-
+  {% endif %}
 
     </div>
 
