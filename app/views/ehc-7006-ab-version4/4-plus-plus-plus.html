@@ -169,17 +169,17 @@
 
 
 
-
-            <input name="keywords" value="CE12 3ER" class="gem-c-input govuk-input gem-c-input--search-icon" id="finder-keyword-search" type="search" aria-controls="js-search-results-info">
-
-
-
+    <form method="GET">
+            <input name="keywords" value="{{query.keywords or ''}}" class="gem-c-input govuk-input gem-c-input--search-icon" id="finder-keyword-search" type="search" aria-controls="js-search-results-info">
+          </form>
 
 
 
 
 
-    <p style="margin-top: 25px;font-size: 1.8rem">Search results for <span style="font-weight: 700"> "CE12 3ER"</span></p>
+
+    {% if query.keywords %}
+    <p style="margin-top: 25px;font-size: 1.8rem">Search results for <span style="font-weight: 700"> "{{query.keywords}}"</span></p>
 
     <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="3-plus" {% endif %} method="POST">
 
@@ -254,29 +254,20 @@
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
                         <label class="govuk-label govuk-radios__label" for="changed-name">
-
                         </label>
                     </div>
                 </div>
             </td>
-
             <td class="govuk-table__cell">
                 ADM exports Ltd.
             </td>
             <td class="govuk-table__cell wrap">
                 <span>Hornbeam House Electra Way Crewe CE12 3ER</span>
-
             </td>
             <td class="govuk-table__cell">
-
             </td>
 
-
         </tr>
-
-
-
-
         <tr class="govuk-table__row">
 
             <td class="govuk-table__cell">
@@ -385,7 +376,7 @@
 
 </form>
 
-
+  {% endif %}
 
     </div>
 
