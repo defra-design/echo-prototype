@@ -181,6 +181,9 @@
 
     <p style="margin-top: 25px;font-size: 1.8rem">Search results for <span style="font-weight: 700"> "CE12 3ER"</span></p>
 
+    <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="3-plus" {% endif %} method="POST">
+
+
 
 
     <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER" style="margin-top: 20px">
@@ -200,7 +203,7 @@
             <td class="govuk-table__cell">
                 <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <input {% if data.certifier == "A1 Export" %}checked="checked"{% endif %} class="govuk-radios__input" id="changed-name" name="certifier" type="radio" value="A1 Export">
                         <label class="govuk-label govuk-radios__label" for="changed-name">
 
                         </label>
@@ -219,7 +222,7 @@
                 <span>CV18 7YT</span>
             </td>
 
-            <td class="govuk-table__cell">
+           <!-- <td class="govuk-table__cell">
                 <form action="15c" method="POST">
 
                     <input type="hidden" name="address1" value="123 Address Line1">
@@ -238,7 +241,7 @@
                     <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
 
                 </form>
-            </td>
+            </td>-->
         </tr>
 
 
@@ -268,27 +271,7 @@
 
             </td>
 
-            <td class="govuk-table__cell">
-                <form action="15c" method="POST">
 
-
-
-                    <input type="hidden" name="address1" value="Hornbeam House">
-                    <input type="hidden" name="address2" value="Electra Way">
-                    <input type="hidden" name="city" value="Crewe">
-                    <input type="hidden" name="county" value="">
-                    <input type="hidden" name="postcode" value="CW12 3ER">
-
-                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
-                    <input type="hidden" name="ehcNumber" value="7006EHC">
-                    <input type="hidden" name="applicationFormId" value="1721147986171">
-                    <input type="hidden" name="pageSequence" value="1">
-                    <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
-
-                    <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
-                    <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
-
-                </form></td>
         </tr>
 
 
@@ -318,27 +301,7 @@
 
             </td>
 
-            <td class="govuk-table__cell">
-                <form action="15c" method="POST">
 
-
-
-                    <input type="hidden" name="address1" value="Hornbeam House">
-                    <input type="hidden" name="address2" value="Electra Way">
-                    <input type="hidden" name="city" value="Crewe">
-                    <input type="hidden" name="county" value="">
-                    <input type="hidden" name="postcode" value="CW12 3ER">
-
-                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
-                    <input type="hidden" name="ehcNumber" value="7006EHC">
-                    <input type="hidden" name="applicationFormId" value="1721147986171">
-                    <input type="hidden" name="pageSequence" value="1">
-                    <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
-
-                    <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
-                    <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
-
-                </form></td>
         </tr>
 
 
@@ -369,27 +332,7 @@
 
             </td>
 
-            <td class="govuk-table__cell">
-                <form action="15c" method="POST">
 
-
-
-                    <input type="hidden" name="address1" value="Hornbeam House">
-                    <input type="hidden" name="address2" value="Electra Way">
-                    <input type="hidden" name="city" value="Crewe">
-                    <input type="hidden" name="county" value="">
-                    <input type="hidden" name="postcode" value="CW12 3ER">
-
-                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
-                    <input type="hidden" name="ehcNumber" value="7006EHC">
-                    <input type="hidden" name="applicationFormId" value="1721147986171">
-                    <input type="hidden" name="pageSequence" value="1">
-                    <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
-
-                    <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
-                    <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
-
-                </form></td>
         </tr>
 
 
@@ -421,7 +364,7 @@
     </div>-->
 
 
-    <form action="3-plus" method="POST">
+
 
     <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0" style="margin-top: 70px">
 

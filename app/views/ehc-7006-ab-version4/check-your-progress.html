@@ -82,10 +82,10 @@
 
 
 
-                    {% if not data.great_britain or not data.n_i or not data.outside_uk %}
+                    {% if not data.origin and not data.processing_day and not data.processing_year and not data.processing_month and not data.processing_day2 and not data.processing_year2 and not data.processing_month2 and not data.where_slaughtered %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
 
-                    {% elseif data.great_britain or data.n_i or data.outside_uk %}
+                    {% elseif data.origin and data.processing_day and data.processing_year and data.processing_month and data.processing_day2 and data.processing_year2 and data.processing_month2 and data.where_slaughtered %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                     {% else %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
@@ -152,7 +152,9 @@
             <ul class="app-task-list__items">
                 <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                   Product details
+                      <a href="6" aria-describedby="company-information-completed">
+                          Product details
+                      </a>
               </span>
 
 
