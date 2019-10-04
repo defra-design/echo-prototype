@@ -17,7 +17,6 @@ module.exports = function(router) {
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function(req, res) {
     console.log("default get routing page for: "+base_url + req.params[0])
-    console.log(req.session.data)
     // clear session info
     if(req.query.destroy=="yes"){
       req.session.destroy();
