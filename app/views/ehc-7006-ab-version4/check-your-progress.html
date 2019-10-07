@@ -106,7 +106,17 @@
                     Confirm your vet
                 </a>
               </span>
+
+
+                    {% if not data.certifier and not data.alert %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% elseif data.certifier and data.alert  %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+                    {% endif %}
+
+
                 </li>
 
 
@@ -247,7 +257,6 @@
 
 
 
-<form action="6" method="POST" >
 
 
 
@@ -256,12 +265,17 @@
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full govuk-body">
-            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+
+
+            <form action="dashboard">
+                <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+            </form>
+
+
         </div>
     </div>
 
 
-</form>
 
 
 {% endblock %}
