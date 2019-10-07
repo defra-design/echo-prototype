@@ -14,8 +14,7 @@
     </div>
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-
-                <form action="16" method="POST" id="addr-form">
+                <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="16" {% endif %} method="POST" >
                     <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
                     <input type="hidden" name="ehcNumber" value="7006EHC">
                     <input type="hidden" name="applicationFormId" value="1721147986171">
@@ -61,14 +60,15 @@
 
                             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                                    <input  {% if data.ov_address == "	OV address" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional" name="ov_address" type="radio" value="OV address" data-aria-controls="conditional-how-contacted-conditional">
                                     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                                         Yes, use this address
                                     </label>
                                 </div>
 
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                                    <input  {% if data.ov_address == "	Different address" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional" name="ov_address" type="radio" value="Different address" data-aria-controls="conditional-how-contacted-conditional">
+
                                     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                                         No, the OV is based at a different address
                                     </label>

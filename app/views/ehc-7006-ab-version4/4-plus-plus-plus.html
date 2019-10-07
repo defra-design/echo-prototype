@@ -222,26 +222,8 @@
                 <span>CV18 7YT</span>
             </td>
 
-           <!-- <td class="govuk-table__cell">
-                <form action="15c" method="POST">
 
-                    <input type="hidden" name="address1" value="123 Address Line1">
-                    <input type="hidden" name="address2" value="1">
-                    <input type="hidden" name="city" value="1">
-                    <input type="hidden" name="county" value="d">
-                    <input type="hidden" name="postcode" value="POSTCODE">
 
-                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
-                    <input type="hidden" name="ehcNumber" value="7006EHC">
-                    <input type="hidden" name="applicationFormId" value="1721147986171">
-                    <input type="hidden" name="pageSequence" value="1">
-                    <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
-
-                    <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
-                    <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
-
-                </form>
-            </td>-->
         </tr>
 
 
@@ -252,7 +234,7 @@
             <td class="govuk-table__cell">
                 <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <input {% if data.certifier == "ADM exports Ltd" %}checked="checked"{% endif %} class="govuk-radios__input" id="changed-name" name="certifier" type="radio" value="ADM exports Ltd">
                         <label class="govuk-label govuk-radios__label" for="changed-name">
                         </label>
                     </div>
@@ -273,7 +255,7 @@
             <td class="govuk-table__cell">
                 <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <input {% if data.certifier == "	Chinese Wall Traders" %}checked="checked"{% endif %} class="govuk-radios__input" id="changed-name" name="certifier" type="radio" value="	Chinese Wall Traders">
                         <label class="govuk-label govuk-radios__label" for="changed-name">
 
                         </label>
@@ -304,7 +286,7 @@
             <td class="govuk-table__cell">
                 <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <input {% if data.certifier == "Exports Fresh Produce" %}checked="checked"{% endif %} class="govuk-radios__input" id="changed-name" name="certifier" type="radio" value="Exports Fresh Produce">
                         <label class="govuk-label govuk-radios__label" for="changed-name">
 
                         </label>

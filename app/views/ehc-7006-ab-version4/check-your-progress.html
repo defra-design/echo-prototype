@@ -106,7 +106,17 @@
                     Confirm your vet
                 </a>
               </span>
+
+
+                    {% if not data.certifier and not data.alert %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% elseif data.certifier and data.alert  %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+                    {% endif %}
+
+
                 </li>
 
 
