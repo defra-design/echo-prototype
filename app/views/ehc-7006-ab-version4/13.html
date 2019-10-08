@@ -32,7 +32,7 @@ GOV.UK Prototype Kit
                     <div class="govuk-form-group ">
                         <label class="govuk-label" for="7006EHC-0">Type and number of packages? </label>
                         <div class="govuk-hint">Enter the number and type of packages of this product.</div>
-                        <textarea  {% if data.packages %}value="{{data.packages}}"{% endif %}  class="govuk-textarea" id="7006EHC-0" name="packages" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                        <textarea   class="govuk-textarea" id="7006EHC-0" name="packages" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.packages %}{{data.packages}}{% endif %} </textarea>
                     </div>
 
                     <div class="govuk-form-group ">
@@ -46,13 +46,13 @@ GOV.UK Prototype Kit
                     <div class="govuk-form-group ">
                         <label class="govuk-label " for="7006EHC-0">What are the batch numbers? </label>
                         <div class="govuk-hint">Enter the range of batch codes or lot numbers (first to last) for this product.</div>
-                        <textarea {% if data.batch %}value="{{data.batch}}"{% endif %} class="govuk-textarea" id="7006EHC-0" name="batch" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                        <textarea class="govuk-textarea" id="7006EHC-0" name="batch" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.batch %}{{data.batch}}{% endif %} </textarea>
                     </div>
 
                     <div class="govuk-form-group ">
                         <label class="govuk-label " for="7006EHC-0">What are the shipping marks? </label>
                         <div class="govuk-hint">The approval number of the cutting plant or slaughterhouse in the form UK/1234/EC may be used as the shipping mark.</div>
-                        <textarea {% if data.marks %}value="{{data.marks}}"{% endif %} class="govuk-textarea" id="7006EHC-0" name="marks" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                        <textarea class="govuk-textarea" id="7006EHC-0" name="marks" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.marks %}{{data.marks}}{% endif %} </textarea>
                     </div>
 
 
@@ -60,7 +60,7 @@ GOV.UK Prototype Kit
                     <div class="govuk-form-group ">
                         <label class="govuk-label " for="7006EHC-0">What is the storage temperature? </label>
                         <div class="govuk-hint">This should only be written in this format: ‘ -18 degrees Celsius’ </div>
-                        <textarea  {% if data.temperature %}value="{{data.temperature}}"{% endif %} class="govuk-textarea" id="7006EHC-0" name="temperature" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                        <textarea  class="govuk-textarea" id="7006EHC-0" name="temperature" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.temperature %}{{data.temperature}}{% endif %} </textarea>
                     </div>
 
 
