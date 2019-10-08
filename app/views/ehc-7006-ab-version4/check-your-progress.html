@@ -350,17 +350,39 @@
                 <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
-                   Check your answers
+                  <a href="check-your-answers" aria-describedby="medical-information-completed">
+                      Check your answers
+                  </a>
 
               </span>
+
+
+                    {% if not data.specimen %}
+                    <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% endif %}
+
+
                 </li>
 
                 <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
-                   Declaration and submission
+                    <a href="review" aria-describedby="medical-information-completed">
+                        Declaration and submission
+                    </a>
 
-              </span>
+                     </span>
+
+                       {% if not data.exporter_correct %}
+                    <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% endif %}
+
+
+
                 </li>
 
 

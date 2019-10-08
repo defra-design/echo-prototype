@@ -16,7 +16,7 @@
                     Preview your certificate
                 </h1>
 
-                <form action="check-your-progress10" method="POST" >
+                <form action="check-your-progress" method="POST" >
 
 
 
@@ -50,7 +50,7 @@
 
 
                 <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
-                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                        <input {% if data.specimen %}value="{{data.specimen}}"{% endif %} class="govuk-button margin-top-30" type="submit" name="specimen" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
                     </div>
                 </form>
                     <div class="govuk-grid-row">
