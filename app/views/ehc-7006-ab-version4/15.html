@@ -17,13 +17,19 @@ GOV.UK Prototype Kit
 
                 <h1 class="govuk-heading-xl">Name and address of the organisation receiving your export</h1>
 
-                <form action="check-your-progress9" method="POST" >
+
+                    <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST">
+
+
+
+
+
                     <fieldset class="govuk-fieldset">
 
 
                         <div class="govuk-form-group ">
                             <label class="govuk-label" for="7006EHC-0">What is the name of the importer? </label>
-                            <input class="govuk-textarea" id="7006EHC-0" name="consignor" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                            <input {% if data.consignor %}value="{{data.consignor}}"{% endif %} class="govuk-textarea" id="7006EHC-0" name="consignor" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
                         </div>
 
 
@@ -41,7 +47,7 @@ GOV.UK Prototype Kit
                                 <label class="govuk-label" for="certifier-address-line-1">
                                     Importer address
                                 </label>
-                                <textarea class="govuk-textarea" id="certifier-address-line-1" name="address1" type="text" value="" rows="5"></textarea>
+                                <textarea  {% if data.importer_address %}value="{{data.importer_address}}"{% endif %}  class="govuk-textarea" id="certifier-address-line-1" name="importer_address" type="text" value="" rows="5"></textarea>
                             </div>
                         </fieldset>
 

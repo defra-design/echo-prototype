@@ -16,7 +16,13 @@ GOV.UK Prototype Kit
        Adding a product step 2 of 3
         </span>
                 <h1 id="questionPageHeading" class="govuk-heading-xl"  style="margin-bottom: 10px">Cutting plant details</h1>
-                <h2 style="font-weight: 300" class="govuk-heading-m">What are the details of the slaughterhouse of origin?</h2><form action="11-minus" method="POST" >
+                <h2 style="font-weight: 300" class="govuk-heading-m">What are the details of the slaughterhouse of origin?</h2>
+
+
+                <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="11-minus" {% endif %} method="POST">
+
+
+
                 <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
                 <!-- @formatter:off -->
@@ -26,7 +32,7 @@ GOV.UK Prototype Kit
                         <label class="govuk-label" for="full-name">
                             Provide cutting plant name
                         </label>
-                        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+                        <input {% if data.cutting_name %}value="{{data.cutting_name}}"{% endif %}  class="govuk-input" id="full-name" name="cutting_name" type="text" autocomplete="name" spellcheck="false">
                     </div>
 
 
@@ -43,7 +49,7 @@ GOV.UK Prototype Kit
                         <label class="govuk-label" for="address-postcode">
                             Postcode
                         </label>
-                        <input class="govuk-input govuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" value="" aria-describedby="address-postcode-error">
+                        <input {% if data.cutting_postcode %}value="{{data.cutting_postcode}}"{% endif %} class="govuk-input govuk-input--width-10 " id="address-postcode" name="cutting_postcode" type="text" value="" aria-describedby="address-postcode-error">
                     </div>
                     <a href="#" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
                         Find address
@@ -66,7 +72,7 @@ GOV.UK Prototype Kit
                         <label class="govuk-label" for="full-name">
                             Provide veterinary approval number
                         </label>
-                        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+                        <input {% if data.cutting_van %}value="{{data.cutting_van}}"{% endif %}  class="govuk-input" id="full-name" name="cutting_van" type="text" autocomplete="name" spellcheck="false">
                     </div>
 
 
@@ -84,22 +90,28 @@ GOV.UK Prototype Kit
 
                 </div>
                 <div class="govuk-form-group" {{ data['production-dates'] }}>
+
+
                 <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+
 
                     <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                         From date
                     </label>
 
-                         <span id="passport-issued-hint" class="govuk-hint">
-      For example, 27 3 2007
-    </span>
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 27 3 2007
+            </span>
+
+
                     <div class="govuk-date-input" id="passport-issued">
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                                     Day
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                                <input {% if data.cutting_day %}value="{{data.cutting_day}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="cutting_day" type="number" pattern="[0-9]*">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
@@ -107,7 +119,7 @@ GOV.UK Prototype Kit
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                                     Month
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                                <input {% if data.cutting_month %}value="{{data.cutting_month}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="cutting_month" type="number" pattern="[0-9]*">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
@@ -115,7 +127,7 @@ GOV.UK Prototype Kit
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                                     Year
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                                <input {% if data.cutting_year %}value="{{data.cutting_year}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="cutting_year" type="number" pattern="[0-9]*">
                             </div>
                         </div>
                     </div>
@@ -126,20 +138,24 @@ GOV.UK Prototype Kit
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
 
+
+
+
                     <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                         To date
                     </label>
 
-                         <span id="passport-issued-hint" class="govuk-hint">
-      For example, 27 4 2007
-    </span>
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 27 4 2007
+            </span>
+
                     <div class="govuk-date-input" id="passport-issued">
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                                     Day
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                                <input {% if data.cutting_day2 %}value="{{data.cutting_day2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="cutting_day2" type="number" pattern="[0-9]*">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
@@ -147,7 +163,7 @@ GOV.UK Prototype Kit
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                                     Month
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                                <input {% if data.cutting_month2 %}value="{{data.cutting_month2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="cutting_month2" type="number" pattern="[0-9]*">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
@@ -155,11 +171,15 @@ GOV.UK Prototype Kit
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                                     Year
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                                <input {% if data.cutting_year2 %}value="{{data.cutting_year2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="cutting_year2" type="number" pattern="[0-9]*">
                             </div>
                         </div>
                     </div>
-                </fieldset>
+
+
+</fieldset>
+
+
             </div>
 
 

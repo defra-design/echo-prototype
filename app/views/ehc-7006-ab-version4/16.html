@@ -31,22 +31,24 @@ GOV.UK Prototype Kit
                         </h1>
 
                     </legend>
+                    <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST" >
+
 
 
 
 
                     <div class="govuk-radios govuk-radios">
                         <div class="govuk-radios__item">
-                            <input type="radio" class="govuk-radios__input" id="England" value="England" name="region" data-qa-id="Question-radio-">
+                            <input {% if data.region == "England" %}checked="checked"{% endif %} type="radio" class="govuk-radios__input" id="England" value="England" name="region" data-qa-id="Question-radio-">
                             <label class="govuk-label govuk-radios__label" for="England">England</label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input type="radio" class="govuk-radios__input" id="Scotland" value="Scotland" name="region" data-qa-id="Question-radio-">
+                            <input {% if data.region == "Scotland" %}checked="checked"{% endif %} type="radio" class="govuk-radios__input" id="Scotland" value="Scotland" name="region" data-qa-id="Question-radio-">
                             <label class="govuk-label govuk-radios__label" for="Scotland">Scotland</label>
                         </div>
                         <p class="form-block" style="padding-left:10px">or</p>
                         <div class="govuk-radios__item">
-                            <input type="radio" class="govuk-radios__input" id="Wales" value="Wales" name="region" data-qa-id="Question-radio-">
+                            <input {% if data.region == "Wales" %}checked="checked"{% endif %} type="radio" class="govuk-radios__input" id="Wales" value="Wales" name="region" data-qa-id="Question-radio-">
                             <label class="govuk-label govuk-radios__label" for="Wales">Wales</label>
                         </div>
                     </div>
@@ -55,7 +57,9 @@ GOV.UK Prototype Kit
 
 
             <div class="govuk-grid-row">
-                <form action="check-your-progress3" method="GET">
+
+
+
                     <input class="govuk-button" type="submit" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
 
                 </form>
