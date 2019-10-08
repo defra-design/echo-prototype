@@ -82,10 +82,10 @@
 
 
 
-                    {% if not data.origin and not data.processing_day and not data.processing_year and not data.processing_month and not data.processing_day2 and not data.processing_year2 and not data.processing_month2 and not data.where_slaughtered %}
+                    {% if not data.origin  and not data.where_slaughtered %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
 
-                    {% elseif data.origin and data.processing_day and data.processing_year and data.processing_month and data.processing_day2 and data.processing_year2 and data.processing_month2 and data.where_slaughtered %}
+                    {% elseif data.origin  and data.where_slaughtered %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                     {% else %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
@@ -127,7 +127,17 @@
                     Confirm where to send your certificate
                 </a>
               </span>
+
+
+                    {% if not data.ov_address and not data.region %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% elseif data.ov_address and data.region %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+                    {% endif %}
+
+
                 </li>
 
 
@@ -168,9 +178,24 @@
               </span>
 
 
-                    {% if not data.slaughterhouse_name and not data.address_postcode and not data.veterinary_approval_number %}
+                    {% if not data.slaughterhouse_name and not data.address_postcode and not data.veterinary_approval_number and not data.processing_year and not data.processing_month and not data.processing_day2 and not data.processing_year2 and not data.processing_month2 and not data.processing_day
+
+                    and not data.shelf_year and not data.cutting_month and not data.cutting_day2 and not data.cutting_year2 and not data.cutting_month2 and not data.cutting_day
+                    and not data.processed_year and not data.processed_month and not data.processed_day2 and not data.processed_year2 and not data.processed_month2 and not data.processed_day
+
+                    and not data.cutting_name and not data.cutting_postcode and not data.cutting_van and not data.product_name
+                    and not data.product_type
+                    %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-                    {% elseif data.slaughterhouse_name and data.address_postcode and data.veterinary_approval_number %}
+                    {% elseif data.slaughterhouse_name and data.address_postcode and data.veterinary_approval_number and data.processing_month and data.processing_day2 and data.processing_year2 and data.processing_month2 and data.processing_day and data.processing_year
+
+                    and data.cutting_month and data.cutting_day2 and data.cutting_year2 and data.cutting_month2 and data.cutting_day and data.cutting_year
+
+                    and data.processed_month and data.processed_day2 and data.processed_year2 and data.processed_month2 and data.processed_day and data.processed_year
+
+                    and data.cutting_name and data.cutting_postcode and data.cutting_van
+                    and data.product_name and data.product_type
+                    %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                     {% else %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
@@ -183,29 +208,67 @@
 
 
 
-
-
-
-
                 <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-
+                <a href="11" aria-describedby="medical-information-completed">
                     Cold store details
-  </span>
-                </li>
+                </a>
+              </span>
+
+
+
+
+                    {% if not data.coldstore_postcode and not data.coldstore_name and not data.coldstore_van
+
+                    and not data.shelf_year and not data.shelf_month and not data.shelf_day2 and not data.shelf_year2 and not data.shelf_month2 and not data.shelf_day
+
+                    %}
+                    <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% elseif data.coldstore_postcode and data.coldstore_name and data.coldstore_van
+                    and data.shelf_year and data.shelf_month and data.shelf_day2 and data.shelf_year2 and data.shelf_month2 and data.shelf_day
+
+
+                    %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+                    {% endif %}
+
+
 
 
 
 
                 <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                    Transport details
+                     <a href="13" aria-describedby="medical-information-completed">
+                         Transport details
+                     </a>
               </span>
-                </li>
+
+                {% if not data.packages and not data.weight and not data.batch and not data.marks and not data.temperature %}
+                <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                {% elseif data.packages and data.weight and data.batch and data.marks and data.temperature %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                {% else %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+                {% endif %}
+
+
+
+
+            </li>
+
+
+
+
                 <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                    Importer details
+                   <a href="15" aria-describedby="medical-information-completed">
+                       Importer details
+                   </a>
               </span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                 </li>
 
 
@@ -215,10 +278,13 @@
 
                 <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                    The timings of your certification and export
+                      <a href="5" aria-describedby="read-declaration-completed">
+                          The timings of your certification and export
+                      </a>
               </span>
-                </li>
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
 
+                </li>
 
 
 

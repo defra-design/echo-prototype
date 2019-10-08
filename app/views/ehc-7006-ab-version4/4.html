@@ -49,114 +49,11 @@ GOV.UK Prototype Kit
 
 
 
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h2 class="govuk-heading-m margin-top-45 govuk-\!-margin-bottom-1">
-          About the processing of your commodity
-        </h2>
-      </legend>
-
-
-
-      <div class="govuk-form-group ">
-        <label class="govuk-label govuk-\!-margin-bottom-8" for="7006EHC-2" style="margin-bottom: 20px">When were the animals slaughtered?</label>
 
 
 
 
 
-
-
-
-        <div class="govuk-form-group" value="{{ data['when-slaughtered'] }}">
-          <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
-
-
-
-            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-              From date
-            </label>
-
-            <span id="passport-issued-hint" class="govuk-hint">
-              For example, 27 3 2007
-            </span>
-
-
-            <div class="govuk-date-input" id="passport-issued">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                    Day
-                  </label>
-                  <input {% if data.processing_day %}value="{{data.processing_day}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="processing_day" type="number" pattern="[0-9]*">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                    Month
-                  </label>
-                  <input {% if data.processing_month %}value="{{data.processing_month}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="processing_month" type="number" pattern="[0-9]*">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                    Year
-                  </label>
-                  <input {% if data.processing_year %}value="{{data.processing_year}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="processing_year" type="number" pattern="[0-9]*">
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
-
-
-
-
-            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-              To date
-            </label>
-
-            <span id="passport-issued-hint" class="govuk-hint">
-              For example, 27 4 2007
-            </span>
-
-
-            <div class="govuk-date-input" id="passport-issued">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                    Day
-                  </label>
-                  <input {% if data.processing_day2 %}value="{{data.processing_day2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="processing_day2" type="number" pattern="[0-9]*">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                    Month
-                  </label>
-                  <input {% if data.processing_month2 %}value="{{data.processing_month2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="processing_month2" type="number" pattern="[0-9]*">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                    Year
-                  </label>
-                  <input {% if data.processing_year2 %}value="{{data.processing_year2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="processing_year2" type="number" pattern="[0-9]*">
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-
-      </div>
 
       <div class="govuk-form-group " id="checkboxes" data-qa-id="7006EHC-3">
         <label class="govuk-label" for="7006EHC-3">Where were the animals slaughtered?</label>

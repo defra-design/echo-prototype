@@ -53,14 +53,14 @@
 
                             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input {% if data.exporter_correct == "yes" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional" name="exporter_correct" type="radio" value="yes" data-aria-controls="conditional-how-contacted-conditional">
+                                    <input {% if data.exporter_correct == "Yes" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional" name="exporter_correct" type="radio" value="Yes" data-aria-controls="conditional-how-contacted-conditional">
                                     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                                         Yes
                                     </label>
                                 </div>
 
                                 <div class="govuk-radios__item">
-                                    <input {% if data.exporter_correct == "no" %}checked="checked"{%endif%} class="govuk-radios__input" id="how-contacted-conditional-2" name="exporter_correct" type="radio" value="no" aria-controls="conditional-how-contacted-conditional-2" aria-expanded="false">
+                                    <input {% if data.exporter_correct == "No" %}checked="checked"{%endif%} class="govuk-radios__input" id="how-contacted-conditional-2" name="exporter_correct" type="radio" value="No" aria-controls="conditional-how-contacted-conditional-2" aria-expanded="false">
                                     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                                         No
                                     </label>

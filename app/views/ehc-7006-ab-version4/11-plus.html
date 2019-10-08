@@ -24,7 +24,10 @@
             <h1 class="govuk-heading-xl" style="margin-bottom: 5px">About your product</h1>
             <h2 class="govuk-heading-m" style="font-weight: 300;margin-bottom: 10px">You can add up to 4 products</h2>
             <p>
-            </p><form action="check-your-progress6" method="POST" >
+            </p>
+                <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST">
+
+
             <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
 

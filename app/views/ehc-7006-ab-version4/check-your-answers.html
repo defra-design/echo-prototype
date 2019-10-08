@@ -121,25 +121,17 @@
     <td class="govuk-table__cell" scope="row" id="4-answer">{{ data['exporter'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="1" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Edit</a>
+        <a class="govuk-link" href="1?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Edit</a>
     </td>
 </tr>
-<tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="48-question">The paper certificate will be sent to your nominated address for certification. How would you like the certificate to be delivered?
-    </td>
-    <td class="govuk-table__cell" scope="row" id="5-answer">{{ data['certificate'] }}
-    </td>
-    <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="4" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Edit</a>
-    </td>
-</tr>
+
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="49-question">In which region will the certification take place?
     </td>
     <td class="govuk-table__cell" scope="row" id="6-answer">{{ data['region'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="4" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Edit</a>
+        <a class="govuk-link" href="16?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Edit</a>
     </td>
 </tr>
 
@@ -153,13 +145,46 @@
     </td>
 </tr>
 
+
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="44-question">Slaughterhouse name
+    </td>
+    <td class="govuk-table__cell" scope="row" id="7-answer">{{ data['slaughterhouse_name'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="7?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="44-question">Slaughterhouse postcode
+    </td>
+    <td class="govuk-table__cell" scope="row" id="7-answer">{{ data['address_postcode'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="7?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="44-question">Slaughterhouse veterinary approval number
+    </td>
+    <td class="govuk-table__cell" scope="row" id="7-answer">{{ data['veterinary_approval_number'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="7?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Edit</a>
+    </td>
+</tr>
+
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="44-question">What is the origin of the raw materials?
     </td>
     <td class="govuk-table__cell" scope="row" id="7-answer">{{ data['origin'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="5" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Edit</a>
+        <a class="govuk-link" href="5?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
@@ -236,41 +261,86 @@
     </td>
 </tr>
 <tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="224-question">What are the details of the cutting plant?
+    <td class="govuk-table__header" scope="row" id="224-question">Provide cutting plant name
+
     </td>
-    <td class="govuk-table__cell" scope="row" id="16-answer">{{ data['cutting-plant'] }}
+    <td class="govuk-table__cell" scope="row" id="16-answer">{{ data['cutting_name'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="8" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-16">Edit</a>
+        <a class="govuk-link" href="9?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-16">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="262-question">Provide name, address and Veterinary Approval number for any additional cutting plants.
+    <td class="govuk-table__header" scope="row" id="262-question">Cutting plant address
     </td>
-    <td class="govuk-table__cell" scope="row" id="17-answer">{{ data['cutting-approval'] }}
+    <td class="govuk-table__cell" scope="row" id="17-answer">{{ data['cutting_postcode'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="8" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-17">Edit</a>
+        <a class="govuk-link" href="9?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-17">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="263-question">Provide name, address and Veterinary Approval number for any additional cutting plants.
+    <td class="govuk-table__header" scope="row" id="263-question">Provide cutting plant Veterinary Approval number.
     </td>
-    <td class="govuk-table__cell" scope="row" id="18-answer">{{ data['cutting-plant'] }}
+    <td class="govuk-table__cell" scope="row" id="18-answer">{{ data['cutting_van'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="8" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-18">Edit</a>
+        <a class="govuk-link" href="9?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-18">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="46-question">What are the dates of processing of the product?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="8-answer">From {{ data['cutting_day'] }} {{  data['cutting_month'] }} {{  data['cutting_year'] }} To {{ data['cutting_day2'] }} {{  data['cutting_month2']}} {{  data['cutting_year2'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="4?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-8">Edit</a>
+    </td>
+</tr>
+
+
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="227-question">What are the details of the cold store?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="19-answer">{{ data['coldstore_name'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="11?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-19">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="227-question">What are the details of the cold store?
     </td>
-    <td class="govuk-table__cell" scope="row" id="19-answer">{{ data['cold-store'] }}
+    <td class="govuk-table__cell" scope="row" id="19-answer">{{ data['coldstore_postcode'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="9" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-19">Edit</a>
+        <a class="govuk-link" href="11?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-19">Edit</a>
+    </td>
+</tr><tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="227-question">What are the details of the cold store?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="19-answer">{{ data['coldstore_van'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="11?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-19">Edit</a>
     </td>
 </tr>
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="46-question">What is the shelf life of the product(s)?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="8-answer">From {{ data['shelf_day'] }} {{  data['shelf_month'] }} {{  data['shelf_year'] }} To {{ data['shelf_day2'] }} {{  data['shelf_month2']}} {{  data['shelf_year2'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="11?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-8">Edit</a>
+    </td>
+</tr>
+
+
 
 
 <tr class="govuk-table__row"><td/>&nbsp;</td></tr>
@@ -286,21 +356,37 @@
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="228-question">What is the name of the product?
     </td>
-    <td class="govuk-table__cell" scope="row" id="20-answer">{{ data['product-name'] }}
+    <td class="govuk-table__cell" scope="row" id="20-answer">{{ data['product_name'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="10" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-20">Edit</a>
+        <a class="govuk-link" href="11-minus?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-20">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="229-question">What type of product is it?
     </td>
-    <td class="govuk-table__cell" scope="row" id="21-answer">{{ data['product-type'] }}
+    <td class="govuk-table__cell" scope="row" id="21-answer">{{ data['product_type'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="10" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-21">Edit</a>
+        <a class="govuk-link" href="11-minus?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-21">Edit</a>
     </td>
 </tr>
+
+
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="46-question">Over what range of dates was the product processed, wrapped and packaged for export?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="8-answer">From {{ data['processed_day'] }} {{  data['processed_month'] }} {{  data['processed_year'] }} To {{ data['processed_day2'] }} {{  data['processed_month2']}} {{  data['processed_year2'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="11-minus?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-8">Edit</a>
+    </td>
+</tr>
+
+
+
 
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="230-question">What is the type and number of packages?
@@ -308,27 +394,19 @@
     <td class="govuk-table__cell" scope="row" id="22-answer">{{ data['packages'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="11" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-22">Edit</a>
+        <a class="govuk-link" href="13?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-22">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="231-question">What is the gross weight of the product(s)?
+    <td class="govuk-table__header" scope="row" id="231-question">What is the gross and net weight of the product?
     </td>
-    <td class="govuk-table__cell" scope="row" id="23-answer">{{ data['weight-gross'] }}
-    </td>
-    <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="12" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-23">Edit</a>
-    </td>
-</tr>
-<tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="232-question">What is the net weight of the product(s)?
-    </td>
-    <td class="govuk-table__cell" scope="row" id="24-answer">{{ data['weight-net'] }}
+    <td class="govuk-table__cell" scope="row" id="23-answer">{{ data['weight'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="12" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-24">Edit</a>
+        <a class="govuk-link" href="13?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-23">Edit</a>
     </td>
 </tr>
+
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="233-question">What is the range of slaughter dates?
     </td>
@@ -356,22 +434,14 @@
         <a class="govuk-link" href="15" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-27">Edit</a>
     </td>
 </tr>
-<tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="236-question">What is the shelf life of the product(s)?
-    </td>
-    <td class="govuk-table__cell" scope="row" id="28-answer">{{ data['shelf-life'] }}
-    </td>
-    <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="16" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-28">Edit</a>
-    </td>
-</tr>
+
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="243-question">What are the batch numbers?
     </td>
-    <td class="govuk-table__cell" scope="row" id="29-answer">{{ data['batch-numbers'] }}
+    <td class="govuk-table__cell" scope="row" id="29-answer">{{ data['batch'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="17" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-29">Edit</a>
+        <a class="govuk-link" href="13?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-29">Edit</a>
     </td>
 </tr>
 
@@ -388,10 +458,10 @@
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="244-question">What are the shipping marks?
     </td>
-    <td class="govuk-table__cell" scope="row" id="30-answer">{{ data['shipping-marks'] }}
+    <td class="govuk-table__cell" scope="row" id="30-answer">{{ data['marks'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="18" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-30">Edit</a>
+        <a class="govuk-link" href="13?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-30">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
@@ -400,7 +470,7 @@
     <td class="govuk-table__cell" scope="row" id="31-answer">{{ data['temperature'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="19" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-31">Edit</a>
+        <a class="govuk-link" href="13?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-31">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
