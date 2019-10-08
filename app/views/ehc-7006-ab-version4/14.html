@@ -53,8 +53,8 @@ GOV.UK Prototype Kit
                         Select port
                     </label>
                     <select class="govuk-select" id="sort" name="sort">
-                        <option value="published">Southampton</option>
-                        <option value="updated" selected>Belfast</option>
+                        <option {% if data.port and "Southampton" in data.port %} selected {% endif %}  value="Southampton" name="port">Southampton</option>
+                        <option {% if data.port and "Belfast" in data.port %} selected {% endif %}  value="Belfast" name="port">Belfast</option>
                         <option value="views">Dundee</option>
                         <option value="comments">Fleetwood</option>
                         <option value="comments">Holyhead Port</option>
@@ -85,42 +85,9 @@ GOV.UK Prototype Kit
                     </details>
 
 
-                <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
-                        <label class="govuk-label" for="sort">
-                            Select date
-                        </label>
-    <span id="passport-issued-hint" class="govuk-hint">
-      For example, 27 3 2007
-    </span>
-                        <div class="govuk-date-input" id="passport-issued">
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
-                                </div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
-                                </div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
+
+
+
 
                 <div class="govuk-form-group">
 
@@ -213,7 +180,7 @@ GOV.UK Prototype Kit
                 <input type="hidden" name="questionSequence-251" value="2"><div class="govuk-form-group ">
                 <label class="govuk-label " for="7006EHC-3">What is the means of transport? </label>
                 <div class="govuk-hint">In the majority of cases the means of transport should be entered as ‘Refrigerated Container by Sea’. The name of the ship need not be entered in this section.</div>
-                <input class="govuk-input form-control-3-4" id="7006EHC-3" name="transport-means" value="{{ data['transport-means'] }}" type="text" data-qa-id="Question-7006EHC-3">
+                <input {% if data.transport_means %}value="{{data.transport_means}}"{% endif %} class="govuk-input form-control-3-4" id="7006EHC-3" name="transport_means" value="{{ data['transport-means'] }}" type="text" data-qa-id="Question-7006EHC-3">
             </div>
                 <input type="hidden" name="3-formQuestionId" value="254">
                 <input type="hidden" name="3-questionId" value="24">
@@ -224,7 +191,7 @@ GOV.UK Prototype Kit
                 <input type="hidden" name="3-questionScope" value="BOTH">
                 <input type="hidden" name="questionSequence-254" value="3"><div class="govuk-form-group ">
                 <label class="govuk-label " for="7006EHC-4">What is the container number? </label>
-                <input class="govuk-input form-control-3-4" id="7006EHC-4" name="container-number" value="{{ data['container-number'] }}" type="text" data-qa-id="Question-7006EHC-4">
+                <input {% if data.container_number %}value="{{data.container_number}}"{% endif %}  class="govuk-input form-control-3-4" id="7006EHC-4" name="container_number" value="{{ data['container-number'] }}" type="text" data-qa-id="Question-7006EHC-4">
             </div>
                 <input type="hidden" name="4-formQuestionId" value="255">
                 <input type="hidden" name="4-questionId" value="55">
@@ -235,7 +202,7 @@ GOV.UK Prototype Kit
                 <input type="hidden" name="4-questionScope" value="BOTH">
                 <input type="hidden" name="questionSequence-255" value="4"><div class="govuk-form-group ">
                 <label class="govuk-label " for="7006EHC-5">What is the seal number? </label>
-                <input class="govuk-input form-control-3-4" id="7006EHC-5" name="seal-number" value="{{ data['seal-number'] }}" type="text" data-qa-id="Question-7006EHC-5">
+                <input {% if data.seal_number %}value="{{data.seal_number}}"{% endif %}  class="govuk-input form-control-3-4" id="7006EHC-5" name="seal_number" value="{{ data['seal-number'] }}" type="text" data-qa-id="Question-7006EHC-5">
             </div>
                 <input type="hidden" name="5-formQuestionId" value="256">
                 <input type="hidden" name="5-questionId" value="56">

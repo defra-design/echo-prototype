@@ -217,19 +217,19 @@
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="42-question">What is the planned date of certification?
     </td>
-    <td class="govuk-table__cell" scope="row" id="11-answer">{{ data['certification-day'] }} {{ data['certification-month'] }} {{ data['certification-year'] }}
+    <td class="govuk-table__cell" scope="row" id="11-answer">{{ data['certification_day'] }} {{ data['certification_month'] }} {{ data['certification_year'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="6" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-11">Edit</a>
+        <a class="govuk-link" href="5?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-11">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="43-question">What is the planned export date of the consignment?
     </td>
-    <td class="govuk-table__cell" scope="row" id="12-answer">{{ data['consignment-day'] }} {{ data['consignment-month'] }} {{ data['consignment-year'] }}
+    <td class="govuk-table__cell" scope="row" id="12-answer">{{ data['export_day'] }} {{ data['export_month'] }} {{ data['export_year'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="6" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-12">Edit</a>
+        <a class="govuk-link" href="5?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-12">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
@@ -503,19 +503,19 @@
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="254-question">What is the means of transport?
     </td>
-    <td class="govuk-table__cell" scope="row" id="35-answer">{{ data['transport-means'] }}
+    <td class="govuk-table__cell" scope="row" id="35-answer">{{ data['transport_means'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="20" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-35">Edit</a>
+        <a class="govuk-link" href="14?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-35">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
     <td class="govuk-table__header" scope="row" id="255-question">What is the container number?
     </td>
-    <td class="govuk-table__cell" scope="row" id="36-answer">{{ data['container-number'] }}
+    <td class="govuk-table__cell" scope="row" id="36-answer">{{ data['container_number'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="20" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-36">Edit</a>
+        <a class="govuk-link" href="14?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-36">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
@@ -528,12 +528,20 @@
     </td>
 </tr>
 <tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="257-question">What is the name and address of the consignor?
+    <td class="govuk-table__header" scope="row" id="257-question">What is the name of the consignor?
     </td>
     <td class="govuk-table__cell" scope="row" id="38-answer">{{ data['consignor'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
-        <a class="govuk-link" href="21" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-38">Edit</a>
+        <a class="govuk-link" href="15?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-38">Edit</a>
+    </td>
+</tr><tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="257-question">What is the address of the consignor?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="38-answer">{{ data['importer_address'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="15?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-38">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">

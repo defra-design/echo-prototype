@@ -246,9 +246,9 @@
                      </a>
               </span>
 
-                {% if not data.packages and not data.weight and not data.batch and not data.marks and not data.temperature %}
+                {% if not data.packages and not data.weight and not data.batch and not data.marks and not data.temperature and not data.transport_means and not data.container_number and not data.seal_number %}
                 <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-                {% elseif data.packages and data.weight and data.batch and data.marks and data.temperature %}
+                {% elseif data.packages and data.weight and data.batch and data.marks and data.temperature and data.transport_means and data.container_number and data.seal_number %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
                 {% else %}
                 <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
@@ -268,7 +268,18 @@
                        Importer details
                    </a>
               </span>
+
+
+
+                    {% if not data.importer_address and not data.consignor %}
+                    <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% elseif data.importer_address and data.consignor %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+                    {% endif %}
+
+
                 </li>
 
 
@@ -282,7 +293,46 @@
                           The timings of your certification and export
                       </a>
               </span>
+
+
+
+                    {% if not
+                    data.certification_day
+                    and
+                    not
+                    data.certification_month  and
+                    not
+                    data.certification_year and not
+                    data.export_day
+                    and
+                    not
+                    data.export_month  and
+                    not
+                    data.export_year
+
+                    %}
+                    <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% elseif
+                    data.certification_day
+                    and
+
+                    data.certification_month  and
+
+                    data.certification_year and
+                    data.export_day
+                    and
+
+                    data.export_month  and
+
+                    data.export_year
+                    %}
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+                    {% endif %}
+
+
+
 
                 </li>
 

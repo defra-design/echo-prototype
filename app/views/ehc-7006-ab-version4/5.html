@@ -17,7 +17,13 @@ GOV.UK Prototype Kit
                 <h1 id="questionPageHeading" class="govuk-heading-xl">The timings of your certification and export
                 </h1>
                 <p>
-                </p><form action="check-your-progress5" method="POST" >
+                </p>
+                <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST">
+
+
+
+
+
                 <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
 
                 <!-- @formatter:off -->
@@ -31,19 +37,19 @@ GOV.UK Prototype Kit
                             <div class="govuk-date-input__item">
                                 <div class="govuk-form-group">
                                     <label class="govuk-label govuk-date-input__label" for="7006EHC-0-day">Day</label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-0-day" name="certification-day" value="{{ data['certification-day'] }}" data-qa-id="Question-7006EHC-0-Day" autofocus="autofocus" type="number" pattern="^[0-9]{2}$">
+                                    <input {% if data.certification_day %}value="{{data.certification_day}}" {% endif %}  class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-0-day" name="certification_day" value="{{ data['certification-day'] }}" data-qa-id="Question-7006EHC-0-Day" autofocus="autofocus" type="number" pattern="^[0-9]{2}$">
                                 </div>
                             </div>
                             <div class="govuk-date-input__item">
                                 <div class="govuk-form-group">
                                     <label class="govuk-label govuk-date-input__label" for="7006EHC-0-month">Month</label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-0-month" name="certification-month" value="{{ data['certification-month'] }}" data-qa-id="Question-7006EHC-0-Month" type="number" pattern="^[0-9]{2}$">
+                                    <input {% if data.certification_month %}value="{{data.certification_month}}" {% endif %}  class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-0-month" name="certification_month" value="{{ data['certification-month'] }}" data-qa-id="Question-7006EHC-0-Month" type="number" pattern="^[0-9]{2}$">
                                 </div>
                             </div>
                             <div class="govuk-date-input__item">
                                 <div class="govuk-form-group">
                                     <label class="govuk-label govuk-date-input__label" for="7006EHC-0-year">Year</label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="7006EHC-0-year" name="certification-year" value="{{ data['certification-year'] }}" data-qa-id="Question-7006EHC-0-Year" type="number" pattern="^[0-9]{4}$">
+                                    <input {% if data.certification_year %}value="{{data.certification_year}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="7006EHC-0-year" name="certification_year" value="{{ data['certification-year'] }}" data-qa-id="Question-7006EHC-0-Year" type="number" pattern="^[0-9]{4}$">
                                 </div>
                             </div>
                         </div>
@@ -65,20 +71,20 @@ GOV.UK Prototype Kit
                     <div class="govuk-date-input">
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="7006EHC-1-day">Day</label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-1-day" name="consignment-day" value="{{ data['consignment-day'] }}" data-qa-id="Question-7006EHC-1-Day" type="number" pattern="^[0-9]{2}$">
+                                <label class="govuk-label govuk-date-input__label" for="7006EHC-0-day">Day</label>
+                                <input {% if data.export_day %}value="{{data.export_day}}" {% endif %}  class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-0-day" name="export_day" value="{{ data['export-day'] }}" data-qa-id="Question-7006EHC-0-Day" autofocus="autofocus" type="number" pattern="^[0-9]{2}$">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="7006EHC-1-month">Month</label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-1-month" name="consignment-month" value="{{ data['consignment-month'] }}" data-qa-id="Question-7006EHC-1-Month" type="number" pattern="^[0-9]{2}$">
+                                <label class="govuk-label govuk-date-input__label" for="7006EHC-0-month">Month</label>
+                                <input {% if data.export_month %}value="{{data.export_month}}" {% endif %}  class="govuk-input govuk-date-input__input govuk-input--width-2" id="7006EHC-0-month" name="export_month" value="{{ data['export-month'] }}" data-qa-id="Question-7006EHC-0-Month" type="number" pattern="^[0-9]{2}$">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="7006EHC-1-year">Year</label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="7006EHC-1-year" name="consignment-year" value="{{ data['consignment-year'] }}" data-qa-id="Question-7006EHC-1-Year" type="number" pattern="^[0-9]{4}$">
+                                <label class="govuk-label govuk-date-input__label" for="7006EHC-0-year">Year</label>
+                                <input {% if data.export_year %}value="{{data.export_year}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="7006EHC-0-year" name="export_year" value="{{ data['export-year'] }}" data-qa-id="Question-7006EHC-0-Year" type="number" pattern="^[0-9]{4}$">
                             </div>
                         </div>
                     </div>
