@@ -298,7 +298,7 @@ button.blue-button:hover {
 a.gem-c-pagination__link {
 text-decoration:none}
 
-.govuk-fieldset__legend--m {font-weight: normal}
+// .govuk-fieldset__legend--m {font-weight: normal}
 
 
 .govuk-button_no_margin_bottom {
@@ -426,4 +426,11 @@ h3#section-a-forms,h3#section-b-guidance {
   }
 .app-c-important-metadata dt{font-weight: 100!important;}
 .app-c-important-metadata__definition {
+}
+
+.govuk-radios--fixed .govuk-radios__item{
+  width:auto;
+  @include govuk-media-query($from: tablet) {
+    width: 40%
+  }
 }
