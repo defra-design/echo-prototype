@@ -47,7 +47,7 @@ GOV.UK Prototype Kit
                                 <label class="govuk-label" for="certifier-address-line-1">
                                     Importer address
                                 </label>
-                                <textarea  {% if data.importer_address %}value="{{data.importer_address}}"{% endif %}  class="govuk-textarea" id="certifier-address-line-1" name="importer_address" type="text" value="" rows="5"></textarea>
+                                <textarea   class="govuk-textarea" id="certifier-address-line-1" name="importer_address" type="text" value="" rows="5">{% if data.importer_address %} {{data.importer_address}}{% endif %} </textarea>
                             </div>
                         </fieldset>
 

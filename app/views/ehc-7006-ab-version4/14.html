@@ -52,15 +52,15 @@ GOV.UK Prototype Kit
                     <label class="govuk-label" for="sort">
                         Select port
                     </label>
-                    <select class="govuk-select" id="sort" name="sort">
-                        <option {% if data.port and "Southampton" in data.port %} selected {% endif %}  value="Southampton" name="port">Southampton</option>
-                        <option {% if data.port and "Belfast" in data.port %} selected {% endif %}  value="Belfast" name="port">Belfast</option>
-                        <option value="views">Dundee</option>
-                        <option value="comments">Fleetwood</option>
-                        <option value="comments">Holyhead Port</option>
-                        <option value="comments">Felixstove</option>
-                        <option value="comments">Troon</option>
-                        <option value="comments">Wick Harbour</option>
+                    <select class="govuk-select" id="sort" name="port">
+                        <option {% if  data.port == "Southampton" %} selected {% endif %}  value="Southampton">Southampton</option>
+                        <option {% if data.port == "Belfast"  %} selected {% endif %}  value="Belfast" name="port">Belfast</option>
+                        <option {% if data.port == "Dundee"  %} selected {% endif %}  value="Dundee">Dundee</option>
+                        <option {% if data.port == "Fleetwood"  %} selected {% endif %} value="Fleetwood">Fleetwood</option>
+                        <option {% if data.port == "Holyhead Port"  %} selected {% endif %} value="Holyhead Port">Holyhead Port</option>
+                        <option {% if data.port == "Felixstove"  %} selected {% endif %} value="Felixstove">Felixstove</option>
+                        <option {% if data.port == "Troon"  %} selected {% endif %} value="Troon">Troon</option>
+                        <option {% if data.port == "Wick Harbour"  %} selected {% endif %} value="Wick Harbour">Wick Harbour</option>
                     </select>
                 </div>
 
@@ -123,15 +123,15 @@ GOV.UK Prototype Kit
                         <label class="govuk-label" for="sort">
                             Select port
                         </label>
-                        <select class="govuk-select" id="sort" name="sort">
-                            <option value="published">Dalian</option>
-                            <option value="updated" selected>Tianjin</option>
-                            <option value="views">Yingkou</option>
-                            <option value="comments">Qinhuangdao</option>
-                            <option value="comments">Yantai</option>
-                            <option value="comments">Weihai</option>
-                            <option value="comments">Qingdao</option>
-                            <option value="comments">Rizhao</option>
+                        <select class="govuk-select" id="china-port" name="china_port">
+                            <option {% if  data.port == "Dalian" %} selected {% endif %}  value="Dalian">Dalian</option>
+                            <option {% if  data.port == "Tianjin" %} selected {% endif %}  value="Tianjin" selected>Tianjin</option>
+                            <option {% if  data.port == "Yingkou" %} selected {% endif %}  value="Yingkou">Yingkou</option>
+                            <option {% if  data.port == "Qinhuangdao" %} selected {% endif %}  value="Qinhuangdao">Qinhuangdao</option>
+                            <option {% if  data.port == "Yantai" %} selected {% endif %}  value="Yantai">Yantai</option>
+                            <option {% if  data.port == "Weihai" %} selected {% endif %}  value="Weihai">Weihai</option>
+                            <option {% if  data.port == "Qingdao" %} selected {% endif %}  value="Qingdao">Qingdao</option>
+                            <option {% if  data.port == "Rizhao" %} selected {% endif %}  value="Rizhao">Rizhao</option>
                         </select>
                     </div>
 

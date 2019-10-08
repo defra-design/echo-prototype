@@ -30,7 +30,7 @@
                     </label>
                     <div class="govuk-hint">
                         The name of the product should correspond exactly with the name of the product printed on the label. </div>
-                    <textarea {% if data.product_name %}value="{{data.product_name}}"{% endif %}  class="govuk-textarea" id="7006EHC-0" name="product_name" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                    <textarea  class="govuk-textarea" id="7006EHC-0" name="product_name" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.product_name %}{{data.product_name}}{% endif %} </textarea>
                 </div>
                 <input type="hidden" name="0-formQuestionId" value="228">
                 <input type="hidden" name="0-questionId" value="16">
@@ -42,7 +42,7 @@
                 <input type="hidden" name="questionSequence-228" value="0"><div class="govuk-form-group ">
                 <label class="govuk-label " for="7006EHC-1">What type of product is it? </label>
                 <div class="govuk-hint">Describe the product condition, anatomical area, cut. For example, details such as frozen, smoked, boned or deboned, shoulder, steak etc.</div>
-                <textarea {% if data.product_type %}value="{{data.product_type}}"{% endif %}  class="govuk-textarea" id="7006EHC-1" name="product_type" rows="3" data-qa-id="Question-7006EHC-1"> </textarea>
+                <textarea   class="govuk-textarea" id="7006EHC-1" name="product_type" rows="3" data-qa-id="Question-7006EHC-1">{% if data.product_type %}{{data.product_type}}{% endif %} </textarea>
             </div>
                 <input type="hidden" name="1-formQuestionId" value="229">
                 <input type="hidden" name="1-questionId" value="17">
