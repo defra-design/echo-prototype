@@ -48,11 +48,9 @@ GOV.UK Prototype Kit
 
 
                 <div class="govuk-form-group">
-                    <p>Select initial port of departure</p>
-                    <label class="govuk-label" for="sort">
-                        Select port
-                    </label>
+
                     <select class="govuk-select" id="sort" name="port">
+                        <option>Select port</option>
                         <option {% if  data.port == "Southampton" %} selected {% endif %}  value="Southampton">Southampton</option>
                         <option {% if data.port == "Belfast"  %} selected {% endif %}  value="Belfast" name="port">Belfast</option>
                         <option {% if data.port == "Dundee"  %} selected {% endif %}  value="Dundee">Dundee</option>
@@ -120,18 +118,16 @@ GOV.UK Prototype Kit
 
 
                     <div class="govuk-form-group">
-                        <label class="govuk-label" for="sort">
-                            Select port
-                        </label>
                         <select class="govuk-select" id="china-port" name="china_port">
-                            <option {% if  data.port == "Dalian" %} selected {% endif %}  value="Dalian">Dalian</option>
-                            <option {% if  data.port == "Tianjin" %} selected {% endif %}  value="Tianjin" selected>Tianjin</option>
-                            <option {% if  data.port == "Yingkou" %} selected {% endif %}  value="Yingkou">Yingkou</option>
-                            <option {% if  data.port == "Qinhuangdao" %} selected {% endif %}  value="Qinhuangdao">Qinhuangdao</option>
-                            <option {% if  data.port == "Yantai" %} selected {% endif %}  value="Yantai">Yantai</option>
-                            <option {% if  data.port == "Weihai" %} selected {% endif %}  value="Weihai">Weihai</option>
-                            <option {% if  data.port == "Qingdao" %} selected {% endif %}  value="Qingdao">Qingdao</option>
-                            <option {% if  data.port == "Rizhao" %} selected {% endif %}  value="Rizhao">Rizhao</option>
+                            <option>Select port</option>
+                            <option {% if  data.china_port == "Dalian" %} selected {% endif %}  value="Dalian">Dalian</option>
+                            <option {% if  data.china_port == "Tianjin" %} selected {% endif %}  value="Tianjin">Tianjin</option>
+                            <option {% if  data.china_port == "Yingkou" %} selected {% endif %}  value="Yingkou">Yingkou</option>
+                            <option {% if  data.china_port == "Qinhuangdao" %} selected {% endif %}  value="Qinhuangdao">Qinhuangdao</option>
+                            <option {% if  data.china_port == "Yantai" %} selected {% endif %}  value="Yantai">Yantai</option>
+                            <option {% if  data.china_port == "Weihai" %} selected {% endif %}  value="Weihai">Weihai</option>
+                            <option {% if  data.china_port == "Qingdao" %} selected {% endif %}  value="Qingdao">Qingdao</option>
+                            <option {% if  data.china_port == "Rizhao" %} selected {% endif %}  value="Rizhao">Rizhao</option>
                         </select>
                     </div>
 
