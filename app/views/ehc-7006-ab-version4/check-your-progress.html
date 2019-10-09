@@ -48,10 +48,21 @@
                 </a>
               </span>
 
-                    {% if not data.exporter_correct %}
+                    {% if not data.exporter_correct
+
+              and not data.exporter_correct and not data.full_name and not data.email and not data.telephone_number
+
+                    %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-                    {% else %}
+
+
+
+                    {% elseif  data.exporter_correct == "Yes" or (  data.exporter_correct and data.full_name and data.email and  data.telephone_number  )      %}
+
+
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed app-task-list__task-progress">In progress</strong>
                     {% endif %}
 
 
@@ -379,7 +390,14 @@
 
                      </span>
 
+
+
+                    {% if not data.submit %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% endif %}
+
 
 
 
