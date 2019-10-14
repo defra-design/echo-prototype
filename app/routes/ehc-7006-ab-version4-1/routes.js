@@ -7,12 +7,21 @@ module.exports = function(router) {
 
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'ehc-7006-ab-version4-1'
+  const version = 'ehc-7006-ab-version4'
   const base_url = version + "/"
 
 
   // Base page router
+  router.post('/' + base_url + "/7", function(req, res) {
+    if(req.query.change == "yes"){
+      res.redirect(301, '/' + base_url + '/check-your-answers');
+    }else if(req.query.change == "product"){
+      res.redirect(301, '/' + base_url + '/11-plus');
+    }else{
+      res.redirect(301, '/' + base_url + '/9');
+    }
 
+  })
 
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function(req, res) {
