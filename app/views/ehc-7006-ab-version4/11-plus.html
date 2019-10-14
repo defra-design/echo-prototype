@@ -62,17 +62,17 @@
                         <th scope="col" class="govuk-table__header ">From date</th>
                         <th scope="col" class="govuk-table__header ">To date</th>
                         <th scope="col" class="govuk-table__header ">Address</th>
-                        <th scope="col" class="govuk-table__header"><a href="7" style="font-weight: 300;padding-left: 25px;">Edit</a></th>
+                        <th scope="col" class="govuk-table__header"><a href="7?change=product" style="font-weight: 300;padding-left: 25px;">Edit</a></th>
                     </tr>
                     </thead>
 
                     <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">Bolton&nbsp;plant</td>
-                        <td class="govuk-table__cell">649887200</td>
-                        <td class="govuk-table__cell">22&nbsp;11&nbsp;2019</td>
-                        <td class="govuk-table__cell">23&nbsp;11&nbsp;2019</td>
-                        <td class="govuk-table__cell">27 Square caste road, BO10 8NY, Bolton </td>
+                        <td class="govuk-table__cell">{{data.slaughterhouse_name}}</td>
+                        <td class="govuk-table__cell">{{data.veterinary_approval_number}}</td>
+                        <td class="govuk-table__cell">{{data.processing_day}}&nbsp;{{data.processing_month}}&nbsp;{{data.processing_year}}</td>
+                        <td class="govuk-table__cell">{{data.processing_day2}}&nbsp;{{data.processing_month2}}&nbsp;{{data.processing_year2}}</td>
+                        <td class="govuk-table__cell">{{data.address_postcode}} </td>
                         <td class="govuk-table__cell"> </td>
                     </tr>
                     </tbody>
@@ -84,18 +84,18 @@
                         <th scope="col" class="govuk-table__header ">From date</th>
                         <th scope="col" class="govuk-table__header ">To date</th>
                         <th scope="col" class="govuk-table__header ">Address</th>
-                        <th scope="col" class="govuk-table__header"><a href="9" style="font-weight: 300;padding-left: 25px;">Edit</a></th>
+                        <th scope="col" class="govuk-table__header"><a href="9?change=product" style="font-weight: 300;padding-left: 25px;">Edit</a></th>
                     </tr>
                     </thead>
 
 
                     <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">Crewe&nbsp;cutting&nbsp;plant</td>
-                        <td class="govuk-table__cell">649887200</td>
-                        <td class="govuk-table__cell">22&nbsp;11&nbsp;2019</td>
-                        <td class="govuk-table__cell">23&nbsp;11&nbsp;2019</td>
-                        <td class="govuk-table__cell">27 Square caste road, CR10 8NY, Crewe </td>
+                        <td class="govuk-table__cell">{{data.cutting_name}}</td>
+                        <td class="govuk-table__cell">{{data.cutting_van}}</td>
+                        <td class="govuk-table__cell">{{data.cutting_day}}&nbsp;{{data.cutting_month}}&nbsp;{{data.cutting_year}}</td>
+                        <td class="govuk-table__cell">{{data.cutting_day2}}&nbsp;{{data.cutting_month2}}&nbsp;{{data.cutting_year2}}</td>
+                        <td class="govuk-table__cell">{{data.cutting_postcode}} </td>
                         <td class="govuk-table__cell"> </td>
                     </tr>
                     </tbody>
@@ -114,10 +114,11 @@
 
                     <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">Pig lunch meat </td>
-                        <td class="govuk-table__cell">Cold cuts</td>
-                        <td class="govuk-table__cell">22&nbsp;11&nbsp;2019</td>
-                        <td class="govuk-table__cell">23&nbsp;11&nbsp;2019</td>
+                        <td class="govuk-table__cell">{{data.product_name}} </td>
+                        <td class="govuk-table__cell">{{data.product_type}}</td>
+                        <td class="govuk-table__cell">{{data.processed_day}}&nbsp;{{data.processed_month}}&nbsp;{{data.processed_year}}</td>
+                        <td class="govuk-table__cell">{{data.processed_day2}}&nbsp;{{data.processed_month2}}&nbsp;{{data.processed_year2}}</td>
+                        <td class="govuk-table__cell"> </td>
                         <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"> </td>
                     </tr>

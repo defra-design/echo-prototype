@@ -48,10 +48,21 @@
                 </a>
               </span>
 
-                    {% if not data.exporter_correct %}
+                    {% if not data.exporter_correct
+
+              and not data.exporter_correct and not data.full_name and not data.email and not data.telephone_number
+
+                    %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-                    {% else %}
+
+
+
+                    {% elseif  data.exporter_correct == "Yes" or (  data.exporter_correct and data.full_name and data.email and  data.telephone_number  )      %}
+
+
                     <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed app-task-list__task-progress">In progress</strong>
                     {% endif %}
 
 
@@ -184,7 +195,7 @@
 
                     {% if not data.slaughterhouse_name and not data.address_postcode and not data.veterinary_approval_number and not data.processing_year and not data.processing_month and not data.processing_day2 and not data.processing_year2 and not data.processing_month2 and not data.processing_day
 
-                    and not data.shelf_year and not data.cutting_month and not data.cutting_day2 and not data.cutting_year2 and not data.cutting_month2 and not data.cutting_day
+                    and not data.cutting_year and not data.cutting_month and not data.cutting_day2 and not data.cutting_year2 and not data.cutting_month2 and not data.cutting_day
                     and not data.processed_year and not data.processed_month and not data.processed_day2 and not data.processed_year2 and not data.processed_month2 and not data.processed_day
 
                     and not data.cutting_name and not data.cutting_postcode and not data.cutting_van and not data.product_name
@@ -379,7 +390,14 @@
 
                      </span>
 
+
+
+                    {% if not data.submit %}
                     <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                    {% else %}
+                    <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                    {% endif %}
+
 
 
 

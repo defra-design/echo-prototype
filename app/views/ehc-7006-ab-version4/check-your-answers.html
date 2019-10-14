@@ -100,16 +100,34 @@
     <td class="govuk-table__header" scope="row" id="50-question">Are you the exporter or the agent of the exporter?
     </td>
     <td class="govuk-table__cell" scope="row" id="2-answer">{{ data['exporter_correct'] }}
+
+
+        {% if  (  data.exporter_correct and data.full_name and data.email and  data.telephone_number  )
+
+
+
+
+         %}
+        <br>Exporter details:
+        {{ data['full_name'] }} {{ data['email'] }}  {{ data['telephone_number'] }}
+
+        {% endif %}
+
     </td>
     <td class="govuk-table__cell align-right" scope="row">
         <a class="govuk-link" href="3-plus-plus?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Edit</a>
     </td>
 </tr>
 <tr class="govuk-table__row">
-    <td class="govuk-table__header" scope="row" id="41-question">You can give your application a reference number to allow you to easily identify it. If you would like to do so, enter it here.
+    <td class="govuk-table__header" scope="row" id="41-question">
+
+        Do you want to create your own unique reference number?
+
+
     </td>
     <td class="govuk-table__cell" scope="row" id="3-answer">
-        {{ data['reference_number'] }}
+        {{ data['reference_number'] }} &nbsp;&nbsp;&nbsp;
+        {{ data['ref_number'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
         <a class="govuk-link" href="3?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-3">Edit</a>
@@ -182,6 +200,14 @@
     <td class="govuk-table__header" scope="row" id="44-question">What is the origin of the raw materials?
     </td>
     <td class="govuk-table__cell" scope="row" id="7-answer">{{ data['origin'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="5?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Edit</a>
+    </td>
+</tr><tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="44-question">Where were the animals slaughtered?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="7-answer">{{ data['where_slaughtered'] }}
     </td>
     <td class="govuk-table__cell align-right" scope="row">
         <a class="govuk-link" href="5?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Edit</a>
@@ -498,6 +524,17 @@
 
 
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-body">
+
+
+        <form action="dashboard">
+            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </form>
+
+
+    </div>
+</div>
 
 
 
