@@ -1,0 +1,266 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div>
+<span class="govuk-caption-xl">
+       Adding a product step 1 of 3
+        </span>
+
+
+                    <h1 id="questionPageHeading" style="margin-bottom: 10px" class="govuk-heading-xl">Slaughterhouse details</h1>
+                    <h2 style="font-weight: 300" class="govuk-heading-m">What are the details of the slaughterhouse of origin?</h2>
+
+
+
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+text: "Complete as much as possible. If you do not know an answer leave the field empty for your OV / certifier to complete at a later date.",
+iconFallbackText: "Warning"
+}) }}
+
+
+
+<form {% if query.change=="yes" %} action="check-your-answers" {% elseif query.change=="product" %} action="11-plus" {% else %} action="9" {% endif %} method="POST">
+
+
+                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+
+                    <!-- @formatter:off -->
+                    <div class="govuk-form-group ">
+
+
+
+
+
+
+
+<br>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="full-name">
+                                Slaughterhouse name
+                            </label>
+                            <input {% if data.slaughterhouse_name %}value="{{data.slaughterhouse_name}}"{% endif %} class="govuk-input" id="full-name" name="slaughterhouse_name" type="text" autocomplete="name" spellcheck="false">
+                        </div>
+
+
+
+
+
+                        <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
+                            Slaughterhouse address
+                        </h2>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="address-postcode">
+                                Postcode
+                            </label>
+                            <input {% if data.address_postcode %}value="{{data.address_postcode}}"{% endif %}  class="govuk-input govuk-input--width-10 " id="address-postcode" name="address_postcode" type="text" value="" aria-describedby="address-postcode-error">
+                        </div>
+                        <a href="#" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                            Find address
+                        </a>
+
+                        <div class="govuk-link">
+                            <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="#">Enter my address manually</a>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="govuk-form-group margin-top-45">
+                            <label class="govuk-label" for="full-name">
+                                Provide veterinary approval number
+                            </label>
+                            <input {% if data.veterinary_approval_number %}value="{{data.veterinary_approval_number}}"{% endif %} class="govuk-input" id="full-name" name="veterinary_approval_number" type="text" autocomplete="name" spellcheck="false">
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+                    <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px;margin-bottom:0px">
+                        What are the range of slaughter dates?
+                    </h2>
+                            <div class="govuk-hint">From earliest to latest</div>
+
+                    <!-- @formatter:off -->
+                    <div class="govuk-form-group ">
+
+                    </div>
+
+
+                            <div class="govuk-form-group ">
+
+                                <div class="govuk-form-group" value="{{ data['when-slaughtered'] }}">
+                                    <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+
+
+                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                            From date
+                                        </label>
+
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 27 3 2007
+            </span>
+
+
+                                        <div class="govuk-date-input" id="passport-issued">
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                                        Day
+                                                    </label>
+                                                    <input {% if data.processing_day %}value="{{data.processing_day}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="processing_day" type="number" pattern="[0-9]*">
+                                                </div>
+                                            </div>
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                                        Month
+                                                    </label>
+                                                    <input {% if data.processing_month %}value="{{data.processing_month}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="processing_month" type="number" pattern="[0-9]*">
+                                                </div>
+                                            </div>
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                                        Year
+                                                    </label>
+                                                    <input {% if data.processing_year %}value="{{data.processing_year}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="processing_year" type="number" pattern="[0-9]*">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+
+
+
+                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                            To date
+                                        </label>
+
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 27 4 2007
+            </span>
+
+                                        <div class="govuk-date-input" id="passport-issued">
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                                        Day
+                                                    </label>
+                                                    <input {% if data.processing_day2 %}value="{{data.processing_day2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="processing_day2" type="number" pattern="[0-9]*">
+                                                </div>
+                                            </div>
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                                        Month
+                                                    </label>
+                                                    <input {% if data.processing_month2 %}value="{{data.processing_month2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="processing_month2" type="number" pattern="[0-9]*">
+                                                </div>
+                                            </div>
+                                            <div class="govuk-date-input__item">
+                                                <div class="govuk-form-group">
+                                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                                        Year
+                                                    </label>
+                                                    <input {% if data.processing_year2 %}value="{{data.processing_year2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="processing_year2" type="number" pattern="[0-9]*">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                    </fieldset>
+                                </div>
+
+
+                            </div>
+
+
+
+
+
+                <div class="govuk-grid-row margin-top-30"></div>
+                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+
+                </form>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+
+
+                            <form action="dashboard">
+                                <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+                            </form>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <p></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
