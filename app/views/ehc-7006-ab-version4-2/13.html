@@ -19,7 +19,9 @@ GOV.UK Prototype Kit
           Step 1 of 2
         </span>
 
-                <h1 class="govuk-heading-xl">About the shipment</h1>
+                <h1 class="govuk-heading-xl" style="margin-bottom: 20px">About the shipment</h1>
+
+                {% block warn_message %}{% include "./partial_message.html" %}{% endblock %}
 
 
                     <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="14" {% endif %} method="POST">

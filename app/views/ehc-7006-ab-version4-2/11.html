@@ -15,7 +15,9 @@
             <div class="govuk-grid-column-two-thirds">
                 <div>
 
-                    <h1 class="govuk-heading-xl">About the cold store</h1>
+                    <h1 class="govuk-heading-xl"style="margin-bottom: 20px">About the cold store</h1>
+
+                    {% block warn_message %}{% include "./partial_message.html" %}{% endblock %}
 
 
                         <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST">

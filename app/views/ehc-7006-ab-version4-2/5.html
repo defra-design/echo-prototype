@@ -14,10 +14,11 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <div>
-                <h1 id="questionPageHeading" class="govuk-heading-xl">The timings of your certification and export
+                <h1 id="questionPageHeading" class="govuk-heading-xl" style="margin-bottom: 20px">The timings of your certification and export
                 </h1>
-                <p>
-                </p>
+
+                {% block warn_message %}{% include "./partial_message.html" %}{% endblock %}
+
                 <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST">
 
 

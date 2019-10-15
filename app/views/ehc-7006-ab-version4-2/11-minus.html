@@ -16,9 +16,13 @@
                 <span class="govuk-caption-xl">
        Adding a product step 3 of 3
         </span>
-                <h1 id="questionPageHeading" class="govuk-heading-xl">About your finished product</h1>
-                <p>
-                </p>
+                <h1 id="questionPageHeading" class="govuk-heading-xl" style="margin-bottom: 20px">About your finished product</h1>
+
+
+
+                {% block warn_message %}{% include "./partial_message.html" %}{% endblock %}
+
+
 
                 <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="11-plus" {% endif %} method="POST">
 
