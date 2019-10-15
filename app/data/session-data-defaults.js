@@ -18,7 +18,8 @@ Example usage:
 */
 
 module.exports = {
-
+  empty:[],
+  skipped:["empty"]
   // Insert values here
 
 }

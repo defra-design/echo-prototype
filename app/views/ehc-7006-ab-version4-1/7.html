@@ -7,137 +7,164 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
-<div class="govuk-width-container">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <div>
-        <span class="govuk-caption-xl">
-          Adding a product step 1 of 3
-        </span>
-        <h1 id="questionPageHeading" style="margin-bottom: 10px" class="govuk-heading-xl">Slaughterhouse details</h1>
-        <h2 style="font-weight: 300" class="govuk-heading-m">What are the details of the slaughterhouse of origin?</h2>
-        <form  method="POST">
-          <div class="govuk-form-group ">
-            <br>
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="full-name">
-                Slaughterhouse name
-              </label>
-              <input {% if data.slaughterhouse_name %}value="{{data.slaughterhouse_name}}" {% endif %} class="govuk-input" id="full-name" name="slaughterhouse_name" type="text" autocomplete="name" spellcheck="false">
-            </div>
-            <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
-              Slaughterhouse address
-            </h2>
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="address-postcode">
-                Postcode
-              </label>
-              <input {% if data.address_postcode %}value="{{data.address_postcode}}" {% endif %} class="govuk-input govuk-input--width-10 " id="address-postcode" name="address_postcode" type="text" value="" aria-describedby="address-postcode-error">
-            </div>
-            <a href="#" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-              Find address
-            </a>
-            <div class="govuk-link">
-              <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="#">Enter my address manually</a>
-            </div>
-            <div class="govuk-form-group margin-top-45">
-              <label class="govuk-label" for="full-name">
-                Provide veterinary approval number
-              </label>
-              <input {% if data.veterinary_approval_number %}value="{{data.veterinary_approval_number}}" {% endif %} class="govuk-input" id="full-name" name="veterinary_approval_number" type="text" autocomplete="name" spellcheck="false">
-            </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Error message START-->
+    {% block errorBlank %}{% include "./partial_error_blank.html" %}{% endblock %}
+    <!-- Error message END -->
+    <div>
+      <span class="govuk-caption-xl">
+        Adding a product step 1 of 3
+      </span>
+      <h1 id="questionPageHeading" style="margin-bottom: 10px" class="govuk-heading-xl">Slaughterhouse details</h1>
+      <h2 style="font-weight: 300" class="govuk-heading-m">What are the details of the slaughterhouse of origin?</h2>
+      <form method="POST">
+        <div class="govuk-form-group ">
+          <br>
+          <div class="govuk-form-group {% if 'slaughterhouse_name' in data.empty %}govuk-form-group--error{% endif %}">
+            <label class="govuk-label" for="full-name">
+              Slaughterhouse name
+            </label>
+            {% if 'slaughterhouse_name' in data.empty %}
+            <span id="slaughterhouse_name_error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a slaughter house name
+            </span>
+            {% endif %}
+            <input {% if data.slaughterhouse_name %}value="{{data.slaughterhouse_name}}" {% endif %} class="govuk-input {% if 'slaughterhouse_name' in data.empty %}govuk-input--error{%endif%}" id="full-name" name="slaughterhouse_name" type="text" autocomplete="name" spellcheck="false" >
           </div>
-          <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px;margin-bottom:0px">
-            What are the range of slaughter dates?
+          <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
+            Slaughterhouse address
           </h2>
-          <div class="govuk-hint">From earliest to latest</div>
-          <div class="govuk-form-group ">
-            <div class="govuk-form-group" value="{{ data['when-slaughtered'] }}">
-              <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  From date
-                </label>
-                <span id="passport-issued-hint" class="govuk-hint">
-                  For example, 27 3 2007
-                </span>
-                <div class="govuk-date-input" id="passport-issued">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                        Day
-                      </label>
-                      <input {% if data.processing_day %}value="{{data.processing_day}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="processing_day" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                        Month
-                      </label>
-                      <input {% if data.processing_month %}value="{{data.processing_month}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="processing_month" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                        Year
-                      </label>
-                      <input {% if data.processing_year %}value="{{data.processing_year}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="processing_year" type="number" pattern="[0-9]*">
-                    </div>
+          <div class="govuk-form-group {% if 'address_postcode' in data.empty %}govuk-form-group--error{% endif %}">
+            <label class="govuk-label" for="address_postcode">
+              Postcode
+            </label>
+            {% if 'address_postcode' in data.empty %}
+            <span id="slaughterhouse_name_error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a postcode
+            </span>
+            {% endif %}
+            <input {% if data.address_postcode %}value="{{data.address_postcode}}" {% endif %} class="govuk-input govuk-input--width-10 {% if 'address_postcode' in data.empty %}govuk-input--error{%endif%} " id="address-postcode" name="address_postcode" type="text" value="" aria-describedby="address-postcode-error">
+          </div>
+          <a href="#" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+            Find address
+          </a>
+          <div class="govuk-link">
+            <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="#">Enter my address manually</a>
+          </div>
+          <div class="govuk-form-group margin-top-45 {% if 'veterinary_approval_number' in data.empty %}govuk-form-group--error{% endif %}">
+            <label class="govuk-label" for="full-name">
+              Provide veterinary approval number
+            </label>
+            {% if 'veterinary_approval_number' in data.empty %}
+            <span id="slaughterhouse_name_error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a veternary approval number
+            </span>
+            {% endif %}
+            <input {% if data.veterinary_approval_number %}value="{{data.veterinary_approval_number}}" {% endif %} class="govuk-input {% if 'address_postcode' in data.empty %}govuk-input--error{%endif%}" id="full-name" name="veterinary_approval_number" type="text" autocomplete="name" spellcheck="false">
+          </div>
+        </div>
+        <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px;margin-bottom:0px">
+          What are the range of slaughter dates?
+        </h2>
+        <div class="govuk-hint">From earliest to latest</div>
+        <div class="govuk-form-group ">
+          <div class="govuk-form-group {% if 'processing_from_date' in data.empty %}govuk-form-group--error{% endif %}" value="{{ data['when-slaughtered'] }}">
+            <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                From date
+              </label>
+              {% if 'processing_from_date' in data.empty %}
+              <span id="slaughterhouse_name_error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a date from
+              </span>
+              {% endif %}
+              <span id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </span>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input {% if data.processing_day %}value="{{data.processing_day}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="processing_day" type="number" pattern="[0-9]*">
                   </div>
                 </div>
-              </fieldset>
-            </div>
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  To date
-                </label>
-                <span id="passport-issued-hint" class="govuk-hint">
-                  For example, 27 4 2007
-                </span>
-                <div class="govuk-date-input" id="passport-issued">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                        Day
-                      </label>
-                      <input {% if data.processing_day2 %}value="{{data.processing_day2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="processing_day2" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                        Month
-                      </label>
-                      <input {% if data.processing_month2 %}value="{{data.processing_month2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="processing_month2" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                        Year
-                      </label>
-                      <input {% if data.processing_year2 %}value="{{data.processing_year2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="processing_year2" type="number" pattern="[0-9]*">
-                    </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input {% if data.processing_month %}value="{{data.processing_month}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="processing_month" type="number" pattern="[0-9]*">
                   </div>
                 </div>
-              </fieldset>
-            </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input {% if data.processing_year %}value="{{data.processing_year}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="processing_year" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
           </div>
-          {% block leaveForm %}{% include "./partial_leave_section2.html" %}{% endblock %}
-          <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
-            <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          <div class="govuk-form-group {% if 'processing_from_date' in data.empty %}govuk-form-group--error{% endif %}">
+            <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                To date
+              </label>
+              {% if 'processing_to_date' in data.empty %}
+              <span id="slaughterhouse_name_error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a date from
+              </span>
+              {% endif %}
+              <span id="passport-issued-hint" class="govuk-hint">
+                For example, 27 4 2007
+              </span>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input {% if data.processing_to_day %}value="{{data.processing_to_day}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="processing_to_day" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input {% if data.processing_to_month %}value="{{processing_to_month}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="processing_to_month" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input {% if data.processing_to_year %}value="{{data.processing_to_year}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="processing_to_year" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
           </div>
+        </div>
+        {% block leaveForm %}{% include "./partial_leave_section2.html" %}{% endblock %}
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        </div>
 
-        </form>
+      </form>
 
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full govuk-body">
-            <form action="dashboard">
-              <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
-            </form>
-          </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <form action="dashboard">
+            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+          </form>
         </div>
       </div>
     </div>

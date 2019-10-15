@@ -5,16 +5,21 @@
   }
 </style>
 
-<div class="govuk-form-group defra-callout">
+<div class="govuk-form-group defra-callout {% if (data.empty | length) > 0 %}govuk-form-group--error{% endif %}">
   <h3 class="govuk-heading-m">Skip answers</h3>
+  {% if (data.empty | length) > 0 %}
+  <span id="slaughterhouse_name_error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Must check this if you are leaving anything blank
+  </span>
+  {% endif %}
   <p class="govuk-body">
     If you are only able to complete partially you can leave the rest for the OV
   </p>
   <div class="govuk-checkboxes">
     <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-      <label class="govuk-label govuk-checkboxes__label" for="waste">
-        Leave remaining for the <abbr title="Enviromental health office">EHO</abbr>
+      <input class="govuk-checkboxes__input" id="skip_answers" name="skip_answers" type="checkbox" value="skip">
+      <label class="govuk-label govuk-checkboxes__label" for="skip_answers" >
+          Leave remaining for the <abbr title="Enviromental health office">EHO</abbr>
       </label>
     </div>
   </div>
