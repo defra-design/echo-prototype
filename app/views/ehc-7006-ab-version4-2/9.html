@@ -19,8 +19,7 @@ GOV.UK Prototype Kit
                 <h2 style="font-weight: 300" class="govuk-heading-m">What are the details of the slaughterhouse of origin?</h2>
 
 
-
-
+                {% block warn_message %}{% include "./partial_message.html" %}{% endblock %}
 
 
                 <form {% if query.change=="yes" %} action="check-your-answers" {% elseif query.change=="product" %} action="11-plus" {% else %} action="11-minus" {% endif %} method="POST">
