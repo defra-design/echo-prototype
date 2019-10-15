@@ -16,9 +16,10 @@ GOV.UK Prototype Kit
             <span class="govuk-caption-xl">
           Step 2 of 2
         </span>
-                <h1 id="questionPageHeading" class="govuk-heading-xl">Transport details</h1>
-                <p>
-                </p>
+                <h1 id="questionPageHeading" style="margin-bottom: 20px" class="govuk-heading-xl">Transport details</h1>
+
+            {% block warn_message %}{% include "./partial_message.html" %}{% endblock %}
+
             <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="check-your-progress" {% endif %} method="POST">
 
 
