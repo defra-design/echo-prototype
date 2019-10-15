@@ -32,7 +32,7 @@ module.exports = function(router) {
       return arr
   }
   router.post('/' + base_url + "15", function(req, res) {
-
+    var page = "importer_details"
     //check if anthing is empty
     req.session.data.empty = getBlankFields(req.body)
 
@@ -40,6 +40,10 @@ module.exports = function(router) {
     if(req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip')){
       return res.redirect(301, '/' + base_url + '15?hasError=yes');
     }
+    // add this page to the skipped list
+    if(!req.session.data.skipped.includes(page)){
+    req.session.data.skipped.push(page);
+}
     //reset the sesson data object for "empty"
     req.session.data.empty=[]
     if(req.query.change == "yes"){
@@ -50,14 +54,21 @@ module.exports = function(router) {
   })
   // Base page router
   router.post('/' + base_url + "7", function(req, res) {
+    var page = "slaughterhouse_details";
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = getBlankFields(req.body)
 
     // Show error message if the user has left anything blank and not skipped
     if(req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip')){
+      // ensure this page has been removed from the skipped list (used in check your progress)
+      req.session.data.skipped = req.session.data.skipped.filter(e => e !== page)
       return res.redirect(301, '/' + base_url + '7?hasError=yes');
     }
+    // add this page to the skipped list
+    if(!req.session.data.skipped.includes(page)){
+    req.session.data.skipped.push(page);
+}
     //reset the sesson data object for "empty"
     req.session.data.empty = []
     if(req.query.change == "yes"){
@@ -70,14 +81,21 @@ module.exports = function(router) {
 
   })
   router.post('/' + base_url + "9", function(req, res) {
+    var page = "cutting_details";
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = getBlankFields(req.body)
 
     // Show error message if the user has left anything blank and not skipped
     if(req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip')){
+      // ensure this page has been removed from the skipped list (used in check your progress)
+      req.session.data.skipped = req.session.data.skipped.filter(e => e !== page)
       return res.redirect(301, '/' + base_url + '9?hasError=yes');
     }
+    // add this page to the skipped list
+    if(!req.session.data.skipped.includes(page)){
+    req.session.data.skipped.push(page);
+}
     //reset the sesson data object for "empty"
     req.session.data.empty = []
     if(req.query.change == "yes"){
@@ -90,14 +108,20 @@ module.exports = function(router) {
 
   })
   router.post('/' + base_url + "11-minus", function(req, res) {
+    var page = "product_details";
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = getBlankFields(req.body)
-
     // Show error message if the user has left anything blank and not skipped
     if(req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip')){
+      // ensure this page has been removed from the skipped list (used in check your progress)
+      req.session.data.skipped = req.session.data.skipped.filter(e => e !== page)
       return res.redirect(301, '/' + base_url + '11-minus?hasError=yes');
     }
+    // add this page to the skipped list
+    if(!req.session.data.skipped.includes(page)){
+    req.session.data.skipped.push(page);
+}
     //reset the sesson data object for "empty"
     req.session.data.empty = []
     if(req.query.change == "yes"){
@@ -108,14 +132,21 @@ module.exports = function(router) {
 
   })
   router.post('/' + base_url + "11", function(req, res) {
+    var page="coldstore_details";
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = getBlankFields(req.body)
 
     // Show error message if the user has left anything blank and not skipped
     if(req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip')){
+      // ensure this page has been removed from the skipped list (used in check your progress)
+      req.session.data.skipped = req.session.data.skipped.filter(e => e !== page)
       return res.redirect(301, '/' + base_url + '11?hasError=yes');
     }
+    // add this page to the skipped list
+    if(!req.session.data.skipped.includes(page)){
+    req.session.data.skipped.push(page);
+}
     //reset the sesson data object for "empty"
     req.session.data.empty = []
     if(req.query.change == "yes"){
@@ -126,14 +157,21 @@ module.exports = function(router) {
 
   })
   router.post('/' + base_url + "13", function(req, res) {
+    var page = "shipment_details";
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = getBlankFields(req.body)
 
     // Show error message if the user has left anything blank and not skipped
     if(req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip')){
+      // ensure this page has been removed from the skipped list (used in check your progress)
+      req.session.data.skipped = req.session.data.skipped.filter(e => e !== page)
       return res.redirect(301, '/' + base_url + '13?hasError=yes');
     }
+    // add this page to the skipped list
+    if(!req.session.data.skipped.includes(page)){
+    req.session.data.skipped.push(page);
+}
     //reset the sesson data object for "empty"
     req.session.data.empty = []
     if(req.query.change == "yes"){
@@ -144,13 +182,22 @@ module.exports = function(router) {
 
   })
   router.post('/' + base_url + "14", function(req, res) {
+    var page = "transport_details"
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = getBlankFields(req.body)
 
     // Show error message if the user has left anything blank and not skipped
     if(req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip')){
+      // ensure this page has been removed from the skipped list (used in check your progress)
+      req.session.data.skipped = req.session.data.skipped.filter(e => e !== page)
       return res.redirect(301, '/' + base_url + '14?hasError=yes');
+    }
+    // add this page to the skipped list
+    if(!req.session.data.skipped.includes(page)){
+        if(!req.session.data.skipped.includes(page)){
+    req.session.data.skipped.push(page);
+}
     }
     //reset the sesson data object for "empty"
     req.session.data.empty = []
@@ -174,7 +221,9 @@ module.exports = function(router) {
 
     }
     // add this page to the skipped list
+    if(!req.session.data.skipped.includes(page)){
     req.session.data.skipped.push(page);
+}
     //reset the sesson data object for "empty"
     req.session.data.empty = []
     if(req.query.change == "yes"){

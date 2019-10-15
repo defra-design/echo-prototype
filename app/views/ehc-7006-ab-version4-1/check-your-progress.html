@@ -108,7 +108,9 @@ GOV.UK Prototype Kit
                 Product details
               </a>
             </span>
-            {% if not data.slaughterhouse_name and not data.address_postcode and not data.veterinary_approval_number and not data.processing_year and not data.processing_month and not data.processing_day2 and not data.processing_year2 and not
+            {% if "slaughterhouse_details" in data.skipped and "cutting_details" in data.skipped and "product_details" in data.skipped%}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% elseif not data.slaughterhouse_name and not data.address_postcode and not data.veterinary_approval_number and not data.processing_year and not data.processing_month and not data.processing_day2 and not data.processing_year2 and not
             data.processing_month2 and not data.processing_day
             and not data.cutting_year and not data.cutting_month and not data.cutting_day2 and not data.cutting_year2 and not data.cutting_month2 and not data.cutting_day
             and not data.processed_year and not data.processed_month and not data.processed_day2 and not data.processed_year2 and not data.processed_month2 and not data.processed_day
@@ -134,7 +136,9 @@ GOV.UK Prototype Kit
                 Cold store details
               </a>
             </span>
-            {% if not data.coldstore_postcode and not data.coldstore_name and not data.coldstore_van
+            {% if "coldstore_details" in data.skipped%}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% elseif not data.coldstore_postcode and not data.coldstore_name and not data.coldstore_van
             and not data.shelf_year and not data.shelf_month and not data.shelf_day2 and not data.shelf_year2 and not data.shelf_month2 and not data.shelf_day
             %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
@@ -151,7 +155,9 @@ GOV.UK Prototype Kit
                 Transport details
               </a>
             </span>
-            {% if not data.port and not data.china_port and not data.packages and not data.weight and not data.batch and not data.marks and not data.temperature and not data.transport_means and not data.container_number and not data.seal_number %}
+            {% if "shipment_details" in data.skipped and "transport_details" in data.skipped%}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% elseif not data.port and not data.china_port and not data.packages and not data.weight and not data.batch and not data.marks and not data.temperature and not data.transport_means and not data.container_number and not data.seal_number %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
             {% elseif data.port and data.china_port and data.packages and data.weight and data.batch and data.marks and data.temperature and data.transport_means and data.container_number and data.seal_number %}
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
