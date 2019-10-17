@@ -18,19 +18,10 @@ GOV.UK Prototype Kit
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-answer">
               <div class="govuk-form-group ">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-postcode">
-                    Postcode
-                  </label>
-                  <input {% if data.coldstore_postcode %}value="{{data.coldstore_postcode}}" {% endif %} class="govuk-input govuk-input--width-10 " id="address-postcode" name="coldstore_postcode" type="text" value="" aria-describedby="address-postcode-error">
-                </div>
-                <a href="#" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
-                  Find address
-                </a>
-                <div class="govuk-link">
-                  <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="#">Enter my address manually</a>
-                </div>
-            
+                <label class="govuk-label" for="certifier-address-line-1">
+                  What is the address of the cold store?
+                </label>
+                <textarea class="govuk-textarea" id="certifier-address-line-1" name="importer_address" type="text" value="" rows="5">{% if data.importer_address %} {{data.importer_address}}{% endif %} </textarea>
               </div>
             </div>
             <div class="govuk-radios__item">

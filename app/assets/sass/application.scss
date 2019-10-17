@@ -16,7 +16,7 @@ $govuk-assets-path: '/govuk/assets/';
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 @import "components/search";
-
+@import "components/autocomplete";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 
@@ -430,7 +430,7 @@ h3#section-a-forms,h3#section-b-guidance {
 
 .govuk-radios--fixed .govuk-radios__item{
   width:auto;
-  @include govuk-media-query($from: tablet) {
+  @media (min-width: 40.0625em){
     width: 40%
   }
 }

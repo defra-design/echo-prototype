@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div>
+        <span class="govuk-caption-xl">
+          Transport details
+        </span>
+        <h1 id="questionPageHeading" class="govuk-heading-xl">Are there two ports involved on arrival in China? </h1>
+        <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="transport-type" {% endif %} method="POST">
+          <p class="govuk-body"> For example, transhipment at initial port of arrival in China for internal travel to the final port of entry where the final import clearance will be carried out, then both ports need to be entered</p>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional" name="knows_second_port_entry" type="radio" value="yes" data-aria-controls="conditional-answer" >
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                      Yes
+                  </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-answer">
+                <div class="govuk-form-group ">
+                  <label class="govuk-label" for="autocomplete_dropdown">Entry port in China</label>
+                  <div id="autocomplete_dropdown" class="autocomplete-wrapper govuk-input--width-20"></div>
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="how-contacted-conditional-2" name="knows_second_port_entry" type="radio" value="no" >
+                  <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                      No
+                  </label>
+              </div>
+          </div>
+          <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+            <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          </div>
+        </form>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full govuk-body">
+            <form action="dashboard">
+              <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+            </form>
+          </div>
+        </div>
+        <p></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+{{super()}}
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    var ports = [
+  'Dalian',
+  'Tianjin',
+  'Yingkou',
+  'Qinhuangdao',
+  'Yantai',
+  'Weihai',
+  'Qingdao',
+  'Rizhao'
+]
+      element = document.querySelector('#autocomplete_dropdown')
+      id = 'autocomplete_dropdown'
+      accessibleAutocomplete({
+        element: element,
+        id: id,
+        showNoOptionsFound: false,
+        source: ports
+      })
+  })
+</script>
+
+{% endblock %}
