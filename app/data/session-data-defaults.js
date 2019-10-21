@@ -17,9 +17,13 @@ Example usage:
 
 */
 
+var ehc8270 = require('./ehc-8270.json')
 module.exports = {
-  empty:[],
-  skipped:["empty"]
-  // Insert values here
+    "empty":[],
+    "skipped"   :  ["empty"],
+    "uploaded_files": [],
+    "file_id_count" : 0,
+    "ehc8270"   :  ehc8270,
+
 
 }

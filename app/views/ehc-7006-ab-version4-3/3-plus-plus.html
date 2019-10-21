@@ -19,11 +19,11 @@
 
 
                     <h1 class="govuk-heading-xl">
-                       Confirm the exporter details
+                       Who is the consignor (exporter)?
 
                     </h1>
                 </div>
-<p>The exporter details we have for this application are:</p>
+<p>These are the details that will appear on the certificate</p>
 
 
 
@@ -40,10 +40,7 @@
 
 
 
-                    <hr>
-                    <p> Acme Org Export <br>Telephone: 0207 586 2837<br>Email: coldroom@a1export.com </p>
-                    <hr>
-                    <h3 id="questionPageHeading" class="govuk-heading-m" style="margin-top: 25px">   Are the Exporter details correct?</h3>
+
 
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
@@ -55,14 +52,14 @@
                                 <div class="govuk-radios__item">
                                     <input {% if data.exporter_correct == "Yes" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional" name="exporter_correct" type="radio" value="Yes" data-aria-controls="conditional-how-contacted-conditional">
                                     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-                                        Yes
+                                        Acme Org Export<br><span class="govuk-hint">Email: coldroom@a1export.com<br>Telephone: 0207 586 2837</span>
                                     </label>
                                 </div>
 
                                 <div class="govuk-radios__item">
                                     <input {% if data.exporter_correct == "No" %}checked="checked"{%endif%} class="govuk-radios__input" id="how-contacted-conditional-2" name="exporter_correct" type="radio" value="No" aria-controls="conditional-how-contacted-conditional-2" aria-expanded="false">
                                     <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                                        No
+                                        A different consignor (exporter)
                                     </label>
                                 </div>
                                 <div class="govuk-radios__conditional {% if data.exporter_correct != 'No' %}govuk-radios__conditional--hidden{%endif%} " id="conditional-how-contacted-conditional-2">

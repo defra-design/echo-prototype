@@ -35,6 +35,7 @@ $govuk-assets-path: '/govuk/assets/';
   font: inherit;
   border-bottom: 1px solid #005ea5;
   cursor: pointer;
+  text-decoration:none;
 }
 
 .govuk-radios__input {
@@ -432,5 +433,10 @@ h3#section-a-forms,h3#section-b-guidance {
   width:auto;
   @media (min-width: 40.0625em){
     width: 40%
+  }
+}
+@media (min-width: 40.0625em){
+  .app-task-list__task-name{
+    max-width:75%
   }
 }

@@ -1,0 +1,586 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<style>h2{padding-top: 50px!important;}</style>
+
+
+
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+
+<h1 class="govuk-heading-l">
+    Review your answers
+</h1>
+
+<div class="govuk-details__text">
+    <strong class="govuk-body ">
+        Your application for a health certificate is now ready to be submitted.<br>
+        Please check that the answers you've provided are correct.
+    </strong>
+</div>
+<br/><br/>
+<table class="govuk-table">
+<tbody class="govuk-table__body">
+
+<tr class="govuk-table__row">
+    <td colspan="3">
+		<h2 class="govuk-heading-m">
+			General Information about your export
+		</h2>
+
+
+
+    </td>
+</tr>
+
+<!--<tr class="govuk-table__row">
+   <!-- <td class="govuk-table__header" scope="row" id="specific-commodity-question">
+        What specific commodity are you exporting?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="specific-commodity-answer"><p>{{ data['selectedCommodityNameOrCommodityType'] }}</p>
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="1" data-qa-id="Link-ChangeAnswer" id="Link-specific-commodity-question">Edit</a>
+    </td>
+</tr>-->
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="-question">What is the specific commodity you are exporting?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="0-answer">Mixed
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="15b" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Edit</a>
+    </td>
+</tr>
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="-question">Number of certificates required
+    </td>
+    <td class="govuk-table__cell" scope="row" id="0-answer">1
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="15b" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Edit</a>
+    </td>
+</tr>
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="-question">What country of the selected economic community does the certificate relate to?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="0-answer">Germany
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="15b" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="-question">Select the certifier practice to include with your application
+    </td>
+    <td class="govuk-table__cell" scope="row" id="0-answer">{{ data['Button-SaveAndContinue-0'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="15b" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="-question">Select certificate delivery address
+    </td>
+    <td class="govuk-table__cell" scope="row" id="1-answer">{{ data['address1'] }}, {{ data['address2'] }}, {{ data['city'] }}, {{ data['county'] }}, {{ data['postcode'] }}  
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="15c" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-1">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row"><td/>&nbsp;</td></tr>
+<tr class="govuk-table__row">
+    <td colspan="3">
+		<h2 class="govuk-heading-m">
+			Exporter information
+		</h2>
+
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="50-question">Are you the exporter or the agent of the exporter?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="2-answer">{{ data['agent-exporter'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="1" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="41-question">You can give your application a reference number to allow you to easily identify it. If you would like to do so, enter it here.
+    </td>
+    <td class="govuk-table__cell" scope="row" id="3-answer">
+        {{ data['ref-number'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="1" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-3">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="40-question">What is the name of the exporter?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="4-answer">{{ data['exporter'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="1" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="48-question">The paper certificate will be sent to your nominated address for certification. How would you like the certificate to be delivered?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="5-answer">{{ data['certificate'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="4" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="49-question">In which region will the certification take place?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="6-answer">{{ data['region'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="4" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row"><td/>&nbsp;</td></tr>
+<tr class="govuk-table__row">
+    <td colspan="3">
+		<h2 class="govuk-heading-m">
+			Details of origin of the consignment
+		</h2>
+
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="44-question">What is the origin of the raw materials?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="7-answer">{{ data['origin'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="5" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="46-question">What are the dates of processing of the product?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="8-answer">{{ data['processing-date'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="5" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-8">Edit</a>
+    </td>
+</tr>
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="42-question">What is the planned date of certification?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="11-answer">{{ data['certification-day'] }} {{ data['certification-month'] }} {{ data['certification-year'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="6" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-11">Edit</a>
+    </td>
+</tr>
+
+
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="226-question">Description of commodity
+    </td>
+    <td class="govuk-table__cell" scope="row" id="15-answer">{{ data['additional-slaughterhouse'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="7" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-15">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="224-question">Total net weight of the consignment
+    </td>
+    <td class="govuk-table__cell" scope="row" id="16-answer">{{ data['cutting-plant'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="8" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-16">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="262-question">Temperature of commodity
+    </td>
+    <td class="govuk-table__cell" scope="row" id="17-answer">{{ data['cutting-approval'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="8" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-17">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="263-question">Approval number of the manufacturing plant
+    </td>
+    <td class="govuk-table__cell" scope="row" id="18-answer">{{ data['cutting-plant'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="8" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-18">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="227-question">Treatment type
+    </td>
+    <td class="govuk-table__cell" scope="row" id="19-answer">{{ data['cold-store'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="9" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-19">Edit</a>
+    </td>
+</tr>
+
+
+<tr class="govuk-table__row"><td/>&nbsp;</td></tr>
+<tr class="govuk-table__row">
+    <td colspan="3">
+		<h2 class="govuk-heading-m">
+			Exported product details
+		</h2>
+
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="228-question">What is the name of the product?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="20-answer">{{ data['product-name'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="10" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-20">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="229-question">What type of product is it?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="21-answer">{{ data['product-type'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="10" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-21">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="230-question">What is the type and number of packages?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="22-answer">{{ data['packages'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="11" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-22">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="231-question">What is the gross weight of the product(s)?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="23-answer">{{ data['weight-gross'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="12" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-23">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="232-question">What is the net weight of the product(s)?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="24-answer">{{ data['weight-net'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="12" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-24">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="233-question">Approval number of the manufacturing plant
+    </td>
+    <td class="govuk-table__cell" scope="row" id="25-answer">{{ data['slaughter-dates'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="13" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-25">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="234-question">Total number of packages in the consignment
+    </td>
+    <td class="govuk-table__cell" scope="row" id="26-answer">{{ data['cutting-earliest-day'] }} {{ data['cutting-earliest-month'] }} {{ data['cutting-earliest-year'] }} - {{ data['cutting-latest-day'] }} {{ data['cutting-latest-month'] }} {{ data['cutting-latest-year'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="14" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-26">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="235-question">What are the dates of production?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="27-answer">{{ data['production-dates'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="15" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-27">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="236-question">What is the shelf life of the product(s)?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="28-answer">{{ data['shelf-life'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="16" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-28">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="243-question">What are the batch numbers?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="29-answer">{{ data['batch-numbers'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="17" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-29">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row"><td/>&nbsp;</td></tr>
+<tr class="govuk-table__row">
+    <td colspan="3">
+		<h2 class="govuk-heading-m">
+			Transport details
+		</h2>
+
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="244-question">What are the shipping marks?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="30-answer">{{ data['shipping-marks'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="18" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-30">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="246-question">What is the storage temperature?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="31-answer">{{ data['temperature'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="19" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-31">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="247-question">What is the date of despatch?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="32-answer">{{ data['despatch-day'] }} {{ data['despatch-month'] }} {{ data['despatch-year'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="20" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-32">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="249-question">What is the port(s) of departure?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="33-answer">{{ data['ports'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="20" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-33">Edit</a>
+    </td>
+</tr>
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="254-question">What is the means of transport?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="35-answer">{{ data['transport-means'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="20" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-35">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="255-question">What is the container number?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="36-answer">{{ data['container-number'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="20" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-36">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="256-question">What is the seal number?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="37-answer">{{ data['seal-number'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="20" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-37">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="257-question">What is the name and address of the consignor?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="38-answer">{{ data['consignor'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="21" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-38">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="258-question">What is the name and address of the consignee?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="39-answer">
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="#" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-39">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="259-question">What will the place of issue of the certificate be?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="40-answer">{{ data['cert-place'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="22" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-40">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="260-question">When will the certificate be issued?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="41-answer">{{ data['cert-day'] }} {{ data['cert-month'] }} {{ data['cert-year'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="22" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-41">Edit</a>
+    </td>
+</tr>
+<tr class="govuk-table__row">
+    <td class="govuk-table__header" scope="row" id="261-question">What is the name of the certifying official?
+    </td>
+    <td class="govuk-table__cell" scope="row" id="42-answer">{{ data['cert-official'] }}
+    </td>
+    <td class="govuk-table__cell align-right" scope="row">
+        <a class="govuk-link" href="23" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-42">Edit</a>
+    </td>
+</tr>
+</tbody>
+</table>
+
+<!--
+
+<div class="govuk-grid-column-full margin-bottom-15">
+    <div class="govuk-grid-row  margin-bottom-15"><p class=" govuk-!-font-size-27">Supporting
+        documents</p></div>
+    <div class="govuk-grid-row"><div class="govuk-body govuk-!-margin-0">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-quarter ">File name</div>
+                    <div class="govuk-grid-column-three-quarters">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-three-quarters wrap" id="no_file_name">No documents uploaded</div>
+                            <div class="govuk-grid-column-one-quarter align-right"><a href="/protected/form/7006EHC/application/1721147986171/supplementary-documents" id="no_file_change" class="govuk-link">Edit</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-quarter ">File description</div>
+                    <div class="govuk-grid-column-one-half wrap" id="no_file_description">{{ data['file-description'] }}
+                    </div>
+                    <div class="govuk-grid-column-one-quarter">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>-->
+
+</div>
+</div>
+
+
+<!--
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-warning-text">
+            <span class="govuk-visually-hidden">File download</span>
+            <strong class="govuk-body govuk-!-font-weight-regular">Preview your<a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link"> specimen certificate </a>.</strong>
+
+
+            <div class="govuk-form-group margin-top-30">
+                <img src="/public/images/specimen.jpg" style="width: 400px; margin-bottom: 20px"><br>
+
+
+
+                <strong class="govuk-body govuk-!-font-weight-regular margin-top-45"><a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">   Download your specimen certificate </a></strong>
+
+
+
+
+                <!--<span class="govuk-!-font-weight-bold"> Email me the specimen certificate (optional)</span>
+
+                Download your specimen cerificate
+
+
+                <label class="govuk-label" for="email">
+                    Email address
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+-->
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div>
+            <form action="specimen" method="POST">
+                <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                <input type="hidden" name="applicationFormStatus" value="">
+                <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue" data-qa-id="Button-Continue">
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
