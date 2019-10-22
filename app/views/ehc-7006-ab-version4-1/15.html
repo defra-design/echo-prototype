@@ -38,7 +38,7 @@ GOV.UK Prototype Kit
                 <textarea class="govuk-textarea" id="certifier-address-line-1" name="importer_address" type="text" value="" rows="5">{% if data.importer_address %} {{data.importer_address}}{% endif %} </textarea>
               </div>
             </fieldset>
-            {% block leaveForm %}{% include "./partial_leave_section2.html" %}{% endblock %}
+            {% block leaveForm %}{% include "./partial_leave_section.html" %}{% endblock %}
             <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
               <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
             </div>

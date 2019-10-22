@@ -14,12 +14,12 @@ GOV.UK Prototype Kit
       </div>
       <span id="changed-name-hint" class="govuk-hint">If you want to link multiple applications together, you can enter a reference number to connect them as a group. This will allow cases to be considered together.
       </span>
-      <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
+      <form {% if query.change=="yes" %} action="../check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
         <div class="govuk-form-group">
 
             <div class="govuk-from-group">
-              <label class="govuk-label" for="7006EHC-1"> Enter your reference number (max 20 characters)</label>
-              <input class="govuk-input" id="7006EHC-1" name="ref-number" value="{{ data['ref-number'] }}" type="text" data-qa-id="Question-7006EHC-1">
+              <label class="govuk-label" for="reference_num">Enter your reference number (max 20 characters)</label>
+              <input class="govuk-input" id="reference_num" name="reference_num" value="{{ data.reference_num }}" type="text" data-qa-id="Question-7006EHC-1">
             </div>
         </div>
         <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">

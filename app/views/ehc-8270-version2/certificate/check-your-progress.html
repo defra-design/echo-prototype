@@ -28,7 +28,11 @@ GOV.UK Prototype Kit
                 Confirm your commodity
               </a>
             </span>
+            {% if not data.commodity_type %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -36,7 +40,11 @@ GOV.UK Prototype Kit
                 Create a reference number
               </a>
             </span>
+            {% if not data.reference_num %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -44,7 +52,11 @@ GOV.UK Prototype Kit
                 Request multiple certificates
               </a>
             </span>
+            {% if not data.certificate_request_amount %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -52,7 +64,11 @@ GOV.UK Prototype Kit
                 Export destination
               </a>
             </span>
+            {% if not data.export_destination_entry and not data.export_destination %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -60,7 +76,11 @@ GOV.UK Prototype Kit
                 About your certifier
               </a>
             </span>
+            {% if not data.is_certifier_address_correct and not data.delivery_options %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -68,8 +88,11 @@ GOV.UK Prototype Kit
                 Where will certification take place?
               </a>
             </span>
-
+            {% if not data.certification_place %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -77,8 +100,11 @@ GOV.UK Prototype Kit
                 Who is exporting the product?
               </a>
             </span>
-
+            {% if not data.exporter_name %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -86,19 +112,25 @@ GOV.UK Prototype Kit
                 What is the origin of the product?
               </a>
             </span>
-
+            {% if not data.origin %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
           </li>
-
         </ul>
       </li>
+      {% if data.origin %}
+      {% set ech_active = "yes"%}
+      {% endif %}
+      {{ech_active}}
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">2. </span> Exporter and certifier complete this section
         </h2>
         <ul class="app-task-list__items">
           {% for task in tasks %}
-          {% if data.ech_active == "yes"%}
+          {% if ech_active != "yes"%}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               {{task.title}}
@@ -112,18 +144,15 @@ GOV.UK Prototype Kit
               {% else %}
               {% set next_page = task.content.next %}
               {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=1{%endif%}{%else%}supporting-documents{%endif%}"
-                aria-describedby="">
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=1{%endif%}{%else%}supporting-documents{%endif%}" aria-describedby="">
                 {{task.title}}
               </a>
             </span>
-
-            {% if  data.completed[task.page] %}
+            {% if data.completed[task.page] %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
             {% else%}
             <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
             {% endif %}
-
           </li>
           {% endif %}
           <!-- data.ech_active -->
@@ -136,14 +165,28 @@ GOV.UK Prototype Kit
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="check-your-answers">Check your answers</a>
-            </span>
+
+              {% if ech_active != "yes"%}
+                <span class="app-task-list__task-name">Check your answers</span>
+              {% else %}
+                <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers</a></span>
+                <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+              {% endif%}
+
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="review">Declaration and submission</a>
-            </span>
+
+
+              {% if ech_active != "yes"%}
+                <span class="app-task-list__task-name">Declaration and submissions  </span>
+              {% else %}
+                <span class="app-task-list__task-name"><a href="review">Declaration and submission</a>  </span>
+
+              {% endif%}
+              <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+
+
+
           </li>
         </ul>
       </li>

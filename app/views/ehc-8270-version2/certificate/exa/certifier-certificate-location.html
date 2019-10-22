@@ -11,12 +11,8 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     <div>
       <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Where will certification take place?</h1>
-      <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
-      <p>
-      </p>
       <form action="../check-your-progress" method="POST" >
         <input type="hidden" name="crumb_csrf_token" value="nAitoNVyVGtnnzUQ-QQk78LOMzR_-9L6qqu86Lg9aRY">
-        <!-- @formatter:off -->
         <div class="govuk-form-group ">
           <fieldset id="8270EHCBLOCKTEST-0" class="govuk-fieldset">
             <legend class="govuk-fieldset__legend" for="8270EHCBLOCKTEST-0">
@@ -25,16 +21,16 @@ GOV.UK Prototype Kit
             <div class="govuk-hint">Select the region in which the certification will take place:</div>
             <div class="govuk-radios govuk-radios">
               <div class="govuk-radios__item">
-                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="England" name="0" data-qa-id="Question-radio-England" autofocus="autofocus">
+                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="England" name="certification_place" data-qa-id="Question-radio-England" autofocus="autofocus">
                 <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">England</label>
               </div>
               <div class="govuk-radios__item">
-                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="Scotland" name="0" data-qa-id="Question-radio-Scotland">
+                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="Scotland" name="certification_place" data-qa-id="Question-radio-Scotland">
                 <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">Scotland</label>
               </div>
               <p class="form-block">or</p>
               <div class="govuk-radios__item">
-                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="Wales" name="0" data-qa-id="Question-radio-Wales">
+                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="Wales" name="certification_place" data-qa-id="Question-radio-Wales">
                 <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">Wales</label>
               </div>
             </div>
@@ -51,8 +47,6 @@ GOV.UK Prototype Kit
           </div>
         </div>
       </form>
-      <p></p>
-    </div>
   </div>
 </div>
 {% endblock %}
