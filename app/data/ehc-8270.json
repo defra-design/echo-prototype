@@ -1,86 +1,4 @@
-[{
-		"page": 0,
-		"title": "Where will certification take place?",
-		"content": {
-			"header": "Where will certification take place?",
-			"caption": "",
-			"paragraph": "",
-			"next": "",
-			"prev": "",
-			"product_page": "no",
-			"fields": [{
-					"type": "radio",
-					"inline": "no",
-					"label": "Certification region",
-					"hint": "Select the region in which the certification will take place:",
-					"required": "yes",
-					"id": "certification-place",
-					"name": "certification_place",
-					"options": [{
-							"title": "England",
-							"value": "England"
-						},
-						{
-							"title": "Scotland",
-							"value": "Scotland"
-						},
-						{
-							"title": "Wales",
-							"value": "Wales"
-						}
-					]
-				}
-
-			]
-		}
-	}, {
-		"page": 1,
-		"title": "Who is exporting the product?",
-		"content": {
-			"header": "Who is exporting the product?",
-			"caption": "",
-			"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
-			"next": "",
-			"prev": "",
-			"product_page": "no",
-			"fields": [{
-				"type": "text",
-				"label": "Exporter name",
-				"hint": "",
-				"required": "yes",
-				"id": "exporter_name",
-				"name": "exporter_name"
-			}]
-		}
-	}, {
-		"page": 2,
-		"title": "What is the origin of the product?",
-		"content": {
-			"header": "What is the origin of the product?",
-			"caption": "",
-			"paragraph": "Provide details of the origin of the animals from which the product is derived. These may originate from more than one region. We use this information to help control the spread of disease.",
-			"next": "",
-			"prev": "",
-			"product_page": "no",
-			"fields": [{
-				"type": "checkbox",
-				"label": "Origin",
-				"hint": "Select all that apply:",
-				"required": "Yes",
-				"id": "origin",
-				"name": "origin",
-				"options": [{
-						"title": "Great Britain"
-					}, {
-						"title": "Northern Ireland"
-					},
-					{
-						"title": "Outside the UK"
-					}
-				]
-			}]
-		}
-	},
+[
 	{
 		"page": 3,
 		"title": "What are the commodity details?",
@@ -155,7 +73,7 @@
 			"header": "What are the details of the product?",
 			"caption": "What are the details of the product? 1 of 5",
 			"paragraph": "Provide details of the products in this consignment. Use a new record for each product. If there are more than 5 products, attach a schedule as a supporting document at the end of this application. When you have finished, select 'Save and review'.",
-			"next": "product-list",
+			"next": "product-list ",
 			"prev": "",
 			"product_page": "yes",
 			"fields": [{

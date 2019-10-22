@@ -13,9 +13,8 @@ module.exports = function(router) {
   const database = "ehc8270"
 
 
-  router.get('/'+base_url+'certificate/check-your-progress', function(req, res) {
-    console.log("working")
-    res.render(base_url + '/certificate/check-your-progress', {
+  router.get('/'+base_url+'certificate/check-your-*', function(req, res) {
+    res.render(base_url + '/certificate/check-your-'+req.params[0], {
       "query": req.query,
       "tasks": req.session.data[database]
     });
@@ -32,7 +31,6 @@ function isDupucate(arr,name){
   return false;
 }
 router.post('/'+base_url+'certificate/exa/certifier-confirm-address', function(req, res) {
-  console.log("rf")
   req.session.data.file_id_count += 1
   if(req.body.is_certifier_address_correct =="yes"){
     res.redirect(301, '/' + base_url + 'certificate/exa/certifier-certificate-delevery');
@@ -40,6 +38,10 @@ router.post('/'+base_url+'certificate/exa/certifier-confirm-address', function(r
     res.redirect(301, '/' + base_url + 'certificate/exa/certifier-new-address');
   }
 
+})
+router.post('/'+base_url+'certificate/page', function(req, res, next) {
+  req.session.data.completed[req.query.id] = req.query.id
+  res.redirect(301, '/' + base_url + 'certificate/'+req.query.next);
 })
 
 

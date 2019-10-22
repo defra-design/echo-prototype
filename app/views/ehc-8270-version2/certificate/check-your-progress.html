@@ -57,9 +57,36 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certifier" aria-describedby="eligibility-completed">
-              About your certifier
+                About your certifier
               </a>
             </span>
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="exa/certification_location" aria-describedby="eligibility-completed">
+                Where will certification take place?
+              </a>
+            </span>
+
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="exa/exporter" aria-describedby="eligibility-completed">
+                Who is exporting the product?
+              </a>
+            </span>
+
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="exa/product-origin" aria-describedby="eligibility-completed">
+                What is the origin of the product?
+              </a>
+            </span>
+
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
           </li>
 
@@ -71,27 +98,35 @@ GOV.UK Prototype Kit
         </h2>
         <ul class="app-task-list__items">
           {% for task in tasks %}
-            {% if data.ech_active == "yes"%}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
+          {% if data.ech_active == "yes"%}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {{task.title}}
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if not task.content.next %}
+              {% set next_page = 'check-your-progress' %}
+              {% else %}
+              {% set next_page = task.content.next %}
+              {% endif %}
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=1{%endif%}{%else%}supporting-documents{%endif%}"
+                aria-describedby="">
                 {{task.title}}
-              </span>
-            </li>
-            {% else %}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
+              </a>
+            </span>
 
-                <a href="{% if task.title!='Supporting documents' %}
-                          page?id={{task.page}}
-                          {%if task.content.product_page == 'yes' %}product_page=1{%endif%}
-                          {%else%}supporting-documents{%endif%}" aria-describedby="">
-                  {{task.title}}
-                </a>
+            {% if  data.completed[task.page] %}
+            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% else%}
+            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+            {% endif %}
 
-              </span>
-              <strong class="govuk-tag app-task-list__task-completed not-started" >Not started</strong>
-            </li>
-            {% endif %}<!-- data.ech_active -->
+          </li>
+          {% endif %}
+          <!-- data.ech_active -->
           {% endfor %}
         </ul>
       </li>
@@ -102,12 +137,12 @@ GOV.UK Prototype Kit
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              Check your answers
+              <a href="check-your-answers">Check your answers</a>
             </span>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              Declaration and submission
+              <a href="review">Declaration and submission</a>
             </span>
           </li>
         </ul>

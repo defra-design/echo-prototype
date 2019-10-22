@@ -134,7 +134,9 @@ GOV.UK Prototype Kit
                 Cold store details
               </a>
             </span>
-            {% if not data.coldstore_postcode and not data.coldstore_name and not data.coldstore_van
+            {% if data.has_coldstore=="assign" and data.has_coldstore_self_life=="assign" %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% elseif not data.coldstore_postcode and not data.coldstore_name and not data.coldstore_van
             and not data.shelf_year and not data.shelf_month and not data.shelf_day2 and not data.shelf_year2 and not data.shelf_month2 and not data.shelf_day
             %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>

@@ -23,7 +23,6 @@ module.exports = {
     "skipped"   :  ["empty"],
     "uploaded_files": [],
     "file_id_count" : 0,
+    "completed" :   [],
     "ehc8270"   :  ehc8270,
-
-
 }

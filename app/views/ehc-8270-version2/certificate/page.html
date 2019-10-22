@@ -17,7 +17,8 @@
       {{page.content.header}}
     </h1>
     <p class="govuk-body">{% if page.content.paragraph %}{{page.content.paragraph}}{% endif %}</p>
-    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
+    <form method="POST">
+    <!-- <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST"> -->
       <fieldset class="govuk-fieldset">
         {% for field in page.content.fields %}
         {% set type = "./partials/"+field.type+".html"%}
