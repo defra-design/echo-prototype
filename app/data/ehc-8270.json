@@ -1,6 +1,6 @@
 [
 	{
-		"page": 3,
+		"page":1,
 		"title": "What are the commodity details?",
 		"content": {
 			"header": "What are the commodity details?",
@@ -67,7 +67,7 @@
 		}
 	},
 	{
-		"page": 4,
+		"page": 2,
 		"title": "What are the details of the product?",
 		"content": {
 			"header": "What are the details of the product?",
@@ -163,7 +163,7 @@
 			]
 		}
 	}, {
-		"page": 5,
+		"page": 3,
 		"title": "What is the place of origin of the consignment?",
 		"content": {
 			"header": "What is the place of origin of the consignment?",
@@ -201,7 +201,7 @@
 		}
 	},
 	{
-		"page": 6,
+		"page": 4,
 		"title": "Who is sending the consignment?",
 		"content": {
 			"header": "Who is sending the consignment?",
@@ -246,7 +246,7 @@
 			]
 		}
 	}, {
-		"page": 7,
+		"page": 5,
 		"title": "How will the consignment be packaged?",
 		"content": {
 			"header": "How will the consignment be packaged?",
@@ -275,7 +275,7 @@
 		}
 	},
 	{
-		"page": 8,
+		"page": 6,
 		"title": "Where will the consignment be loaded?",
 		"content": {
 			"header": "Where will the consignment be loaded?",
@@ -295,7 +295,7 @@
 		}
 	},
 	{
-		"page": 9,
+		"page": 7,
 		"title": "How will the consignment be transported?",
 		"content": {
 			"header": "How will the consignment be transported?",
@@ -368,7 +368,7 @@
 		}
 	},
 	{
-		"page": 10,
+		"page": 8,
 		"title": "Who is receiving the consignment?",
 		"content": {
 			"header": "Who is receiving the consignment?",
@@ -414,7 +414,7 @@
 		}
 	},
 	{
-		"page": 11,
+		"page": 9,
 		"title": "What is the final destination of this consignment?",
 		"content": {
 			"header": "What is the final destination of this consignment?",
@@ -444,7 +444,7 @@
 		}
 	},
 	{
-		"page": 12,
+		"page": 10,
 		"title": "Which Border Inspection Post (BIP) will the consignment arrive at?",
 		"content": {
 			"header": "What is the final destination of this consignment?",

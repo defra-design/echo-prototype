@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!-- Error message START-->
+      {% block errorBlank %}{% include "./partial_error_blank.html" %}{% endblock %}
+      <!-- Error message END -->
+      <div>
+        <span class="govuk-caption-xl">
+          Step 1 of 2
+        </span>
+        <h1 class="govuk-heading-xl">About the shipment</h1>
+        <form method="POST">
+          <div class="govuk-form-group ">
+            <label class="govuk-label" for="7006EHC-0">Type and number of packages? </label>
+            <div class="govuk-hint">Enter the number and type of packages of this product.</div>
+            <textarea class="govuk-textarea" id="7006EHC-0" name="packages" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.packages %}{{data.packages}}{% endif %} </textarea>
+          </div>
+          <div class="govuk-form-group ">
+            <label class="govuk-label" for="7006EHC-0">What is the gross and net weight of the product?
+            </label>
+            <div class="govuk-hint">Weight in Kilograms. </div>
+            <input {% if data.weight %}value="{{data.weight}}" {% endif %} class="govuk-input govuk-input--width-20 form-control-3-4" id="7006EHC-0" name="weight" value="" type="text" autofocus="autofocus" data-qa-id="Question-7006EHC-0">
+          </div>
+          <div class="govuk-form-group ">
+            <label class="govuk-label " for="7006EHC-0">What are the batch numbers? </label>
+            <div class="govuk-hint">Enter the range of batch codes or lot numbers (first to last) for this product.</div>
+            <textarea class="govuk-textarea" id="7006EHC-0" name="batch" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.batch %}{{data.batch}}{% endif %} </textarea>
+          </div>
+          <div class="govuk-form-group ">
+            <label class="govuk-label " for="7006EHC-0">What are the shipping marks? </label>
+            <div class="govuk-hint">The approval number of the cutting plant or slaughterhouse in the form UK/1234/EC may be used as the shipping mark.</div>
+            <textarea class="govuk-textarea" id="7006EHC-0" name="marks" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.marks %}{{data.marks}}{% endif %} </textarea>
+          </div>
+          <div class="govuk-form-group ">
+            <label class="govuk-label " for="7006EHC-0">What is the storage temperature? </label>
+            <div class="govuk-hint">This should only be written in this format: ‘ -18 degrees Celsius’ </div>
+            <textarea class="govuk-textarea" id="7006EHC-0" name="temperature" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false">{% if data.temperature %}{{data.temperature}}{% endif %} </textarea>
+          </div>
+          {% block leaveForm %}{% include "./partial_leave_section2.html" %}{% endblock %}
+          <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+            <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          </div>
+        </form>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full govuk-body">
+            <form action="dashboard">
+              <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+            </form>
+          </div>
+        </div>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
