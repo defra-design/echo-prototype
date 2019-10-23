@@ -447,7 +447,7 @@
 		"page": 10,
 		"title": "Which Border Inspection Post (BIP) will the consignment arrive at?",
 		"content": {
-			"header": "What is the final destination of this consignment?",
+			"header": "Which Border Inspection Post (BIP) will the consignment arrive at?",
 			"caption": "",
 			"paragraph": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry.",
 			"next": "",

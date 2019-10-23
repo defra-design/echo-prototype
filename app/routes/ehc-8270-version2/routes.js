@@ -31,6 +31,16 @@ function isDupucate(arr,name){
   }
   return false;
 }
+
+function findPage(arr,id){
+  for (var i = 0; i < arr.length; i++) {
+
+    if (arr[i].page == id) {
+      return arr[i];
+    }
+  }
+  return false;
+}
 router.post('/'+base_url+'certificate/exa/certifier-confirm-address', function(req, res) {
   req.session.data.file_id_count += 1
   if(req.body.is_certifier_address_correct =="yes"){
@@ -86,7 +96,9 @@ router.post('/'+base_url+'certificate/supporting-documents', function(req, res) 
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function(req, res) {
     console.log("default get routing page for: "+base_url + req.params[0])
-    var id =  parseInt(req.query.id) || 0
+    var id =  parseInt(req.query.id) || 0;
+    console.log(findPage(req.session.data.ehc8270,id))
+
 
     // clear session info
     if(req.query.destroy=="yes"){
@@ -94,7 +106,7 @@ router.post('/'+base_url+'certificate/supporting-documents', function(req, res) 
     }
     res.render(base_url + req.params[0], {
       "query":req.query,
-      "page":req.session.data.ehc8270[id]
+      "page":findPage(req.session.data.ehc8270,id)
     });
   })
 

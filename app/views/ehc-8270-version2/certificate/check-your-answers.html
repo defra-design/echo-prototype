@@ -82,7 +82,7 @@ GOV.UK Prototype Kit
             <td class="govuk-table__cell" scope="row" id="5-answer">Electra Way Crewe Business Park Crewe CW1 6GJ
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995659/page/4/certificate-delivery-address" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>
+              <a class="govuk-link" href="exa/certifier-confirm-address?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -91,7 +91,7 @@ GOV.UK Prototype Kit
             <td class="govuk-table__cell" scope="row" id="6-answer">{{data.delivery_options}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995659/page/5?selectedQuestion=8191" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Change</a>
+              <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -100,7 +100,7 @@ GOV.UK Prototype Kit
             <td class="govuk-table__cell" scope="row" id="7-answer">{{data.certification_place}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995659/page/6?selectedQuestion=8192" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Change</a>
+              <a class="govuk-link" href="exa/certifier-certificate-location?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -109,7 +109,7 @@ GOV.UK Prototype Kit
             <td class="govuk-table__cell" scope="row" id="8-answer">{{data.exporter_name}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995659/page/7?selectedQuestion=8193" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-8">Change</a>
+              <a class="govuk-link" href="exa/exporter?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-8">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -118,18 +118,18 @@ GOV.UK Prototype Kit
             <td class="govuk-table__cell" scope="row" id="9-answer">{{data.origin}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995659/page/8?selectedQuestion=8194" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-9">Change</a>
+              <a class="govuk-link" href="exa/product-origin?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-9">Change</a>
             </td>
           </tr>
-          <tr class="govuk-table__row">
+          <!-- <tr class="govuk-table__row">
             <td class="govuk-table__header" scope="row" id="8195-question">Planned export date
             </td>
             <td class="govuk-table__cell" scope="row" id="10-answer">2 Mar 2020
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995659/page/9?selectedQuestion=8195" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-10">Change</a>
+              <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-10">Change</a>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
 
@@ -147,7 +147,7 @@ GOV.UK Prototype Kit
             {{data[field.name]}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="page?id={{task.page-1}}&next=check-your-answers">
+            <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
               Change<span class="govuk-visually-hidden"> {{field.label}}</span>
             </a>
           </dd>
