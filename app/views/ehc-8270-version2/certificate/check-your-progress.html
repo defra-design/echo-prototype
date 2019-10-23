@@ -82,42 +82,28 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
+          {% for task in tasks %}
+          {% if task.exa == "yes" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="exa/certification_location" aria-describedby="eligibility-completed">
-                Where will certification take place?
+              {% if not task.content.next %}
+              {% set next_page = 'check-your-progress' %}
+              {% else %}
+              {% set next_page = task.content.next %}
+              {% endif %}
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=1{%endif%}{%else%}supporting-documents{%endif%}" aria-describedby="">
+                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
               </a>
             </span>
-            {% if not data.certification_place %}
-            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-            {% else %}
-            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% if data.completed[task.page] %}
+            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% else%}
+            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
             {% endif %}
           </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="exa/exporter" aria-describedby="eligibility-completed">
-                Who is exporting the product?
-              </a>
-            </span>
-            {% if not data.exporter_name %}
-            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-            {% else %}
-            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-            {% endif %}
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="exa/product-origin" aria-describedby="eligibility-completed">
-                What is the origin of the product?
-              </a>
-            </span>
-            {% if not data.origin %}
-            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-            {% else %}
-            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-            {% endif %}
-          </li>
+          <!-- data.ech_active -->
+          {% endif %}
+          {% endfor %}
         </ul>
       </li>
       {% if data.origin %}
@@ -129,6 +115,7 @@ GOV.UK Prototype Kit
         </h2>
         <ul class="app-task-list__items">
           {% for task in tasks %}
+          {% if task.exa != "yes" %}
           {% if ech_active != "yes"%}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -148,7 +135,7 @@ GOV.UK Prototype Kit
               </a>
             </span>
             {% if task.title =='Supporting documents' %}
-            <strong class="govuk-tag app-task-list__task-completed">{% if (updloaded_files | length) %}Documents added{% else %}None added{% endif %}</strong>
+            <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
             {% elseif data.completed[task.page] %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
             {% else%}
@@ -157,6 +144,7 @@ GOV.UK Prototype Kit
           </li>
           {% endif %}
           <!-- data.ech_active -->
+          {% endif %}
           {% endfor %}
         </ul>
       </li>

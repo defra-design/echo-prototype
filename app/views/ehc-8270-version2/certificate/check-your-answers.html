@@ -3,7 +3,6 @@
 GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
-<style>h2{padding-top: 50px!important;}</style>
 <a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
@@ -18,126 +17,116 @@ GOV.UK Prototype Kit
         </strong>
       </div>
       <br /><br />
-      <table class="govuk-table">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="specific-commodity-question">
-              What are you exporting?
-            </td>
-            <td class="govuk-table__cell" scope="row" id="specific-commodity-answer">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What are you exporting?
+          </dt>
+          <dd class="govuk-summary-list__value">
               {{data.commodity_type or "Crab"}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="exa/your-commodity?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-specific-commodity-question">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="-6-question">Group reference number (optional)
-            </td>
-            <td class="govuk-table__cell" scope="row" id="0-answer">{{data.reference_num or "no reference"}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="exa/your-commodity?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-specific-commodity-question">Change</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Create a reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{data.reference_num or "no reference"}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="exa/reference?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="-5-question">Number of certificates
-            </td>
-            <td class="govuk-table__cell" scope="row" id="1-answer">{{data.certificate_request_amount or "1"}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Number of certificates
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{data.certificate_request_amount or "1"}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="exa/certificates?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-1">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="-7-question">Point of entry into the European Economic Area
-            </td>
-            <td class="govuk-table__cell" scope="row" id="2-answer">{{data.export_destination_entry}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Point of entry into the European Economic Area
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data.export_destination_entry}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="exa/export-destination?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="-3-question">Destination in the European Economic Area
-            </td>
-            <td class="govuk-table__cell" scope="row" id="3-answer">{{data.export_destination}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="exa/export-destination?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-3">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="-question">Select the certifier practice to include with your application
-            </td>
-            <td class="govuk-table__cell" scope="row" id="4-answer">Barnyard Dawg Electra Way CW1 6GJ
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Destination in the European Economic Area
+          </dt>
+          <dd class="govuk-summary-list__value">{{data.export_destination}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="exa/export-destination?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Change</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Select the certifier practice to include with your application
+          </dt>
+          <dd class="govuk-summary-list__value">Barnyard Dawg Electra Way CW1 6GJ
+          </dd>
+          <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="exa/certifier?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="-question">Select certificate delivery address
-            </td>
-            <td class="govuk-table__cell" scope="row" id="5-answer">Electra Way Crewe Business Park Crewe CW1 6GJ
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="exa/certifier-confirm-address?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="8191-question">Delivery method
-            </td>
-            <td class="govuk-table__cell" scope="row" id="6-answer">{{data.delivery_options}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="8192-question">Certification region
-            </td>
-            <td class="govuk-table__cell" scope="row" id="7-answer">{{data.certification_place}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="exa/certifier-certificate-location?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-7">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="8193-question">Exporter name
-            </td>
-            <td class="govuk-table__cell" scope="row" id="8-answer">{{data.exporter_name}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="exa/exporter?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-8">Change</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="8194-question">Origin
-            </td>
-            <td class="govuk-table__cell" scope="row" id="9-answer">{{data.origin}}
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="exa/product-origin?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-9">Change</a>
-            </td>
-          </tr>
-          <!-- <tr class="govuk-table__row">
-            <td class="govuk-table__header" scope="row" id="8195-question">Planned export date
-            </td>
-            <td class="govuk-table__cell" scope="row" id="10-answer">2 Mar 2020
-            </td>
-            <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-10">Change</a>
-            </td>
-          </tr> -->
-        </tbody>
-      </table>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Select certificate delivery address
+          </dt>
+          <dd class="govuk-summary-list__value">Electra Way Crewe Business Park Crewe CW1 6GJ
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="exa/certifier-confirm-address?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Delivery method
+          </dt>
+          <dd class="govuk-summary-list__value">{{data.delivery_options}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Change</a>
+          </dd>
+        </div>
+        {% for task in tasks %}
+        {% if task.exa == "yes" %}
+          {% for field in task.content.fields %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {{field.label}}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data[field.name]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> {{field.label}}</span>
+              </a>
+            </dd>
+          </div>
+          {% endfor %}
+        {% endif %}
+        {% endfor %}
+      </dl>
+
+      <!-- GET BESPOKE EXA QUESTIONS -->
+
 
 
       {% for task in tasks %}
-      {% if task.title != "Supporting documents" %}
+      {% if task.title != "Supporting documents" and task.exa != "yes" %}
       <h2 class="govuk-heading-m">{{task.title}}</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-4 govuk-summary-list__m">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
         {% for field in task.content.fields %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -158,7 +147,7 @@ GOV.UK Prototype Kit
       {% endfor %}
       <!-- {Tasks -->
       <h2 class="govuk-heading-m">Supporting socuments</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-4 govuk-summary-list__m">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
         {% if (data.uploaded_files | length) > 0 %}
         {% for file in data.uploaded_files %}
         <div class="govuk-summary-list__row">

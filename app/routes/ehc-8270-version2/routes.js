@@ -54,7 +54,21 @@ router.post('/'+base_url+'certificate/page', function(req, res, next) {
   req.session.data.completed[req.query.id] = req.query.id
   res.redirect(301, '/' + base_url + 'certificate/'+req.query.next);
 })
-
+router.get('/'+base_url+'certificate/page', function(req, res) {
+    var id =  parseInt(req.query.id) || 0;
+  res.render(base_url+'certificate/page', {
+    "query": req.query,
+    "page":findPage(req.session.data.ehc8270,id)
+  }, function(err, html) {
+    if (err) {
+      if (err.message.indexOf('template not found') !== -1) {
+        return res.render(file_url + '/certificate/page');
+      }
+      throw err;
+    }
+    res.send(html);
+  })
+})
 
 router.get('/'+base_url+'certificate/supporting-documents', function(req, res) {
 
@@ -96,17 +110,10 @@ router.post('/'+base_url+'certificate/supporting-documents', function(req, res) 
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function(req, res) {
     console.log("default get routing page for: "+base_url + req.params[0])
-    var id =  parseInt(req.query.id) || 0;
-    console.log(findPage(req.session.data.ehc8270,id))
 
 
-    // clear session info
-    if(req.query.destroy=="yes"){
-      req.session.destroy();
-    }
     res.render(base_url + req.params[0], {
-      "query":req.query,
-      "page":findPage(req.session.data.ehc8270,id)
+      "query":req.query
     });
   })
 
