@@ -13,13 +13,13 @@ module.exports = function(router) {
   const database = "ehc8270"
 
 
-  router.get('/'+base_url+'certificate/check-your-*', function(req, res) {
+router.get('/'+base_url+'certificate/check-your-*', function(req, res) {
 
-    res.render(base_url + '/certificate/check-your-'+req.params[0], {
-      "query": req.query,
-      "tasks": req.session.data[database]
-    });
+  res.render(base_url + '/certificate/check-your-'+req.params[0], {
+    "query": req.query,
+    "tasks": req.session.data[database]
   });
+});
 
 
 function isDupucate(arr,name){
