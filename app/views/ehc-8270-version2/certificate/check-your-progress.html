@@ -4,7 +4,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent%}
 {{super()}}
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<a href="javascript:history.back()" class="govuk-back-link">Return to your applications</a>
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
@@ -12,8 +12,8 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">
       New Application
     </h1>
-    <h2 class="govuk-heading-m" style="font-weight: 300">Export fishery products intended for human consumption to the EU: certificate 8270</h2>
-    <p> If this is not correct, <a href="index" style="font-weight: 300">find another Export Health Certificate</a>
+    <h2 class="govuk-heading-m" >Export Certificate 8270EHC</h2>
+    <p> If this is not correct, <a href="index">find another Export Health Certificate</a>
     </p>
     <hr>
     <ol class="app-task-list">
@@ -123,7 +123,6 @@ GOV.UK Prototype Kit
       {% if data.origin %}
       {% set ech_active = "yes"%}
       {% endif %}
-      {{ech_active}}
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">2. </span> Exporter and certifier complete this section
@@ -145,10 +144,12 @@ GOV.UK Prototype Kit
               {% set next_page = task.content.next %}
               {% endif %}
               <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=1{%endif%}{%else%}supporting-documents{%endif%}" aria-describedby="">
-                {{task.title}}
+                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
               </a>
             </span>
-            {% if data.completed[task.page] %}
+            {% if task.title =='Supporting documents' %}
+            <strong class="govuk-tag app-task-list__task-completed">{% if (updloaded_files | length) %}Documents added{% else %}None added{% endif %}</strong>
+            {% elseif data.completed[task.page] %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
             {% else%}
             <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
@@ -181,9 +182,9 @@ GOV.UK Prototype Kit
                 <span class="app-task-list__task-name">Declaration and submissions  </span>
               {% else %}
                 <span class="app-task-list__task-name"><a href="review">Declaration and submission</a>  </span>
-
+                <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
               {% endif%}
-              <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+
 
 
 

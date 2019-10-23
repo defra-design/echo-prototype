@@ -27,19 +27,19 @@ GOV.UK Prototype Kit
             </legend>
             <div class="govuk-checkboxes ">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Great Britain" checked="checked">
+                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Great Britain" {% if data.origin and 'Great Britain' in data.origin %}checked="checked"{% endif %}>
                 <label class="govuk-label govuk-checkboxes__label" for="Great Britain">
                   Great Britain
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Northern Ireland" checked="checked">
+                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Northern Ireland" {% if data.origin and 'Northern Ireland' in data.origin %}checked="checked"{% endif %}>
                 <label class="govuk-label govuk-checkboxes__label" for="Northern Ireland">
                   Northern Ireland
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Outside the UK" checked="checked">
+                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Outside the UK" {% if data.origin and 'Outside the UK' in data.origin %}checked="checked"{% endif %}>
                 <label class="govuk-label govuk-checkboxes__label" for="Outside the UK">
                   Outside the UK
                 </label>

@@ -14,6 +14,7 @@ module.exports = function(router) {
 
 
   router.get('/'+base_url+'certificate/check-your-*', function(req, res) {
+
     res.render(base_url + '/certificate/check-your-'+req.params[0], {
       "query": req.query,
       "tasks": req.session.data[database]

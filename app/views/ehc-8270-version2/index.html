@@ -4,15 +4,7 @@
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
-
-{% block content %}
-
-
-
-
-
-
-
+{% block beforeContent%}
 
 <div class="gem-c-breadcrumbs govuk-breadcrumbs " data-module="track-click">
     <ol class="govuk-breadcrumbs__list">
@@ -27,6 +19,13 @@
         </li>
     </ol>
 </div>
+{% endblock%}
+
+{% block content %}
+
+
+
+
 
 
         <style>
@@ -52,24 +51,9 @@
 </style>
 
 
-
-<div class="govuk-width-container">
-
-
-    <div class="gem-c-contextual-breadcrumbs">
-
-
-
-
-
-
-    </div>
-
-
-
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <div class="gem-c-title govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+            <div class="gem-c-title govuk-!-margin-bottom-8">
                 <h1 class="gem-c-title__text govuk-heading-xl">
                     Find an export health certificate
                 </h1>
@@ -139,21 +123,7 @@
 
 
 <div class="app-c-option-select  js-collapsible" data-module="option-select" data-input-aria-controls="js-search-results-info">
-<div role="group" aria-labelledby="option-select-title-destination-country" class="app-c-option-select__container js-options-container" id="destination_country" tabindex="-1" style="height: 260.333px;">
-<div class="app-c-option-select__container-inner js-auto-height-inner">
 
-<div id="checkboxes-da905a79" class="gem-c-checkboxes govuk-form-group" data-module="govuk-checkboxes">
-<fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--m gem-c-checkboxes__legend--hidden">Destination country</legend>
-
-
-
-
-
-</fieldset>
-</div>
-</div>
-</div>
 </div>
 
 
@@ -244,7 +214,7 @@
 <ol class="gem-c-document-list gem-c-document-list--no-underline">
 
 <li class="gem-c-document-list__item  ">
-    <a data-ecommerce-path="" data-ecommerce-content-id="52cd62d8-6c64-4efa-9a5b-b4d5c0a2c72b" data-ecommerce-row="1" data-track-category="navFinderLinkClicked" data-track-action="Find an export health certificate.1" data-track-label="/export-health-certificates/export-fishery-products-intended-for-human-consumption-to-the-eu-certificate-8270" data-track-options="{&quot;dimension28&quot;:50,&quot;dimension29&quot;:&quot;Export fishery products intended for human consumption to the EU: certificate 8270&quot;}" class="gem-c-document-list__item-title  " href="1">Export fishery products intended for human consumption to the EU: certificate 8270</a>
+    <a data-ecommerce-path="" data-ecommerce-content-id="52cd62d8-6c64-4efa-9a5b-b4d5c0a2c72b" data-ecommerce-row="1" data-track-category="navFinderLinkClicked" data-track-action="Find an export health certificate.1" data-track-label="/export-health-certificates/export-fishery-products-intended-for-human-consumption-to-the-eu-certificate-8270" data-track-options="{&quot;dimension28&quot;:50,&quot;dimension29&quot;:&quot;Export fishery products intended for human consumption to the EU: certificate 8270&quot;}" class="gem-c-document-list__item-title  " href="certificate">Export fishery products intended for human consumption to the EU: certificate 8270</a>
 
 
 
@@ -1228,6 +1198,7 @@
 
 
 
-        
+
+
 
 {% endblock %}
