@@ -25,44 +25,26 @@
     <table class="govuk-table" id="Table-RepeatablePageReview">
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th class="govuk-table__header">Scientific species name (optional)</th>
-        <th class="govuk-table__header">Nature of the commodity (optional)</th>
-        <th class="govuk-table__header">Treatment type (optional)</th>
-        <th class="govuk-table__header">Approval number of the manufacturing plant (optional)</th>
-        <th class="govuk-table__header">Number of packages (optional)</th>
-        <th class="govuk-table__header">Net weight (optional)</th>
-        <th class="govuk-table__header">Actions</th>
+        {% for question in product.content.fields %}
+        <th class="govuk-table__header">{{question.label}} {% if question.required != 'yes'%}{%endif%}</th>
+        {% endfor %}
+        <th class="govuk-table__header">actions</th>
       </tr>
       </thead>
 
       <tbody class="govuk-table__body" id="TableBody-RepeatablePageReview">
       <tr class="govuk-table__row">
+        {% for question in product.content.fields %}
+        <td class="govuk-table__cell">{{data[question.name]}}</td>
+        {% endfor %}
         <td class="govuk-table__cell">
-          delboy
-        </td>
-        <td class="govuk-table__cell">
-          Aquaculture
-        </td>
-        <td class="govuk-table__cell">
-          Chilled
-        </td>
-        <td class="govuk-table__cell">
-          United Kingdom
-        </td>
-        <td class="govuk-table__cell">
-          asdfsd
-        </td>
-        <td class="govuk-table__cell">
-          dasfasd
-        </td>
-        <td class="govuk-table__cell">
-          <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995653/page/11?pageOccurrence=0" data-qa-id="Link-ChangeRepeatablePage" id="Link-ChangeRepeatablePage-0">Edit</a>
+          <a class="govuk-link" href="page?id={{query.id or 2}}?product=1" data-qa-id="Link-ChangeRepeatablePage" id="Link-ChangeRepeatablePage-0">Edit</a>
           <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995653/page/11/review/delete?pageOccurrence=0" id="0-deleteLink">Delete</a>
         </td>
       </tr>
       </tbody>
     </table>
-    <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id={{ data.product_page }}" id="Button-AddAnother">Add Another</a>
+    <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id={{query.id or 2}}&next=product-list" id="Button-AddAnother">Add Another</a>
     <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
       <input type="hidden" name="crumb_csrf_token" value="nAitoNVyVGtnnzUQ-QQk78LOMzR_-9L6qqu86Lg9aRY">
       <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
