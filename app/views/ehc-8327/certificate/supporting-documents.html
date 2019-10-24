@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if query.hasError %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          {% if query.errorType == "duplicate" %}
+          <li>
+            File names need to be different - rename the file and try again
+          </li>
+           {% endif %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+    <h1 id="supplementary-documents" class="govuk-heading-xl">Supporting documents</h1>
+    <div class="govuk-width-container">
+      <div class="govuk-body">
+        <div id="paragraph" class="margin-top-20">
+          <p>If you wish to attach any supporting documents to your application, you can upload them here. Otherwise, please click 'Save and continue' to skip this section.</p>
+        </div>
+        <div class="margin-top-20">
+          <label id="subTitle" class="govuk-label">You can only upload one at a time. Each file must: </label>
+        </div>
+        <div>
+          <ul id="bulletPoints">
+            <li id="point_0">be in PDF, Word, Excel or JPEG format</li>
+            <li id="point_1">be less than 10 megabytes (10 MB)</li>
+            <li id="point_2">have a unique, meaningful file name</li>
+            <li id="point_3">uploaded with a file description</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      </div>
+      <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-body govuk-!-margin-0">
+          <div class="govuk-grid-row govuk-!-font-weight-bold">
+            <div class="govuk-grid-column-three-quarters">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">File name</div>
+                <div class="govuk-grid-column-one-half">File description</div>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">Action</div>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-body govuk-!-margin-0">
+          <form method="POST">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+              </div>
+            </div>
+            {% for file in data.uploaded_files %}
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-one-half wrap" id="file_test_support.docx">{{file.name}}</div>
+                  <div class="govuk-grid-column-one-half wrap" id="description_test_support.docx">{{file.description}}</div>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-quarter" id="action_links_0">
+                <a id="view_link_test_support.docx" href="/protected/form/8270EHC/application/1721147992687/supplementary-documents/10977038-996d-492d-be43-8e1988e5667a/view" target="_blank" class="govuk-link">View</a>
+                <a id="delete_link_test_support.docx" href="supporting-documents?delete={{file.ID}}" class="margin-left-30 govuk-link">Delete</a>
+              </div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                <hr>
+              </div>
+            </div>
+            {% endfor%}
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-one-half">
+                    <input class="inputfile govuk-file-upload" id="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg" type="file">
+                  </div>
+                  <div class="govuk-grid-column-one-half">
+                    <textarea rows="2" id="description" name="file_description" class="govuk-textarea margin-bottom-0" maxlength="100"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <input class="link-button" type="submit" name="upload" value="Upload" id="Upload" data-qa-id="Button-Upload">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="govuk-grid-row margin-top-30">
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-grid-row">
+            <a class="govuk-button" href="check-your-progress" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">Save and continue</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

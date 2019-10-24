@@ -18,6 +18,8 @@ Example usage:
 */
 
 var ehc8270 = require('./ehc-8270.json')
+var ehc8327 = require('./ehc8327.json')
+
 module.exports = {
     "empty":[],
     "skipped"   :  ["empty"],
@@ -25,4 +27,5 @@ module.exports = {
     "file_id_count" : 0,
     "completed" :   [],
     "ehc8270"   :  ehc8270,
+    "ehc8327"   :  ehc8327,
 }

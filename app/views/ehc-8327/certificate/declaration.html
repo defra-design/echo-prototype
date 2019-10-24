@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Your export application<br>
+          has been sent to APHA and your certifier
+        </h1>
+        <div class="govuk-panel__body">
+          The APHA application reference number is<br>
+          <strong class="bold" id="applicationFormId" data-qa-id="TextDisplay-CVEDReferenceNumber">8270-47986165</strong><br>
+          Your unique reference number is
+          <strong class="bold" id="applicationFormId" data-qa-id="TextDisplay-CVEDReferenceNumber"><br>PO-47982019</strong>
+        </div>
+      </div>
+      <div class="govuk-body margin-top-45">
+        <!--go-->
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive"></span>
+            It can take up to 10 working days to complete the health certification process.
+          </strong>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>You will get an email with confirmation of your application. Check your spam folder if you cannot find it.</li>
+          <li>Our team will check the information you gave us and process your application. This can take up to 2 working days. We will contact you if there is any missing information.</li>
+          <li>We will send your certificate to the official veterinarian you chose. The OV will contact you to inspect your consignment.</li>
+        </ul>
+        <h2 class="govuk-heading-m"> Paperwork will be sent out to your nominated Official Vet by first class post</h2>
+        <p>If you prefer the paperwork to be sent by Special Delivery or courier service, use the contact details below to make&nbsp;arrangements.</p>
+        <p class="govuk-heading-m">Where would you like to go next?</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a id="link-returnToHome" href="/e2e/search?q=" class="govuk-link">
+              Find another health certificate
+            </a>
+          </li>
+          <li>
+            <a id="link-returnToHome" href="dashboard" class="govuk-link">
+              My exports dashboard
+            </a>
+          </li>
+        </ul>
+        <h2 class="govuk-heading-m">
+          Help with your submission
+        </h2>
+        <p>Telephone: 03000 200 301<br>
+          Opening Times: Monday to Friday, 8.30am to 5pm GMT<br>
+          Email: <a href="mailto: SSC.Carlisle@apha.gov.uk">SSC.Carlisle@apha.gov.uk</a></p>
+        <form action="../dashboard">
+          <button class="govuk-button" type="submit">Return to home</button>
+        </form>
+        <!--stop-->
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

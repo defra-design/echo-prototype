@@ -8,18 +8,13 @@ module.exports = function(router) {
 
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'ehc-8270-version2'
+  const version = 'ehc-8327'
   const base_url = version + "/"
-  const database = "ehc8270"
+  const database = "ehc8327"
+  const certificate= "8327EHC"
 
 
-router.get('/'+base_url+'certificate/check-your-*', function(req, res) {
 
-  res.render(base_url + '/certificate/check-your-'+req.params[0], {
-    "query": req.query,
-    "tasks": req.session.data[database]
-  });
-});
 
 
 function isDupucate(arr,name){
@@ -41,6 +36,15 @@ function findPage(arr,id){
   }
   return false;
 }
+
+router.get('/'+base_url+'certificate/check-your-*', function(req, res) {
+  req.session.data.certificate = certificate
+  console.log(req.session.data)
+  res.render(base_url + '/certificate/check-your-'+req.params[0], {
+    "query": req.query,
+    "tasks": req.session.data[database].pages
+  });
+});
 router.post('/'+base_url+'certificate/exa/certifier-confirm-address', function(req, res) {
   req.session.data.file_id_count += 1
   if(req.body.is_certifier_address_correct =="yes"){
@@ -50,19 +54,39 @@ router.post('/'+base_url+'certificate/exa/certifier-confirm-address', function(r
   }
 
 })
+
+
 router.post('/'+base_url+'certificate/page', function(req, res, next) {
   req.session.data.completed[req.query.id] = req.query.id
   res.redirect(301, '/' + base_url + 'certificate/'+req.query.next);
 })
+
+
 router.get('/'+base_url+'certificate/page', function(req, res) {
-  var id =  parseInt(req.query.id) || 0;
+    var id =  parseInt(req.query.id) || 0;
   res.render(base_url+'certificate/page', {
     "query": req.query,
-    "page":findPage(req.session.data.ehc8270,id)
+    "page":findPage(req.session.data[database].pages,id)
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
         return res.render(file_url + '/certificate/page');
+      }
+      throw err;
+    }
+    res.send(html);
+  })
+})
+
+
+router.get('/'+base_url+'certificate/exa/your-commodity', function(req, res) {
+  res.render(base_url+'certificate/exa/your-commodity', {
+    "query": req.query,
+    "commodities":req.session.data.ehc8327.commodities
+  }, function(err, html) {
+    if (err) {
+      if (err.message.indexOf('template not found') !== -1) {
+        return res.render(file_url + '/exa/your-commodity');
       }
       throw err;
     }
@@ -87,6 +111,8 @@ router.get('/'+base_url+'certificate/supporting-documents', function(req, res) {
     res.send(html);
   })
 })
+
+
 router.post('/'+base_url+'certificate/supporting-documents', function(req, res) {
   req.session.data.file_id_count += 1
 
@@ -101,8 +127,6 @@ router.post('/'+base_url+'certificate/supporting-documents', function(req, res) 
     // add uploaded file.
     req.session.data.uploaded_files.push({"name":file,"description":description,"ID":id})
   }
-
-  // checkifFileExists()
   res.redirect(301, '/' + base_url + 'certificate/supporting-documents'+query);
 
 })

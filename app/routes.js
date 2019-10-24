@@ -7,5 +7,5 @@ require('./routes/ehc-7006-ab-version4-1/routes.js')(router);
 require('./routes/ehc-7006-ab-version4-2/routes.js')(router);
 require('./routes/ehc-7006-ab-version4-3/routes.js')(router);
 require('./routes/ehc-8270-version2/routes.js')(router);
-
+require('./routes/ehc-8327/routes.js')(router);
 module.exports = router

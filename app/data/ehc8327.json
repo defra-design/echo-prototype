@@ -1,0 +1,646 @@
+{
+	"commodities": [{
+		"group": "Hides/Skins",
+		"options": [{
+			"title": "Bovine",
+			"name": "Bovine"
+		}, {
+			"title": "Caprine",
+			"name": "Caprine"
+		}, {
+			"title": "Equine",
+			"name": "Equine"
+		}, {
+			"title": "Game",
+			"name": "Game"
+		}, {
+			"title": "Ovine",
+			"name": "Ovine"
+		}, {
+			"title": "Porcine",
+			"name": "Porcine"
+		}, {
+			"title": "Mixed",
+			"name": "Mixed"
+		}]
+	}],
+	"pages": [{
+			"page": 1,
+			"title": "What are the commodity details?",
+			"content": {
+				"header": "What are the commodity details?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Commodity code",
+						"hint": "You can use the trade tariff search on GOV.UK to find this. This code is between 4 and 10 digits, for example 0308305000",
+						"required": "no",
+						"id": "commodity-code",
+						"name": "commodity_code"
+					},
+					{
+						"type": "text",
+						"label": "Description of commodity",
+						"hint": "For example, fresh sheep skins",
+						"required": "no",
+						"id": "commodity-description",
+						"name": "commodity_description"
+					},
+					{
+						"type": "text",
+						"label": "Net and gross weight of consignment",
+						"hint": "Provide the number and the units of measurement. For example, 500 kg (528 kg)",
+						"required": "no",
+						"id": "commodity-weight",
+						"name": "commodity_weight"
+					},
+					{
+						"type": "radio",
+						"inline": "no",
+						"label": "Temperature of commodity",
+						"hint": "Select one only",
+						"required": "no",
+						"id": "commodity-temprature",
+						"name": "commodity_temprature",
+						"options": [{
+								"title": "Ambient",
+								"value": "ambient"
+							},
+							{
+								"title": "Chilled",
+								"value": "chilled"
+							},
+							{
+								"title": "Frozen",
+								"value": "frozen"
+							}
+						]
+					},
+					{
+						"type": "radio",
+						"inline": "no",
+						"label": "Intended use of commodity",
+						"hint": "Select one only",
+						"required": "no",
+						"id": "commodity-temprature",
+						"name": "commodity_temprature",
+						"options": [{
+								"title": "Animal feedingstuff",
+								"value": "Animal feedingstuff"
+							},
+							{
+								"title": "Technical use",
+								"value": "Technical use"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"page": 2,
+			"title": "What are the details of the product?",
+			"content": {
+				"header": "What are the details of the product?",
+				"caption": "What are the details of the product? 1 of 5",
+				"paragraph": "",
+				"next": "product-list",
+				"prev": "",
+				"product_page": "yes",
+				"fields": [{
+						"type": "text",
+						"label": "Scientific species name",
+						"hint": "",
+						"required": "no",
+						"id": "product-name",
+						"name": "product_name"
+					},
+					{
+						"type": "text",
+						"label": "Approval number of the manufacturing plant",
+						"hint": "",
+						"required": "no",
+						"id": "product_approval_num",
+						"name": "product_approval_num"
+					},
+					{
+						"type": "text",
+						"label": "Net weight",
+						"hint": "Provide the number and the units of measurement.  For example 105.5 kg",
+						"required": "no",
+						"id": "product_weight",
+						"name": "product_weight"
+					}
+				]
+			}
+		}, {
+			"page": 3,
+			"title": "What is the place of origin of the consignment?",
+			"content": {
+				"header": "What is the place of origin of the consignment?",
+				"caption": "",
+				"paragraph": "Provide details of the name and address of the dispatch establishment",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Name of dispatch establishment",
+						"hint": "",
+						"required": "no",
+						"id": "origin-establishment",
+						"name": "origin-establishment"
+					},
+					{
+						"type": "textarea",
+						"label": "Address of dispatch establishment ",
+						"hint": "",
+						"required": "no",
+						"id": "origin-address",
+						"name": "origin_address",
+						"rows": "4"
+					},
+					{
+						"type": "text",
+						"label": "Approval number of dispatch establishment ",
+						"hint": "",
+						"required": "no",
+						"id": "origin-approval-num",
+						"name": "origin_approval_num"
+					}
+				]
+			}
+		},
+		{
+			"page": 4,
+			"title": "Who is sending the consignment?",
+			"content": {
+				"header": "Who is sending the consignment?",
+				"caption": "",
+				"paragraph": "Provide details of the person who will send the consignment, or their representative.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Consignor name",
+						"hint": "",
+						"required": "yes",
+						"id": "Consignor-name",
+						"name": "Consignor-_name"
+					},
+					{
+						"type": "textarea",
+						"label": "Consignor address",
+						"hint": "",
+						"required": "yes",
+						"id": "Consignor-address",
+						"name": "Consignor_address",
+						"rows": "4"
+					},
+					{
+						"type": "text",
+						"label": "Consignor telephone number",
+						"hint": "",
+						"required": "no",
+						"id": "consignor-tel",
+						"name": "consignor_tel"
+					},
+					{
+						"type": "text",
+						"label": "Consignor country",
+						"hint": "",
+						"required": "yes",
+						"id": "consignor-county",
+						"name": "consignor_county"
+					}
+				]
+			}
+		}, {
+			"page": 5,
+			"title": "How will the consignment be packaged?",
+			"content": {
+				"header": "How will the consignment be packaged?",
+				"caption": "",
+				"paragraph": "Enter the person or organisation responsible for the consignment arriving at its destination, for example the exporter or the agent.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Total number of packages in the consignment",
+						"hint": "",
+						"required": "no",
+						"id": "packaged-name",
+						"name": "packaged_name"
+					},
+					{
+						"type": "text",
+						"label": "Type of packaging",
+						"hint": "For example Box, Carton, Crate etc.",
+						"required": "no",
+						"id": "packaged-tel",
+						"name": "packaged_tel"
+					}
+				]
+			}
+		},
+		{
+			"page": 6,
+			"title": "Where will the consignment be loaded?",
+			"content": {
+				"header": "Where will the consignment be loaded?",
+				"caption": "",
+				"paragraph": "Provide details of where the consignment will be loaded. This may be the same as the place of origin.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Place of loading",
+					"hint": "Provide the name and location of the establishment",
+					"required": "no",
+					"id": "loading-location",
+					"name": "loading_location"
+				}]
+			}
+		},
+		{
+			"page": 7,
+			"title": "How will the consignment be transported?",
+			"content": {
+				"header": "How will the consignment be transported?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "date",
+						"label": "Expected date of departure from the UK",
+						"hint": "For example, 31 08 1970",
+						"required": "no",
+						"id": "transported-date",
+						"name": "transported_date"
+					},
+					{
+						"type": "checkbox",
+						"label": "Means of transport to the BIP",
+						"hint": "Select all that apply:",
+						"required": "no",
+						"id": "transported-mehtod",
+						"name": "transported_method",
+						"options": [{
+								"title": "Aeroplane",
+								"name": "Aeroplane"
+							}, {
+								"title": "Ship",
+								"name": "Ship"
+							},
+							{
+								"title": "Railway wagon",
+								"name": "Railway wagon"
+							},
+							{
+								"title": "Road vehicle",
+								"name": "Road vehicle"
+							},
+							{
+								"title": "Other",
+								"name": "Other"
+							}
+						]
+					},
+					{
+						"type": "text",
+						"label": "Identification of the transport",
+						"hint": "Provide the flight number, the ship name or vehicle registration number(s)",
+						"required": "no",
+						"id": "transported-id",
+						"name": "transported_id"
+					},
+					{
+						"type": "text",
+						"label": "Documentary reference number for the transport",
+						"hint": "For example, number of  the airline bill or bill of lading",
+						"required": "no",
+						"id": "transported-reference",
+						"name": "transported_reference"
+					},
+					{
+						"type": "text",
+						"label": "Container and seal numbers (optional)",
+						"hint": "If this is not known at the time of application, leave blank",
+						"required": "no",
+						"id": "transported-seal",
+						"name": "transported_seal"
+					}
+				]
+			}
+		},
+		{
+			"page": 15,
+			"title": "Is the final destination of your consignment the EU or a third country?",
+			"content": {
+				"header": "Is the final destination of your consignment the EU or a third country?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Final destination",
+					"hint": "",
+					"required": "no",
+					"id": "Final-destination",
+					"name": "final_destination",
+					"options": [{
+							"title": "EU",
+							"value": "EU"
+						},
+						{
+							"title": "Third country",
+							"value": "Third country"
+						}
+					]
+				}]
+			}
+		},
+		{
+			"page": 16,
+			"title": "Which Border Inspection Post (BIP) will the consignment arrive at?",
+			"content": {
+				"header": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Name of the BIP",
+						"hint": "",
+						"required": "no",
+						"id": "BIP-name-EU",
+						"name": "bip_name_eu"
+					},
+					{
+						"type": "text",
+						"label": "BIP unit number",
+						"hint": "You can find this on the European Commission’s approved list of BIPs",
+						"required": "no",
+						"id": "bip_unit_num",
+						"name": "bip_unit_num"
+					}
+				]
+			}
+		},
+		{
+			"page": 17,
+			"title": "What is the destination third country?",
+			"content": {
+				"header": "What is the destination third country?",
+				"caption": "",
+				"paragraph": "If your consignment is destined for a third country, complete this page and the next two pages. If the consignment is destined for the EU, leave this page and the next two pages blank.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Third country of destination",
+						"hint": "For example, China, Belarus, Turkey",
+						"required": "no",
+						"id": "third-country-destination",
+						"name": "third_country_destination"
+					},
+					{
+						"type": "text",
+						"label": "ISO code of third country",
+						"hint": "This is the 2 digit code according to the ISO 3166 standard. For example, CN, BY, TY",
+						"required": "no",
+						"id": "iso_code_third_country",
+						"name": "iso_code_third_country"
+					}
+				]
+			}
+		},
+		{
+			"page": 18,
+			"title": "For consignments transiting through EU countries, who is responsible for the consignment when in the EU?",
+			"content": {
+				"header": "For consignments transiting through EU countries, who is responsible for the consignment when in the EU?",
+				"caption": "",
+				"paragraph": "If your consignment has a final destination of the EU, leave blank.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name, address, post code and telephone number of the person responsible for the consignment in the EU",
+					"hint": "",
+					"required": "no",
+					"id": "eu_consignment_responsibility",
+					"name": "eu_consignment_responsibility",
+					"row": "4"
+				}]
+			}
+		},
+		{
+			"page": 19,
+			"title": "Where will the consignment be stored during transit?",
+			"content": {
+				"header": "Where will the consignment be stored during transit?",
+				"caption": "",
+				"paragraph": "If your consignment has a final destination of the EU, leave blank.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "textarea",
+						"label": "Name, address and post code of the place of storage in the EU",
+						"hint": "",
+						"required": "no",
+						"id": "transit_storage_address",
+						"name": "transit_storage_address",
+						"row": "4"
+					},
+					{
+						"type": "text",
+						"label": "Approval number of the place of storage in the EU (optional)",
+						"hint": "",
+						"required": "no",
+						"id": "transit_storage_num",
+						"name": "transit_storage_num"
+					}
+				]
+			}
+		},
+		{
+			"page": 8,
+			"title": "Who is receiving the consignment?",
+			"content": {
+				"header": "Who is receiving the consignment?",
+				"caption": "",
+				"paragraph": "Provide details of the person  the consignment will be shipped to, or their representative.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Consignee name",
+						"hint": "",
+						"required": "no",
+						"id": "Consignee-name",
+						"name": "Consignee-_name"
+					},
+					{
+						"type": "textarea",
+						"label": "Consignee address",
+						"hint": "",
+						"required": "no",
+						"id": "Consignee-address",
+						"name": "Consignee_address",
+						"rows": "4"
+					},
+					{
+						"type": "text",
+						"label": "Consignee telephone number",
+						"hint": "",
+						"required": "no",
+						"id": "Consignee-tel",
+						"name": "Consignee_tel"
+					},
+					{
+						"type": "text",
+						"label": "Consignee country",
+						"hint": "",
+						"required": "no",
+						"id": "Consignee-county",
+						"name": "Consignee_county"
+					}
+				]
+			}
+		},
+		{
+			"page": "supporting-documents",
+			"title": "Supporting documents",
+			"optional": "yes",
+			"content": {}
+		},
+		{
+			"page": 11,
+			"exa": "yes",
+			"title": "Where will certification take place?",
+			"content": {
+				"header": "Where will certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					]
+				}]
+			}
+		}, {
+			"page": 12,
+			"exa": "yes",
+			"title": "Who is exporting the product?",
+			"content": {
+				"header": "Who is exporting the product?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Exporter name",
+					"hint": "",
+					"required": "yes",
+					"id": "exporter_name",
+					"name": "exporter_name"
+				}]
+			}
+		},
+		{
+			"page": 13,
+			"exa": "yes",
+			"title": "What is the origin of the product?",
+			"content": {
+				"header": "What is the origin of the product?",
+				"caption": "",
+				"paragraph": "Provide details of the origin of the animals from which the product is derived. These may originate from more than one region. We use this information to help control the spread of disease.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "checkbox",
+					"label": "Origin",
+					"hint": "Select all that apply:",
+					"required": "yes",
+					"id": "origin",
+					"name": "origin",
+					"options": [{
+							"title": "Great Britain",
+							"name": "Great Britain"
+						}, {
+							"title": "Northern Ireland",
+							"name": "Northern Ireland"
+						},
+						{
+							"title": "Outside the UK",
+							"name": "Outside the UK"
+						}
+					]
+				}]
+			}
+		}, {
+			"page": 14,
+			"exa": "yes",
+			"title": "What is the planned date of export?",
+			"content": {
+				"header": "What is the planned date of export?",
+				"caption": "",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned export date",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date"
+				}]
+			}
+		}
+
+	]
+}

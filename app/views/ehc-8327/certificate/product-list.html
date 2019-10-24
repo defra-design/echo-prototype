@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{page.title}} - GOV.UK
+{% endblock %}
+
+{% block beforeContent%}
+{{super()}}
+<a href="{{page.content.prev or 'javascript:history.back()'}}" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<main class="govuk-main-wrapper" id="main-content" role="main" data-qa-page="Repeatable-Page-Review" data-qa-id="Repeatable-Page-Review-11">
+
+    <div class="govuk-form-group" id="Repeatable-Page-Review">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Review your answers
+          </h1>
+        </legend>
+      </fieldset>
+    </div>
+
+    <table class="govuk-table" id="Table-RepeatablePageReview">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header">Scientific species name (optional)</th>
+        <th class="govuk-table__header">Nature of the commodity (optional)</th>
+        <th class="govuk-table__header">Treatment type (optional)</th>
+        <th class="govuk-table__header">Approval number of the manufacturing plant (optional)</th>
+        <th class="govuk-table__header">Number of packages (optional)</th>
+        <th class="govuk-table__header">Net weight (optional)</th>
+        <th class="govuk-table__header">Actions</th>
+      </tr>
+      </thead>
+
+      <tbody class="govuk-table__body" id="TableBody-RepeatablePageReview">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          delboy
+        </td>
+        <td class="govuk-table__cell">
+          Aquaculture
+        </td>
+        <td class="govuk-table__cell">
+          Chilled
+        </td>
+        <td class="govuk-table__cell">
+          United Kingdom
+        </td>
+        <td class="govuk-table__cell">
+          asdfsd
+        </td>
+        <td class="govuk-table__cell">
+          dasfasd
+        </td>
+        <td class="govuk-table__cell">
+          <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995653/page/11?pageOccurrence=0" data-qa-id="Link-ChangeRepeatablePage" id="Link-ChangeRepeatablePage-0">Edit</a>
+          <a class="govuk-link" href="/protected/form/8270EHC/application/1721147995653/page/11/review/delete?pageOccurrence=0" id="0-deleteLink">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id={{ data.product_page }}" id="Button-AddAnother">Add Another</a>
+    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
+      <input type="hidden" name="crumb_csrf_token" value="nAitoNVyVGtnnzUQ-QQk78LOMzR_-9L6qqu86Lg9aRY">
+      <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
+        <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </div>
+      </div>
+    </form>
+  </main>
+{% endblock %}
