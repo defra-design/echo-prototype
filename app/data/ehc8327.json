@@ -89,8 +89,8 @@
 						"id": "commodity-temprature",
 						"name": "commodity_temprature",
 						"options": [{
-								"title": "Animal feedingstuff",
-								"value": "Animal feedingstuff"
+								"title": "Animal feeding stuff",
+								"value": "Animal feeding stuff"
 							},
 							{
 								"title": "Technical use",
@@ -106,11 +106,12 @@
 			"title": "What are the details of the product?",
 			"content": {
 				"header": "What are the details of the product?",
-				"caption": "What are the details of the product? 1 of 5",
+				"caption": "What are the details of the product?",
 				"paragraph": "",
 				"next": "product-list",
 				"prev": "",
 				"product_page": "yes",
+				"product_max": "5",
 				"fields": [{
 						"type": "text",
 						"label": "Scientific species name",
@@ -162,7 +163,7 @@
 						"required": "no",
 						"id": "origin-address",
 						"name": "origin_address",
-						"rows": "4"
+						"rows": 4
 					},
 					{
 						"type": "text",
@@ -200,7 +201,7 @@
 						"required": "yes",
 						"id": "Consignor-address",
 						"name": "Consignor_address",
-						"rows": "4"
+						"rows": 4
 					},
 					{
 						"type": "text",
@@ -447,7 +448,7 @@
 					"required": "no",
 					"id": "eu_consignment_responsibility",
 					"name": "eu_consignment_responsibility",
-					"row": "4"
+					"rows": 4
 				}]
 			}
 		},
@@ -468,7 +469,7 @@
 						"required": "no",
 						"id": "transit_storage_address",
 						"name": "transit_storage_address",
-						"row": "4"
+						"rows": 4
 					},
 					{
 						"type": "text",
@@ -506,7 +507,7 @@
 						"required": "no",
 						"id": "Consignee-address",
 						"name": "Consignee_address",
-						"rows": "4"
+						"rows": 4
 					},
 					{
 						"type": "text",

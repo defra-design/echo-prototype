@@ -25,14 +25,8 @@ function isDupucate(arr,name){
 }
 
 function findPage(arr,id){
-  console.log("----")
-  console.log("finding page based on ID")
-  console.log("id = " + id)
 
   for (var i = 0; i < arr.length; i++) {
-    console.log("checking = " + i)
-    console.log("page id = " + arr[i].page)
-    console.log("page title = " + arr[i].title)
     if (arr[i].page == id) {
       return arr[i];
     }
@@ -58,21 +52,44 @@ router.post('/'+base_url+'certificate/exa/certifier-confirm-address', function(r
   }
 
 })
+function addProduct(arr,page,post){
+  // get all fields from the page
+  var f = page.content.fields
+  var p = {"id":arr.length }
+  for (var i = 0; i < f.length; i++) {
+    // for each field create an obj with the Key being the field name
+    // and the value being the posted data from that field
+    console.log("adding : "+f[i].name)
+
+    var v = post[f[i].name]
+    p[f[i].name]=v
+
+  }
+  arr.push(p)
+}
 
 
 router.post('/'+base_url+'certificate/page', function(req, res, next) {
   var query = ""
+  if(req.query.product_page){
+    var product = findPage(req.session.data[database].pages,req.query.id)
+    addProduct(req.session.data.products,product,req.body)
+  }
   if(req.query.next == "product-list"){
     query+=("id="+req.query.id)
   }
   req.session.data.completed[req.query.id] = req.query.id
-  res.redirect(301, '/' + base_url + 'certificate/'+req.query.next+"?"+query);
+  if(req.body.cta == "Save and continue" || req.body.cta == "Save and preview"){
+    res.redirect(301, '/' + base_url + 'certificate/'+req.query.next+"?"+query);
+  }else{
+    res.redirect(301, '/' + base_url + 'certificate/page?id='+req.query.id+"&new=yes&product_page=yes&next="+req.query.next);
+  }
+
 })
 
 
 router.get('/'+base_url+'certificate/page', function(req, res) {
-    var id =  parseInt(req.query.id) || 0;
-
+  var id =  parseInt(req.query.id) || 0;
   res.render(base_url+'certificate/page', {
     "query": req.query,
     "page":findPage(req.session.data[database].pages, id)
@@ -105,7 +122,6 @@ router.get('/'+base_url+'certificate/exa/your-commodity', function(req, res) {
 router.get('/'+base_url+'certificate/product-list', function(req, res) {
   var id = req.query.id || 2;
 
-  console.log( findPage(req.session.data[database].pages,id))
   var product = findPage(req.session.data[database].pages,id)
   res.render(base_url+'certificate/product-list', {
     "query": req.query,

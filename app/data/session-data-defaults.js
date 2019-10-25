@@ -28,4 +28,5 @@ module.exports = {
     "completed" :   [],
     "ehc8270"   :  ehc8270,
     "ehc8327"   :  ehc8327,
+    "products"   :  [],
 }

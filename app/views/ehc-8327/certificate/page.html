@@ -12,7 +12,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% if page.content.caption %}<span class="govuk-caption-xl">{{page.content.caption}}</span>{%endif%}
+    {% if page.content.caption %}<span class="govuk-caption-xl">{{page.content.caption}} {% if query.product_page %}{{(data.products | length)+1}} of {{page.content.product_max or 4}}{%endif%}</span>{%endif%}
     <h1 class="govuk-heading-xl">
       {{page.content.header}}
     </h1>
@@ -25,8 +25,13 @@
         {{field.title}}
         {% block question %}{% include type %}{% endblock%}
         {% endfor%}
-        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
-          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        <div class="govuk-form-group govuk-!-margin-top-8">
+          {% if not query.product_page %}
+          <input class="govuk-button govuk-!-margin-right-1" type="submit" name="cta" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          {% else %}
+          <input class="govuk-button govuk-!-margin-right-1" type="submit" name="cta" value="Add another" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          <input class="govuk-button govuk-button--secondary" type="submit" name="cta" value="Save and preview"id="Button-SaveAndpreview" data-qa-id="Button-SaveAndContinue">
+          {% endif%}
         </div>
       </fieldset>
     </form>
