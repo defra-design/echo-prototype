@@ -89,8 +89,8 @@
 						"id": "commodity-temprature",
 						"name": "commodity_temprature",
 						"options": [{
-								"title": "Animal feeding stuff",
-								"value": "Animal feeding stuff"
+								"title": "Animal feedingstuff",
+								"value": "Animal feedingstuff"
 							},
 							{
 								"title": "Technical use",
