@@ -56,8 +56,7 @@ router.get('/'+base_url+'certificate/check-your-*', function(req, res) {
   if(req.query.certificate){
     database=req.query.certificate
   }
-  req.session.data.certificate = certificate_code
-  console.log(req.session.data)
+  req.session.data.certificate = certificate
   res.render(base_url + '/certificate/check-your-'+req.params[0], {
     "query": req.query,
     "tasks": getDB(database).data.pages

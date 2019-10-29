@@ -277,7 +277,7 @@
 			"page": 7,
 			"title": "Transportaion",
 			"content": {
-				"header": "How will the consignment be transported?",
+				"header": "Transportaion",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -438,9 +438,9 @@
 			"page": 18,
 			"title": "Responsible for the consignment when in the EU",
 			"content": {
-				"header": "For consignments transiting through EU countries, who is responsible for the consignment when in the EU?",
+				"header": "who is responsible for the consignment when in the EU?",
 				"caption": "",
-				"paragraph": "If your consignment has a final destination of the EU, leave blank.",
+				"paragraph": "For consignments transiting through EU countries. If your consignment has a final destination of the EU, leave blank.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
