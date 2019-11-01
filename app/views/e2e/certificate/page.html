@@ -35,7 +35,7 @@
         </div>
       </fieldset>
     </form>
-    <p class="govuk-body"><a class="link-button" href="dashboard" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+    <p class="govuk-body"><a class="link-button" href="../{{data.return_url or 'dashboard'}}-1?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
   </div>
 </div>
 {% endblock %}

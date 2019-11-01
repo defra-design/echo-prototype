@@ -118,6 +118,8 @@ GOV.UK Prototype Kit
             </tr>
             </thead>
             <tbody>
+
+
               {% if data.cloned =="yes"%}
               <tr class="govuk-table__row">
               <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
@@ -141,6 +143,29 @@ GOV.UK Prototype Kit
                 <a id="1651966025323-cloneLink" class="govuk-link" href="clone">Clone</a>
               </td>            </tr>
               {% endif %}
+              {% if data.draft =="yes"%}
+              <tr class="govuk-table__row">
+              <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                1651966026841
+              </td>
+              <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
+                45678
+              </td>
+              <td id="1651966025323-status" class="govuk-table__cell" scope="row">
+                <div class="status-cell">
+                  <div class="orange-tag">
+                    DRAFT
+                  </div>
+                </div>
+              </td>
+              <td id="1651966025323-submitted" class="govuk-table__cell submitted-column" scope="row">
+              </td>
+              <td class="govuk-table__cell actions-column">
+                <a id="1651966025323-editLink" class="govuk-link" href="certificate/check-your-progress?Confirm your commodity=Bovine">Edit</a>
+                <a id="1651966025323-deleteLink" class="govuk-link" href="delete">Delete</a>
+                <a id="1651966025323-cloneLink" class="govuk-link" href="clone">Clone</a>
+              </td>            </tr>
+              {% else %}
               <tr class="govuk-table__row">
                 <td id="1651965954689-appRef" class="govuk-table__cell applicationRef-column" scope="row">
                   1651965954689
@@ -161,6 +186,8 @@ GOV.UK Prototype Kit
                   <a id="1651966025323-cloneLink" class="govuk-link" href="clone?return=dashboard-1">Clone</a>
                 </td>
               </tr>
+              {% endif %}
+
             </tbody>
           </table>
         </div>
