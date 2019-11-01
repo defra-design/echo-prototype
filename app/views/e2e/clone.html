@@ -63,7 +63,7 @@
       <div class="govuk-grid-column-full">
         <form class="review-form" action="/protected/application/1651966026841/clone" method="POST">
           <input type="hidden" name="crumb_csrf_token" value="Bbvbk_P6oCpENC6f578b-j1rdxKXTLXfJwjJuG5MfMl">
-          <a href="dashboard?cloned=yes" class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue">Continue</a>
+          <a href="{{query.return or 'dashboard'}}?cloned=yes" class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue">Continue</a>
         </form>
         <a id="Link-cancelAndGoBack" class="govuk-link" href="/protected/dashboard">Cancel and go
           back</a>
