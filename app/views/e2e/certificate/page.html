@@ -35,7 +35,11 @@
         </div>
       </fieldset>
     </form>
-    <p class="govuk-body"><a class="link-button" href="../{{data.return_url or 'dashboard'}}-1?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+    {% if data.journey=="new" %}
+    <p class="govuk-body"><a class="link-button" href="../dashboard-1?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+    {% else %}
+    <p class="govuk-body"><a class="link-button" href="../{{data.return_url or 'dashboard'}}?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+    {% endif %}
   </div>
 </div>
 {% endblock %}

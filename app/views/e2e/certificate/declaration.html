@@ -43,9 +43,11 @@ GOV.UK Prototype Kit
             </a>
           </li>
           <li>
-            <a id="link-returnToHome" href="dashboard" class="govuk-link">
-              My exports dashboard
-            </a>
+            {% if data.journey=="new" %}
+              <a class="govuk-link" href="../dashboard-1?draft=no">My exports dashboard</a>
+            {% else %}
+              <a class="govuk-link" href="../{{data.return_url or 'dashboard'}}?draft=no">My exports dashboard</a>
+            {% endif %}
           </li>
         </ul>
         <h2 class="govuk-heading-m">

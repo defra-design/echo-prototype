@@ -29,4 +29,5 @@ module.exports = {
     "ehc8270"   :  ehc8270,
     "ehc8327"   :  ehc8327,
     "products"   :  [],
+    "certificate" : "8327EHC"
 }

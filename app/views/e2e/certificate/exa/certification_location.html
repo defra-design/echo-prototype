@@ -48,7 +48,11 @@ GOV.UK Prototype Kit
           </fieldset>
         </div>
         <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
-          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          {% if data.journey=="new" %}
+          <p class="govuk-body"><a class="link-button" href="../../dashboard-1?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+          {% else %}
+          <p class="govuk-body"><a class="link-button" href="../../{{data.return_url or 'dashboard'}}?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+          {% endif %}
         </div>
       </fieldset>
     </form>
