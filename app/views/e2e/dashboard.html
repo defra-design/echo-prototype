@@ -118,13 +118,45 @@ GOV.UK Prototype Kit
             </tr>
             </thead>
             <tbody>
-              {% if data.cloned =="yes"%}
+              {% if data.cloned =="yes" %}
               <tr class="govuk-table__row">
               <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
                 1651966026841
               </td>
               <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
-                45678
+                {{data.reference_num or 45678}}
+              </td>
+              <td id="1651966025323-status" class="govuk-table__cell" scope="row">
+                <div class="status-cell">
+                  {% if query.submitted=="yes" %}
+                    <div class="green-tag">
+                      SUBMITTED
+                    </div>
+                  {% else %}
+                  <div class="orange-tag">
+                    DRAFT
+                  </div>
+                  {% endif %}
+                </div>
+              </td>
+              <td id="1651966025323-submitted" class="govuk-table__cell submitted-column" scope="row">
+                {% if query.submitted=="yes" %}
+                  05-11-2019
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell actions-column">
+                <a id="1651966025323-editLink" class="govuk-link" href="certificate/check-your-progress?Confirm your commodity=Bovine">Edit</a>
+                <a id="1651966025323-deleteLink" class="govuk-link" href="delete">Delete</a>
+                <a id="1651966025323-cloneLink" class="govuk-link" href="clone?return=dashboard">Clone</a>
+              </td>            </tr>
+              {% endif %}
+              {% if data.draft =="yes"%}
+              <tr class="govuk-table__row">
+              <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                1651966026841
+              </td>
+              <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
+                {{data.reference_num or 45678}}
               </td>
               <td id="1651966025323-status" class="govuk-table__cell" scope="row">
                 <div class="status-cell">
@@ -138,15 +170,15 @@ GOV.UK Prototype Kit
               <td class="govuk-table__cell actions-column">
                 <a id="1651966025323-editLink" class="govuk-link" href="certificate/check-your-progress?Confirm your commodity=Bovine">Edit</a>
                 <a id="1651966025323-deleteLink" class="govuk-link" href="delete">Delete</a>
-                <a id="1651966025323-cloneLink" class="govuk-link" href="clone">Clone</a>
+                <a id="1651966025323-cloneLink" class="govuk-link" href="clone?return=dashboard">Clone</a>
               </td>            </tr>
-              {% endif %}
-              {% if query.submitted=="yes"%}
+              {% else %}
               <tr class="govuk-table__row">
                 <td id="1651965954689-appRef" class="govuk-table__cell applicationRef-column" scope="row">
                   1651965954689
                 </td>
                 <td id="1651965954689-group-number" class="govuk-table__cell" scope="row">
+                  {{data.reference_num or 45678}}
                 </td>
                 <td id="1651965954689-status" class="govuk-table__cell" scope="row">
                   <div class="status-cell">
@@ -156,20 +188,20 @@ GOV.UK Prototype Kit
                   </div>
                 </td>
                 <td id="1651965954689-submitted" class="govuk-table__cell submitted-column" scope="row">
-                  09-15-2019
+                  09-10-2019
                 </td>
                 <td class="govuk-table__cell actions-column">
-                  <a id="1651966025323-cloneLink" class="govuk-link" href="clone">Clone</a>
+                  <a id="1651966025323-cloneLink" class="govuk-link" href="clone?return=dashboard">Clone</a>
                 </td>
               </tr>
-              {%endif%}
+              {% endif %}
 
               <tr class="govuk-table__row">
               <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
                 1651966025323
               </td>
               <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
-                45678
+                {{data.reference_num or 45678}}
               </td>
               <td id="1651966025323-status" class="govuk-table__cell" scope="row">
                 <div class="status-cell">
@@ -190,7 +222,7 @@ GOV.UK Prototype Kit
                 1651966025323
               </td>
               <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
-                45678
+                {{data.reference_num or 45678}}
               </td>
               <td id="1651966025323-status" class="govuk-table__cell" scope="row">
                 <div class="status-cell">
@@ -211,7 +243,7 @@ GOV.UK Prototype Kit
                 1651966025323
               </td>
               <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
-                45678
+                {{data.reference_num or 45678}}
               </td>
               <td id="1651966025323-status" class="govuk-table__cell" scope="row">
                 <div class="status-cell">
