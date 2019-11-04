@@ -55,7 +55,11 @@ GOV.UK Prototype Kit
           Opening Times: Monday to Friday, 8.30am to 5pm GMT<br>
           Email: <a href="mailto: SSC.Carlisle@apha.gov.uk">SSC.Carlisle@apha.gov.uk</a></p>
         <form action="../dashboard">
-          <a class="govuk-button" href="../{{data.return_url or 'dashboard'}}?draft=no">Return to home</a>
+          {% if data.journey=="new" %}
+            <a class="govuk-button" href="../dashboard-1?draft=no">Return to home</a>
+          {% else %}
+            <a class="govuk-button" href="../{{data.return_url or 'dashboard'}}?draft=no">Return to home</a>
+          {% endif %}
         </form>
         <!--stop-->
       </div>
