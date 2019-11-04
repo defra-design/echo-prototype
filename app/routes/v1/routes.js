@@ -57,7 +57,7 @@ router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
   if(req.query.certificate){
     database=req.query.certificate
   }
-  req.session.data.certificate = certificate
+  req.session.data.certificate = getDB(database).data.certificate_code
   res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {
     "query": req.query,
     "tasks": getDB(database).data.pages
@@ -154,8 +154,7 @@ router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url + '/certificate/exa/your-commodity',{"query": req.query,
-        "commodities":getDB(database).data.commodities});
+        return res.render(file_url + '/certificate/exa/your-commodity');
       }
       throw err;
     }

@@ -11,10 +11,10 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      When would the OV need this block application?
+      What is the planned date of export?
     </h1>
-    <p class="govuk-body">For block applications, enter an estimated date that the first export is likely to take place.</p>
-    <form method="POST" action="check-your-progress">
+    <p class="govuk-body">This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.</p>
+    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif query.change=="product" %} action="product-list" {% else %} action="check-your-progress" {% endif %} method="POST">
     <!-- <form  action="check-your-progress"  method="POST"> -->
       <fieldset class="govuk-fieldset">
 
@@ -24,7 +24,7 @@ GOV.UK Prototype Kit
   <fieldset class="govuk-fieldset" role="group" aria-describedby="export_date-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
       <h3 class="govuk-fieldset__heading">
-        Need the block by
+        Planned export date
       </h3>
     </legend>
     <span id="export_date-hint" class="govuk-hint">For example, 31 08 1970</span>
@@ -34,7 +34,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label govuk-date-input__label" for="export_date-day">
             Day
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pexport_dateday" name="export_date_day" type="number" pattern="[0-9]*" value="">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pexport_dateday" name="export_date_day" type="number" pattern="[0-9]*" value="1">
         </div>
       </div>
       <div class="govuk-date-input__item">

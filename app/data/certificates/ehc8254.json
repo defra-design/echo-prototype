@@ -1,10 +1,13 @@
 {
-	"certificate_code": "8327EHC",
+	"certificate_code": "8254EHC",
 	"version": "1",
-	"certificate_name":	"Export fresh or chilled hides and skins of ungulates to the European Union",
+	"certificate_name": "Export certain meat products and treated stomachs, bladders and intestines to the European Union",
 	"commodities": [{
-		"group": "Hides/Skins",
+		"group": "Meat",
 		"options": [{
+			"title": "Avian",
+			"name": "Avian"
+		}, {
 			"title": "Bovine",
 			"name": "Bovine"
 		}, {
@@ -17,14 +20,14 @@
 			"title": "Game",
 			"name": "Game"
 		}, {
+			"title": "Mixed",
+			"name": "Mixed"
+		}, {
 			"title": "Ovine",
 			"name": "Ovine"
 		}, {
 			"title": "Porcine",
 			"name": "Porcine"
-		}, {
-			"title": "Mixed",
-			"name": "Mixed"
 		}]
 	}],
 	"pages": [{
@@ -48,7 +51,7 @@
 					{
 						"type": "text",
 						"label": "Description of commodity",
-						"hint": "For example, fresh sheep skins",
+						"hint": "For example, sheep bladders",
 						"required": "no",
 						"id": "commodity-description",
 						"name": "commodity_description"
@@ -60,6 +63,22 @@
 						"required": "no",
 						"id": "commodity-weight",
 						"name": "commodity_weight"
+					},
+					{
+						"type": "text",
+						"label": "Number of packages",
+						"hint": "",
+						"required": "yes",
+						"id": "commodity-package",
+						"name": "commodity_package"
+					},
+					{
+						"type": "text",
+						"label": "Type of packaging",
+						"hint": "",
+						"required": "yes",
+						"id": "commodity-package-type",
+						"name": "commodity_package_type"
 					},
 					{
 						"type": "radio",
@@ -80,24 +99,6 @@
 							{
 								"title": "Frozen",
 								"value": "frozen"
-							}
-						]
-					},
-					{
-						"type": "radio",
-						"inline": "no",
-						"label": "Intended use of commodity",
-						"hint": "Select one only",
-						"required": "no",
-						"id": "commodity-temprature",
-						"name": "commodity_temprature",
-						"options": [{
-								"title": "Animal feedingstuff",
-								"value": "Animal feedingstuff"
-							},
-							{
-								"title": "Technical use",
-								"value": "Technical use"
 							}
 						]
 					}
@@ -125,13 +126,46 @@
 					},
 					{
 						"type": "text",
-						"label": "Approval number of the manufacturing plant",
-						"hint": "",
+						"label": "Nature of commodity",
+						"hint": "For example, meat product, treated stomachs, bladders and intestines",
 						"required": "no",
-						"id": "product_approval_num",
-						"name": "product_approval_num"
+						"id": "product_description",
+						"name": "product_description"
 					},
 					{
+						"type": "text",
+						"label": "Abattoir approval number",
+						"hint": "",
+						"required": "no",
+						"id": "product_abattoir_num",
+						"name": "product_abattoir_num"
+					},
+					{
+						"type": "text",
+						"label": "Cold store approval number",
+						"hint": "",
+						"required": "no",
+						"id": "product_storage_num",
+						"name": "product_storage_num"
+					},
+					{
+						"type": "text",
+						"label": "Number of packages",
+						"hint": "",
+						"required": "no",
+						"id": "product_package_ammount",
+						"name": "product_package_ammount"
+					},
+					{
+						"type": "text",
+						"label": "Type of packaging",
+						"hint": "",
+						"required": "no",
+						"id": "product_package_type",
+						"name": "product_package_type"
+					},
+
+					 {
 						"type": "text",
 						"label": "Net weight",
 						"hint": "Provide the number and the units of measurement.  For example 105.5 kg",
@@ -143,11 +177,11 @@
 			}
 		}, {
 			"page": 3,
-			"title": "What is the place of origin of the consignment?",
+			"title": "What is the dispatch establishment?",
 			"content": {
-				"header": "What is the place of origin of the consignment?",
+				"header": "What is the dispatch establishment?",
 				"caption": "",
-				"paragraph": "Provide details of the name and address of the dispatch establishment",
+				"paragraph": "",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
@@ -161,7 +195,7 @@
 					},
 					{
 						"type": "textarea",
-						"label": "Address of dispatch establishment ",
+						"label": "Address of dispatch establishment",
 						"hint": "",
 						"required": "no",
 						"id": "origin-address",
@@ -170,7 +204,7 @@
 					},
 					{
 						"type": "text",
-						"label": "Approval number of dispatch establishment ",
+						"label": "Approval number of dispatch establishment",
 						"hint": "",
 						"required": "no",
 						"id": "origin-approval-num",
@@ -224,34 +258,6 @@
 					}
 				]
 			}
-		}, {
-			"page": 5,
-			"title": "How will the consignment be packaged?",
-			"content": {
-				"header": "How will the consignment be packaged?",
-				"caption": "",
-				"paragraph": "Enter the person or organisation responsible for the consignment arriving at its destination, for example the exporter or the agent.",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-						"type": "text",
-						"label": "Total number of packages in the consignment",
-						"hint": "",
-						"required": "no",
-						"id": "packaged-name",
-						"name": "packaged_name"
-					},
-					{
-						"type": "text",
-						"label": "Type of packaging",
-						"hint": "For example Box, Carton, Crate etc.",
-						"required": "no",
-						"id": "packaged-tel",
-						"name": "packaged_tel"
-					}
-				]
-			}
 		},
 		{
 			"page": 6,
@@ -259,7 +265,7 @@
 			"content": {
 				"header": "Where will the consignment be loaded?",
 				"caption": "",
-				"paragraph": "Provide details of where the consignment will be loaded. This may be the same as the place of origin.",
+				"paragraph": "This may be the same as the dispatch establishment",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
@@ -270,6 +276,14 @@
 					"required": "no",
 					"id": "loading-location",
 					"name": "loading_location"
+				},
+				{
+					"type": "text",
+					"label": "Approval number",
+					"hint": "",
+					"required": "no",
+					"id": "loading-num",
+					"name": "loading_num"
 				}]
 			}
 		},
@@ -348,32 +362,31 @@
 		},
 		{
 			"page": 15,
-			"title": "Is the final destination of your consignment the EU or a third country?",
+			"title": "What is the destination country of this consignment?",
 			"content": {
-				"header": "Is the final destination of your consignment the EU or a third country?",
+				"header": "This is the country where the consignment is delivered following clearance from the BIP",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
-					"type": "radio",
-					"inline": "no",
-					"label": "Final destination",
-					"hint": "",
-					"required": "no",
-					"id": "Final-destination",
-					"name": "final_destination",
-					"options": [{
-							"title": "EU",
-							"value": "EU"
-						},
-						{
-							"title": "Third country",
-							"value": "Third country"
-						}
-					]
-				}]
+						"type": "text",
+						"label": "Destination country",
+						"hint": "",
+						"required": "no",
+						"id": "eu_destination",
+						"name": "eu_destination"
+					},
+					{
+						"type": "text",
+						"label": "ISO code of destination country",
+						"hint": "This is the 2 digit code according to the ISO 3166 standard. For example, FR, DE etc",
+						"required": "no",
+						"id": "eu_destination_iso",
+						"name": "eu_destination_iso"
+					}
+				]
 			}
 		},
 		{
@@ -401,86 +414,6 @@
 						"required": "no",
 						"id": "bip_unit_num",
 						"name": "bip_unit_num"
-					}
-				]
-			}
-		},
-		{
-			"page": 17,
-			"title": "What is the destination third country?",
-			"content": {
-				"header": "What is the destination third country?",
-				"caption": "",
-				"paragraph": "If your consignment is destined for a third country, complete this page and the next two pages. If the consignment is destined for the EU, leave this page and the next two pages blank.",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-						"type": "text",
-						"label": "Third country of destination",
-						"hint": "For example, China, Belarus, Turkey",
-						"required": "no",
-						"id": "third-country-destination",
-						"name": "third_country_destination"
-					},
-					{
-						"type": "text",
-						"label": "ISO code of third country",
-						"hint": "This is the 2 digit code according to the ISO 3166 standard. For example, CN, BY, TY",
-						"required": "no",
-						"id": "iso_code_third_country",
-						"name": "iso_code_third_country"
-					}
-				]
-			}
-		},
-		{
-			"page": 18,
-			"title": "For consignments transiting through EU countries, who is responsible for the consignment when in the EU?",
-			"content": {
-				"header": "For consignments transiting through EU countries, who is responsible for the consignment when in the EU?",
-				"caption": "",
-				"paragraph": "If your consignment has a final destination of the EU, leave blank.",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-					"type": "textarea",
-					"label": "Name, address, post code and telephone number of the person responsible for the consignment in the EU",
-					"hint": "",
-					"required": "no",
-					"id": "eu_consignment_responsibility",
-					"name": "eu_consignment_responsibility",
-					"rows": 4
-				}]
-			}
-		},
-		{
-			"page": 19,
-			"title": "Where will the consignment be stored during transit?",
-			"content": {
-				"header": "Where will the consignment be stored during transit?",
-				"caption": "",
-				"paragraph": "If your consignment has a final destination of the EU, leave blank.",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-						"type": "textarea",
-						"label": "Name, address and post code of the place of storage in the EU",
-						"hint": "",
-						"required": "no",
-						"id": "transit_storage_address",
-						"name": "transit_storage_address",
-						"rows": 4
-					},
-					{
-						"type": "text",
-						"label": "Approval number of the place of storage in the EU",
-						"hint": "",
-						"required": "no",
-						"id": "transit_storage_num",
-						"name": "transit_storage_num"
 					}
 				]
 			}
@@ -612,14 +545,14 @@
 					"name": "origin",
 					"options": [{
 							"title": "Great Britain",
-							"value": "Great_Britain"
+							"name": "Great Britain"
 						}, {
 							"title": "Northern Ireland",
-							"value": "Northern_Ireland"
+							"name": "Northern Ireland"
 						},
 						{
 							"title": "Outside the UK",
-							"value": "Outside_the_UK"
+							"name": "Outside the UK"
 						}
 					]
 				}]

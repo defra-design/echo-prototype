@@ -1,0 +1,44 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <style>.app-tabs {
+            border: 1px solid #b58840;
+        }
+        .app-tabs:hover {
+            border: 1px solid #1d70b8	;
+        }
+       </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Exporter journey prototype
+        <span class="govuk-caption-xl">Designed with The GOV.UK Prototype Kit {{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <ol class="govuk-list">
+        <li>
+          <a href="v1/core/index" class="govuk-heading-m govuk-link--no-visited-state">
+            Version 1
+          </a>
+        </li>
+
+        <li>
+          <ul class="govuk-list">
+            <li>Testing versions</li>
+            <li><a href="v1/blocks/dashboard">Blocks</a></li>
+            <li><a href="v1/blocks/index">Check answers and submit flow</a></li>
+
+          </ul>
+        </li>
+
+      </ol>
+
+    </div>
+</div>
+
+{% endblock %}
