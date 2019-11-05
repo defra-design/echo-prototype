@@ -165,7 +165,7 @@
 						"name": "product_package_type"
 					},
 
-					 {
+					{
 						"type": "text",
 						"label": "Net weight",
 						"hint": "Provide the number and the units of measurement.  For example 105.5 kg",
@@ -270,21 +270,22 @@
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
-					"type": "text",
-					"label": "Place of loading",
-					"hint": "Provide the name and location of the establishment",
-					"required": "no",
-					"id": "loading-location",
-					"name": "loading_location"
-				},
-				{
-					"type": "text",
-					"label": "Approval number",
-					"hint": "",
-					"required": "no",
-					"id": "loading-num",
-					"name": "loading_num"
-				}]
+						"type": "text",
+						"label": "Place of loading",
+						"hint": "Provide the name and location of the establishment",
+						"required": "no",
+						"id": "loading-location",
+						"name": "loading_location"
+					},
+					{
+						"type": "text",
+						"label": "Approval number",
+						"hint": "",
+						"required": "no",
+						"id": "loading-num",
+						"name": "loading_num"
+					}
+				]
 			}
 		},
 		{
@@ -574,7 +575,10 @@
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
 					"id": "export_date",
-					"name": "export_date"
+					"name": "export_date",
+					"validation": "yes",
+					"validation_type": "empty",
+					"validation_message": "Enter a planned date of export"
 				}]
 			}
 		}
