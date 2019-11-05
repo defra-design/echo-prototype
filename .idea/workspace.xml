@@ -25,10 +25,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="new-dashboard-tab.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new-dashboard-tab.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/new-dashboard-tab.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="8" selection-start="5748" selection-end="5748" vertical-scroll-proportion="0.8611111" vertical-offset="2100" max-vertical-offset="5595">
+            <state line="324" column="41" selection-start="9455" selection-end="9455" vertical-scroll-proportion="-4.28" vertical-offset="4631" max-vertical-offset="5865">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#section#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#section#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#section#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ehc-page-fav.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page-fav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="715" column="84" selection-start="23093" selection-end="23093" vertical-scroll-proportion="0.33333334" vertical-offset="10545" max-vertical-offset="12630">
               <folding />
             </state>
           </provider>
@@ -52,7 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-2/11-minus.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-2/11.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-2/13.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-2/14.html" />
@@ -68,6 +80,7 @@
         <option value="$PROJECT_DIR$/app/assets/sass/application.scss" />
         <option value="$PROJECT_DIR$/app/views/index.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/new-dashboard-tab.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page-fav.html" />
       </list>
     </option>
   </component>
@@ -350,11 +363,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-2/14.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="71" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="3945" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-2/15.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="0" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1545" />
@@ -431,7 +439,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/new-dashboard-tab.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="8" selection-start="5748" selection-end="5748" vertical-scroll-proportion="0.8611111" vertical-offset="2100" max-vertical-offset="5595">
+        <state line="324" column="41" selection-start="9455" selection-end="9455" vertical-scroll-proportion="-4.28" vertical-offset="4631" max-vertical-offset="5865">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#section#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#section#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#section#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page-fav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="715" column="84" selection-start="23093" selection-end="23093" vertical-scroll-proportion="0.33333334" vertical-offset="10545" max-vertical-offset="12630">
           <folding />
         </state>
       </provider>
