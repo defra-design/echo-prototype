@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div id="messageInfo" class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <span class="govuk-warning-text__assistive">Warning</span>
+          <strong class="govuk-warning-text__text">
+            <h1 id="message_heading">
+              Are you sure you want to clone this
+              application?
+            </h1>
+          </strong>
+        </div>
+        <div class="margin-top-30">
+          <p class="govuk-body" lang="en">
+            The cloned application will be #<span id="clonedApplicationFormId">1651966026841</span>. This will appear at the top of your dashboard.
+          </p>
+        </div>
+        <div>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">
+                Application
+              </th>
+              <th class="govuk-table__header">EHC</th>
+              <th class="govuk-table__header">Commodity</th>
+              <th class="govuk-table__header">Destination</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr class="govuk-table__row">
+              <td id="1651966024771-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                1651966024771
+              </td>
+              <td id="1651966024771-ehc" class="govuk-table__cell" scope="row">
+                8327EHC
+              </td>
+              <td id="1651966024771-commodity" class="govuk-table__cell commodity-column" scope="row">
+                Hides and Skins
+              </td>
+              <td id="1651966024771-destination" class="govuk-table__cell" scope="row">
+                Austria
+              </td>
+            </tr>
+            </tbody>
+          </table>        </div>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <form class="review-form" action="/protected/application/1651966026841/clone" method="POST">
+          <input type="hidden" name="crumb_csrf_token" value="Bbvbk_P6oCpENC6f578b-j1rdxKXTLXfJwjJuG5MfMl">
+          <a href="{{query.return or 'dashboard'}}?cloned=yes" class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue">Continue</a>
+        </form>
+        <a id="Link-cancelAndGoBack" class="govuk-link" href="/protected/dashboard">Cancel and go
+          back</a>
+      </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

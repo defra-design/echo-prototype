@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!--start-->
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="certifier-certificate-delevery" method="POST">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Where would you like your certificate to be delivered?
+              </h1>
+            </legend>
+            <br>
+            <div class="govuk-form-group ">
+              <label class="govuk-label" for="certifier-address-line-1">
+                Building and street
+                <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <input class="govuk-input" id="certifier-address-line-1" name="addressLine1" type="text" value="">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="certifier-address-line-2">
+                <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+              </label>
+              <input class="govuk-input" id="certifier-address-line-2" name="addressLine2" type="text" value="">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="certifier-address-town">
+                Town or city
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="certifier-address-town" name="town" type="text" value="">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="certifier-address-county">
+                County
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="certifier-address-county" name="county" type="text" value="">
+            </div>
+            <div class="govuk-form-group ">
+              <label class="govuk-label" for="certifier-address-postcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="certifier-address-postcode" name="postcode" value="" type="text">
+            </div>
+          </fieldset>
+          <br>
+          <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
+            <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-body">
+              {% if data.journey=="new" %}
+              <p class="govuk-body"><a class="link-button" href="../../dashboard-1?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+              {% else %}
+              <p class="govuk-body"><a class="link-button" href="../../{{data.return_url or 'dashboard'}}?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+              {% endif %}
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

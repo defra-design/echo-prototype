@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Select a certificate</h1>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Certificate</th>
+              <th class="govuk-table__header">Commodity</th>
+              <th class="govuk-table__header">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+              {% for d in db %}
+              <tr class="govuk-table__row">
+                <td id="1651966024771-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  {{d.data.certificate_code}} {% if d.data.version != "1" %}(V{{d.data.version}}){% endif %}
+                </td>
+                <td id="1651966024771-ehc" class="govuk-table__cell" scope="row">
+                  {{d.data.certificate_name}}
+                </td>
+                <td id="1651966024771-commodity" class="govuk-table__cell commodity-column" scope="row">
+                  <a href="certificate/blocks?certificate={{d.id}}" class="govuk-link">Select</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <p>
+        <a id="Link-cancelAndGoBack" class="govuk-link" href="/protected/dashboard">Cancel and go
+          back</a>
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

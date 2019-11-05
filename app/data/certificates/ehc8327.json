@@ -380,9 +380,9 @@
 			"page": 16,
 			"title": "Which Border Inspection Post (BIP) will the consignment arrive at?",
 			"content": {
-				"header": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry",
+				"header": "Which Border Inspection Post (BIP) will the consignment arrive at?",
 				"caption": "",
-				"paragraph": "",
+				"paragraph": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
@@ -612,14 +612,14 @@
 					"name": "origin",
 					"options": [{
 							"title": "Great Britain",
-							"name": "Great Britain"
+							"value": "Great_Britain"
 						}, {
 							"title": "Northern Ireland",
-							"name": "Northern Ireland"
+							"value": "Northern_Ireland"
 						},
 						{
 							"title": "Outside the UK",
-							"name": "Outside the UK"
+							"value": "Outside_the_UK"
 						}
 					]
 				}]

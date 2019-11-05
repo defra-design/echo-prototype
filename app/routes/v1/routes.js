@@ -2,7 +2,7 @@ module.exports = function(router) {
   // Load helper functions
   var tools = require('../tools.js')
 
-
+  require('./blocks.js')(router)
   // ADD extra routing here if needed.
   // require('./extra-stories.js')(router)
   const fs = require('fs');
@@ -57,10 +57,11 @@ router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
   if(req.query.certificate){
     database=req.query.certificate
   }
-  req.session.data.certificate = certificate
+  req.session.data.certificate = getDB(database).data.certificate_code
   res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {
     "query": req.query,
-    "tasks": getDB(database).data.pages
+    "tasks": getDB(database).data.pages,
+    "certificate_code": getDB(database).data.certificate_code
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
@@ -145,15 +146,16 @@ router.get('/'+base_url+'*/certificate/page', function(req, res) {
   })
 })
 
-
+// your-commmodities
 router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
-  res.render(base_url+'certificate/exa/your-commodity', {
+  console.log()
+  res.render(base_url+req.params[0]+'/certificate/exa/your-commodity', {
     "query": req.query,
     "commodities":getDB(database).data.commodities
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url + '/exa/your-commodity');
+        return res.render(file_url + '/certificate/exa/your-commodity');
       }
       throw err;
     }
