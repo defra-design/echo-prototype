@@ -56,10 +56,11 @@ router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
   if(req.query.certificate){
     database=req.query.certificate
   }
-  req.session.data.certificate = certificate
+  req.session.data.certificate_code = getDB(database).data.certificate_code
   res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {
     "query": req.query,
-    "tasks": getDB(database).data.pages
+    "tasks": getDB(database).data.pages,
+    "certificate_code":getDB(database).data.certificate_code
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {

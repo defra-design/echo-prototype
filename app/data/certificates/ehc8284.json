@@ -3,26 +3,17 @@
 	"version": "1",
 	"certificate_name": "Export dairy products from a Category C country for human consumption to the European Union",
 	"commodities": [{
-		"group": "Hides/Skins",
+		"group": "Dairy",
 		"options": [{
 			"title": "Bovine",
 			"name": "Bovine"
 		}, {
 			"title": "Caprine",
 			"name": "Caprine"
-		}, {
-			"title": "Equine",
-			"name": "Equine"
-		}, {
-			"title": "Game",
-			"name": "Game"
-		}, {
+		},{
 			"title": "Ovine",
 			"name": "Ovine"
-		}, {
-			"title": "Porcine",
-			"name": "Porcine"
-		}, {
+		},{
 			"title": "Mixed",
 			"name": "Mixed"
 		}]
@@ -377,9 +368,9 @@
 			"page": 16,
 			"title": "Which Border Inspection Post (BIP) will the consignment arrive at?",
 			"content": {
-				"header": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry",
+				"header": "Which Border Inspection Post (BIP) will the consignment arrive at?",
 				"caption": "",
-				"paragraph": "",
+				"paragraph": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
