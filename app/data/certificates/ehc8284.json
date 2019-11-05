@@ -3,26 +3,17 @@
 	"version": "1",
 	"certificate_name": "Export dairy products from a Category C country for human consumption to the European Union",
 	"commodities": [{
-		"group": "Hides/Skins",
+		"group": "Dairy",
 		"options": [{
 			"title": "Bovine",
 			"name": "Bovine"
 		}, {
 			"title": "Caprine",
 			"name": "Caprine"
-		}, {
-			"title": "Equine",
-			"name": "Equine"
-		}, {
-			"title": "Game",
-			"name": "Game"
-		}, {
+		},{
 			"title": "Ovine",
 			"name": "Ovine"
-		}, {
-			"title": "Porcine",
-			"name": "Porcine"
-		}, {
+		},{
 			"title": "Mixed",
 			"name": "Mixed"
 		}]
