@@ -91,7 +91,7 @@ GOV.UK Prototype Kit
               {% else %}
               {% set next_page = task.content.next %}
               {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents{%endif%}" aria-describedby="">
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
                 {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
               </a>
             </span>
@@ -133,7 +133,7 @@ GOV.UK Prototype Kit
                  {% if (data.products | length) > 0 and task.content.product_page == 'yes' %}
                  <a href="product-list?id={{task.page}}" class="govuk-link">
                  {% else%}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents{%endif%}" aria-describedby="">
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
                 {% endif %}
                 {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
               </a>
