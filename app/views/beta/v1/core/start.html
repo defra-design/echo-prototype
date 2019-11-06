@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">
-                    Apply to export fresh or chilled hides and skins of ungulates to the European Union: certificate 8327  </h1>
+                    Apply to {{certificate.certificate_name}}: certificate {{certificate.certificate_code or 8327}}  </h1>
                 <!--<p>Use this service to process and manage substance data and dossiers.</p>
                 <p>You will also need to use this service to register a substance if you're a:</p>
                 <div class="govuk-inset-text">
@@ -35,7 +35,7 @@
 
 
 
-                <a href="gov-sign-in?destination=check-your-progress
+                <a href="gov-sign-in?destination=check-your-progress&certificate={{query.certificate}}
                 " role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
                     Start now
 

@@ -51,7 +51,24 @@ function getDB(id){
   }
   return false;
 }
-
+router.get('/'+base_url+'*/start', function(req, res) {
+  if(req.query.certificate){
+    database=req.query.certificate
+  }
+  req.session.data.certificate = getDB(database).data.certificate_code
+  res.render(base_url +req.params[0]+ '/start', {
+    "query": req.query,
+    "certificate": getDB(database).data
+  }, function(err, html) {
+    if (err) {
+      if (err.message.indexOf('template not found') !== -1) {
+        return res.render(file_url + '/certificate/check-your-'+req.params[1],{"query": req.query,"certificate": getDB(database).data});
+      }
+      throw err;
+    }
+    res.send(html);
+  })
+});
 
 router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
   if(req.query.certificate){
