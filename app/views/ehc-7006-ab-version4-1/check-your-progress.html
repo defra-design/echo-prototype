@@ -27,7 +27,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="3-plus-plus" aria-describedby="eligibility-completed">
-                Confirm exporter
+                Confirm consignor
               </a>
             </span>
             {% if not data.exporter_correct
@@ -168,7 +168,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="15" aria-describedby="medical-information-completed">
-                Importer details
+                  Consignee details
               </a>
             </span>
             {% if "importer_details" in data.skipped%}
@@ -229,7 +229,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="check-your-answers" aria-describedby="medical-information-completed">
-                Check your answers
+                Check your answers, declaration and submission
               </a>
             </span>
             {% if not data.specimen %}
@@ -238,18 +238,7 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="review" aria-describedby="medical-information-completed">
-                Declaration and submission
-              </a>
-            </span>
-            {% if not data.submit %}
-            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-            {% else %}
-            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-            {% endif %}
-          </li>
+
         </ul>
       </li>
     </ol>
