@@ -71,9 +71,7 @@ module.exports = function(router) {
     var id =  parseInt(req.query.id) || 0;
     var page = findPage(getDB(database).data.pages, id);
     var query = ""
-    console.log(req.params)
-
-    req.session.data.empty = []
+    req.body.skip_answers = req.body.skip_answers || ["skip"]
     //check if anthing is empty
     req.session.data.empty = getBlankFields(req.body)
     // Show error message if the user has left anything blank and not skipped
@@ -81,7 +79,6 @@ module.exports = function(router) {
       // ensure this page has been removed from the skipped list (used in check your progress)
       req.session.data.skipped = req.session.data.skipped.filter(e => e !== page)
       return res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+req.query.id+"&next="+req.query.next+'&hasError=yes');
-
     }
     // add this page to the skipped list
     if(!req.session.data.skipped.includes(page)){
@@ -98,7 +95,7 @@ module.exports = function(router) {
     if(req.body.cta == "Save and continue" || req.body.cta == "Save and review"){
       res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+req.query.next+"?"+query);
     }else{
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+req.query.id+"&new=yes&product_page=yes&next="+req.query.next);
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+req.query.id+"&new=yes&hasError=no&product_page=yes&next="+req.query.next);
     }
 
   })
