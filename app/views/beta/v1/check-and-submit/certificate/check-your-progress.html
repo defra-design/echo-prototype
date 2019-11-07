@@ -12,7 +12,7 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">
       New Application
     </h1>
-    <h2 class="govuk-heading-m" >Export Certificate {{data.certificate}}</h2>
+    <h2 class="govuk-heading-m">Export Certificate {{data.certificate}}</h2>
     <p> If this is not correct, <a href="../select-certificate">find another Export Health Certificate</a>
     </p>
     <hr>
@@ -116,7 +116,7 @@ GOV.UK Prototype Kit
         <ul class="app-task-list__items">
           {% for task in tasks %}
           {% if task.exa != "yes" %}
-          {% if ech_active != "yes"%}
+          {% if ech_active != "yes" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               {{task.title}}

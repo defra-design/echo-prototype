@@ -92,7 +92,7 @@ router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
 router.post('/'+base_url+'*/certificate/exa/certifier-confirm-address', function(req, res) {
   req.session.data.file_id_count += 1
   if(req.body.is_certifier_address_correct =="yes"){
-    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/exa/certifier-certificate-delevery');
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-progress');
   }else{
     res.redirect(301, '/' + base_url +req.params[0]+'/certificate/exa/certifier-new-address');
   }

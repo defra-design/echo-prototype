@@ -76,7 +76,19 @@ GOV.UK Prototype Kit
                 About your certifier
               </a>
             </span>
-            {% if not data.is_certifier_address_correct and not data.delivery_options %}
+            {% if not data.is_certifier_address_correct %}
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="exa/certifer-certificate-delivery" aria-describedby="eligibility-completed">
+                How would you like the certificate to be delivered to the certifier?
+              </a>
+            </span>
+            {% if not data.delivery_options %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
             {% else %}
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
