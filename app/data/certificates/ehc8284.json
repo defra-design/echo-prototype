@@ -146,15 +146,15 @@
 						"label": "Number of packages",
 						"hint": "",
 						"required": "no",
-						"id": "product_batch",
-						"name": "product_batch"
+						"id": "product_package_num",
+						"name": "product_package_num"
 					}, {
 						"type": "text",
 						"label": "Net weight",
 						"hint": "Provide the number and the units of measurement.  For example 105.5 kg",
 						"required": "no",
-						"id": "product_batch",
-						"name": "product_batch"
+						"id": "product_net_weight",
+						"name": "product_net_weight"
 					}
 				]
 			}
