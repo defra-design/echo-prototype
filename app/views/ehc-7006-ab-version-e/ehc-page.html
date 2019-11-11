@@ -1,0 +1,801 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    main{padding-top: 0px!important;}
+    .green-tag{background: #00823b}
+
+
+
+    .govuk-tag, .green-tag, .orange-tag, .blue-tag, .red-tag {
+
+        font-size: 1.2rem;
+    }
+
+    .govuk-summary-list__key {
+        width: 90%;
+    }
+
+
+</style>
+<div class="govuk-width-container">
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+    #filter-cert-org #filter-container {
+        bottom: 0px;
+        color: rgb(255, 255, 255);
+        height: 40px;
+        left: 0px;
+        position: relative;
+        right: 0px;
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        top: 0px;
+        width: 300px;
+        column-rule-color: rgb(255, 255, 255);
+        perspective-origin: 150px 20px;
+        transform-origin: 150px 20px;
+        caret-color: rgb(255, 255, 255);
+        background: rgb(0, 94, 165) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='white'%3E%3C/path%3E%3C/svg%3E") no-repeat scroll 0% 0% / 40px 40px padding-box border-box;
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#filter-container*/
+
+    #filter-cert-org #filter-container:after {
+        color: rgb(255, 255, 255);
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        column-rule-color: rgb(255, 255, 255);
+        caret-color: rgb(255, 255, 255);
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#DIV_4:after*/
+
+    #filter-cert-org #filter-container:before {
+        color: rgb(255, 255, 255);
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        column-rule-color: rgb(255, 255, 255);
+        caret-color: rgb(255, 255, 255);
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#DIV_4:before*/
+
+
+    #filter-cert-org #filter-input {
+        bottom: 0px;
+        height: 22px;
+        left: 0px;
+        position: relative;
+        right: 0px;
+        text-size-adjust: 100%;
+        top: 0px;
+        width: 260px;
+        perspective-origin: 130px 20px;
+        transform-origin: 130px 20px;
+        border: 2px solid rgb(255, 255, 255);
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+        margin: 0px 0px 0px 40px;
+        padding: 9px 10px 5px;
+        border: solid 2px #000;
+        outline: none;
+    }/*#filter-input*/
+
+    #filter-cert-org #filter-input:focus {
+        border: solid 2px #ffbf47;
+        outline: none;
+    }/*#filter-input*/
+
+    #filter-cert-org #filter-input:after {
+        text-size-adjust: 100%;
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+    }/*#filter-input:after*/
+
+    #filter-cert-org #filter-input:before {
+        text-size-adjust: 100%;
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+    }/*#filter-input:before*/
+
+
+
+    .govuk-details__summary:before{display: none}
+
+
+</style>
+
+
+
+
+<div class="govuk-width-container">
+
+    <a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7">Back</a>
+
+
+
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+
+
+
+                <span class="govuk-caption-xl">
+         Your EHC application
+        </span>
+
+                <h1 class="govuk-heading-xl heading" style="margin-bottom: 25px">Export pig meat from Great Britain to China: certificate 7006GB</h1>
+
+
+
+
+
+
+
+
+
+
+               <!-- <table class="govuk-table">
+
+                    <tbody>
+                    <tr class="govuk-table__row">
+
+                        <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+                           Exporter name
+                        </td>
+
+
+
+
+
+                        <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+                            A1 Exports, 12 North street, Covenry, CV12 7RE
+                        </td>
+
+
+
+
+                    </tr>
+
+
+
+
+
+                    </tbody><tbody>
+                <tr class="govuk-table__row">
+
+                    <td id="1721147986156-group-number" class="govuk-table__cell" scope="row">
+
+                        Your commodity the farms of origin
+
+                    </td>
+                    <td id="1721147986156-submitted" class="govuk-table__cell submitted-column" scope="row">
+                        Great Britain
+                    </td>
+
+
+
+
+
+
+                </tr>
+                </tbody><tbody>
+                <tr class="govuk-table__row">
+
+                    <td id="1721147985832-group-number" class="govuk-table__cell" scope="row">
+                        Your Official Vet
+                    </td>
+                    <td id="1721147985832-submitted" class="govuk-table__cell submitted-column" scope="row">
+                        Vet Studio, 177 north avenue, CR23 8UT
+                    </td>
+
+
+
+
+
+                </tr>
+                </tbody><tbody>
+                <tr class="govuk-table__row">
+
+                    <td id="1651965956486-group-number" class="govuk-table__cell" scope="row">
+                        2366-Shanghai
+                    </td>
+                    <td id="1651965956486-submitted" class="govuk-table__cell submitted-column" scope="row">
+
+                    </td>
+
+
+
+
+                </tr>
+                </tbody>
+                </table>-->
+
+                <h2 class="govuk-heading-m govuk-!-margin-top-9">
+                    General information about your export
+                </h2>
+
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Select the certifier practice to include with your application
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            A1 Export
+                        </dd>
+
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Alert your OV or certifier you have begun this application?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                           Yes
+                        </dd>
+
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Select certificate delivery address
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            72 Guild Street, London, SE23 6FH
+                        </dd>
+
+                    </div>
+
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Do you want to create your own unique reference number?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          Yes - PO 78234234
+                        </dd>
+
+                    </div>
+                 <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            In which region will the certification take place?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                         England
+                        </dd>
+
+                    </div>
+
+                </dl>
+
+
+
+
+
+
+
+
+
+
+                        <h2 class="govuk-heading-m">
+                            Exporter information
+                        </h2>
+
+
+
+
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Are you the exporter or the agent of the exporter?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <p class="govuk-body">Exporter</p>
+                    </dd>
+
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Details of origin of the consignment
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <p class="govuk-body">Scotland</p>
+                    </dd>
+
+                </div>
+
+
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Slaughterhouse name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            A1 Export
+                        </dd>
+
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Slaughterhouse address
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Cream o' Galloway, Rainton, Gatehouse of Fleet
+                        </dd>
+
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Slaughterhouse veterinary approval number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Castle Douglas, DG7 2DR
+                        </dd>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What is the origin of the raw materials?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          England
+                        </dd>
+
+                    </div>
+
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Where were the animals slaughtered?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Northern Ireland
+                        </dd>
+
+                    </div>        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+
+                            What are the dates of processing of the product?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            From 22 11 2020 To 31 12 2020
+                        </dd>
+
+                    </div>   <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What is the planned date of certification?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            3 4 2021
+                        </dd>
+
+                    </div>   <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What is the planned export date of the consignment?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            4 4 2021
+                        </dd>
+
+                    </div>
+
+
+                </dl>
+
+
+
+
+
+                    <h2 class="govuk-heading-m">
+                        Exported product details
+                    </h2>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+                <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Provide cutting plant name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Cream o' Galloway
+                        </dd>
+
+                    </div>
+ <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Cutting plant address
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Rainton,Castle Douglas, DG7 2DR
+                        </dd>
+
+                    </div>
+ <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Provide cutting plant Veterinary Approval number.
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            BU 97975947
+                        </dd>
+
+                    </div>
+ <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What are the dates of processing of the product?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            From 22 11 2020 To 23 11 2020
+                        </dd>
+
+                    </div>
+ <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What are the details of the cold store?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Locharbriggs Coldstore of Catherinefield Ind Estate
+                        </dd>
+
+                    </div>
+ <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What are the details of the cold store?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Rainton, Gatehouse of Fleet, Castle Douglas, DG7 2DR
+                        </dd>
+
+                    </div>
+ <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What are the details of the cold store?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Locharbriggs34569998
+                        </dd>
+
+                    </div>
+
+ <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What is the shelf life of the product(s)?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            From 30 11 2020 To 31 11 2020
+                        </dd>
+
+ </div>
+
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What is the name of the product?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Cream o’ Galloway
+                        </dd>
+                        </div>
+     <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What type of product is it?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Smoked cut
+                        </dd>
+
+     </div>
+         <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Over what range of dates was the product processed, wrapped and packaged for export?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            From 22 11 2020 To 23 11 2020
+                        </dd>
+
+         </div>
+
+
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What is the type and number of packages?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Transport for Edinburgh – providing numerous docking points for the Edinburgh Cycle
+                        </dd>
+
+
+                        </div>
+
+
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What is the gross and net weight of the product?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            34
+                        </dd>
+
+                            </div>
+
+
+
+             <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            What are the batch numbers?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            78857758
+                        </dd>
+
+                    </div>
+
+
+
+
+
+                </dl>
+
+
+
+
+                            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+                            <h2 class="govuk-heading-m">
+                    Transport details
+                </h2>
+
+
+
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        What are the shipping marks?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        Transport for Edinburgh
+                                    </dd>
+
+                                </div>
+
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+
+                                        What is the storage temperature?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+-18 Celsius
+                                    </dd>
+
+                                </div>
+
+
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        What is the port(s) of departure?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+Belfast
+                                    </dd>
+
+                                </div>
+  <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        What is the port(s) of entry in China?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        Qinhuangdao
+                                    </dd>
+
+                                </div>
+
+
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        What is the means of transport?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        Providing numerous docking points for the Edinburgh Cycle ... Warmworks – creating a 'virtual power plant' in Dumfries and Galloway
+                                    </dd>
+
+                                </div>
+  <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        What is the container number?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+65783
+                                    </dd>
+
+                                </div>
+
+
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        What is the seal number?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+74764
+                                    </dd>
+
+                                </div>
+  <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        What is the name of the consignor?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        SEP Boar D3 Power Plant
+                                    </dd>
+
+                                </div>
+
+
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        What is the address of the consignor?
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        SEP D3 Power Plant
+                                        89864
+                                        Beijing
+                                        China South
+                                    </dd>
+
+                                </div>
+
+
+
+                          </dl>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+
+
+                <aside class="app-related-items" role="complementary" style="background: #F8F8F8;padding: 5px 15px;padding-bottom: 20px">
+
+                <h2 class="govuk-heading-m" style="margin-top: 30px">Status</h2>
+
+                <div class="blue-tag" style="width: auto" >
+                    SUBMITTED
+                </div>
+
+
+                    <hr class="govuk-!-margin-top-6">
+                    <p class="govuk-!-margin-top-4">
+                        Submitted:<br>
+                        11 Mar 2019 by Simon Spark <br>
+                        Number of certificates: 50
+
+                    </p>                 <hr>
+
+
+
+                    <h2 class="govuk-heading-m" style="margin-top: 30px">Clone this application</h2>
+
+
+                    <p>
+                        Make a new application based on an existing one.
+<br>
+                        <a href="#clone">Clone this EHC application</a>
+                    </p>
+
+
+
+
+
+                    <hr class="govuk-!-margin-top-6">
+
+
+
+                    <h2 class="govuk-heading-m" style="margin-top: 30px">Preview this certificate</h2>
+
+
+                    <p>
+                       View a specimen certificate PDF. The PDF will open in a new window.
+                        <br>        <a href="/public/images/ehc-7006ehc-3.0.pdf" target="_blank">Preview this EHC certificate</a>
+                    </p>
+
+
+
+                    <hr class="govuk-!-margin-top-6">
+
+                    <h2 class="govuk-heading-m" style="margin-top: 30px">Withdraw this application</h2>
+
+
+                    <p>
+                        Cancel this application. Your certifier will be notified.
+<br>        <a href="#clone">Withdraw this EHC application</a>
+                    </p>
+
+
+
+
+
+
+
+                    <hr class="govuk-!-margin-top-6">
+
+                    <h2 class="govuk-heading-m" style="margin-top: 30px">Favourite this application</h2>
+
+
+                    <p>
+
+                        Save this application as a favourite. <br>
+                        <a href="#clone">Favourite this EHC application</a>
+                    </p>
+
+
+
+
+
+
+                </aside>
+
+
+            </div>
+        </div>
+
+    </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

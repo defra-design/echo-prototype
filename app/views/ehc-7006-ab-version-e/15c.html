@@ -1,0 +1,209 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+    <div>
+
+    </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form {% if query.change=="yes" %} action="check-your-answers" {% else %} action="16" {% endif %} method="POST" >
+                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                    <input type="hidden" name="ehcNumber" value="7006EHC">
+                    <input type="hidden" name="applicationFormId" value="1721147986171">
+                    <input type="hidden" name="pageSequence" value="1">
+                    <input type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
+                    <input type="hidden" name="addressLine1" value="123 Address Line1">
+                    <input type="hidden" name="addressLine2" value="1">
+                    <input type="hidden" name="addressLine3" value="1">
+                    <input type="hidden" name="postcode" value="POSTCODE">
+                    <input type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
+                    <input type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
+                    <div class="govuk-form-group">
+
+
+                        <span class="govuk-caption-xl">
+          Step 1 of 2
+        </span>
+
+                        <h1 class="govuk-heading-xl">Confirm where to send your certificate</h1>
+                        <span class="govuk-caption-l">Organisation name</span>
+
+                        <p class="govuk-body govuk-fieldset__legend--m">
+                            <span id="certificate-delivery-address-line-1">ADM ACCOUNTING LIMITED</span><br>
+                        </p>
+
+                        <span class="govuk-caption-l">Address</span>
+                        <p class="govuk-body govuk-fieldset__legend--m">
+                            <span id="certificate-delivery-address-line-1">Hornbeam House</span><br>
+                            <span id="certificate-delivery-address-line-2">Electra Way</span><br>
+                            <span id="certificate-delivery-address-postcode">Crewe</span><br>
+							<span id="certificate-delivery-address-postcode">CW12 3ER</span><br>
+                        </p>
+                    </div>
+                    <br>
+
+
+
+                 <!--   <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" style="">
+                                <h1 class="govuk-fieldset__heading">Do you want to send the certificate to the above address?</h1>
+                            </legend>
+
+                            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input  {% if data.ov_address == "	OV address" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional" name="ov_address" type="radio" value="OV address" data-aria-controls="conditional-how-contacted-conditional">
+                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                        Yes, use this address
+                                    </label>
+                                </div>
+
+                                <div class="govuk-radios__item">
+                                    <input  {% if data.ov_address == "	Different address" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional-2" name="ov_address" type="radio" value="Different address" data-aria-controls="conditional-how-contacted-conditional">
+
+                                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                                        No, the OV is based at a different address
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                                    <div class="govuk-form-group">
+                                            <p>
+                                                You can arrange to send certificates to an address other than the main address of your OV or EHO practice. To get an alternative address agreed, your OV or EHO must complete an authorising declaration form. This form is available from the <a href="#">Centre for International Trade, Carlisle</a>.
+                                                Alternatively you can contact APHA telephone helpline: 03000 200 301</p>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </fieldset>
+                    </div>
+-->
+
+
+
+
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" style="">
+                            <h1 class="govuk-fieldset__heading">Do you want to send the certificate to the above address?</h1>
+                        </legend>
+
+                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input  {% if data.ov_address == "OV address" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional" name="ov_address" type="radio" value="OV address" data-aria-controls="conditional-how-contacted-conditional">
+                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                    Yes, use this address
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input  {% if data.ov_address == "Different address" %}checked="checked"{% endif %} class="govuk-radios__input" id="how-contacted-conditional-2" name="ov_address" type="radio" value="Different address" data-aria-controls="conditional-how-contacted-conditional-2">
+                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                                    No, the OV is based at a different address
+                                </label>
+                            </div>
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+
+
+
+
+
+
+
+                                    <div class="govuk-form-group">
+
+                                        <h2 class="govuk-label form-label-bold govuk-\!-font-weight-bold govuk-!-font-weight-bold" for="7006EHC-0">Provide alternative address</h2>
+
+
+                                        <label class="govuk-label" for="full-name">
+                                            Organisation name
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="full-name" name="full_name" type="text" autocomplete="name" spellcheck="false">
+
+
+                                        <label class="govuk-label" for="email" style="    margin-top:15px;">
+                                            Address
+                                        </label>
+                                        <input value="" class="govuk-input govuk-input--width-60" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <!--<div class="govuk-form-group">
+                                    <p>
+                                        You can arrange to send certificates to an address other than the main address of your OV or EHO practice. To get an alternative address agreed, your OV or EHO must complete an authorising declaration form. This form is available from the <a href="#">Centre for International Trade, Carlisle</a>.
+                                        Alternatively you can contact APHA telephone helpline: 03000 200 301</p>
+
+                                </div>-->
+
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+                </div>
+
+
+
+
+
+
+
+
+
+                    <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
+                        <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-CertificateDeliveryAddressSaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+                </form>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+
+
+                            <form action="dashboard">
+                                <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+                            </form>
+
+
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+</div>
+<script>
+
+document.getElementById("manual-address-option").onclick=function(e) {
+	document.getElementById("addr-form").action="postcode-lookup";
+	document.getElementById("addr-form").submit();
+}
+
+</script>
+{% endblock %}
