@@ -261,110 +261,6 @@
 			}
 		},
 		{
-			"page": 15,
-			"title": "What is the destination country of this consignment?",
-			"content": {
-				"header": "This is the country where the consignment is delivered following clearance from the BIP",
-				"caption": "",
-				"paragraph": "",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-						"type": "text",
-						"label": "Destination country in the EU",
-						"hint": "",
-						"required": "no",
-						"id": "eu_destination",
-						"name": "eu_destination"
-					},
-					{
-						"type": "text",
-						"label": "ISO code of destination country",
-						"hint": "This is the 2 digit code according to the ISO 3166 standard. For example, FR, DE etc",
-						"required": "no",
-						"id": "eu_destination_iso",
-						"name": "eu_destination_iso"
-					}
-				]
-			}
-		},
-		{
-			"page": 16,
-			"title": "Which Border Inspection Post (BIP) will the consignment arrive at?",
-			"content": {
-				"header": "Which Border Inspection Post (BIP) will the consignment arrive at?",
-				"caption": "",
-				"paragraph": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-						"type": "text",
-						"label": "Name of the BIP",
-						"hint": "",
-						"required": "no",
-						"id": "BIP-name-EU",
-						"name": "bip_name_eu"
-					},
-					{
-						"type": "text",
-						"label": "BIP unit number",
-						"hint": "You can find this on the European Commission’s approved list of BIPs",
-						"required": "no",
-						"id": "bip_unit_num",
-						"name": "bip_unit_num"
-					}
-				]
-			}
-		},
-		{
-			"page": 8,
-			"title": "Who is receiving the consignment?",
-			"content": {
-				"header": "Who is receiving the consignment?",
-				"caption": "",
-				"paragraph": "Provide details of the person  the consignment will be shipped to, or their representative.",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-						"type": "text",
-						"label": "Consignee name",
-						"hint": "",
-						"required": "no",
-						"id": "Consignee-name",
-						"name": "Consignee-_name"
-					},
-					{
-						"type": "textarea",
-						"label": "Consignee address",
-						"hint": "",
-						"required": "no",
-						"id": "Consignee-address",
-						"name": "Consignee_address",
-						"rows": 4
-					},
-					{
-						"type": "text",
-						"label": "Consignee telephone number",
-						"hint": "",
-						"required": "no",
-						"id": "Consignee-tel",
-						"name": "Consignee_tel"
-					},
-					{
-						"type": "text",
-						"label": "Consignee country",
-						"hint": "",
-						"required": "no",
-						"id": "Consignee-county",
-						"name": "Consignee_county"
-					}
-				]
-			}
-		},
-		{
 			"page": "supporting-documents",
 			"title": "Supporting documents",
 			"optional": "yes",
@@ -402,6 +298,26 @@
 							"value": "Wales"
 						}
 					]
+				}]
+			}
+		},{
+			"page": 16,
+			"exa": "yes",
+			"title": "What is the planned date of certification?",
+			"content": {
+				"header": "What is the planned date of certification?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned date of certification",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date"
 				}]
 			}
 		}, {

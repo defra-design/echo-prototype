@@ -142,7 +142,7 @@ GOV.UK Prototype Kit
               {% else %}
               {% set next_page = task.content.next %}
               {% endif %}
-                 {% if task.content.product_page == 'yes' %}
+                 {% if (data.products | length) > 0 and task.content.product_page == 'yes' %}
                  <a href="product-list?id={{task.page}}" class="govuk-link">
                  {% else%}
               <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
@@ -177,21 +177,14 @@ GOV.UK Prototype Kit
                 <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers</a></span>
                 <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
               {% endif%}
-
           </li>
           <li class="app-task-list__item">
-
-
               {% if ech_active != "yes"%}
                 <span class="app-task-list__task-name">Declaration and submissions  </span>
               {% else %}
                 <span class="app-task-list__task-name"><a href="review">Declaration and submission</a>  </span>
                 <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
               {% endif%}
-
-
-
-
           </li>
         </ul>
       </li>
