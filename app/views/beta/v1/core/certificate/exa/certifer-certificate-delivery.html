@@ -25,10 +25,12 @@ GOV.UK Prototype Kit
               <label class="govuk-label govuk-!-font-weight-bold">Delivery method</label>
             </legend>
             <div class="govuk-radios govuk-radios">
+              {% if query.printable!="no"%}
               <div class="govuk-radios__item">
                 <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="Email" name="delivery_options" data-qa-id="Question-radio-Email" autofocus="autofocus">
                 <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">Email</label>
               </div>
+              {% endif %}
               <div class="govuk-radios__item">
                 <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="First class post" name="delivery_options" data-qa-id="Question-radio-First class post">
                 <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">First class post</label>
