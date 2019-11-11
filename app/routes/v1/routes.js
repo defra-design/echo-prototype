@@ -98,20 +98,7 @@ router.post('/'+base_url+'*/certificate/exa/certifier-confirm-address', function
   }
 
 })
-function addProduct(arr,page,post){
-  // get all fields from the page
-  var f = page.content.fields
-  var p = {"id":arr.length }
-  for (var i = 0; i < f.length; i++) {
-    // for each field create an obj with the Key being the field name
-    // and the value being the posted data from that field
 
-    var v = post[f[i].name]
-    p[f[i].name]=v
-
-  }
-  arr.push(p)
-}
 router.get('/'+base_url+'*/select-certificate', function(req, res) {
   console.log("finding page in: "+req.params[0])
   res.render(base_url+req.params[0]+'/select-certificate', {
@@ -127,12 +114,42 @@ router.get('/'+base_url+'*/select-certificate', function(req, res) {
     res.send(html);
   })
 })
+function addProduct(arr,page,post){
+  // get all fields from the page
+  var f = page.content.fields
+  var p = {"id":arr.length }
 
+  for (var i = 0; i < f.length; i++) {
+    // for each field create an obj with the Key being the field name
+    // and the value being the posted data from that field
+    var v = post[f[i].name]
+    console.log("addding:"+v)
+    p[f[i].name]=v
+  }
+  arr.push(p)
+}
+function updateProduct(id,arr,page,post){
+  var f = page.content.fields
+  var p = {"id":arr.length }
+  for (var i = 0; i < f.length; i++) {
+    // for each field create an obj with the Key being the field name
+    // and the value being the posted data from that field
+
+    var v = post[f[i].name]
+    p[f[i].name]=v
+  }
+  arr[id]=p
+}
 router.post('/'+base_url+'*/certificate/page', function(req, res, next) {
   var query = ""
   if(req.query.product_page){
+    req.session.data.products = req.session.data.products || []
     var product = findPage(getDB(database).data.pages,req.query.id)
-    addProduct(req.session.data.products,product,req.body)
+    if(req.query.edit){
+      updateProduct(req.query.edit,req.session.data.products,product,req.body)
+    }else{
+      addProduct(req.session.data.products,product,req.body)
+    }
   }
   if(req.query.next == "product-list"){
     query+=("id="+req.query.id)
@@ -155,6 +172,7 @@ router.get('/'+base_url+'*/certificate/page', function(req, res) {
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
+        console.log("Could not find "+ base_url+req.params[0]+'/certificate/page' +": Loading from main folder")
         return res.render(file_url + '/certificate/page',{"query": req.query,"page":findPage(getDB(database).data.pages, id)});
       }
       throw err;
@@ -165,7 +183,6 @@ router.get('/'+base_url+'*/certificate/page', function(req, res) {
 
 // your-commmodities
 router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
-  console.log()
   res.render(base_url+req.params[0]+'/certificate/exa/your-commodity', {
     "query": req.query,
     "commodities":getDB(database).data.commodities
@@ -181,8 +198,13 @@ router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
 })
 router.get('/'+base_url+'*/certificate/product-list', function(req, res) {
   var id = req.query.id || 2;
-
+  console.log(req.session.data.products.length)
   var product = findPage(getDB(database).data.pages,id)
+  if(req.query.delete){
+    console.log("removing : "+req.query.delete)
+    console.log(req.session.data.products.splice(req.query.delete,1))
+    console.log(req.session.data.products.length)
+  }
   res.render(base_url+req.params[0]+'/certificate/product-list', {
     "query": req.query,
     "product":product
@@ -249,7 +271,8 @@ router.post('/'+base_url+'*certificate/supporting-documents', function(req, res)
     res.render(base_url + req.params[0], {"query":req.query},function(err, html) {
       if (err) {
         if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url + baseDir,{"query":req.query});
+          console.log("No page in directory.attempting to load from core")
+          return res.render(file_url + baseDir,{"query":req.query});
       }
         throw err;
       }

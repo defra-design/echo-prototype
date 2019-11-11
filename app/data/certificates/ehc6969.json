@@ -1,0 +1,544 @@
+{
+	"certificate_code": "6969EHC",
+	"version": "1",
+	"certificate_name": "Export dairy products from a Category C country for human consumption to the European Union",
+	"commodities": [{
+		"group": "Dairy",
+		"options": [{
+			"title": "Bovine",
+			"name": "Bovine"
+		}, {
+			"title": "Caprine",
+			"name": "Caprine"
+		}, {
+			"title": "Ovine",
+			"name": "Ovine"
+		}, {
+			"title": "Mixed",
+			"name": "Mixed"
+		}]
+	}],
+	"pages": [{
+			"page": 1,
+			"title": "What is your import permit number and expiry date?",
+			"content": {
+				"header": "What is your import permit number and expiry date?",
+				"caption": "",
+				"paragraph": "If an import permit has been issued to you, enter the details below.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Import permit number ",
+						"hint": "Select all that apply:",
+						"required": "no",
+						"id": "import-code",
+						"name": "import_code"
+					},
+					{
+						"type": "date",
+						"label": "Expiry date",
+						"hint": "For example, 31 08 1970",
+						"required": "no",
+						"id": "export_date",
+						"name": "export_date"
+					}
+				]
+			}
+		},
+		{
+			"page": 2,
+			"title": "What is the origin of your product?",
+			"content": {
+				"header": "What is the origin of your product?",
+				"caption": "You can enter more than one species and country of origin.",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"product_max": "5",
+				"fields": [{
+						"type": "text",
+						"label": "Species",
+						"hint": "",
+						"required": "no",
+						"id": "product-species",
+						"name": "product_species"
+					},
+					{
+						"type": "text",
+						"label": "Country of origin",
+						"hint": "",
+						"required": "no",
+						"id": "product_country_origin",
+						"name": "product_country_origin"
+					}
+				]
+			}
+		}, {
+			"page": 3,
+			"title": "Where was the raw milk processed?",
+			"content": {
+				"header": "Where was the raw milk processed?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name, address and approval number of processing establishment",
+					"hint": "",
+					"required": "no",
+					"id": "processing_establishment",
+					"name": "processing_establishment",
+					"rows": 4
+				}]
+			}
+		},
+		{
+			"page": 4,
+			"title": "Where was the export product processed?",
+			"content": {
+				"header": "Where was the export product processed?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name, address and approval number of processing establishment",
+					"hint": "",
+					"required": "no",
+					"id": "processing_establishment",
+					"name": "processing_establishment",
+					"rows": 4
+				}]
+			}
+		},
+		{
+			"page": 5,
+			"title": "What are the details of your final product?",
+			"content": {
+				"header": "What are the details of your final product?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Description of the product",
+					"hint": "Include details such as commodity type and product name",
+					"required": "no",
+					"id": "product_details",
+					"name": "product_details",
+					"rows": 4
+				}]
+			}
+		},
+		{
+			"page": 6,
+			"title": "What are the consignment details?",
+			"content": {
+				"header": "What are the consignment details?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Type and number of packages",
+						"hint": "",
+						"required": "no",
+						"id": "consignment-package-number",
+						"name": "consignment_package-number"
+					},
+					{
+						"type": "text",
+						"label": "Net weight",
+						"hint": "",
+						"required": "no",
+						"id": "consignment-net-weight",
+						"name": "consignment_net_weight"
+					},
+					{
+						"type": "text",
+						"label": "Identification marks",
+						"hint": "Enter the serial and batch numbers. Multiple numbers can be comma separated.",
+						"required": "no",
+						"id": "consignment-id-marks",
+						"name": "consignment_id_marks"
+					},
+					{
+						"type": "date",
+						"label": "Date of manufacture",
+						"hint": "For example, 31 08 1970",
+						"required": "no",
+						"id": "consignment-manufacture-date",
+						"name": "consignment_manufacture_date"
+					}
+				]
+			}
+		},
+		{
+			"page": 7,
+			"title": "What are the details of the exporter?",
+			"content": {
+				"header": "What are the details of the exporter?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of exporter",
+					"hint": "",
+					"required": "no",
+					"id": "exporter_details_address",
+					"name": "exporter_details_address"
+				}]
+			}
+		},
+		{
+			"page": 8,
+			"title": "What is the means of transportation?",
+			"content": {
+				"header": "What is the means of transportation?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Means of transportation",
+					"hint": "Enter the method of travel and the identification of the transport. For example Airplane ZZ1234",
+					"required": "no",
+					"id": "transport_means",
+					"name": "transport_means"
+				}, {
+					"type": "text",
+					"label": "Shipping marks",
+					"hint": "Enter the container and seal numbers ",
+					"required": "no",
+					"id": "transport_seal_number",
+					"name": "transport_seal_number"
+				}]
+			}
+		},
+		{
+			"page": 9,
+			"title": "Who is receiving the product?",
+			"content": {
+				"header": "Who is receiving the product?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of consignee",
+					"hint": "Provide details of the person the consignment will be shipped to, or their representative.",
+					"required": "no",
+					"id": "consignee_details",
+					"name": "consignee_details",
+					"rows": 4
+				}, {
+					"type": "textarea",
+					"label": "Name and contact number of consignee representative",
+					"hint": "Leave blank if no agent has been used",
+					"required": "no",
+					"id": "consignee_representive",
+					"name": "consignee_representive",
+					"rows": 4
+				}]
+			}
+		},
+		{
+			"page": 15,
+			"title": "What is the destination country of this consignment?",
+			"content": {
+				"header": "This is the country where the consignment is delivered following clearance from the BIP",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Destination country in the EU",
+						"hint": "",
+						"required": "no",
+						"id": "eu_destination",
+						"name": "eu_destination"
+					},
+					{
+						"type": "text",
+						"label": "ISO code of destination country",
+						"hint": "This is the 2 digit code according to the ISO 3166 standard. For example, FR, DE etc",
+						"required": "no",
+						"id": "eu_destination_iso",
+						"name": "eu_destination_iso"
+					}
+				]
+			}
+		},
+		{
+			"page": 16,
+			"title": "Which Border Inspection Post (BIP) will the consignment arrive at?",
+			"content": {
+				"header": "Which Border Inspection Post (BIP) will the consignment arrive at?",
+				"caption": "",
+				"paragraph": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Name of the BIP",
+						"hint": "",
+						"required": "no",
+						"id": "BIP-name-EU",
+						"name": "bip_name_eu"
+					},
+					{
+						"type": "text",
+						"label": "BIP unit number",
+						"hint": "You can find this on the European Commission’s approved list of BIPs",
+						"required": "no",
+						"id": "bip_unit_num",
+						"name": "bip_unit_num"
+					}
+				]
+			}
+		},
+		{
+			"page": 8,
+			"title": "Who is receiving the consignment?",
+			"content": {
+				"header": "Who is receiving the consignment?",
+				"caption": "",
+				"paragraph": "Provide details of the person  the consignment will be shipped to, or their representative.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Consignee name",
+						"hint": "",
+						"required": "no",
+						"id": "Consignee-name",
+						"name": "Consignee-_name"
+					},
+					{
+						"type": "textarea",
+						"label": "Consignee address",
+						"hint": "",
+						"required": "no",
+						"id": "Consignee-address",
+						"name": "Consignee_address",
+						"rows": 4
+					},
+					{
+						"type": "text",
+						"label": "Consignee telephone number",
+						"hint": "",
+						"required": "no",
+						"id": "Consignee-tel",
+						"name": "Consignee_tel"
+					},
+					{
+						"type": "text",
+						"label": "Consignee country",
+						"hint": "",
+						"required": "no",
+						"id": "Consignee-county",
+						"name": "Consignee_county"
+					}
+				]
+			}
+		},
+		{
+			"page": "supporting-documents",
+			"title": "Supporting documents",
+			"optional": "yes",
+			"content": {}
+		},
+		{
+			"page": 11,
+			"exa": "yes",
+			"title": "Where will certification take place?",
+			"content": {
+				"header": "Where will certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					]
+				}]
+			}
+		}, {
+			"page": 12,
+			"exa": "yes",
+			"title": "Who is exporting the product?",
+			"content": {
+				"header": "Who is exporting the product?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Exporter name",
+					"hint": "",
+					"required": "yes",
+					"id": "exporter_name",
+					"name": "exporter_name"
+				}]
+			}
+		},
+		{
+			"page": 13,
+			"exa": "yes",
+			"title": "When and where was the milk collected?",
+			"content": {
+				"header": "When and where was the milk collected?",
+				"caption": "",
+				"paragraph": "Provide details of where and when the milk was collected. You can select more than one region. We use this information to help control the spread of disease.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "checkbox",
+					"label": "Origin",
+					"hint": "Select all that apply:",
+					"required": "yes",
+					"id": "origin",
+					"name": "origin",
+					"options": [{
+							"title": "Great Britain",
+							"name": "Great Britain"
+						}, {
+							"title": "Northern Ireland",
+							"name": "Northern Ireland"
+						},
+						{
+							"title": "Outside the UK",
+							"name": "Outside the UK"
+						}
+					]
+				}, {
+					"type": "date",
+					"label": "Earliest date of collection",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "origin_earliest_date",
+					"name": "origin_earliest_date"
+				}, {
+					"type": "date",
+					"label": "Latest date of collection",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "origin_latest_date",
+					"name": "origin_latest_date"
+				}]
+			}
+		},
+		{
+			"page": 15,
+			"exa": "yes",
+			"title": "What are the processing details?",
+			"content": {
+				"header": "What are the processing details?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "checkbox",
+					"label": "Origin",
+					"hint": "Select all that apply:",
+					"required": "yes",
+					"id": "origin",
+					"name": "origin",
+					"options": [{
+							"title": "Great Britain",
+							"name": "Great Britain"
+						}, {
+							"title": "Northern Ireland",
+							"name": "Northern Ireland"
+						},
+						{
+							"title": "Outside the UK",
+							"name": "Outside the UK"
+						}
+					]
+				}, {
+					"type": "date",
+					"label": "Earliest date of processing",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "origin_processing_early_date",
+					"name": "origin_processing_early_date"
+				}, {
+					"type": "date",
+					"label": "Latest date of processing",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "origin_processing_late_date",
+					"name": "origin_processing_late_date"
+				}]
+			}
+		}, {
+			"page": 14,
+			"exa": "yes",
+			"title": "What is the planned date of export?",
+			"content": {
+				"header": "What is the planned date of export?",
+				"caption": "",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned export date",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date"
+				}]
+			}
+		}
+
+	]
+}
