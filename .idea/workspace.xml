@@ -28,7 +28,7 @@
       <file leaf-file-name="new-dashboard-tab.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1165" column="0" selection-start="34633" selection-end="34633" vertical-scroll-proportion="0.43430656" vertical-offset="17103" max-vertical-offset="18540">
+            <state line="1125" column="84" selection-start="33817" selection-end="33817" vertical-scroll-proportion="0.5620438" vertical-offset="16413" max-vertical-offset="18540">
               <folding>
                 <element signature="n#style#0;n#hr#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -450,7 +450,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1165" column="0" selection-start="34633" selection-end="34633" vertical-scroll-proportion="0.43430656" vertical-offset="17103" max-vertical-offset="18540">
+        <state line="1125" column="84" selection-start="33817" selection-end="33817" vertical-scroll-proportion="0.5620438" vertical-offset="16413" max-vertical-offset="18540">
           <folding>
             <element signature="n#style#0;n#hr#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
