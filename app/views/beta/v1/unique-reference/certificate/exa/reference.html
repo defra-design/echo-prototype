@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="app-content__header">
+      <h1 class="govuk-heading-xl">
+        Do you want to create your own unique reference?
+      </h1>
+    </div>
+    <span id="changed-name-hint" class="govuk-hint">You can add a name or number to help identify your application. For example, this could be a container or PO number.
+    </span>
+    <form {% if query.change=="yes" %} action="../check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
+      <!-- @formatter:off -->
+      <!--radio start-->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="has_reference_num" type="radio" value="yes" aria-controls="conditional-how-contacted-conditional-2" {% if data.has_reference_num == "no"%}checked="checked"{%endif%}aria-expanded="{% if data.has_reference_num == "no"%}true{% else%}false{%endif%}">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="7006EHC-1"> Enter your reference number (max 20 characters)</label>
+                <input value="" class="govuk-input form-control-3-4 govuk-input--width-20" id="7006EHC-1" name="reference_num" type="text" data-qa-id="Question-7006EHC-1">
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional" name="has_reference_number" type="radio" value="no" data-aria-controls="conditional-how-contacted-conditional">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <!--radio end-->
+      <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+      </div>
+    </form>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-body">
+        <form action="dashboard">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </form>
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+{% endblock %}
