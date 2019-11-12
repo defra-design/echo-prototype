@@ -17,20 +17,21 @@
           <h1 class="govuk-fieldset__heading">
             Your products
           </h1>
-          <span class="govuk-caption-l">You can add up to 4 products</span>
+
         </legend>
       </fieldset>
     </div>
 
-    <p class="govuk-body">{{ data.products | length }} product{% if (data.products | length )!=1%}s{%endif%} added</p>
-    {% if (data.products | length ) >0 %}
+    <p class="govuk-body-l">You can add up to 5 products to this certificate</p>
+      <!-- <p class="govuk-body">{{ data.products | length }} product{% if (data.products | length )!=1%}s{%endif%} added</p> -->
+        {% if (data.products | length ) >0 %}
     <table class="govuk-table" id="Table-RepeatablePageReview">
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         {% for question in product.content.fields %}
         <th class="govuk-table__header">{{question.label}} {% if question.required != 'yes'%}{%endif%}</th>
         {% endfor %}
-        <th class="govuk-table__header">actions</th>
+        <th class="govuk-table__header"></th>
       </tr>
       </thead>
 
@@ -45,12 +46,13 @@
           <a class="govuk-link" href="product-list?delete={{loop.index -1}}&id={{query.id}}" id="0-deleteLink">Delete</a>
         </td>
       </tr>
+
       {% endfor %}
       </tbody>
-    </table>
 
-    {% endif %}
-    <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id={{query.id or 2}}&next=product-list&product_page=yes&new=yes" id="Button-AddAnother">{% if (data.products | length) == 0 %}Add a product{%else%}Add Another{% endif %}</a>
+    </table>
+      {% endif %}
+    <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id={{query.id or 2}}&next=product-list&product_page=yes&new=yes" id="Button-AddAnother">{% if (data.products | length) == 0 %}Add a product{%else%}Add another{% endif %}</a>
     <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
       <input type="hidden" name="crumb_csrf_token" value="nAitoNVyVGtnnzUQ-QQk78LOMzR_-9L6qqu86Lg9aRY">
       <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">

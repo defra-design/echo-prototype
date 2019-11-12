@@ -62,7 +62,7 @@ router.get('/'+base_url+'*/start', function(req, res) {
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url + '/certificate/check-your-'+req.params[1],{"query": req.query,"certificate": getDB(database).data});
+        return res.render(file_url +  '/start',{"query": req.query,"certificate": getDB(database).data});
       }
       throw err;
     }
@@ -191,7 +191,8 @@ router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url + '/certificate/exa/your-commodity');
+        return res.render(file_url + '/certificate/exa/your-commodity',{"query": req.query,
+        "commodities":getDB(database).data.commodities});
       }
       throw err;
     }
