@@ -52,17 +52,19 @@ function getDB(id){
   return false;
 }
 router.get('/'+base_url+'*/start', function(req, res) {
+  req.session.data.database = req.session.data.database || database
   if(req.query.certificate){
-    database=req.query.certificate
+    req.session.data.database=req.query.certificate
   }
-  req.session.data.certificate = getDB(database).data.certificate_code
+  var db = getDB(req.session.data.database).data
+  req.session.data.certificate = db.certificate_code
   res.render(base_url +req.params[0]+ '/start', {
     "query": req.query,
-    "certificate": getDB(database).data
+    "certificate": db
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url +  '/start',{"query": req.query,"certificate": getDB(database).data});
+        return res.render(file_url +  '/start',{"query": req.query,"certificate": db});
       }
       throw err;
     }
@@ -71,10 +73,12 @@ router.get('/'+base_url+'*/start', function(req, res) {
 });
 
 router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
-  var db= getDB(database).data
+  req.session.data.database = req.session.data.database || database
   if(req.query.certificate){
-    database=req.query.certificate
+    req.session.data.database=req.query.certificate
   }
+
+  var db= getDB(req.session.data.database).data
   req.session.data.printable = db.printable || "yes"
   req.session.data.certificate = db.certificate_code
   res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {

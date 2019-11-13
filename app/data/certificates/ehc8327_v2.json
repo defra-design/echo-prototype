@@ -143,7 +143,7 @@
 			}
 		}, {
 			"page": 3,
-			"title": "Consignment origin",
+			"title": "Origin of consignment",
 			"content": {
 				"header": "What is the place of origin of the consignment?",
 				"caption": "",
@@ -181,7 +181,7 @@
 		},
 		{
 			"page": 4,
-			"title": "Consignor details (exporter) ",
+			"title": "Exporter or export agent details",
 			"content": {
 				"header": "Who is sending the consignment?",
 				"caption": "",
@@ -255,7 +255,7 @@
 		},
 		{
 			"page": 6,
-			"title": "Consignment loading details",
+			"title": "Place of consignment loading",
 			"content": {
 				"header": "Where will the consignment be loaded?",
 				"caption": "",
@@ -275,7 +275,7 @@
 		},
 		{
 			"page": 7,
-			"title": "Transportaion",
+			"title": "Transportation details",
 			"content": {
 				"header": "Transportaion",
 				"caption": "",
@@ -378,7 +378,7 @@
 		},
 		{
 			"page": 16,
-			"title": "Border Inspection Post (BIP)",
+			"title": "Border inspections",
 			"content": {
 				"header": "Consignments exported into the EU need to be inspected at a border inspection post, this is likely to be the same location as the first port of entry",
 				"caption": "",
@@ -407,7 +407,7 @@
 		},
 		{
 			"page": 17,
-			"title": "Third country destination",
+			"title": "The destination country",
 			"content": {
 				"header": "What is the destination third country?",
 				"caption": "",
@@ -436,7 +436,7 @@
 		},
 		{
 			"page": 18,
-			"title": "Responsible for the consignment when in the EU",
+			"title": "Consignments transiting the EU",
 			"content": {
 				"header": "who is responsible for the consignment when in the EU?",
 				"caption": "",
@@ -457,7 +457,7 @@
 		},
 		{
 			"page": 19,
-			"title": "Storage details",
+			"title": "Storage during transit",
 			"content": {
 				"header": "Where will the consignment be stored during transit?",
 				"caption": "",
@@ -487,7 +487,7 @@
 		},
 		{
 			"page": 8,
-			"title": "Consignee details (importer)",
+			"title": "The consignee",
 			"content": {
 				"header": "Who is receiving the consignment?",
 				"caption": "",
@@ -533,14 +533,14 @@
 		},
 		{
 			"page": "supporting-documents",
-			"title": "Supporting documents",
+			"title": "Supporting documents (optional)",
 			"optional": "yes",
 			"content": {}
 		},
 		{
 			"page": 11,
 			"exa": "yes",
-			"title": "Certification location",
+			"title": "Where certification with happen",
 			"content": {
 				"header": "Where will certification take place?",
 				"caption": "",
@@ -574,7 +574,7 @@
 		}, {
 			"page": 12,
 			"exa": "yes",
-			"title": "Exporter",
+			"title": "The exporter",
 			"content": {
 				"header": "Who is exporting the product?",
 				"caption": "",
@@ -595,7 +595,7 @@
 		{
 			"page": 13,
 			"exa": "yes",
-			"title": "Product origin",
+			"title": "Origin of product",
 			"content": {
 				"header": "What is the origin of the product?",
 				"caption": "",
@@ -627,7 +627,7 @@
 		}, {
 			"page": 14,
 			"exa": "yes",
-			"title": "Exporting date",
+			"title": "Planned date of export",
 			"content": {
 				"header": "What is the planned date of export?",
 				"caption": "",
