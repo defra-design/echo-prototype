@@ -79,16 +79,18 @@ router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
   }
 
   var db= getDB(req.session.data.database).data
+  console.log("db.printable: "+db.printable )
   req.session.data.printable = db.printable || "yes"
   req.session.data.certificate = db.certificate_code
   res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {
     "query": req.query,
     "tasks": db.pages,
-    "certificate_code": db.certificate_code
+    "certificate_code": db.certificate_code,
+    "printable": db.printable
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url + '/certificate/check-your-'+req.params[1],{"query": req.query,"tasks": db.pages});
+        return res.render(file_url + '/certificate/check-your-'+req.params[1],{"query": req.query,"tasks": db.pages, "printable": db.printable});
       }
       throw err;
     }

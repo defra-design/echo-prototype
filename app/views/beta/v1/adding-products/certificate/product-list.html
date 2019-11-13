@@ -10,19 +10,18 @@
 {% endblock %}
 
 {% block content %}
-
-    <div class="govuk-form-group" id="Repeatable-Page-Review">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">
             Your products
           </h1>
+          <p class="govuk-body">You can add up to 5 products to this certificate. If there are more than 5 products, attach a schedule as a supporting document at the end of this application.</p>
+  </div>
 
-        </legend>
-      </fieldset>
-    </div>
+  <div class="govuk-grid-column-full">
 
-    <p class="govuk-body-l">You can add up to 5 products to this certificate</p>
+
+
       <!-- <p class="govuk-body">{{ data.products | length }} product{% if (data.products | length )!=1%}s{%endif%} added</p> -->
         {% if (data.products | length ) >0 %}
     <table class="govuk-table" id="Table-RepeatablePageReview">
@@ -64,4 +63,5 @@
         </div>
       </div>
     </form>
+    </div>
 {% endblock %}
