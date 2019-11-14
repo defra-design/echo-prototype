@@ -5,6 +5,26 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+{{super()}}
+
+
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+</div>
+
+
+
+{% endblock%}
+
 {% block content %}
 
 
@@ -14,15 +34,12 @@
 
 
 
-    <div class="govuk-grid-row">
-        <div class="govuk-breadcrumbs" style="position: relative;top:-20px;margin-left: 20px">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="index">Home</a>
-                </li>
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-top-0" style="position: relative;top:-15px">Back</a>
 
-            </ol>
-        </div>
+
+
+    <div class="govuk-grid-row">
+
         <div class="govuk-grid-column-two-thirds">
 
             <h1 class="govuk-heading-l">
