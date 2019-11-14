@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/private-beta/static-form-finder.html" afterPath="$PROJECT_DIR$/app/views/private-beta/static-form-finder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="defra-exports-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,47 +26,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="new-dashboard-tab.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/private-beta/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1157" column="51" selection-start="34452" selection-end="34452" vertical-scroll-proportion="0.33291456" vertical-offset="17075" max-vertical-offset="18540">
+            <state line="28" column="6" selection-start="472" selection-end="472" vertical-scroll-proportion="-17.458334" vertical-offset="1" max-vertical-offset="840">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reg.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/private-beta/reg.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="141" selection-start="676" selection-end="676" vertical-scroll-proportion="-13.125" vertical-offset="195" max-vertical-offset="1125">
               <folding>
-                <element signature="n#style#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#1;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#4;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#5;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#6;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#7;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#8;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#9;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#10;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#11;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#12;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#13;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#17;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#18;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#19;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#20;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#21;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#22;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#23;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#24;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#25;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#26;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/sass/application.scss">
+      <file leaf-file-name="service-start-page-exports.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/private-beta/service-start-page-exports.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="502" column="15" selection-start="10477" selection-end="10477" vertical-scroll-proportion="0.0" vertical-offset="7258" max-vertical-offset="8340">
+            <state line="21" column="6" selection-start="490" selection-end="490" vertical-scroll-proportion="-4.375" vertical-offset="210" max-vertical-offset="5670">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service-start-page-certifier.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/private-beta/service-start-page-certifier.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="32" selection-start="618" selection-end="654" vertical-scroll-proportion="-3.9" vertical-offset="405" max-vertical-offset="2175">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="static-form-finder.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/private-beta/static-form-finder.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="163" column="109" selection-start="313536" selection-end="313536" vertical-scroll-proportion="0.5631068" vertical-offset="2155" max-vertical-offset="3120">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,12 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page-template.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/new-dashboard.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page-fav.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page-draft.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/new-dashboard-tab.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/3-plus-plus.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/15.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/check-your-progress.html" />
@@ -101,17 +102,23 @@
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/11-plus.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/15c.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/check-your-answers.html" />
-        <option value="$PROJECT_DIR$/app/views/index.html" />
         <option value="$PROJECT_DIR$/app/assets/sass/application.scss" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab.html" />
+        <option value="$PROJECT_DIR$/app/views/private-beta/apply-online.html" />
+        <option value="$PROJECT_DIR$/app/views/index.html" />
+        <option value="$PROJECT_DIR$/app/views/private-beta/index.html" />
+        <option value="$PROJECT_DIR$/app/views/private-beta/service-start-page-exports.html" />
+        <option value="$PROJECT_DIR$/app/views/private-beta/service-start-page-certifier.html" />
+        <option value="$PROJECT_DIR$/app/views/private-beta/reg.html" />
+        <option value="$PROJECT_DIR$/app/views/private-beta/static-form-finder.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1305" />
+    <option name="x" value="1" />
     <option name="y" value="23" />
-    <option name="width" value="1569" />
-    <option name="height" value="982" />
+    <option name="width" value="1280" />
+    <option name="height" value="701" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -139,7 +146,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,52 +228,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ehc-7006-ab-version-e" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="defra-exports-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="defra-exports-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="defra-exports-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="defra-exports-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="private-beta" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,14 +305,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1305" y="23" width="1569" height="982" extended-state="0" />
+    <frame x="1" y="23" width="1280" height="701" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22052263" sideWeight="0.8561064" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2703125" sideWeight="0.8561064" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14389358" sideWeight="0.5010957" order="8" side_tool="true" content_ui="tabs" />
@@ -372,36 +339,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page-fav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="766" column="4" selection-start="17515" selection-end="17818" vertical-scroll-proportion="-21.75" vertical-offset="10968" max-vertical-offset="12270" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/new-dashboard-fav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="35" selection-start="622521" selection-end="622523" vertical-scroll-proportion="0.33268481" vertical-offset="2334" max-vertical-offset="5295" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page-draft.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="0" selection-start="4301" selection-end="4301" vertical-scroll-proportion="0.0" vertical-offset="2445" max-vertical-offset="6600" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/ehc-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="762" column="36" selection-start="24385" selection-end="24385" vertical-scroll-proportion="0.0" vertical-offset="8988" max-vertical-offset="12105" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/15.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="100" selection-start="823" selection-end="823" vertical-scroll-proportion="0.08759124" vertical-offset="288" max-vertical-offset="1110" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/check-your-progress.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="0" selection-start="14162" selection-end="14162" vertical-scroll-proportion="0.0" vertical-offset="3104" max-vertical-offset="3900" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version4-1/specimen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="0" selection-start="1335" selection-end="1335" vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1215" />
@@ -437,48 +374,67 @@
         <state line="264" column="1" selection-start="7886" selection-end="8523" vertical-scroll-proportion="-8.125" vertical-offset="3750" max-vertical-offset="5850" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="41" selection-start="642" selection-end="642" vertical-scroll-proportion="0.40145984" vertical-offset="45" max-vertical-offset="6060" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/sass/application.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="502" column="15" selection-start="10477" selection-end="10477" vertical-scroll-proportion="0.0" vertical-offset="7258" max-vertical-offset="8340">
-          <folding />
-        </state>
+        <state line="502" column="15" selection-start="10477" selection-end="10477" vertical-scroll-proportion="0.0" vertical-offset="7258" max-vertical-offset="8340" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1157" column="51" selection-start="34452" selection-end="34452" vertical-scroll-proportion="0.33291456" vertical-offset="17075" max-vertical-offset="18540">
+        <state line="1157" column="51" selection-start="34452" selection-end="34452" vertical-scroll-proportion="1.9131238" vertical-offset="16305" max-vertical-offset="18540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="289" column="0" selection-start="6753" selection-end="6753" vertical-scroll-proportion="0.83179295" vertical-offset="3870" max-vertical-offset="6270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="112" selection-end="225" vertical-scroll-proportion="0.2495379" vertical-offset="0" max-vertical-offset="3795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/private-beta/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="6" selection-start="472" selection-end="472" vertical-scroll-proportion="-17.458334" vertical-offset="1" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/private-beta/service-start-page-exports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="490" selection-end="490" vertical-scroll-proportion="-4.375" vertical-offset="210" max-vertical-offset="5670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/private-beta/service-start-page-certifier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="32" selection-start="618" selection-end="654" vertical-scroll-proportion="-3.9" vertical-offset="405" max-vertical-offset="2175">
           <folding>
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#1;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#4;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#5;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#6;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#7;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#8;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#9;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#10;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#11;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#12;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#13;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#17;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#18;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#19;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#20;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#21;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#22;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#23;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#24;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#25;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#26;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/private-beta/reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="141" selection-start="676" selection-end="676" vertical-scroll-proportion="-13.125" vertical-offset="195" max-vertical-offset="1125">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/private-beta/static-form-finder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="109" selection-start="313536" selection-end="313536" vertical-scroll-proportion="0.5631068" vertical-offset="2155" max-vertical-offset="3120">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#form#0;n#div#0;n#main#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

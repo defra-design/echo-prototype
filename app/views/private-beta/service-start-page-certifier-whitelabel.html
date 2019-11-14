@@ -1,0 +1,124 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-breadcrumbs" style="position: relative;top:-20px;margin-left: 20px">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="index">Home</a>
+                </li>
+
+            </ol>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">
+                <!--  Export Health Certificates  -->
+                Certify export health certificates online
+            </h1>
+
+        <label class="govuk-label" style="font-size: 24px;">Official veterinarians (OVs) and environmental health officers (EHOs) in England, Scotland and Wales can use this service to certify export health certificates (EHCs) online.</label>
+
+        <p class="govuk-body">Thank you for agreeing to take part in the early access testing of the new online Export Health Certificate service.</p>
+
+        <p class="govuk-body">You'll be able to use this service to view, certify or reject applications for EHCs online.</p>
+
+        <p class="govuk-body">To access the service, you will need:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>your Government Gateway user ID and password (if you don't already have an account, you will be guided to create one)</li>
+            <li>a Defra identity account (again, if you don't have one set up, you'll be guided through that process)</li>
+          </ul>
+
+        <p class="govuk-body govuk-!-font-weight-bold">Setting up a Government Gateway ID and Defra identity</p>
+
+        <p class="govuk-body">Make sure you associate these accounts with your organisation, not an individual. You will need:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>your work email address, phone number and postal address</li>
+            <li>the main contact details for your business or organisation (for example, head office contact details)</li>
+            <li>the Companies House number if you are registering on behalf of a limited company</li>
+          </ul>
+
+        <p class="govuk-body">APHA have to process your Defra identity registration, so please allow time for that to happen.</p>
+
+
+
+            <a href="https://identity-management-app.herokuapp.com/scp/login-new?serviceLine=Export%20Health%20Certificates&amp;serviceRole=Certifier&amp;userType=new&amp;regSuccess=pending&amp;serviceQuestions=yes&amp;numUsers=1&amp;numAgents=0&amp;numServices=1&amp;version=1" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
+                Start now
+            </a>
+
+
+
+
+
+
+
+
+
+            <!-- <p class="govuk-!-font-weight-bold">To apply online you'll need:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Personal or company contact details</li>
+                <li>update your name, address or other details</li>
+                <li>do something else</li>
+              </ul>
+
+              <p>Registering takes around 5 minutes.</p> -->
+
+            <!-- <a href="#" role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">Start now</a>
+
+              <h2 class="govuk-heading-m">Before you start</h2>
+
+              <p>You can also <a href="#">register by post</a>.</p>
+
+              <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
+
+              <p>You can’t register for this service if you’re in the UK illegally.</p> -->
+
+        </div>
+        <!--
+          <div class="govuk-grid-column-one-third">
+
+            <aside class="app-related-items" role="complementary">
+              <h2 class="govuk-heading-m" id="subsection-title">
+                Subsection
+              </h2>
+              <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="govuk-list govuk-!-font-size-16">
+                  <li>
+                    <a href="#">
+                      Related link
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Related link
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="govuk-!-font-weight-bold">
+                      More <span class="govuk-visually-hidden">in Subsection</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+
+          </div> -->
+    </div>
+
+
+
+{% endblock %}

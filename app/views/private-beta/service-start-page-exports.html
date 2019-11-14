@@ -1,0 +1,304 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+{{super()}}
+
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    </p>
+</div>
+
+
+
+{% endblock%}
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+
+
+<div class="gem-c-contextual-breadcrumbs">
+
+    <div class="gem-c-breadcrumbs govuk-breadcrumbs " data-module="track-click">
+        <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item" aria-current="false">
+                <a data-track-category="homeLinkClicked" data-track-action="homeBreadcrumb" data-track-label="" data-track-options="{}" class="govuk-breadcrumbs__link" aria-current="false" href="index">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item" aria-current="false">
+                <a data-track-category="breadcrumbClicked" data-track-action="2" data-track-label="/export-health-certificates" data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;Export health certificates&quot;}" class="govuk-breadcrumbs__link" aria-current="false" href="#">Export health certificates</a>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <div class="govuk-heading-s">
+
+            <h1 class="govuk-heading-xl">
+
+            Apply for an export health certificate
+
+            </h1>
+
+
+            <label class="govuk-label" style="font-size: 24px;">
+
+
+                Use this
+service to apply online for an export health certificate if you're exporting from England, Scotland or Wales
+               <!-- In the event the UK leaves the EU without a deal, use these forms and guidance notes to export hatching eggs of poultry like chickens,
+                ducks and turkeys, other than ratites to, or transit through, member states of the European Union.
+            --></label>
+
+        </div>
+    </div>
+
+
+   <!-- <div class="grid-row">
+        <div class="govuk-grid-column-full">
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col"></th>
+                    <th class="govuk-table__header" scope="col"></th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" scope="row" style="border-bottom: 0px; font-size: 16px;">
+                        <label class="govuk-label" style="font-size: 16px;">
+                            From: <a class="govuk-breadcrumbs govuk-!-font-weight-bold" style="font-size: 16px;" href="/government/organisations/animal-and-plant-health-agency">Department for Environment, Food & Rural Affairs, Animal and Plant Health Agency</a>
+                            , and<a class="govuk-breadcrumbs govuk-!-font-weight-bold" style="font-size: 16px;" href="/government/organisations/animal-and-plant-health-agency">Department of Agriculture, Environment and Rural Affairs (Northern Ireland)</a>
+                        </label>
+                    </td>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>-->
+</div>
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <style>
+            .app-c-important-metadata--bottom-margin {
+                margin-bottom: 45px;
+            }
+
+            .app-c-important-metadata--bottom-margin {
+                margin-bottom: 15px;
+            }
+
+            .app-c-important-metadata {
+                overflow: auto;
+                padding: 20px 30px;
+            }
+
+            .app-c-important-metadata {
+                font-size: 16px;
+                line-height: 1.25;
+            }
+
+            .app-c-important-metadata {
+                font-family: "nta", Arial, sans-serif;
+                font-weight: 400;
+                text-transform: none;
+                font-size: 14px;
+                line-height: 1.1428571429;
+                background: #005ea5;
+                color: #fff;
+                padding: 15px;
+            }
+
+            .app-c-important-metadata a,
+            .app-c-important-metadata a:visited,
+            .app-c-important-metadata a:hover {
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            .app-c-important-metadata__definition {
+                font-weight: bold;
+            }
+
+            .app-c-important-metadata__term {
+                float: left;
+                padding-right: 5px;
+            }
+
+            .gem-c-govspeak h2:first-child, .gem-c-govspeak h3:first-child, .gem-c-govspeak h4:first-child, .gem-c-govspeak p:first-child {
+                margin-top: 0;
+            }
+
+            .gem-c-govspeak h3 {
+                font-size: 19px;
+                line-height: 1.3157894737;
+            }
+
+            .gem-c-govspeak h3 {
+                font-family: "nta", Arial, sans-serif;
+                font-weight: 700;
+                text-transform: none;
+                font-size: 16px;
+                line-height: 1.25;
+                margin-top: 35px;
+                margin-bottom: 0;
+            }
+
+            .gem-c-govspeak ol, .gem-c-govspeak ul, .gem-c-govspeak p {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .gem-c-govspeak ol, .gem-c-govspeak ul, .gem-c-govspeak p {
+                font-size: 19px;
+                line-height: 1.3157894737;
+            }
+
+            .gem-c-govspeak .call-to-action {
+                margin: 2em 0;
+                background-color: #dee0e2;
+                padding: 2em;
+            }
+
+            .gem-c-govspeak h2 {
+                font-family: "nta", Arial, sans-serif;
+                font-weight: 700;
+                text-transform: none;
+                font-size: 20px;
+                line-height: 1.1111111111;
+                margin-top: 30px;
+                margin-bottom: 0;
+            }
+            .app-c-important-metadata {
+                overflow: auto;
+                padding: 20px 30px;
+            }
+            .app-c-important-metadata{line-height: 1.5;}
+        </style>
+
+
+
+
+
+
+      <!--  <div class="responsive-bottom-margin">
+            <nav role="navigation" class="gem-c-contents-list gem-c-contents-list--no-underline " data-module="track-click">
+                <h2 class="gem-c-contents-list__title govuk-body">Contents</h2>
+
+                <ol class="gem-c-contents-list__list">
+                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                        <a class="gem-c-contents-list__link " data-track-category="contentsClicked" data-track-action="content_item 1" data-track-label="#what-you-need-to-do" data-track-options="{&quot;dimension29&quot;:&quot;What you need to do&quot;}" href="#what-you-need-to-do">What you need to do</a>
+                    </li>
+                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                        <a class="gem-c-contents-list__link " data-track-category="contentsClicked" data-track-action="content_item 2" data-track-label="#what-exporters-in-northern-ireland-need-to-do" data-track-options="{&quot;dimension29&quot;:&quot;What exporters in Northern Ireland need to do&quot;}" href="#what-exporters-in-northern-ireland-need-to-do">What exporters in Northern Ireland need to do</a>
+                    </li>
+                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed ">
+                        <a class="gem-c-contents-list__link " data-track-category="contentsClicked" data-track-action="content_item 3" data-track-label="#always-use-the-latest-certificate" data-track-options="{&quot;dimension29&quot;:&quot;Always use the latest certificate&quot;}" href="#always-use-the-latest-certificate">Always use the latest certificate</a>
+                    </li>
+                </ol>
+            </nav>
+
+        </div>-->
+
+
+
+        <div id="contents" class="app-c-contents-list-with-body">
+
+            <div class="responsive-bottom-margin">
+
+
+
+
+
+
+
+                <p>Thank you for agreeing to take part in the early access testing of the new online Export Health Certificate service.</p>
+
+                <p>You'll be able to use this service to manage your applications for EHCs online including cloning existing applications.</p>
+
+                <p class="govuk-body">To access the service, you will need:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>the user name and password you where sent by email</li>
+                    <li>your Government Gateway user ID and password (if you don't already have an account, you will be guided to create one)</li>
+                    <li>a Defra identity account (again, if you don't have one set up, you'll be guided through that process)</li>
+                  </ul>
+
+                <p class="govuk-body govuk-!-font-weight-bold">Setting up a Government Gateway ID and Defra identity</p>
+
+                <p class="govuk-body">Make sure you associate these accounts with your organisation, not an individual. You will need:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>your work email address, phone number and postal address</li>
+                    <li>the main contact details for your business or organisation (for example, head office contact details)</li>
+                    <li>the Companies House number if you are registering on behalf of a limited company</li>
+                  </ul>
+
+                <p class="govuk-body">APHA have to process your Defra identity registration, so please allow time for that to happen.</p>
+
+
+                <a href="https://identity-management-app.herokuapp.com/scp/login-new?serviceLine=Export%20Health%20Certificates&amp;serviceRole=Certifier&amp;userType=new&amp;regSuccess=pending&amp;serviceQuestions=yes&amp;numUsers=1&amp;numAgents=0&amp;numServices=1&amp;version=1" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
+                    Start now
+                </a>
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="column-one-third">
+
+    <div class="gem-c-contextual-sidebar">
+
+
+
+
+    </div>
+
+</div>
+
+</main></div>
+
+{% endblock %}
