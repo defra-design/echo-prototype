@@ -110,7 +110,7 @@
 			"content": {
 				"header": "What are the details of the product?",
 				"caption": "What are the details of the product?",
-				"paragraph": "",
+				"paragraph": "You can add up to 5 products to this certificate.",
 				"next": "product-list",
 				"prev": "",
 				"product_page": "yes",
