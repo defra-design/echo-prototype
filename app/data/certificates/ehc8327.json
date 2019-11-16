@@ -109,8 +109,8 @@
 			"title": "What are the details of the product?",
 			"content": {
 				"header": "What are the details of the product?",
-				"caption": "What are the details of the product?",
-				"paragraph": "You can add up to 5 products to this certificate.",
+				"caption": "Your products",
+				"paragraph": "Provide details of the products in this consignment. You can add up to 5 products to this certificate.",
 				"next": "product-list",
 				"prev": "",
 				"product_page": "yes",
