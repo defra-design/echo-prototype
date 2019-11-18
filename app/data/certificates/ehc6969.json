@@ -42,8 +42,8 @@
 						"label": "Expiry date",
 						"hint": "For example, 31 08 1970",
 						"required": "no",
-						"id": "export_date",
-						"name": "export_date"
+						"id": "permit_date",
+						"name": "permit_date"
 					}
 				]
 			}
@@ -317,8 +317,8 @@
 					"label": "Planned date of certification",
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
-					"id": "export_date",
-					"name": "export_date"
+					"id": "certificate_date",
+					"name": "certificate_date"
 				}]
 			}
 		}, {
