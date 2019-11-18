@@ -302,7 +302,7 @@
 				}]
 			}
 		},{
-			"page": 16,
+			"page": 12,
 			"exa": "yes",
 			"title": "What is the planned date of certification?",
 			"content": {
@@ -322,7 +322,7 @@
 				}]
 			}
 		}, {
-			"page": 12,
+			"page": 13,
 			"exa": "yes",
 			"title": "Who is exporting the product?",
 			"content": {
@@ -343,7 +343,7 @@
 			}
 		},
 		{
-			"page": 13,
+			"page": 14,
 			"exa": "yes",
 			"title": "When and where was the milk collected?",
 			"content": {
@@ -436,7 +436,7 @@
 				}]
 			}
 		}, {
-			"page": 14,
+			"page": 16,
 			"exa": "yes",
 			"title": "What is the planned date of export?",
 			"content": {

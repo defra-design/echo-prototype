@@ -34,10 +34,11 @@ function isDupucate(arr,name){
 }
 
 function findPage(arr,id){
-console.log("Find Page")
+console.log("Find Page "+id+"----")
   for (var i = 0; i < arr.length; i++) {
-
+    console.log(arr[i].page)
     console.log(arr[i].title)
+    console.log("****")
     if (arr[i].page == id) {
       return arr[i];
     }
@@ -152,9 +153,10 @@ function updateProduct(id,arr,page,post){
 }
 router.post('/'+base_url+'*/certificate/page', function(req, res, next) {
   var query = ""
+
   if(req.query.product_page){
     req.session.data.products = req.session.data.products || []
-    var product = findPage(getDB(database).data.pages,req.query.id)
+    var product = findPage(getDB(req.session.data.database).data.pages,req.query.id)
     if(req.query.edit){
       updateProduct(req.query.edit,req.session.data.products,product,req.body)
     }else{
@@ -178,12 +180,12 @@ router.get('/'+base_url+'*/certificate/page', function(req, res) {
   var id =  parseInt(req.query.id) || 0;
   res.render(base_url+req.params[0]+'/certificate/page', {
     "query": req.query,
-    "page":findPage(getDB(database).data.pages, id)
+    "page":findPage(getDB(req.session.data.database).data.pages, id)
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
         console.log("Could not find "+ base_url+req.params[0]+'/certificate/page' +": Loading from main folder")
-        return res.render(file_url + '/certificate/page',{"query": req.query,"page":findPage(getDB(database).data.pages, id)});
+        return res.render(file_url + '/certificate/page',{"query": req.query,"page":findPage(getDB(req.session.data.database).data.pages, id)});
       }
       throw err;
     }
@@ -195,12 +197,12 @@ router.get('/'+base_url+'*/certificate/page', function(req, res) {
 router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
   res.render(base_url+req.params[0]+'/certificate/exa/your-commodity', {
     "query": req.query,
-    "commodities":getDB(database).data.commodities
+    "commodities":getDB(req.session.data.database).data.commodities
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
         return res.render(file_url + '/certificate/exa/your-commodity',{"query": req.query,
-        "commodities":getDB(database).data.commodities});
+        "commodities":getDB(req.session.data.database).data.commodities});
       }
       throw err;
     }
@@ -210,7 +212,7 @@ router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
 router.get('/'+base_url+'*/certificate/product-list', function(req, res) {
   var id = req.query.id || 2;
   console.log(req.session.data.products.length)
-  var product = findPage(getDB(database).data.pages,id)
+  var product = findPage(getDB(req.session.data.database).data.pages,id)
   if(req.query.delete){
     console.log("removing : "+req.query.delete)
     console.log(req.session.data.products.splice(req.query.delete,1))

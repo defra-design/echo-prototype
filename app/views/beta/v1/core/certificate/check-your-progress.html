@@ -58,18 +58,21 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
+          {% if data.certificate_destination == "eu" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/export-destination" aria-describedby="eligibility-completed">
                 Export destination
               </a>
             </span>
+
             {% if not data.export_destination_entry and not data.export_destination %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
             {% else %}
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
+            {% endif %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certifier" aria-describedby="eligibility-completed">
