@@ -207,7 +207,16 @@ $(document).ready(function (e) {
 
 </script>
 
-<div class="search-wrapper govuk-form-group" style="float:right;width:300px;">
+
+<style>
+    .search-wrapper{float:right;width:300px;}
+
+    @media only screen and (max-width: 636px) {
+
+    .search-wrapper{float:none;width:auto;}}
+</style>
+
+<div class="search-wrapper govuk-form-group" style="">
                 <div class="search-input-wrapper">
                     <input type="search" value="" id="search-input" name="keywords" title="Search" class="govuk-input" style="height:40px;">
                     <div class="search-input-submit-wrapper">
