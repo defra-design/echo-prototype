@@ -34,8 +34,10 @@ function isDupucate(arr,name){
 }
 
 function findPage(arr,id){
-
+console.log("Find Page")
   for (var i = 0; i < arr.length; i++) {
+
+    console.log(arr[i].title)
     if (arr[i].page == id) {
       return arr[i];
     }
