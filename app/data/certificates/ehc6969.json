@@ -53,8 +53,8 @@
 			"title": "What is the origin of your product?",
 			"content": {
 				"header": "What is the origin of your product?",
-				"caption": "You can enter more than one species and country of origin.",
-				"paragraph": "",
+				"caption": "",
+				"paragraph": "You can enter more than one species and country of origin.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
