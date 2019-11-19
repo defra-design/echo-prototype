@@ -120,7 +120,7 @@ GOV.UK Prototype Kit
 
 </style>
 
-<h1 class="govuk-heading-xl heading" style="margin-bottom: 25px">Your Applications</h1>
+<h1 class="govuk-heading-xl heading" style="margin-bottom: 25px">Your applications</h1>
 
 
 
@@ -209,7 +209,7 @@ $(document).ready(function (e) {
 
 
 <style>
-    .search-wrapper{float:right;width:300px;}
+    .search-wrapper{float:right;width:300px;margin-bottom: 0}
 
     @media only screen and (max-width: 636px) {
 
@@ -218,13 +218,19 @@ $(document).ready(function (e) {
 
 <div class="search-wrapper govuk-form-group" style="">
                 <div class="search-input-wrapper">
-                    <input type="search" value="" id="search-input" name="keywords" title="Search" class="govuk-input" style="height:40px;">
+
+
+                    <label class="govuk-visually-hidden" for="app-site-search__input">Search applications</label>
+
+                    <input type="search" value="" id="search-input" type="submit" name="keywords" title="Search" class="govuk-input" style="height:40px;" placeholder="Search applications">
                     <div class="search-input-submit-wrapper">
                         <button type="button" class="search-submit" id="search" style="height:40px;">Search</button>
                     </div>
                 </div>
-				<a href="#" id="clear-search" style="display:block;margin-top:5px;">Clear search</a>
 
+    <div class="search-what-cont">
+				<a href="#" id="clear-search" style="display:block;margin-top:5px;">Clear</a>
+    </div>
 
 				<div class="search-what-cont">
 				<div class="search-what-label">Containing: </div>
@@ -239,9 +245,9 @@ $(document).ready(function (e) {
 
 <!--table-->
 
-
-
-
+<div class="search-what-cont">
+<p style="margin-left:18px">There are three results matching <strong>"<span class="search-what-text"></span>"</strong></p>
+</div>
 
 
 <div style="clear: both;margin: 0 20px ">
