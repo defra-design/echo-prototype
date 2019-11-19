@@ -13,9 +13,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-xl">
-            Your products
+            {{ product.title or 'Your products'}}
           </h1>
-          <p class="govuk-body">You can add up to 5 products to this certificate. If there are more than 5 products, attach a schedule as a supporting document at the end of this application.</p>
+          <p class="govuk-body">You can add up to 5 products to this certificate.</p>
+          <p class="govuk-body">For longer product lists, attach a schedule as a <a href="exa/supporting-documents" class="govuk-link">supporting document</a> at the end of this application.</p>
   </div>
 
   <div class="govuk-grid-column-full">

@@ -42,8 +42,8 @@
 						"label": "Expiry date",
 						"hint": "For example, 31 08 1970",
 						"required": "no",
-						"id": "export_date",
-						"name": "export_date"
+						"id": "permit_date",
+						"name": "permit_date"
 					}
 				]
 			}
@@ -53,8 +53,8 @@
 			"title": "What is the origin of your product?",
 			"content": {
 				"header": "What is the origin of your product?",
-				"caption": "You can enter more than one species and country of origin.",
-				"paragraph": "",
+				"caption": "",
+				"paragraph": "You can enter more than one species and country of origin.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
@@ -302,7 +302,7 @@
 				}]
 			}
 		},{
-			"page": 16,
+			"page": 12,
 			"exa": "yes",
 			"title": "What is the planned date of certification?",
 			"content": {
@@ -317,12 +317,12 @@
 					"label": "Planned date of certification",
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
-					"id": "export_date",
-					"name": "export_date"
+					"id": "certificate_date",
+					"name": "certificate_date"
 				}]
 			}
 		}, {
-			"page": 12,
+			"page": 13,
 			"exa": "yes",
 			"title": "Who is exporting the product?",
 			"content": {
@@ -343,7 +343,7 @@
 			}
 		},
 		{
-			"page": 13,
+			"page": 14,
 			"exa": "yes",
 			"title": "When and where was the milk collected?",
 			"content": {
@@ -436,7 +436,7 @@
 				}]
 			}
 		}, {
-			"page": 14,
+			"page": 16,
 			"exa": "yes",
 			"title": "What is the planned date of export?",
 			"content": {
