@@ -20,22 +20,22 @@ GOV.UK Prototype Kit
       Select the organisation that will be carrying out the certification for this application.
       This might be an Official Veterinarian (OV) or an Environmental Health Officer (EHO).
     </p>
-    <form method="GET">
+    <form method="GET" action="certifier">
       <div class="search-wrapper govuk-form-group">
         <!-- <label class="govuk-label defra-search__label govuk-!-font-weight-bold " for="search">
           Find the organisation
         </label> -->
         <label for="search-reservations" class="govuk-label">
-          Search by name, address, location or specialism
+          Search by organisation name, address or postcode
         </label>
         <div class="search-input-wrapper">
-          <input type="search" value="{{query.keywords or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
+          <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
           <div class="search-input-submit-wrapper">
             <button type="submit" class="search-submit">Search</button>
           </div>
         </div>
         {% if query.search and query.search != 'no vets' %}
-        <p class="govuk-body govuk-!-margin-top-2"><a href="certifier-multi-org-dashboard" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
+        <p class="govuk-body govuk-!-margin-top-2"><a href="certifier?search=" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
         {% endif %}
       </div>
 
@@ -46,7 +46,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-full">
   {% if query.search and query.search != 'no vets' %}
   <!-- <p class="govuk-body"><a href="certifier?search=" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">Clear search</a></p> -->
-  <p class="govuk-body">8 organisations matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
+  <p class="govuk-body">{%if query.single %}There is 1 organisation{% else %}There are 8 organisations{% endif %}  matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
   <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER" id="certifyingOrganisations">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
@@ -57,6 +57,26 @@ GOV.UK Prototype Kit
       </tr>
     </thead>
     <tbody class="govuk-table__body">
+      {% if query.single %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          ADM ACCOUNTING LIMITED Hornbeam House CW12 3ER
+        </td>
+        <td class="govuk-table__cell wrap">
+          Hornbeam House
+          Electra Way
+
+          Crewe
+          CW12 3ER
+        </td>
+        <td class="govuk-table__cell">
+
+        </td>
+        <td class="govuk-table__cell">
+          <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
+        </td>
+      </tr>
+      {% else %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
           ADM ACCOUNTING LIMITED DO NOT USE - Hornhouse Crewe
@@ -239,6 +259,7 @@ GOV.UK Prototype Kit
           <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
         </td>
       </tr>
+      {% endif %}
     </tbody>
   </table>
   {% elseif query.search=="no vets" %}
