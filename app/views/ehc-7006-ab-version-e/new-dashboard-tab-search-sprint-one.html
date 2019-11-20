@@ -120,7 +120,7 @@ GOV.UK Prototype Kit
 
 </style>
 
-<h1 class="govuk-heading-xl heading" style="margin-bottom: 25px">Your Applications</h1>
+<h1 class="govuk-heading-xl heading" style="margin-bottom: 25px">Your applications</h1>
 
 
 
@@ -155,7 +155,7 @@ GOV.UK Prototype Kit
 }
 
 .search-what-label {
-	font-size: 14px;
+	font-size: 16px;
 	display:inline-block;
 	margin-top:10px;
 	margin-right:10px;
@@ -207,19 +207,35 @@ $(document).ready(function (e) {
 
 </script>
 
-<div class="search-wrapper govuk-form-group" style="float:right;width:300px;">
+
+<style>
+    .search-wrapper{float:right;width:300px;margin-bottom: 0}
+
+    @media only screen and (max-width: 636px) {
+
+    .search-wrapper{float:none;width:auto;}}
+</style>
+
+<div class="search-wrapper govuk-form-group" style="">
                 <div class="search-input-wrapper">
-                    <input type="search" value="" id="search-input" name="keywords" title="Search" class="govuk-input" style="height:40px;">
+
+
+                    <label class="govuk-visually-hidden" for="app-site-search__input">Search applications</label>
+
+                    <input type="search" value="" id="search-input" type="submit" name="keywords" title="Search" class="govuk-input" style="height:40px;" placeholder="Search applications">
                     <div class="search-input-submit-wrapper">
                         <button type="button" class="search-submit" id="search" style="height:40px;">Search</button>
                     </div>
                 </div>
-				<a href="#" id="clear-search" style="display:block;margin-top:5px;">Clear search</a>
 
+    <div class="search-what-cont">
+				<a href="#" id="clear-search" style="display:block;margin-top:5px;">Clear</a>
+    </div>
 
-				<div class="search-what-cont">
+				<!--<div class="search-what-cont">
 				<div class="search-what-label">Containing: </div>
 				<div class="search-what"><span class="search-what-close">✕</span>&nbsp;&nbsp;<span class="search-what-text"></div></div>
+    -->
 				</div>
 
             </div>
@@ -230,12 +246,12 @@ $(document).ready(function (e) {
 
 <!--table-->
 
+<div class="search-what-cont">
+<p style="margin-left:18px">There are 3 results matching <strong>"<span class="search-what-text"></span>"</strong></p>
+</div>
 
 
-
-
-
-<div style="clear: both">
+<div style="clear: both;margin: 0 20px ">
     <hr style="    top: 10px;
     position: relative;">
     <table class="govuk-table">
@@ -257,7 +273,7 @@ $(document).ready(function (e) {
 
 
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7006-47986484</a>
+                7006-47986484
             </td>
 
 
@@ -305,7 +321,7 @@ $(document).ready(function (e) {
     <tr class="govuk-table__row result">
 
         <td id="1721147986156-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="ehc-page-draft">7006-47986156</a>
+            7006-47986156
         </td>
 
         <td id="1721147986156-group-number" class="govuk-table__cell" scope="row">
@@ -379,7 +395,7 @@ $(document).ready(function (e) {
         <tr class="govuk-table__row result">
 
             <td id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-draft"> 7006-65956486</a>
+                 7006-65956486
             </td>
 
 
@@ -430,7 +446,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">3987-47868887</a>
+              3987-47868887
             </td>
 
 
@@ -462,7 +478,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">8327-47868887</a>
+            8327-47868887
             </td>
 
 
@@ -498,7 +514,7 @@ $(document).ready(function (e) {
         <tr class="govuk-table__row result">
 
             <td id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-draft"> 3926-65956486</a>
+                 3926-65956486
             </td>
 
 
@@ -536,7 +552,7 @@ $(document).ready(function (e) {
         <tr class="govuk-table__row result">
 
             <td id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-draft"> 6969-65956486</a>
+                 6969-65956486
             </td>
 
 
@@ -573,7 +589,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">8270-47868887</a>
+                8270-47868887
             </td>
 
 
@@ -604,7 +620,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">8270-47868887</a>
+               8270-47868887
             </td>
 
 
@@ -637,7 +653,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">8270-47868777</a>
+                 8270-47868777
             </td>
 
 
@@ -669,7 +685,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">8249-47868777</a>
+               8249-47868777
             </td>
 
 
@@ -702,7 +718,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7490-47868777</a>
+                7490-47868777
             </td>
 
 
@@ -734,7 +750,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7490-47868707</a>
+                 7490-47868707
             </td>
 
 
@@ -763,7 +779,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7490-47868997</a>
+              7490-47868997
             </td>
 
 
@@ -793,7 +809,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7490-47888777</a>
+                7490-47888777
             </td>
 
 
@@ -823,7 +839,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">5498-47868777</a>
+                5498-47868777
             </td>
 
 
@@ -854,7 +870,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7421-47868777</a>
+              7421-47868777
             </td>
 
 
@@ -887,7 +903,7 @@ $(document).ready(function (e) {
         <tr class="govuk-table__row result">
 
             <td id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-draft"> 2185-65956486</a>
+                 2185-65956486
             </td>
 
 
@@ -925,7 +941,7 @@ $(document).ready(function (e) {
         <tr class="govuk-table__row result">
 
             <td id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-draft"> 2300-65956486</a>
+                 2300-65956486
             </td>
 
 
@@ -965,7 +981,7 @@ $(document).ready(function (e) {
         <tr class="govuk-table__row result">
 
             <td id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-draft"> 7546-65977486</a>
+                 7546-65977486
             </td>
 
 
@@ -1002,7 +1018,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7321-47868776</a>
+                7321-47868776
             </td>
 
 
@@ -1032,7 +1048,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7321-47868700</a>
+                7321-47868700
             </td>
 
 
@@ -1062,7 +1078,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7321-47868990</a>
+                7321-47868990
             </td>
 
 
@@ -1092,7 +1108,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7321-47868899</a>
+                7321-47868899
             </td>
 
 
@@ -1122,7 +1138,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7321-47868877</a>
+                7321-47868877
             </td>
 
 
@@ -1151,7 +1167,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7321-477777790</a>
+                7321-477777790
             </td>
 
 
@@ -1182,7 +1198,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7321-477778889</a>
+                7321-477778889
             </td>
 
 
@@ -1212,7 +1228,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7321-477778909</a>
+                7321-477778909
             </td>
 
 
@@ -1242,7 +1258,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">7455-477778909</a>
+                7455-477778909
             </td>
 
 
@@ -1271,7 +1287,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page">5353-477778909</a>
+                5353-477778909
             </td>
 
 
