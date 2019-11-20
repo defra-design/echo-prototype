@@ -89,11 +89,12 @@ router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
     "query": req.query,
     "tasks": db.pages,
     "certificate_code": db.certificate_code,
-    "printable": db.printable
+    "printable": db.printable,
+    "destination": db.destination
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url + '/certificate/check-your-'+req.params[1],{"query": req.query,"tasks": db.pages, "printable": db.printable});
+        return res.render(file_url + '/certificate/check-your-'+req.params[1],{"query": req.query,"tasks": db.pages, "printable": db.printable,"destination": db.destination});
       }
       throw err;
     }

@@ -1,6 +1,7 @@
 {
 	"certificate_code": "8284EHC",
 	"version": "1",
+	"destination": "EU",
 	"certificate_name": "Export dairy products from a Category C country for human consumption to the European Union",
 	"commodities": [{
 		"group": "Dairy",

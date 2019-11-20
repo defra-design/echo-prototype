@@ -1,6 +1,7 @@
 {
 	"certificate_code": "8270EHC",
 	"version": "1",
+	"destination": "EU",
 	"certificate_name": "Export fishery products intended for human consumption to the EU",
 	"commodities": [{
 		"group": "Live shellfish",

@@ -2,6 +2,7 @@
 	"certificate_code": "6969EHC",
 	"version": "1",
 	"printable": "no",
+	"destination": "Australia",
 	"certificate_name": "Export dairy and dairy products to Australia",
 	"commodities": [{
 		"group": "Dairy",

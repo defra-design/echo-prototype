@@ -1,6 +1,7 @@
 {
 	"certificate_code": "8254EHC",
 	"version": "1",
+	"destination": "EU",
 	"certificate_name": "Export certain meat products and treated stomachs, bladders and intestines to the European Union",
 	"commodities": [{
 		"group": "Meat",
