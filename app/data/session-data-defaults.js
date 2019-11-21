@@ -30,5 +30,7 @@ module.exports = {
     "ehc8327"   :  ehc8327,
     "products"   :  [],
     "certificate" : "8327EHC",
-    "forms" : form
+    "database": "ehc8327",
+    "forms" : form,
+    "printable": "yes"
 }

@@ -93,8 +93,8 @@
 					"label": "Name, address and approval number of processing establishment",
 					"hint": "",
 					"required": "no",
-					"id": "processing_establishment",
-					"name": "processing_establishment",
+					"id": "processing_raw_milk",
+					"name": "processing_raw_milk",
 					"rows": 4
 				}]
 			}
@@ -114,8 +114,8 @@
 					"label": "Name, address and approval number of processing establishment",
 					"hint": "",
 					"required": "no",
-					"id": "processing_establishment",
-					"name": "processing_establishment",
+					"id": "processing_export_product",
+					"name": "processing_export_product",
 					"rows": 4
 				}]
 			}
