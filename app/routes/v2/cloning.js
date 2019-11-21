@@ -67,61 +67,23 @@ module.exports = function(router) {
       }
       return arr
   }
-  router.get('/'+base_url+'*/certificate/new-certificate', function(req, res) {
-    console.log()
-    console.log("---rendering page --- ")
-    console.log(req.session.data.test)
 
-    req.session.data.test = req.session.data.test || "new"
-    if(req.query.test){
-      req.session.data.test = req.query.test
-    }
-    console.log(req.session.data.test)
-    res.render(base_url +req.params[0]+ '/certificate/new-certificate', {
-      "query": req.query,
-      "certificate": db
-    }, function(err, html) {
-      if (err) {
-        if (err.message.indexOf('template not found') !== -1) {
-          return res.render(file_url +  '/certificate/new-certificate',{"query": req.query,"certificate": db});
-        }
-        throw err;
-      }
-      res.send(html);
-    })
-  });
-  router.post('/'+base_url+'*/certificate/cloning', function(req, res) {
-    req.session.data.file_id_count += 1
-    if(req.body.is_certifier_address_correct =="yes"){
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-progress');
+  router.post('/'+base_url+'*/certificate/new-certificate', function(req, res) {
+
+    if(req.body.application_type =="clone"){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/choose-clone');
     }else{
-      res.redirect(301, '/' + base_url +req.params[0]+'/certificate/exa/certifier-new-address');
+      res.redirect(301, '/' + base_url +req.params[0]+'../select-certificate');
     }
 
   })
+  router.post('/'+base_url+'*/clone', function(req, res) {
 
-  // this adds query to all pages and will be called if no other get routing exists.
-  router.get('/' + base_url + '*', function(req, res) {
-    console.log("default get routing page for: "+base_url + req.params[0])
+    if(req.body.application_type =="clone"){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-answers-cloned?certificate=ehc6969');
+    }else{
+      res.redirect(301, '/' + base_url +req.params[0]+'/dashboard');
+    }
 
-    var dir = req.params[0].split(/\/+/g);
-    // Remove the main folder
-    dir.shift()
-    var baseDir = ""
-    dir.forEach(function(element) {
-      var path = "/" + element
-      baseDir += path
-
-    })
-    res.render(base_url + req.params[0], {"query":req.query},function(err, html) {
-      if (err) {
-        if (err.message.indexOf('template not found') !== -1) {
-          console.log("No page in directory.attempting to load from core")
-          return res.render(file_url + baseDir,{"query":req.query});
-      }
-        throw err;
-      }
-      res.send(html);
-    });
   })
 }

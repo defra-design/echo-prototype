@@ -54,14 +54,21 @@ function getDB(id){
   }
   return false;
 }
-router.get('/'+base_url+'*', function (req, res, next) {
-  if(req.query.certificate){
-    console.log("LOADING THE PAGE")
-    req.session.data.database=req.query.certificate
+
+
+router.use(function (req, res, next) {
+  console.log("--- calling middleware ---")
+  console.log("current db is : "+req.session.database)
+  if(req.query.certificate && req.session.database != req.query.certificate){
+    req.session.database=req.query.certificate
+    req.session.db = getDB(req.query.certificate).data
+    console.log("updating database: "+req.session.db.certificate_code);
   }
-  req.session.db= getDB(req.session.data.database).data
-  return next()
+  req.session.db = req.session.db || getDB(req.session.database).data
+  console.log("--- Middleware END---")
+  next()
 })
+
 router.get('/'+base_url+'*/start', function(req, res) {
 
   var db = getDB(req.session.data.database).data
@@ -83,39 +90,17 @@ router.get('/'+base_url+'*/start', function(req, res) {
 
 
 router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
-  console.log("req.session.data.database:"+req.session.data.database)
-
-  console.log("db.printable: "+db.printable )
-  console.log("data.printable: "+req.session.data.printable)
-  console.log("changing printable")
-  req.session.data.printable = db.printable
-  console.log("new data.printable: "+req.session.data.printable)
-  console.log("----------")
-  req.session.data.certificate = db.certificate_code
-  req.session.save( function(err) {
-      if (err) return next(err)
-    req.session.reload( function (err) {
-      res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {
-        "query": req.query,
-        "tasks": db.pages,
-        "certificate_code": db.certificate_code,
-        "printable": db.printable,
-        "destination": db.destination,
-        "session": req.session
-      }, function(err, html) {
-        console.log("Rendering")
-        if (err) {
-          if (err.message.indexOf('template not found') !== -1) {
-            return res.render(file_url + '/certificate/check-your-'+req.params[1],{"query": req.query,"tasks": db.pages, "printable": db.printable,"destination": db.destination});
-          }
-          throw err;
-        }
-        res.send(html);
-      })
-    });
-
-
-
+  res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {
+    "query": req.query,
+    "db": req.session.db
+  }, function(err, html) {
+    if (err) {
+      if (err.message.indexOf('template not found') !== -1) {
+        return res.render(file_url + '/certificate/check-your-'+req.params[1],{"query": req.query,"db": req.session.db});
+      }
+      throw err;
+    }
+    res.send(html);
   })
 
 });
@@ -300,11 +285,14 @@ router.post('/'+base_url+'*certificate/supporting-documents', function(req, res)
       baseDir += path
 
     })
-    res.render(base_url + req.params[0], {"query":req.query},function(err, html) {
+    res.render(base_url + req.params[0], {
+      "query":req.query,
+      "db": req.session.db
+    },function(err, html) {
       if (err) {
         if (err.message.indexOf('template not found') !== -1) {
           console.log("No page in directory.attempting to load from core")
-          return res.render(file_url + baseDir,{"query":req.query});
+          return res.render(file_url + baseDir,{"query":req.query,"db": req.session.db});
       }
         throw err;
       }

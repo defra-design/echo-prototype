@@ -9,7 +9,7 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="check-your-progress" method="post" novalidate>
+    <form  method="post" novalidate>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -17,8 +17,7 @@ GOV.UK Prototype Kit
               Do you want to clone an existing application?
             </h1>
           </legend>
-          <p class="govuk-body">bla bla bla</p>
-          <p class="govuk-body">data.test={{data.test}}</p>
+          <p class="govuk-body">You’ll be able to change any details that are different before you submit.</p>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="application_type_clone" name="application_type" type="radio" value="clone">
@@ -29,7 +28,7 @@ GOV.UK Prototype Kit
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="application_type_new" name="application_type" type="radio" value="new">
               <label class="govuk-label govuk-radios__label" for="application_type_new">
-                No, create a new application
+                No, start a new application
               </label>
             </div>
           </div>
@@ -39,7 +38,6 @@ GOV.UK Prototype Kit
         Continue
       </button>
     </form>
-    <p class="govuk-body"><a class="link-button" href="dashboard" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
   </div>
 </div>
 {% endblock %}

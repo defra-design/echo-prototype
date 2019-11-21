@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+       In future, you’ll be able to clone this application
+    </h1>
+
+          <p class="govuk-body">You’re about to start a new application for an export health certificate.</p>
+          <p class="govuk-body">Next time you’ll be able to make a copy of an existing application, change any details that are different and submit it.</p>
+          <p class="govuk-body">This will be quicker than starting a new application, especially if you make many similar exports.</p>
+          <p class="govuk-body">You will also be able to start a new application if you need to.</p>
+          <form  method="post" action="certificate/check-your-progress" novalidate>
+            <div class="govuk-form-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>
+{% endblock %}

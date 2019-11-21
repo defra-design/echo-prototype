@@ -25,7 +25,8 @@ GOV.UK Prototype Kit
         </label>
         <input class="govuk-input govuk-input--width-10" id="password" name="password" type="text">
       </div>
-      <a class="govuk-button" href="certificate/check-your-progress?certificate={{query.certificate}}">
+      <a class="govuk-button" href="
+        {%if data.journey == 'new' %}interstitial-can-clone{%else%}certificate/check-your-progress{%endif%}?certificate={{query.certificate}}">
         Sign in
       </a>
       <p class="govuk-body"><a href="https://identity-management-app.herokuapp.com/scp/email-address?serviceLine=Exporter%20Service&serviceRole=Certifier&userType=new&regSuccess=success&serviceQuestions=no&numUsers=1&numAgents=0&numServices=1" class="govuk-link">Create

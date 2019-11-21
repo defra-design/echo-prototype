@@ -12,7 +12,7 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">
       New Application
     </h1>
-    <h2 class="govuk-heading-m" >Export Certificate {{certificate_code or "8327EHC"}}</h2>
+    <h2 class="govuk-heading-m" >Export Certificate {{db.certificate_code or "8327EHC"}}</h2>
     <p> If this is not correct, <a href="../select-certificate">find another Export Health Certificate</a>
     </p>
     <hr>
@@ -58,7 +58,7 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
-          {% if data.destination == "EU" %}
+          {% if db.destination == "EU" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/export-destination" aria-describedby="eligibility-completed">
@@ -87,9 +87,8 @@ GOV.UK Prototype Kit
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              Printable = {{data.printable}}
-              <a href="exa/certifer-certificate-delivery?printable={{printable or 'yes'}}" aria-describedby="eligibility-completed">
-                How would you like the certificate to be delivered to the certifier?
+              <a href="exa/certifer-certificate-delivery?printable={{db.printable or 'yes'}}" aria-describedby="eligibility-completed">
+                How would you like the certificate to be delivered to the certifier? ({{db.printable}})
               </a>
             </span>
             {% if not data.delivery_options %}
@@ -98,7 +97,7 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
-          {% for task in tasks %}
+          {% for task in db.pages %}
           {% if task.exa == "yes" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -130,7 +129,7 @@ GOV.UK Prototype Kit
           <span class="app-task-list__section-number">2. </span> Exporter and certifier complete this section
         </h2>
         <ul class="app-task-list__items">
-          {% for task in tasks %}
+          {% for task in db.pages %}
           {% if task.exa != "yes" %}
           {% if ech_active != "yes"%}
           <li class="app-task-list__item">
