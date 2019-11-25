@@ -1,0 +1,386 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock%}
+{% block content %}
+<style>
+  main{padding-top: 0px!important;}
+    .green-tag{background: #00823b}
+</style>
+<style>
+  .govuk-details__summary:before{display: none}
+    .govuk-summary-list--slim .govuk-summary-list__key, .govuk-summary-list--slim .govuk-summary-list__value, .govuk-summary-list--slim .govuk-summary-list__actions{ padding-top: 5px;padding-bottom: 5px;font-size:16px}
+    /* .govuk-summary-list--slim{border-bottom:1px solid #b1b4b6; padding-bottom:20px;} */
+      .result .result-title{
+        margin-bottom:10px;
+      }
+      .result{border-top:1px solid #b1b4b6;padding-top:20px;}
+      .results--action{text-align: right;}
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl heading">Find an application for {{selected_certificate or 'EHC8327'}} to clone</h1>
+    <form method="GET" >
+      <div class="search-wrapper govuk-form-group">
+        <!-- <label class="govuk-label defra-search__label govuk-!-font-weight-bold " for="search">
+              Find the organisation
+            </label> -->
+        <label for="search-reservations" class="govuk-label">
+          Search by application number, your reference number or EHC number
+        </label>
+        <div class="search-input-wrapper">
+          <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
+          <div class="search-input-submit-wrapper">
+            <button type="submit" class="search-submit">Search</button>
+          </div>
+        </div>
+        {% if query.search %}
+        <p class="govuk-body govuk-!-margin-top-2"><a href="certifier?search=" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
+
+        {% endif %}
+      </div>
+    </form>
+    {% if query.search %}
+    <p class="govuk-body">There are 4 applications matching <span class="govuk-!-font-weight-bold">"{{query.search}}""</span>
+    {% endif %}
+    <div class="results">
+    <article class="result govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          Fousda23432 - 8327EHC
+          <span class="govuk-caption-m">Application ID 11023043453</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cloned
+          </dt>
+          <dd class="govuk-summary-list__value">
+             4 times
+          </dd>
+        </div>
+      </dl>
+      </div>
+      <div class="results--action govuk-grid-column-one-third">
+        <a class="govuk-button govuk-button--secondary" href="check-your-answers-cloned?certificate=ehc6969&alert=cloned">Clone</a>
+      </div>
+    </article>
+    <article class="result govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          Fousda23432 - 8327EHC
+          <span class="govuk-caption-m">Application ID 11023043453</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cloned
+          </dt>
+          <dd class="govuk-summary-list__value">
+             4 times
+          </dd>
+        </div>
+      </dl>
+      </div>
+      <div class="results--action govuk-grid-column-one-third">
+        <a class="govuk-button govuk-button--secondary" href="check-your-answers-cloned?certificate=ehc6969&alert=cloned">Clone</a>
+      </div>
+    </article>
+    <article class="result govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          Fousda23432 - 8327EHC
+          <span class="govuk-caption-m">Application ID 11023043453</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cloned
+          </dt>
+          <dd class="govuk-summary-list__value">
+             4 times
+          </dd>
+        </div>
+      </dl>
+      </div>
+      <div class="results--action govuk-grid-column-one-third">
+        <a class="govuk-button govuk-button--secondary" href="check-your-answers-cloned?certificate=ehc6969&alert=cloned">Clone</a>
+      </div>
+    </article>
+
+    <article class="result govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          Fousda23432 - 8327EHC
+          <span class="govuk-caption-m">Application ID 11023043453</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cloned
+          </dt>
+          <dd class="govuk-summary-list__value">
+             4 times
+          </dd>
+        </div>
+      </dl>
+      </div>
+      <div class="results--action govuk-grid-column-one-third">
+        <a class="govuk-button govuk-button--secondary" href="check-your-answers-cloned?certificate=ehc6969&alert=cloned">Clone</a>
+      </div>
+    </article>
+    <article class="result govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          Fousda23432 - 8327EHC
+          <span class="govuk-caption-m">Application ID 11023043453</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cloned
+          </dt>
+          <dd class="govuk-summary-list__value">
+             4 times
+          </dd>
+        </div>
+      </dl>
+      </div>
+      <div class="results--action govuk-grid-column-one-third">
+        <a class="govuk-button govuk-button--secondary" href="check-your-answers-cloned?certificate=ehc6969&alert=cloned">Clone</a>
+      </div>
+    </article>
+    <article class="result Framework-result" id="Framework-447-2-1">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          8327EHC Fousda23432
+          <span class="govuk-caption-m">Application ID 11023043453 | Cloned 3 times</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Submitted date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 Nov 2019
+          </dd>
+        </div>
+      </dl>
+    </article>
+    <article class="result Framework-result" id="Framework-447-2-1">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          8327EHC Fousda23432
+          <span class="govuk-caption-m">Application ID 11023043453 | Cloned 3 times</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Submitted date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 Nov 2019
+          </dd>
+        </div>
+      </dl>
+    </article>
+    <article class="result Framework-result" id="Framework-447-2-1">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          8327EHC Fousda23432
+          <span class="govuk-caption-m">Application ID 11023043453 | Cloned 3 times</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Submitted date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 Nov 2019
+          </dd>
+        </div>
+      </dl>
+    </article>
+    <article class="result Framework-result" id="Framework-447-2-1">
+      <header>
+        <h2 class="result-title govuk-heading-s">
+          8327EHC Fousda23432
+          <span class="govuk-caption-m">Application ID 11023043453 | Cloned 3 times</span>
+        </h2>
+      </header>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-summary-list--slim">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            China
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nestle
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Submitted date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 Nov 2019
+          </dd>
+        </div>
+      </dl>
+    </article>
+    </div>
+  </div>
+</div>
+{% endblock %}
