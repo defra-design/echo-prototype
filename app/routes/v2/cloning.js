@@ -26,6 +26,7 @@ module.exports = function(router) {
   //
   //
   // })
+
   function getDB(id){
 
     for (var i = 0; i < db.length; i++) {
@@ -86,4 +87,44 @@ module.exports = function(router) {
     }
 
   })
+  // updated
+  router.post('/'+base_url+'*/certificate/page', function(req, res, next) {
+    var query = ""
+
+    if(req.query.product_page){
+      req.session.data.products = req.session.data.products || []
+      var product = findPage(getDB(req.session.data.database).data.pages,req.query.id)
+      if(req.query.edit){
+        tools.updateProduct(req.query.edit,req.session.data.products,product,req.body)
+      }else{
+        tools.addProduct(req.session.data.products,product,req.body)
+      }
+    }
+    if(req.query.next == "product-list"){
+      query+=("id="+req.query.id)
+    }
+    req.session.data.completed[req.query.id] = req.query.id
+    // updated with cloning storey
+    if(req.body.cta == "Save and continue" || req.body.cta == "Save and review"){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+req.query.next+"?"+query);
+    }else{
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+req.query.id+"&new=yes&product_page=yes&next="+req.query.next);
+    }
+
+  })
+  router.get('/'+base_url+'*/certificate/choose-certificate', function(req, res) {
+    res.render(base_url+req.params[0]+'/certificate/choose-certificate', {
+      "query": req.query,
+      "db":db
+    }, function(err, html) {
+      if (err) {
+        if (err.message.indexOf('template not found') !== -1) {
+          return res.render(file_url + '/certificate/choose-certificate',{"query": req.query,"db":db});
+        }
+        throw err;
+      }
+      res.send(html);
+    })
+  })
+
 }

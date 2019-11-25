@@ -3,27 +3,44 @@
 GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
-<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<style media="screen">
+  @media (min-width: 28.125em){
+    .app-task-list__task-completed {
+        float: none;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+  }
+  .defra-alert{
+    background-color:#EAF6F5;
+    padding:20px;
+    position:relative;
+    border-left: 10px solid #30A197;
+    margin-bottom:20px;
+  }
+
+</style>
+
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
+
     <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-l">
-        Review your answers
-      </h1>
-      <div class="govuk-details__text">
-        <strong class="govuk-body ">
-          Your application for a health certificate is now ready to be submitted.<br>
-          Please check that the answers you've provided are correct.
-        </strong>
+      {% if query.alert == "cloned" %}
+      <div class="defra-alert">
+        <h3 class="govuk-heading-m">Successfully cloned</h3>
+        <p class="govuk-body">You have successfully cloned applciataion 232380923400</p>
       </div>
-      <br /><br />
+      {% endif %}
+      <h1 class="govuk-heading-xl">
+        Review and submit your {{db.certificate_code or "6969EHC"}} application
+      </h1>
       <dl class="govuk-summary-list govuk- !-margin-bottom-9 govuk-summary-list__m">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             What are you exporting?
           </dt>
           <dd class="govuk-summary-list__value">
-              {{data.commodity_type}}
+              {{data.commodity_type or "Bovine"}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="exa/your-commodity?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-specific-commodity-question">Change</a>
@@ -35,9 +52,13 @@ GOV.UK Prototype Kit
           </dt>
           <dd class="govuk-summary-list__value">
               {{data.reference_num or "no reference"}}
+              {% if data.update_field == field.name and data.update_answer != ((data[field.name] or field.default))%}
+              <br>
+              <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Updated</strong>
+              {% endif%}
           </dd>
           <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="exa/reference?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Change</a>
+              <a class="govuk-link" href="exa/reference?change=yes&next=check-your-answers-cloned&update_field={{data[field.name]}}&update_answer={{data[field.name] or field.default}}" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Change</a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -56,16 +77,7 @@ GOV.UK Prototype Kit
             Point of entry into the European Economic Area
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data.export_destination_entry}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="exa/export-destination?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Change</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Destination in the European Economic Area
-          </dt>
-          <dd class="govuk-summary-list__value">{{data.export_destination}}
+            {{data.export_destination_entry or "Bovine"}}
           </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="exa/export-destination?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Change</a>
@@ -92,7 +104,7 @@ GOV.UK Prototype Kit
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Delivery method
           </dt>
-          <dd class="govuk-summary-list__value">{{data.delivery_options}}
+          <dd class="govuk-summary-list__value">{{data.delivery_options or "1st class post"}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Change</a>
@@ -107,14 +119,25 @@ GOV.UK Prototype Kit
             </dt>
             <dd class="govuk-summary-list__value">
               {% if field.type=="date"%}
-                {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
+                <!-- updated with cloning storey -->
+                {% if not data[field.name+'_day'] %}
+                  {{field.default}}
+                {% else %}
+                  {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
+                {% endif %}
+
               {% else %}
-                {{data[field.name]}}
+                {{data[field.name] or field.default}}
               {% endif %}
+
+              {% if data.update_field == field.name and data.update_answer != ((data[field.name] or field.default))%}
+              <br>
+              <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Updated</strong>
+              {% endif%}
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
+              <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers-cloned&update_field={{data[field.name]}}&update_answer={{data[field.name] or field.default}}">
                 Change<span class="govuk-visually-hidden"> {{field.label}}</span>
               </a>
             </dd>
@@ -138,14 +161,25 @@ GOV.UK Prototype Kit
             {{field.label}}
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if field.type=="date" and data[field.name+'_day']%}
-              {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
+            {% if field.type=="date"%}
+              <!-- updated with cloning storey -->
+              {% if not data[field.name+'_day'] %}
+                {{field.default}}
+              {% else %}
+                {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
+              {% endif %}
+
             {% else %}
-              {{data[field.name]}}
+              {{data[field.name] or field.default }}
             {% endif %}
+            {% if data.update_field == field.name and data.update_answer != ((data[field.name] or field.default))%}
+                <br>
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Updated</strong>
+            {% endif%}
+
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
+            <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers-cloned&update_field={{field.name}}&update_answer={{data[field.name] or field.default}}">
               Change<span class="govuk-visually-hidden"> {{field.label}}</span>
             </a>
           </dd>
@@ -198,7 +232,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <p class="notice">
         <span class="icon icon-file-download"><span class="govuk-visually-hidden">File download</span></span>
-        <strong>Preview your answers in a <a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
+        <strong>Preview your answers in a <a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate (opens in new tab)</a>.</strong>
       </p>
     </div>
   </div>

@@ -3,7 +3,7 @@ module.exports = {
 makeCurrancyValue: function (x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 },
- 
+
 getKeyByValue : function (object, value) {
   return Object.keys(object).find(key => object[key] === value);
 },
@@ -21,4 +21,30 @@ removeFromList : function (array, value) {
   }
   return false;
 },
+addProduct :function(arr,page,post){
+  // get all fields from the page
+  var f = page.content.fields
+  var p = {"id":arr.length }
+
+  for (var i = 0; i < f.length; i++) {
+    // for each field create an obj with the Key being the field name
+    // and the value being the posted data from that field
+    var v = post[f[i].name]
+    console.log("addding:"+v)
+    p[f[i].name]=v
+  }
+  arr.push(p)
+},
+ updateProduct: function(id,arr,page,post){
+  var f = page.content.fields
+  var p = {"id":arr.length }
+  for (var i = 0; i < f.length; i++) {
+    // for each field create an obj with the Key being the field name
+    // and the value being the posted data from that field
+
+    var v = post[f[i].name]
+    p[f[i].name]=v
+  }
+  arr[id]=p
+}
 }

@@ -58,20 +58,20 @@ function getDB(id){
 
 router.use(function (req, res, next) {
   console.log("--- calling middleware ---")
-  console.log("current db is : "+req.session.database)
   if(req.query.certificate && req.session.database != req.query.certificate){
     req.session.database=req.query.certificate
     req.session.db = getDB(req.query.certificate).data
-    console.log("updating database: "+req.session.db.certificate_code);
   }
-  req.session.db = req.session.db || getDB(req.session.database).data
+
+  req.session.db = req.session.db || getDB(req.session.data.database).data
+  console.log("database is : "+req.session.db.certificate_code)
   console.log("--- Middleware END---")
   next()
 })
 
 router.get('/'+base_url+'*/start', function(req, res) {
 
-  var db = getDB(req.session.data.database).data
+  var db = getDB(req.session.database).data
   req.session.data.certificate = db.certificate_code
   res.render(base_url +req.params[0]+ '/start', {
     "query": req.query,
@@ -86,10 +86,9 @@ router.get('/'+base_url+'*/start', function(req, res) {
     res.send(html);
   })
 });
-
-
-
 router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
+  console.log("redering a check your .. page")
+  console.log("Certificate is : "+ req.session.db.certificate_code)
   res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {
     "query": req.query,
     "db": req.session.db
@@ -102,7 +101,6 @@ router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
     }
     res.send(html);
   })
-
 });
 router.post('/'+base_url+'*/certificate/exa/certifier-confirm-address', function(req, res) {
   req.session.data.file_id_count += 1
@@ -111,11 +109,8 @@ router.post('/'+base_url+'*/certificate/exa/certifier-confirm-address', function
   }else{
     res.redirect(301, '/' + base_url +req.params[0]+'/certificate/exa/certifier-new-address');
   }
-
 })
-
 router.get('/'+base_url+'*/select-certificate', function(req, res) {
-  console.log("finding page in: "+req.params[0])
   res.render(base_url+req.params[0]+'/select-certificate', {
     "query": req.query,
     "db":db
@@ -129,42 +124,17 @@ router.get('/'+base_url+'*/select-certificate', function(req, res) {
     res.send(html);
   })
 })
-function addProduct(arr,page,post){
-  // get all fields from the page
-  var f = page.content.fields
-  var p = {"id":arr.length }
 
-  for (var i = 0; i < f.length; i++) {
-    // for each field create an obj with the Key being the field name
-    // and the value being the posted data from that field
-    var v = post[f[i].name]
-    console.log("addding:"+v)
-    p[f[i].name]=v
-  }
-  arr.push(p)
-}
-function updateProduct(id,arr,page,post){
-  var f = page.content.fields
-  var p = {"id":arr.length }
-  for (var i = 0; i < f.length; i++) {
-    // for each field create an obj with the Key being the field name
-    // and the value being the posted data from that field
-
-    var v = post[f[i].name]
-    p[f[i].name]=v
-  }
-  arr[id]=p
-}
 router.post('/'+base_url+'*/certificate/page', function(req, res, next) {
   var query = ""
 
   if(req.query.product_page){
     req.session.data.products = req.session.data.products || []
-    var product = findPage(getDB(req.session.data.database).data.pages,req.query.id)
+    var product = findPage(getDB(req.session.database).data.pages,req.query.id)
     if(req.query.edit){
-      updateProduct(req.query.edit,req.session.data.products,product,req.body)
+      tools.updateProduct(req.query.edit,req.session.data.products,product,req.body)
     }else{
-      addProduct(req.session.data.products,product,req.body)
+      tools.addProduct(req.session.data.products,product,req.body)
     }
   }
   if(req.query.next == "product-list"){
@@ -178,35 +148,32 @@ router.post('/'+base_url+'*/certificate/page', function(req, res, next) {
   }
 
 })
-
-
 router.get('/'+base_url+'*/certificate/page', function(req, res) {
   var id =  parseInt(req.query.id) || 0;
   res.render(base_url+req.params[0]+'/certificate/page', {
     "query": req.query,
-    "page":findPage(getDB(req.session.data.database).data.pages, id)
+    "page":findPage(getDB(req.session.database).data.pages, id)
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
         console.log("Could not find "+ base_url+req.params[0]+'/certificate/page' +": Loading from main folder")
-        return res.render(file_url + '/certificate/page',{"query": req.query,"page":findPage(getDB(req.session.data.database).data.pages, id)});
+        return res.render(file_url + '/certificate/page',{"query": req.query,"page":findPage(getDB(req.session.database).data.pages, id)});
       }
       throw err;
     }
     res.send(html);
   })
 })
-
 // your-commmodities
 router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
   res.render(base_url+req.params[0]+'/certificate/exa/your-commodity', {
     "query": req.query,
-    "commodities":getDB(req.session.data.database).data.commodities
+    "commodities":getDB(req.session.database).data.commodities
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
         return res.render(file_url + '/certificate/exa/your-commodity',{"query": req.query,
-        "commodities":getDB(req.session.data.database).data.commodities});
+        "commodities":getDB(req.session.database).data.commodities});
       }
       throw err;
     }
@@ -216,7 +183,7 @@ router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
 router.get('/'+base_url+'*/certificate/product-list', function(req, res) {
   var id = req.query.id || 2;
   console.log(req.session.data.products.length)
-  var product = findPage(getDB(req.session.data.database).data.pages,id)
+  var product = findPage(getDB(req.session.database).data.pages,id)
   if(req.query.delete){
     console.log("removing : "+req.query.delete)
     console.log(req.session.data.products.splice(req.query.delete,1))

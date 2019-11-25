@@ -36,7 +36,8 @@
 						"hint": "Select all that apply:",
 						"required": "no",
 						"id": "import-code",
-						"name": "import_code"
+						"name": "import_code",
+						"default": "003453232"
 					},
 					{
 						"type": "date",
@@ -44,7 +45,8 @@
 						"hint": "For example, 31 08 1970",
 						"required": "no",
 						"id": "permit_date",
-						"name": "permit_date"
+						"name": "permit_date",
+						"default": "01/02/2020"
 					}
 				]
 			}
@@ -66,7 +68,8 @@
 						"hint": "",
 						"required": "no",
 						"id": "product-species",
-						"name": "product_species"
+						"name": "product_species",
+						"default": "Bovine"
 					},
 					{
 						"type": "text",
@@ -74,7 +77,8 @@
 						"hint": "",
 						"required": "no",
 						"id": "product_country_origin",
-						"name": "product_country_origin"
+						"name": "product_country_origin",
+						"default": "France"
 					}
 				]
 			}
@@ -95,7 +99,8 @@
 					"required": "no",
 					"id": "processing_raw_milk",
 					"name": "processing_raw_milk",
-					"rows": 4
+					"rows": 4,
+					"default": "ABC limited, France SA, Paris 039432. Registration number - FR3945-2342"
 				}]
 			}
 		},
@@ -116,7 +121,8 @@
 					"required": "no",
 					"id": "processing_export_product",
 					"name": "processing_export_product",
-					"rows": 4
+					"rows": 4,
+					"default": "ABC limited UK, Wendsbury, BM1 3XE (UK.HD.323.323)"
 				}]
 			}
 		},
@@ -137,7 +143,8 @@
 					"required": "no",
 					"id": "product_details",
 					"name": "product_details",
-					"rows": 4
+					"rows": 4,
+					"default": "Coffee flat white, Coffee skinny capp,Coffee creamy"
 				}]
 			}
 		},
@@ -157,7 +164,8 @@
 						"hint": "",
 						"required": "no",
 						"id": "consignment-package-number",
-						"name": "consignment_package-number"
+						"name": "consignment_package-number",
+						"default": "8544 cases"
 					},
 					{
 						"type": "text",
@@ -165,7 +173,8 @@
 						"hint": "",
 						"required": "no",
 						"id": "consignment-net-weight",
-						"name": "consignment_net_weight"
+						"name": "consignment_net_weight",
+						"default": "9262.6kg"
 					},
 					{
 						"type": "text",
@@ -173,7 +182,8 @@
 						"hint": "Enter the serial and batch numbers. Multiple numbers can be comma separated.",
 						"required": "no",
 						"id": "consignment-id-marks",
-						"name": "consignment_id_marks"
+						"name": "consignment_id_marks",
+						"default": ""
 					},
 					{
 						"type": "date",
@@ -181,7 +191,8 @@
 						"hint": "For example, 31 08 1970",
 						"required": "no",
 						"id": "consignment-manufacture-date",
-						"name": "consignment_manufacture_date"
+						"name": "consignment_manufacture_date",
+						"default": "Janet Barrow, ABC limited UK., 16 Edenhurst ave, SW6 5ED"
 					}
 				]
 			}
@@ -202,7 +213,8 @@
 					"hint": "",
 					"required": "no",
 					"id": "exporter_details_address",
-					"name": "exporter_details_address"
+					"name": "exporter_details_address",
+					"default": ""
 				}]
 			}
 		},
@@ -222,14 +234,16 @@
 					"hint": "Enter the method of travel and the identification of the transport. For example Airplane ZZ1234",
 					"required": "no",
 					"id": "transport_means",
-					"name": "transport_means"
+					"name": "transport_means",
+					"default": "Sea freight"
 				}, {
 					"type": "text",
 					"label": "Shipping marks",
 					"hint": "Enter the container and seal numbers ",
 					"required": "no",
 					"id": "transport_seal_number",
-					"name": "transport_seal_number"
+					"name": "transport_seal_number",
+					"default": ""
 				}]
 			}
 		},
@@ -250,7 +264,8 @@
 					"required": "no",
 					"id": "consignee_details",
 					"name": "consignee_details",
-					"rows": 4
+					"rows": 4,
+					"default": "ABC limited Australia, 637 Rowley Street, Melbourne, CIC2002 "
 				}, {
 					"type": "textarea",
 					"label": "Name and contact number of consignee representative",
@@ -258,7 +273,8 @@
 					"required": "no",
 					"id": "consignee_representive",
 					"name": "consignee_representive",
-					"rows": 4
+					"rows": 4,
+					"default": ""
 				}]
 			}
 		},
@@ -299,7 +315,8 @@
 							"title": "Wales",
 							"value": "Wales"
 						}
-					]
+					],
+					"default": "England"
 				}]
 			}
 		},{
@@ -319,7 +336,8 @@
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
 					"id": "certificate_date",
-					"name": "certificate_date"
+					"name": "certificate_date",
+					"default": "30 09 2019"
 				}]
 			}
 		}, {
@@ -339,7 +357,8 @@
 					"hint": "",
 					"required": "yes",
 					"id": "exporter_name",
-					"name": "exporter_name"
+					"name": "exporter_name",
+					"default": "ABC ltd"
 				}]
 			}
 		},
@@ -372,21 +391,24 @@
 							"title": "Outside the UK",
 							"name": "Outside the UK"
 						}
-					]
+					],
+					"default": "Great Britain"
 				}, {
 					"type": "date",
 					"label": "Earliest date of collection",
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
 					"id": "origin_earliest_date",
-					"name": "origin_earliest_date"
+					"name": "origin_earliest_date",
+					"default": "20/10/2019"
 				}, {
 					"type": "date",
 					"label": "Latest date of collection",
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
 					"id": "origin_latest_date",
-					"name": "origin_latest_date"
+					"name": "origin_latest_date",
+					"default": "20/10/2019"
 				}]
 			}
 		},
@@ -419,21 +441,24 @@
 							"title": "Outside the UK",
 							"name": "Outside the UK"
 						}
-					]
+					],
+					"default": "Great Britain"
 				}, {
 					"type": "date",
 					"label": "Earliest date of processing",
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
 					"id": "origin_processing_early_date",
-					"name": "origin_processing_early_date"
+					"name": "origin_processing_early_date",
+					"default": "29/10/2019"
 				}, {
 					"type": "date",
 					"label": "Latest date of processing",
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
 					"id": "origin_processing_late_date",
-					"name": "origin_processing_late_date"
+					"name": "origin_processing_late_date",
+					"default": "29/10/2019"
 				}]
 			}
 		}, {
@@ -453,7 +478,8 @@
 					"hint": "For example, 31 08 1970",
 					"required": "yes",
 					"id": "export_date",
-					"name": "export_date"
+					"name": "export_date",
+					"default": "29/10/2019"
 				}]
 			}
 		}
