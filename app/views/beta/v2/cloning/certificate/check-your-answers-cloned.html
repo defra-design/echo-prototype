@@ -2,6 +2,10 @@
 {% block pageTitle %}
 GOV.UK Prototype Kit
 {% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Return to your applications</a>
+{% endblock %}
 {% block content %}
 <style media="screen">
   @media (min-width: 28.125em){
@@ -18,7 +22,16 @@ GOV.UK Prototype Kit
     border-left: 10px solid #30A197;
     margin-bottom:20px;
   }
-
+  .defra-alert--warning{
+    background:#f7ebe6;
+    border-left: 10px solid #f47738;
+    padding: 20px 20px 5px;
+  }
+  .defra-content-check--warning {
+      background-color: #f7ebe6;
+      border-bottom: 3px solid #f47738;
+      display: inline-block;
+  }
 </style>
 
 <div class="govuk-width-container">
@@ -28,12 +41,20 @@ GOV.UK Prototype Kit
       {% if query.alert == "cloned" %}
       <div class="defra-alert">
         <h3 class="govuk-heading-m">Successfully cloned</h3>
-        <p class="govuk-body">You have successfully cloned applciataion 232380923400</p>
+        <p class="govuk-body">You have successfully cloned application 232380923400.</p>
+        <p class="govuk-body">Change any details that are different in this application.</p>
       </div>
       {% endif %}
       <h1 class="govuk-heading-xl">
         Review and submit your {{db.certificate_code or "6969EHC"}} application
       </h1>
+      <div class="defra-alert defra-alert--warning ">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Check these answers which may need updating</h3>
+        <ul class="govuk-list">
+          {% if updated_date!="yes"%}<li><a href="page?id=16&next=check-your-answers-cloned&update_field=&update_answer=export_date_day&updated_date=yes" class="govuk-link  govuk-link--no-visited-state">Export date: 14/08/2019</a></li>{% endif %}
+          <li><a href="#" class="govuk-link govuk-link--no-visited-state">Processing date: 14/08/2019</a></li>
+        </ul>
+      </div>
       <dl class="govuk-summary-list govuk- !-margin-bottom-9 govuk-summary-list__m">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

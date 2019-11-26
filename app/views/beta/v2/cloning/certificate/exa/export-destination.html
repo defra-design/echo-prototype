@@ -9,7 +9,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Where are you exporting to?
       </h1>
-      <form {% if query.change=="yes" %} action="../check-your-answers{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %} method="POST">
+      <form {% if query.change=="yes" %} action="../check-your-answers-cloned{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %} method="POST">
         <p class="govuk-body">Tell us about the destination country, and how your export will get there. This will allow us to supply duplicate certificates in the relevant foreign languages.</p>
         <div class="govuk-date-input__item">
           <div class="govuk-form-group">

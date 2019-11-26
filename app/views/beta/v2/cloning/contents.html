@@ -21,12 +21,19 @@
       </h1>{{releaseVersion | log }}
       <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
         <ul class="govuk-list">
-          <li><a href="search/6969">From form finder</a></li>
-          <li><a href="interstitial-can-clone?certificate=ehc6969">Find certifer:  with no search query (start)</a></li>
+          <li><a href="search/6969">From form finder (new journey)</a></li>
+          <li><a href="dashboard?certificate=ehc6969">From Dashboard (exisiting journey)</a></li>
+          <br>
+          <li><a href="interstitial-can-clone?certificate=ehc6969">Interstitial page: new user journey</a></li>
+            <br>
           <li><a href="clone?certificate=ehc6969&cloned=no">Clone from dashboard</a></li>
+            <br>
           <li><a href="certificate/new-certificate">New certificate (from start new application)</a></li>
-          <li><a href="certificate/choose-clone">Choose application to clone</a></li>
-          <li><a href="certificate/check-your-answers-cloned?certificate=ehc6969&cloned=yes">Cloned check your answers</a></li>
+          <li><a href="certificate/choose-certificate">Choose certificate</a></li>
+          <li><a href="certificate/find-application?selected_certificate=6969EHC&certificate=ehc6969">Choose application</a></li>
+          <li><a href="certificate/find-application?selected_certificate=8254EHC&certificate=ehc8254">Choose application (with new version alert)</a></li>
+          <li><a href="certificate/check-your-answers-cloned?certificate=ehc6969&cloned=yes&alert=cloned">Cloned application: check your answers</a></li>
+
           <br>
     </div>
   </div>

@@ -69,49 +69,26 @@ module.exports = function(router) {
       return arr
   }
 
-  router.post('/'+base_url+'*/certificate/new-certificate', function(req, res) {
 
-    if(req.body.application_type =="clone"){
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/choose-clone');
-    }else{
-      res.redirect(301, '/' + base_url +req.params[0]+'../select-certificate');
-    }
-
-  })
   router.post('/'+base_url+'*/clone', function(req, res) {
 
     if(req.body.application_type =="clone"){
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-answers-cloned?certificate=ehc6969');
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-answers-cloned?certificate=ehc6969&alert=cloned');
     }else{
       res.redirect(301, '/' + base_url +req.params[0]+'/dashboard');
     }
 
   })
-  // updated
-  router.post('/'+base_url+'*/certificate/page', function(req, res, next) {
-    var query = ""
+  router.post('/'+base_url+'*/certificate/new-certificate', function(req, res) {
 
-    if(req.query.product_page){
-      req.session.data.products = req.session.data.products || []
-      var product = findPage(getDB(req.session.data.database).data.pages,req.query.id)
-      if(req.query.edit){
-        tools.updateProduct(req.query.edit,req.session.data.products,product,req.body)
-      }else{
-        tools.addProduct(req.session.data.products,product,req.body)
-      }
-    }
-    if(req.query.next == "product-list"){
-      query+=("id="+req.query.id)
-    }
-    req.session.data.completed[req.query.id] = req.query.id
-    // updated with cloning storey
-    if(req.body.cta == "Save and continue" || req.body.cta == "Save and review"){
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+req.query.next+"?"+query);
+    if(req.body.application_type =="clone"){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/choose-certificate');
     }else{
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+req.query.id+"&new=yes&product_page=yes&next="+req.query.next);
+      res.redirect(301, '/' + base_url +req.params[0]+'/certificate/form-finder');
     }
 
   })
+
   router.get('/'+base_url+'*/certificate/choose-certificate', function(req, res) {
     res.render(base_url+req.params[0]+'/certificate/choose-certificate', {
       "query": req.query,

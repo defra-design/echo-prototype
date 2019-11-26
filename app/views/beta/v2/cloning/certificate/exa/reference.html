@@ -22,7 +22,7 @@ GOV.UK Prototype Kit
 <p class="govuk-hint">
   Your number can be made up of numbers and letters and be up to 10 characters long.
       </p>
-      <form {% if query.change=="yes" %} action="../check-your-answers{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
+      <form {% if query.change=="yes" %} action="../check-your-answers-cloned{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
         <div class="govuk-form-group">
           <div class="govuk-from-group">
             <label class="govuk-label" for="reference_num">Applicant reference number (optional)</label>

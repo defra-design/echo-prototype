@@ -9,7 +9,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">How many certificates do you need?
       </h1>
-      <form {% if query.change=="yes" %} action="../check-your-answers{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %} method="POST">
+      <form {% if query.change=="yes" %} action="../check-your-answers-cloned{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %} method="POST">
         <p> You can apply for blocks of up to 100 certificates for frequent or regular consignments to the same country.
         </p>
         <div class="govuk-date-input__item">

@@ -14,7 +14,7 @@ GOV.UK Prototype Kit
       Who is exporting the product?
     </h1>
     <p class="govuk-body">If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.</p>
-    <form {% if query.change=="yes" %} action="../check-your-answers{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
+    <form {% if query.change=="yes" %} action="../check-your-answers-cloned{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
       <!-- <form  action="check-your-progress"  method="POST"> -->
       <fieldset class="govuk-fieldset">
         <div class="govuk-form-group">

@@ -13,7 +13,7 @@ GOV.UK Prototype Kit
 <!--start-->
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-          <form {% if query.change=="yes" %} action="../check-your-answers{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %} method="POST">
+          <form {% if query.change=="yes" %} action="../check-your-answers-cloned{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %} method="POST">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">

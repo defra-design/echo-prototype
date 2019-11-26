@@ -14,7 +14,7 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
         <div>
           <h1 id="questionPageHeading" class="govuk-heading-xl">What are you exporting?</h1>
-          <form {% if query.change=="yes" %} action="../check-your-answers{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %}" method="POST" enctype="">
+          <form {% if query.change=="yes" %} action="../check-your-answers-cloned{% if data.cloned == 'yes'%}-cloned{%endif%}" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %}" method="POST" enctype="">
             {% for commodity in commodities %}
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
