@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1-dispatched.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1-dispatched.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-draft-1.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-draft-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.html" afterPath="$PROJECT_DIR$/app/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/extensions/_extensions.scss" afterPath="$PROJECT_DIR$/lib/extensions/_extensions.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-new-statuses.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-new-statuses.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg-not-bold.html" afterPath="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg-not-bold.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="defra-exports-prototype.iws" />
@@ -30,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="new-dashboard-new-statuses.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new-dashboard-new-statuses.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-new-statuses.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="472" column="27" selection-start="13292" selection-end="13292" vertical-scroll-proportion="0.17372881" vertical-offset="6983" max-vertical-offset="22650">
+            <state line="472" column="26" selection-start="13291" selection-end="13291" vertical-scroll-proportion="0.625" vertical-offset="7080" max-vertical-offset="22650">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -48,46 +46,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="new-dashboard-tab-search-statuses-no-bg-not-bold.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg-not-bold.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="121" column="5" selection-start="4470" selection-end="4470" vertical-scroll-proportion="0.22105263" vertical-offset="1710" max-vertical-offset="22245">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="new-dashboard-tab-search-sprint-one.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-sprint-one.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="210" column="0" selection-start="6032" selection-end="6205" vertical-scroll-proportion="-2.9583333" vertical-offset="3079" max-vertical-offset="20910">
-              <folding>
-                <element signature="e#1725#2087#1" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#1;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#4;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#5;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#6;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#7;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#8;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#9;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#10;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#11;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#12;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#13;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#17;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#18;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#19;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#20;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#21;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#22;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#23;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#24;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#25;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#4;n#tr#26;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="210" column="0" selection-start="6032" selection-end="6205" vertical-scroll-proportion="0.0" vertical-offset="3150" max-vertical-offset="20910">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,10 +67,8 @@
       <file leaf-file-name="ehc-page-1.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="707" column="22" selection-start="23005" selection-end="23005" vertical-scroll-proportion="-9.75" vertical-offset="10371" max-vertical-offset="12150">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="707" column="22" selection-start="23005" selection-end="23005" vertical-scroll-proportion="0.0" vertical-offset="10605" max-vertical-offset="12150">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,12 +76,8 @@
       <file leaf-file-name="ehc-page-1-dispatched.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1-dispatched.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="707" column="50" selection-start="23192" selection-end="23192" vertical-scroll-proportion="-12.166667" vertical-offset="10313" max-vertical-offset="12105">
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="707" column="50" selection-start="23192" selection-end="23192" vertical-scroll-proportion="0.0" vertical-offset="10313" max-vertical-offset="12105">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,11 +85,8 @@
       <file leaf-file-name="ehc-page-draft-1.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-draft-1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="329" column="47" selection-start="8767" selection-end="8767" vertical-scroll-proportion="-5.625" vertical-offset="4800" max-vertical-offset="6600">
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="329" column="47" selection-start="8767" selection-end="8767" vertical-scroll-proportion="0.0" vertical-offset="4800" max-vertical-offset="6600">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,18 +119,18 @@
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-sprint-one.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg.html" />
-        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg-not-bold.html" />
         <option value="$PROJECT_DIR$/app/views/index.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-draft-1.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1-dispatched.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-new-statuses.html" />
+        <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg-not-bold.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="15" />
-    <option name="y" value="23" />
+    <option name="x" value="36" />
+    <option name="y" value="26" />
     <option name="width" value="1238" />
     <option name="height" value="681" />
   </component>
@@ -197,6 +160,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,7 +271,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,14 +286,6 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -341,15 +296,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -378,14 +341,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="23" width="1238" height="681" extended-state="0" />
+    <frame x="36" y="26" width="1238" height="681" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.365105" sideWeight="0.8561064" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36268175" sideWeight="0.8561064" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14389358" sideWeight="0.5010957" order="8" side_tool="true" content_ui="tabs" />
@@ -449,156 +412,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="27" selection-start="4492" selection-end="4492" vertical-scroll-proportion="-6.25" vertical-offset="1665" max-vertical-offset="22245">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg-not-bold.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="96" selection-start="4632" selection-end="4632" vertical-scroll-proportion="-3.75" vertical-offset="1815" max-vertical-offset="22245">
-          <folding />
-        </state>
+        <state line="121" column="27" selection-start="4492" selection-end="4492" vertical-scroll-proportion="-6.25" vertical-offset="1665" max-vertical-offset="22245" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="159" selection-start="2007" selection-end="2011" vertical-scroll-proportion="-2.84" vertical-offset="908" max-vertical-offset="6900">
-          <folding />
-        </state>
+        <state line="70" column="159" selection-start="2007" selection-end="2011" vertical-scroll-proportion="-2.84" vertical-offset="908" max-vertical-offset="6900" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="58" selection-start="8055" selection-end="8055" vertical-scroll-proportion="-3.4615386" vertical-offset="3765" max-vertical-offset="22245">
-          <folding>
-            <element signature="e#1727#2089#1" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#1;n#tbody#1;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#2;n#tbody#1;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#3;n#tbody#1;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#4;n#tbody#1;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#5;n#tbody#1;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#1;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#2;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#3;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#4;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#5;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#6;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#7;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#8;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#9;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#10;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#11;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#12;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#13;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#14;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#15;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#16;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#17;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#18;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#19;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#20;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#21;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#22;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#23;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#24;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#25;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#26;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#section#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#section#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#section#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="269" column="58" selection-start="8055" selection-end="8055" vertical-scroll-proportion="-3.4615386" vertical-offset="3765" max-vertical-offset="22245" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-draft-1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="329" column="47" selection-start="8767" selection-end="8767" vertical-scroll-proportion="-5.625" vertical-offset="4800" max-vertical-offset="6600">
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="329" column="47" selection-start="8767" selection-end="8767" vertical-scroll-proportion="0.0" vertical-offset="4800" max-vertical-offset="6600">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-sprint-one.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="0" selection-start="6032" selection-end="6205" vertical-scroll-proportion="-2.9583333" vertical-offset="3079" max-vertical-offset="20910">
-          <folding>
-            <element signature="e#1725#2087#1" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#1;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#4;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#5;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#6;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#7;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#8;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#9;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#10;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#11;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#12;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#13;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#17;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#18;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#19;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#20;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#21;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#22;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#23;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#24;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#25;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#4;n#tr#26;n#tbody#3;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#nav#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="210" column="0" selection-start="6032" selection-end="6205" vertical-scroll-proportion="0.0" vertical-offset="3150" max-vertical-offset="20910">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1-dispatched.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="707" column="50" selection-start="23192" selection-end="23192" vertical-scroll-proportion="-12.166667" vertical-offset="10313" max-vertical-offset="12105">
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="707" column="50" selection-start="23192" selection-end="23192" vertical-scroll-proportion="0.0" vertical-offset="10313" max-vertical-offset="12105">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/ehc-page-1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="707" column="22" selection-start="23005" selection-end="23005" vertical-scroll-proportion="-9.75" vertical-offset="10371" max-vertical-offset="12150">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#aside#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="707" column="22" selection-start="23005" selection-end="23005" vertical-scroll-proportion="0.0" vertical-offset="10605" max-vertical-offset="12150">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-new-statuses.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="472" column="27" selection-start="13292" selection-end="13292" vertical-scroll-proportion="0.17372881" vertical-offset="6983" max-vertical-offset="22650">
+        <state line="472" column="26" selection-start="13291" selection-end="13291" vertical-scroll-proportion="0.625" vertical-offset="7080" max-vertical-offset="22650">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -609,6 +466,13 @@
             <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#4;n#tr#2;n#tbody#3;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg-not-bold.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="5" selection-start="4470" selection-end="4470" vertical-scroll-proportion="0.22105263" vertical-offset="1710" max-vertical-offset="22245">
+          <folding />
         </state>
       </provider>
     </entry>
