@@ -24,7 +24,7 @@ GOV.UK Prototype Kit
         <li class="login-nav__list-item"><a href="#ß" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
     </ul></div>
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-full">
+<div class="govuk-grid-column-full" style="margin-bottom: 20px">
 <style>
 
 
@@ -117,15 +117,37 @@ GOV.UK Prototype Kit
 
     .govuk-tag, .green-tag, .orange-tag, .blue-tag, .red-tag {
 
-          font-size: 17px;
+          font-size: 12px;
 
-     padding: 0;
+          min-width: 100px;
 
-          text-transform: none;
+
       }
 
 
-    .blue-tag{background: none!important;color: inherit!important;font-weight: normal!important;}
+    .blue-tag{
+        background: #ffffff;
+        color:#005ea5 ;
+        border: 3px solid #005ea5;
+    }
+
+    .red-tag {
+        background-color: #b10e1e;
+        border: 3px solid  #b10e1e;
+        color: #ffffff;
+    }
+    .blue-tag-reversed{background:#005ea5;
+        color: #ffffff;
+    }
+
+    .green-tag {
+        color: #ffffff;
+        background-color: #006435;   border: 3px solid  #006435;
+        }
+
+    .orange-tag{color: #0b0c0c;background: #FFBF47;border: 3px solid  #FFBF47; }
+
+    .gray-tag{color: #0b0c0c;background: #DEE0E2;border: 3px solid  #DEE0E2;}
 
 </style>
 
@@ -182,6 +204,12 @@ GOV.UK Prototype Kit
 	cursor:pointer;
 }
 
+.turquoise-tag {
+    border: 3px solid #28a197;
+    background: #fff;
+    color:  #28a197;
+}
+
 </style>
 
 <script>
@@ -216,28 +244,43 @@ $(document).ready(function (e) {
 
 </script>
 
-<div class="search-wrapper govuk-form-group" style="float:right;width:300px;">
-                <div class="search-input-wrapper">
-                    <input type="search" value="" id="search-input" name="keywords" title="Search" class="govuk-input" style="height:40px;">
-                    <div class="search-input-submit-wrapper">
-                        <button type="button" class="search-submit" id="search" style="height:40px;">Search</button>
-                    </div>
-                </div>
-				<!--
-				appear after you search
-				<a href="#" id="clear-search" style="display:block;margin-top:5px;">Clear</a>
-				 -->
-				
-				<div class="search-what-cont">
-				<div class="search-what-label">Containing: </div>
-				<div class="search-what"><span class="search-what-close">✕</span>&nbsp;&nbsp;<span class="search-what-text"></div></div>
-				</div>
+
+<style>
+    .search-wrapper{float:right;width:300px;margin-bottom: 0}
+
+    @media only screen and (max-width: 636px) {
+
+        .search-wrapper{float:none;width:auto;}}
+</style>
+
+
+<div class="search-wrapper govuk-form-group" style="">
+    <div class="search-input-wrapper">
+
+
+        <label class="govuk-visually-hidden" for="app-site-search__input">Search applications</label>
+
+        <input type="search" value="" id="search-input" type="submit" name="keywords" title="Search" class="govuk-input" style="height:40px;" placeholder="Search applications">
+        <div class="search-input-submit-wrapper">
+            <button type="button" class="search-submit" id="search" style="height:40px;">Search</button>
+        </div>
+    </div>
+
+    <div class="search-what-cont">
+        <a href="#" id="clear-search" style="display:block;margin-top:5px;">Clear search</a>
+    </div>
+
+    <!--<div class="search-what-cont">
+    <div class="search-what-label">Containing: </div>
+    <div class="search-what"><span class="search-what-close">✕</span>&nbsp;&nbsp;<span class="search-what-text"></div></div>
+-->
+</div>
 				
             </div>
 
 
 
-<div class="govuk-tabs" data-module="govuk-tabs" style="margin-top:45px;">
+<div class="govuk-tabs" data-module="govuk-tabs" style="margin-top:45px; margin: 0 15px">
 
 <!--table-->
 
@@ -324,7 +367,7 @@ $(document).ready(function (e) {
 
 
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-1">7006-98786484</a>
+                <a href="#">7006-98786484</a>
             </td>
 
 
@@ -345,7 +388,7 @@ $(document).ready(function (e) {
 
 
             <td id="1721147986456-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag blue-tag-reversed" style="width: auto">
                     Processing
                 </div>
             </td>
@@ -379,7 +422,7 @@ $(document).ready(function (e) {
             </td>
 
             <td id="1721147986456-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag turquoise-tag" style="width: auto">
                     Dispatched
                 </div>
             </td>
@@ -388,7 +431,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-1">8327-47867777</a>
+                <a href="#">8327-47867777</a>
             </td>
 
 
@@ -406,7 +449,7 @@ $(document).ready(function (e) {
             </td>
 
             <td id="1721147986456-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag red-tag" style="width: auto">
                   Rejected
                 </div>
             </td>
@@ -415,7 +458,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-1">8327-37867567</a>
+                <a href="#">8327-37867567</a>
             </td>
 
 
@@ -433,7 +476,7 @@ $(document).ready(function (e) {
             </td>
 
             <td id="1721147986456-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="orange-tag" style="width: auto">
                    Cancelled
                 </div>
             </td>
@@ -443,7 +486,7 @@ $(document).ready(function (e) {
 
         <tr class="govuk-table__row result">
             <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-                <a href="ehc-page-1">8327-31367567</a>
+                <a href="#">8327-31367567</a>
             </td>
 
 
@@ -461,7 +504,7 @@ $(document).ready(function (e) {
             </td>
 
             <td id="1721147986456-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag green-tag" style="width: auto">
                     Completed
                 </div>
             </td>
@@ -487,7 +530,7 @@ $(document).ready(function (e) {
         </td>
 
         <td id="1721147986156-status" class="govuk-table__cell" scope="row">
-            <div class="blue-tag" style="width: auto">
+            <div class="blue-tag gray-tag" style="width: auto">
                 Draft
             </div>
         </td>
@@ -558,7 +601,7 @@ $(document).ready(function (e) {
 
 
             <td id="1651965956486-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag gray-tag" style="width: auto">
                     Draft
                 </div>
             </td>
@@ -658,7 +701,7 @@ $(document).ready(function (e) {
 
 
             <td id="1651965956486-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag gray-tag" style="width: auto">
                     Draft
                 </div>
             </td>
@@ -691,7 +734,7 @@ $(document).ready(function (e) {
 
 
             <td id="1651965956486-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag gray-tag" style="width: auto">
                     Draft
                 </div>
             </td>
@@ -997,7 +1040,7 @@ $(document).ready(function (e) {
 
 
             <td id="1651965956486-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag gray-tag" style="width: auto">
                     Draft
                 </div>
             </td>
@@ -1030,7 +1073,7 @@ $(document).ready(function (e) {
 
 
             <td id="1651965956486-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag gray-tag" style="width: auto">
                     Draft
                 </div>
             </td>
@@ -1065,7 +1108,7 @@ $(document).ready(function (e) {
 
 
             <td id="1651965956486-status" class="govuk-table__cell" scope="row">
-                <div class="blue-tag" style="width: auto">
+                <div class="blue-tag gray-tag" style="width: auto">
                     Draft
                 </div>
             </td>
