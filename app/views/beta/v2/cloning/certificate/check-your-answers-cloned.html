@@ -141,11 +141,8 @@ GOV.UK Prototype Kit
             <dd class="govuk-summary-list__value">
               {% if field.type=="date"%}
                 <!-- updated with cloning storey -->
-                {% if not data[field.name+'_day'] %}
-                  {{field.default}}
-                {% else %}
+
                   {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
-                {% endif %}
 
               {% else %}
                 {{data[field.name] or field.default}}
@@ -184,11 +181,7 @@ GOV.UK Prototype Kit
           <dd class="govuk-summary-list__value">
             {% if field.type=="date"%}
               <!-- updated with cloning storey -->
-              {% if not data[field.name+'_day'] %}
-                {{field.default}}
-              {% else %}
                 {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
-              {% endif %}
 
             {% else %}
               {{data[field.name] or field.default }}

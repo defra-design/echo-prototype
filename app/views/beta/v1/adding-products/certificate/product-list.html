@@ -15,8 +15,13 @@
           <h1 class="govuk-heading-xl">
             {{ product.title or 'Your products'}}
           </h1>
+          {% if product.content.paragraph %}
+          <p class="govuk-body">{{product.content.paragraph}}</p>
+
+          {% else %}
           <p class="govuk-body">You can add up to 5 products to this certificate.</p>
           <p class="govuk-body">For longer product lists, attach a schedule as a <a href="exa/supporting-documents" class="govuk-link">supporting document</a> at the end of this application.</p>
+          {% endif %}
   </div>
 
   <div class="govuk-grid-column-full">

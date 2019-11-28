@@ -17,18 +17,18 @@ GOV.UK Prototype Kit
               What do you want to clone ?
             </h1>
           </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-checkboxess" data-module="govuk-checkboxes">
 
-            {% for d in db %}
-            {% if d.data.version != 2 %}
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="certificate-{{d.data.certificate_code}}" name="selected_certificate" type="radio" value="{{d.data.certificate_code}}">
-              <label class="govuk-label govuk-radios__label" for="application_type_clone">
-                <span class="govuk-!-font-weight-bold">{{d.data.certificate_code}} ({{ [2,3,4,5,6,7,8,9] | random }} applications)</span>
-                <br><span class="govuk-hint">{{d.data.certificate_name}}</span>
+            {% for d in db.pages %}
+            <p>Hi</p>
+            {% for f in d.content.fields %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="{{f.label.id}}" name="selected_certificate" type="checkbox" value="{{f.name}}">
+              <label class="govuk-label govuk-checkboxes__label" for="application_type_clone">
+                <span class="govuk-!-font-weight-bold">{{f.label}}</span>
               </label>
             </div>
-            {% endif %}
+            {% endfor %}
             {% endfor %}
           </div>
         </fieldset>
