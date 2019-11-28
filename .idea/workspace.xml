@@ -26,7 +26,7 @@
       <file leaf-file-name="dashboard-new-colour-statuses.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/dashboard-new-colour-statuses.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1110" column="45" selection-start="31807" selection-end="31815" vertical-scroll-proportion="0.33190578" vertical-offset="16480" max-vertical-offset="22890">
+            <state line="209" column="19" selection-start="6142" selection-end="6142" vertical-scroll-proportion="0.4282655" vertical-offset="2935" max-vertical-offset="22890">
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -417,7 +417,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/dashboard-new-colour-statuses.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1110" column="45" selection-start="31807" selection-end="31815" vertical-scroll-proportion="0.33190578" vertical-offset="16480" max-vertical-offset="22890">
+        <state line="209" column="19" selection-start="6142" selection-end="6142" vertical-scroll-proportion="0.4282655" vertical-offset="2935" max-vertical-offset="22890">
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#4;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#section#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
