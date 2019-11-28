@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form  method="post" novalidate action="find-application">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-4">
+            <h1 class="govuk-fieldset__heading">
+              What do you want to clone ?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            {% for d in db %}
+            {% if d.data.version != 2 %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-{{d.data.certificate_code}}" name="selected_certificate" type="radio" value="{{d.data.certificate_code}}">
+              <label class="govuk-label govuk-radios__label" for="application_type_clone">
+                <span class="govuk-!-font-weight-bold">{{d.data.certificate_code}} ({{ [2,3,4,5,6,7,8,9] | random }} applications)</span>
+                <br><span class="govuk-hint">{{d.data.certificate_name}}</span>
+              </label>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
