@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div>
+      <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Where will certification take place?</h1>
+      <form action="../check-your-answers-cloned" method="POST" >
+        <input type="hidden" name="crumb_csrf_token" value="nAitoNVyVGtnnzUQ-QQk78LOMzR_-9L6qqu86Lg9aRY">
+        <div class="govuk-form-group ">
+          <fieldset id="8270EHCBLOCKTEST-0" class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend" for="8270EHCBLOCKTEST-0">
+              <label class="govuk-label govuk-!-font-weight-bold">Certification region </label>
+            </legend>
+            <div class="govuk-hint">Select the region in which the certification will take place:</div>
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="England" name="certification_place" data-qa-id="Question-radio-England" autofocus="autofocus">
+                <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">England</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="Scotland" name="certification_place" data-qa-id="Question-radio-Scotland">
+                <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">Scotland</label>
+              </div>
+              <p class="form-block">or</p>
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="Wales" name="certification_place" data-qa-id="Question-radio-Wales">
+                <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">Wales</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="1">
+        <div class="govuk-grid-row margin-top-30"></div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full govuk-body">
+            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+          </div>
+        </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,340 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item" id="Nav-DisplayName">Ann Cooper</li>
+    <li class="login-nav__list-item"> | <a href="https://identity-management-app.herokuapp.com/manage/team-members/services-on-team-member-admin-account_company-exports?serviceLine=Exporter%20Service&serviceRole=Exporter&numUsers=1&numAgents=0&numServices=1&multiOrg=no&parentChild=parent"
+        class="govuk-link govuk-link--no-visited-state login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a>|</li>
+    <li class="login-nav__list-item"><a href="#ß" class="govuk-link govuk-link--no-visited-state login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+{% endblock%}
+{% block content %}
+<style>
+  main {
+    padding-top: 0px !important;
+  }
+
+  .green-tag {
+    background: #00823b
+  }
+</style>
+<style>
+  #filter-cert-org #filter-container {
+    bottom: 0px;
+    color: rgb(255, 255, 255);
+    height: 40px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 300px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 150px 20px;
+    transform-origin: 150px 20px;
+    caret-color: rgb(255, 255, 255);
+    background: rgb(0, 94, 165) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='white'%3E%3C/path%3E%3C/svg%3E") no-repeat scroll 0% 0% / 40px 40px padding-box border-box;
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+    outline: rgb(255, 255, 255) none 0px;
+  }
+
+  /*#filter-container*/
+  #filter-cert-org #filter-container:after {
+    color: rgb(255, 255, 255);
+    text-decoration: none solid rgb(255, 255, 255);
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+    outline: rgb(255, 255, 255) none 0px;
+  }
+
+  /*#DIV_4:after*/
+  #filter-cert-org #filter-container:before {
+    color: rgb(255, 255, 255);
+    text-decoration: none solid rgb(255, 255, 255);
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal 400 normal 16px / normal "Times New Roman";
+    outline: rgb(255, 255, 255) none 0px;
+  }
+
+  /*#DIV_4:before*/
+  #filter-cert-org #filter-input {
+    bottom: 0px;
+    height: 22px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 260px;
+    perspective-origin: 130px 20px;
+    transform-origin: 130px 20px;
+    border: 2px solid rgb(255, 255, 255);
+    font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+    margin: 0px 0px 0px 40px;
+    padding: 9px 10px 5px;
+    border: solid 2px #000;
+    outline: none;
+  }
+
+  /*#filter-input*/
+  #filter-cert-org #filter-input:focus {
+    border: solid 2px #ffbf47;
+    outline: none;
+  }
+
+  /*#filter-input*/
+  #filter-cert-org #filter-input:after {
+    text-size-adjust: 100%;
+    font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+  }
+
+  /*#filter-input:after*/
+  #filter-cert-org #filter-input:before {
+    text-size-adjust: 100%;
+    font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+  }
+
+  /*#filter-input:before*/
+  .govuk-details__summary:before {
+    display: none
+  }
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div>
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr>
+            <td scope="row">
+              <a id="link-startNewApplicationLink" href="certificate/new-certificate" class="govuk-button_no_margin_bottom">
+                Start a new application
+              </a></td>
+          </tr>
+        </tbody>
+      </table>
+      <h1 class="govuk-heading-l heading">Your applications</h1>
+    </div>
+    <div>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">
+              <div class="applicationRef-column">Application</div>
+            </th>
+            <th class="govuk-table__header">Reference</th>
+            <th class="govuk-table__header">Status</th>
+            <th class="govuk-table__header">Submitted date</th>
+            <th class="govuk-table__header">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if query.submitted=="yes"%}
+          <tr class="govuk-table__row">
+            <td id="1651965954689-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651966034932
+            </td>
+            <td id="1651965954689-group-number" class="govuk-table__cell" scope="row">
+              {{data.reference_num}}
+            </td>
+            <td id="1651965954689-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="green-tag">
+                  SUBMITTED
+                </div>
+              </div>
+            </td>
+            <td id="1651965954689-submitted" class="govuk-table__cell submitted-column" scope="row">
+              09-15-2019
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Clone</a>
+            </td>
+          </tr>
+          {%endif%}
+          {% if data.cloned =="yes"%}
+          <tr class="govuk-table__row">
+            <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651966026841
+            </td>
+            <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
+              45678
+            </td>
+            <td id="1651966025323-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="orange-tag">
+                  DRAFT
+                </div>
+              </div>
+            </td>
+            <td id="1651966025323-submitted" class="govuk-table__cell submitted-column" scope="row">
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-editLink" class="govuk-link govuk-link--no-visited-state" href="certificate/check-your-progress?Confirm your commodity=Bovine">Edit</a>
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Copy as new</a>
+            </td>
+          </tr>
+          {% endif %}
+          <tr class="govuk-table__row">
+            <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651966025323
+            </td>
+            <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
+              45678
+            </td>
+            <td id="1651966025323-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="orange-tag">
+                  DRAFT
+                </div>
+              </div>
+            </td>
+            <td id="1651966025323-submitted" class="govuk-table__cell submitted-column" scope="row">
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-editLink" class="govuk-link govuk-link--no-visited-state" href="certificate/check-your-progress?Confirm your commodity=Bovine">Edit</a>&nbsp;&nbsp;
+              <a id="1651966025323-deleteLink" class="govuk-link govuk-link--no-visited-state" href="delete">Delete</a>
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Clone</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651966025323
+            </td>
+            <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
+              45678
+            </td>
+            <td id="1651966025323-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="orange-tag">
+                  DRAFT
+                </div>
+              </div>
+            </td>
+            <td id="1651966025323-submitted" class="govuk-table__cell submitted-column" scope="row">
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-editLink" class="govuk-link govuk-link--no-visited-state" href="certificate/check-your-progress?Confirm your commodity=Bovine">Edit</a>&nbsp;&nbsp;
+              <a id="1651966025323-deleteLink" class="govuk-link govuk-link--no-visited-state" href="delete">Delete</a>
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Clone</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="1651966025323-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651966025323
+            </td>
+            <td id="1651966025323-group-number" class="govuk-table__cell" scope="row">
+              45678
+            </td>
+            <td id="1651966025323-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="orange-tag">
+                  DRAFT
+                </div>
+              </div>
+            </td>
+            <td id="1651966025323-submitted" class="govuk-table__cell submitted-column" scope="row">
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-editLink" class="govuk-link govuk-link--no-visited-state" href="certificate/check-your-progress?Confirm your commodity=Bovine">Edit</a>&nbsp;&nbsp;
+              <a id="1651966025323-deleteLink" class="govuk-link govuk-link--no-visited-state" href="delete">Delete</a>
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Clone</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="1651965954692-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651965954692
+            </td>
+            <td id="1651965954692-group-number" class="govuk-table__cell" scope="row">
+            </td>
+            <td id="1651965954692-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="green-tag">
+                  SUBMITTED
+                </div>
+              </div>
+            </td>
+            <td id="1651965954692-submitted" class="govuk-table__cell submitted-column" scope="row">
+              09-08-2019
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Copy as new</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="1651965954689-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651965954689
+            </td>
+            <td id="1651965954689-group-number" class="govuk-table__cell" scope="row">
+            </td>
+            <td id="1651965954689-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="green-tag">
+                  SUBMITTED
+                </div>
+              </div>
+            </td>
+            <td id="1651965954689-submitted" class="govuk-table__cell submitted-column" scope="row">
+              09-08-2019
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Copy as new</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="1651965954689-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651965954689
+            </td>
+            <td id="1651965954689-group-number" class="govuk-table__cell" scope="row">
+            </td>
+            <td id="1651965954689-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="green-tag">
+                  SUBMITTED
+                </div>
+              </div>
+            </td>
+            <td id="1651965954689-submitted" class="govuk-table__cell submitted-column" scope="row">
+              09-08-2019
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Copy as new</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="1651965954689-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+              1651965954689
+            </td>
+            <td id="1651965954689-group-number" class="govuk-table__cell" scope="row">
+            </td>
+            <td id="1651965954689-status" class="govuk-table__cell" scope="row">
+              <div class="status-cell">
+                <div class="green-tag">
+                  SUBMITTED
+                </div>
+              </div>
+            </td>
+            <td id="1651965954689-submitted" class="govuk-table__cell submitted-column" scope="row">
+              09-08-2019
+            </td>
+            <td class="govuk-table__cell actions-column">
+              <a id="1651966025323-cloneLink" class="govuk-link govuk-link--no-visited-state" href="clone">Copy as new</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
