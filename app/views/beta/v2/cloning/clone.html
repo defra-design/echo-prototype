@@ -14,8 +14,7 @@
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Are you sure you want to copy this
-          application?
+          Are you sure you want to {% if data.copy_as_new %}copy{% else %}clone{% endif%} this application?
         </h1>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
   <div class="govuk-summary-list__row">
@@ -60,7 +59,7 @@
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="application_type_clone" name="application_type" type="radio" value="clone">
           <label class="govuk-label govuk-radios__label" for="application_type_clone">
-            Yes, copy as new
+            Yes, {% if data.copy_as_new %}copy{% else %}clone{% endif%} this application
           </label>
         </div>
         <div class="govuk-radios__item">

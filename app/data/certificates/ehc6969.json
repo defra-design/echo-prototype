@@ -192,7 +192,7 @@
 						"required": "no",
 						"id": "consignment-manufacture-date",
 						"name": "consignment_manufacture_date",
-						"default": "Janet Barrow, ABC limited UK., 16 Edenhurst ave, SW6 5ED"
+						"default": "31/10/2019"
 					}
 				]
 			}
@@ -337,7 +337,7 @@
 					"required": "yes",
 					"id": "certificate_date",
 					"name": "certificate_date",
-					"default": "30 09 2019"
+					"default": ""
 				}]
 			}
 		}, {
@@ -400,7 +400,7 @@
 					"required": "yes",
 					"id": "origin_earliest_date",
 					"name": "origin_earliest_date",
-					"default": "20/10/2019"
+					"default": ""
 				}, {
 					"type": "date",
 					"label": "Latest date of collection",
@@ -408,7 +408,7 @@
 					"required": "yes",
 					"id": "origin_latest_date",
 					"name": "origin_latest_date",
-					"default": "20/10/2019"
+					"default": ""
 				}]
 			}
 		},
@@ -450,7 +450,7 @@
 					"required": "yes",
 					"id": "origin_processing_early_date",
 					"name": "origin_processing_early_date",
-					"default": "29/10/2019"
+					"default": ""
 				}, {
 					"type": "date",
 					"label": "Latest date of processing",
@@ -458,7 +458,7 @@
 					"required": "yes",
 					"id": "origin_processing_late_date",
 					"name": "origin_processing_late_date",
-					"default": "29/10/2019"
+					"default": ""
 				}]
 			}
 		}, {
@@ -479,7 +479,7 @@
 					"required": "yes",
 					"id": "export_date",
 					"name": "export_date",
-					"default": "29/10/2019"
+					"default": ""
 				}]
 			}
 		}
