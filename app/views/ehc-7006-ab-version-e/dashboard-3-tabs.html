@@ -1,0 +1,809 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  
+<style>
+    main{padding-top: 0px!important;}
+    .green-tag{background: #00823b}
+</style>
+<div class="govuk-width-container">
+<div class="login-nav login-border">
+    <ul class="login-nav__list">
+        <li class="login-nav__list-item" id="Nav-DisplayName">Ann Cooper</li>
+        <li class="login-nav__list-item"> | <a href="https://identity-management-app.herokuapp.com/manage/team-members/services-on-team-member-admin-account_company-exports?serviceLine=Exporter%20Service&serviceRole=Exporter&numUsers=1&numAgents=0&numServices=1&multiOrg=no&parentChild=parent" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a>|</li>
+        <li class="login-nav__list-item"><a href="#ß" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+    </ul></div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full" style="margin-bottom: 20px">
+<style>
+
+
+    #filter-cert-org #filter-container {
+        bottom: 0px;
+        color: rgb(255, 255, 255);
+        height: 40px;
+        left: 0px;
+        position: relative;
+        right: 0px;
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        top: 0px;
+        width: 300px;
+        column-rule-color: rgb(255, 255, 255);
+        perspective-origin: 150px 20px;
+        transform-origin: 150px 20px;
+        caret-color: rgb(255, 255, 255);
+        background: rgb(0, 94, 165) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='white'%3E%3C/path%3E%3C/svg%3E") no-repeat scroll 0% 0% / 40px 40px padding-box border-box;
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#filter-container*/
+
+    #filter-cert-org #filter-container:after {
+        color: rgb(255, 255, 255);
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        column-rule-color: rgb(255, 255, 255);
+        caret-color: rgb(255, 255, 255);
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#DIV_4:after*/
+
+    #filter-cert-org #filter-container:before {
+        color: rgb(255, 255, 255);
+        text-decoration: none solid rgb(255, 255, 255);
+        text-size-adjust: 100%;
+        column-rule-color: rgb(255, 255, 255);
+        caret-color: rgb(255, 255, 255);
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal 400 normal 16px / normal "Times New Roman";
+        outline: rgb(255, 255, 255) none 0px;
+    }/*#DIV_4:before*/
+
+
+    #filter-cert-org #filter-input {
+        bottom: 0px;
+        height: 22px;
+        left: 0px;
+        position: relative;
+        right: 0px;
+        text-size-adjust: 100%;
+        top: 0px;
+        width: 260px;
+        perspective-origin: 130px 20px;
+        transform-origin: 130px 20px;
+        border: 2px solid rgb(255, 255, 255);
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+        margin: 0px 0px 0px 40px;
+        padding: 9px 10px 5px;
+        border: solid 2px #000;
+        outline: none;
+    }/*#filter-input*/
+
+    #filter-cert-org #filter-input:focus {
+        border: solid 2px #ffbf47;
+        outline: none;
+    }/*#filter-input*/
+
+    #filter-cert-org #filter-input:after {
+        text-size-adjust: 100%;
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+    }/*#filter-input:after*/
+
+    #filter-cert-org #filter-input:before {
+        text-size-adjust: 100%;
+        font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+    }/*#filter-input:before*/
+
+
+
+    .govuk-details__summary:before{display: none}
+
+    .b{font-weight: 700!important;}
+
+
+
+
+    .govuk-tag, .green-tag, .orange-tag, .blue-tag, .red-tag {
+
+          font-size: 12px;
+
+          min-width: 100px;
+
+
+      }
+
+
+    .blue-tag{
+        background: #ffffff;
+        color:#005ea5 ;
+        border: 3px solid #005ea5;
+    }
+
+    .red-tag {
+        background-color: #b10e1e;
+        border: 3px solid  #b10e1e;
+        color: #ffffff;
+    }
+    .blue-tag-reversed{background:#005ea5;
+        color: #ffffff;
+    }
+
+    .green-tag {
+        color: #ffffff;
+        background-color: #006435;   border: 3px solid  #006435;
+        }
+
+    .orange-tag{color: #0b0c0c;background: #FFBF47;border: 3px solid  #FFBF47; }
+
+    .gray-tag{color: #0b0c0c;background: #DEE0E2;border: 3px solid  #DEE0E2;}
+
+
+
+</style>
+
+<h1 class="govuk-heading-xl heading" style="margin-bottom: 25px">Your applications</h1>
+
+
+
+
+
+
+<a id="link-startNewApplicationLink" href="index" class="govuk-button" style="margin-bottom: 20px">
+    Start a new application
+
+</a>
+
+
+
+
+
+<!--<div style="float: right">
+    <div id="filter-cert-org" style="margin-right: 30px">
+        <div id="filter-container">
+            <input id="filter-input" name="input-autocomplete" placeholder="Search applications" type="text">
+        </div>
+    </div>
+</div>-->
+
+<style>
+
+.search-what-cont {
+	width:100%;
+	height:auto;
+	margin-top:10px;
+	font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+	display:none;
+}
+
+.search-what-label {
+	font-size: 14px;
+	display:inline-block;
+	margin-top:10px;
+	margin-right:10px;
+}
+
+.search-what {
+	padding:5px 10px;
+	border-radius:8px;
+	font-size: 15px;
+	display:inline-block;
+	border: solid 1px #000;
+}
+
+.search-what-close {
+	cursor:pointer;
+}
+
+.turquoise-tag {
+    border: 3px solid #006435;
+    background: #fff;
+    color:  #006435;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function (e) {
+
+	$("#search").click(function (e) {
+		$(".search-what-text").text($("#search-input").val());
+		$(".search-what-cont").show();
+		$(".result").each(function (e) {
+			var text=$(this).text().toLowerCase();
+			if (text.indexOf($("#search-input").val().toLowerCase())>-1) {
+				$(this).show();
+			} else {
+				$(this).hide();
+			}
+		});
+	}); 
+	
+	$("#clear-search, .search-what-close").click(function (e) {
+		e.preventDefault();
+		$(".search-what-cont").hide();
+		$("#search-input").val("");
+		$(".result").each(function (e) {
+			$(this).show();
+		});
+		$(this).blur();
+	});	
+	
+
+});
+
+</script>
+
+
+<style>
+    .search-wrapper{float:right;width:300px;margin-bottom: 0}
+
+    @media only screen and (max-width: 636px) {
+
+        .search-wrapper{float:none;width:auto;}}
+</style>
+
+
+<div class="search-wrapper govuk-form-group" style="">
+    <div class="search-input-wrapper">
+
+
+        <label class="govuk-visually-hidden" for="app-site-search__input">Search applications</label>
+
+        <input type="search" value="" id="search-input" type="submit" name="keywords" title="Search" class="govuk-input" style="height:40px;" placeholder="Search applications">
+        <div class="search-input-submit-wrapper">
+            <button type="button" class="search-submit" id="search" style="height:40px;">Search</button>
+        </div>
+    </div>
+
+    <div class="search-what-cont">
+        <a href="#" id="clear-search" style="display:block;margin-top:5px;">Clear search</a>
+    </div>
+
+    <!--<div class="search-what-cont">
+    <div class="search-what-label">Containing: </div>
+    <div class="search-what"><span class="search-what-close">✕</span>&nbsp;&nbsp;<span class="search-what-text"></div></div>
+-->
+</div>
+				
+            </div>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs" style="margin-top:45px; margin: 0 15px">
+
+<!--table-->
+
+
+
+
+    <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#draft">
+                Draft Applications
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#submitted">
+               Submitted Applications
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#template">
+               Template Applications
+            </a>
+        </li>		
+        </ul>
+
+    <section class="govuk-tabs__panel" id="draft">
+<div style="clear: both">
+    <hr style="    top: 10px;
+    position: relative;">
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+            <th class="govuk-table__header">Application
+
+ 
+
+            </th>
+			<th class="govuk-table__header">Reference</th>
+            <th class="govuk-table__header">Going to</th>
+            <th class="govuk-table__header">Created</th>
+            <th class="govuk-table__header">Status</th>
+			<th class="govuk-table__header">Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006-New</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              811-Chinzu
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+            <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+                Today 12:45
+            </td>
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="blue-tag" style="width: auto">
+                        DRAFT
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a>
+            </td>
+
+        </tr>
+		
+        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006-Clone</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+             
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+            <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+                01/12/2019
+            </td>
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="blue-tag" style="width: auto">
+                        DRAFT
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a>
+            </td>
+
+        </tr>		
+
+        </tbody>
+    </table>
+
+
+
+    <div class="app-example-page">
+
+        <nav class="moj-pagination" id="pagination-label">
+
+            <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+            <ul class="moj-pagination__list">
+                <li class="moj-pagination__item  moj-pagination__item--prev">
+                    <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+
+
+                <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#" style="color: black!important;font-weight: 700">1</a></li>
+
+                <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">2</a></li>
+
+
+
+                <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
+
+                <li class="moj-pagination__item  moj-pagination__item--next">
+                    <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+            </ul>
+            <p class="moj-pagination__results">Showing <b>1</b> to <b>30</b> of <b>90</b> results</p>
+        </nav>
+
+    </div>
+
+
+
+
+</div>
+
+
+</section>
+<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="submitted">
+
+    <div style="clear: both">
+        <hr style="    top: 10px;
+    position: relative;">
+            <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header">Application</th>
+			<th class="govuk-table__header">Reference</th>
+            <th class="govuk-table__header">Going to</th>
+            <th class="govuk-table__header">Date Submitted</th>
+            <th class="govuk-table__header">Status</th>
+			<th class="govuk-table__header">Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006-58186484</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              2366-Shanghai
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+            <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+                22/11/2019
+            </td>
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="blue-tag" style="width: auto">
+                        SUBMITTED
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Clone</a>&nbsp;&nbsp;<a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Archive</a>
+            </td>
+
+        </tr>
+	
+
+		        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006-58186484</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              4811-Chinzu
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+            <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+                01/10/2019
+            </td>
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="green-tag" style="width: auto">
+                        COMPLETED
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Clone</a>&nbsp;&nbsp;<a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Archive</a>
+            </td>
+
+        </tr>
+		
+		        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006-58186484</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              9874-Shanghai
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+            <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+                19/08/2019
+            </td>
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="red-tag" style="width: auto">
+                        REJECTED
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Clone</a>&nbsp;&nbsp;<a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Archive</a>
+            </td>
+
+        </tr>
+		
+        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006-58186484</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              7771-Hong Kong
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+            <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+                22/06/2019
+            </td>
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="blue-tag" style="width: auto">
+                        SUBMITTED
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Clone</a>&nbsp;&nbsp;<a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Archive</a>
+            </td>
+
+        </tr>		
+		
+		<tbody>
+		</table>
+
+
+    <div class="app-example-page">
+
+        <nav class="moj-pagination" id="pagination-label">
+
+            <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+            <ul class="moj-pagination__list">
+                <li class="moj-pagination__item  moj-pagination__item--prev">
+                    <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+
+
+                <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#" style="color: black!important;font-weight: 700">1</a></li>
+
+                <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">2</a></li>
+
+
+
+                <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
+
+                <li class="moj-pagination__item  moj-pagination__item--next">
+                    <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+            </ul>
+            <p class="moj-pagination__results">Showing <b>1</b> to <b>30</b> of <b>90</b> results</p>
+        </nav>
+
+    </div>
+
+
+            </div>
+
+
+
+</section>
+
+<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="template">
+
+
+
+
+
+
+
+    <div style="clear: both">
+        <hr style="    top: 10px;
+    position: relative;">
+            <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header">Application</th>
+			<th class="govuk-table__header">Template name</th>
+            <th class="govuk-table__header">Destination</th>
+            <th class="govuk-table__header">Status</th>
+			<th class="govuk-table__header">Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              Tims-PIG-2-CHINA
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="red-tag" style="width: auto">
+                        OUT OF DATE
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Update</a>
+            </td>
+
+        </tr>
+		
+        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              SOPH-dairytemp1
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="blue-tag" style="width: auto">
+                        VALID EHC
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Clone</a>
+            </td>
+
+        </tr>
+
+		        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              DAV-BEEF-2-CHI3
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="blue-tag" style="width: auto">
+                        VALID EHC
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Clone</a>
+            </td>
+
+        </tr>	
+		
+        <tr class="govuk-table__row result">
+
+
+            <td id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+                <a href="ehc-page-1">7006</a>
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              Lucy-dairymix2019
+            </td>
+
+            <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+              China
+            </td>
+
+
+            <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+                    <div class="blue-tag" style="width: auto">
+                        VALID EHC
+                </div>
+            </td>
+
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+               <a href="#">Clone</a>
+            </td>
+
+        </tr>			
+
+
+</tbody>
+
+
+            </table>
+
+
+    <div class="app-example-page">
+
+        <nav class="moj-pagination" id="pagination-label">
+
+            <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+            <ul class="moj-pagination__list">
+                <li class="moj-pagination__item  moj-pagination__item--prev">
+                    <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+
+
+                <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#" style="color: black!important;font-weight: 700">1</a></li>
+
+                <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">2</a></li>
+
+
+
+                <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
+
+                <li class="moj-pagination__item  moj-pagination__item--next">
+                    <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+            </ul>
+            <p class="moj-pagination__results">Showing <b>1</b> to <b>30</b> of <b>90</b> results</p>
+        </nav>
+
+    </div>
+
+
+            </div>
+
+
+
+</section>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}
