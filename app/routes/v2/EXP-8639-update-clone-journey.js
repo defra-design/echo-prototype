@@ -9,7 +9,7 @@ module.exports = function(router) {
 
   // CHANGE VERSION TO THE VERSION
   const version = 'beta/v2'
-  const base_url = version + "/copy-as-new"
+  const base_url = version + "/EXP-8639-update-clone-journey"
   const file_url = version + "/core"
   var database = "ehc8327"
   const certificate= "8327EHC"
@@ -70,11 +70,11 @@ module.exports = function(router) {
   }
 
 
-  router.post('/'+base_url+'*/clone', function(req, res) {
+  router.post('/'+base_url+'*/clone*', function(req, res) {
 
     if(req.body.application_type =="clone"){
       req.session.data=[]
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/reference-update?certificate=ehc6969&alert=cloned');
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-answers-cloned?certificate=ehc6969&alert=cloned');
     }else{
       res.redirect(301, '/' + base_url +req.params[0]+'/dashboard');
     }
@@ -89,7 +89,6 @@ module.exports = function(router) {
     }
 
   })
-
   router.get('/'+base_url+'*/certificate/choose-certificate', function(req, res) {
     res.render(base_url+req.params[0]+'/certificate/choose-certificate', {
       "query": req.query,

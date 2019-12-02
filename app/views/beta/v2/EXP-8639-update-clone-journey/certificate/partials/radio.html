@@ -13,7 +13,7 @@
       <div class="govuk-radios__divider">or</div>
       {% endif %}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="{{field.id}}" name="{{field.name}}" type="radio" value="{{radio.value}}" {% if data[field.name] == radio.value %}checked="checked"{%endif%}>
+        <input class="govuk-radios__input" id="{{field.id}}" name="{{field.name}}" type="radio" value="{{radio.value}}" {% if (data[field.name] or field.defualt) == radio.value %}checked="checked"{%endif%}>
         <label class="govuk-label govuk-radios__label" for="{{radio.value}}">
           {{radio.title}}
         </label>

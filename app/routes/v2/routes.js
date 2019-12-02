@@ -3,6 +3,8 @@ module.exports = function(router) {
   var tools = require('../tools.js')
 
   require('./cloning.js')(router)
+  require('./EXP-8639-update-clone-journey.js')(router)
+
   // ADD extra routing here if needed.
   // require('./extra-stories.js')(router)
   const fs = require('fs');
