@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<!--start-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      What is the origin of the product?
+    </h1>
+    <p class="govuk-body">Provide details of the origin of the animals from which the product is derived. These may originate from more than one region. We use this information to help control the spread of disease.</p>
+    <form action="../check-your-answers-cloned" method="POST">
+      <!-- <form  action="check-your-progress"  method="POST"> -->
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xs">
+              <h3 class="govuk-fieldset__heading">
+                Origin
+              </h3>
+              <span id="origin-hint" class="govuk-hint">Select all that apply:</span>
+            </legend>
+            <div class="govuk-checkboxes ">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Great Britain" {% if data.origin and 'Great Britain' in data.origin %}checked="checked"{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="Great Britain">
+                  Great Britain
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Northern Ireland" {% if data.origin and 'Northern Ireland' in data.origin %}checked="checked"{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="Northern Ireland">
+                  Northern Ireland
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="origin" name="origin" type="checkbox" value="Outside the UK" {% if data.origin and 'Outside the UK' in data.origin %}checked="checked"{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="Outside the UK">
+                  Outside the UK
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        </div>
+      </fieldset>
+    </form>
+    <p class="govuk-body"><a class="link-button" href="dashboard" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+  </div>
+</div>
+{% endblock %}

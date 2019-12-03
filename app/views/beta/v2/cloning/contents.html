@@ -17,25 +17,37 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Cloning V2
+        EXP-8639 Cloning V2
       </h1>{{releaseVersion | log }}
+      <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8639"><span class="govuk-!-font-weight-bold">Jira:</span>Update exporter dashboard 'clone' flow</a></p>
+
       <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
         <ul class="govuk-list">
-          <li><a href="search/6969">From form finder (new journey)</a></li>
-          <li><a href="dashboard?certificate=ehc6969">From Dashboard (exisiting journey)</a></li>
+          <li><h3 class="govuk-link--no-visited-state" class="govuk-header-sm">Interstitial page for first time users</h3></li>
+          <li><a class="govuk-link--no-visited-state" href="search/6969">From form finder (new journey)</a></li>
+          <li><a class="govuk-link--no-visited-state" href="interstitial-can-clone?certificate=ehc6969">Interstitial page: new user journey</a></li>
+          <li><h3 class="govuk-header-sm">New clone journey from dashboard</h3></li>
+          <li><a class="govuk-link--no-visited-state" href="dashboard?copy_as_new=&certificate=ehc6969">From Dashboard</a></li>
+          <li><a class="govuk-link--no-visited-state" href="clone?copy_as_new=&certificate=ehc6969&cloned=no">Do you want to clone this application?</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/reference-update?copy_as_new=&certificate=ehc6969&cloned=no">Resue the same application reference?</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/cloned-confirmation?copy_as_new=&certificate=ehc6969&cloned=no">Removing invalid dates</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=&&data=&certificate=ehc6969&cloned=yes&alert=cloned">Cloned: Check your answers (with alert)</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=&certificate=ehc6969&certificate_date_day=01&origin_earliest_date_day=01&origin_latest_date_day=01&export_date_day=01&certificate_date_day=01&origin_processing_early_date_day=01&origin_processing_late_date_day=01">Check your answers (completed todo list)</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=&certificate=ehc6969&certificate_date_day=01&origin_earliest_date_day=01&origin_latest_date_day=01&export_date_day=01&certificate_date_day=01&origin_processing_early_date_day=01&origin_processing_late_date_day=01&product_country_origin=Germany">Check your answers (with updated field: Country of origin)</a></li>
           <br>
-          <li><a href="interstitial-can-clone?certificate=ehc6969">Interstitial page: new user journey</a></li>
-            <br>
-          <li><a href="clone?certificate=ehc6969&cloned=no">Clone from dashboard</a></li>
-            <br>
-          <li><a href="certificate/new-certificate">New certificate (from start new application)</a></li>
-          <li><a href="certificate/choose-certificate">Choose certificate</a></li>
-          <li><a href="certificate/find-application?selected_certificate=6969EHC&certificate=ehc6969">Choose application</a></li>
-          <li><a href="certificate/find-application?selected_certificate=8254EHC&certificate=ehc8254">Choose application (with new version alert)</a></li>
-          <li><a href="certificate/check-your-answers-cloned?certificate=ehc6969&cloned=yes&alert=cloned">Cloned application: check your answers</a></li>
+          <li><h3 class="govuk-header-sm">Same with copy as new</h3></li>
+          <li><a class="govuk-link--no-visited-state" href="dashboard?copy_as_new=yes&certificate=ehc6969">From Dashboard</a></li>
+          <li><a class="govuk-link--no-visited-state" href="clone?copy_as_new=yes&certificate=ehc6969&cloned=no">Do you want to clone this application?</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=yes&&data=&certificate=ehc6969&cloned=yes&alert=cloned">Cloned: Check your answers (with alert)</a></li>
+          <br>
+          <li><h3 class="govuk-header-sm">Clone when starting new appliction <strong class="govuk-tag">Experimental</strong></h3></li>
+          <li><a class="govuk-link--no-visited-state" href="dashboard-new-clone?copy_as_new=&certificate=ehc6969">0. From Dashboard</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/new-certificate">1. Do you want to clone?</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/choose-certificate">2. Select certificate</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/find-application?selected_certificate=6969EHC&certificate=ehc6969">3. Which application do you want to clone</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/find-application?selected_certificate=8254EHC&certificate=ehc8254">3-1. There is a new version alert</a></li>
 
-          <br>
+      </div>
     </div>
-  </div>
 
 {% endblock %}

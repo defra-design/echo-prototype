@@ -111,7 +111,7 @@
 			"content": {
 				"header": "What are the details of the product?",
 				"caption": "Your products",
-				"paragraph": "Provide details of the products in this consignment. You can add up to 5 products to this certificate.",
+				"paragraph": "You can add up to 5 products to this certificate. For longer product lists, attach a schedule as a supporting document at the end of this application.",
 				"next": "product-list",
 				"prev": "",
 				"product_page": "yes",

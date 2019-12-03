@@ -32,5 +32,6 @@ module.exports = {
     "certificate" : "8327EHC",
     "database": "ehc8327",
     "forms" : form,
-    "printable": "yes"
+    "printable": "yes",
+    "originals": {}
 }
