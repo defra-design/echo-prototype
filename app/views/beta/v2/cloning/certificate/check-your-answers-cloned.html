@@ -44,14 +44,14 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-three-quarters">
       {% if query.alert == "cloned" %}
       <div class="defra-alert">
-        <p class="govuk-body govuk-!-margin-bottom-0"><span class="govuk-!-font-weight-bold">Successfully {% if data.copy_as_new %}copied{% else %}cloned{% endif%}</span> application 232380923400.</p>
+        <p class="govuk-body govuk-!-margin-bottom-0"><span class="govuk-!-font-weight-bold">Successfully {% if data.copy_as_new %}copied{% else %}cloned{% endif%}</span> application 232380923400</p>
       </div>
       {% endif %}
       <h1 class="govuk-heading-xl">
         Review and submit your {{db.certificate_code or "6969EHC"}} application
       </h1>
       <div id="clone-required-list" class="defra-alert defra-alert--warning ">
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><span class="clone-required-count">5</span> required questions to complete before submitting</h3>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">There are <span class="clone-required-count">5</span> required questions to complete before submitting</h3>
         <ul class="govuk-list">
           {% for task in db.pages %}
           {% for field in task.content.fields %}
