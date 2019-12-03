@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <style>.app-tabs {
+            border: 1px solid #b58840;
+        }
+        .app-tabs:hover {
+            border: 1px solid #1d70b8	;
+        }
+       </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        EXP-8648 - keep reference number when cloning
+      </h1>{{releaseVersion | log }}
+      <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8648"><span class="govuk-!-font-weight-bold">Jira:</span>Ask if user wants to keep their reference number when cloning</a></p>
+      <p class="govuk-body">This inludes <a href="https://eaflood.atlassian.net/browse/EXP-8648">EXP-8639</a> jounery</p>
+      <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+        <h3 class="govuk-heading-m">Content</h3>
+        <ul class="govuk-list">
+          <li><a class="govuk-link--no-visited-state" href="dashboard?copy_as_new=&certificate=ehc6969">Start from Dashboard (using the older dashboard)</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/reference-update?copy_as_new=&certificate=ehc6969&cloned=no">Asking to change reference</a></li>
+          <br>
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=&data=&certificate=ehc6969&cloned=yes&reference_num=AUS-CA9328802-N&has_reference_num=yes">Check answers with changed reference number</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=&data=&certificate=ehc6969&reference_num=&has_reference_num=no">Check answers with no reference number</a></li>
+          <br>
+
+      </div>
+    </div>
+
+{% endblock %}

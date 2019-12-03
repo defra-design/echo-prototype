@@ -4,6 +4,8 @@ module.exports = function(router) {
 
   require('./cloning.js')(router)
   require('./EXP-8639-update-clone-journey.js')(router)
+  require('./EXP-8648-keep-reference-number.js')(router)
+  require('./EXP-8649-invalid-clone-items.js')(router)
 
   // ADD extra routing here if needed.
   // require('./extra-stories.js')(router)
