@@ -170,7 +170,7 @@ GOV.UK Prototype Kit
         {% for field in task.content.fields %}
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key{% if query.hasError and field.label in data.errors_list %} govuk-summary-list__row-error{% endif %}">
+          <dt class="govuk-summary-list__key{% if query.hasError and field.label in data.errors_list and (not data[field.name] or not data[field.name+'_day'])%} govuk-summary-list__row-error{% endif %}">
             {{field.label}}
           </dt>
           <dd class="govuk-summary-list__value">
