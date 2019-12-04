@@ -37,6 +37,7 @@
 						"required": "no",
 						"id": "import-code",
 						"name": "import_code",
+						"allow": "past",
 						"default": "003453232"
 					},
 					{
@@ -46,6 +47,7 @@
 						"required": "no",
 						"id": "permit_date",
 						"name": "permit_date",
+						"allow": "past",
 						"default": "01/02/2020"
 					}
 				]
@@ -192,6 +194,7 @@
 						"required": "no",
 						"id": "consignment-manufacture-date",
 						"name": "consignment_manufacture_date",
+						"allow": "past",
 						"default": "31/10/2019"
 					}
 				]
@@ -282,7 +285,9 @@
 			"page": "supporting-documents",
 			"title": "Supporting documents",
 			"optional": "yes",
-			"content": {}
+			"content": {
+				"fields": []
+			}
 		},
 		{
 			"page": 11,
@@ -337,6 +342,7 @@
 					"required": "yes",
 					"id": "certificate_date",
 					"name": "certificate_date",
+					"allow": "future",
 					"default": ""
 				}]
 			}
@@ -400,6 +406,7 @@
 					"required": "yes",
 					"id": "origin_earliest_date",
 					"name": "origin_earliest_date",
+					"allow": "past",
 					"default": ""
 				}, {
 					"type": "date",
@@ -408,6 +415,7 @@
 					"required": "yes",
 					"id": "origin_latest_date",
 					"name": "origin_latest_date",
+					"allow": "past",
 					"default": ""
 				}]
 			}
@@ -450,6 +458,7 @@
 					"required": "yes",
 					"id": "origin_processing_early_date",
 					"name": "origin_processing_early_date",
+					"allow": "past",
 					"default": ""
 				}, {
 					"type": "date",
@@ -458,6 +467,7 @@
 					"required": "yes",
 					"id": "origin_processing_late_date",
 					"name": "origin_processing_late_date",
+					"allow": "past",
 					"default": ""
 				}]
 			}
@@ -479,6 +489,7 @@
 					"required": "yes",
 					"id": "export_date",
 					"name": "export_date",
+					"allow": "future",
 					"default": ""
 				}]
 			}
