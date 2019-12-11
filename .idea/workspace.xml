@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d8424ec-4270-4531-94f0-abd19d3809f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/extensions/_extensions.scss" afterPath="$PROJECT_DIR$/lib/extensions/_extensions.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.html" afterPath="$PROJECT_DIR$/app/views/index.html" />
     </list>
     <ignored path="defra-exports-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,19 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="475" column="0" selection-start="11056" selection-end="11056" vertical-scroll-proportion="-34.875" vertical-offset="6273" max-vertical-offset="7200">
+            <state line="88" column="19" selection-start="2724" selection-end="2724" vertical-scroll-proportion="0.5363322" vertical-offset="855" max-vertical-offset="7290">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard-new-colour-statuses-v1.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dashboard-new-colour-statuses-v1.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/dashboard-new-colour-statuses-v1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="260" column="5" selection-start="7096" selection-end="7096" vertical-scroll-proportion="0.51724136" vertical-offset="3465" max-vertical-offset="23040">
+            <state line="262" column="0" selection-start="7098" selection-end="7098" vertical-scroll-proportion="-9.3" vertical-offset="3465" max-vertical-offset="23040">
               <folding />
             </state>
           </provider>
@@ -76,14 +75,14 @@
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/dashboard-new-colour-statuses.html" />
         <option value="$PROJECT_DIR$/app/assets/sass/application.scss" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/dashboard-3-tabs.html" />
-        <option value="$PROJECT_DIR$/app/views/index.html" />
         <option value="$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/dashboard-new-colour-statuses-v1.html" />
+        <option value="$PROJECT_DIR$/app/views/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1565" />
-    <option name="y" value="42" />
+    <option name="x" value="1343" />
+    <option name="y" value="24" />
     <option name="width" value="1459" />
     <option name="height" value="1027" />
   </component>
@@ -356,7 +355,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1565" y="42" width="1459" height="1027" extended-state="0" />
+    <frame x="1343" y="24" width="1459" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -464,16 +463,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.html">
+    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/dashboard-new-colour-statuses-v1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="475" column="0" selection-start="11056" selection-end="11056" vertical-scroll-proportion="-34.875" vertical-offset="6273" max-vertical-offset="7200">
+        <state line="262" column="0" selection-start="7098" selection-end="7098" vertical-scroll-proportion="-9.3" vertical-offset="3465" max-vertical-offset="23040">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ehc-7006-ab-version-e/dashboard-new-colour-statuses-v1.html">
+    <entry file="file://$PROJECT_DIR$/app/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="5" selection-start="7096" selection-end="7096" vertical-scroll-proportion="0.51724136" vertical-offset="3465" max-vertical-offset="23040">
+        <state line="88" column="19" selection-start="2724" selection-end="2724" vertical-scroll-proportion="0.5363322" vertical-offset="855" max-vertical-offset="7290">
           <folding />
         </state>
       </provider>
