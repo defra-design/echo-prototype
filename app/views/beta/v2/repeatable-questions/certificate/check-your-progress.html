@@ -12,7 +12,7 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">
       New Application
     </h1>
-    <h2 class="govuk-heading-m" >Export Certificate {{certificate_code or "8327EHC"}}</h2>
+    <h2 class="govuk-heading-m" >Export Certificate {{db.certificate_code or "8327EHC"}}</h2>
     <p> If this is not correct, <a href="../select-certificate">find another Export Health Certificate</a>
     </p>
     <hr>
@@ -58,18 +58,21 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
+          {% if db.destination == "EU" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/export-destination" aria-describedby="eligibility-completed">
                 Export destination
               </a>
             </span>
+
             {% if not data.export_destination_entry and not data.export_destination %}
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
             {% else %}
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
+            {% endif %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certifier" aria-describedby="eligibility-completed">
@@ -84,8 +87,8 @@ GOV.UK Prototype Kit
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="exa/certifer-certificate-delivery?printable={{printable or 'yes'}}" aria-describedby="eligibility-completed">
-                How would you like the certificate to be delivered to the certifier?
+              <a href="exa/certifer-certificate-delivery?printable={{db.printable or 'yes'}}" aria-describedby="eligibility-completed">
+                How would you like the certificate to be delivered to the certifier? ({{db.printable}})
               </a>
             </span>
             {% if not data.delivery_options %}
@@ -94,7 +97,7 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
-          {% for task in tasks %}
+          {% for task in db.pages %}
           {% if task.exa == "yes" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -126,7 +129,7 @@ GOV.UK Prototype Kit
           <span class="app-task-list__section-number">2. </span> Exporter and certifier complete this section
         </h2>
         <ul class="app-task-list__items">
-          {% for task in tasks %}
+          {% for task in db.pages %}
           {% if task.exa != "yes" %}
           {% if ech_active != "yes"%}
           <li class="app-task-list__item">
@@ -143,7 +146,7 @@ GOV.UK Prototype Kit
               {% set next_page = task.content.next %}
               {% endif %}
                  {% if task.content.product_page == 'yes' %}
-                 <a href="product-list?id={{task.page}}" class="govuk-link">
+                  <a href="product-list?id={{task.page}}" class="govuk-l ink">
                  {% else%}
               <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
                 {% endif %}
@@ -170,28 +173,12 @@ GOV.UK Prototype Kit
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
-
               {% if ech_active != "yes"%}
-                <span class="app-task-list__task-name">Check your answers</span>
+                <span class="app-task-list__task-name">Check your answers and submit application</span>
               {% else %}
-                <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers</a></span>
+                <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers and submit application</a></span>
                 <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
               {% endif%}
-
-          </li>
-          <li class="app-task-list__item">
-
-
-              {% if ech_active != "yes"%}
-                <span class="app-task-list__task-name">Declaration and submissions  </span>
-              {% else %}
-                <span class="app-task-list__task-name"><a href="review">Declaration and submission</a>  </span>
-                <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-              {% endif%}
-
-
-
-
           </li>
         </ul>
       </li>
@@ -205,4 +192,5 @@ GOV.UK Prototype Kit
     </div>
   </div>
 </form>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
 {% endblock %}

@@ -7,13 +7,28 @@
 {% block beforeContent%}
 {{super()}}
 <a href="{{page.content.prev or 'javascript:history.back()'}}" class="govuk-back-link">Back</a>
+<style media="screen">
+  .govuk-summary-list {
+    margin-bottom: 0;
+}
+  .govuk-summary-list__key {
+    width: 50%;
+
+}
+@media (min-width: 40.0625em){
+  .govuk-summary-list__value:last-child {
+      width: 50%;
+  }
+}
+
+</style>
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-xl">
-            {{ product.title or 'Your products'}}
+            Your products
           </h1>
           {% if product.content.paragraph %}
           <p class="govuk-body">{{product.content.paragraph}}</p>
@@ -26,15 +41,15 @@
 
   <div class="govuk-grid-column-full">
 
-
-
       <!-- <p class="govuk-body">{{ data.products | length }} product{% if (data.products | length )!=1%}s{%endif%} added</p> -->
         {% if (data.products | length ) >0 %}
     <table class="govuk-table" id="Table-RepeatablePageReview">
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         {% for question in product.content.fields %}
-        <th class="govuk-table__header">{{question.label}} {% if question.required != 'yes'%}{%endif%}</th>
+        <th class="govuk-table__header">
+          <!-- {{question.label}} {% if question.required != 'yes'%}{%endif%} -->
+        </th>
         {% endfor %}
         <th class="govuk-table__header"></th>
       </tr>
@@ -43,12 +58,26 @@
       <tbody class="govuk-table__body" id="TableBody-RepeatablePageReview">
       {% for prod in data.products %}
       <tr class="govuk-table__row">
-        {% for question in product.content.fields %}
-        <td class="govuk-table__cell">{{prod[question.name]}}</td>
-        {% endfor %}
-        <td class="govuk-table__cell">
-          <a class="govuk-link" href="page?id={{query.id or 2}}&edit={{prod.id}}&next=product-list&product_page=yes" data-qa-id="Link-ChangeRepeatablePage" id="Link-ChangeRepeatablePage-0">Edit</a>
-          <a class="govuk-link" href="product-list?delete={{loop.index -1}}&id={{query.id}}" id="0-deleteLink">Delete</a>
+        <th class="govuk-table__cell" style="width:20%; padding-top:20px;">
+          Product {{ loop.index }}
+        </th>
+        <td class="govuk-table__cell" style="width:75%;">
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            {% for question in product.content.fields %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    {{question.label}}
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{prod[question.name]}}
+                  </dd>
+                </div>
+              {% endfor %}
+          </dl>
+        </td>
+        <td class="govuk-table__cell" style="width:5%;">
+          <a class="govuk-link" href="page?id={{query.id or 2}}&edit={{prod.id}}&next=product-list&product_page=yes" data-qa-id="Link-ChangeRepeatablePage" id="Link-ChangeRepeatablePage-0">Change</a>
+          <br><a class="govuk-link" href="product-list?delete={{loop.index -1}}&id={{query.id}}" id="0-deleteLink">Remove</a>
         </td>
       </tr>
 

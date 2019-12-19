@@ -1,103 +1,165 @@
 {
-	"certificate_code": "6969EHC",
-	"version": "1",
+	"certificate_code": "1631EHC",
+	"version": "2",
 	"printable": "yes",
 	"destination": "Australia",
 	"certificate_name": "Export dairy and dairy products to Australia",
 	"commodities": [{
-		"group": "Dairy",
+		"group": "Meat",
 		"options": [{
-			"title": "Bovine",
-			"name": "Bovine"
-		}, {
-			"title": "Caprine",
-			"name": "Caprine"
-		}, {
-			"title": "Ovine",
-			"name": "Ovine"
-		}, {
-			"title": "Mixed",
-			"name": "Mixed"
+			"title": "Porcine",
+			"name": "Porcine"
 		}]
 	}],
 	"pages": [{
 			"page": 1,
-			"title": "What is your import permit number and expiry date?",
+			"title": "What are the details of your consignment?",
 			"content": {
-				"header": "What is your import permit number and expiry date?",
+				"header": "What are the details of your consignment?",
 				"caption": "",
-				"paragraph": "If an import permit has been issued to you, enter the details below.",
+				"paragraph": "Enter details of each category in this consignment. Use a new record for each category. When you have finished select ‘Save and review’.",
 				"next": "",
 				"prev": "",
-				"product_page": "no",
+				"product_page": "yes",
 				"fields": [{
 						"type": "text",
-						"label": "Import permit number ",
-						"hint": "Select all that apply:",
+						"label": "Process category",
+						"hint": "For example, raw product - intact",
 						"required": "no",
-						"id": "import-code",
-						"name": "import_code",
+						"id": "Processs_category",
+						"name": "Processs_category",
 						"allow": "past",
 						"default": "003453232"
 					},
 					{
-						"type": "date",
-						"label": "Expiry date",
-						"hint": "For example, 31 08 1970",
-						"required": "no",
-						"id": "permit_date",
-						"name": "permit_date",
-						"allow": "past",
-						"default": "01/02/2020"
-					}
+							"type": "text",
+							"label": "Producgt category",
+							"hint": "For example, raw intact pork",
+							"required": "no",
+							"id": "product_category",
+							"name": "product_category",
+							"allow": "past",
+							"default": "003453232"
+						},
+						{
+								"type": "text",
+								"label": "Type of meat",
+								"hint": "For example, pork",
+								"required": "no",
+								"id": "meet_type",
+								"name": "meet_type",
+								"allow": "past",
+								"default": "003453232"
+							},
+							{
+									"type": "text",
+									"label": "Identification/Shipping mark",
+									"hint": "Enter the marks on the container",
+									"required": "no",
+									"id": "id_marking",
+									"name": "id_marking",
+									"allow": "past",
+									"default": "003453232"
+								},
+								{
+										"type": "text",
+										"label": "Type and number of packages",
+										"hint": "For example, 150 cases",
+										"required": "no",
+										"id": "number_of_packages",
+										"name": "number_of_packages",
+										"allow": "past",
+										"default": "003453232"
+									}
 				]
 			}
 		},
 		{
 			"page": 2,
-			"title": "What is the origin of your product?",
+			"title": "Were the animals slaughtered and processed in the United Kingdom?",
 			"content": {
-				"header": "What is the origin of your product?",
+				"header": "Were the animals slaughtered and processed in the United Kingdom?",
 				"caption": "",
-				"paragraph": "You can enter more than one species and country of origin.",
+				"paragraph": "Enter details of each category slaughtered and processed in the UK in this consignment. If your categories were slaughtered and processed outside the UK, leave this section blank. Use a new record for each category. When you have finished select ‘Save and review’.",
 				"next": "",
 				"prev": "",
-				"product_page": "no",
+				"product_page": "yes",
 				"product_max": "5",
 				"fields": [{
 						"type": "text",
-						"label": "Species",
+						"label": "Name, address and approval number of the slaughterhouse",
 						"hint": "",
 						"required": "no",
-						"id": "product-species",
-						"name": "product_species",
+						"id": "sh_name_address",
+						"name": "sh_name_addres",
 						"default": "Bovine"
 					},
 					{
 						"type": "text",
-						"label": "Country of origin",
+						"label": "Name, address and approval number of the cutting plant",
 						"hint": "",
 						"required": "no",
-						"id": "product_country_origin",
-						"name": "product_country_origin",
+						"id": "cp_name_address",
+						"name": "cp_name_address",
+						"default": "France"
+					}
+					,
+					{
+						"type": "text",
+						"label": "Name, address and approval number of the processing/ producing plant",
+						"hint": "",
+						"required": "no",
+						"id": "pp_name_address",
+						"name": "pp_name_address",
+						"default": "France"
+					}
+					,
+					{
+						"type": "textarea",
+						"label": "Name, address and approval number of the final processing/producing establishment",
+						"hint": "",
+						"required": "no",
+						"id": "pp_number",
+						"rows": 4,
+						"name": "pp_number",
+						"default": "France"
+					}
+					,
+					{
+						"type": "text",
+						"label": "Production dates",
+						"hint": "Provide in format: DD/MM/YYYY to DD/MM/YYYY",
+						"required": "no",
+						"id": "pp_dates",
+						"name": "pp_dates",
 						"default": "France"
 					}
 				]
 			}
 		}, {
 			"page": 3,
-			"title": "Where was the raw milk processed?",
+			"title": "Were the animals slaughtered and processed outside of the United Kingdom?",
 			"content": {
-				"header": "Where was the raw milk processed?",
+				"header": "Were the animals slaughtered and processed outside of the United Kingdom?",
 				"caption": "",
-				"paragraph": "",
+				"paragraph": "Enter details of each category slaughtered and processed outside the UK in this consignment. If your categories were slaughtered and processed in the UK, leave this section blank. Use a new record for each category. When you have finished select ‘Save and review’.",
 				"next": "",
 				"prev": "",
-				"product_page": "no",
-				"fields": [{
+				"product_page": "yes",
+				"fields": [
+					{
+						"type": "text",
+						"label": "Source country",
+						"hint": "",
+						"required": "no",
+						"id": "pp_dates",
+						"name": "pp_dates",
+						"default": "France"
+					},
+					{
 					"type": "textarea",
-					"label": "Name, address and approval number of processing establishment",
-					"hint": "",
+					"label": "Foreign Establishment numbers ",
+					"hint": "Provide the slaughterhouse number first",
 					"required": "no",
 					"id": "processing_raw_milk",
 					"name": "processing_raw_milk",
