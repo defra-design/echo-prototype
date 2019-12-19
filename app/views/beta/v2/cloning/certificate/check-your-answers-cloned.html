@@ -36,12 +36,34 @@ GOV.UK Prototype Kit
     background:#FFBF45;
     color: #0b0c0c;
   }
+
+  .govuk-summary-list__row-error{
+    padding-left: 15px;
+    border-left: 5px solid #d4351c;
+  }
+
 </style>
 
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-three-quarters">
+      {% if query.hasError=="yes"%}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            {% for error in data.errors %}
+
+            <li class="error-list--item"><a href="page?id={{error.page}}&next=check-your-answers-cloned&update_field=&update_answer={{data[error.name]}}" class="govuk-link  govuk-link--no-visited-state">Enter the {{error.label | lower }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+
       {% if query.alert == "cloned" %}
       <div class="defra-alert">
         <p class="govuk-body govuk-!-margin-bottom-0"><span class="govuk-!-font-weight-bold">Successfully {% if data.copy_as_new %}copied{% else %}cloned{% endif%}</span> application 232380923400</p>
@@ -50,18 +72,20 @@ GOV.UK Prototype Kit
       <h1 class="govuk-heading-xl">
         Review and submit your {{db.certificate_code or "6969EHC"}} application
       </h1>
+      {% if query.hasError!="yes"%}
       <div id="clone-required-list" class="defra-alert defra-alert--warning ">
         <h3 class="govuk-heading-s govuk-!-margin-bottom-2">There are <span class="clone-required-count">5</span> required questions to complete before submitting</h3>
         <ul class="govuk-list">
           {% for task in db.pages %}
-          {% for field in task.content.fields %}
+            {% for field in task.content.fields %}
             {% if field.required == "yes" and not field.default and not (data[field.name] or data[field.name+'_day'])%}
-            <li class="clone-required-answers"><a href="page?id={{task.page}}&next=check-your-answers-cloned&update_field=&update_answer={{data[field.name]}}" class="govuk-link  govuk-link--no-visited-state">{{field.label}}</a></li>
+              <li class="clone-required-answers"><a href="page?id={{task.page}}&next=check-your-answers-cloned&update_field=&update_answer={{data[field.name]}}" class="govuk-link  govuk-link--no-visited-state">{{field.label}}</a></li>
             {% endif %}
-          {% endfor %}
+            {% endfor %}
           {% endfor %}
         </ul>
       </div>
+      {% endif %}
       <dl class="govuk-summary-list govuk- !-margin-bottom-9 govuk-summary-list__m">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -146,7 +170,7 @@ GOV.UK Prototype Kit
         {% for field in task.content.fields %}
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key{% if query.hasError and field.label in data.errors_list and (not data[field.name] or not data[field.name+'_day'])%} govuk-summary-list__row-error{% endif %}">
             {{field.label}}
           </dt>
           <dd class="govuk-summary-list__value">
@@ -156,8 +180,12 @@ GOV.UK Prototype Kit
             {{field.default}}
             {% elseif data[field.name+'_day'] %}
             {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
-            {% else %}
+            {% elseif not query.hasError %}
             <strong class="govuk-tag govuk-tag--required" id="eligibility-completed">Required</strong>
+            {% elseif query.hasError %}
+            <span id="consignor-name-error" class="govuk-error-message govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Error:</span> Enter the {{field.label | lower}}
+            </span>
             {% endif %}
             {% else %}
             {{data[field.name] or field.default}}
@@ -198,11 +226,13 @@ GOV.UK Prototype Kit
 
 
             {% if field.type=="date"%}
-              {% if field.default and not data[field.name+'_day'] %}
-                {{field.default}}
-              {% elseif data[field.name+'_day'] %}
-              {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
-              {% endif %}
+            {% if field.default and not data[field.name+'_day'] %}
+            {{field.default}}
+            {% elseif data[field.name+'_day'] %}
+            {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
+            {% elseif not query.hasError %}
+            <strong class="govuk-tag govuk-tag--required" id="eligibility-completed">Required</strong>
+            {% endif %}
             <!-- updated with cloning storey -->
 
 
@@ -276,7 +306,7 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <div>
-        <form action="review" method="POST">
+        <form method="POST">
           <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
           <input type="hidden" name="applicationFormStatus" value="">
           <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue" data-qa-id="Button-Continue">
@@ -292,11 +322,11 @@ GOV.UK Prototype Kit
     var required = $('.clone-required-answers') || 0
     console.log(required.length);
     $('.clone-required-count').text(required.length)
-    if(required.length == 0){
+    if (required.length == 0) {
       $("#clone-required-list").removeClass('defra-alert--warning')
       $("#clone-required-list h3").text("You have completed all required questions").addClass("govuk-!-margin-bottom-0").removeClass("govuk-!-margin-bottom-2")
       $("#clone-required-list .govuk-list").hide()
     }
-});
+  });
 </script>
 {% endblock %}

@@ -146,9 +146,9 @@ GOV.UK Prototype Kit
               {% set next_page = task.content.next %}
               {% endif %}
                  {% if task.content.product_page == 'yes' %}
-                 <a href="product-list?id={{task.page}}&products=" class="govuk-link">
+                  <a href="product-list?id={{task.page}}" class="govuk-l ink">
                  {% else%}
-              <a href="{% if task.title!='Supporting documents' %}page_2?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
                 {% endif %}
                 {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
               </a>

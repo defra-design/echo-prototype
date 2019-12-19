@@ -90,6 +90,31 @@ module.exports = function(router) {
     }
 
   })
+  router.post('/'+base_url+'*/certificate/check-your-answers-cloned', function(req, res) {
+      var hasError = false
+      req.session.data.errors = []
+      req.session.data.errors_list =[]
+      var pages = getDB(req.session.database).data.pages
+      for(var i=0;i < pages.length;i++){
+          for(var j=0;j < pages[i].content.fields.length;j++ ) {
+            if( pages[i].content.fields[j].required && pages[i].content.fields[j].required == "yes" && pages[i].content.fields[j].default =="" ){
+              hasError = true;
+              var section = {"page": pages[i].page, "name":pages[i].content.fields[j].name,"label":pages[i].content.fields[j].label}
+              req.session.data.errors.push(section);
+              req.session.data.errors_list.push(pages[i].content.fields[j].label)
+            }
+        }
+      }
+      if(hasError){
+        res.redirect(301, '/' + base_url +req.params[0]+'/certificate/check-your-answers-cloned?hasError=yes');
+      }else{
+        res.redirect(301, '/' + base_url +req.params[0]+'/certificate/review');
+      }
+        console.log("this is working")
+
+
+
+  })
 
   router.get('/'+base_url+'*/certificate/choose-certificate', function(req, res) {
     res.render(base_url+req.params[0]+'/certificate/choose-certificate', {

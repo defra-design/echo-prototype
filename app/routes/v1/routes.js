@@ -154,7 +154,6 @@ function updateProduct(id,arr,page,post){
 }
 router.post('/'+base_url+'*/certificate/page', function(req, res, next) {
   var query = ""
-
   if(req.query.product_page){
     req.session.data.products = req.session.data.products || []
     var product = findPage(getDB(req.session.data.database).data.pages,req.query.id)

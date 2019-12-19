@@ -42,26 +42,9 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-three-quarters">
-      {% if query.alert == "cloned" %}
-      <div class="defra-alert">
-        <p class="govuk-body govuk-!-margin-bottom-0"><span class="govuk-!-font-weight-bold">Successfully {% if data.copy_as_new %}copied{% else %}cloned{% endif%}</span> application 232380923400.</p>
-      </div>
-      {% endif %}
       <h1 class="govuk-heading-xl">
         Review and submit your {{db.certificate_code or "6969EHC"}} application
       </h1>
-      <div id="clone-required-list" class="defra-alert defra-alert--warning ">
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><span class="clone-required-count">5</span> required questions to complete before submitting</h3>
-        <ul class="govuk-list">
-          {% for task in db.pages %}
-          {% for field in task.content.fields %}
-            {% if field.required == "yes" and not field.default and not (data[field.name] or data[field.name+'_day'])%}
-            <li class="clone-required-answers"><a href="page?id={{task.page}}&next=check-your-answers-cloned&update_field=&update_answer={{data[field.name]}}" class="govuk-link  govuk-link--no-visited-state">{{field.label}}</a></li>
-            {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </ul>
-      </div>
       <dl class="govuk-summary-list govuk- !-margin-bottom-9 govuk-summary-list__m">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -80,7 +63,7 @@ GOV.UK Prototype Kit
           </dt>
           <dd class="govuk-summary-list__value">
             {{data.reference_num or "AUS-CA9328802-N"}}
-            {% if data.update_field == field.name and data.update_answer != ((data[field.name] or field.default))%}
+            {% if data[field.name] and data[field.name] != field.default%}
             <br>
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Updated</strong>
             {% endif%}
@@ -157,7 +140,7 @@ GOV.UK Prototype Kit
             {% elseif data[field.name+'_day'] %}
             {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
             {% else %}
-            <strong class="govuk-tag govuk-tag--required" id="eligibility-completed">Required</strong>
+
             {% endif %}
             {% else %}
             {{data[field.name] or field.default}}

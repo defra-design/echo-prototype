@@ -15,8 +15,8 @@ module.exports = function(router) {
   const version = 'beta/v2'
   const base_url = version + "/"
   const file_url = version + "/core"
-  var database = "ehc3987"
-  const certificate= "3987EHC"
+  var database = "ehc8327"
+  const certificate= "8327EHC"
   const db = []
   var normalizedPath = require("path").join(__dirname, "../../data/certificates");
   fs.readdirSync(normalizedPath).forEach(function(file) {
@@ -127,38 +127,6 @@ router.get('/'+base_url+'*/select-certificate', function(req, res) {
     }
     res.send(html);
   })
-})
-router.get('/'+base_url+'*/certificate/page-2', function(req, res) {
-  var id =  parseInt(req.query.id) || 0;
-  res.render(base_url+req.params[0]+'/certificate/page-2', {
-    "query": req.query,
-    "page":findPage(getDB(req.session.database).data.pages, id)
-  }, function(err, html) {
-    if (err) {
-      if (err.message.indexOf('template not found') !== -1) {
-        console.log("Could not find "+ base_url+req.params[0]+'/certificate/page' +": Loading from main folder")
-        return res.render(file_url + '/certificate/page-2',{"query": req.query,"page":findPage(getDB(req.session.database).data.pages, id)});
-      }
-      throw err;
-    }
-    res.send(html);
-  })
-})
-
-router.post('/'+base_url+'*/certificate/page-2', function(req, res, next) {
-  console.log("working!")
-    req.session.data.horses = req.session.data.horses || []
-    var horse = findPage(getDB(req.session.database).data.pages,req.query.id)
-    console.log(req.body)
-    if(req.query.edit){
-      tools.updateProduct(req.query.horse,req.session.data.horses,horse,req.body)
-    }else{
-      tools.addProduct(req.session.data.horses,horse,req.body)
-    }
-    req.session.data.completed[req.query.id] = req.query.id
-
-    console.log(req.session.data.horses)
-    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-progress');
 })
 
 router.post('/'+base_url+'*/certificate/page', function(req, res, next) {
