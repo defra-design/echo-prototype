@@ -15,8 +15,8 @@ module.exports = function(router) {
   const version = 'beta/v2'
   const base_url = version + "/"
   const file_url = version + "/core"
-  var database = "ehc8327"
-  const certificate= "8327EHC"
+  var database = "ehc3987"
+  const certificate= "3987EHC"
   const db = []
   var normalizedPath = require("path").join(__dirname, "../../data/certificates");
   fs.readdirSync(normalizedPath).forEach(function(file) {

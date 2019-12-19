@@ -1,0 +1,241 @@
+{
+	"certificate_code": "3987EHC",
+	"version": "1",
+	"printable": "no",
+	"destination": "Australia",
+	"certificate_name": "Export dairy and dairy products to Australia",
+	"commodities": [{
+		"group": "Dairy",
+		"options": [{
+			"title": "Bovine",
+			"name": "Bovine"
+		}, {
+			"title": "Caprine",
+			"name": "Caprine"
+		}, {
+			"title": "Ovine",
+			"name": "Ovine"
+		}, {
+			"title": "Mixed",
+			"name": "Mixed"
+		}]
+	}],
+	"pages": [{
+			"page": 1,
+			"title": "Identification of animal",
+        "repeatable":"yes",
+			"content": {
+				"header": "Identification of animal",
+				"caption": "",
+				"paragraph": "If an import permit has been issued to you, enter the details below.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "What is the name of the animal? (optional) ",
+						"hint": "",
+						"required": "no",
+						"id": "import-code-name",
+						"name": "import_code_name",
+						"allow": "past",
+						"default": "003453232"
+					},
+					{
+						"type": "date",
+						"label": "What is the breed of the animal? (optional)",
+						"hint": "",
+						"required": "no",
+						"id": "permit_date",
+						"name": "permit_date",
+						"allow": "past",
+						"default": "01/02/2020"
+					},
+                    {
+                        "type": "text",
+                        "label": "How old is the animal? (optional) ",
+                        "hint": "",
+                        "required": "no",
+                        "id": "import-code",
+                        "name": "import_code",
+                        "allow": "past",
+                        "default": "003453232"
+                    },
+                    {
+                        "type": "text",
+                        "label": "What colour is the animal? (optional) ",
+                        "hint": "",
+                        "required": "no",
+                        "id": "import-code",
+                        "name": "import_code",
+                        "allow": "past",
+                        "default": "003453232"
+                    },
+                    {
+                        "type": "text",
+                        "label": "What sex is the animal? (optional)",
+                        "hint": "",
+                        "required": "no",
+                        "id": "import-code",
+                        "name": "import_code",
+                        "allow": "past",
+                        "default": "003453232"
+                    }
+				]
+			}
+		},
+		{
+			"page": 2,
+			"title": "Origin of the animal",
+			"content": {
+				"header": "Origin of the animal",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"product_max": "5",
+				"fields": [{
+						"type": "text",
+						"label": "What is the name and address of the exporter?",
+						"hint": "",
+						"required": "no",
+						"id": "product-species",
+						"name": "product_species",
+						"default": "Bovine"
+					},
+					{
+						"type": "text",
+						"label": "Where was the animal examined? (optional)",
+						"hint": "",
+						"required": "no",
+						"id": "product_country_origin",
+						"name": "product_country_origin",
+						"default": "France"
+					},
+                    {
+                        "type": "text",
+                        "label": "What is the owner's name and address? (optional)",
+                        "hint": "",
+                        "required": "no",
+                        "id": "product-species",
+                        "name": "product_species",
+                        "default": "Bovine"
+                    }
+				]
+			}
+		}, {
+			"page": 3,
+			"title": "Destination of the animal",
+			"content": {
+				"header": "Destination of the animal",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "What is the name and address of the consignee? (optional)",
+					"hint": "The consignee is the receiver of the consignment",
+					"required": "no",
+					"id": "processing_raw_milk",
+					"name": "processing_raw_milk",
+					"rows": 4,
+					"default": "ABC limited, France SA, Paris 039432. Registration number - FR3945-2342"
+				}]
+			}
+		},
+		{
+			"page": 4,
+			"title": "Means of transport",
+			"content": {
+				"header": "Means of transport",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "What is the means of transportation? (optional)",
+					"hint": "Enter the method of travel and the identification of the transport. e.g. Airplane ZZ1234",
+					"required": "no",
+					"id": "processing_export_product",
+					"name": "processing_export_product",
+					"rows": 4,
+					"default": "ABC limited UK, Wendsbury, BM1 3XE (UK.HD.323.323)"
+				}]
+			}
+		},
+
+
+
+
+
+		{
+			"page": "supporting-documents",
+			"title": "Supporting documents (optional)",
+			"optional": "yes",
+			"content": {
+				"fields": []
+			}
+		},
+
+
+        {
+			"page": 12,
+			"exa": "yes",
+			"title": "Origin addresses",
+			"content": {
+				"header": "Origin addresses",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "What is the name of the exporter?",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "certificate_date",
+					"name": "certificate_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
+		}, {
+			"page": 13,
+			"exa": "yes",
+			"title": "EU Transit",
+			"content": {
+				"header": "EU Transit",
+				"caption": "",
+                "paragraph": "Will the consignment transit the European Union and require an Intra Trade Animal Health Certificate?",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Exporter name",
+					"hint": "",
+					"required": "yes",
+					"id": "eu_transit",
+					"name": "eu_transit",
+					"default": "ABC ltd"
+				}]
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+	]
+}
