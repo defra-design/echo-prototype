@@ -64,7 +64,7 @@ findPage: function(arr,id){
   }
   return false;
 },
-getDB: function(id){
+getDB: function(id,db){
 
   for (var i = 0; i < db.length; i++) {
     if (db[i].id == id) {

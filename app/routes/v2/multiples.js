@@ -10,8 +10,6 @@ module.exports = function(router) {
   const version = 'beta/v2/multiples'
   const base_url = version + "/"
   const file_url = version + "/core"
-  var database = "ehc3987"
-  const certificate= "3987EHC"
   const db = []
   var normalizedPath = require("path").join(__dirname, "../../data/certificates");
   fs.readdirSync(normalizedPath).forEach(function(file) {
@@ -88,6 +86,8 @@ router.get('/'+base_url+'*/start', function(req, res) {
 router.get('/'+base_url+'*/certificate/check-your-*', function(req, res) {
   console.log("redering a check your .. page")
   console.log("Certificate is : "+ req.session.db.certificate_code)
+  req.session.database='ehc3987'
+  req.session.db = getDB(req.session.data.database).data
   res.render(base_url +req.params[0]+ '/certificate/check-your-'+req.params[1], {
     "query": req.query,
     "db": req.session.db

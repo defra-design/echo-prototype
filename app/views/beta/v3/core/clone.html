@@ -6,67 +6,83 @@
 {% endblock %}
 
 {% block beforeContent %}
-<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 {% endblock%}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <div id="messageInfo" class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <span class="govuk-warning-text__assistive">Warning</span>
-          <strong class="govuk-warning-text__text">
-            <h1 id="message_heading">
-              Are you sure you want to clone this
-              application?
-            </h1>
-          </strong>
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Are you sure you want to {% if data.copy_as_new %}copy{% else %}clone{% endif%} this application?
+        </h1>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Application
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{query.application or 1651966024771}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reference
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{query.reference_num or "EAU3942038"}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      EHC
+    </dt>
+    <dd class="govuk-summary-list__value">
+      6969EHC (version 2)
+      <br>
+      Export dairy and dairy products to Australia
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Destination
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Australia
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Exporter
+    </dt>
+    <dd class="govuk-summary-list__value">
+      ABC COMPANY LTD
+    </dd>
+  </div>
+</dl>
+<form  method="post" novalidate>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="application_type_clone" name="application_type" type="radio" value="clone">
+          <label class="govuk-label govuk-radios__label" for="application_type_clone">
+            Yes, {% if data.copy_as_new %}copy{% else %}clone{% endif%} this application
+          </label>
         </div>
-        <div class="margin-top-30">
-          <p class="govuk-body" lang="en">
-            The cloned application will be #<span id="clonedApplicationFormId">1651966026841</span>. This will appear at the top of your dashboard.
-          </p>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="application_type_new" name="application_type" type="radio" value="new">
+          <label class="govuk-label govuk-radios__label" for="application_type_new">
+            No
+          </label>
         </div>
-        <div>
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header">
-                Application
-              </th>
-              <th class="govuk-table__header">EHC</th>
-              <th class="govuk-table__header">Commodity</th>
-              <th class="govuk-table__header">Destination</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            <tr class="govuk-table__row">
-              <td id="1651966024771-appRef" class="govuk-table__cell applicationRef-column" scope="row">
-                1651966024771
-              </td>
-              <td id="1651966024771-ehc" class="govuk-table__cell" scope="row">
-                8327EHC
-              </td>
-              <td id="1651966024771-commodity" class="govuk-table__cell commodity-column" scope="row">
-                Hides and Skins
-              </td>
-              <td id="1651966024771-destination" class="govuk-table__cell" scope="row">
-                Austria
-              </td>
-            </tr>
-            </tbody>
-          </table>        </div>
       </div>
-
-      <div class="govuk-grid-column-full">
-        <form class="review-form" action="/protected/application/1651966026841/clone" method="POST">
-          <input type="hidden" name="crumb_csrf_token" value="Bbvbk_P6oCpENC6f578b-j1rdxKXTLXfJwjJuG5MfMl">
-          <a href="dashboard?cloned=yes" class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue">Continue</a>
-        </form>
-        <a id="Link-cancelAndGoBack" class="govuk-link" href="/protected/dashboard">Cancel and go
-          back</a>
+    </fieldset>
+  </div>
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+</form>
       </div>
     </div>
 
