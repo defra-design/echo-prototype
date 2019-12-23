@@ -46,5 +46,31 @@ addProduct :function(arr,page,post){
     p[f[i].name]=v
   }
   arr[id]=p
+},
+ isDupucate: function(arr,name){
+  for (var i = 0; i < arr.length; i++) {
+
+    if (arr[i].name == name) {
+      return true;
+    }
+  }
+  return false;
+},
+findPage: function(arr,id){
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].page == id) {
+      return arr[i];
+    }
+  }
+  return false;
+},
+getDB: function(id){
+
+  for (var i = 0; i < db.length; i++) {
+    if (db[i].id == id) {
+      return db[i];
+    }
+  }
+  return false;
 }
 }
