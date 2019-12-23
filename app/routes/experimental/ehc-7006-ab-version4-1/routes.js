@@ -7,7 +7,7 @@ module.exports = function(router) {
 
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'ehc-7006-ab-version4-1'
+  const version = 'experimental/ehc-7006-ab-version4-1'
   const base_url = version + "/"
   function countProperties (obj) {
       var count = 0;

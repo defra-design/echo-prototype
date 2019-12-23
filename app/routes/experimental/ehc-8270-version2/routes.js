@@ -1,6 +1,6 @@
 module.exports = function(router) {
   // Load helper functions
-  var tools = require('../tools.js')
+  var tools = require('../../tools.js')
 
 
   // ADD extra routing here if needed.
@@ -8,7 +8,7 @@ module.exports = function(router) {
 
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'ehc-8270-version2'
+  const version = 'experimental/ehc-8270-version2'
   const base_url = version + "/"
   const database = "ehc8270"
 

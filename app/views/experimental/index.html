@@ -1,0 +1,475 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <style>.app-tabs {
+            border: 1px solid #b58840;
+        }
+        .app-tabs:hover {
+            border: 1px solid #1d70b8	;
+        }
+       </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Alpha - Exporter journey prototype
+        <span class="govuk-caption-xl">Designed with The GOV.UK Prototype Kit {{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+
+      <div class="app-tabs">
+
+          <p class="govuk-body">
+              <a href="private-beta/index" class="govuk-heading-m">Private beta</a>
+          </p>
+
+      </div>
+
+
+      <div class="app-tabs">
+
+          <p class="govuk-body">
+              Sprint 1
+              <a href="ehc-7006-ab-version-e/new-dashboard-tab-search-sprint-one" class="govuk-heading-m">Dashboard</a>
+          </p>
+      </div>
+
+
+      <div class="app-tabs">
+
+      <p class="govuk-body">
+          Experimental version for user research
+
+     </p>
+
+
+          <ul class="govuk-list govuk-list--bullet">
+
+
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-7006-ab-version-e/new-dashboard-tab-search" class=" ">Dashboard (current statuses) </a>
+
+              </li>
+
+
+              <li class="govuk-!-padding-bottom-3">
+              <a href="ehc-7006-ab-version-e/new-dashboard-tab-search-statuses" class=" ">Dashboard with new statuses - all blue tags  </a>
+
+          </li>
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg" class=" ">Dashboard with new statuses - all bold text tags  </a>
+
+              </li>
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-7006-ab-version-e/new-dashboard-tab-search-statuses-no-bg-not-bold" class=" ">Dashboard with new statuses - all normal text tags  </a>
+
+              </li>    <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-7006-ab-version-e/new-dashboard-new-statuses" class=" ">Dashboard with new statuses - default sync with the certifier </a>
+
+              </li>
+ <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-7006-ab-version-e/dashboard-new-colour-statuses" class=" ">Dashboard with new statuses - ACCESSIBLE  </a>
+
+              </li>
+
+              </li>
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-7006-ab-version-e/dashboard-new-colour-statuses-v1" class=" ">Dashboard with new statuses - complete with certifier  </a>
+
+              </li>
+
+
+              </ul>
+
+
+          <p class="govuk-body">
+           Dashboard - proof of concept
+
+          </p>
+          <ul>
+
+          </li>
+          <li class="govuk-!-padding-bottom-3">
+              <a href="ehc-7006-ab-version-e/dashboard-3-tabs" class=" ">Dashboard with 3 tabs  </a>
+
+          </li>
+
+
+          </ul>
+
+</div>
+
+      <hr>
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Certificates</h2>
+      <div class="app-tabs">
+
+          <h2 class="govuk-heading-m">EHC-3987</h2>
+
+
+          <ul class="govuk-list govuk-list--bullet">
+
+
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-3987/">
+                      EHC-3987
+                  </a>
+
+              </li>
+
+          </ul>
+
+          <p>Export male horses to the USA: certificate 3987</p>
+
+      </div>
+
+
+      <div class="app-tabs">
+
+          <h2 class="govuk-heading-m">EHC-3926</h2>
+
+
+          <ul class="govuk-list govuk-list--bullet">
+
+
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-8327/index">
+                      EHC-8327
+                  </a>
+
+              </li>
+
+          </ul>
+
+          <p>Export hides and skins certificate 8327</p>
+
+      </div>
+
+
+
+      <div class="app-tabs">
+
+          <h2 class="govuk-heading-m">EHC-3926</h2>
+
+
+          <ul class="govuk-list govuk-list--bullet">
+
+
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-3926/">
+                      EHC-3926
+                  </a>
+
+              </li>
+
+          </ul>
+
+          <p>Export cats and dogs to the United Arab Emirates (UAE): certificate 3926</p>
+
+      </div>
+
+
+      <div class="app-tabs">
+
+          <h2 class="govuk-heading-m">EHC-6969</h2>
+
+
+          <ul class="govuk-list govuk-list--bullet">
+
+
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-6969/">
+                      EHC-6969
+                  </a>
+
+              </li>
+
+          </ul>
+
+          <p>Export dairy and dairy products to Australia: certificate 6969</p>
+
+      </div>
+
+
+
+      <div class="app-tabs">
+
+          <h2 class="govuk-heading-m">EHC-8270</h2>
+
+
+          <ul class="govuk-list govuk-list--bullet">
+
+
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-8270/">
+                      EHC-8270
+                  </a>
+
+              </li>
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-8270-version2/index">
+                      EHC-8270 version2
+                  </a>
+
+              </li>
+
+          </ul>
+
+          <p>Export fishery products intended for human consumption to the EU: certificate 8270</p>
+
+      </div>
+
+
+
+
+
+      <div class="app-tabs">
+
+        <h2 class="govuk-heading-m">EHC-7006 AB testing</h2>
+
+
+        <ul class="govuk-list govuk-list--bullet">
+
+
+
+            <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006/">
+                    EHC-7006 as is
+                </a>
+
+            </li>
+
+
+
+
+            <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006-ab/">
+                    EHC-7006 version B
+                </a>
+
+            </li>
+
+
+
+
+            <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006-ab-version1/">
+                    EHC-7006 version C
+                </a>
+            </li>
+
+
+            <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006-ab-version2/">
+                    EHC-7006 version D
+                </a>
+            </li>
+
+
+
+            <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006-ab-version3/">
+                    EHC-7006 version D - September
+                </a>
+            </li>
+
+
+            <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006-ab-version4/index">
+                    EHC-7006 version D - October
+                </a>
+            </li>
+
+
+            <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006-ab-version4-1/index">
+                    EHC-7006 version D - Explicit
+                </a>
+            </li>
+        <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006-ab-version4-2/index">
+                    EHC-7006 version D - Implicit
+                </a>
+            </li>
+
+
+
+            <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-7006-ab-version-e/index">
+                    EHC-7006 version E
+                </a>
+            </li>
+
+
+
+
+
+        </ul>
+
+          <p>Export pig meat from Great Britain to China: certificate 7006GB</p>
+          <p><a href="https://defra.sharepoint.com/sites/def-ddts-euexitpmo/Shared%20Documents/Forms/AllItems.aspx?originalPath=aHR0cHM6Ly9kZWZyYS5zaGFyZXBvaW50LmNvbS86Zjovcy9kZWYtZGR0cy1ldWV4aXRwbW8vRXRIV0ozdGg0RGRNcW5LeG1OZmhHUW9CbVYzRnBOWmctdUsyR2M4WUNJNXdtZz9ydGltZT1mUXpsUDB4RzEwZw&viewid=fd2a2433%2D225c%2D4ee1%2D9ffb%2D667f6d1c9dba&id=%2Fsites%2Fdef%2Dddts%2Deuexitpmo%2FShared%20Documents%2FProjects%2FInternational%20Trade%2FExports%2F010%20User%20Research%2FBeta%2FUR%20findings%20%28Exporters%29%2F7006%20vD%20test%20videos"> Explore user research - form D</a> - October 2019</p>
+
+      </div>
+
+
+        <div class="app-tabs">
+
+            <h2 class="govuk-heading-m">Exporter E2E</h2>
+
+            <ul class="govuk-list govuk-list--bullet" style="margin-bottom: -10px;">
+
+
+
+                <li>
+                    <a href="e2e/index">
+                        Exporter end to end journey
+                    </a>
+                </li>
+            </ul>
+
+
+            <i class="icon icon-important" style="position: relative;
+    top: 35px;left: 5px">
+                <span class="visually-hidden">Warning</span>
+            </i>
+            <p style="margin-left: 60px">Please note that E2E prototype identity registration part is provided by the IDM team and you will need to log in with:<br> <span style="font-weight: 700">username: whoareyou & password: menotyou</span></p>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="app-tabs">
+            <ul class="govuk-list govuk-list--bullet">
+
+                <h2 class="govuk-heading-m">Jira tickets</h2>
+
+
+                <li class="govuk-!-padding-bottom-3">
+                <a href="ehc-2849/">
+                    EHC-2849 repeatable questions
+                </a>
+            </li>
+
+
+                <li class=" ">
+                    <p>  EXP-4316 error management</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li class="govuk-!-padding-bottom-3">
+                    <a href="ehc-4316/">
+                      500 Error - form not available
+                    </a>  </li>
+                        <li class=" ">
+                    <a href="ehc-4316/producer-error">
+                        Producer not working Error
+                    </a>  </li>
+
+
+
+
+
+
+                        </ul>
+
+                </li>
+
+
+
+                <li class="govuk-!-padding-bottom-3">
+                    <a href="e2e/start-page">
+                        EHC-6150 start page
+                    </a>
+                </li>
+
+
+
+
+
+            </ul>
+        </div>
+
+
+        <div class="app-tabs">
+
+            <h2 class="govuk-heading-m">Form E ideas</h2>
+
+
+
+
+
+
+            <ul class="govuk-list govuk-list--bullet">
+
+
+
+                <li>
+                    <a href="form-e/dashboard">
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+      <div class="app-tabs">
+
+          <h2 class="govuk-heading-m">EHC-8249</h2>
+
+
+          <ul class="govuk-list govuk-list--bullet">
+
+
+
+              <li class="govuk-!-padding-bottom-3">
+                  <a href="ehc-8249/">
+                      EHC-8249
+                  </a>
+
+              </li>
+
+              <p>       Export live bivalve molluscs, echinoderms, tunicates and marine gastropods intended for human consumption to the EU: certificate 8249
+
+              </p>
+
+          </ul>
+
+      </div>
+
+
+
+
+
+
+
+        <h2 class="govuk-heading-m" style="margin-top: 50%">Examples and documentation</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="docs/tutorials-and-examples">Example pages and documentation</a></li>
+        <li>
+          <a href="https://design-system.service.gov.uk">
+            GOV.UK Design System
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+
+{% endblock %}

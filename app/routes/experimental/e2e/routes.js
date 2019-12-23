@@ -1,22 +1,22 @@
 module.exports = function(router) {
   // Load helper functions
-  var tools = require('../tools.js')
+  var tools = require('../../tools.js')
 
   // ADD extra routing here if needed.
   // require('./extra-stories.js')(router)
   const fs = require('fs');
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'e2e'
+  const version = 'experimental/e2e'
   const base_url = version + ""
-  const file_url = version + "/e2e"
+  const file_url = version + "experimental/e2e"
   var database = "ehc8327"
   const certificate= "8327EHC"
   const db = []
-  var normalizedPath = require("path").join(__dirname, "../../data/certificates");
+  var normalizedPath = require("path").join(__dirname, "../../../data/certificates");
   fs.readdirSync(normalizedPath).forEach(function(file) {
     // require("./routes/" + file);
-    var d = require("../../data/certificates/" + file);
+    var d = require("../../../data/certificates/" + file);
     var n = file.substring(0, file.lastIndexOf("."));
     var f = {"id":n,"data":d}
     db.push(f)
