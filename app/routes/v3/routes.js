@@ -2,7 +2,7 @@ module.exports = function(router) {
   // Load helper functions
   var tools = require('../tools.js')
 
-  // require('./cloning.js')(router)
+  require('./repeatable-questions-v3.js')(router)
   // require('./EXP-8639-update-clone-journey.js')(router)
   // require('./EXP-8648-keep-reference-number.js')(router)
   // require('./EXP-8649-invalid-clone-items.js')(router)
@@ -176,7 +176,7 @@ router.get('/'+base_url+'*/certificate/exa/your-commodity', function(req, res) {
 })
 router.get('/'+base_url+'*/certificate/product-list', function(req, res) {
   var id = req.query.id || 2;
-  console.log(req.session.data.products.length)
+  console.log("older version product list")
   var product = tools.findPage(tools.getDB(req.session.database,db).data.pages,id)
   if(req.query.delete){
     console.log("removing : "+req.query.delete)
@@ -237,7 +237,6 @@ router.post('/'+base_url+'*certificate/supporting-documents', function(req, res)
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function(req, res) {
     console.log("default get routing page for: "+base_url + req.params[0])
-
     var dir = req.params[0].split(/\/+/g);
     // Remove the main folder
     dir.shift()
