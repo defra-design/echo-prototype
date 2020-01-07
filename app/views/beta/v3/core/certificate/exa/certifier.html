@@ -11,59 +11,75 @@ GOV.UK Prototype Kit
 {% block content %}
 
 <!--start-->
-
-    <div class="govuk-form-group " id="Form-Organisation">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-heading-xl">
-            Who will certify your consignment?
-          </h1>
-        </legend>
-        <span id="Hint-CertifierOrganisation" class="govuk-hint">
-          Select the organisation that will be carrying out the certification for this application.<br>
-          This might be an Official Veterinarian (OV) or an Environmental Health Officer (EHO).
-        </span>
-      </fieldset>
-    </div>
-
-    <form name="search" action="" method="GET">
-
-        <div class="govuk-grid-row">
-          <div class="govuk-form-group">
-            <div class="govuk-grid-column-two-thirds">
-              <label class="govuk-label" for="filter">Filter by name, address, location or specialism</label>
-              <input class="govuk-input" id="filter" type="text" name="search" data-qa-id="TextField-filter" value="{{ query.search or '' }}" placeholder="">
-            </div>
-
-            <div class="govuk-grid-column-one-third">
-              <div class="govuk-label margin-top-45">
-                <button type="submit" name="name" value="" class="link-button" id="Button-Search" data-qa-id="Button-Search">
-                  Search
-                </button>
-                <a href="certifier?search=" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">
-                  Clear
-                </a>
-              </div>
-            </div>
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Who will certify this certificate?
+    </h1>
+    <p id="Hint-CertifierOrganisation" class="govuk-body">
+      Select the organisation that will be carrying out the certification for this application.
+      This might be an Official Veterinarian (OV) or an Environmental Health Officer (EHO).
+    </p>
+    <form method="GET" action="certifier">
+      <div class="search-wrapper govuk-form-group">
+        <!-- <label class="govuk-label defra-search__label govuk-!-font-weight-bold " for="search">
+          Find the organisation
+        </label> -->
+        <label for="search-reservations" class="govuk-label">
+          Search by organisation name, address or location
+        </label>
+        <div class="search-input-wrapper">
+          <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
+          <div class="search-input-submit-wrapper">
+            <button type="submit" class="search-submit">Search</button>
           </div>
         </div>
+        {% if query.search and query.search != 'no vets' %}
+        <p class="govuk-body govuk-!-margin-top-2"><a href="certifier?search=" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
+        {% endif %}
+      </div>
 
     </form>
-    {% if query.search %}
-    <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER" id="certifyingOrganisations">
-      <thead class="govuk-table__head">
+  </div>
+    </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+  {% if query.search and query.search != 'no vets' %}
+  <!-- <p class="govuk-body"><a href="certifier?search=" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">Clear search</a></p> -->
+  <p class="govuk-body">{%if query.single %}There is 1 organisation{% else %}There are 8 organisations{% endif %}  matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
+  <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER" id="certifyingOrganisations">
+    <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th class="govuk-table__header">Name</th>
         <th class="govuk-table__header">Address</th>
         <th class="govuk-table__header">Area</th>
         <th class="govuk-table__header"></th>
       </tr>
-      </thead>
-      <tbody class="govuk-table__body">
+    </thead>
+    <tbody class="govuk-table__body">
+      {% if query.single %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          ADM ACCOUNTING LIMITED DO NOT USE - Hornhouse  Crewe
+          ADM ACCOUNTING LIMITED Hornbeam House CW12 3ER
+        </td>
+        <td class="govuk-table__cell wrap">
+          Hornbeam House
+          Electra Way
+
+          Crewe
+          CW12 3ER
+        </td>
+        <td class="govuk-table__cell">
+
+        </td>
+        <td class="govuk-table__cell">
+          <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
+        </td>
+      </tr>
+      {% else %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          ADM ACCOUNTING LIMITED DO NOT USE - Hornhouse Crewe
         </td>
         <td class="govuk-table__cell wrap">
           DO NOT USE - Hornhouse
@@ -81,7 +97,7 @@ GOV.UK Prototype Kit
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          ADM ACCOUNTING LIMITED Hornbeam House  CW12 3ER
+          ADM ACCOUNTING LIMITED Hornbeam House CW12 3ER
         </td>
         <td class="govuk-table__cell wrap">
           Hornbeam House
@@ -99,7 +115,7 @@ GOV.UK Prototype Kit
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          Barnyard Dawg Electra Way  CW1 6GJ
+          Barnyard Dawg Electra Way CW1 6GJ
         </td>
         <td class="govuk-table__cell wrap">
           Electra Way
@@ -117,7 +133,7 @@ GOV.UK Prototype Kit
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          BREXIT LIMITED Brexit House  CW16GJ
+          BREXIT LIMITED Brexit House CW16GJ
         </td>
         <td class="govuk-table__cell wrap">
           Brexit House
@@ -130,12 +146,12 @@ GOV.UK Prototype Kit
           Cheshire
         </td>
         <td class="govuk-table__cell">
-<a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
+          <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
         </td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          Certifier Related Organisation Related Organisation House  CW5 8DG
+          Certifier Related Organisation Related Organisation House CW5 8DG
         </td>
         <td class="govuk-table__cell wrap">
           Related Organisation House
@@ -153,7 +169,7 @@ GOV.UK Prototype Kit
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          DEMO TEST VETS 100  aa11aa
+          DEMO TEST VETS 100 aa11aa
         </td>
         <td class="govuk-table__cell wrap">
           100
@@ -171,7 +187,7 @@ GOV.UK Prototype Kit
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          ESKKAY LIMITED 1  wd19 7pf
+          ESKKAY LIMITED 1 wd19 7pf
         </td>
         <td class="govuk-table__cell wrap">
           1
@@ -184,12 +200,12 @@ GOV.UK Prototype Kit
 
         </td>
         <td class="govuk-table__cell">
-          <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>>
+          <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
         </td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          RH Vets (Manchester) 10  CW1 2FF
+          RH Vets (Manchester) 10 CW1 2FF
         </td>
         <td class="govuk-table__cell wrap">
           10
@@ -203,13 +219,13 @@ GOV.UK Prototype Kit
         </td>
         <td class="govuk-table__cell">
           <form action="/protected/form/8270EHC/application/1721147995659/page/4/organisation-search" method="POST">
-<a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
+            <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
           </form>
         </td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          TH Vets (Northwich) 10  CW1 2FF
+          TH Vets (Northwich) 10 CW1 2FF
         </td>
         <td class="govuk-table__cell wrap">
           10
@@ -227,7 +243,7 @@ GOV.UK Prototype Kit
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">
-          TJ Vets (Barbridge) 10  CW1 2FF
+          TJ Vets (Barbridge) 10 CW1 2FF
         </td>
         <td class="govuk-table__cell wrap">
           10
@@ -243,8 +259,14 @@ GOV.UK Prototype Kit
           <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
         </td>
       </tr>
-      </tbody>
-    </table>
       {% endif %}
-      {% block chatbot %}{% include "../../../../../includes/chat.html" %}{%endblock%}
-{% endblock %}
+    </tbody>
+  </table>
+  {% elseif query.search=="no vets" %}
+  <!-- <p class="govuk-body"><a href="certifier?search=" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">Clear search</a></p> -->
+  <p class="govuk-body">0 organisations matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
+  {% endif %}
+  </div>
+  </div>
+
+  {% endblock %}

@@ -30,13 +30,8 @@
           <h1 class="govuk-heading-xl">
             Your products
           </h1>
-          {% if product.content.paragraph %}
-          <p class="govuk-body">{{product.content.paragraph}}</p>
-
-          {% else %}
           <p class="govuk-body">You can add up to 5 products to this certificate.</p>
           <p class="govuk-body">For longer product lists, attach a schedule as a <a href="exa/supporting-documents" class="govuk-link">supporting document</a> at the end of this application.</p>
-          {% endif %}
   </div>
 
   <div class="govuk-grid-column-full">
@@ -69,8 +64,10 @@
           Product {{ loop.index }}
         </th>
         <td class="govuk-table__cell" >
-            {% for question in product.content.fields %}
+          {% for question in product.content.fields %}
+          {% if loop.index <= 2 %}
           {{prod[question.name]}},
+          {% endif %}
           {% endfor %}
           <!-- <dl class="govuk-summary-list govuk-summary-list--no-border">
             {% for question in product.content.fields %}

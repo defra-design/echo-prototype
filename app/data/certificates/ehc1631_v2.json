@@ -34,21 +34,21 @@
           },
           {
             "type": "text",
-            "label": "Producgt category",
-            "hint": "For example, raw intact pork",
-            "required": "no",
-            "id": "product_category",
-            "name": "product_category",
-            "allow": "past",
-            "default": "003453232"
-          },
-          {
-            "type": "text",
             "label": "Type of meat",
             "hint": "For example, pork",
             "required": "no",
             "id": "meet_type",
             "name": "meet_type",
+            "allow": "past",
+            "default": "003453232"
+          },
+          {
+            "type": "text",
+            "label": "Product category",
+            "hint": "For example, raw intact pork",
+            "required": "no",
+            "id": "product_category",
+            "name": "product_category",
             "allow": "past",
             "default": "003453232"
           },
