@@ -8,12 +8,11 @@
 {{super()}}
 <a href="{{page.content.prev or 'javascript:history.back()'}}" class="govuk-back-link">Back</a>
 <style media="screen">
-  .govuk-summary-list {
+.govuk-summary-list {
     margin-bottom: 0;
 }
-  .govuk-summary-list__key {
+.govuk-summary-list__key {
     width: 50%;
-
 }
 @media (min-width: 40.0625em){
   .govuk-summary-list__value:last-child {
@@ -69,6 +68,7 @@
           {{prod[question.name]}},
           {% endif %}
           {% endfor %}
+          
           <!-- <dl class="govuk-summary-list govuk-summary-list--no-border">
             {% for question in product.content.fields %}
 

@@ -1,8 +1,7 @@
 .govuk-button--secondary {
-    background-color: #bfc1c3;
+    background-color: #f3f2f1;
     -webkit-box-shadow: 0 2px 0 #929191;
     box-shadow: 0 2px 0 #929191;
-        // padding: 6px;
 }
 
 .govuk-button--secondary,
@@ -14,7 +13,7 @@
 }
 
 .govuk-button--secondary:hover {
-    background-color: #dbdad9
+    background-color: #dbdad9;
 }
 
 .govuk-button--secondary:hover[disabled] {
