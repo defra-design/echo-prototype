@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<br>
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+{% endblock%}
+
+{% block content %}
+        <style>.app-tabs {
+            border: 1px solid #b58840;
+        }
+        .app-tabs:hover {
+            border: 1px solid #1d70b8	;
+        }
+       </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        EXP-8907 Cancel and replace (Exporters)
+      </h1>
+      <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8907">View Jira ticket</a></p>
+        <ul class="govuk-list">
+          <li><a href="dashboard">From dashboard</a></li>
+          <li><a href="application?application_id=100065956486&application_status=replaced&is_block=no&is_replacement=yes">Application page - Replaced</a></li>
+          <li><a href="application?has_cancelation=yes&is_block=yes&application_status=dispatched">Application page - block with cancelled application</a></li>
+          <li><a href="application?application_id=100065956486&application_status=processing&is_block=no&is_replacement=yes">Application page - Replacement</a></li>
+
+          <li>Other states</li>
+          <li><a href="application?has_cancelation=yes&is_block=yes">Application page - submitted, (no certificate number yet)</a></li>
+          <li><a href="application?has_cancelation=yes&is_block=yes">Application page - draft (extra actions)</a></li>
+    </div>
+</div>
+
+{% endblock %}
