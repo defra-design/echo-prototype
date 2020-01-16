@@ -2,6 +2,7 @@ module.exports = function(router) {
   // Load helper functions
   var tools = require('../tools.js')
 
+  require('./attach-schedule.js')(router)
   require('./repeatable-questions-v3.js')(router)
   // require('./EXP-8639-update-clone-journey.js')(router)
   // require('./EXP-8648-keep-reference-number.js')(router)

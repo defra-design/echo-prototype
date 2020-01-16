@@ -87,7 +87,9 @@ GOV.UK Prototype Kit
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="exa/certifier-confirm-address?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>
-          </dd>
+          </dd>y
+          y
+
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Delivery method
@@ -111,7 +113,6 @@ GOV.UK Prototype Kit
               {% else %}
                 {{data[field.name]}}
               {% endif %}
-
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
@@ -147,7 +148,6 @@ GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
-
         {% endfor %}
       </dl>
       {% elseif task.content.product_page=="yes" %}
