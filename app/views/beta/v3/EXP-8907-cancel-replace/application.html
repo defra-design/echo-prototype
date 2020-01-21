@@ -96,16 +96,26 @@ GOV.UK Prototype Kit
           </dd>
         </div> -->
     </dl>
-    <!-- <h2 class="govuk-heading-l">Actions </h2> -->
+
+    <!-- <p class="govuk-body">
+      {% if query.application_status == 'draft' %}
+      <a class="govuk-button govuk-!-margin-right-4" href="certificate/check-your-progress">Edit and submit</a>
+      {% endif%}
+      <a class="govuk-button govuk-button--secondary " href="clone">Clone as new application</a>
+      {% if query.application_status == 'draft' %}
+      <a class="govuk-link govuk-link--no-visited-state" href="delete">Delete application</a>
+      {% endif%}
+    </p> -->
     <ul class="govuk-list  govuk-!-margin-bottom-6">
       {% if query.application_status == 'draft' %}
-      <li><a class="govuk-button" href="certificate/check-your-progress">Edit and submit</a> &nbsp;&nbsp;<a class="govuk-button govuk-button--secondary" href="clone">Clone as new application</a><br> <a class="govuk-link govuk-link--no-visited-state" href="delete">Delete application</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="certificate/check-your-progress">Edit and submit this application</a></li>
       {% endif%}
-      <li></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="clone">Clone as new application</a></li>
       {% if query.application_status == 'draft' %}
-      <li></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="delete">Delete this application</a></li>
       {% endif%}
     </ul>
+
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -118,7 +128,7 @@ GOV.UK Prototype Kit
             <th class="govuk-table__header">Certificate number</th>
             <th class="govuk-table__header">Actual export date</th>
             <th class="govuk-table__header">Certificate status</th>
-            <th class="govuk-table__header"></th>
+            <th class="govuk-table__header">Actions</th>
           </tr>
         </thead>
         <tbody>
