@@ -28,7 +28,7 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">{% if query.is_block == "yes" or is_multiple =="yes"%}Block appication{%else%}Application{%endif%} {{query.applciation_id or '10000432423'}}
     </h1>
     {% if query.is_block == "yes" %}
-    <p class="govuk-body">This is a block application of 50 certificates</p>
+    <p class="govuk-body">This is a block application of 5 certificates</p>
     {% endif %}
     <!-- <div class="defra-alert defra-alert--info ">
         <h3 class="govuk-heading-s govuk-!-margin-bottom-2">1 certificate has been replaced </h3>
@@ -146,10 +146,8 @@ GOV.UK Prototype Kit
             </td>
             <td id="status" class="govuk-table__cell" scope="row">
               {% if not query.has_cancelation %}
-              {{ (query.application_status | upper ) or "DISPATCHED"}}
-              {% if query.application_status == "replaced" %}<br>Cancelled on 20 Dec 2019{% endif %}
-              {% else %}
-              CERTIFIED
+              {% if query.application_status == "completed"%}CERTIFIED{%else%}{{ (query.application_status | upper ) or "DISPATCHED"}}{% endif%}
+
               {% endif %}
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
