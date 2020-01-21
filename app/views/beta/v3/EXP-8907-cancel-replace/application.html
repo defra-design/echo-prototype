@@ -109,14 +109,14 @@ GOV.UK Prototype Kit
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-l">{% if query.is_block == "yes" %}5{% endif %} Certificate{% if query.is_block == "yes" or is_multiple =="yes"%}s{%endif%}</h2>
+    <h2 class="govuk-heading-l">{% if query.is_block == "yes" %}5 certificates{% else %}Certificate{% endif %} </h2>
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             {% if query.is_block == "yes" or is_multiple =="yes"%}<th class="govuk-table__header">No.</th>{% endif %}
-            <th class="govuk-table__header">Certificate Number</th>
-            <th class="govuk-table__header">Actual Export Date</th>
-            <th class="govuk-table__header">Certificate Status</th>
+            <th class="govuk-table__header">Certificate number</th>
+            <th class="govuk-table__header">Actual export date</th>
+            <th class="govuk-table__header">Certificate status</th>
             <th class="govuk-table__header">Actions</th>
           </tr>
         </thead>
@@ -152,7 +152,7 @@ GOV.UK Prototype Kit
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" target="_blank">
-                View Certificate
+                View certificate
               </a>
             </td>
           </tr>
@@ -167,7 +167,7 @@ GOV.UK Prototype Kit
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" target="_blank">
-                View Certificate
+                View certificate
               </a>
             </td>
           </tr>
@@ -198,7 +198,7 @@ GOV.UK Prototype Kit
             <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="certificateActions govuk-table__cell" scope="row">
-              <a id="view_cert_19/2/022135" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c3ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View Certificate</a>
+              <a id="view_cert_19/2/022135" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c3ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View certificate</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -210,7 +210,7 @@ GOV.UK Prototype Kit
             <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="certificateActions govuk-table__cell" scope="row">
-              <a id="view_cert_19/2/022136" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c4ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View Certificate</a>
+              <a id="view_cert_19/2/022136" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c4ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View certificate</a>
             </td>
           </tr>
           {% endif %}
@@ -218,7 +218,7 @@ GOV.UK Prototype Kit
       </table>
   </div>
   <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body govuk-hint">{% if query.application_status=="dispatched" or query.is_block == 'yes' %}We do not track when a certificate has been delivered to the certifer. <br>{% endif %}{% if query.application_status=="completed" or query.is_block == 'yes' %}To request a certificate replacement please contact the certifier.{% endif %}</p>
+      <p class="govuk-body govuk-hint">{% if query.application_status=="completed" or query.is_block == 'yes' %}If you need to cancel and replace a certificate, contact your certifier to make the request.{% endif %}</p>
     </div>
 </div>
 {% endblock %}
