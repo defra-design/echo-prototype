@@ -96,13 +96,14 @@ GOV.UK Prototype Kit
           </dd>
         </div> -->
     </dl>
+    <!-- <h2 class="govuk-heading-l">Actions </h2> -->
     <ul class="govuk-list  govuk-!-margin-bottom-6">
       {% if query.application_status == 'draft' %}
-      <li><a class="govuk-link" href="certificate/check-your-progress">Edit and submit this application</a></li>
+      <li><a class="govuk-button" href="certificate/check-your-progress">Edit and submit</a> &nbsp;&nbsp;<a class="govuk-button govuk-button--secondary" href="clone">Clone as new application</a><br> <a class="govuk-link govuk-link--no-visited-state" href="delete">Delete application</a></li>
       {% endif%}
-      <li><a class="govuk-link" href="clone">Clone as new application</a></li>
+      <li></li>
       {% if query.application_status == 'draft' %}
-      <li><a class="govuk-link" href="delete">Delete this application</a></li>
+      <li></li>
       {% endif%}
     </ul>
   </div>
@@ -117,7 +118,7 @@ GOV.UK Prototype Kit
             <th class="govuk-table__header">Certificate number</th>
             <th class="govuk-table__header">Actual export date</th>
             <th class="govuk-table__header">Certificate status</th>
-            <th class="govuk-table__header">Actions</th>
+            <th class="govuk-table__header"></th>
           </tr>
         </thead>
         <tbody>
@@ -152,7 +153,7 @@ GOV.UK Prototype Kit
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" target="_blank">
-                View certificate
+                 {% if query.application_status =="draft"%}Preview certificate{%else%}View certificate{% endif%}
               </a>
             </td>
           </tr>
