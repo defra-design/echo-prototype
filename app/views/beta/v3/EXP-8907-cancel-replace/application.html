@@ -25,7 +25,7 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">{% if query.is_block == "yes" or is_multiple =="yes"%}Block appication{%else%}Application{%endif%} {{query.applciation_id or '10000432423'}}
+    <h1 class="govuk-heading-xl">{% if query.is_block == "yes" or is_multiple =="yes"%}Block application{%else%}Application{%endif%} {{query.applciation_id or '10000432423'}}
     </h1>
     {% if query.is_block == "yes" %}
     <p class="govuk-body">This is a block application of 5 certificates</p>
@@ -50,7 +50,12 @@ GOV.UK Prototype Kit
           Your reference
         </dt>
         <dd class="govuk-summary-list__value">
-          {{query.reference_num or "EAU3942038"}}
+          {% if query.reference_num %}
+          {{query.reference_num}}
+          {% else %}
+          <span class="govuk-hint">Not entered</span>
+          {% endif %}
+
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -84,7 +89,13 @@ GOV.UK Prototype Kit
           Certifier
         </dt>
         <dd class="govuk-summary-list__value">
-          ABC Vets LTD
+          {% if query.application_status != "draft" %}
+          XYZ CERTIFIERS LTD
+          {% else %}
+          <span class="govuk-hint">Not entered</span>
+          {% endif %}
+
+
         </dd>
       </div>
       <!-- <div class="govuk-summary-list__row">

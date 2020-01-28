@@ -38,7 +38,17 @@ module.exports = function(router) {
   }
 
   router.post('/'+base_url+'*/certificate/add-new-certificate', function(req, res) {
-    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/new_ehc?new=yes');
+    if(req.body.clone_as_new == "yes"){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/repeatable-page');
+
+    }else{
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/new_ehc?new=yes');
+
+    }
+
+  })
+  router.post('/'+base_url+'*/certificate/repeatable-page', function(req, res) {
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-answers-ehc')
   })
   router.post('/'+base_url+'*/certificate/check-your-answers-ehc', function(req, res) {
     // console.log("POST:")
