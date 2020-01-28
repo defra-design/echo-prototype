@@ -33,5 +33,6 @@ module.exports = {
     "database": "ehc8327",
     "forms" : form,
     "printable": "yes",
-    "originals": {}
+    "originals": {},
+    "added_certificates" : []
 }

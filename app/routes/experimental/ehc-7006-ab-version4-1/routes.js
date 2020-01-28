@@ -7,17 +7,15 @@ module.exports = function(router) {
 
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'experimental/ehc-7006-ab-version4-1'
+  const version = 'ehc-7006-ab-version4-1'
   const base_url = version + "/"
   function countProperties (obj) {
       var count = 0;
-
       for (var property in obj) {
           if (Object.prototype.hasOwnProperty.call(obj, property)) {
               count++;
           }
       }
-
       return count;
   }
   function getBlankFields(obj){

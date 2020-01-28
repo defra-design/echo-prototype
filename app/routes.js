@@ -12,4 +12,5 @@ require('./routes/experimental/ehc-8270-version2/routes.js')(router);
 require('./routes/v1/routes.js')(router);
 require('./routes/v2/routes.js')(router);
 require('./routes/v3/routes.js')(router);
+require('./routes/v4/routes.js')(router);
 module.exports = router

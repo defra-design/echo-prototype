@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      Your certificates to be submited on this application
+    </h1>
+
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <table class="govuk-table">
+  <caption class="govuk-table__caption">Certificate{% if (data.added_certificates | length) > 1 %}s{% endif %}</caption>
+    <tbody class="govuk-table__body">
+      {% for certificate in data.added_certificates %}
+
+  <!-- <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class"></th>
+      <th scope="col" class="govuk-table__header app-custom-class">Certificate</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Actions</th>
+    </tr>
+  </thead> -->
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{loop.index}}. EHC6868 certificate</th>
+      <td class="govuk-table__cell">EHC6868</td>
+      <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">View</a></td>
+    </tr>
+      {% endfor%}
+  </tbody>
+</table>
+<p class="govuk-body"><a href="add-new-certificate">Add another certificate</a></p>
+<form method="post">
+      <p class="govuk-body"><a href="check-your-progress" class="govuk-button">Continue</a></p>
+  </form>
+    </div>
+  </div>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}

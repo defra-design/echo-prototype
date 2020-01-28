@@ -23,7 +23,7 @@
 	"pages": [{
 			"page": 1,
 			"title": "Identification of animal",
-        "repeatable":"yes",
+      "repeatable":"yes",
 			"content": {
 				"header": "Identification of animal",
 				"caption": "",
@@ -178,7 +178,16 @@
 			"title": "Supporting documents (optional)",
 			"optional": "yes",
 			"content": {
-				"fields": []
+				"fields": [{
+					"type": "textarea",
+					"label": "Not used",
+					"hint": "",
+					"required": "no",
+					"id": "processing_export_product",
+					"name": "processing_export_product",
+					"rows": 4,
+					"default": "ABC limited UK, Wendsbury, BM1 3XE (UK.HD.323.323)"
+				}]
 			}
 		},
 
