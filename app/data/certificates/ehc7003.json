@@ -21,7 +21,7 @@
 				"paragraph": "Enter details of each category in this consignment. Use a new record for each category. When you have finished select ‘Save and review’.",
 				"next": "",
 				"prev": "",
-				"product_page": "yes",
+				"product_page": "no",
 				"fields": [{
 						"type": "text",
 						"label": "Import licence number",

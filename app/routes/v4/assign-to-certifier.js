@@ -77,6 +77,7 @@ module.exports = function(router) {
       req.session.data.products = req.session.data.products || []
       var product = tools.findPage(tools.getDB(req.session.database, db).data.pages, req.query.id)
       if (req.query.edit) {
+        console.log("UPDATE PRODUCT")
         tools.updateProduct(req.query.edit, req.session.data.products, product, req.body)
       } else {
         tools.addProduct(req.session.data.products, product, req.body)
