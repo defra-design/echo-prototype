@@ -99,7 +99,7 @@
 					{
 						"type": "text",
 						"label": "Identification marks and date codes printed on straws",
-						"hint": "",
+						"hint": "If there are multiple separate with a comma",
 						"required": "no",
 						"id": "straw_id_marks",
 						"name": "straw_id_marks",
