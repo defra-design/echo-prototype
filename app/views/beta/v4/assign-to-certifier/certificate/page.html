@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{page.title}} - GOV.UK
+{% endblock %}
+
+{% block beforeContent%}
+{{super()}}
+<a href="{{page.content.prev or 'javascript:history.back()'}}" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% block errorBlank %}{% include "./partials/partial_error_blank.html" %}{% endblock %}
+    {% if page.content.caption %}<span class="govuk-caption-xl">{{page.content.caption}} {% if query.product_page %}{{(data.products | length)+1}} of {{page.content.product_max or 4}}{%endif%}</span>{%endif%}
+    <h1 class="govuk-heading-xl">
+      {{page.content.header}}
+    </h1>
+    <p class="govuk-body">{% if page.content.paragraph %}{{page.content.paragraph}}{% endif %}</p>
+    <form method="POST">
+    <!-- <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST"> -->
+      <fieldset class="govuk-fieldset">
+        {% for field in page.content.fields %}
+        {% set type = "./partials/"+field.type+".html"%}
+        {{field.title}}
+        {% block question %}{% include type %}{% endblock%}
+        {% endfor%}
+
+        {% if page.exa != "yes" %}
+          {% block leaveForm %}{% include "./partials/partial_leave_section.html" %}{% endblock %}
+        {% endif %}
+        <div class="govuk-form-group govuk-!-margin-top-8">
+          {% if not query.product_page %}
+          <input class="govuk-button govuk-!-margin-right-1" type="submit" name="cta" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          {% else %}
+          <button class="govuk-button" type="submit" name="cta" value="Save and review"id="Button-SaveAndpreview" data-qa-id="Button-SaveAndContinue">Save and continue</button >
+          {% endif%}
+        </div>
+
+      </fieldset>
+    </form>
+    <p class="govuk-body"><a class="link-button" href="dashboard" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+  </div>
+</div>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+
+{% endblock %}
