@@ -1,0 +1,675 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item" id="Nav-DisplayName">Ann Cooper</li>
+    <li class="login-nav__list-item"> | <a href="https://identity-management-app.herokuapp.com/manage/team-members/services-on-team-member-admin-account_company-exports?serviceLine=Exporter%20Service&serviceRole=Exporter&numUsers=1&numAgents=0&numServices=1&multiOrg=no&parentChild=parent"
+        class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a>|</li>
+    <li class="login-nav__list-item"><a href="#ß" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+{% endblock%}
+{% block content %}
+<style media="screen">
+  span.das-tag {
+    background: transparent;
+    border:3px solid #bfc1c3;
+    color: #0b0c0c;
+    font-weight:400;
+  }
+
+  span.das-tag--rejected{
+    border-color: #B10E1E;
+    color:#000000;
+  }
+  span.das-tag--closed{
+    border-color: #0b0c0c;
+
+  }
+  span.das-tag--live {
+      border-color: #006435;
+  }
+  span.das-tag--submitted {
+      border-color: #F47738;
+  }
+  .lottery-ticket{
+    margin-top:30px;
+    margin-left:1px;
+    padding: 10px 10px 10px 0;
+  }
+  .lottery-ticket--number{
+    display:inline-block;
+    font-size: 18px;
+    margin-right:5px;
+  }
+  @media (min-width: 40.0625em){
+  .lottery-ticket--number{
+    font-size: 21px;
+    font-size: 1.15rem;
+    display:block;
+    color:#6f777bx;
+    }
+  }
+  .das-filter-tab--group{
+    margin-left:1px;
+    margin-bottom:31px;
+  }
+  .das-filter-tab--group:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+  .das-filter-tab, .das-filter-tab--non-link{
+    display:inline-block;
+    text-decoration:none;
+    padding:15px 30px;
+    float:left;
+    border: 1px solid #bfc1c3;
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin-left:-1px;
+
+  }
+  .das-filter-tab:hover{
+    background-color: #f8f8f8;
+  }
+  a.lottery-ticket--link .lottery-ticket--title{
+    text-decoration: none;
+  }
+  a.lottery-ticket--active{
+    background: #005EA5 !important;
+    color: #ffffff !important;
+
+  }
+  a.lottery-ticket--active .lottery-ticket--title{
+    color: #ffffff !important;
+  }
+  .lottery-ticket--title{
+    display:inline-block;
+    font-size: 18px;
+    font-size: 1.125rem;
+    color: #0b0c0c;
+  }
+  @media (min-width: 40.0625em){
+  .lottery-ticket--title{
+    display:block;
+    font-size: 18px;
+    font-size: 1.125rem;
+
+    }
+  }
+
+
+  .lottery-ticket--action{
+
+    display:block;
+
+    color:#6f777bx;
+    text-decoration: underline;
+    /* margin-bottom:10px; */
+  }
+
+  /* .lottery-ticket a:hover{
+    background-color: #dee0e2;
+
+  } */
+
+  .lottery-ticket-danger {
+    color: #b10e1e!important;
+  }
+
+  .lottery-ticket--muted{
+    color: #6f777b;
+  }
+  .govuk-grid-column-border-left{
+    border-right: 1px solid #bfc1c3;
+  }
+  .das-link-divider{
+    display: inline-block;
+    color:#6f777b;
+    padding:0 10px;
+  }
+  .govuk-grid-column-half-border-right{border-right-color: transparent;}
+  .govuk-grid-column-third-border-right{border-right-color: transparent;}
+
+  @media (min-width: 40.0625em){
+    .govuk-grid-column-one-third {
+        width: 33.3333%;
+        float: left;
+    }
+    .govuk-grid-column-third-border-right{border-right: 1px solid #bfc1c3;}
+
+  }
+
+  @media (min-width: 40.0625em)
+    and (max-width : 865px) {
+  .dashboard-row .govuk-grid-column-one-third{
+    width: 50%;
+    float: left;
+  }
+  .govuk-grid-column-third-border-right{border-right-color: transparent;}
+  .govuk-grid-column-half-border-right{
+    border-right: 1px solid #bfc1c3;
+  }
+
+
+}
+.das-table__header--sort{
+  font-weight: 400 !important;
+}
+
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Your Applications</h1>
+      <a class="govuk-heading-m" href="select-certificate">Start a new application</a>
+  <form method="GET">
+  <div class="search-wrapper govuk-form-group">
+    <label for="search-reservations" class="govuk-label">
+      Search by case ID, name, destination or reference number
+    </label>
+    <div class="search-input-wrapper">
+      <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
+      <div class="search-input-submit-wrapper">
+        <button type="submit" class="search-submit">Search</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <div class="das-filter-tab--group govuk-!-margin-bottom">
+          <a class="das-filter-tab govuk-link {% if query.status == 'any' %}lottery-ticket--active{% endif %}" href="?status=any" class="prototype-link">
+            <span class="lottery-ticket--number"><span class="govuk-visually-hidden">You have </span>37</span>
+            <span class="lottery-ticket--title">Total applications</span>
+          </a>
+          <a class="das-filter-tab govuk-link {% if query.status == 'live' %}lottery-ticket--active{% endif %}" href="?status=live" class="prototype-link">
+            <span class="lottery-ticket--number"><span class="govuk-visually-hidden">You have </span>12</span>
+            <span class="lottery-ticket--title">Draft applications</span>
+          </a>
+          <a class="das-filter-tab govuk-link {% if query.status == 'new' %}lottery-ticket--active{% endif %}" href="?status=new" class="prototype-link">
+            <span class="lottery-ticket--number"><span class="govuk-visually-hidden">You have </span>5</span>
+            <span class="lottery-ticket--title">Active applications</span>
+          </a>
+          <a class="das-filter-tab govuk-link {% if query.status == 'rejected' %}lottery-ticket--active{% endif %}" href="?status=rejected" class="prototype-link">
+            <span class="lottery-ticket--number"><span class="govuk-visually-hidden">You have </span>40</span>
+            <span class="lottery-ticket--title">Completed applications</span>
+          </a>
+
+      </div>
+    <p class="govuk-body search-what-cont" id="result-count">
+      There are <span id="js-case-count">120</span> cases matching <strong>"<span class="search-what-text"></span>"</strong>
+    </p>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">
+            <div class="applicationRef-column">Application</div>
+          </th>
+          <th class="govuk-table__header">Reference</th>
+          <th class="govuk-table__header">Destination</th>
+          <th class="govuk-table__header">Submitted date</th>
+          <th class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=1000247986484&application_status=submitted&is_block=no" class="govuk-link govuk-link--no-visited-state">1000247986484</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            7836-Peking
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            China
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            22/11/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--submitted" style="width: auto">
+              Submitted
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100098786484&application_status=processing" class="govuk-link govuk-link--no-visited-state">100098786484</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            7836-Tientun
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            China
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            10/11/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--processing">
+              Processing
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=processing&is_block=no&is_replacement=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            Skins and Hides-Berlin 337376
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Germany
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            09/11/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--processing">
+              Processing
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=dispatched&is_block=yes&has_cancelation=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            Skins and Hides-Berlin 337376
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Germany
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            09/11/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--dispatched">
+              Dispatched
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=cancelled&is_block=no&is_replaced=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            Skins and Hides-Berlin 337376
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Germany
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            09/11/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--warning">
+              cancelled
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+              <a href="application?application_id=100047867777&application_status=rejected" class="govuk-link govuk-link--no-visited-state">100047867777</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            Skins and Hides-Berlin 887376
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Germany
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            08/11/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--rejected">
+              Rejected
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100037867567&application_status=cancelled" class="govuk-link govuk-link--no-visited-state">100037867567</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            Skins and Hides-Berlin 997376
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Germany
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            07/11/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--warning">
+              Cancelled
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            Skins and Hides-Berlin 994476
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Germany
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            06/11/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986156-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100047986156&application_status=draft" class="govuk-link govuk-link--no-visited-state">100047986156</a>
+          </th>
+          <td id="1721147986156-group-number" class="govuk-table__cell" scope="row">
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            China
+          </td>
+          <td id="1721147986156-submitted" class="govuk-table__cell submitted-column" scope="row">
+          </td>
+          <td id="1721147986156-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--not-submitted" style="width: auto">
+              Draft
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=certifier-action" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1651965956486-group-number" class="govuk-table__cell" scope="row">
+            2366-Shanghai
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            China
+          </td>
+          <td id="1651965956486-submitted" class="govuk-table__cell submitted-column" scope="row">
+            21/10/2019
+          </td>
+          <td id="1651965956486-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--action">
+              Certifier action
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=completed&is_pending_replacement=yes" class="govuk-link govuk-link--no-visited-state">100065956499</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            USA Atlanta 2234523
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            USA
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            22/10/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100047868887&application_status=complete" class="govuk-link govuk-link--no-visited-state">100047868887</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            4564774 Skins&amp;Hides
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Germany
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            31/09/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="100065956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+          <a href="application?application_id=100065956486&application_status=draft" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1651965956486-group-number" class="govuk-table__cell" scope="row">
+            PO-243536
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            United Arab Emirates
+          </td>
+          <td id="1651965956486-submitted" class="govuk-table__cell submitted-column" scope="row">
+          </td>
+          <td id="1651965956486-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--not-submitted">
+              Draft
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=draft" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1651965956486-group-number" class="govuk-table__cell" scope="row">
+            PO-77686868
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Australia
+          </td>
+          <td id="1651965956486-submitted" class="govuk-table__cell submitted-column" scope="row">
+          </td>
+          <td id="1651965956486-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--not-submitted">
+              Draft
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100047868887&application_status=complete" class="govuk-link govuk-link--no-visited-state">100047868887</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            EU-fishery w84789
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Spain
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            08/08/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            EU-fishery w84991
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            France
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            01/08/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            EU w84789998
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Italy
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            09/07/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+          <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            EU bivalve molluscs PO 5647
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Austria
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            02/06/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            PO 15699747
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Argentina
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            08/05/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            PO 15699749
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Argentina
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            10/04/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row result">
+          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+          </th>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            PO 99699747
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            Argentina
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            11/03/2019
+          </td>
+          <td id="1721147986456-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--completed">
+              Completed
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="app-example-page">
+      <nav class="moj-pagination" id="pagination-label">
+        <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+        <ul class="moj-pagination__list">
+          <li class="moj-pagination__item  moj-pagination__item--prev">
+            <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+          </li>
+          <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#" style="color: black!important;font-weight: 700">1</a></li>
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">2</a></li>
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
+          <li class="moj-pagination__item  moj-pagination__item--next">
+            <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+          </li>
+        </ul>
+        <p class="moj-pagination__results">Showing <b>1</b> to <b>30</b> of <b>90</b> results</p>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+
+window.addEventListener('load', function() {
+
+  $(".clear-search-holder").hide()
+  $(".search-what-cont").hide()
+	$("#search").click(function (e) {
+		$(".search-what-text").text($("#search-input").val());
+		$(".search-what-cont").show();
+		$(".result").each(function (e) {
+			var text=$(this).text().toLowerCase();
+			if (text.indexOf($("#search-input").val().toLowerCase())>-1) {
+				$(this).show();
+			} else {
+				$(this).hide();
+			}
+		});
+	});
+
+	$("#clear-search, .search-what-close").click(function (e) {
+    $(".clear-search-holder").show()
+    $(".search-what-text").text($("#search-input").val());
+    $(".search-what-cont").show()
+    clear-search-holder
+		$(".search-what-cont").hide();
+		$("#search-input").val("");
+		$(".result").each(function (e) {
+			$(this).show();
+		});
+		$(this).blur();
+	});
+
+
+});
+
+</script>
+{% endblock %}
