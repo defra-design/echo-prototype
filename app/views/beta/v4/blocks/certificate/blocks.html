@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Return to your applications</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="check-your-progress" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you need muliple certificates?
+            </h1>
+          </legend>
+          <p class="govuk-body">If you have the same shipment and need your OV or EHO to have copies ready to print out you can order multiple applications.</p>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="is_block_application" name="is_block_application" type="radio" value="yes" data-aria-controls="conditional-certificates">
+              <label class="govuk-label govuk-radios__label" for="is_block_application">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-certificates">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <p class="govuk-hint"> You can apply for blocks of up to 100 certificates for frequent or regular consignments to the same country.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="is_block_application-2" name="is_block_application" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="is_block_application-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+    <p class="govuk-body"><a class="link-button" href="dashboard" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+  </div>
+</div>
+{% endblock %}

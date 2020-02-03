@@ -4,6 +4,7 @@ module.exports = function(router) {
 
   require('./multiples.js')(router)
   require('./assign-to-certifier.js')(router)
+  require('./blocks.js')(router)
   // require('./repeatable-questions-v3.js')(router)
   // require('./EXP-8639-update-clone-journey.js')(router)
   // require('./EXP-8648-keep-reference-number.js')(router)
