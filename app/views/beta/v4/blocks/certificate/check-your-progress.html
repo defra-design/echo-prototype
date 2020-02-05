@@ -24,6 +24,20 @@ GOV.UK Prototype Kit
           <span class="app-task-list__section-number">1. </span> About your application
         </h2>
         <ul class="app-task-list__items">
+          {% if db.allow_blocks !="no" or data.is_block_application == "yes"%}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="exa/certificates " aria-describedby="read-declaration-completed">
+                Number of certificates
+              </a>
+            </span>
+            {% if not data.certificate_request_amount %}
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
+          </li>
+          {% endif %}
           <!-- Dont show commodities if there is only one. -->
           {% if (db.commodities | length) > 1 %}
           <li class="app-task-list__item">
@@ -53,20 +67,7 @@ GOV.UK Prototype Kit
             {% endif %}
           </li>
 
-          {% if db.allow_blocks !="no" or data.is_block_application == "yes"%}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="exa/certificates " aria-describedby="read-declaration-completed">
-                Number of certificates
-              </a>
-            </span>
-            {% if not data.certificate_request_amount %}
-            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-            {% else %}
-            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-            {% endif %}
-          </li>
-          {% endif %}
+
           {% if db.destination == "EU" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -164,8 +165,8 @@ GOV.UK Prototype Kit
         <ul class="app-task-list__items">
             <div class="govuk-body defra-alert defra-alert--info">
               {% if data.is_block_application != "no" %}
-              <p>This is a block application anything you enter in this section will appear on <strong>every EHC</strong>. </p>
-              <p> If you have completed all you want to you can <a href="#">mark all remaining tasks as completed</a></p>
+              <p>This is a block application anything you enter in this section will appear on <strong>all {{data.certificate_request_amount}} certificates</strong>. </p>
+              <p> You will be able to leave any questions that are about a specific consignment blank. Your certifer will fill them in for each export.</p>
               {% else %}
               This information will appear on the EHC. Your certifier can help you complete this section.
               {% endif %}
