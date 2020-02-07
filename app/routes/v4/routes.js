@@ -70,13 +70,16 @@ module.exports = function(router) {
   });
 
   // **** cloning ***
-  router.post('/' + base_url + '*/clone*', function(req, res) {
-    if (req.body.application_type == "clone") {
-      req.session.data = []
-      res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-answers-cloned?certificate=ehc6969&alert=cloned');
-    } else {
-      res.redirect(301, '/' + base_url + req.params[0] + '/dashboard');
+  router.post('/'+base_url+'*/clone', function(req, res) {
+    var copy = req.session.data.copy_as_new || ""
+    if(req.body.application_type =="clone"){
+      req.session.data=[]
+
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/reference-update?certificate=ehc6969&alert=cloned&copy_as_new='+copy);
+    }else{
+      res.redirect(301, '/' + base_url +req.params[0]+'/dashboard');
     }
+
   })
 
   // **** Check your answers and check your progress ****
