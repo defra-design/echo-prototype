@@ -9,9 +9,10 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-fieldset__heading">
+    <h1 class="govuk-heading-xl">
       Scan the QR code on the certificate
     </h1>
+    <div class="govuk-panel" style="width:100%; background:#f8f8f8; min-height:300px;"></div>
     <video id="preview"></video>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
@@ -30,7 +31,7 @@ GOV.UK Prototype Kit
       }).catch(function (e) {
         console.error(e);
       });
-    }
+    })
     </script>
     </div>
 </div>
