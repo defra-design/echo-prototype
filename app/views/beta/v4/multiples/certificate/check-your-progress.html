@@ -10,12 +10,11 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-      Apply for {{certificate_code or "EHC 8327"}}
+      Apply for {{db.certificate_code or "EHC 8327"}}
     </h1>
     <span class="govuk-caption-l govuk-!-margin-bottom-8">{{db.certificate_name}}</span>
 
 
-    <hr>
     <ol class="app-task-list">
 
       <li>
@@ -70,8 +69,8 @@ GOV.UK Prototype Kit
         <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Disease clearance information
         </h2>
+        <p class="govuk-body govuk-!-margin-left-6">This information is required by APHA before a certificate can be issued</p>
         <ul class="app-task-list__items">
-          <p class="govuk-body">This information is required by APHA before a certificate can be issued</p>
           {% if db.destination == "EU" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -128,12 +127,13 @@ GOV.UK Prototype Kit
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">3. </span> Information required by the destination country
         </h2>
+        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
         <ul class="app-task-list__items">
-          <p class="govuk-body">This information will appear on the EHC. Your certifier can help you complete this section.</p>
+
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="{% if data.has_added_ehc %}certificates-list{%else%}new_ehc{% endif %}" class="govuk-link">Add your EHC</a>
+              <a href="{% if data.has_added_ehc %}certificate-list{%else%}new_ehc{% endif %}" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
             </span>
             {% if data.has_added_ehc == "yes" %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>

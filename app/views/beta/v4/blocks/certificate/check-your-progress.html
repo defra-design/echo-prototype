@@ -116,7 +116,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certifer-certificate-delivery?printable={{db.printable or 'yes'}}" aria-describedby="eligibility-completed">
-                How would you like the certificate to be delivered to the certifier?
+                How would you like the certificate{% if data.is_block == "yes" %}s{%endif%} to be delivered to the certifier?
               </a>
             </span>
             {% if not data.delivery_options %}

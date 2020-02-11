@@ -10,13 +10,14 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
-      Your certificates to be submited on this application
+      {{data.added_certificates | length}} certificate{% if (data.added_certificates | length) > 1 %}s{% endif %} added to application
     </h1>
 
     </div>
     <div class="govuk-grid-column-two-thirds">
+
       <table class="govuk-table">
-  <caption class="govuk-table__caption">Certificate{% if (data.added_certificates | length) > 1 %}s{% endif %}</caption>
+
     <tbody class="govuk-table__body">
       {% for certificate in data.added_certificates %}
 
@@ -29,16 +30,42 @@ GOV.UK Prototype Kit
   </thead> -->
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">{{loop.index}}. EHC6868 certificate</th>
-      <td class="govuk-table__cell">EHC6868</td>
-      <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">View</a></td>
+      <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
+      <td class="govuk-table__cell">{{certificate.title}} - EHC2123<br><a href="#">View certificate(opens in new tab)</a></td>
+      <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Edit</a></td>
     </tr>
       {% endfor%}
   </tbody>
 </table>
-<p class="govuk-body"><a href="add-new-certificate">Add another certificate</a></p>
+<p class="govuk-body govuk-!-margin-bottom-8"><a href="add-new-certificate">Add another certificate</a></p>
 <form method="post">
-      <p class="govuk-body"><a href="check-your-progress" class="govuk-button">Continue</a></p>
+  <!-- <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to add another certificate?
+            </h1>
+          </legend>
+          <p class="govuk-body">You can add upto 100 certificates on one application
+            </p>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="is_block_application" name="is_block_application" type="radio" value="yes" aria-controls="conditional-certificates" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="is_block_application">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="is_block_application-2" name="is_block_application" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="is_block_application-2">
+                No, return to the applcation
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div> -->
+      <p class="govuk-body"><a href="check-your-progress" class="govuk-button">Continue to application</a></p>
   </form>
     </div>
   </div>

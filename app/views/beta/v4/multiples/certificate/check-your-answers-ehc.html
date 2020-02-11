@@ -8,11 +8,9 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-xl">
-        Check your answers
+        Check your certificate answers
       </h1>
       <p class="govuk-body">These answers will appear on the certificate. You can also review your answers in a <a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate (opens in new tab)</a></p>
-
-
 
 
       {% for task in db.pages %}
@@ -30,7 +28,7 @@ GOV.UK Prototype Kit
             {% elseif data[field.name]%}
               {{data[field.name]}}
             {%else%}
-              <span class="govuk-hint" >(Left for certifer)</span>
+              <span class="govuk-hint">Left for certifier</span>
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">

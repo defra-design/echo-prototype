@@ -61,15 +61,12 @@ function getDB(id){
 
 
 router.use(function (req, res, next) {
-  console.log("--- calling middleware ---")
   if(req.query.certificate && req.session.database != req.query.certificate){
     req.session.database=req.query.certificate
     req.session.db = getDB(req.query.certificate).data
   }
-
-  req.session.db = req.session.db || getDB(req.session.data.database).data
-  console.log("database is : "+req.session.db.certificate_code)
-  console.log("--- Middleware END---")
+  req.session.database = req.session.database || "ehc8327";
+  req.session.db = req.session.db || getDB(req.session.data.database).data;
   next()
 })
 
