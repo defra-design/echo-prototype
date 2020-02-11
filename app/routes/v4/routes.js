@@ -157,12 +157,37 @@ module.exports = function(router) {
       res.send(html);
     })
   })
-  router.post('/' + base_url + '*/certificate/page', function(req, res, next) {
+  router.post('/' + base_url + "*/certificate/page", function(req, res) {
+
     var query = ""
+    var page=tools.findPage(tools.getDB(req.session.database, db).data.pages, req.query.id)
+    var page_name = page.title
+
+    req.session.data.empty = []
+    //check if anthing is empty
+    req.session.data.empty = tools.getBlankFields(req.body)
+    // console.log(tools.getDB(req.session.data.database,db).data.pages[req.query.id])
+
+    // Show error message if the user has left anything blank and not skipped
+    req.body.skip_answers = req.body.skip_answers || []
+    if (req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip') && page.exa!="yes") {
+
+      // ensure this page has been removed from the skipped list (used in check your progress)
+      req.session.data.skipped = req.session.data.skipped.filter(e => e !== page_name)
+      return res.redirect(301, '/' + base_url + req.params[0] + '/certificate/page?id='+req.query.id+'&next='+ req.query.next+'&hasError=yes');
+    }
+    // add this page to the skipped list
+    if (!req.session.data.skipped.includes(page_name)) {
+      req.session.data.skipped.push(page_name);
+    }
+    //reset the sesson data object for "empty"
+    req.session.data.empty = []
+
     if (req.query.product_page) {
       req.session.data.products = req.session.data.products || []
       var product = tools.findPage(tools.getDB(req.session.database, db).data.pages, req.query.id)
       if (req.query.edit) {
+        console.log("UPDATE PRODUCT")
         tools.updateProduct(req.query.edit, req.session.data.products, product, req.body)
       } else {
         tools.addProduct(req.session.data.products, product, req.body)

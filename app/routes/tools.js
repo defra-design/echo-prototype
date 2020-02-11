@@ -71,5 +71,26 @@ getDB: function(id,db){
     }
   }
   return false;
+},
+countProperties: function (obj) {
+  var count = 0;
+  for (var property in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, property)) {
+      count++;
+    }
+  }
+  return count;
+},
+
+getBlankFields: function(obj) {
+  var arr = []
+  for (var property in obj) {
+    console.log("Checking:" + property)
+    if (obj[property] == "" && property != "saveAndContinue" && property != "skip_answers") {
+      console.log("adding:" + property)
+      arr.push(property)
+    }
+  }
+  return arr
 }
 }

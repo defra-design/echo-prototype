@@ -12,6 +12,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% block errorBlank %}{% include "./partials/partial_error_blank.html" %}{% endblock %}
     {% if page.content.caption %}<span class="govuk-caption-xl">{{page.content.caption}} {% if query.product_page %}{{(data.products | length)+1}} of {{page.content.product_max or 4}}{%endif%}</span>{%endif%}
     <h1 class="govuk-heading-xl">
       {{page.content.header}}
@@ -25,6 +26,10 @@
         {{field.title}}
         {% block question %}{% include type %}{% endblock%}
         {% endfor%}
+
+        {% if page.exa != "yes" %}
+          {% block leaveForm %}{% include "./partials/partial_leave_section.html" %}{% endblock %}
+        {% endif %}
         <div class="govuk-form-group govuk-!-margin-top-8">
           {% if not query.product_page %}
           <input class="govuk-button govuk-!-margin-right-1" type="submit" name="cta" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
