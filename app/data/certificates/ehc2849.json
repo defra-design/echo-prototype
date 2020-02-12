@@ -142,25 +142,6 @@
 						"name": "owner_details",
 						"rows": "4",
 						"default": ""
-					},
-					{
-						"type": "text",
-						"label": "Passport number",
-						"hint": "",
-						"required": "no",
-						"id": "Passport_number",
-						"name": "passport_number",
-						"allow": "past",
-						"default": "123456678"
-					},
-					{
-						"type": "text",
-						"label": "Passport issuer",
-						"hint": "",
-						"required": "no",
-						"id": "passport_issuer",
-						"name": "passport_issuer",
-						"default": "UK"
 					}
 				]
 			}

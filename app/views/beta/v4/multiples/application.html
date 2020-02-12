@@ -25,10 +25,13 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">{% if query.is_block == "yes" or is_multiple =="yes"%}Block appication{%else%}Application{%endif%} {{query.applciation_id or '10000432423'}}
+    <h1 class="govuk-heading-xl">{% if query.is_block == "yes" %}Block appication{%elseif query.is_group == "yes" %}Group application{%else%}Application{%endif%} {{query.applciation_id or '10000432423'}}
     </h1>
     {% if query.is_block == "yes" %}
-    <p class="govuk-body">This is a block application of 5 certificates</p>
+    <p class="govuk-body">This is a block application of 100 certificates</p>
+    {% endif %}
+    {% if query.is_group == "yes" %}
+    <p class="govuk-body">This is an application of 5 certificates</p>
     {% endif %}
     <!-- <div class="defra-alert defra-alert--info ">
         <h3 class="govuk-heading-s govuk-!-margin-bottom-2">1 certificate has been replaced </h3>
@@ -120,11 +123,11 @@ GOV.UK Prototype Kit
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-l">{% if query.is_block == "yes" %}5 certificates{% else %}Certificate{% endif %} </h2>
+    <h2 class="govuk-heading-l">{% if query.is_block == "yes" or query.is_group == "yes"   %}5 certificates{% else %}Certificate{% endif %} </h2>
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            {% if query.is_block == "yes" or is_multiple =="yes"%}<th class="govuk-table__header">No.</th>{% endif %}
+            {% if query.is_block == "yes" or query.is_group =="yes"%}<th class="govuk-table__header">No.</th>{% endif %}
             <th class="govuk-table__header">Certificate number</th>
             <th class="govuk-table__header">Actual export date</th>
             <th class="govuk-table__header">Certificate status</th>
@@ -133,14 +136,14 @@ GOV.UK Prototype Kit
         </thead>
         <tbody>
           <tr class="govuk-table__row">
-            {% if query.is_block == "yes" or is_multiple =="yes"%}
+            {% if query.is_block == "yes" or query.is_group =="yes"%}
             <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
             {% endif %}
-            {% if query.is_block != 'yes' and query.is_replaced %}
+            {% if query.is_block != 'yes' and query.is_group !="yes" and query.is_replaced %}
             <td id="cert-num" class="govuk-table__cell" scope="row" style="width:30%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;19/2/00869<br>
               <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by <a href="case-new">19/2/00872</a></span>
             </td>
-            {% elseif query.is_block != 'yes' and query.is_replacement %}
+            {% elseif query.is_block != 'yes' and query.is_group !="yes" and query.is_replacement %}
             <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-tag govuk-tag--complete">Replacement</span>&nbsp;&nbsp; 19/2/008722
               <br>
               <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced certificate <a href="application?has_cancelation=yes&is_block=yes&application_status=dispatched">19/2/00869 </a> on 02 Aug 2019</span>
@@ -167,7 +170,7 @@ GOV.UK Prototype Kit
               </a>
             </td>
           </tr>
-          {% if query.is_block == 'yes' %}
+          {% if query.is_block == 'yes' or query.is_group =="yes"%}
           <tr class="govuk-table__row">
             <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
             <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022133</td>

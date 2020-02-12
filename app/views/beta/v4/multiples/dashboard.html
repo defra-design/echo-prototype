@@ -17,6 +17,35 @@ GOV.UK Prototype Kit
   main{padding-top: 0px!important;}
     .green-tag{background: #00823b}
 </style>
+<style media="screen">
+  .defra-table--blockn th,.defra-table--blockn td{}
+  .govuk-status--block {
+    display: inline-block;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    color: #fff;
+    background-color: #1d70b8;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: "GDS Transport", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    /* color: #144e81;
+    background: #d2e2f1; */
+    color: #454a4d;
+background: #eff0f1;
+}
+</style>
 <style>
   #filter-cert-org #filter-container {
         bottom: 0px;
@@ -106,13 +135,12 @@ GOV.UK Prototype Kit
           <button type="button" class="search-submit" id="search" style="height:40px;">Search</button>
         </div>
       </div>
-      <p class="clear-search-holder" >
+      <p class="clear-search-holder">
         <a href="#" id="clear-search" style="display:block;margin-top:5px;">Clear search</a>
       </p>
     </div>
   </div>
   <div class="govuk-grid-column-full">
-
     <p class="govuk-body search-what-cont" id="result-count">
       There are <span id="js-case-count">120</span> cases matching <strong>"<span class="search-what-text"></span>"</strong>
     </p>
@@ -120,7 +148,7 @@ GOV.UK Prototype Kit
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header">
-            <div class="applicationRef-column">Application</div>
+            <div class="applicationRef-column" >Application</div>
           </th>
           <th class="govuk-table__header">Reference</th>
           <th class="govuk-table__header">Destination</th>
@@ -130,11 +158,12 @@ GOV.UK Prototype Kit
       </thead>
       <tbody>
         <tr class="govuk-table__row result">
-          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=1000247986484&application_status=submitted&is_block=no" class="govuk-link govuk-link--no-visited-state">1000247986484</a>
+          <th id="1721147986456-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?reference_num=AUS03402342-KXC&application_id=1000247986484&application_status=submitted&is_block=no&is_group=yes" class="govuk-link govuk-link--no-visited-state">1000247986484</a>
+            <br><div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Group of 5 certificates</div>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
-            7836-Peking
+            AUS03402342-KXC
           </td>
           <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
             China
@@ -150,7 +179,8 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100098786484&application_status=processing" class="govuk-link govuk-link--no-visited-state">100098786484</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100098786484&application_status=processing&is_block=yes" class="govuk-link govuk-link--no-visited-state">100098786484</a>
+            <br><div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Block of 5 certificataes</div>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             7836-Tientun
@@ -169,7 +199,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=processing&is_block=no&is_replacement=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=processing&is_block=no&is_replacement=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             Skins and Hides-Berlin 337376
@@ -188,7 +218,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=dispatched&is_block=yes&has_cancelation=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=dispatched&is_block=yes&has_cancelation=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             Skins and Hides-Berlin 337376
@@ -207,7 +237,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=cancelled&is_block=no&is_replaced=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=cancelled&is_block=no&is_replaced=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             Skins and Hides-Berlin 337376
@@ -224,12 +254,13 @@ GOV.UK Prototype Kit
             </div>
           </td>
         </tr>
-        <tr class="govuk-table__row result">
+        <tr class="govuk-table__row result defra-table--block">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-              <a href="application?application_id=100047867777&application_status=rejected" class="govuk-link govuk-link--no-visited-state">100047867777</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100047867777&application_status=rejected" class="govuk-link govuk-link--no-visited-state">100047867777</a>
+            <!-- <span class="govuk-!-font-size-19 govuk-!-font-weight-regular">  <br> AUS03402342-KXC</span> -->
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
-            Skins and Hides-Berlin 887376
+            AUS03402342-KXC
           </td>
           <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
             Germany
@@ -245,7 +276,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100037867567&application_status=cancelled" class="govuk-link govuk-link--no-visited-state">100037867567</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100037867567&application_status=cancelled" class="govuk-link govuk-link--no-visited-state">100037867567</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             Skins and Hides-Berlin 997376
@@ -264,7 +295,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             Skins and Hides-Berlin 994476
@@ -280,7 +311,6 @@ GOV.UK Prototype Kit
               Completed
             </div>
           </td>
-
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986156-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
@@ -301,7 +331,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1651965956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=certifier-action" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=certifier-action" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1651965956486-group-number" class="govuk-table__cell" scope="row">
             2366-Shanghai
@@ -320,7 +350,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=completed&is_pending_replacement=yes" class="govuk-link govuk-link--no-visited-state">100065956499</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed&is_pending_replacement=yes" class="govuk-link govuk-link--no-visited-state">100065956499</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             USA Atlanta 2234523
@@ -339,7 +369,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100047868887&application_status=complete" class="govuk-link govuk-link--no-visited-state">100047868887</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100047868887&application_status=complete" class="govuk-link govuk-link--no-visited-state">100047868887</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             4564774 Skins&amp;Hides
@@ -358,7 +388,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="100065956486-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-          <a href="application?application_id=100065956486&application_status=draft" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=draft" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1651965956486-group-number" class="govuk-table__cell" scope="row">
             PO-243536
@@ -394,7 +424,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100047868887&application_status=complete" class="govuk-link govuk-link--no-visited-state">100047868887</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100047868887&application_status=complete" class="govuk-link govuk-link--no-visited-state">100047868887</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             EU-fishery w84789
@@ -413,7 +443,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             EU-fishery w84991
@@ -432,7 +462,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             EU w84789998
@@ -451,7 +481,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-          <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             EU bivalve molluscs PO 5647
@@ -470,7 +500,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             PO 15699747
@@ -489,7 +519,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             PO 15699749
@@ -508,7 +538,7 @@ GOV.UK Prototype Kit
         </tr>
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed" class="govuk-link govuk-link--no-visited-state">100065956486</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             PO 99699747
@@ -528,59 +558,53 @@ GOV.UK Prototype Kit
       </tbody>
     </table>
     <div class="app-example-page">
-      <nav class="moj-pagination" id="pagination-label">
+      <nav class="defra-pagination" id="pagination-label">
         <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
-        <ul class="moj-pagination__list">
-          <li class="moj-pagination__item  moj-pagination__item--prev">
-            <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+        <ul class="defra-pagination__list">
+          <li class="defra-pagination__item  defra-pagination__item--prev">
+            <a class="defra-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
           </li>
-          <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#" style="color: black!important;font-weight: 700">1</a></li>
-          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">2</a></li>
-          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
-          <li class="moj-pagination__item  moj-pagination__item--next">
-            <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+          <li class="defra-pagination__item defra-pagination__item--active"><a class="defra-pagination__link" href="#" style="color: black!important;font-weight: 700">1</a></li>
+          <li class="defra-pagination__item"><a class="defra-pagination__link" href="#">2</a></li>
+          <li class="defra-pagination__item"><a class="defra-pagination__link" href="#">3</a></li>
+          <li class="defra-pagination__item  defra-pagination__item--next">
+            <a class="defra-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
           </li>
         </ul>
-        <p class="moj-pagination__results">Showing <b>1</b> to <b>30</b> of <b>90</b> results</p>
+        <p class="defra-pagination__results">Showing <b>1</b> to <b>30</b> of <b>90</b> results</p>
       </nav>
     </div>
   </div>
 </div>
 </div>
 <script>
-
-window.addEventListener('load', function() {
-
-  $(".clear-search-holder").hide()
-  $(".search-what-cont").hide()
-	$("#search").click(function (e) {
-		$(".search-what-text").text($("#search-input").val());
-		$(".search-what-cont").show();
-		$(".result").each(function (e) {
-			var text=$(this).text().toLowerCase();
-			if (text.indexOf($("#search-input").val().toLowerCase())>-1) {
-				$(this).show();
-			} else {
-				$(this).hide();
-			}
-		});
-	});
-
-	$("#clear-search, .search-what-close").click(function (e) {
-    $(".clear-search-holder").show()
-    $(".search-what-text").text($("#search-input").val());
-    $(".search-what-cont").show()
-    clear-search-holder
-		$(".search-what-cont").hide();
-		$("#search-input").val("");
-		$(".result").each(function (e) {
-			$(this).show();
-		});
-		$(this).blur();
-	});
-
-
-});
-
+  window.addEventListener('load', function() {
+    $(".clear-search-holder").hide()
+    $(".search-what-cont").hide()
+    $("#search").click(function(e) {
+      $(".search-what-text").text($("#search-input").val());
+      $(".search-what-cont").show();
+      $(".result").each(function(e) {
+        var text = $(this).text().toLowerCase();
+        if (text.indexOf($("#search-input").val().toLowerCase()) > -1) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+    $("#clear-search, .search-what-close").click(function(e) {
+      $(".clear-search-holder").show()
+      $(".search-what-text").text($("#search-input").val());
+      $(".search-what-cont").show()
+      clear - search - holder
+      $(".search-what-cont").hide();
+      $("#search-input").val("");
+      $(".result").each(function(e) {
+        $(this).show();
+      });
+      $(this).blur();
+    });
+  });
 </script>
 {% endblock %}

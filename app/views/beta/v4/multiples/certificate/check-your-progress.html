@@ -51,6 +51,18 @@ GOV.UK Prototype Kit
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
+              <a href="exa/certifier" aria-describedby="eligibility-completed">
+                About your certifier
+              </a>
+            </span>
+            {% if not data.is_certifier_address_correct %}
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
               <a href="exa/certifer-certificate-delivery?printable={{db.printable or 'yes'}}" aria-describedby="eligibility-completed">
                 How would you like the certificate to be delivered to the certifier?
               </a>
@@ -61,16 +73,7 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
-        </ul>
-      </li>
 
-
-      <li>
-        <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Disease clearance information
-        </h2>
-        <p class="govuk-body govuk-!-margin-left-6">This information is required by APHA before a certificate can be issued</p>
-        <ul class="app-task-list__items">
           {% if db.destination == "EU" %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -86,18 +89,18 @@ GOV.UK Prototype Kit
             {% endif %}
           </li>
             {% endif %}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="exa/certifier" aria-describedby="eligibility-completed">
-                About your certifier
-              </a>
-            </span>
-            {% if not data.is_certifier_address_correct %}
-            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-            {% else %}
-            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-            {% endif %}
-          </li>
+
+        </ul>
+      </li>
+
+
+      <li>
+        <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Disease clearance information
+        </h2>
+        <p class="govuk-body govuk-!-margin-left-6">This information is required by APHA before a certificate can be issued</p>
+        <ul class="app-task-list__items">
+
           {% for task in db.pages %}
           {% if task.exa == "yes" %}
           <li class="app-task-list__item">

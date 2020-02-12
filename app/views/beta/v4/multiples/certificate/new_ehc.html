@@ -10,89 +10,52 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
-      Create a new {{certificate_code or "8327EHC"}} for your application
+      Create a new {{certificate_code or "8327EHC"}}
     </h1>
-    <ol class="app-task-list">
-
-      <!-- Hack to make part 3 active from the start -->
-      {% set ech_active = "yes"%}
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. Information required by the destination country
-        </h2>
-        <ul class="app-task-list__items">
-          <p class="govuk-body">This information will appear on the EHC. Your certifier can help you complete this section.</p>
-          {% for task in db.pages %}
-          {% if task.exa != "yes" %}
+    {% set ech_active = "yes" %}
+    <ul class="app-task-list__items" style="padding-left:0;">
+      <p class="govuk-body">This information will appear on the EHC. Your certifier can help you complete this section.</p>
+      {% for task in db.pages %}
+        {% if task.exa != "yes" %}
           {% if ech_active != "yes"%}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              {{task.title}}
-            </span>
-          </li>
-          {% elseif task.title != 'Supporting documents' %}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              {% if not task.content.next %}
-              {% set next_page = 'new_ehc' %}
-              {% else %}
-              {% set next_page = task.content.next %}
-              {% endif %}
-                 {% if task.content.product_page == 'yes' %}
-                 <a href="product-list?id={{task.page}}&products=" class="govuk-link">
-                 {% else%}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                {{task.title}}
+              </span>
+            </li>
+            {% elseif task.title != 'Supporting documents' %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                {% if not task.content.next %}
+                {% set next_page = 'new_ehc' %}
+                {% else %}
+                {% set next_page = task.content.next %}
                 {% endif %}
-                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
-              </a>
-            </span>
-            {% if data.completed[task.page] or query.new != "yes"%}
-            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-            {% else%}
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-            {% endif %}
-          </li>
+                   {% if task.content.product_page == 'yes' %}
+                   <a href="product-list?id={{task.page}}&products=" class="govuk-link">
+                   {% else%}
+                <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
+                  {% endif %}
+                  {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
+                </a>
+              </span>
+              {% if data.completed[task.page]%}
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else%}
+              <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+              {% endif %}
+            </li>
           {% endif %}
-          <!-- data.ech_active -->
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </li>
-      <!-- <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span>Additional information (optional)
-        </h2>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
-
-              {% if ech_active != "yes"%}
-                <span class="app-task-list__task-name">Supporting documents</span>
-              {% else %}
-                <span class="app-task-list__task-name"><a href="supporting-documents?test=yes" aria-describedby="">Supporting documents</a></span>
-                <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
-              {% endif%}
-
-          </li>
-        </ul>
-      </li> -->
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span>Reivew your certificate
-        </h2>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
-              {% if ech_active != "yes"%}
-                <span class="app-task-list__task-name">Check your answers and add certificate</span>
-              {% else %}
-                <span class="app-task-list__task-name"><a href="check-your-answers-ehc">Check your answers and add certificate</a></span>
-                <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-              {% endif%}
-          </li>
-        </ul>
-      </li>
-    </ol>
+        <!-- data.ech_active -->
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="govuk-!-margin-top-6">
+      <a href="check-your-answers-ehc" class="govuk-button">Continue</a>
+    </div>
   </div>
 </div>
+
 <form action="6" method="POST" enctype="application/x-www-form-urlencoded">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-body">

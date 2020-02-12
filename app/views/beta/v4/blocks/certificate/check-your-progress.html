@@ -24,7 +24,7 @@ GOV.UK Prototype Kit
           <span class="app-task-list__section-number">1. </span> About your application
         </h2>
         <ul class="app-task-list__items">
-          {% if db.allow_blocks !="no" or data.is_block_application == "yes"%}
+          {% if data.is_block_application == "yes"%}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certificates " aria-describedby="read-declaration-completed">
@@ -116,7 +116,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certifer-certificate-delivery?printable={{db.printable or 'yes'}}" aria-describedby="eligibility-completed">
-                How would you like the certificate{% if data.is_block == "yes" %}s{%endif%} to be delivered to the certifier?
+                How would you like the certificate{% if data.is_block_application == "yes" %}s{%endif%} to be delivered to the certifier?
               </a>
             </span>
             {% if not data.delivery_options %}
@@ -125,6 +125,7 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
+
         </ul>
       </li>
 
@@ -134,7 +135,7 @@ GOV.UK Prototype Kit
         </h2>
         <ul class="app-task-list__items">
           {% for task in db.pages %}
-          {% if task.exa == "yes" %}
+          {% if task.exa == "yes" and (task.title != "What is the planned date of export?") %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               {% if not task.content.next %}
@@ -155,6 +156,20 @@ GOV.UK Prototype Kit
           <!-- data.ech_active -->
           {% endif %}
           {% endfor %}
+          {% if data.is_block_application == "yes"%}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="dates " aria-describedby="read-declaration-completed">
+                When do you need the certificates
+              </a>
+            </span>
+            {% if not data.certificate_request_amount %}
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
+          </li>
+          {% endif %}
         </ul>
       </li>
       {% set ech_active = "yes"%}
