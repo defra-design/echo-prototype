@@ -22,6 +22,8 @@ module.exports = function(router) {
   });
   // Load any certificate within "app/data/certificates" folder
   function addCertificate(cert,data){
+    console.log(cert)
+    console.log("addCertificate")
     var list= data.added_certificates
     var newcert=[]
     var obj = {}
@@ -36,37 +38,26 @@ module.exports = function(router) {
             var name = data[field]
           }
           newcert[field] = data[field]
+          console.log("adding: "+field+" and " +data[field])
         }
       }
 
     }
     obj = {'title':name,'content': newcert}
     list.push(obj)
+    console.log(list)
   }
 
   function getNextRepeatablePage(data,current){
-    console.log("--- Finding REPEATABLE----")
-
+    console.log("--- Adding repeatable ----")
+    console.log(data)
+    var r = false
     for (var i = 0; i < data.length; i++) {
-      if (data[i].repeatable && data[i].repeatable == "yes" && data[i].page > current){
+      if (data[i].repeatable && data[i].repeatable == "Yes"){
         return data[i].page
       }
     }
-    return false
-  }
-
-  function getNextPage(data,current){
-    console.log("--- Adding next ehc page ----")
-
-    for (var i = 0; i < data.length; i++) {
-      if ( !data[i].exa || data[i].exa != "yes" ){
-        if (data[i].page > current && data[i].page != "supporting-documents"){
-          return data[i].page
-        }
-      }
-
-    }
-    return false
+    return arr
   }
 
   router.post('/'+base_url+'*/certificate/add-new-certificate', function(req, res) {
@@ -74,8 +65,9 @@ module.exports = function(router) {
     // find out which page is repeatable
     req.session.data.repeatable = 0
     for (var i = 0; i < cert.length; i++) {
-
+      console.log("Repeatable: "+cert[i].repeatable)
       if (cert[i].repeatable == "yes") {
+        console.log("Found page: "+cert[i].page)
         req.session.data.repeatable = cert[i].page
       }
     }
@@ -97,6 +89,7 @@ module.exports = function(router) {
     // console.log("POST:")
     // console.log(req.session.data.database)
     // console.log("end POST")
+    console.log(req.session.database)
     addCertificate(tools.getDB(req.session.database,db).data.pages,req.session.data)
     req.session.data.has_added_ehc="yes"
     res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/certificate-list');
@@ -104,6 +97,7 @@ module.exports = function(router) {
   })
 
   router.get('/' + base_url + '*/certificate/certificate-list', function(req, res) {
+    console.log(req.session.data.added_certificates["animal_name"])
     res.render(base_url + req.params[0] + '/certificate/certificate-list', {
       "query": req.query
     }, function(err, html) {
@@ -119,19 +113,10 @@ module.exports = function(router) {
     })
   });
 
-  router.get('/' + base_url + '*/certificate/new_ehc', function(req, res) {
-    console.log("redirectging and setting first_time to "+req.session.data.first_time)
-    console.log("and query = "+req.query.first_time)
-   return  res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id=1&next=2&journey=linear&first_time=yes');
-  });
+  router.post('/'+base_url+'*/certificate/certificate-list', function(req, res) {
 
-
-
-  router.post('/' + base_url + '*/certificate/certificate-list'  , function(req, res) {
-    //console.log('req.body.add_another_certificate '+req.body.add_another_certificate)
-    if(req.body.add_another_certificate == "yes"){
-      var page_id =  getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, 0)
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+page_id+'&first_time=no&new=yes');
+    if(req.body.add_new == "yes"){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/add-new-certificate'+req.session.data.repeatable+"&next=check-your-answers-ehc");
 
     }else{
       res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-progress');
@@ -144,9 +129,11 @@ module.exports = function(router) {
     var query = ""
     var page=tools.findPage(tools.getDB(req.session.database, db).data.pages, req.query.id)
     var page_name = page.title
-    console.log("--------")
-    console.log(req.session.data)
-    console.log("--------")
+
+    var repeat = getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages,req.query.id)
+    console.log("POST")
+    console.log("next repeatable is: "+repeat)
+
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = tools.getBlankFields(req.body)
@@ -164,21 +151,8 @@ module.exports = function(router) {
     if (!req.session.data.skipped.includes(page_name)) {
       req.session.data.skipped.push(page_name);
     }
-
     //reset the sesson data object for "empty"
     req.session.data.empty = []
-    if(req.session.data.journey == "linear"){
-      console.log("first_time = "+req.session.data.first_time )
-      var nextPage = (req.session.data.first_time == "yes") ? getNextPage(tools.getDB(req.session.database, db).data.pages, req.query.id) : getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, req.query.id)
-      if(nextPage){
-        return res.redirect(301, '/' + base_url + req.params[0] + '/certificate/page?id='+nextPage+'&next='+ req.query.next+'&new='+req.query.new)
-      }else{
-      return  res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-answers-ehc')
-
-      }
-    }
-    var nextPage =getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, req.query.id)
-
 
     if (req.query.product_page) {
       req.session.data.products = req.session.data.products || []

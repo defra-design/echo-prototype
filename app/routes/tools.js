@@ -85,9 +85,7 @@ countProperties: function (obj) {
 getBlankFields: function(obj) {
   var arr = []
   for (var property in obj) {
-    console.log("Checking:" + property)
     if (obj[property] == "" && property != "saveAndContinue" && property != "skip_answers") {
-      console.log("adding:" + property)
       arr.push(property)
     }
   }

@@ -49,6 +49,7 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
+
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certifier" aria-describedby="eligibility-completed">
@@ -128,13 +129,17 @@ GOV.UK Prototype Kit
       <!-- Hack to make part 3 active from the start -->
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Information required by the destination country
+          <span class="app-task-list__section-number">3. </span> Animal details  <div class="status-tag status-tag--warning">
+              SHOWS ON EHC
+            </div>
         </h2>
         <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
         <ul class="app-task-list__items">
+
+
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="{% if data.has_added_ehc %}certificate-list{%else%}new_ehc?first_time=yes{% endif %}" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+              <a href="{% if data.has_added_ehc %}certificate-list{%else%}new_ehc{% endif %}" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
             </span>
             {% if data.has_added_ehc == "yes" %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
@@ -144,9 +149,57 @@ GOV.UK Prototype Kit
           </li>
         </ul>
       </li>
+      {% set ech_active = "yes"%}
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span>Additional information (optional)
+          <span class="app-task-list__section-number">3. </span> Information required by the destination country <div class="status-tag status-tag--warning">
+              SHOWS ON EHC
+            </div>
+        </h2>
+        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
+        <ul class="app-task-list__items">
+
+          {% for task in db.pages %}
+          {% if task.exa != "yes" and (task.title != 'Supporting documents' or task.title != 'Supporting documents (optional)')%}
+          {% if ech_active != "yes"%}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {{task.title}}
+            </span>
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if not task.content.next %}
+              {% set next_page = 'check-your-progress' %}
+              {% else %}
+              {% set next_page = task.content.next %}
+              {% endif %}
+                 {% if task.content.product_page == 'yes' %}
+                 <a href="product-list?id={{task.page}}&products=" class="govuk-link">
+                 {% else%}
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
+                {% endif %}
+                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
+              </a>
+            </span>
+            {% if task.title =='Supporting documents' %}
+            <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
+            {% elseif data.completed[task.page] %}
+            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% else%}
+            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+            {% endif %}
+          </li>
+          {% endif %}
+          <!-- data.ech_active -->
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">5. </span>Additional information (optional)
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">

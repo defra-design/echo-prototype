@@ -132,9 +132,11 @@ GOV.UK Prototype Kit
         </h2>
         <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
         <ul class="app-task-list__items">
+
+
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="{% if data.has_added_ehc %}certificate-list{%else%}new_ehc?first_time=yes{% endif %}" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+              <a href="{% if data.has_added_ehc %}certificate-list{%else%}new_ehc{% endif %}" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
             </span>
             {% if data.has_added_ehc == "yes" %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>

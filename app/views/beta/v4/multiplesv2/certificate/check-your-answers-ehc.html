@@ -14,7 +14,7 @@ GOV.UK Prototype Kit
 
 
       {% for task in db.pages %}
-      {% if task.page != "supporting-documents" and task.exa != "yes" %}
+      {% if task.title != "Supporting documents" and task.exa != "yes" %}
       <h2 class="govuk-heading-m">{{task.title}}</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
         {% for field in task.content.fields %}
@@ -42,6 +42,43 @@ GOV.UK Prototype Kit
       {% endif %}
       {% endfor %}
       <!-- {Tasks -->
+      <h2 class="govuk-heading-m">Supporting documents</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+        {% if (data.uploaded_files | length) > 0 %}
+        {% for file in data.uploaded_files %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            File name
+            <br> Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{file.name}}
+            <br>{{file.description}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="supporting-documents?change=yes">
+              Change<span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+        {% endfor%}
+        {% else %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            File name
+            <br> Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No documents uploaded
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="supporting-documents?change=yes">
+              Change<span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+        <dl>
     </div>
   </div>
   <div class="govuk-grid-row">

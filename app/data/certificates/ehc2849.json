@@ -82,7 +82,7 @@
 		{
 			"page": 2,
 			"title": "How will the horse be identified?",
-			"repeatable": "no",
+			"repeatable": "yes",
 			"content": {
 				"header": "How will the horse be identified?",
 				"caption": "",
@@ -125,7 +125,7 @@
 		{
 			"page": 3,
 			"title": "Who owns the horse?",
-			"repeatable": "no",
+			"repeatable": "yes",
 			"content": {
 				"header": "Who owns the horse?",
 				"caption": "",

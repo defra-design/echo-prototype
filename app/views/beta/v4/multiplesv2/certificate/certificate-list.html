@@ -40,41 +40,41 @@ GOV.UK Prototype Kit
 
     <tr class="govuk-table__row">
       <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
-      <td class="govuk-table__cell">{{certificate.title}}<br><a href="#">View certificate(opens in new tab)</a></td>
+      <td class="govuk-table__cell">{{certificate.title}} - EHC2123<br><a href="#">View certificate(opens in new tab)</a></td>
       <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Edit</a></td>
     </tr>
       {% endfor%}
   </tbody>
 </table>
-<!-- <p class="govuk-body govuk-!-margin-bottom-8"><a href="add-new-certificate?completed=">Add another certificate</a></p> -->
+<p class="govuk-body govuk-!-margin-bottom-8"><a href="add-new-certificate?completed=">Add another certificate</a></p>
 <form method="post">
-  <div class="govuk-form-group">
+  <!-- <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              Do you want to add another animal?
+              Do you want to add another certificate?
             </h1>
           </legend>
-          <p class="govuk-body">You can add upto 50 animals on one application
+          <p class="govuk-body">You can add upto 100 certificates on one application
             </p>
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add_another_certificate-yes" name="add_another_certificate" type="radio" value="yes" aria-controls="conditional-certificates" aria-expanded="false">
-              <label class="govuk-label govuk-radios__label" for="add_another_certificate-yes">
+              <input class="govuk-radios__input" id="is_block_application" name="is_block_application" type="radio" value="yes" aria-controls="conditional-certificates" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="is_block_application">
                 Yes
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add_another_certificate-no" name="add_another_certificate" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="add_another_certificate-no">
+              <input class="govuk-radios__input" id="is_block_application-2" name="is_block_application" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="is_block_application-2">
                 No, return to the applcation
               </label>
             </div>
           </div>
         </fieldset>
-      </div>
-      <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
+      </div> -->
+      <p class="govuk-body"><a href="check-your-progress" class="govuk-button">Continue to application</a></p>
   </form>
     </div>
   </div>
