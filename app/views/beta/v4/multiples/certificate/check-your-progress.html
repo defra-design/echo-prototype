@@ -96,9 +96,9 @@ GOV.UK Prototype Kit
 
       <li>
         <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Disease clearance information
+            <span class="app-task-list__section-number">2. </span> Information needed by APHA
         </h2>
-        <p class="govuk-body govuk-!-margin-left-6">This information is required by APHA before a certificate can be issued</p>
+        <p class="govuk-body govuk-!-margin-left-6">APHA uses this information to control the spread of disease</p>
         <ul class="app-task-list__items">
 
           {% for task in db.pages %}
@@ -110,7 +110,7 @@ GOV.UK Prototype Kit
               {% else %}
               {% set next_page = task.content.next %}
               {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
                 {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
               </a>
             </span>
@@ -128,7 +128,7 @@ GOV.UK Prototype Kit
       <!-- Hack to make part 3 active from the start -->
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Information required by the destination country
+          <span class="app-task-list__section-number">3. </span> Information needed by the destination country
         </h2>
         <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
         <ul class="app-task-list__items">
@@ -146,8 +146,10 @@ GOV.UK Prototype Kit
       </li>
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span>Additional information (optional)
+          <span class="app-task-list__section-number">4. </span>Additional documents (optional)
         </h2>
+        <p class="govuk-body govuk-!-margin-left-6">Upload packing lists, schedules and other supporting documents to attach to your application</p>
+
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
 
