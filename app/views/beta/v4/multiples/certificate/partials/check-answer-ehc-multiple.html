@@ -1,0 +1,16 @@
+
+
+<table class="govuk-table">
+
+<tbody class="govuk-table__body">
+  <!-- for passing designs to developers show a EHC -->
+
+  {% for certificate in data.added_certificates %}
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
+      <td class="govuk-table__cell">{{certificate.title}}<br><a href="#">Preview certificate (opens in a new tab or window)</a></td>
+      <td class="govuk-table__cell" style="text-align: right;"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Change</a></td>
+    </tr>
+  {% endfor%}
+</tbody>
+</table>
