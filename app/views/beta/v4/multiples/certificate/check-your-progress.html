@@ -110,7 +110,7 @@ GOV.UK Prototype Kit
               {% else %}
               {% set next_page = task.content.next %}
               {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}&return=check-your-progress" aria-describedby="">
                 {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
               </a>
             </span>
@@ -135,7 +135,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <!-- new_ehc? -->
-              <a href="{% if data.has_added_ehc %}certificate-list{%else%}ehc-reference?first_time=yes{% endif %}" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+              <a href="{% if data.has_added_ehc %}certificate-list{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
             </span>
             {% if data.has_added_ehc == "yes" %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>

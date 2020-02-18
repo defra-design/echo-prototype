@@ -3,14 +3,32 @@
 <table class="govuk-table">
 
 <tbody class="govuk-table__body">
-  <!-- for passing designs to developers show a EHC -->
 
   {% for certificate in data.added_certificates %}
     <tr class="govuk-table__row">
       <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
       <td class="govuk-table__cell">{{certificate.title}}<br><a href="#">Preview certificate (opens in a new tab or window)</a></td>
-      <td class="govuk-table__cell" style="text-align: right;"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Change</a></td>
+      <td class="govuk-table__cell" style="text-align: right;"><!-- <a href="#">Delete</a>&nbsp;&nbsp;<a href="check-your-answers-ehc?&return_check_answers=check-your-answers&ehc_reference_num={{certificate.title}}&change_ehc=yes">Change</a>--></td>
     </tr>
   {% endfor%}
 </tbody>
 </table>
+<!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Certificates
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% for certificate in data.added_certificates %}
+      {{certificate.title}}<br><a href="#">Preview certificate (opens in a new tab or window)</a><br>
+      {% endfor %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
+        Change<span class="govuk-visually-hidden"> {{field.label}}</span>
+      </a>
+    </dd>
+  </div>
+</dl> -->
+<p class="govuk-body govuk-!-margin-bottom-9"><a href="certificate-list?return=check-your-answers">Add or remove certificates</a></p>

@@ -93,13 +93,22 @@ module.exports = function(router) {
   router.post('/'+base_url+'*/certificate/repeatable-page', function(req, res) {
     res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-answers-ehc')
   })
+
+
   router.post('/'+base_url+'*/certificate/check-your-answers-ehc', function(req, res) {
     // console.log("POST:")
     // console.log(req.session.data.database)
     // console.log("end POST")
-    addCertificate(tools.getDB(req.session.database,db).data.pages,req.session.data)
-    req.session.data.has_added_ehc="yes"
-    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/certificate-list');
+    if(req.session.data.change_ehc!="yes"){
+      addCertificate(tools.getDB(req.session.database,db).data.pages,req.session.data)
+      req.session.data.has_added_ehc="yes"
+    }
+
+    var url = 'certificate-list'
+    if(req.session.data.return_check_answers){
+      url =req.session.data.return_check_answers
+    }
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+url+'?change_ehc=');
 
   })
 
@@ -123,7 +132,12 @@ module.exports = function(router) {
     console.log("redirectging and setting first_time to "+req.session.data.first_time)
     console.log("and query = "+req.query.first_time)
     var page = req.query.id || 1
-    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+page+'&next=2&journey=linear');
+    var url = 'page?id='+page+'&next=2&journey=linear'
+    if (req.query.change == "yes "){
+      url = req.query.return_check_answers || 'check-your-answers'
+    }
+
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+url);
   });
 
   router.post('/' + base_url + '*/certificate/delete-certificate', function(req, res) {
@@ -146,10 +160,11 @@ module.exports = function(router) {
     //console.log('req.body.add_another_certificate '+req.body.add_another_certificate)
     if(req.body.add_another_certificate == "yes"){
       var page_id =  getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, 0)
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/ehc-reference?id='+page_id+'&first_time=no&new=yes');
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/ehc-reference?id='+page_id+'&first_time=no&new=yes&return_check_answers=certificate-list');
 
     }else{
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-progress');
+      var url = req.session.data.return || 'check-your-progress'
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+url );
 
     }
 
@@ -181,7 +196,10 @@ module.exports = function(router) {
 
     //reset the sesson data object for "empty"
     req.session.data.empty = []
-    if(req.session.data.journey == "linear"){
+
+    // when a user comes to edit a multiple we need to push the user confirm when changing content that is not repeatable.
+
+    if(req.session.data.journey == "linear" && req.query.change != "yes"){
       console.log("first_time = "+req.session.data.first_time )
       var nextPage = (req.session.data.first_time == "yes") ? getNextPage(tools.getDB(req.session.database, db).data.pages, req.query.id) : getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, req.query.id)
       if(nextPage){

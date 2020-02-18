@@ -28,7 +28,7 @@ GOV.UK Prototype Kit
         {% if db.is_multiple != "yes"%}
         <li><a href="#section-ehc-info">Information needed by the destination country</a></li>
         {% else%}
-        <li><a href="#section-ehc-info">Your {{data.added_certificate | length }} certificates added to applciation</a></li>
+        <li><a href="#section-ehc-info">Your certificates added to applciation</a></li>
         {% endif %}
         <li><a href="#section-documents-info">Supporting documents</a></li>
         {% if db.is_multiple != "yes"%}
@@ -149,9 +149,10 @@ GOV.UK Prototype Kit
       <!-- GET BESPOKE EXA QUESTIONS -->
 
 
-      <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">{% if db.is_multiple == "yes" %}{{(data.added_certificates | length) or "8"}} certificates added to application{% else %}3. Information needed by the destination country{% endif %}</h2>
+      <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">3. Information needed by the destination country</h2>
       <!-- If multiple show only the EHC's This is now split into partials -->
       {% if db.is_multiple %}
+        <p class="govuk-body">{{(data.added_certificates | length) or "8"}} certificates added to application</p>
         {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
       {% else %}
         {% block ehcAnswers %}{% include "./partials/check-answer-ehc.html" %}{% endblock%}

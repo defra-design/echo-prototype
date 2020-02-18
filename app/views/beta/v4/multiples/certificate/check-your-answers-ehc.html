@@ -8,10 +8,24 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-xl">
-        Check your certificate answers
+        {% if data.change_ehc == "yes"%}Update{% else %}Check{% endif %} your certificate answers
       </h1>
       <p class="govuk-body">These answers will appear on the certificate. You can also review your answers in a <a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate (opens in new tab)</a></p>
-
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Certificate reference title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ehc_reference_num or "Seabiscuit"}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="ehc-reference?return_check_answers=check-your-answers-ehc&change=yes">
+              Change<span class="govuk-visually-hidden"> Name</span>
+            </a>
+          </dd>
+      </div>
+      </dl>
 
       {% for task in db.pages %}
       {% if task.page != "supporting-documents" and task.exa != "yes" %}
@@ -32,7 +46,7 @@ GOV.UK Prototype Kit
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers-ehc">
+            <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers-ehc{%if task.page.repeatable!='yes' %}&confirm=yes{% endif%}&change=yes">
               Change<span class="govuk-visually-hidden"> {{field.label}}</span>
             </a>
           </dd>
@@ -58,7 +72,7 @@ GOV.UK Prototype Kit
         <form method="POST">
           <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
           <input type="hidden" name="applicationFormStatus" value="">
-          <input class="govuk-button margin-top-30" type="submit" value="Add certificate" id="Button-Continue" data-qa-id="Button-Continue">
+          <input class="govuk-button margin-top-30" type="submit" value="{% if data.change_ehc == 'yes'%}Update{% else %}add{% endif %} certificate" id="Button-Continue" data-qa-id="Button-Continue">
         </form>
       </div>
     </div>
