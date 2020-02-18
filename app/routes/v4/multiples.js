@@ -119,10 +119,25 @@ module.exports = function(router) {
     })
   });
 
-  router.get('/' + base_url + '*/certificate/new_ehc', function(req, res) {
+  router.post('/' + base_url + '*/certificate/ehc-reference', function(req, res) {
     console.log("redirectging and setting first_time to "+req.session.data.first_time)
     console.log("and query = "+req.query.first_time)
-   return  res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id=1&next=2&journey=linear&first_time=yes');
+    var page = req.query.id || 1
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+page+'&next=2&journey=linear');
+  });
+
+  router.post('/' + base_url + '*/certificate/delete-certificate', function(req, res) {
+    console.log("delete-certificate : "+req.body.confirm_delete_certificate )
+    var show_alert="no"
+    if(req.body.confirm_delete_certificate == "yes"){
+      console.log(req.session.data.added_certificates)
+      req.session.data.added_certificates.splice(req.query.id,1)
+      console.log("-----after----")
+      console.log(req.session.data.added_certificates)
+      show_alert="yes"
+    }
+
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/certificate-list?show_alert='+show_alert+'&lalert_type=deleted');
   });
 
 
@@ -131,7 +146,7 @@ module.exports = function(router) {
     //console.log('req.body.add_another_certificate '+req.body.add_another_certificate)
     if(req.body.add_another_certificate == "yes"){
       var page_id =  getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, 0)
-      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+page_id+'&first_time=no&new=yes');
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/ehc-reference?id='+page_id+'&first_time=no&new=yes');
 
     }else{
       res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-progress');
@@ -155,7 +170,6 @@ module.exports = function(router) {
     // Show error message if the user has left anything blank and not skipped
     req.body.skip_answers = req.body.skip_answers || []
     if (req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip') && page.exa!="yes") {
-
       // ensure this page has been removed from the skipped list (used in check your progress)
       req.session.data.skipped = req.session.data.skipped.filter(e => e !== page_name)
       return res.redirect(301, '/' + base_url + req.params[0] + '/certificate/page?id='+req.query.id+'&next='+ req.query.next+'&hasError=yes');

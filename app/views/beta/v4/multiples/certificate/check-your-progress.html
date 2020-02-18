@@ -134,7 +134,8 @@ GOV.UK Prototype Kit
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="{% if data.has_added_ehc %}certificate-list{%else%}new_ehc?first_time=yes{% endif %}" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+              <!-- new_ehc? -->
+              <a href="{% if data.has_added_ehc %}certificate-list{%else%}ehc-reference?first_time=yes{% endif %}" class="govuk-link">{% if data.has_added_ehc != "yes" %}Add your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
             </span>
             {% if data.has_added_ehc == "yes" %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>

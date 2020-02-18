@@ -9,7 +9,10 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl govuk-!-margin-boxx11ttom-8">
+    {% if query.show_alert == "yes"%}
+    <div class="defra-alert defra-alert--success"><p class="govuk-body govuk-!-margin-bottom-0">Successfully deleted certificate</p></div>
+    {% endif %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
       {{data.added_certificates | length}} certificate{% if (data.added_certificates | length) > 1 %}s{% endif %} added to application
     </h1>
 
@@ -24,7 +27,7 @@ GOV.UK Prototype Kit
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__header">1.</td>
         <td class="govuk-table__cell">Billy - EHC2123<br><a href="#">View certificate(opens in new tab)</a></td>
-        <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Edit</a></td>
+        <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Change</a></td>
       </tr>
       {% endif %}
 
@@ -41,7 +44,7 @@ GOV.UK Prototype Kit
     <tr class="govuk-table__row">
       <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
       <td class="govuk-table__cell">{{certificate.title}}<br><a href="#">Preview certificate (opens in a new tab or window)</a></td>
-      <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Edit</a></td>
+      <td class="govuk-table__cell"><a href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Delete</a>&nbsp;&nbsp;<a href="check-your-answers-chanage?change_id={{loop.index -1}}">Change</a></td>
     </tr>
       {% endfor%}
   </tbody>
