@@ -56,5 +56,30 @@
   </div>
 </div>
 {% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+  $('.govuk-textarea').each(function() {
+  var elem = $(this);
 
+  // Save current value of element
+  elem.data('oldVal', elem.val());
+
+  // Look for changes in the value
+  elem.bind("propertychange change click keyup input paste", function(event){
+     // If value has changed...
+     if (elem.data('oldVal') != elem.val()) {
+      // Updated stored value
+
+      console.log(elem.attr('data-default'))
+      // Do action
+      if(elem.val()=="//default"){
+        elem.val(elem.attr('data-default'));
+
+      }
+      elem.data('oldVal', elem.val());
+    }
+  });
+});
+});
+</script>
 {% endblock %}

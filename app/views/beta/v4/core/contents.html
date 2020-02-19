@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Main core Prototype
+    </h1>{{releaseVersion | log }}
+    <p class="govuk-body">This prototype should be as close to the live service. Updated with in development or soon to be released features.</p>
+
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <h3 class="govuk-heading-m">End to end journeys</h3>
+    <ul class="govuk-list">
+      <li><a href="search/8254">Form 8254EHC</a> </li>
+      <li><a href="search/8284">Form 8284EHC</a> </li>
+      <li><a href="search/6969">Form 6969EHC</a> </li>
+    </ul>
+    <h3 class="govuk-heading-m">Main start pages</h3>
+    <ul class="govuk-list">
+      <li><a href="gov-sign-in">Sign in</a> </li>
+      <li><a href="dashboard">Dashboard</a> </li>
+      <li><a href="select-certificate">Select certificate</a></li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}
