@@ -1,23 +1,23 @@
 {
-	"certificate_code": "2580EHC",
+	"certificate_code": "2432EHC",
 	"version": "1",
 	"printable": "no",
 	"is_multiple": "yes",
 	"destination": "United Arab Emirates",
-	"certificate_name": "Export dogs from United Kingdom to Australia",
+	"certificate_name": "Export cats from United Kingdom to Australia",
 	"commodities": [{
-		"group": "Dogs",
+		"group": "Cats",
 		"options": [{
-			"title": "Dogs",
-			"name": "Dogs"
+			"title": "Cats",
+			"name": "Cats"
 		}]
 	}],
 	"pages": [{
 			"page": 1,
-			"title": "What are the details of the dog?",
+			"title": "What are the details of the cat?",
 			"repeatable": "yes",
 			"content": {
-				"header": "What are the details of the dog?",
+				"header": "What are the details of the cat?",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -31,7 +31,7 @@
 						"id": "animal_name",
 						"name": "animal_name",
 						"allow": "past",
-						"default": "Seabiscuit"
+						"default": "003453232"
 					},
 					{
 						"type": "text",
@@ -138,10 +138,10 @@
 		},
 		{
 			"page": 3,
-			"title": "Where is the dog from?",
+			"title": "Where is the cat from?",
 			"repeatable": "yes",
 			"content": {
-				"header": "Where is the dog from?",
+				"header": "Where is the cat from?",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -149,7 +149,7 @@
 				"product_page": "no",
 				"fields": [{
 					"type": "textarea",
-					"label": "Address of the dog at time of export",
+					"label": "Address of the cat at time of export",
 					"hint": "",
 					"required": "no",
 					"id": "owner_address",
@@ -194,8 +194,8 @@
 				"product_max": "5",
 				"fields": [{
 					"type": "textarea",
-					"label": "Who is sending the dog?",
-					"hint": "Provide details of the person who will send the consignment, or their representative",
+					"label": "Who is sending the cat?",
+					"hint": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
 					"required": "yes",
 					"id": "consignee_details",
 					"name": "consignee_details",
@@ -203,8 +203,17 @@
 					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
 				}, {
 					"type": "text",
-					"label": "Flight number",
-					"hint": "You can enter more than one flight number",
+					"label": "Means of transport",
+					"hint": "",
+					"required": "no",
+					"id": "transport_means",
+					"name": "transport_means",
+
+					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
+				},  {
+					"type": "text",
+					"label": "Flight number or name of ship",
+					"hint": "",
 					"required": "no",
 					"id": "flight_number",
 					"name": "flight_number",
@@ -212,8 +221,8 @@
 					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
 				}, {
 					"type": "textarea",
-					"label": "Who is receiving the dog?",
-					"hint": "Provide Name and address of the person (consignee) the dog will be shipped to, or their representative",
+					"label": "Who is receiving the cat?",
+					"hint": "Provide Name and address of the person (consignee) the cat will be shipped to, or their representative",
 					"required": "no",
 					"id": "consignee_details",
 					"name": "consignee_details",
@@ -352,25 +361,26 @@
 				"next": "",
 				"prev": "",
 				"product_page": "no",
-				"fields": [{
+				"fields": [
+					{
+						"type": "date",
+						"label": "Planned export date",
+						"hint": "For example, 31 08 1970",
+						"required": "yes",
+						"id": "export_date",
+						"name": "export_date",
+						"allow": "future",
+						"default": ""
+					},{
 					"type": "date",
-					"label": "Planned export date",
-					"hint": "For example, 31 08 1970",
+					"label": "Date of final appointment with veterinarian",
+					"hint": "This needs to be on or before the export date",
 					"required": "yes",
-					"id": "export_date",
-					"name": "export_date",
-					"allow": "future",
+					"id": "export_date_final_appoint",
+					"name": "export_date_final_appoint",
+					"allow": "no",
 					"default": ""
-				},{
-				"type": "date",
-				"label": "Date of final appointment with veterinarian",
-				"hint": "This needs to be on or before the export date",
-				"required": "yes",
-				"id": "export_date_final_appoint",
-				"name": "export_date_final_appoint",
-				"allow": "no",
-				"default": ""
-			}]
+				}]
 			}
 		}
 	]

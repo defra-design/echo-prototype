@@ -35,4 +35,5 @@ module.exports = {
     "printable": "yes",
     "originals": {},
     "added_certificates" : []
+    "mulitiple_max" : "8327EHC","
 }

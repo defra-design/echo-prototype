@@ -1,6 +1,6 @@
 {
-	"certificate_code": "2849EHC_test",
-	"version": "2",
+	"certificate_code": "1261EHC",
+	"version": "1",
 	"printable": "no",
 	"is_multiple": "yes",
 	"destination": "United Arab Emirates",
@@ -17,10 +17,10 @@
 	}],
 	"pages": [{
 			"page": 1,
-			"title": "Horse details",
+			"title": "What are the details of the horse?",
 			"repeatable": "yes",
 			"content": {
-				"header": "Horse details",
+				"header": "What are the details of the horse?",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -75,17 +75,7 @@
 						"name": "animal_gender",
 						"allow": "past",
 						"default": "003453232"
-					},
-					{
-							"type": "textarea",
-							"label": "Name and address of the owner",
-							"hint": "",
-							"required": "no",
-							"id": "owner_details",
-							"name": "owner_details",
-							"rows": "4",
-							"default": ""
-						}
+					}
 				]
 			}
 		},
@@ -133,11 +123,35 @@
 			}
 		},
 		{
+			"page": 3,
+			"title": "Who owns the horse?",
+			"repeatable": "yes",
+			"content": {
+				"header": "Who owns the horse?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "textarea",
+						"label": "Name and address of the owner",
+						"hint": "",
+						"required": "no",
+						"id": "owner_details",
+						"name": "owner_details",
+						"rows": "4",
+						"default": ""
+					}
+				]
+			}
+		},
+		{
 			"page": 4,
-			"title": "Consignment details",
+			"title": "Where was the horse examined?",
 			"repeatable": "no",
 			"content": {
-				"header": "Consignment details",
+				"header": "Where was the horse examined?",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -152,7 +166,21 @@
 					"name": "examination_details",
 					"rows": "4",
 					"default": ""
-				},{
+				}]
+			}
+		},
+		{
+			"page": 5,
+			"title": "Who is sending the consignment?",
+			"content": {
+				"header": "Who is sending the consignment?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"product_max": "5",
+				"fields": [{
 					"type": "textarea",
 					"label": "Name and address of exporter",
 					"hint": "",
@@ -161,7 +189,20 @@
 					"name": "product_species",
 					"rows": "4",
 					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
-				},{
+				}]
+			}
+		},
+		{
+			"page": 6,
+			"title": "How will the horse be transported?",
+			"content": {
+				"header": "How will the horse be transported?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
 					"type": "text",
 					"label": "Means of transport",
 					"hint": "For example, aeroplane, ship, road",
@@ -169,7 +210,19 @@
 					"id": "transport_means",
 					"name": "transport_means",
 					"default": "Ship"
-				},{
+				}]
+			}
+		}, {
+			"page": 7,
+			"title": "Where is the consignment being sent to?",
+			"content": {
+				"header": "Where is the consignment being sent to?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
 					"type": "textarea",
 					"label": "Address of destination",
 					"hint": "",
@@ -178,7 +231,20 @@
 					"name": "destination_address",
 					"rows": 4,
 					"default": "ABC limited, UAE, 039432. Registration number - UAE3945-2342"
-				},{
+				}]
+			}
+		},
+		{
+			"page": 8,
+			"title": "Who is receiving the consignment?",
+			"content": {
+				"header": "Who is receiving the consignment?",
+				"caption": "",
+				"paragraph": "Provide details of the person the consignment will be shipped to, or their representative.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
 					"type": "textarea",
 					"label": "Name and address of consignee",
 					"hint": "",

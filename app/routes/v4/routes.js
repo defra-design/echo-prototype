@@ -3,6 +3,7 @@ module.exports = function(router) {
   var tools = require('../tools.js')
 
   require('./multiples.js')(router)
+  require('./multiples-1-2.js')(router)
   require('./assign-to-certifier.js')(router)
   require('./blocks.js')(router)
   require('./cloning.js')(router)
@@ -46,6 +47,8 @@ module.exports = function(router) {
     }
     // if the certificate is does not exist get one.
     req.session.db = req.session.db || tools.getDB(req.session.data.database, db).data
+    req.session.data.is_multiple = req.session.db.is_multiple
+    req.session.data.certificate_code = req.session.db.certificate_code
     next()
   })
 

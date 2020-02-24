@@ -1,75 +1,35 @@
-
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
-
 {% block content %}
 <a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
-
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-
-
-                <h1 class="govuk-heading-xl">
-                    Preview your certificate
-                </h1>
-
-                <form action="review" method="POST" >
-
-
-
-
-                            <div class="govuk-form-group margin-top-30">
-<img src="/public/images/specimen.jpg" style="width: 500px"><br>
-
-                                <ul class="govuk-list govuk-list--bullet" style="margin-top: 25px">
-
-
-                                    <li> <strong class="govuk-body govuk-!-font-weight-regular margin-top-45"><a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">   Download your specimen certificate </a></strong></li>
-
-                                    <li> <strong class="govuk-body govuk-!-font-weight-regular">Preview your<a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link"> specimen certificate </a>.</strong></li>
-
-
-</ul>
-
-
-
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-                <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
-                        <input {% if data.specimen %}value="{{data.specimen}}"{% endif %} class="govuk-button margin-top-30" type="submit" name="specimen" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
-                    </div>
-                </form>
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-full govuk-body">
-
-
-                            <form action="dashboard">
-                                <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
-                            </form>
-
-
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Preview your certificate
+    </h1>
+    <form action="review" method="POST">
+      <div class="govuk-form-group margin-top-30">
+        <img src="/public/images/specimen.jpg" style="width: 500px"><br>
+        <ul class="govuk-list govuk-list--bullet" style="margin-top: 25px">
+          <li> <strong class="govuk-body govuk-!-font-weight-regular margin-top-45"><a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link"> Download your specimen certificate </a></strong></li>
+          <li> <strong class="govuk-body govuk-!-font-weight-regular">Preview your<a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link"> specimen certificate </a>.</strong></li>
+        </ul>
+      </div>
+      <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+        <input {% if data.specimen %}value="{{data.specimen}}" {% endif %} class="govuk-button margin-top-30" type="submit" name="specimen" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+      </div>
+    </form>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-body">
+        <form action="dashboard">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-
+</div>
+</div>
 {% endblock %}
