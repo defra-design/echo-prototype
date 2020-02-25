@@ -92,20 +92,16 @@ GOV.UK Prototype Kit
 
         </ul>
       </li>
-
-
-
-      <!-- Hack to make part 3 active from the start -->
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">2. </span> Information for the EHC
         </h2>
-        <p class="govuk-body govuk-!-margin-left-6">The information in this section will appear on the EHC. Your certifier can help you complete this section.</p>
+        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <!-- new_ehc? -->
-              <a href="{% if data.has_added_ehc %}certificate-list{%else%}new_ehc?first_time=yes{% endif %}&return=check-your-progress" class="govuk-link">{% if data.has_added_ehc != "yes" %}Create your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+              <a href="{% if data.has_added_ehc %}certificate-list{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress&return_check_answers=ehc-reference" class="govuk-link">{% if data.has_added_ehc != "yes" %}Create your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
             </span>
             {% if data.has_added_ehc == "yes" %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
@@ -115,11 +111,12 @@ GOV.UK Prototype Kit
           </li>
         </ul>
       </li>
+
       <li>
         <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">3. </span> Information needed by APHA
         </h2>
-        <p class="govuk-body govuk-!-margin-left-6">APHA uses this information to control the spread of disease. This information does not appear on the EHC</p>
+        <p class="govuk-body govuk-!-margin-left-6">APHA uses this information to control the spread of disease</p>
         <ul class="app-task-list__items">
 
           {% for task in db.pages %}
@@ -146,6 +143,8 @@ GOV.UK Prototype Kit
           {% endfor %}
         </ul>
       </li>
+      <!-- Hack to make part 3 active from the start -->
+
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">4. </span>Additional documents (optional)

@@ -1,9 +1,10 @@
 module.exports = function(router) {
   // Load helper functions
   var tools = require('../tools.js')
-
-  require('./multiples.js')(router)
+  require('./multiples-1-3.js')(router)
   require('./multiples-1-2.js')(router)
+  require('./multiples.js')(router)
+
   require('./assign-to-certifier.js')(router)
   require('./blocks.js')(router)
   require('./cloning.js')(router)

@@ -34,6 +34,6 @@ module.exports = {
     "forms" : form,
     "printable": "yes",
     "originals": {},
-    "added_certificates" : []
-    "mulitiple_max" : "8327EHC","
+    "added_certificates" : [],
+    "mulitiple_max" : 50
 }

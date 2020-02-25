@@ -30,7 +30,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data.is_multiple == "yes" %}<span class="govuk-caption-xl">Create a new certificate {% if data.animal_name %} for {{data.animal_name}}{% endif %}</span>{% endif %}
+    {% if data.is_multiple == "yes" %}<span class="govuk-caption-xl">{% if data.change_ehc != "yes"%}Create a new c{%else%}C{%endif%}ertificate for {{data.ehc_reference_num}}</span>{% endif %}
     {% block errorBlank %}{% include "./partials/partial_error_blank.html" %}{% endblock %}
     {% if page.content.caption %}<span class="govuk-caption-xl">{{page.content.caption}} {% if query.product_page %}{{(data.products | length)+1}} of {{page.content.product_max or 4}}{%endif%}</span>{%endif%}
     <h1 class="govuk-heading-xl">

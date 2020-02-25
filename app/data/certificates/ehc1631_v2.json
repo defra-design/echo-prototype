@@ -138,394 +138,350 @@
         ]
       }
     },
-    {
-      "page": 4,
-      "title": "Where was the export product processed?",
-      "content": {
-        "header": "Where was the export product processed?",
-        "caption": "",
-        "paragraph": "",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "textarea",
-          "label": "Name, address and approval number of processing establishment",
-          "hint": "",
-          "required": "no",
-          "id": "processing_export_product",
-          "name": "processing_export_product",
-          "rows": 4,
-          "default": "ABC limited UK, Wendsbury, BM1 3XE (UK.HD.323.323)"
-        }]
-      }
-    },
-    {
-      "page": 5,
-      "title": "What are the details of your final product?",
-      "content": {
-        "header": "What are the details of your final product?",
-        "caption": "",
-        "paragraph": "",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "textarea",
-          "label": "Description of the product",
-          "hint": "Include details such as commodity type and product name",
-          "required": "no",
-          "id": "product_details",
-          "name": "product_details",
-          "rows": 4,
-          "default": "Coffee flat white, Coffee skinny capp,Coffee creamy"
-        }]
-      }
-    },
-    {
-      "page": 6,
-      "title": "What are the consignment details?",
-      "content": {
-        "header": "What are the consignment details?",
-        "caption": "",
-        "paragraph": "",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-            "type": "text",
-            "label": "Type and number of packages",
-            "hint": "",
-            "required": "no",
-            "id": "consignment-package-number",
-            "name": "consignment_package-number",
-            "default": "8544 cases"
-          },
-          {
-            "type": "text",
-            "label": "Net weight",
-            "hint": "",
-            "required": "no",
-            "id": "consignment-net-weight",
-            "name": "consignment_net_weight",
-            "default": "9262.6kg"
-          },
-          {
-            "type": "text",
-            "label": "Identification marks",
-            "hint": "Enter the serial and batch numbers. Multiple numbers can be comma separated.",
-            "required": "no",
-            "id": "consignment-id-marks",
-            "name": "consignment_id_marks",
-            "default": ""
-          },
-          {
-            "type": "date",
-            "label": "Date of manufacture",
-            "hint": "For example, 31 08 1970",
-            "required": "no",
-            "id": "consignment-manufacture-date",
-            "name": "consignment_manufacture_date",
-            "allow": "past",
-            "default": "31/10/2019"
-          }
-        ]
-      }
-    },
-    {
-      "page": 7,
-      "title": "What are the details of the exporter?",
-      "content": {
-        "header": "What are the details of the exporter?",
-        "caption": "",
-        "paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "textarea",
-          "label": "Name and address of exporter",
-          "hint": "",
-          "required": "no",
-          "id": "exporter_details_address",
-          "name": "exporter_details_address",
-          "default": ""
-        }]
-      }
-    },
-    {
-      "page": 8,
-      "title": "What is the means of transportation?",
-      "content": {
-        "header": "What is the means of transportation?",
-        "caption": "",
-        "paragraph": "",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "text",
-          "label": "Means of transportation",
-          "hint": "Enter the method of travel and the identification of the transport. For example Airplane ZZ1234",
-          "required": "no",
-          "id": "transport_means",
-          "name": "transport_means",
-          "default": "Sea freight"
-        }, {
-          "type": "text",
-          "label": "Shipping marks",
-          "hint": "Enter the container and seal numbers ",
-          "required": "no",
-          "id": "transport_seal_number",
-          "name": "transport_seal_number",
-          "default": ""
-        }]
-      }
-    },
-    {
-      "page": 9,
-      "title": "Who is receiving the product?",
-      "content": {
-        "header": "Who is receiving the product?",
-        "caption": "",
-        "paragraph": "",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "textarea",
-          "label": "Name and address of consignee",
-          "hint": "Provide details of the person the consignment will be shipped to, or their representative.",
-          "required": "no",
-          "id": "consignee_details",
-          "name": "consignee_details",
-          "rows": 4,
-          "default": "ABC limited Australia, 637 Rowley Street, Melbourne, CIC2002 "
-        }, {
-          "type": "textarea",
-          "label": "Name and contact number of consignee representative",
-          "hint": "Leave blank if no agent has been used",
-          "required": "no",
-          "id": "consignee_representive",
-          "name": "consignee_representive",
-          "rows": 4,
-          "default": ""
-        }]
-      }
-    },
-    {
-      "page": "supporting-documents",
-      "title": "Supporting documents",
-      "optional": "yes",
-      "content": {
-        "fields": []
-      }
-    },
-    {
-      "page": 11,
-      "exa": "yes",
-      "title": "Where will certification take place?",
-      "content": {
-        "header": "Where will certification take place?",
-        "caption": "",
-        "paragraph": "",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "radio",
-          "inline": "no",
-          "label": "Certification region",
-          "hint": "Select the region in which the certification will take place:",
-          "required": "yes",
-          "id": "certification_place",
-          "name": "certification_place",
-          "options": [{
-              "title": "England",
-              "value": "England"
-            },
-            {
-              "title": "Scotland",
-              "value": "Scotland"
-            },
-            {
-              "title": "Wales",
-              "value": "Wales"
-            }
-          ],
-          "default": "England"
-        }]
-      }
-    }, {
-      "page": 12,
-      "exa": "yes",
-      "title": "What is the planned date of certification?",
-      "content": {
-        "header": "What is the planned date of certification?",
-        "caption": "",
-        "paragraph": "",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "date",
-          "label": "Planned date of certification",
-          "hint": "For example, 31 08 1970",
-          "required": "yes",
-          "id": "certificate_date",
-          "name": "certificate_date",
-          "allow": "future",
-          "default": ""
-        }]
-      }
-    }, {
-      "page": 13,
-      "exa": "yes",
-      "title": "Who is exporting the product?",
-      "content": {
-        "header": "Who is exporting the product?",
-        "caption": "",
-        "paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "text",
-          "label": "Exporter name",
-          "hint": "",
-          "required": "yes",
-          "id": "exporter_name",
-          "name": "exporter_name",
-          "default": "ABC ltd"
-        }]
-      }
-    },
-    {
-      "page": 14,
-      "exa": "yes",
-      "title": "When and where was the milk collected?",
-      "content": {
-        "header": "When and where was the milk collected?",
-        "caption": "",
-        "paragraph": "Provide details of where and when the milk was collected. You can select more than one region. We use this information to help control the spread of disease.",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "checkbox",
-          "label": "Origin",
-          "hint": "Select all that apply:",
-          "required": "yes",
-          "id": "origin",
-          "name": "origin",
-          "options": [{
-              "title": "Great Britain",
-              "name": "Great Britain"
-            }, {
-              "title": "Northern Ireland",
-              "name": "Northern Ireland"
-            },
-            {
-              "title": "Outside the UK",
-              "name": "Outside the UK"
-            }
-          ],
-          "default": "Great Britain"
-        }, {
-          "type": "date",
-          "label": "Earliest date of collection",
-          "hint": "For example, 31 08 1970",
-          "required": "yes",
-          "id": "origin_earliest_date",
-          "name": "origin_earliest_date",
-          "allow": "past",
-          "default": ""
-        }, {
-          "type": "date",
-          "label": "Latest date of collection",
-          "hint": "For example, 31 08 1970",
-          "required": "yes",
-          "id": "origin_latest_date",
-          "name": "origin_latest_date",
-          "allow": "past",
-          "default": ""
-        }]
-      }
-    },
-    {
-      "page": 15,
-      "exa": "yes",
-      "title": "What are the processing details?",
-      "content": {
-        "header": "What are the processing details?",
-        "caption": "",
-        "paragraph": "",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "checkbox",
-          "label": "Origin",
-          "hint": "Select all that apply:",
-          "required": "yes",
-          "id": "origin",
-          "name": "origin",
-          "options": [{
-              "title": "Great Britain",
-              "name": "Great Britain"
-            }, {
-              "title": "Northern Ireland",
-              "name": "Northern Ireland"
-            },
-            {
-              "title": "Outside the UK",
-              "name": "Outside the UK"
-            }
-          ],
-          "default": "Great Britain"
-        }, {
-          "type": "date",
-          "label": "Earliest date of processing",
-          "hint": "For example, 31 08 1970",
-          "required": "yes",
-          "id": "origin_processing_early_date",
-          "name": "origin_processing_early_date",
-          "allow": "past",
-          "default": ""
-        }, {
-          "type": "date",
-          "label": "Latest date of processing",
-          "hint": "For example, 31 08 1970",
-          "required": "yes",
-          "id": "origin_processing_late_date",
-          "name": "origin_processing_late_date",
-          "allow": "past",
-          "default": ""
-        }]
-      }
-    }, {
-      "page": 16,
-      "exa": "yes",
-      "title": "What is the planned date of export?",
-      "content": {
-        "header": "What is the planned date of export?",
-        "caption": "",
-        "paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
-        "next": "",
-        "prev": "",
-        "product_page": "no",
-        "fields": [{
-          "type": "date",
-          "label": "Planned export date",
-          "hint": "For example, 31 08 1970",
-          "required": "yes",
-          "id": "export_date",
-          "name": "export_date",
-          "allow": "future",
-          "default": ""
-        }]
-      }
-    }
+		{
+			"page": 4,
+			"title": "Where was the product stored?",
+			"content": {
+				"header": "Where was the product stored?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name, address and approval number of the cold store of dispatch",
+					"hint": "",
+					"required": "no",
+					"id": "processing_export_product",
+					"name": "processing_export_product",
+					"rows": 4,
+					"default": "ABC limited UK, Wendsbury, BM1 3XE (UK.HD.323.323)"
+				}]
+			}
+		},
+		{
+			"page": 5,
+			"title": "Who is sending the consignment?",
+			"content": {
+				"header": "Who is sending the consignment?",
+				"caption": "",
+				"paragraph": "Provide details of the person who will send the consignment, or their representative.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of exporter",
+					"hint": "",
+					"required": "no",
+					"id": "consignee_sender",
+					"name": "consignee_sender",
+					"rows": 4,
+					"default": "address 1"
+				}]
+			}
+		},
+		{
+			"page": 8,
+			"title": "How will the consignment be transported?",
+			"content": {
+				"header": "How will the consignment be transported?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Enter the means of transport and the seal and container numbers",
+					"required": "no",
+					"id": "transport_means",
+					"name": "transport_means",
+					"default": "Sea freight"
+				}]
+			}
+		},
+		{
+			"page": 9,
+			"title": "What is the destination of this consignment?",
+			"content": {
+				"header": "What is the destination of this consignment?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Place of unloading within the destination country",
+					"hint": "",
+					"required": "no",
+					"id": "consignee_destination",
+					"name": "consignee_destination",
+					"rows": 4,
+					"default": "ABC limited Australia, 637 Rowley Street, Melbourne, CIC2002 "
+				}, {
+					"type": "textarea",
+					"label": "Name and contact number of consignee representative",
+					"hint": "Leave blank if no agent has been used",
+					"required": "no",
+					"id": "consignee_representive",
+					"name": "consignee_representive",
+					"rows": 4,
+					"default": ""
+				}]
+			}
+		},
+		{
+			"page": 10,
+			"title": "Who is receiving the consignment?",
+			"content": {
+				"header": "Who is receiving the consignment?",
+				"caption": "",
+				"paragraph": "Provide details of the person the consignment will be shipped to, or their representative.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of consignee",
+					"hint": "",
+					"required": "no",
+					"id": "consignee_address",
+					"name": "consignee_address",
+					"rows": 4,
+					"default": "ABC limited Australia, 637 Rowley Street, Melbourne, CIC2002 "
+				}]
+			}
+		},
+		{
+			"page": "supporting-documents",
+			"title": "Supporting documents",
+			"optional": "yes",
+			"content": {
+				"fields": []
+			}
+		},
+		{
+			"page": 11,
+			"exa": "yes",
+			"title": "Where will certification take place?",
+			"content": {
+				"header": "Where will certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					],
+					"default": "England"
+				}]
+			}
+		}, {
+			"page": 12,
+			"exa": "yes",
+			"title": "What is the planned date of certification?",
+			"content": {
+				"header": "What is the planned date of certification?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned date of certification",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "certificate_date",
+					"name": "certificate_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
+		}, {
+			"page": 13,
+			"exa": "yes",
+			"title": "Who is exporting the product?",
+			"content": {
+				"header": "Who is exporting the product?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Exporter name",
+					"hint": "",
+					"required": "yes",
+					"id": "exporter_name",
+					"name": "exporter_name",
+					"default": "ABC ltd"
+				}]
+			}
+		},
+		{
+			"page": 14,
+			"exa": "yes",
+			"title": "What is the origin of the product?",
+			"content": {
+				"header": "What is the origin of the product?",
+				"caption": "",
+				"paragraph": "Provide details of the origin of the animals from which the product is derived. These may originate from more than one region. We use this information to help control the spread of disease.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "checkbox",
+					"label": "Origin",
+					"hint": "Select all that apply:",
+					"required": "yes",
+					"id": "origin",
+					"name": "origin",
+					"options": [{
+							"title": "Great Britain",
+							"name": "Great Britain"
+						}, {
+							"title": "Northern Ireland",
+							"name": "Northern Ireland"
+						},
+						{
+							"title": "Outside the UK",
+							"name": "Outside the UK"
+						}
+					],
+					"default": "Great Britain"
+				}]
+			}
+		},
+		{
+			"page": 15,
+			"exa": "yes",
+			"title": "When and where were the animals slaughtered?",
+			"content": {
+				"header": "When and where were the animals slaughtered?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "checkbox",
+					"label": "Country of slaughter, processing and storage",
+					"hint": "Select all that apply:",
+					"required": "yes",
+					"id": "origin",
+					"name": "origin",
+					"options": [{
+							"title": "Great Britain",
+							"name": "Great Britain"
+						}, {
+							"title": "Northern Ireland",
+							"name": "Northern Ireland"
+						},
+						{
+							"title": "Outside the UK",
+							"name": "Outside the UK"
+						}
+					],
+					"default": "Great Britain"
+				}, {
+					"type": "date",
+					"label": "Earliest date of slaughter",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "origin_slaughter_early_date",
+					"name": "origin_slaughter_early_date",
+					"allow": "past",
+					"default": ""
+				}, {
+					"type": "date",
+					"label": "Latest date of slaughter",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "origin_slaughter_late_date",
+					"name": "origin_slaughter_late_date",
+					"allow": "past",
+					"default": ""
+				}]
+			}
+		},
+		{
+			"page": 16,
+			"exa": "yes",
+			"title": "When were the raw materials processed?",
+			"content": {
+				"header": "When were the raw materials processed?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Earliest date of processing",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "origin_processing_early_date",
+					"name": "origin_processing_early_date",
+					"allow": "past",
+					"default": ""
+				}, {
+					"type": "date",
+					"label": "Latest date of processing",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "origin_processing_late_date",
+					"name": "origin_processing_late_date",
+					"allow": "past",
+					"default": ""
+				}]
+			}
+		}, {
+			"page": 17,
+			"exa": "yes",
+			"title": "What is the planned date of export?",
+			"content": {
+				"header": "What is the planned date of export?",
+				"caption": "",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned export date",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
+		}
 
   ]
 }

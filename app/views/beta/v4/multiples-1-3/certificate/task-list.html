@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Return to your applications</a>
+{% endblock %}
+{% block content %}
+<style media="screen">
+    .defra-task-list__item{
+    border-bottom: 1px solid #b1b4b6;
+    margin-bottom: 0 !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+    @media (min-width: 40.0625em){
+.defra-task-list{
+    min-width: 550px;
+
+}}
+.defra-task-list__item:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.defra-task-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+@media (min-width: 40.0625em){
+.defra-task-list__content {
+    max-width: 75%;
+}}
+@media (min-width: 28.125em){
+.defra-task-list__content {
+    float: left;
+}}
+.defra-task-list__content {
+    display: block;
+}
+
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+      Apply for {{certificate_code or "EHC 8327"}}
+    </h1>
+    <span class="govuk-caption-l govuk-!-margin-bottom-8">{{db.certificate_name}}</span>
+
+
+    <hr>
+    <ol class="defra-task-list govuk-!-margin-bottom-6">
+
+      <li class="defra-task-list__item">
+        <div class="defra-task-list__content">
+          <h2 class="govuk-heading-m">
+            <a href="exa/your-commodity" aria-describedby="eligibility-completed">
+              About the application
+            </a>
+          </h2>
+          <p class="govuk-hint">Number of certificates and the adding a refernce number</p>
+        </div>
+        {% if not data.commodity_type %}
+        <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+        {% else %}
+        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+        {% endif %}
+      </li>
+
+      <li class="defra-task-list__item">
+        <div class="defra-task-list__content">
+          <h2 class="govuk-heading-m">
+            <a href="exa/your-commodity" aria-describedby="eligibility-completed">
+              APHA processing information
+            </a>
+          </h2>
+          <p class="govuk-hint">Disease clearance information required by APHA before a certificate can be issued.</p>
+        </div>
+        {% if not data.commodity_type %}
+        <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+        {% else %}
+        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+        {% endif %}
+      </li>
+      <li class="defra-task-list__item">
+        <div class="defra-task-list__content">
+          <h2 class="govuk-heading-m">
+            <a href="new_ehc" aria-describedby="eligibility-completed">
+              The 8327EHC certificate
+            </a>
+          </h2>
+            <p class="govuk-hint">Information required by the destination country. All information if this section will appear on the EHC </p>
+        </div>
+        {% if not data.commodity_type %}
+        <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+        {% else %}
+        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+        {% endif %}
+      </li>
+      <li class="defra-task-list__item">
+        <div class="defra-task-list__content">
+          <h2 class="govuk-heading-m">
+            <a href="exa/your-commodity" aria-describedby="eligibility-completed">
+              Supporting documents (optional)
+            </a>
+          </h2>
+            <p class="govuk-hint">Information required by the destination country. All information if this section will appear on the EHC </p>
+        </div>
+        <!-- {% if not data.commodity_type %}
+        <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not added</strong>
+        {% else %}
+        <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+        {% endif %} -->
+      </li>
+      </ol>
+
+
+  </div>
+</div>
+<form  method="POST">
+  <div class="govuk-grid-row govuk-!-margin-top-6">
+    <div class="govuk-grid-column-full govuk-body">
+      <h2 class="govuk-heading-m">Submit your application</h2>
+      <p class="govuk-body">Once completed and checked the sections above you can submit your application. </p>
+      <button type="submit" class="govuk-button govuk-!-margin-right-4">Submit application</button><br><a href="../dashboard?saveAndResumeLater=Save+and+continue+later" class="link-button govuk-!-margin-top-2" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" >Save and continue later</a>
+    </div>
+  </div>
+</form>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}
