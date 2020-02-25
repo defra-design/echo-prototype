@@ -13,7 +13,10 @@ GOV.UK Prototype Kit
       Apply for {{db.certificate_code or "EHC 8327"}}
     </h1>
     <span class="govuk-caption-l govuk-!-margin-bottom-8">{{db.certificate_name}}</span>
+
+
     <ol class="app-task-list">
+
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">1. </span> About your application
@@ -85,23 +88,26 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
-          {% endif %}
+            {% endif %}
 
         </ul>
       </li>
+
+
+
+      <!-- Hack to make part 3 active from the start -->
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">2. </span> Information for the EHC
         </h2>
-        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
+        <p class="govuk-body govuk-!-margin-left-6">The information in this section will appear on the EHC. Your certifier can help you complete this section.</p>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <!-- new_ehc? -->
-              <a href="{% if (data.added_certificates | length) >0  %}certificate-list?first_time=no{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress&return_check_answers=certificate-list" class="govuk-link">{% if (data.added_certificates | length) == 0 %}Create your
-                EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+              <a href="{% if data.has_added_ehc %}certificate-list{%else%}new_ehc?first_time=yes{% endif %}&return=check-your-progress" class="govuk-link">{% if data.has_added_ehc != "yes" %}Create your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
             </span>
-            {% if (data.added_certificates | length) >0  %}
+            {% if data.has_added_ehc == "yes" %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
             {% else%}
             <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
@@ -109,10 +115,9 @@ GOV.UK Prototype Kit
           </li>
         </ul>
       </li>
-
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Information needed by APHA
+            <span class="app-task-list__section-number">3. </span> Information needed by APHA
         </h2>
         <p class="govuk-body govuk-!-margin-left-6">APHA uses this information to control the spread of disease. This information does not appear on the EHC</p>
         <ul class="app-task-list__items">
@@ -126,8 +131,7 @@ GOV.UK Prototype Kit
               {% else %}
               {% set next_page = task.content.next %}
               {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}&return=check-your-progress"
-                aria-describedby="">
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}&return=check-your-progress" aria-describedby="">
                 {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
               </a>
             </span>
@@ -142,8 +146,6 @@ GOV.UK Prototype Kit
           {% endfor %}
         </ul>
       </li>
-      <!-- Hack to make part 3 active from the start -->
-
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">4. </span>Additional documents (optional)
@@ -152,8 +154,10 @@ GOV.UK Prototype Kit
 
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name"><a href="supporting-documents?test=yes" aria-describedby="">Supporting documents</a></span>
-            <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
+
+                <span class="app-task-list__task-name"><a href="supporting-documents?test=yes" aria-describedby="">Supporting documents</a></span>
+                <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
+
           </li>
         </ul>
       </li>
@@ -164,8 +168,8 @@ GOV.UK Prototype Kit
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
 
-            <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers and submit application</a></span>
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+                <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers and submit application</a></span>
+                <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
 
           </li>
         </ul>
@@ -176,8 +180,7 @@ GOV.UK Prototype Kit
 <form action="6" method="POST" enctype="application/x-www-form-urlencoded">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-body">
-      <a href="../dashboard?saveAndResumeLater=Save+and+continue+later" class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">Save and
-        continue later</a>
+      <a href="../dashboard?saveAndResumeLater=Save+and+continue+later" class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" >Save and continue later</a>
     </div>
   </div>
 </form>

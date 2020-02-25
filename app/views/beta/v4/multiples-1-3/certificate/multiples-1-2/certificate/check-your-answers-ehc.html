@@ -7,26 +7,11 @@ GOV.UK Prototype Kit
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      {% if data.is_multiple == "yes" %}<span class="govuk-caption-xl">{% if data.change_ehc != "yes"%}Create a new c{%else%}C{%endif%}ertificate for {{data.ehc_reference_num}}</span>{% endif %}
+      {% if data.is_multiple == "yes" %}<span class="govuk-caption-xl">Create a new certificate {% if data.animal_name %} for {{data.animal_name}}{% endif %}</span>{% endif %}
       <h1 class="govuk-heading-xl">
         {% if data.change_ehc == "yes"%}Update{% else %}Check{% endif %} your answers that will appear on the certificate
       </h1>
-      <p class="govuk-body">These answers will appear on the certificate. You can also review your answers in a <a href="/public/images/ehc-2849ehc-3.1.pdf"  target="_blank" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate (opens in new tab)</a></p>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Certificate reference name (does not appear on the certificate)
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data.ehc_reference_num or "Seabiscuit"}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="ehc-reference?return_check_answers=check-your-answers-ehc&change=yes&first-time=no">
-              Change<span class="govuk-visually-hidden"> Name</span>
-            </a>
-          </dd>
-      </div>
-      </dl>
+      <p class="govuk-body">These answers will appear on the certificate. You can also review your answers in a <a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate (opens in new tab)</a></p>
 
       {% for task in db.pages %}
       {% if task.page != "supporting-documents" and task.exa != "yes" %}
@@ -63,7 +48,7 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <p class="notice">
         <span class="icon icon-file-download"><span class="govuk-visually-hidden">File download</span></span>
-        <strong>Preview your answers in a <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
+        <strong>Preview your answers in a <a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
       </p>
     </div>
   </div>

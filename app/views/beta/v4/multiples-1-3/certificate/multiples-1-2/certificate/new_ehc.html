@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="app-content__header">
+        <h1 class="govuk-heading-xl">
+          Create a new {{data.certificate_code}}
+        </h1>
+      </div>
+      <!-- <div class="govuk-form-group margin-top-30">
+        <img src="/public/images/specimen.jpg" style="width: 500px"><br>
+        <ul class="govuk-list govuk-list--bullet" style="margin-top: 25px">
+          <li> <strong class="govuk-body govuk-!-font-weight-regular margin-top-45"><a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link"> Download your specimen certificate </a></strong></li>
+          <li> <strong class="govuk-body govuk-!-font-weight-regular">Preview your<a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link"> specimen certificate </a>.</strong></li>
+        </ul>
+      </div> -->
+      <!-- <div class="defra-alert defra-alert--info">
+      <p class="govuk-body govuk-!-margin-bottom-0">
+        All information in this section will appear on the certificate.
+      </p>
+      </div> -->
+      <p class="govuk-body">
+        All information in this section will appear on the certificate. If you are unable to answer questions like shipping informaiton you can leave it for the certifier.
+      </p>
+      <p class="govuk-body">
+        You will be able to create up to {{data.mulitiple_max}} horses on this application
+      </p>
+      <p class="govuk-body">Before you start you might want to look at the following:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li><a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">Download a sample of the {{data.certificate_code}} certificate </a></li>
+        <li><a href="https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">Download guidance notes for certificate {{data.certificate_code}}</a></li>
+      </ul>
+      <form method="POST">
+
+        <div class="govuk-form-group">
+          <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        </div>
+      </form>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </div>
+      </div>
+      <p></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

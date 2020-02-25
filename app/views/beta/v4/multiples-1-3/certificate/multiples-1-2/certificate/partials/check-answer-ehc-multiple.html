@@ -7,7 +7,7 @@
   {% for certificate in data.added_certificates %}
     <tr class="govuk-table__row">
       <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
-      <td class="govuk-table__cell">{{certificate.title}}<br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" class="govuk-link">Preview certificate (opens in a new tab or window)</a></td>
+      <td class="govuk-table__cell">{{certificate.title}}<br><a href="#">Preview certificate (opens in a new tab or window)</a></td>
       <td class="govuk-table__cell" style="text-align: right;"><!-- <a href="#">Delete</a>&nbsp;&nbsp;<a href="check-your-answers-ehc?&return_check_answers=check-your-answers&ehc_reference_num={{certificate.title}}&change_ehc=yes">Change</a>--></td>
     </tr>
   {% endfor%}
