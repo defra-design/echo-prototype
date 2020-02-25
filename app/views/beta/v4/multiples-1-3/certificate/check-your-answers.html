@@ -24,13 +24,13 @@ GOV.UK Prototype Kit
       <p class="govuk-body govuk-!-margin-bottom-1">Sections you will need to check:</p>
       <ol class="govuk-list govuk-!-margin-bottom-0">
         <li><a href="#section-application-info">About your application</a></li>
+
+        <li><a href="#section-apha-info">Information needed by APHA</a></li>
         {% if db.is_multiple != "yes"%}
         <li><a href="#section-ehc-info">Information for the EHC</a></li>
         {% else%}
         <li><a href="#section-ehc-info">Information for the EHC</a></li>
         {% endif %}
-        <li><a href="#section-apha-info">Information needed by APHA</a></li>
-
         <li><a href="#section-documents-info">Supporting documents</a></li>
         {% if db.is_multiple != "yes"%}
         <li><a href="#section-documents-info">Preview specimin sample</a></li>
@@ -129,17 +129,6 @@ GOV.UK Prototype Kit
 
       <!-- GET BESPOKE EXA QUESTIONS -->
 
-
-      <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">2. Information for the EHC</h2>
-      <!-- If multiple show only the EHC's This is now split into partials -->
-      {% if db.is_multiple %}
-        <p class="govuk-body">{{(data.added_certificates | length) or "8"}} certificates added to application</p>
-        {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
-      {% else %}
-        {% block ehcAnswers %}{% include "./partials/check-answer-ehc.html" %}{% endblock%}
-      {% endif %}
-      <!-- {Tasks -->
-
       <h2 id="section-application-info" class="govuk-heading-m defra-check-answers-title">3.Information needed by APHA</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
       {% for task in db.pages %}
@@ -167,6 +156,17 @@ GOV.UK Prototype Kit
       {% endif %}
       {% endfor %}
       </dl>
+
+            <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">2. Information for the EHC</h2>
+            <!-- If multiple show only the EHC's This is now split into partials -->
+            {% if db.is_multiple %}
+              <p class="govuk-body">{{(data.added_certificates | length) or "8"}} certificates added to application</p>
+              {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
+            {% else %}
+              {% block ehcAnswers %}{% include "./partials/check-answer-ehc.html" %}{% endblock%}
+            {% endif %}
+            <!-- {Tasks -->
+
 
       <h2 id="section-documents-info" class="govuk-heading-m defra-check-answers-title">Supporting documents</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
