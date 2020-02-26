@@ -351,10 +351,10 @@
 			"content": {
 				"header": "Will the consignment transit the EU?",
 				"caption": "",
-				"paragraph": "Enter details of all premises where the horse has been resident in the last 60 days. We use this information to help control the spread of disease.",
+				"paragraph": "",
 				"next": "",
 				"prev": "",
-				"product_page": "no",
+				"product_page": "No",
 				"fields": [{
 					"type": "radio",
 					"inline": "yes",
@@ -374,13 +374,14 @@
 					],
 					"default": "England"
 				}, {
-					"type": "text",
+					"type": "textarea",
 					"label": "Intra trade animal health certificate (ITAHC) number",
-					"hint": "Horses transiting the EU require an ITAHC. If you have created an ITAHC enter the number below.",
+					"hint": "Horses transiting the EU need an ITAHC. Enter an ITACH number for each horse in this application.",
 					"required": "no",
 					"id": "intra_trade",
 					"name": "intra_trade",
-					"default": ""
+					"default": "",
+					"rows": "5"
 				}]
 			}
 		}, {
