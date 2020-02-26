@@ -21,7 +21,26 @@ GOV.UK Prototype Kit
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">1. </span> About your application
         </h2>
-        <ul class="app-task-list__items">
+        <p class="govuk-body govuk-!-margin-left-6">Add certificate reference, who the certifier is and where the you want the certificate to be delivered.<p>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  {% if (db.commodities | length) > 1 %}
+                  <a href="exa/your-commodity" aria-describedby="eligibility-completed">
+                    {% else %}
+                    <a href="exa/reference" aria-describedby="eligibility-completed">
+                      {% endif %}
+                      Tell us about the application
+                    </a>
+                </span>
+                {% if not data.application_complete %}
+                <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+            </ul>
+              <!-- <ul class="app-task-list__items">
           {% if (db.commodities | length) > 1 %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -91,95 +110,98 @@ GOV.UK Prototype Kit
             {% endif %}
 
         </ul>
-      </li>
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span> Information for the EHC
-        </h2>
-        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <!-- new_ehc? -->
-              <a href="{% if data.has_added_ehc %}certificate-list{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress&return_check_answers=certificate-list" class="govuk-link">{% if data.has_added_ehc != "yes" %}Create your EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
-            </span>
-            {% if data.has_added_ehc == "yes" %}
-            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-            {% else%}
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-            {% endif %}
-          </li>
-        </ul>
-      </li>
+      </li> -->
+              <li>
+                <h2 class="app-task-list__section">
+                  <span class="app-task-list__section-number">2. </span> Certificate information
+                </h2>
+                <p class="govuk-body govuk-!-margin-left-6">This information will appear on the EHC. Your certifier can help you complete this section.</p>
+                <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <!-- new_ehc? -->
+                      <a href="{% if data.has_added_ehc %}certificate-list{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress&return_check_answers=certificate-list" class="govuk-link">{% if data.has_added_ehc != "yes" %}Enter your certificate information{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+                    </span>
+                    {% if data.has_added_ehc == "yes" %}
+                    <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+                    {% else%}
+                    <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+                    {% endif %}
+                  </li>
+                </ul>
+              </li>
 
-      <li>
-        <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Information needed by APHA
-        </h2>
-        <p class="govuk-body govuk-!-margin-left-6">APHA uses this information to control the spread of disease</p>
-        <ul class="app-task-list__items">
+              <li>
+                <h2 class="app-task-list__section">
+                  <span class="app-task-list__section-number">3. </span> Information for APHA
+                </h2>
+                <p class="govuk-body govuk-!-margin-left-6">Enter export information that APHA  need to process your application. This does not appear on your certificate.</p>
+                <ul class="app-task-list__items">
+                  {% set foundFirst = "no"%}
+                  {% for task in db.pages %}
+                  {% if task.exa == "yes" and foundFirst == "no" %}
+                  {% set foundFirst = "yes"%}
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      {% if not task.content.next %}
+                      {% set next_page = 'check-your-progress' %}
+                      {% else %}
+                      {% set next_page = task.content.next %}
+                      {% endif %}
+                      <a href="page?id={{task.page}}&next={{next_page}}&journey=linear&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}&return=check-your-progress&is_exa=yes"
+                        aria-describedby="">
+                        Enter export information for APHA
+                      </a>
+                    </span>
+                    {% if data.completed[task.page] %}
+                    <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+                    {% else%}
+                    <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+                    {% endif %}
+                  </li>
+                  <!-- data.ech_active -->
+                  {% endif %}
+                  {% endfor %}
+                </ul>
+              </li>
+              <!-- Hack to make part 3 active from the start -->
 
-          {% for task in db.pages %}
-          {% if task.exa == "yes" %}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              {% if not task.content.next %}
-              {% set next_page = 'check-your-progress' %}
-              {% else %}
-              {% set next_page = task.content.next %}
-              {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&journey=jump&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}&return=check-your-progress" aria-describedby="">
-                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
-              </a>
-            </span>
-            {% if data.completed[task.page] %}
-            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-            {% else%}
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-            {% endif %}
-          </li>
-          <!-- data.ech_active -->
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </li>
-      <!-- Hack to make part 3 active from the start -->
+              <li>
+                <h2 class="app-task-list__section">
+                  <span class="app-task-list__section-number">4. </span>Additional documents (optional)
+                </h2>
+                <p class="govuk-body govuk-!-margin-left-6">Upload packing lists, schedules and other supporting documents to attach to your application</p>
 
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span>Additional documents (optional)
-        </h2>
-        <p class="govuk-body govuk-!-margin-left-6">Upload packing lists, schedules and other supporting documents to attach to your application</p>
+                <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
 
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
+                    <span class="app-task-list__task-name"><a href="supporting-documents?test=yes" aria-describedby="">Supporting documents</a></span>
+                    <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
 
-                <span class="app-task-list__task-name"><a href="supporting-documents?test=yes" aria-describedby="">Supporting documents</a></span>
-                <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h2 class="app-task-list__section">
+                  <span class="app-task-list__section-number">5. </span> Check and submit your application
+                </h2>
+                <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
 
-          </li>
-        </ul>
-      </li>
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">5. </span> Check and submit your application
-        </h2>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
+                    <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers and submit application</a></span>
+                    <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
 
-                <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers and submit application</a></span>
-                <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-
-          </li>
-        </ul>
-      </li>
+                  </li>
+                </ul>
+              </li>
     </ol>
   </div>
 </div>
 <form action="6" method="POST" enctype="application/x-www-form-urlencoded">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-body">
-      <a href="../dashboard?saveAndResumeLater=Save+and+continue+later" class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" >Save and continue later</a>
+      <a href="../dashboard?saveAndResumeLater=Save+and+continue+later" class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">Save and
+        continue later</a>
     </div>
   </div>
 </form>

@@ -9,7 +9,7 @@ module.exports = function(router) {
 
   // CHANGE VERSION TO THE VERSION
   const version = 'beta/v4'
-  const base_url = version + "/multiples-1-3"
+  const base_url = version + "/new-form-build"
   const file_url = version + "/core"
   const db = []
   var normalizedPath = require("path").join(__dirname, "../../data/certificates");
@@ -55,11 +55,16 @@ module.exports = function(router) {
     return false
   }
 
-  function getNextPage(data,current){
+  function getNextPage(data,current,isEXA){
     console.log("--- Adding next ehc page ----")
 
     for (var i = 0; i < data.length; i++) {
-      if ( !data[i].exa || data[i].exa != "yes" ){
+      if(isEXA && (data[i].exa || data[i].exa == "yes")){
+        if (data[i].page > current && data[i].page != "supporting-documents"){
+          return data[i].page
+        }
+      }
+      else if ( !data[i].exa || data[i].exa != "yes" ){
         if (data[i].page > current && data[i].page != "supporting-documents"){
           return data[i].page
         }
@@ -201,7 +206,7 @@ module.exports = function(router) {
 
     if(req.session.data.journey == "linear" && req.query.change != "yes"){
       console.log("first_time = "+req.session.data.first_time )
-      var nextPage = (req.session.data.first_time == "yes") ? getNextPage(tools.getDB(req.session.database, db).data.pages, req.query.id) : getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, req.query.id)
+      var nextPage = (req.session.data.first_time == "yes") ? getNextPage(tools.getDB(req.session.database, db).data.pages, req.query.id,req.session.data.is_exa) : getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, req.query.id)
       if(nextPage){
         return res.redirect(301, '/' + base_url + req.params[0] + '/certificate/page?id='+nextPage+'&next='+ req.query.next+'&new='+req.query.new)
       }else{

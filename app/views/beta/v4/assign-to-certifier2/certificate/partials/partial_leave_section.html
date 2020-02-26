@@ -7,7 +7,9 @@
 
 <div class="govuk-form-group defra-callout {% if (data.empty | length) > 0 %}govuk-form-group--error{% endif %}">
   <h3 class="govuk-heading-m">You do not have to answer every question</h3>
+    <div class="defra-callout--content">
   {% if (data.empty | length) > 0 %}
+
   <span id="slaughterhouse_name_error" class="govuk-error-message">
     <span class="govuk-visually-hidden">Error:</span> Select if you have answered as many questions as you can
   </span>
@@ -19,9 +21,10 @@
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="skip_answers" name="skip_answers" type="checkbox" value="skip">
       <label class="govuk-label govuk-checkboxes__label" for="skip_answers" >
-          I've answered as many questions as I can on this page
+          leave any remaining questions for the certifier
       </label>
     </div>
+  </div>
   </div>
 </div>
 

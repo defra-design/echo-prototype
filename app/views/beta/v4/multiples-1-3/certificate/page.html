@@ -76,7 +76,8 @@
 {% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
 <script type="text/javascript">
   window.addEventListener('load', function() {
-  $('.govuk-textarea').each(function() {
+  $('.js-question').each(function() {
+    console.log("looking to see if complete")
   var elem = $(this);
 
   // Save current value of element
@@ -85,19 +86,60 @@
   // Look for changes in the value
   elem.bind("propertychange change click keyup input paste", function(event){
      // If value has changed...
+     console.log("checking content")
      if (elem.data('oldVal') != elem.val()) {
+       console.log("value has changed")
       // Updated stored value
 
-      console.log(elem.attr('data-default'))
       // Do action
       if(elem.val()=="//default"){
         elem.val(elem.attr('data-default'));
 
       }
+      console.log("val length = "+elem.val().length)
+      if(elem.val().length === 0){
+        elem.attr('data-filled','no')
+      }else{
+        elem.attr('data-filled','yes')
+      }
+
+      console.log("data-filled = "+  elem.attr('data-filled'))
+      // elem.attr('data-filled','yes')
+
       elem.data('oldVal', elem.val());
     }
+
+
+    checkFilled()
   });
 });
+function checkFilled(){
+  var completed = 0;
+  var max = $('.js-question').length
+  console.log("---checkFilled---- "+max)
+  $('.js-question').each(function() {
+    console.log("Chekcing if its complete: "+($(this).attr('data-filled') == "yes"))
+    if ($(this).attr('data-filled') === "yes"){
+      completed+=1
+    }
+
+  })
+  console.log("Completed = "+completed)
+  if(completed>=max){
+    // $('.defra-callout h3').text(max +" questions answered")
+    // $('.defra-callout .defra-callout--content').hide()
+    $('.defra-callout').hide()
+  }else{
+    $('.defra-callout').show()
+  }
+  console.log("---end----")
+}
+
+if($('.js-question').length === 1){
+  $('.defra-callout h3').text("You do not have to answer this question")
+  $('.defra-callout .govuk-checkboxes__label').text("Leave this question for the certifier")
+
+}
 });
 </script>
 {% endblock %}

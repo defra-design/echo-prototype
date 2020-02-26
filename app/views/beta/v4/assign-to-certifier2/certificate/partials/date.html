@@ -2,7 +2,7 @@
   <fieldset class="govuk-fieldset" role="group" aria-describedby="{{field.id}}-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
       <h3 class="govuk-fieldset__heading">
-        {{field.label}} {% if field.required == 'no'%}(optional){%endif%}
+    {{field.label}}     <!-- {% if field.required == 'no'%}(optional){%endif%} -->
       </h3>
     </legend>
     {% if field.hint %}<span id="{{field.id}}-hint" class="govuk-hint">{{field.hint}}</span>{% endif %}
