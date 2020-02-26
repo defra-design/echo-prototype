@@ -129,7 +129,7 @@ GOV.UK Prototype Kit
 
       <!-- GET BESPOKE EXA QUESTIONS -->
 
-      <h2 id="section-application-info" class="govuk-heading-m defra-check-answers-title">3.Information needed by APHA</h2>
+      <h2 id="section-application-info" class="govuk-heading-m defra-check-answers-title">2.Information needed by APHA</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
       {% for task in db.pages %}
       {% if task.exa == "yes" %}
@@ -157,10 +157,10 @@ GOV.UK Prototype Kit
       {% endfor %}
       </dl>
 
-            <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">2. Information for the EHC</h2>
+            <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">3. Information for the EHC</h2>
             <!-- If multiple show only the EHC's This is now split into partials -->
             {% if db.is_multiple %}
-              <p class="govuk-body">{{(data.added_certificates | length) or "8"}} certificates added to application</p>
+              <p class="govuk-body">{{(data.added_certificates | length) or "5"}} certificates added to application</p>
               {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
             {% else %}
               {% block ehcAnswers %}{% include "./partials/check-answer-ehc.html" %}{% endblock%}
