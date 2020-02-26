@@ -13,21 +13,16 @@ GOV.UK Prototype Kit
       <h1 class="govuk-heading-xl">
         Create a new {{data.certificate_code or "2849"}}
         <span class="govuk-caption-l">Permanently export horses to the United Arab Emirates (UAE)</span>
-        
+
       </h1>
 
         {% if query.first_time=="yes" %}
         <p class="govuk-body">
-          All information in this section will appear on the certificate. If you are unable to answer questions you can leave it for the certifier.
+          You are about to create a new export health certificate and add it to your application.
         </p>
         <p class="govuk-body">
-          You will be able to create certificates for up to {{data.mulitiple_max}} horses.
+          When you have finished, you can create and add more certificates. You can add up to {{data.mulitiple_max}} certificates to this application.
         </p>
-        <p class="govuk-body">Before you start you might want to look at the following:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <li><a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">Download a sample of the {{data.certificate_code}} certificate </a></li>
-          <li><a href=  "https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">Download guidance notes for certificate {{data.certificate_code}}</a></li>
-        </ul>
         {% endif %}
 
       <form method="post" >
@@ -36,9 +31,9 @@ GOV.UK Prototype Kit
 
 
                   <div class="govuk-form-group " id="conditional-certificates">
-                    <label class="govuk-label govuk-label--s" for="reference_num">Reference name for this certificate</label>
+                    <label class="govuk-label govuk-label--s" for="reference_num">Your reference for this certificate</label>
                     <span class="govuk-hint">
-                        You can give this certificate a reference to make it easier to identify the certificate. This can be the name of the horse or a unique ID.
+                        Enter a reference such as the name of the animal or an invoice number. This reference will not appear in the certificate.
                     </span>
                     <input class="govuk-input govuk-input--width-20" id="reference_num" name="ehc_reference_num" value="{% if query.change == 'yes'%}{{ data.ehc_reference_num }}{%endif%}" type="text">
                   </div>
@@ -51,6 +46,10 @@ GOV.UK Prototype Kit
           <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
         </div>
       </div>
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <p class="govuk-body">Your answers will go into an export health certificate: <a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">download a sample  {{data.certificate_code}} certificate </a></p>
+      <p class="govuk-body">Read <a href="https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">APHA's guidance for exporters and certifiers</a></p>
+
       <p></p>
     </div>
   </div>
