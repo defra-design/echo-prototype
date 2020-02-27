@@ -161,8 +161,14 @@ GOV.UK Prototype Kit
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
 
-            <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers and submit application</a></span>
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+
+              {% if (data.added_certificates | length) > 0%}
+              <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers and submit application</a></span>
+              <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+              {% else %}
+              Check your answers and submit application
+              {% endif %}
+
 
           </li>
         </ul>

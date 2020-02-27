@@ -13,7 +13,7 @@ GOV.UK Prototype Kit
       <h1 class="govuk-heading-xl">
         Create a new {{data.certificate_code or "2849"}}
         <span class="govuk-caption-l">Permanently export horses to the United Arab Emirates (UAE)</span>
-        
+
       </h1>
 
         {% if query.first_time=="yes" %}
@@ -46,12 +46,15 @@ GOV.UK Prototype Kit
             </div>
             <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
         </form>
+
+      <p></p>
+    </div>
+    <div class="govuk-grid-colomn-one-third">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full govuk-body">
           <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
         </div>
       </div>
-      <p></p>
     </div>
   </div>
 </div>

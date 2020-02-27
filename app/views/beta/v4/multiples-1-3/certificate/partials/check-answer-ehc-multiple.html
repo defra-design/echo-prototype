@@ -3,7 +3,7 @@
 <table class="govuk-table">
 
 <tbody class="govuk-table__body">
-  {% if (data.added_certificates | length) > 0 %}
+  {% if (data.added_certificates | length) %}
 
     {% for certificate in data.added_certificates %}
       <tr class="govuk-table__row">

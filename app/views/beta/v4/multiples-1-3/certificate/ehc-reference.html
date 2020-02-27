@@ -46,12 +46,19 @@ GOV.UK Prototype Kit
           <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
         </div>
       </div>
-      <h2 class="govuk-heading-m">Before you start</h2>
-      <p class="govuk-body">Your answers will go into an export health certificate: <a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">download a sample  {{data.certificate_code}} certificate </a></p>
-      <p class="govuk-body">Read <a href="https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">APHA's guidance for exporters and certifiers</a></p>
+
 
       <p></p>
     </div>
+    {% if query.first_time=="yes" %}
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m">Before your start</h2>
+      <p class="govuk-body govuk-!-font-size-16">Your answers will go into an export health certificate: <a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">download a sample  {{data.certificate_code}} certificate </a></p>
+      <p class="govuk-body govuk-!-font-size-16">Read <a href="https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">APHA's guidance for exporters and certifiers</a></p>
+      </aside>
+    </div>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
