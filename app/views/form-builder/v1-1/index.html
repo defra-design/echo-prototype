@@ -70,11 +70,11 @@ GOV.UK Prototype Kit
           <td class="govuk-table__cell actions-cell no-border" rowspan="2">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/health-cert-editor">Manage
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/health-cert-editor?change=yes">Manage
                   Certificate</a>
               </li>
               <li>
-                <a class="govuk-link" id="X005-2849EHC" href="form/versions" data-qa-id="manageVersionsLink-X005-2849EHC">Manage
+                <a class="govuk-link" id="X005-2849EHC" href="form/versions" data-qa-id="form/versions">Manage
                   versions</a>
               </li>
               <li>
@@ -102,15 +102,15 @@ GOV.UK Prototype Kit
           <td class="govuk-table__cell actions-cell no-border" rowspan="2">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" id="linkManage-2849EHC" href="/protected/health-certificates/2849EHC">Manage
+                <a class="govuk-link" id="linkManage-2849EHC" href="manage/health-cert-editor?change=yes">Manage
                   Certificate</a>
               </li>
               <li>
-                <a class="govuk-link" id="2849EHC" href="/protected/health-certificates/2849EHC/versions/0?redirect=true" data-qa-id="manageVersionsLink-2849EHC">Manage
+                <a class="govuk-link" id="2849EHC" href="form/pages" data-qa-id="manageVersionsLink-2849EHC">Manage
                   versions</a>
               </li>
               <li>
-                <a class="govuk-link" href="/protected/health-certificates/2849EHC/update-availability-status" data-qa-id="changeStatusLink-2849EHC">Change
+                <a class="govuk-link" href="status/change" data-qa-id="changeStatusLink-2849EHC">Change
                   Status</a>
               </li>
             </ul>
@@ -122,7 +122,7 @@ GOV.UK Prototype Kit
       </tbody>
     </table>
     {% endif %}
-    <form action="/protected/health-certificates/0" method="GET">
+    <form action="manage/health-cert-editor" method="GET">
       <div>
         <input class="govuk-button margin-top-30" type="submit" id="Button-CreateNewCertificate" value="Create new certificate" data-qa-id="Button-CreateNewCertificate">
       </div>
