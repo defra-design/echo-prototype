@@ -1,6 +1,11 @@
 const express = require('express')
 const router = express.Router()
+
 require('./routes/experimental/e2e/routes.js')(router);
+
+//form builder Admin
+require('./routes/form-builder/form-builder.js')(router);
+
 // Add your routes here - above the module.exports line
 require('./routes/experimental/ehc-7006-ab-version4/routes.js')(router);
 require('./routes/experimental/ehc-7006-ab-version4-1/routes.js')(router);

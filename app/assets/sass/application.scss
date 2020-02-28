@@ -21,6 +21,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/alerts";
 @import "components/status-tags";
 @import "components/pagination";
+@import "components/form-finder";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .defra-search__button {
