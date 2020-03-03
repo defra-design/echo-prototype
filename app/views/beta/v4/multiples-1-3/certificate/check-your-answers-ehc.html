@@ -7,7 +7,7 @@ GOV.UK Prototype Kit
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      {% if data.is_multiple == "yes" %}<span class="govuk-caption-xl">{% if data.change_ehc != "yes"%}Create a new c{%else%}C{%endif%}ertificate for {{data.ehc_reference_num}}</span>{% endif %}
+      {% if data.is_multiple == "yes" %}<span class="govuk-caption-xl">{% if data.change_ehc != "yes"%}Create a new c{%else%}C{%endif%}ertificate for {{data.ehc_reference_num or "Seabiscuit"}}</span>{% endif %}
       <h1 class="govuk-heading-xl">
         {% if data.change_ehc == "yes"%}Update{% else %}Check{% endif %} your answers that will appear on the certificate
       </h1>
@@ -73,7 +73,7 @@ GOV.UK Prototype Kit
         <form method="POST">
           <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
           <input type="hidden" name="applicationFormStatus" value="">
-          <input class="govuk-button margin-top-30" type="submit" value="Add this certificate" id="Button-Continue" data-qa-id="Button-Continue">
+          <input class="govuk-button margin-top-30" type="submit" value="{% if data.change_ehc == 'yes'%}Update this certificate{%else%}Add this certificate{%endif%}" id="Button-Continue" data-qa-id="Button-Continue">
         </form>
       </div>
     </div>

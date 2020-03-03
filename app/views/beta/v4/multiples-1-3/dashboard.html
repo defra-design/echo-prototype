@@ -157,10 +157,10 @@ background: #eff0f1;
         </tr>
       </thead>
       <tbody>
-        <tr class="govuk-table__row result">
+        <!-- <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="govuk-table__cell applicationRef-column" scope="row">
             <a href="application?reference_num=AUS03402342-KXC&application_id=1000247986484&application_status=submitted&is_block=no&is_group=yes" class="govuk-link govuk-link--no-visited-state">1000247986484</a>
-            <br><div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Group of 5 certificates</div>
+
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             AUS03402342-KXC
@@ -176,11 +176,33 @@ background: #eff0f1;
               Submitted
             </div>
           </td>
+        </tr> -->
+        {% if data.has_unfinished_certificate == "yes"%}
+        <tr class="govuk-table__row result">
+          <th id="1721147986156-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
+            <a href="application?application_id=100047986156&application_status=draft&is_block=no&is_group=yes" class="govuk-link govuk-link--no-visited-state">100047986156</a>
+            <div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Group of 2 certificates</div>
+          </th>
+          <td id="1721147986156-group-number" class="govuk-table__cell" scope="row">
+            PO-77686868
+          </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            UAE
+          </td>
+          <td id="1721147986156-submitted" class="govuk-table__cell submitted-column" scope="row">
+          </td>
+          <td id="1721147986156-status" class="govuk-table__cell" scope="row">
+            <div class="status-tag status-tag--not-submitted" style="width: auto">
+              Draft
+            </div>
+          </td>
         </tr>
+        {% endif %}
+        {% if query.has_multiple == "yes"%}
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?reference_num=AUS03402342-KXC&application_id=100098786484&application_status=processing&is_block=yes" class="govuk-link govuk-link--no-visited-state">100098786484</a>
-            <br><div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Block of 5 certificataes</div>
+            <a href="application?reference_num=AUS03402342-KXC&application_id=100098786484&application_status=processing&is_block=no&is_group=yes" class="govuk-link govuk-link--no-visited-state">100098786484</a>
+<br><div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Group of 5 certificates</div>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             7836-Tientun
@@ -197,6 +219,7 @@ background: #eff0f1;
             </div>
           </td>
         </tr>
+        {% endif %}
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
             <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=processing&is_block=no&is_replacement=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
@@ -219,6 +242,7 @@ background: #eff0f1;
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
             <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=dispatched&is_block=yes&has_cancelation=yes" class="govuk-link govuk-link--no-visited-state">100040868887</a>
+            <br><div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Block of 5 certificataes</div>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
             Skins and Hides-Berlin 337376

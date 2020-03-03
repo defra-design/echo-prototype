@@ -111,7 +111,7 @@ GOV.UK Prototype Kit
     </p> -->
     <ul class="govuk-list  govuk-!-margin-bottom-6">
       {% if query.application_status == 'draft' %}
-      <li><a class="govuk-link govuk-link--no-visited-state" href="certificate/check-your-progress">Edit and submit this application</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="certificate/check-your-progress?certificate=ehc2849">Edit and submit this application</a></li>
       {% endif%}
       <li><a class="govuk-link govuk-link--no-visited-state" href="clone?is_group={{ query.is_group }}">Clone as new application</a></li>
       {% if query.application_status == 'draft' %}
@@ -177,7 +177,7 @@ GOV.UK Prototype Kit
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
             </td>
-            <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
+            <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}CERTIFIED{%endif%}
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" target="_blank">
@@ -209,7 +209,7 @@ GOV.UK Prototype Kit
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
             </td>
-            <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
+            <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}DISPATCHED{%endif%}
             </td>
             <td id="actions" class="certificateActions govuk-table__cell" scope="row">
               <a id="view_cert_19/2/022135" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c3ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View certificate</a>
@@ -221,7 +221,7 @@ GOV.UK Prototype Kit
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
             </td>
-            <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
+            <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}DISPATCHED{%endif%}
             </td>
             <td id="actions" class="certificateActions govuk-table__cell" scope="row">
               <a id="view_cert_19/2/022136" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c4ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View certificate</a>

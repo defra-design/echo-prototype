@@ -17,10 +17,31 @@ GOV.UK Prototype Kit
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+      <!-- Error message -->
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#consignor-name-error">Enter the Consignor name</a>
+            </li>
+            <li>
+              <a href="#consignor-address-error">Enter the Consignor address</a>
+            </li>
+            <li>
+              <a href="#consignor-country-error">Consignor country</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- title -->
       <h1 class="govuk-heading-xl">
-        Review your answers
+        Review your application answers
       </h1>
-        <div class="defra-alert defra-alert--info govuk-!-margin-bottom-8">
+      <!-- //Mini task, in-page navigation.  -->
+        <!-- <div class="defra-alert defra-alert--info govuk-!-margin-bottom-8">
       <p class="govuk-body govuk-!-margin-bottom-1">Sections you will need to check:</p>
       <ol class="govuk-list govuk-!-margin-bottom-0">
         <li><a href="#section-application-info">About your application</a></li>
@@ -36,7 +57,7 @@ GOV.UK Prototype Kit
         <li><a href="#section-documents-info">Preview specimin sample</a></li>
         {% endif %}
       </ol>
-      </div>
+      </div> -->
       <h2 id="section-application-info" class="govuk-heading-m defra-check-answers-title">1. About the application</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m" >
         <div class="govuk-summary-list__row">

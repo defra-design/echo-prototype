@@ -159,6 +159,7 @@ module.exports = function(router) {
   router.post('/' + base_url + '*/certificate/certificate-list'  , function(req, res) {
     //console.log('req.body.add_another_certificate '+req.body.add_another_certificate)
     if(req.body.add_another_certificate == "yes"){
+      req.session.data.change_ehc="no"
       var page_id =  getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, 0)
       res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/ehc-reference?id='+page_id+'&first_time=no&new=yes&return_check_answers=certificate-list');
 
@@ -168,6 +169,29 @@ module.exports = function(router) {
 
     }
 
+  })
+  router.post('/' + base_url + '*/certificate/confirm-cancel-certificate'  , function(req, res) {
+    //console.log('req.body.add_another_certificate '+req.body.add_another_certificate)
+    if(req.body.confirm_cancel_certificate == "yes"){
+      var url = (req.session.data.first_time == "yes")? 'check-your-progress' : 'certificate-list'
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+url );
+    }else{
+      req.session.data.change_ehc="no"
+      var page_id =  req.query.id || 1
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+page_id);
+    }
+  })
+  router.post('/' + base_url + '*/certificate/certificate-unfinished'  , function(req, res) {
+    //console.log('req.body.add_another_certificate '+req.body.add_another_certificate)
+    req.session.data.has_unfinished_certificate = "no";
+    if(req.body.continue_certificate == "yes"){
+      var page_id = req.session.data.unfinished_certificate || 2
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/page?id='+page_id+'&first_time=no&new=yes&return_check_answers=certificate-list');
+    }else{
+
+      var page_id =  getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, 0)
+        res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/ehc-reference?id='+page_id+'&first_time=no&new=yes&return_check_answers=certificate-list');
+    }
   })
   router.post('/' + base_url + "*/certificate/page", function(req, res) {
 

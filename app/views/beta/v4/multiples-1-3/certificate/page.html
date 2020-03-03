@@ -6,6 +6,16 @@
 
 {% block beforeContent%}
 {{super()}}
+<style media="screen">
+  .link-button--inline{
+    display:inline-block;
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+    padding-top:5px;
+    margin-left:10px
+  }
+</style>
 <!-- {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
 {{ govukBreadcrumbs({
@@ -23,6 +33,7 @@
     }
   ]
 }) }} -->
+
 <a href="{{page.content.prev or 'javascript:history.back()'}}" class="govuk-back-link">Back</a>
 {% endblock %}
 
@@ -66,13 +77,15 @@
           {% else %}
           <button class="govuk-button" type="submit" name="cta" value="Save and review"id="Button-SaveAndpreview" data-qa-id="Button-SaveAndContinue">Save and continue</button >
           {% endif%}
+          <a class="link-button--inline " href="confirm-cancel-certificate?id={{page.page}}" name="saveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Cancel</a>
         </div>
       </fieldset>
     </form>
 
-    <p class="govuk-body"><a class="link-button" href="dashboard" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+    <p class="govuk-body"><a class="link-button" href="../dashboard?has_unfinished_certificate=yes&unfinished_certificate={{page.page}}" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
   </div>
 </div>
+
 {% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
 <script type="text/javascript">
   window.addEventListener('load', function() {

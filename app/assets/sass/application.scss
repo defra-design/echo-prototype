@@ -23,7 +23,21 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/pagination";
 @import "components/form-finder";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
+.govuk-status--warning {
+  width: auto !important;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  padding-bottom: 1px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  color: #0b0c0c;
+  background: #FFBF47;
+  border: 3px solid #FFBF47;
+}
 .defra-search__button {
     display: inline-block;
     margin-bottom: 0;
