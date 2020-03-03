@@ -100,6 +100,7 @@ module.exports = function(router) {
     // console.log(req.session.data.database)
     console.log("check-your-answers-ehc first")
     if(req.session.data.change_ehc!="yes"){
+      req.session.data.added_certificates = req.session.data.added_certificates || []
       addCertificate(tools.getDB(req.session.database,db).data.pages,req.session.data)
       req.session.data.has_added_ehc="yes"
     }
