@@ -124,7 +124,7 @@ GOV.UK Prototype Kit
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Select the certifier practice to include with your application
           </dt>
-          <dd class="govuk-summary-list__value">Barnyard Dawg Electra Way CW1 6GJ
+          <dd class="govuk-summary-list__value">{{data.certifier_name or 'CBA VETS LIMITED'}}
           </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="exa/certifier?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
@@ -133,7 +133,7 @@ GOV.UK Prototype Kit
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Select certificate delivery address
           </dt>
-          <dd class="govuk-summary-list__value">Electra Way Crewe Business Park Crewe CW1 6GJ
+          <dd class="govuk-summary-list__value">{{data.certifier_addressLine1}} {{data.certifier_addressLine2}}, {{data.certifier_town}}, {{data.certifier_postcode}},
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="exa/certifier-confirm-address?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>

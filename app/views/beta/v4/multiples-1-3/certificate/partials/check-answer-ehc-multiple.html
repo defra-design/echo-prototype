@@ -3,7 +3,7 @@
     width:30%
   }
 </style>
-<dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+<dl class="govuk-summary-list govuk-summary-list__m">
   {% if (data.added_certificates | length) %}
 
   {% for certificate in data.added_certificates %}
@@ -89,6 +89,8 @@
   </div>
   {% endif %}
 </dl>
+<p class="govuk-body govuk-!-margin-bottom-9"><a href="certificate-list?return=check-your-answers">Change, add or delete certificates</a></p>
+
 <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
 
   <div class="govuk-summary-list__row">
@@ -107,4 +109,3 @@
     </dd>
   </div>
 </dl> -->
-<p class="govuk-body govuk-!-margin-bottom-9"><a href="certificate-list?return=check-your-answers">Change, add or delete certificates</a></p>
