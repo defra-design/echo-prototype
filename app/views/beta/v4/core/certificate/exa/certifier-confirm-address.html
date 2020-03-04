@@ -17,12 +17,12 @@ GOV.UK Prototype Kit
     <form  method="POST">
       <div class="govuk-form-group">
         <h1 class="govuk-heading-xl">Is this the right delivery address for your certificate?</h1>
-        <p class="govuk-body govuk-fieldset__legend--m">Aberdour Vets<br>
-          <span id="certificate-delivery-address-line-1">182a</span><br>
-          <span id="certificate-delivery-address-line-2">High Street</span><br>
-          <span id="certificate-delivery-address-town">Beckenham</span><br>
-          <span id="certificate-delivery-address-country">Kent</span><br>
-          <span id="certificate-delivery-address-postcode">BR3 1EW</span><br>
+        <p class="govuk-body govuk-fieldset__legend--m">{{data.certifier_name or 'Aberdour Vets'}}<br>
+          <span id="certificate-delivery-address-line-1">{{data.certifier_addressLine1 or '182a'}} {{data.certifier_addressLine2 or 'High Street'}}</span><br>
+          {% if data.certifier_addressLine3 %}<span id="certificate-delivery-address-line-3">{{data.certifier_addressLine3}}</span><br>{% endif %}
+          <span id="certificate-delivery-address-town">{{data.certifier_town or 'Beckenham'}}</span><br>
+          <span id="certificate-delivery-address-country">{{data.certifier_county or 'Kent'}}</span><br>
+          <span id="certificate-delivery-address-postcode">{{data.certifier_postcode or 'BR3 1EW'}}</span><br>
         </p>
       </div>
       <br>
