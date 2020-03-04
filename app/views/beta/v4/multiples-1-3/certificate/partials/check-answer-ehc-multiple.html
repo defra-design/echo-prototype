@@ -9,11 +9,10 @@
   {% for certificate in data.added_certificates %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      {{loop.index}}.
+      {{loop.index}}. {{certificate.title}}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{certificate.title}}
-      <br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" class="govuk-link">Preview certificate (opens in a new tab or window)</a>
+      <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" class="govuk-link">Preview certificate <br>(opens in a new tab or window)</a>
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
@@ -90,58 +89,6 @@
   </div>
   {% endif %}
 </dl>
-
-<table class="govuk-table">
-
-  <tbody class="govuk-table__body">
-    {% if (data.added_certificates | length) %}
-
-    {% for certificate in data.added_certificates %}
-    <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
-      <td class="govuk-table__cell">{{certificate.title}}<br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" class="govuk-link">Preview certificate (opens in a new tab or window)</a></td>
-    </tr>
-    {% endfor%}
-    {% else %}
-    <!-- default content  -->
-
-    <tr class="govuk-table__row ">
-      <td scope="row" class="govuk-table__header">1.</td>
-      <td class="govuk-table__cell">Seabiscuit<br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank">Preview certificate (opens in a new tab or window)</a></td>
-      <td class="govuk-table__cell"><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank">Change</a></td </tr> <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__header">2.</td>
-      <td class="govuk-table__cell">{% if data.has_unfinished_certificate == 'yes'%}<span class="govuk-status govuk-status--warning" style="margin-right:10px;">Incomplete</span>{%endif%}Last suspect<br><a href="/public/images/ehc-2849ehc-3.1.pdf"
-          target="_blank">Preview certificate (opens in a new tab or window)</a>
-      </td>
-      <td class="govuk-table__cell"><a href="#">Change</a>
-      </td>
-    </tr>
-
-
-    <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__header">3.</td>
-      <td class="govuk-table__cell">Redrum<br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank">Preview certificate (opens in a new tab or window)</a></td>
-      <td class="govuk-table__cell"><a href="#">Change</a>
-      </td>
-    </tr>
-
-
-    <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__header">4.</td>
-      <td class="govuk-table__cell">Bucephalus<br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank">Preview certificate (opens in a new tab or window)</a></td>
-      <td class="govuk-table__cell"><a href="#">Change</a>
-      </td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__header">5.</td>
-      <td class="govuk-table__cell">Northern Dancer<br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank">Preview certificate (opens in a new tab or window)</a></td>
-      <td class="govuk-table__cell"><a href="#">Change</a>
-      </td>
-    </tr>
-    {%endif%}
-  </tbody>
-</table>
 <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
 
   <div class="govuk-summary-list__row">

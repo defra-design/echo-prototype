@@ -18,6 +18,7 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
       <!-- Error message -->
+      {% if query.has_error == "yes" %}
       <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
         <h2 class="govuk-error-summary__title" id="error-summary-title">
           There is a problem
@@ -36,6 +37,7 @@ GOV.UK Prototype Kit
           </ul>
         </div>
       </div>
+      {% endif %}
       <!-- title -->
       <h1 class="govuk-heading-xl">
         Review your application answers
@@ -178,7 +180,7 @@ GOV.UK Prototype Kit
       {% endfor %}
       </dl>
 
-            <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">3. Information for the EHC</h2>
+            <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">3. Information for the export health certificate</h2>
             <!-- If multiple show only the EHC's This is now split into partials -->
             {% if db.is_multiple %}
               <p class="govuk-body">{{(data.added_certificates | length) or "5"}} certificates added to application</p>
