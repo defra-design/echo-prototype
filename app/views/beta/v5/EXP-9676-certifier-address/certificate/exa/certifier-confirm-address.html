@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!--start-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form  method="POST">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-xl">Is this the right delivery address for your certificate?</h1>
+        <p class="govuk-body govuk-fieldset__legend--m">{{data.certifier_name or 'Aberdour Vets'}}<br>
+          <span id="certificate-delivery-address-line-1">{{data.certifier_addressLine1 or '182a'}} {{data.certifier_addressLine2 or 'High Street'}}</span><br>
+          {% if data.certifier_addressLine3 %}<span id="certificate-delivery-address-line-3">{{data.certifier_addressLine3}}</span><br>{% endif %}
+          <span id="certificate-delivery-address-town">{{data.certifier_town or 'Beckenham'}}</span><br>
+          <span id="certificate-delivery-address-country">{{data.certifier_county or 'Kent'}}</span><br>
+          <span id="certificate-delivery-address-postcode">{{data.certifier_postcode or 'BR3 1EW'}}</span><br>
+        </p>
+      </div>
+      <br>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-heading-m">Confirm certificate delivery address:</h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="default-address-option" name="is_certifier_address_correct" type="radio" value="yes">
+              <label id="default-address-option-label" class="govuk-label govuk-radios__label govuk-label--s" for="default-address-option">
+                Yes, deliver to this address
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="manual-address-option" name="is_certifier_address_correct" type="radio" value="no" aria-describedby="manual-address-option-hint" data-aria-controls="conditional-manual-address">
+              <label id="manual-address-option-label" class="govuk-label govuk-radios__label govuk-label--s" for="manual-address-option">
+                No, deliver to a different address
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-manual-address">
+                <p class="govuk-body">
+                An authorising declaration must have been submitted by the Certifier Practice to the
+                <strong class="bold">Centre for International Trade - Carlisle</strong>
+                to enable certificates to be posted to an address other than that of the Certifier Practice address.</p>
+                <p class="govuk-body">
+                A declaration form can be obtained from the <strong class="bold">Centre for International Trade - Carlisle</strong> on request.
+              </p>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
+        <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-CertificateDeliveryAddressSaveAndContinue" data-qa-id="Button-SaveAndContinue">
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% block chatbot %}{% include "../../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}
