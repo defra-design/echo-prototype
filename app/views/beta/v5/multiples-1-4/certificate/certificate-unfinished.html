@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
+            <h1 class="govuk-fieldset__heading">
+             Do you want to continue your unfinished certificate &quot;{{data.ehc_reference_num or 'Seabiscuit'}}&quot;?
+            </h1>
+          </legend>
+          <p class="govuk-body">You have an unfinished certificate with a reference of <strong>&quot;{{data.ehc_reference_num or 'Seabiscuit'}}&quot;</strong> <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" class="govuk-link">View certificate(opens in new tab)</a></p>
+
+          <!-- <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Name
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+
+                        {{data.animal_name or 'Seabiscuit'}}
+
+                    </dd>
+
+                  </div>
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Breed
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+
+                      Thoroughbred
+
+                    </dd>
+
+                  </div>
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Age
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+
+                        <span class="govuk-hint">Left for certifier</span>
+
+                    </dd>
+
+                  </div>
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Colour
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+
+                        <span class="govuk-hint">Left for certifier</span>
+
+                    </dd>
+
+                  </div>
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Sex
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+
+                        <span class="govuk-hint">Left for certifier</span>
+
+                    </dd>
+
+                  </div>
+
+                </dl> -->
+
+
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="continue_certificate-yes" name="continue_certificate" type="radio" value="yes" >
+              <label class="govuk-label govuk-radios__label" for="continue_certificate-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="continue_certificate-no" name="continue_certificate" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="continue_certificate-no">
+                No, delete the certificate and start again
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

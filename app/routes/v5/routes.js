@@ -4,7 +4,7 @@ module.exports = function(router) {
 
 
   // ADD extra routing here if needed.
-  // require('./extra-stories.js')(router)
+  require('./multiples-1-4.js')(router)
 
   const fs = require('fs');
 
