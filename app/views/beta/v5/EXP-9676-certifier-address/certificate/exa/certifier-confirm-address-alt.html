@@ -16,20 +16,22 @@ GOV.UK Prototype Kit
 
     <form  method="POST">
       <div class="govuk-form-group">
-
-
+        <h1 class="govuk-heading-xl">Is this the right delivery address for your certificate?</h1>
+        <p class="govuk-body govuk-fieldset__legend--m">{{data.certifier_name or 'Aberdour Vets'}}<br>
+          <span id="certificate-delivery-address-line-1">{{data.certifier_addressLine1 or '182a'}} {{data.certifier_addressLine2 or 'High Street'}}</span><br>
+          {% if data.certifier_addressLine3 %}<span id="certificate-delivery-address-line-3">{{data.certifier_addressLine3}}</span><br>{% endif %}
+          <span id="certificate-delivery-address-town">{{data.certifier_town or 'Beckenham'}}</span><br>
+          <span id="certificate-delivery-address-country">{{data.certifier_county or 'Kent'}}</span><br>
+          <span id="certificate-delivery-address-postcode">{{data.certifier_postcode or 'BR3 1EW'}}</span><br>
+        </p>
+      </div>
+      <br>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
-              <h1 class="govuk-fieldset__heading">Is this the right delivery address for your certificate?</h1>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-heading-m">Confirm certificate delivery address:</h1>
           </legend>
-          <p class="govuk-body-l govuk-!-font-weight-bold">{{data.certifier_name or 'Aberdour Vets'}}<br>
-            <span id="certificate-delivery-address-line-1">{{data.certifier_addressLine1 or '182a'}} {{data.certifier_addressLine2 or 'High Street'}}</span><br>
-            {% if data.certifier_addressLine3 %}<span id="certificate-delivery-address-line-3">{{data.certifier_addressLine3}}</span><br>{% endif %}
-            <span id="certificate-delivery-address-town">{{data.certifier_town or 'Beckenham'}}</span><br>
-            <span id="certificate-delivery-address-country">{{data.certifier_county or 'Kent'}}</span><br>
-            <span id="certificate-delivery-address-postcode">{{data.certifier_postcode or 'BR3 1EW'}}</span><br>
-          </p>
+
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="default-address-option" name="is_certifier_address_correct" type="radio" value="yes">
