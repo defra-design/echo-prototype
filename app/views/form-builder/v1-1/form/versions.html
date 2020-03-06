@@ -228,6 +228,7 @@ GOV.UK Prototype Kit
                     </tr>
 
                     <!-- #restricted -->
+                    {% if query.unpublished !="yes" %}
                     <tr class="govuk-table__row" data-qa-id="grid-row-version-3.1">
                           <td class="govuk-table__cell" id="EHC-document-version-8" data-qa-id="version-text-3.1">3.2 (v3.1 cloned)
                           </td>
@@ -262,6 +263,29 @@ GOV.UK Prototype Kit
                             </div>
                         </td>
                     </tr>
+                    {% else %}
+                    <tr class="govuk-table__row" data-qa-id="grid-row-version-2.9">
+                        <td class="govuk-table__cell" id="EHC-document-version-6" data-qa-id="version-text-2.9">3.2 (v2.8 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-6">
+                            ehc-2849ehc-3.2.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-6" data-qa-id="status-column">
+                            <strong class="red-tag">INACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="/protected/forms/2849EHC/versions/2.9/form" id="document-action-inactive-view-2.9" class="action-link" data-qa-id="document-action-inactive-view-2.9" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-inactive-publish-2.9" class="action-link" data-qa-id="document-action-inactive-publish-2.9" target="_self">Publish form</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
 
                     <tr class="govuk-table__row" data-qa-id="grid-row-version-3.3">
                         <td class="govuk-table__cell" id="EHC-document-version-9" data-qa-id="version-text-3.2">3.3 (v3.2 cloned)
