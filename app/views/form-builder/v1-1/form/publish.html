@@ -4,42 +4,74 @@ GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <div class="govuk-form-group margin-top-30">
-          <span class="govuk-caption-l" data-qa-id="publish-form-heading">EHC 2849EHC</span>
-          <h2 class="govuk-heading-l">Publish a form version</h2>
-        </div>
-        <form class="case-update" style="display: inline;" action="./versions" method="POST">
-          <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
-          <input type="hidden" value="2849EHC" name="documentNumber">
+  <div class="govuk-grid-column-two-thirds">
 
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header">EHC version</th>
-              <th class="govuk-table__header">PDF</th>
-              <th class="govuk-table__header">Status</th>
-            </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-qa-id="version-in-table">3.2</td>
-              <td class="govuk-table__cell">                <p>ehc-2849ehc-3.2.pdf</p>
-              </td>
-              <td class="govuk-table__cell" data-qa-id="status-in-table"><span class="phase-tag orange-tag">DRAFT</span>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+    <span class="govuk-caption-l" data-qa-id="publish-form-heading">EHC 2849EHC</span>
+    <h1 class="govuk-heading-xl">Publish form version {{query.form_version or '3.2'}}</h1>
 
-          <h3 class="govuk-heading-m margin-top-30">Are you sure you want to publish this form
-            version?</h3>
-
-          <hr>
-
-          <input class="govuk-button" type="submit" value="Publish this form version" data-qa-id="Button-Save">
-          <a class="govuk-button cancel-button margin-left-30" href="versions" data-qa-id="Button-Cancel">Cancel</a>
-        </form>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          EHC version
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{query.form_version or '3.2'}}
+        </dd>
       </div>
-    </div>
-  {% endblock %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          PDF
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ehc-2849ehc-{{query.form_version or '3.2'}}.pdf
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if query.status == "restricted"%}
+          <span class="govuk-tag">RESTRICTED</span>
+          {% elseif query.status == "inactive" %}
+          <span class="phase-tag red-tag">INACTIVE</span>
+          {% else %}
+          <span class="phase-tag orange-tag">DRAFT</span>
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+    <form class="case-update" style="display: inline;" action="./versions" method="GET">
+      <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+      <input type="hidden" value="2849EHC" name="documentNumber">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Who do you want to publish this form for?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live" name="updated_status" type="radio" value="active">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                Everyone (active)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="updated_status" type="radio" value="restricted" {% if query.status == "restricted"%}checked="checked"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                Only those with code (restricted)
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <input type="hidden" name="updated" value="yes">
+      <input type="hidden" name="old_status" value="{{query.status or 'draft'}}">
+      <input class="govuk-button" type="submit" value="Submit" data-qa-id="Button-Save">
+      <a class="link-button--inline" href="versions" data-qa-id="Button-Cancel">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
