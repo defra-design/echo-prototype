@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Application published to {% if query.updated_status == "active" %}everyone{% else %}  only those with the code{% endif %}
+  </h1>
+</div>
+  <p class="govuk-body">The version url is: </p>
+  <div class="govuk-inset-text">
+    https://apply-export-health-certificate-exporter-int-snd.azure.defra.cloud:443/forms/X005-2849EHC
+</div>
+
+    <form class="case-update" style="display: inline;" action="./versions" method="GET">
+      <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+      <input type="hidden" value="2849EHC" name="documentNumber">
+      <input type="hidden" name="updated" value="yes">
+      <input type="hidden" name="old_status" value="{{query.status or 'draft'}}">
+      <input class="govuk-button" type="submit" value="Return to form versions" data-qa-id="Button-Save">
+
+    </form>
+  </div>
+</div>
+{% endblock %}
