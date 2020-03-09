@@ -42,24 +42,20 @@ GOV.UK Prototype Kit
       <h1 class="govuk-heading-xl">
         Review your application answers
       </h1>
+      {% if query.has_warning == "yes"%}
       <!-- //Mini task, in-page navigation.  -->
-        <!-- <div class="defra-alert defra-alert--info govuk-!-margin-bottom-8">
-      <p class="govuk-body govuk-!-margin-bottom-1">Sections you will need to check:</p>
-      <ol class="govuk-list govuk-!-margin-bottom-0">
-        <li><a href="#section-application-info">About your application</a></li>
 
-        <li><a href="#section-apha-info">Information needed by APHA</a></li>
-        {% if db.is_multiple != "yes"%}
-        <li><a href="#section-ehc-info">Information for the EHC</a></li>
-        {% else%}
-        <li><a href="#section-ehc-info">Information for the EHC</a></li>
-        {% endif %}
-        <li><a href="#section-documents-info">Supporting documents</a></li>
-        {% if db.is_multiple != "yes"%}
-        <li><a href="#section-documents-info">Preview specimin sample</a></li>
+        <div class="defra-alert defra-alert--warning govuk-!-margin-bottom-8">
+          {%  if data.warning_type == "certificates"%}
+      <p class="govuk-body govuk-!-margin-bottom-1">3 certificates have issues you will need to fix</p>
+      <ol class="govuk-list govuk-!-margin-bottom-0">
+        <li><a href="#certificarte-section--seabiscuit">Seabiscuit</a></li>
+        <li><a href="#certificarte-section--last-suspect">Last suspect</a></li>
+        <li><a href="#certificarte-section--redrum">Redrum</a></li>
         {% endif %}
       </ol>
-      </div> -->
+      </div>
+      {% endif %}
       <h2 id="section-application-info" class="govuk-heading-m defra-check-answers-title">1. About the application</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m" >
         <div class="govuk-summary-list__row">

@@ -132,7 +132,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="{% if (data.added_certificates | length) >0  %}certificate-list?first_time=no{%elseif data.has_unfinished_certificate == 'yes' %}certificate-unfinished?first_time=no{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress&return_check_answers=certificate-list" class="govuk-link">{% if (data.added_certificates | length) == 0 %}Create your
-                EHC{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+                export health certificate{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
             </span>
             {% if (data.added_certificates | length) >0  %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>

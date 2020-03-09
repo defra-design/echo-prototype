@@ -8,8 +8,8 @@ module.exports = function(router) {
   const fs = require('fs');
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'beta/v4'
-  const base_url = version + "/multiples-1-3"
+  const version = 'beta/v5'
+  const base_url = version + "/multiples-1-4"
   const file_url = version + "/core"
   const db = []
   var normalizedPath = require("path").join(__dirname, "../../data/certificates");

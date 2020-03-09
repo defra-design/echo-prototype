@@ -22,6 +22,15 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/status-tags";
 @import "components/pagination";
 @import "components/form-finder";
+
+.govuk-summary-list__row-error {
+  padding-left: 15px;
+  border-left: 5px solid #d4351c;
+}
+.govuk-summary-list__row-warning{
+  padding-left: 15px;
+  border-left: 5px solid #FFBF45;
+}
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 .govuk-status--warning {
   width: auto !important;
@@ -524,6 +533,8 @@ h3#section-a-forms,h3#section-b-guidance {
     line-height: 1.25;
 }
 }
+
+
 
 .app-copy-button {
     /* font-family: "GDS Transport", Arial, sans-serif; */
