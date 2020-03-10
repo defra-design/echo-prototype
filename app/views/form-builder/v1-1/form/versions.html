@@ -238,7 +238,7 @@ GOV.UK Prototype Kit
                           </td>
 
                           <td class="govuk-table__cell " id="EHC-document-status-8" data-qa-id="status-column">
-                              {% if query.updated=="yes" and query.old_status=="restricted" and query.updated_status != query.old_status%}<strong class="green-tag">ACTIVE</strong>{%else%}<strong class="govuk-tag light-green-tag">RESTRICTED</strong>{%endif%}
+                              {% if query.updated=="yes" and query.old_status=="restricted" and query.updated_status != query.old_status%}<strong class="green-tag">ACTIVE</strong>{%else%}<strong class="govuk-tag light-green-tag">PRIVATE</strong>{%endif%}
                           </td>
 
 
@@ -246,7 +246,7 @@ GOV.UK Prototype Kit
 
                           {% if query.old_status!="restricted" or query.updated_status == query.old_status%}
                           <div class="">
-                            <a href="get-url"id="document-action-active-view-3.1" class="action-link" data-qa-id="document-action-active-view-3.1" target="_self">Copy link</a>
+                            <a href="get-url"id="document-action-active-view-3.1" class="action-link" data-qa-id="document-action-active-view-3.1" target="_self">Copy private link</a>
                           </div>
                           <div>
                               <a href="publish?status=restricted&version=3.2" id="document-action-active-view-3.1" class="action-link" data-qa-id="document-action-active-view-3.1" target="_self">Publish to everyone</a>
