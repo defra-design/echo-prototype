@@ -11,6 +11,28 @@ GOV.UK Prototype Kit
       <h1 class="govuk-heading-xl">
         {% if data.change_ehc == "yes"%}Update{% else %}Check{% endif %} your answers that will appear on the certificate
       </h1>
+      {% if query.has_warning == "yes"%}
+      <!-- //Mini task, in-page navigation.  -->
+
+        <div class="defra-alert defra-alert--error govuk-!-margin-bottom-8">
+          <h3 class="govuk-heading-s">You will need to fix the following</h3>
+          <ul class="govuk-list govuk-!-margin-bottom-0 govuk-error-summary__list" >
+            {% for task in db.pages %}
+            {% if task.page != "supporting-documents" and task.exa != "yes" %}
+            {% for field in task.content.fields %}
+                {% if field.required == "yes" and not data[field.name] %}
+                  <li><a href="#certificarte-section--seabiscuit">Must enter {{field.label}}</a>
+              {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+
+
+          </ul>
+
+
+      </div>
+      {% endif %}
       <p class="govuk-body">These answers will appear on the certificate. You can also review your answers in a <a href="/public/images/ehc-2849ehc-3.1.pdf"  target="_blank" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate (opens in new tab)</a></p>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
         <div class="govuk-summary-list__row">

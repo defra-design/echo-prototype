@@ -200,7 +200,7 @@
 					"id": "consignee_details",
 					"name": "consignee_details",
 					"rows": "4",
-					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
+					"default": "ABC Dogs LTD, 24 edendhurst ave, London, SW6 5EU"
 				}, {
 					"type": "text",
 					"label": "Flight number",
@@ -209,7 +209,7 @@
 					"id": "flight_number",
 					"name": "flight_number",
 
-					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
+					"default": "ABC DOGS LTD, 24 edendhurst ave, London, SW6 5EU"
 				}, {
 					"type": "textarea",
 					"label": "Who is receiving the dog?",
@@ -218,7 +218,7 @@
 					"id": "consignee_details",
 					"name": "consignee_details",
 					"rows": "4",
-					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
+					"default": "ABC DOGS LTD, 24 edendhurst ave, London, SW6 5EU"
 				}]
 			}
 		},
@@ -247,7 +247,7 @@
 			"content": {
 				"header": "In which region will the certification take place?",
 				"caption": "",
-				"paragraph": "Enter details of all premises where the horse has been resident in the last 60 days. We use this information to help control the spread of disease.",
+				"paragraph": "Enter details of all premises where the dog has been resident in the last 60 days. We use this information to help control the spread of disease.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
@@ -283,7 +283,7 @@
 			"content": {
 				"header": "Has the animal been resident in Great Britain for the last 12 months?",
 				"caption": "",
-				"paragraph": "Enter details of all premises where the horse has been resident in the last 60 days. We use this information to help control the spread of disease.",
+				"paragraph": "Enter details of all premises where the dog has been resident in the last 60 days. We use this information to help control the spread of disease.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",

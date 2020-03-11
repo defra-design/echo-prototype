@@ -28,12 +28,12 @@
     </dt>
     <dd class="govuk-summary-list__value">
       {% if data.has_error == "yes" and data.error_type == "certificates" %}
-      <span class="govuk-error-message">Name of horse is too long<br>Must enter the horses height</span>
+      <span class="govuk-error-message">There are 2 errors with this certificate</span>
       {%endif%}
       	<a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" class="govuk-link">Preview certificate <br>(opens in a new tab or window)</a>
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="check-your-answers-ehc?&return_check_answers=check-your-answers&ehc_reference_num={{certificate.title}}&change_ehc=yes">Change <span class="govuk-visually-hidden"> Seabiscuit</span></a>
+      <a href="check-your-answers-ehc?&return_check_answers=check-your-answers&ehc_reference_num={{certificate.title}}&change_ehc=yes&has_warning=yes">Change <span class="govuk-visually-hidden"> Seabiscuit</span></a>
     </dd>
   </div>
   <div class="govuk-summary-list__row">

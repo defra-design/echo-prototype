@@ -208,7 +208,7 @@ router.get('/'+base_url+'*/certificate/supporting-documents', function(req, res)
   }, function(err, html) {
     if (err) {
       if (err.message.indexOf('template not found') !== -1) {
-        return res.render(file_url + '/certificates/supporting-documents');
+        return res.render(file_url + '/certificate/supporting-documents');
       }
       throw err;
     }
