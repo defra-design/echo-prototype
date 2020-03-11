@@ -23,7 +23,7 @@ GOV.UK Prototype Kit
       {% if query.show_fake_ehc %}
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__header">1.</td>
-        <td class="govuk-table__cell">Billy - EHC2123<br><a href="#">View certificate(opens in new tab)</a></td>
+        <td class="govuk-table__cell">Billy - EHC2123<br><a href="#">View certificate (opens in a new window or tab)</a></td>
         <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Edit</a></td>
       </tr>
       {% endif %}
@@ -40,7 +40,7 @@ GOV.UK Prototype Kit
 
     <tr class="govuk-table__row">
       <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
-      <td class="govuk-table__cell">{{certificate.title}} - EHC2123<br><a href="#">View certificate(opens in new tab)</a></td>
+      <td class="govuk-table__cell">{{certificate.title}} - EHC2123<br><a href="#">View certificate (opens in a new window or tab)</a></td>
       <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Edit</a></td>
     </tr>
       {% endfor%}
