@@ -32,7 +32,7 @@ GOV.UK Prototype Kit
         </dt>
         <dd class="govuk-summary-list__value">
           {% if query.status == "restricted"%}
-          <span class="govuk-tag">RESTRICTED</span>
+          <span class="govuk-tag">PRIVATE</span>
           {% elseif query.status == "inactive" %}
           <span class="phase-tag red-tag">INACTIVE</span>
           {% else %}
@@ -48,20 +48,20 @@ GOV.UK Prototype Kit
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              Who do you want to publish this form for?
+              Who will be able to see this form?
             </h1>
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="where-do-you-live" name="updated_status" type="radio" value="active">
               <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                Everyone (active)
+                Everyone
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="where-do-you-live-2" name="updated_status" type="radio" value="restricted" {% if query.status == "restricted"%}checked="checked"{% endif %}>
               <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                Only those with code (restricted)
+                Only those with the private link
               </label>
             </div>
           </div>
