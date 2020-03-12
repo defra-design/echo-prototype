@@ -1,8 +1,9 @@
 {
-	"certificate_code": "2849EHC_test",
+	"certificate_code": "2849EHC_v2",
 	"version": "2",
 	"printable": "no",
 	"is_multiple": "yes",
+	"allow_blocks": "no",
 	"destination": "United Arab Emirates",
 	"certificate_name": "Permanently export horses to the United Arab Emirates (UAE)",
 	"commodities": [{
@@ -17,10 +18,11 @@
 	}],
 	"pages": [{
 			"page": 1,
-			"title": "Horse details",
+			"title": "Identification of the horse",
+			"group_name": "Identification of the horse",
 			"repeatable": "yes",
 			"content": {
-				"header": "Horse details",
+				"header": "Identification of the horse",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -28,9 +30,9 @@
 				"product_page": "no",
 				"fields": [{
 						"type": "text",
-						"label": "Name",
+						"label": "Horse name",
 						"hint": "",
-						"required": "no",
+						"required": "yes",
 						"id": "animal_name",
 						"name": "animal_name",
 						"allow": "past",
@@ -75,23 +77,14 @@
 						"name": "animal_gender",
 						"allow": "past",
 						"default": "003453232"
-					},
-					{
-							"type": "textarea",
-							"label": "Name and address of the owner",
-							"hint": "",
-							"required": "no",
-							"id": "owner_details",
-							"name": "owner_details",
-							"rows": "4",
-							"default": ""
-						}
+					}
 				]
 			}
 		},
 		{
 			"page": 2,
-			"title": "How will the horse be identified?",
+			"title": "Identification of the horse",
+			"group_name": "Identification of the horse",
 			"repeatable": "yes",
 			"content": {
 				"header": "How will the horse be identified?",
@@ -100,44 +93,88 @@
 				"next": "",
 				"prev": "",
 				"product_page": "no",
+				"fields": [
+					{
+						"type": "conditional",
+						"inline": "no",
+						"label": "Method of identification",
+						"hint": "",
+						"required": "yes",
+						"id": "certification_place",
+						"name": "certification_place",
+						"options": [{
+								"title": "Passport",
+								"value": "passport",
+								"conditional": "yes",
+								"conditional_paragraph": "",
+								"conditional_fields" : [
+									{
+										"type": "text",
+										"label": "Passport number",
+										"hint": "",
+										"required": "yes",
+										"id": "Passport_number",
+										"name": "passport_number",
+										"allow": "past",
+										"default": "123456678"
+									},
+									{
+										"type": "text",
+										"label": "Passport issuer",
+										"hint": "",
+										"required": "no",
+										"id": "passport_issuer",
+										"name": "passport_issuer",
+										"default": "UK"
+									}
+								]
+							},
+							{
+									"title": "Microchip",
+									"value": "microchip",
+									"conditional": "no",
+									"conditional_paragraph": "",
+									"conditional_fields" : []
+								}
+						],
+						"default": "Passport"
+					}
+
+				]
+			}
+		},
+		{
+			"page": 3,
+			"title": "Origin of horse",
+			"group_name": "Origin of horse",
+			"repeatable": "yes",
+			"content": {
+				"header": "Who owns the horse?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
 				"fields": [{
-						"type": "text",
-						"label": "Method of identification ",
+						"type": "textarea",
+						"label": "Name and address of the owner",
 						"hint": "",
-						"required": "no",
-						"id": "id_method",
-						"name": "id_method",
-						"allow": "past",
-						"default": "003453232"
-					},
-					{
-						"type": "text",
-						"label": "Passport number",
-						"hint": "",
-						"required": "no",
-						"id": "Passport_number",
-						"name": "passport_number",
-						"allow": "past",
-						"default": "123456678"
-					},
-					{
-						"type": "text",
-						"label": "Passport issuer",
-						"hint": "",
-						"required": "no",
-						"id": "passport_issuer",
-						"name": "passport_issuer",
-						"default": "UK"
+						"required": "yes",
+						"id": "owner_details",
+						"name": "owner_details",
+						"rows": "4",
+						"default": ""
 					}
 				]
 			}
 		},
 		{
 			"page": 4,
-			"title": "Consignment details",
+			"title": "Origin of horse",
+			"group_name": "Origin of horse",
 			"repeatable": "no",
 			"content": {
-				"header": "Consignment details",
+				"header": "Examination and consignment",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -152,7 +189,8 @@
 					"name": "examination_details",
 					"rows": "4",
 					"default": ""
-				},{
+				},
+				{
 					"type": "textarea",
 					"label": "Name and address of exporter",
 					"hint": "",
@@ -161,9 +199,23 @@
 					"name": "product_species",
 					"rows": "4",
 					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
-				},{
+				}]
+			}
+		},
+		{
+			"page": 6,
+			"title": "Transport and destination",
+			"group_name": "Transport and destination",
+			"content": {
+				"header": "Transport and destination",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
 					"type": "text",
-					"label": "Means of transport",
+					"label": "How will the horse be transported?",
 					"hint": "For example, aeroplane, ship, road",
 					"required": "no",
 					"id": "transport_means",
@@ -285,10 +337,10 @@
 			"content": {
 				"header": "Will the consignment transit the EU?",
 				"caption": "",
-				"paragraph": "Enter details of all premises where the horse has been resident in the last 60 days. We use this information to help control the spread of disease.",
+				"paragraph": "",
 				"next": "",
 				"prev": "",
-				"product_page": "no",
+				"product_page": "No",
 				"fields": [{
 					"type": "radio",
 					"inline": "yes",
@@ -308,13 +360,14 @@
 					],
 					"default": "England"
 				}, {
-					"type": "text",
+					"type": "textarea",
 					"label": "Intra trade animal health certificate (ITAHC) number",
-					"hint": "Horses transiting the EU require an ITAHC. If you have created an ITAHC enter the number below.",
+					"hint": "Horses transiting the EU need an ITAHC. Enter an ITAHC number for each horse in this application.",
 					"required": "no",
 					"id": "intra_trade",
 					"name": "intra_trade",
-					"default": ""
+					"default": "",
+					"rows": "5"
 				}]
 			}
 		}, {

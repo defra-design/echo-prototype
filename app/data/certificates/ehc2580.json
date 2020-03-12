@@ -3,6 +3,7 @@
 	"version": "1",
 	"printable": "no",
 	"is_multiple": "yes",
+	"allow_blocks": "no",
 	"destination": "United Arab Emirates",
 	"certificate_name": "Export dogs from United Kingdom to Australia",
 	"commodities": [{
@@ -13,6 +14,28 @@
 		}]
 	}],
 	"pages": [{
+			"page": 0,
+			"title": "What is your import permit number?",
+			"repeatable": "yes",
+			"content": {
+				"header": "What is your import permit number?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Import permit number ",
+						"hint": "",
+						"required": "no",
+						"id": "permit_number",
+						"name": "permit_number",
+						"default": "830482398423"
+					}
+				]
+			}
+		}, {
 			"page": 1,
 			"title": "What are the details of the dog?",
 			"repeatable": "yes",
@@ -161,31 +184,32 @@
 		},
 		{
 			"page": 4,
-			"title": "What is your import permit number?",
+			"title": "Who is sending the dog?",
 			"repeatable": "no",
 			"content": {
-				"header": "What is your import permit number?",
+				"header": "Who is sending the dog?",
 				"caption": "",
-				"paragraph": "",
+				"paragraph": "Provide details of the person who will send the consignment, or their representative",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
-					"type": "text",
-					"label": "Import permit number",
+					"type": "textarea",
+					"label": "Name and address of exporters",
 					"hint": "",
 					"required": "no",
-					"id": "import_permit_number",
-					"name": "import_permit_number",
-					"default": ""
+					"id": "owner_address",
+					"name": "owner_address",
+					"rows": "4",
+					"default": "Highland Riding Centre, AddressBorlum Farm, Inverness, IV63 6X"
 				}]
 			}
 		},
 		{
 			"page": 5,
-			"title": "Destination and transport",
+			"title": "How will the dog be transported?",
 			"content": {
-				"header": "Destination and transport",
+				"header": "How will the dog be transported?",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -193,15 +217,6 @@
 				"product_page": "no",
 				"product_max": "5",
 				"fields": [{
-					"type": "textarea",
-					"label": "Who is sending the dog?",
-					"hint": "Provide details of the person who will send the consignment, or their representative",
-					"required": "yes",
-					"id": "consignee_details",
-					"name": "consignee_details",
-					"rows": "4",
-					"default": "ABC Dogs LTD, 24 edendhurst ave, London, SW6 5EU"
-				}, {
 					"type": "text",
 					"label": "Flight number",
 					"hint": "You can enter more than one flight number",
@@ -210,15 +225,29 @@
 					"name": "flight_number",
 
 					"default": "ABC DOGS LTD, 24 edendhurst ave, London, SW6 5EU"
-				}, {
+				}]
+			}
+		},
+		{
+			"page": 6,
+			"title": "Who is receiving the dog?",
+			"content": {
+				"header": "Who is receiving the dog?",
+				"caption": "",
+				"paragraph": "Provide details of the person the dog will be shipped to, or their representative",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"product_max": "5",
+				"fields": [{
 					"type": "textarea",
-					"label": "Who is receiving the dog?",
-					"hint": "Provide Name and address of the person (consignee) the dog will be shipped to, or their representative",
+					"label": "Name and address of consignee",
+					"hint": "",
 					"required": "no",
 					"id": "consignee_details",
 					"name": "consignee_details",
 					"rows": "4",
-					"default": "ABC DOGS LTD, 24 edendhurst ave, London, SW6 5EU"
+					"default": "ABC Dogs LTD, 24 edendhurst ave, London, SW6 5EU"
 				}]
 			}
 		},
@@ -241,7 +270,7 @@
 			}
 		},
 		{
-			"page": 9,
+			"page": 7,
 			"exa": "yes",
 			"title": "In which region will the certification take place?",
 			"content": {
@@ -283,7 +312,7 @@
 			"content": {
 				"header": "Has the animal been resident in Great Britain for the last 12 months?",
 				"caption": "",
-				"paragraph": "Enter details of all premises where the dog has been resident in the last 60 days. We use this information to help control the spread of disease.",
+				"paragraph": "",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
@@ -348,7 +377,7 @@
 			"content": {
 				"header": "What is the planned date of export?",
 				"caption": "",
-				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"paragraph": "",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
@@ -361,16 +390,16 @@
 					"name": "export_date",
 					"allow": "future",
 					"default": ""
-				},{
-				"type": "date",
-				"label": "Date of final appointment with veterinarian",
-				"hint": "This needs to be on or before the export date",
-				"required": "yes",
-				"id": "export_date_final_appoint",
-				"name": "export_date_final_appoint",
-				"allow": "no",
-				"default": ""
-			}]
+				}, {
+					"type": "date",
+					"label": "Date of final appointment with veterinarian",
+					"hint": "This needs to be on or before the export date",
+					"required": "no",
+					"id": "export_date_final_appoint",
+					"name": "export_date_final_appoint",
+					"allow": "no",
+					"default": ""
+				}]
 			}
 		}
 	]

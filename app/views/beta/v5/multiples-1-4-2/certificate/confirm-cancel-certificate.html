@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to cancel certificte &quot;{{data.ehc_reference_num}}&quot;?
+            </h1>
+          </legend>
+          <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Any information you have added will be lost.
+  </strong>
+</div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirm_cancel_certificate-yes" name="confirm_cancel_certificate" type="radio" value="yes" >
+              <label class="govuk-label govuk-radios__label" for="confirm_cancel_certificate-yes">
+                Yes, cancel adding this certificate
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirm_cancel_certificate-no" name="confirm_cancel_certificate" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="confirm_cancel_certificate-no">
+                No, continue creating certificate
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

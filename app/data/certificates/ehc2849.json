@@ -275,6 +275,42 @@
 			}
 		},
 		{
+			"page": 10,
+			"exa": "yes",
+			"title": "In which region will the certification take place?",
+			"content": {
+				"header": "In which region will the certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					],
+					"default": "England"
+				}]
+			}
+		},
+		{
 			"page": 11,
 			"exa": "yes",
 			"title": "Who is exporting the horse?",
