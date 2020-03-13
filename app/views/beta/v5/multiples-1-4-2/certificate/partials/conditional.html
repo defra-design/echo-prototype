@@ -20,7 +20,7 @@
       </div>
       {% if radio.conditional =="yes" %}
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-{{radio.value}}-conditional">
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
           {% if radio.conditional_paragraph %}<p class="govuk-body">{{radio.conditional_paragraph }}</p>{% endif %}
           {% for cfield in radio.conditional_fields %}
           <div class="govuk-form-group">

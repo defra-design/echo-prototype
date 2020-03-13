@@ -207,6 +207,15 @@ module.exports = function(router) {
     req.session.data.empty = tools.getBlankFields(req.body)
     // console.log(tools.getDB(req.session.data.database,db).data.pages[req.query.id])
 
+    if(page.can_save_address){
+      var address_input_name= page.content.fields[0].name
+
+      // create a new array to hold the address of this type if one does not already exist
+      req.session.data[page.address_type] = req.session.data[page.address_type] || new Array();
+      // Save the new address into appropriate list
+      req.session.data[page.address_type].push(req.body[page.address_input_name])
+    }
+
     // Show error message if the user has left anything blank and not skipped
     req.body.skip_answers = req.body.skip_answers || []
     if (req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip') && page.exa!="yes") {

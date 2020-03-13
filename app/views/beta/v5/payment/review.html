@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+<html lang="en" class="govuk-template ">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+GOV.UK Prototype Kit
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+      <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/govuk/assets/images/favicon.ico" type="image/x-icon" />
+      <link rel="mask-icon" href="/govuk/assets/images/govuk-mask-icon.svg" color="#0b0c0c">
+      <link rel="apple-touch-icon" sizes="180x180" href="/govuk/assets/images/govuk-apple-touch-icon-180x180.png">
+      <link rel="apple-touch-icon" sizes="167x167" href="/govuk/assets/images/govuk-apple-touch-icon-167x167.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="/govuk/assets/images/govuk-apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" href="/govuk/assets/images/govuk-apple-touch-icon.png">
+
+
+
+<!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+
+
+
+
+
+    <meta property="og:image" content="/govuk/assets/images/govuk-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body "><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+
+
+      <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+
+
+
+
+
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <svg
+            role="presentation"
+            focusable="false"
+            class="govuk-header__logotype-crown"
+            xmlns="http://www.w3.org/2000/svg"
+            viewbox="0 0 132 97"
+            height="30"
+            width="36"
+          >
+            <path
+              fill="currentColor" fill-rule="evenodd"
+              d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
+            ></path>
+            <image src="/assets/images/govuk-logotype-crown.png" xlink:href="" class="govuk-header__logotype-crown-fallback-image" width="36" height="32"></image>
+          </svg>
+          <span class="govuk-header__logotype-text">
+            GOV.UK
+          </span>
+        </span>
+
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Review your answers
+      </h1>
+      <div class="govuk-details__text">
+        <strong class="govuk-body ">
+          Your application for a health certificate is now ready to be submitted.<br>
+          Please check that the answers you've provided are correct.
+        </strong>
+      </div>
+      <br /><br />
+
+      <h2 class="govuk-heading-m">Do you want to provide an applicant reference number?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Create a reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+              fhjeoifhiweji
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="exa/reference?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Change</a>
+          </dd>
+        </div>
+      </dl>
+
+
+        <h2 class="govuk-heading-m">Select the certifier practice to include with your application</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Select the certifier practice to include with your application
+          </dt>
+          <dd class="govuk-summary-list__value">ABC VETS LIMITED
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="exa/certifier?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Select certificate delivery address
+          </dt>
+          <dd class="govuk-summary-list__value">Electra Way Crewe Business Park, Crewe , CW1 6GJ,
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="exa/certifier-confirm-address?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>
+          </dd>
+        </div>
+        </dl>
+        <h2 class="govuk-heading-m">How would you like the certificate to be delivered to the certifier?</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Delivery method
+          </dt>
+          <dd class="govuk-summary-list__value">First class post
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Change</a>
+          </dd>
+        </div>
+        </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2 class="govuk-heading-m">In which region will the certification take place?</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Certification region
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                England
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=7&next=check-your-answers">Change<span class="govuk-visually-hidden"> Certification region</span></a>
+            </dd>
+          </div>
+
+          </dl>
+
+
+
+        <h2 class="govuk-heading-m">Has the animal been resident in Great Britain for the last 12 months?</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Resident in GB for last 12 months
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                yes
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=9&next=check-your-answers">Change<span class="govuk-visually-hidden"> Resident in GB for last 12 months</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Addresses in the last 12 months
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                dsfjasdoifjisdj
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=9&next=check-your-answers">Change<span class="govuk-visually-hidden"> Addresses in the last 12 months</span></a>
+            </dd>
+          </div>
+
+          </dl>
+
+
+
+        <h2 class="govuk-heading-m">Who is exporting the animal?</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Exporter name
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                dsfjasdoifjisdj
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=11&next=check-your-answers">Change<span class="govuk-visually-hidden"> Exporter name</span></a>
+            </dd>
+          </div>
+
+          </dl>
+
+
+
+        <h2 class="govuk-heading-m">What is the planned date of export?</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Planned export date
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                1/1/1
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=16&next=check-your-answers">Change<span class="govuk-visually-hidden"> Planned export date</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of final appointment with veterinarian
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                //
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=16&next=check-your-answers">Change<span class="govuk-visually-hidden"> Date of final appointment with veterinarian</span></a>
+            </dd>
+          </div>
+
+          </dl>
+
+
+
+
+      <!-- GET BESPOKE EXA QUESTIONS -->
+
+
+
+
+
+      <h2 class="govuk-heading-m">What is your import permit number?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Import permit number
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              3098423904
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=0&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Import permit number </span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">What are the details of the dog?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              Seabiscuit
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=1&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Breed
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              3423
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=1&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Breed</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Age
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              2
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=1&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Age</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Colour and any distinguishing features
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              blue
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=1&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Colour and any distinguishing features</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Sex
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              Male
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=1&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Sex</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">What are the details of the microchip?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Microchip number
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              90734871823748
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=2&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Microchip number</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Site of the microchip on the body
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              neck
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=2&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Site of the microchip on the body</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of final examination and microchip scanning
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              09824 8230482 83
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=2&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Date of final examination and microchip scanning</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">Where is the dog from?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address of the dog at time of export
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              53 North Street
+HARROW
+HA63 0PS
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=3&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Address of the dog at time of export</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">Who is sending the dog?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name and address of exporters
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              53 North Street
+HARROW
+HA63 0PS
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=4&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Name and address of exporters</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">How will the dog be transported?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Flight number
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              DC38234
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=5&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Flight number</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">Who is receiving the dog?</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name and address of consignee
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+              53 North Street
+HARROW
+HA63 0PS
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="page?id=6&next=check-your-answers">
+              Change<span class="govuk-visually-hidden"> Name and address of consignee</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- {Tasks -->
+      <h2 class="govuk-heading-m">Supporting documents</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            File name
+            <br> Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No documents uploaded
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="supporting-documents?change=yes">
+              Change<span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+
+        <dl>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="notice">
+        <span class="icon icon-file-download"><span class="govuk-visually-hidden">File download</span></span>
+        <strong>Preview your answers in a <a href="/public/images/ehc-2580ehc-7.6.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
+      </p>
+
+      <div class="defra-alert defra-alert--info ">
+
+          <h2 class="govuk-heading-m">Payment summary</h2>
+          <p id="payment-description" class="govuk-body">
+            Payment for[[whatever]]
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-0">
+            Total amount:<br>
+            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" data-amount="20.00">£74.00</span>
+          </p>
+        </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div>
+        <form action="paymentCharge" method="POST">
+          <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+          <input type="hidden" name="applicationFormStatus" value="">
+          <input class="govuk-button margin-top-30" type="submit" value="Continue to payment" id="Button-Continue" data-qa-id="Button-Continue">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+        </main>
+      </div>
+
+
+
+<footer class="govuk-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+          <h2 class="govuk-visually-hidden">Support links</h2>
+
+            <ul class="govuk-footer__inline-list">
+
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://govuk-prototype-kit.herokuapp.com/">
+                    GOV.UK Prototype Kit v9.1.0
+                  </a>
+                </li>
+
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="/prototype-admin/clear-data">
+                    Clear data
+                  </a>
+                </li>
+
+            </ul>
+
+
+
+        <svg
+          role="presentation"
+          focusable="false"
+          class="govuk-footer__licence-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewbox="0 0 483.2 195.7"
+          height="17"
+          width="41"
+        >
+          <path
+            fill="currentColor"
+            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+          />
+        </svg>
+        <span class="govuk-footer__licence-description">
+          All content is available under the
+          <a
+            class="govuk-footer__link"
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            rel="license"
+          >Open Government Licence v3.0</a>, except where otherwise stated
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        >© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+<!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+
+  <script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+
+
+<script src="/public/javascripts/application.js"></script>
+
+
+  <script src="/public/javascripts/auto-store-data.js"></script>
+
+
+
+
+<!-- GOV.UK Prototype Kit v9.1.0 -->
+
+  </body>
+</html>

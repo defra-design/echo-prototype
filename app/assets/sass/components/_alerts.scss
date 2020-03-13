@@ -3,25 +3,27 @@
   background-color:#f3f2f1;
   padding:20px;
   position:relative;
-  border-left: 10px solid #626a6e;
+  border-color:#626a6e;
+  border-style: solid;
+  border-width: 0 0 0 10px;
   margin-bottom:20px;
 
 }
 .defra-alert--success{
   background-color:#EAF6F5;
-  border-left-color: #30A197;
+  border-color: #30A197;
 }
 .defra-alert--info{
   background:#E7F5F9;
-  border-left-color: #0090C1;
+  border-color: #0090C1;
 }
 .defra-alert--warning{
   background:#FFF7E7;
-  border-left-color: #FFBF45;
+  border-color: #FFBF45;
   padding: 20px 20px 5px;
 }
 .defra-alert--error{
   background:#faebe8;
-  border-left-color: #942514;
+  border-color: #942514;
   padding: 20px 20px;
 }

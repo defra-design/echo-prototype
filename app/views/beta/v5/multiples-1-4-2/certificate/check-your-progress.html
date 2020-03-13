@@ -19,6 +19,18 @@ GOV.UK Prototype Kit
           <span class="app-task-list__section-number">1. </span> About your application
         </h2>
         <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="exa/multiples" aria-describedby="eligibility-completed">
+                Number of horses
+              </a>
+            </span>
+            {% if not data.number_horses %}
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
+          </li>
           {% if (db.commodities | length) > 1 %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
