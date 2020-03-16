@@ -1,11 +1,11 @@
 {
-	"certificate_code": "2849EHC_v2",
-	"version": "2",
+	"certificate_code": "2849EHC_v4",
+	"version": "4",
 	"printable": "no",
 	"is_multiple": "yes",
 	"allow_blocks": "no",
 	"destination": "United Arab Emirates",
-	"certificate_name": "Permanently export horses to the United Arab Emirates (UAE)",
+	"certificate_name": "(Exprimental) Permanently export horses to the United Arab Emirates (UAE)",
 	"commodities": [{
 		"group": "Equine",
 		"options": [{
@@ -182,22 +182,18 @@
 		},
 		{
 			"page": 4,
-			"title": "Origin of horse",
+			"title": "Examination and consignment",
 			"group_name": "Origin of horse",
-			"has_address": "yes",
-			"can_save_address": "yes",
-			"address_type": "export_address",
-			"address_input_name" : "examination_details",
 			"repeatable": "no",
 			"content": {
-				"header": "Where was the horse examined?",
+				"header": "Examination and consignment",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
-					"type": "address",
+					"type": "textarea",
 					"label": "Address of the premises of examination",
 					"hint": "",
 					"required": "no",
@@ -205,40 +201,14 @@
 					"name": "examination_details",
 					"rows": "4",
 					"default": ""
-				}]
-			}
-		},
-		{
-			"page": 5,
-			"title": "Origin of horse",
-			"group_name": "Origin of horse",
-			"has_address": "yes",
-			"can_save_address": "yes",
-			"address_type": "export_address",
-			"address_input_name" : "examination_details",
-			"content": {
-				"header": "Who is sending the consignment?",
-				"caption": "",
-				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"product_max": "5",
-				"fields": [{
-					"type": "text",
-					"label": "Name of exporter",
+				},
+				{
+					"type": "textarea",
+					"label": "Name and address of exporter",
 					"hint": "",
 					"required": "no",
-					"id": "exporter_consignment_name",
-					"name": "exporter_consignment_name",
-					"default": "Alexander Charles Barclay"
-				},{
-					"type": "address",
-					"label": "Address of exporter",
-					"hint": "",
-					"required": "no",
-					"id": "exporter_consignment_address",
-					"name": "exporter_consignment_address",
+					"id": "product-species",
+					"name": "product_species",
 					"rows": "4",
 					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
 				}]
@@ -303,6 +273,42 @@
 			}
 		},
 		{
+			"page": 10,
+			"exa": "yes",
+			"title": "In which region will the certification take place?",
+			"content": {
+				"header": "In which region will the certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					],
+					"default": "England"
+				}]
+			}
+		},
+		{
 			"page": 11,
 			"exa": "yes",
 			"title": "Who is exporting the horse?",
@@ -340,7 +346,7 @@
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
-					"type": "address",
+					"type": "textarea",
 					"label": "Premises of origin",
 					"hint": "Enter the address and postcode",
 					"required": "yes",
@@ -357,66 +363,29 @@
 					"id": "certification_place",
 					"name": "certification_place",
 					"options": [
+						{
+							"title": "Yes",
+							"value": "yes"
+						},
 						{"conditional": "yes",
 						"conditional_paragraph": "",
-						"conditional_fields" : [],
-							"title": "Yes",
-							"value": "yes"
-						},
-						{
+						"conditional_fields" : [
+							{
+								"type": "textarea",
+								"label": "Additional premises detail",
+								"hint": "If you have answered no to the question above, list all addresses and postcodes of premises where the horse has been resident in the last 60 days",
+								"required": "no",
+								"id": "premises_details",
+								"name": "premises_details",
+								"rows": "5",
+								"default": ""
+							}
+							],
 							"title": "no",
 							"value": "no"
+
 						}
-					],
-					"default": "England"
-				}, {
-					"type": "text",
-					"label": "Additional premises detail",
-					"hint": "If you have answered no to the question above, list all addresses and postcodes of premises where the horse has been resident in the last 60 days",
-					"required": "no",
-					"id": "premises_details",
-					"name": "premises_details",
-					"default": ""
-				}]
-			}
-		}, {
-			"page": 13,
-			"exa": "yes",
-			"title": "Will the {{data.commodity_type}} transit the EU?",
-			"content": {
-				"header": "Will the consignment transit the EU?",
-				"caption": "",
-				"paragraph": "",
-				"next": "",
-				"prev": "",
-				"product_page": "No",
-				"fields": [{
-					"type": "radio",
-					"inline": "yes",
-					"label": "EU transit",
-					"hint": "",
-					"required": "yes",
-					"id": "certification_place",
-					"name": "certification_place",
-					"options": [{
-							"title": "Yes",
-							"value": "yes"
-						},
-						{
-							"title": "no",
-							"value": "no"
-						}
-					],
-					"default": "England"
-				}, {
-					"type": "textarea",
-					"label": "Intra trade animal health certificate (ITAHC) number",
-					"hint": "Horses transiting the EU need an ITAHC. Enter an ITAHC number for each horse in this application.",
-					"required": "no",
-					"id": "intra_trade",
-					"name": "intra_trade",
-					"default": "",
-					"rows": "5"
+					]
 				}]
 			}
 		}, {

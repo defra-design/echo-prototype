@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      Create a new {{certificate_code or "8327EHC"}} Permanently export horses to the United Arab Emirates (UAE)
+    </h1>
+    {% set ech_active = "yes" %}
+    <ul class="app-task-list__items" style="padding-left:0;">
+      <p class="govuk-body">This information will appear on the EHC. Your certifier can help you complete this section.</p>
+      {% for task in db.pages %}
+        {% if task.exa != "yes" %}
+          {% if ech_active != "yes"%}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                {{task.title}}
+              </span>
+            </li>
+            {% elseif task.title != 'Supporting documents' %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                {% if not task.content.next %}
+                {% set next_page = 'new_ehc' %}
+                {% else %}
+                {% set next_page = task.content.next %}
+                {% endif %}
+                   {% if task.content.product_page == 'yes' %}
+                   <a href="product-list?id={{task.page}}&products=" class="govuk-link">
+                   {% else%}
+                <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
+                  {% endif %}
+                  {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
+                </a>
+              </span>
+              {% if data.completed[task.page]%}
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else%}
+              <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+              {% endif %}
+            </li>
+          {% endif %}
+        <!-- data.ech_active -->
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="govuk-!-margin-top-6">
+      <a href="check-your-answers-ehc" class="govuk-button">Continue</a>
+    </div>
+  </div>
+</div>
+
+<form action="6" method="POST" enctype="application/x-www-form-urlencoded">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-body">
+      <a href="../dashboard?saveAndResumeLater=Save+and+continue+later" class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" >Save and continue later</a>
+    </div>
+  </div>
+</form>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}
