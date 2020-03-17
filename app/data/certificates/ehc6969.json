@@ -3,6 +3,7 @@
 	"version": "1",
 	"printable": "yes",
 	"destination": "Australia",
+	"sample_PDF": "ehc-6969ehc-8.1.pdf",
 	"certificate_name": "Export dairy and dairy products to Australia",
 	"commodities": [{
 		"group": "Dairy",

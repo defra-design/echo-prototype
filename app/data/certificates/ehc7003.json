@@ -3,6 +3,7 @@
 	"version": "1",
 	"printable": "yes",
 	"allow_blocks": "no",
+	"sample_PDF": "ehc-7006ehc-3.0.pdf",
 	"destination": "Northern Ireland, the Isle of Man, Jersey and Guernesy",
 	"certificate_name": "Export non UK bovine semen to Northern Ireland, the Isle of Man, Jersey and Guernesy",
 	"commodities": [{

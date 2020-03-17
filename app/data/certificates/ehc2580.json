@@ -2,6 +2,7 @@
 	"certificate_code": "2580EHC",
 	"version": "1",
 	"printable": "no",
+	"sample_PDF": "ehc-2580ehc-7.6.pdf",
 	"is_multiple": "yes",
 	"allow_blocks": "no",
 	"destination": "United Arab Emirates",

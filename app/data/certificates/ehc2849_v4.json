@@ -5,6 +5,7 @@
 	"is_multiple": "yes",
 	"allow_blocks": "no",
 	"destination": "United Arab Emirates",
+	"sample_PDF": "ehc-2849ehc-3.1.pdf",
 	"certificate_name": "(Exprimental) Permanently export horses to the United Arab Emirates (UAE)",
 	"commodities": [{
 		"group": "Equine",
