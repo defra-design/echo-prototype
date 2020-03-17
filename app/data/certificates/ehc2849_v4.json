@@ -161,17 +161,9 @@
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
-					"type": "text",
-					"label": "Name of owner",
-					"hint": "This is the official owner of the horse",
-					"required": "no",
-					"id": "owner_name",
-					"name": "owner_name",
-					"default": "Alexander Charles Barclay"
-				},{
 						"type": "address",
-						"label": "Address of the owner",
-						"hint": "",
+						"label": "Name and address of the owner",
+						"hint": "This is the official owner of the horse",
 						"required": "yes",
 						"id": "owner_address",
 						"name": "owner_address",
@@ -183,26 +175,17 @@
 		},
 		{
 			"page": 4,
-			"title": "Examination and consignment",
+			"title": "Exporter and examination",
 			"group_name": "Origin of horse",
 			"repeatable": "no",
 			"content": {
-				"header": "Examination and consignment",
+				"header": "Exporter and examination",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
-				"fields": [{
-					"type": "textarea",
-					"label": "Address of the premises of examination",
-					"hint": "",
-					"required": "no",
-					"id": "examination_details",
-					"name": "examination_details",
-					"rows": "4",
-					"default": ""
-				},
+				"fields": [
 				{
 					"type": "textarea",
 					"label": "Name and address of exporter",
@@ -212,6 +195,15 @@
 					"name": "product_species",
 					"rows": "4",
 					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
+				},{
+					"type": "textarea",
+					"label": "Address of the premises of examination",
+					"hint": "",
+					"required": "no",
+					"id": "examination_details",
+					"name": "examination_details",
+					"rows": "4",
+					"default": ""
 				}]
 			}
 		},

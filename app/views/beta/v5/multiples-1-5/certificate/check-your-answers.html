@@ -37,7 +37,7 @@ GOV.UK Prototype Kit
       {% endif %}
       <!-- title -->
       <h1 class="govuk-heading-xl">
-        Review your application answers
+        Review your application answers (v1.5)
       </h1>
       {% if query.has_warning == "yes"%}
       <!-- //Mini task, in-page navigation.  -->
@@ -176,12 +176,13 @@ GOV.UK Prototype Kit
             <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">3. Information for the export health certificate</h2>
             <!-- If multiple show only the EHC's This is now split into partials -->
             {% if db.is_multiple %}
-              <p class="govuk-body">{{(data.added_certificates | length) or "5"}} certificates added to application</p>
+            <h3 class="govuk-heading-m">{{(data.added_certificates | length) or "5"}} horses added to application</h3>
+              <p class="govuk-body"></p>
               {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
             {% else %}
               {% block ehcAnswers %}{% include "./partials/check-answer-ehc.html" %}{% endblock%}
             {% endif %}
-            
+
             <!-- {Tasks -->
 
 

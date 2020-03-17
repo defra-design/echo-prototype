@@ -7,9 +7,9 @@ GOV.UK Prototype Kit
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      {% if data.is_multiple == "yes" %}<span class="govuk-caption-xl">{% if data.change_ehc != "yes"%}Create a new c{%else%}C{%endif%}ertificate for {{data.ehc_reference_num or "Seabiscuit"}}</span>{% endif %}
+
       <h1 class="govuk-heading-xl">
-        {% if data.change_ehc == "yes"%}Update{% else %}Check{% endif %} your answers that will appear on the certificate
+        {% if data.change_ehc == "yes"%}Update{% else %}Check{% endif %} your answers for {{data.ehc_reference_num or "Seabiscuit"}}
       </h1>
       {% if query.has_warning == "yes"%}
       <!-- //Mini task, in-page navigation.  -->
@@ -33,7 +33,6 @@ GOV.UK Prototype Kit
 
       </div>
       {% endif %}
-      <p class="govuk-body">These answers will appear on the certificate. You can also review your answers in a <a href="/public/images/ehc-2849ehc-3.1.pdf"  target="_blank" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate (opens in new tab)</a></p>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -51,7 +50,7 @@ GOV.UK Prototype Kit
       </dl>
 
       {% for task in db.pages %}
-      {% if task.page != "supporting-documents" and task.exa != "yes" %}
+      {% if task.page != "supporting-documents" and task.exa != "yes" and task.repeatable == "yes"%}
       <h2 class="govuk-heading-m">{{task.title}}</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
         {% for field in task.content.fields %}
@@ -81,21 +80,14 @@ GOV.UK Prototype Kit
       <!-- {Tasks -->
     </div>
   </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <p class="notice">
-        <span class="icon icon-file-download"><span class="govuk-visually-hidden">File download</span></span>
-        <strong>Preview your answers in a <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
-      </p>
-    </div>
-  </div>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <div>
         <form method="POST">
           <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
           <input type="hidden" name="applicationFormStatus" value="">
-          <input class="govuk-button margin-top-30" type="submit" value="{% if data.change_ehc == 'yes'%}Update this certificate{%else%}Add this certificate{%endif%}" id="Button-Continue" data-qa-id="Button-Continue">
+          <input class="govuk-button margin-top-30" type="submit" value="{% if data.change_ehc == 'yes'%}Update this horse{%else%}Add this horse{%endif%}" id="Button-Continue" data-qa-id="Button-Continue">
         </form>
       </div>
     </div>

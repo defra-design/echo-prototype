@@ -41,8 +41,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 {% block errorBlank %}{% include "./partials/partial_error_blank.html" %}{% endblock %}
-    {% if data.is_multiple == "yes" and page.exa != "yes"%}<span class="govuk-caption-xl">{% if data.change_ehc != "yes"%}Create a new c{%else%}C{%endif%}ertificate for {{data.ehc_reference_num}}</span>{% endif %}
-    {% if page.exa and page.exa == "yes" %}<span class="govuk-caption-xl">Information needed by APHA</span>{% endif %}
+    {% if data.is_multiple == "yes" and page.exa != "yes" and data.journey == "linear"%}<span class="govuk-caption-xl">{% if data.change_ehc != "yes"%}Add horse details{%else%}Update horse details{%endif%} for {{data.ehc_reference_num}}</span>
+    {% elseif page.exa and page.exa == "yes" %}<span class="govuk-caption-xl">Information needed by APHA</span>{%else%}<span class="govuk-caption-xl">Information for the export health certificate</span>{% endif %}
     {% if page.content.caption %}<span class="govuk-caption-xl">{{page.content.caption}} {% if query.product_page %}{{(data.products | length)+1}} of {{page.content.product_max or 4}}{%endif%}</span>{%endif%}
     <h1 class="govuk-heading-xl">
       {{page.content.header}}

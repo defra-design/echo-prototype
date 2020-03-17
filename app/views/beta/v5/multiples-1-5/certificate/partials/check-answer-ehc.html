@@ -1,7 +1,7 @@
 {% for task in db.pages %}
 {% if task.title != "Supporting documents" and task.exa != "yes" %}
 <h2 class="govuk-heading-m">{{task.title}}</h2>
-<dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+<dl class="govuk-summary-list  govuk-summary-list__m">
   {% for field in task.content.fields %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">

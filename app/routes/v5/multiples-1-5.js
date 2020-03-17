@@ -199,9 +199,7 @@ module.exports = function(router) {
     var query = ""
     var page=tools.findPage(tools.getDB(req.session.database, db).data.pages, req.query.id)
     var page_name = page.title
-    console.log("--------")
-    console.log(req.session.data)
-    console.log("--------")
+
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = tools.getBlankFields(req.body)
@@ -226,7 +224,7 @@ module.exports = function(router) {
 
     if(req.session.data.journey == "linear" && req.query.change != "yes"){
       console.log("first_time = "+req.session.data.first_time )
-      var nextPage = (req.session.data.first_time == "yes") ? getNextPage(tools.getDB(req.session.database, db).data.pages, req.query.id) : getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, req.query.id)
+      var nextPage = getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, req.query.id)
       if(nextPage){
         return res.redirect(301, '/' + base_url + req.params[0] + '/certificate/page?id='+nextPage+'&next='+ req.query.next+'&new='+req.query.new)
       }else{
