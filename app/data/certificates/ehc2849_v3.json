@@ -146,7 +146,7 @@
 		},
 		{
 			"page": 3,
-			"title": "Origin of horse",
+			"title": "Horse owner",
 			"group_name": "Origin of horse",
 			"has_address": "yes",
 			"can_save_address": "yes",
@@ -154,24 +154,16 @@
 			"address_input_name" : "owner_address",
 			"repeatable": "yes",
 			"content": {
-				"header": "Who is the owner of the horse?",
+				"header": "Horse owner",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
-					"type": "text",
-					"label": "Name of owner",
-					"hint": "This is the official owner of the horse",
-					"required": "no",
-					"id": "owner_name",
-					"name": "owner_name",
-					"default": "Alexander Charles Barclay"
-				},{
 						"type": "address",
-						"label": "Address of the owner",
-						"hint": "",
+						"label": "Name and address of the owner",
+						"hint": "This is the official owner of the horse",
 						"required": "yes",
 						"id": "owner_address",
 						"name": "owner_address",
@@ -183,11 +175,11 @@
 		},
 		{
 			"page": 4,
-			"title": "Origin of horse",
+			"title": "Exporter and examination",
 			"group_name": "Origin of horse",
 			"repeatable": "no",
 			"content": {
-				"header": "Examination and consignment",
+				"header": "Exporter and examination",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -274,6 +266,42 @@
 			}
 		},
 		{
+			"page": 10,
+			"exa": "yes",
+			"title": "In which region will the certification take place?",
+			"content": {
+				"header": "In which region will the certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					],
+					"default": "England"
+				}]
+			}
+		},
+		{
 			"page": 11,
 			"exa": "yes",
 			"title": "Who is exporting the horse?",
@@ -299,88 +327,85 @@
 		{
 			"page": 12,
 			"exa": "yes",
-			"title": "What is the premises of origin?",
+			"title": "Where have the horses been for the last 60 days?",
+			"has_address": "yes",
+			"can_save_address": "yes",
+			"address_type": "premises_of_origin",
 			"content": {
-				"header": "What is the premises of origin?",
+				"header": "Where have the horses been for the last 60 days?",
 				"caption": "",
-				"paragraph": "Enter details of all premises where the horse has been resident in the last 60 days. We use this information to help control the spread of disease.",
+				"paragraph": "APHA uses this information to help control the spread of disease.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
-				"fields": [{
-					"type": "text",
+				"fields": [ {
+					"type": "conditional",
+					"inline": "no",
+					"label": "If there is more than one horse in this application, have they been together for the last 60 days?",
+					"hint": "",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [
+						{
+							"title": "Yes",
+							"value": "yes"
+						},
+						{"conditional": "yes",
+						"conditional_paragraph": "You need to make separate applications for each of your horses. You cannot apply for multiple certificates unless the horses have been together for the last 60 days.",
+						"conditional_fields" : [
+							{
+							}
+							],
+							"title": "no",
+							"value": "no"
+
+						},	{
+								"title": "There is only one horse in this application",
+								"value": "one_horse"
+							}
+					]
+				},{
+					"type": "textarea",
 					"label": "Premises of origin",
 					"hint": "Enter the address and postcode",
 					"required": "yes",
 					"id": "premises_of_origin",
 					"name": "premises_of_origin",
+					"rows": "4",
 					"default": ""
-				}, {
-					"type": "radio",
-					"inline": "yes",
-					"label": "Resident for last 60 days",
+				},{
+					"type": "conditional",
+					"inline": "no",
+					"label": "Have the horses in this application been in more than one place in the last 60 days?",
 					"hint": "",
 					"required": "yes",
-					"id": "certification_place",
-					"name": "certification_place",
-					"options": [{
+					"id": "additinal_certification_place",
+					"name": "additinal_certification_place",
+					"options": [
+						{
 							"title": "Yes",
 							"value": "yes"
 						},
-						{
+						{"conditional": "yes",
+						"conditional_paragraph": "",
+						"conditional_fields" : [
+							{
+								"type": "textarea",
+								"label": "Additional premises detail",
+								"hint": "If you have answered no to the question above, list all addresses and postcodes of premises where the horse has been resident in the last 60 days",
+								"required": "no",
+								"id": "additional_premises_details",
+								"name": "additional_premises_details",
+								"rows": "5",
+								"default": ""
+							}
+							],
 							"title": "no",
 							"value": "no"
+
 						}
-					],
-					"default": "England"
-				}, {
-					"type": "text",
-					"label": "Additional premises detail",
-					"hint": "If you have answered no to the question above, list all addresses and postcodes of premises where the horse has been resident in the last 60 days",
-					"required": "no",
-					"id": "premises_details",
-					"name": "premises_details",
-					"default": ""
-				}]
-			}
-		}, {
-			"page": 13,
-			"exa": "yes",
-			"title": "Will the consignment transit the EU?",
-			"content": {
-				"header": "Will the consignment transit the EU?",
-				"caption": "",
-				"paragraph": "",
-				"next": "",
-				"prev": "",
-				"product_page": "No",
-				"fields": [{
-					"type": "radio",
-					"inline": "yes",
-					"label": "EU transit",
-					"hint": "",
-					"required": "yes",
-					"id": "certification_place",
-					"name": "certification_place",
-					"options": [{
-							"title": "Yes",
-							"value": "yes"
-						},
-						{
-							"title": "no",
-							"value": "no"
-						}
-					],
-					"default": "England"
-				}, {
-					"type": "textarea",
-					"label": "Intra trade animal health certificate (ITAHC) number",
-					"hint": "Horses transiting the EU need an ITAHC. Enter an ITAHC number for each horse in this application.",
-					"required": "no",
-					"id": "intra_trade",
-					"name": "intra_trade",
-					"default": "",
-					"rows": "5"
+					]
 				}]
 			}
 		}, {

@@ -19,7 +19,6 @@ GOV.UK Prototype Kit
           <span class="app-task-list__section-number">1. </span> About your application
         </h2>
         <ul class="app-task-list__items">
-
           {% if (db.commodities | length) > 1 %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -89,83 +88,18 @@ GOV.UK Prototype Kit
 
         </ul>
       </li>
+      {% if db.is_multiple == "yes"%}
+      <!-- Your horses -->
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span> Your horses
+          <span class="app-task-list__section-number">2. </span> Your {{db.product_plural or 'horses'}}
         </h2>
-        <p class="govuk-body govuk-!-margin-left-6">APHA uses this information to control the spread of disease. This information does not appear on the EHC</p>
-        <ul class="app-task-list__items">
-
-          {% for task in db.pages %}
-          {% if task.exa == "yes" %}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              {% if not task.content.next %}
-              {% set next_page = 'check-your-progress' %}
-              {% else %}
-              {% set next_page = task.content.next %}
-              {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}&return=check-your-progress"
-                aria-describedby="">
-                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
-              </a>
-            </span>
-            {% if data.completed[task.page] %}
-            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-            {% else%}
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-            {% endif %}
-          </li>
-          <!-- data.ech_active -->
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </li>
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">2. </span> Information needed by APHA
-        </h2>
-        <p class="govuk-body govuk-!-margin-left-6">APHA uses this information to control the spread of disease. This information does not appear on the EHC</p>
-        <ul class="app-task-list__items">
-
-          {% for task in db.pages %}
-          {% if task.exa == "yes" %}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              {% if not task.content.next %}
-              {% set next_page = 'check-your-progress' %}
-              {% else %}
-              {% set next_page = task.content.next %}
-              {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}&return=check-your-progress"
-                aria-describedby="">
-                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
-              </a>
-            </span>
-            {% if data.completed[task.page] %}
-            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-            {% else%}
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-            {% endif %}
-          </li>
-          <!-- data.ech_active -->
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </li>
-      <li>
-        <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Information for the export health certificate
-        </h2>
-        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the certificate. {% if db.is_multiple == "yes"%}You can add up to 50 certificates to this application.{%endif%}</p>
-
-        {% if db.is_multiple == "yes"%}
-
+        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the certificate.</p>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="{% if (data.added_certificates | length) >0  %}certificate-list?first_time=no{%elseif data.has_unfinished_certificate == 'yes' %}certificate-unfinished?first_time=no{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress&return_check_answers=certificate-list" class="govuk-link">{% if (data.added_certificates | length) == 0 %}
-                Create your horse health certificate{% else %}{{ data.added_certificates | length}} certificates{% endif %}</a>
+              <a href="{% if data.has_unfinished_certificate == 'yes' %}certificate-unfinished?first_time=no{%else%}certificate-list?first_time={% if (added_certificates | length) > 0 %}no{%else%}yes{% endif %}{% endif %}&return=check-your-progress&return_check_answers=certificate-list" class="govuk-link">
+                Add horses</a>
             </span>
             {% if (data.added_certificates | length) >0  %}
             <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
@@ -173,6 +107,81 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
             {% endif %}
           </li>
+        </ul>
+      </li>
+      {% endif %}
+
+      <!-- EXA -->
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">{% if db.is_multiple == "yes"%}3. {%else%}2. {% endif %}</span> Information needed by APHA
+        </h2>
+        <p class="govuk-body govuk-!-margin-left-6">APHA uses this information to control the spread of disease. This information does not appear on the EHC</p>
+        <ul class="app-task-list__items">
+
+          {% for task in db.pages %}
+          {% if task.exa == "yes" %}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if not task.content.next %}
+              {% set next_page = 'check-your-progress' %}
+              {% else %}
+              {% set next_page = task.content.next %}
+              {% endif %}
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}&return=check-your-progress"
+                aria-describedby="">
+                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
+              </a>
+            </span>
+            {% if data.completed[task.page] %}
+            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% else%}
+            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+            {% endif %}
+          </li>
+          <!-- data.ech_active -->
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">{% if db.is_multiple == "yes"%}4. {%else%}3. {% endif %} </span> Information for the export health certificate
+        </h2>
+        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the certificate. </p>
+
+        {% if db.is_multiple == "yes"%}
+
+        <ul class="app-task-list__items">
+
+
+          {% for task in db.pages %}
+
+          {% if task.exa != "yes" and task.title!='Supporting documents' and task.repeatable != "yes"%}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if not task.content.next %}
+              {% set next_page = 'check-your-progress' %}
+              {% else %}
+              {% set next_page = task.content.next %}
+              {% endif %}
+                 {% if task.content.product_page == 'yes' %}
+                 <a href="product-list?id={{task.page}}&products=" class="govuk-link">
+                 {% else%}
+              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%endif%}&journey=one_page" aria-describedby="">
+                {% endif %}
+                {% if task.title != 'Supporting documents' %}{{task.title}}{%endif%}
+              </a>
+            </span>
+            {% if data.completed[task.page] %}
+            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            {% else%}
+            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+            {% endif %}
+          </li>
+          <!-- data.ech_active -->
+          {% endif %}
+          {% endfor %}
         </ul>
 
         {% else %}
@@ -218,7 +227,7 @@ GOV.UK Prototype Kit
       <!-- Hack to make part 3 active from the start -->
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span>Additional documents (optional)
+          <span class="app-task-list__section-number">{% if db.is_multiple == "yes"%}5. {%else%}4. {% endif %} </span>Additional documents (optional)
         </h2>
         <p class="govuk-body govuk-!-margin-left-6">Upload packing lists, schedules and other supporting documents to attach to your application</p>
 
@@ -231,7 +240,7 @@ GOV.UK Prototype Kit
       </li>
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">5. </span> Check and submit your application
+          <span class="app-task-list__section-number">{% if db.is_multiple == "yes"%}. {%else%}5. {% endif %} </span> Check and submit your application
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
@@ -246,6 +255,7 @@ GOV.UK Prototype Kit
 
 
           </li>
+
         </ul>
       </li>
     </ol>
