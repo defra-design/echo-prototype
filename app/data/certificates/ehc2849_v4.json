@@ -1,12 +1,12 @@
 {
-	"certificate_code": "2849EHC_v4",
+	"certificate_code": "2849EHC",
 	"version": "4",
 	"printable": "no",
 	"is_multiple": "yes",
 	"allow_blocks": "no",
 	"destination": "United Arab Emirates",
 	"sample_PDF": "ehc-2849ehc-3.1.pdf",
-	"certificate_name": "(Exprimental) Permanently export horses to the United Arab Emirates (UAE)",
+	"certificate_name": "(Exprimental - no place of origin) Permanently export horses to the United Arab Emirates (UAE)",
 	"commodities": [{
 		"group": "Equine",
 		"options": [{
@@ -84,8 +84,7 @@
 		},
 		{
 			"page": 2,
-			"title": "Identification of the horse",
-			"group_name": "Identification of the horse",
+			"title": "How will the horse be identified?",
 			"repeatable": "yes",
 			"content": {
 				"header": "How will the horse be identified?",
@@ -94,53 +93,35 @@
 				"next": "",
 				"prev": "",
 				"product_page": "no",
-				"fields": [
+				"fields": [{
+						"type": "text",
+						"label": "Method of identification ",
+						"hint": "",
+						"required": "no",
+						"id": "id_method",
+						"name": "id_method",
+						"allow": "past",
+						"default": "003453232"
+					},
 					{
-						"type": "conditional",
-						"inline": "no",
-						"label": "Method of identification",
+						"type": "text",
+						"label": "Passport number",
 						"hint": "",
 						"required": "yes",
-						"id": "certification_place",
-						"name": "certification_place",
-						"options": [{
-								"title": "Passport",
-								"value": "passport",
-								"conditional": "yes",
-								"conditional_paragraph": "",
-								"conditional_fields" : [
-									{
-										"type": "text",
-										"label": "Passport number",
-										"hint": "",
-										"required": "yes",
-										"id": "Passport_number",
-										"name": "passport_number",
-										"allow": "past",
-										"default": "123456678"
-									},
-									{
-										"type": "text",
-										"label": "Passport issuer",
-										"hint": "",
-										"required": "no",
-										"id": "passport_issuer",
-										"name": "passport_issuer",
-										"default": "UK"
-									}
-								]
-							},
-							{
-									"title": "Microchip",
-									"value": "microchip",
-									"conditional": "no",
-									"conditional_paragraph": "",
-									"conditional_fields" : []
-								}
-						],
-						"default": "Passport"
+						"id": "Passport_number",
+						"name": "passport_number",
+						"allow": "past",
+						"default": "123456678"
+					},
+					{
+						"type": "text",
+						"label": "Passport issuer",
+						"hint": "",
+						"required": "no",
+						"id": "passport_issuer",
+						"name": "passport_issuer",
+						"default": "UK"
 					}
-
 				]
 			}
 		},
@@ -304,9 +285,9 @@
 		{
 			"page": 11,
 			"exa": "yes",
-			"title": "Who is exporting the horse?",
+			"title": "Who is the exporter?",
 			"content": {
-				"header": "Who is exporting the horse?",
+				"header": "Who is the exporter",
 				"caption": "",
 				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
 				"next": "",
@@ -321,64 +302,6 @@
 					"name": "exporter_name",
 					"allow": "future",
 					"default": "ABC EXPORTER LTD"
-				}]
-			}
-		},
-		{
-			"page": 12,
-			"exa": "yes",
-			"title": "What is the premises of origin?",
-			"has_address": "yes",
-			"can_save_address": "yes",
-			"address_type": "premises_of_origin",
-			"content": {
-				"header": "What is the premises of origin?",
-				"caption": "",
-				"paragraph": "APHA need to know where the horses in the consignment have been in the last 60 days. We use this information to help control the spread of disease.",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-					"type": "textarea",
-					"label": "Premises of origin",
-					"hint": "Enter the address and postcode",
-					"required": "yes",
-					"id": "premises_of_origin",
-					"name": "premises_of_origin",
-					"rows": "4",
-					"default": ""
-				}, {
-					"type": "conditional",
-					"inline": "no",
-					"label": "Has the horse(s) been resident for last 60 days",
-					"hint": "",
-					"required": "yes",
-					"id": "certification_place",
-					"name": "certification_place",
-					"options": [
-						{
-							"title": "Yes",
-							"value": "yes"
-						},
-						{"conditional": "yes",
-						"conditional_paragraph": "",
-						"conditional_fields" : [
-							{
-								"type": "textarea",
-								"label": "Additional premises detail",
-								"hint": "If you have answered no to the question above, list all addresses and postcodes of premises where the horse has been resident in the last 60 days",
-								"required": "no",
-								"id": "premises_details",
-								"name": "premises_details",
-								"rows": "5",
-								"default": ""
-							}
-							],
-							"title": "no",
-							"value": "no"
-
-						}
-					]
 				}]
 			}
 		}, {

@@ -11,19 +11,14 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Create a new {{data.certificate_code or "2849"}}
-        <span class="govuk-caption-l">Permanently export horses to the United Arab Emirates (UAE)</span>
+        Create a new export health certificate for your horse
+        <span class="govuk-caption-l"> {{data.certificate_code or "2849"}}: Permanently export horses to the United Arab Emirates (UAE)</span>
 
       </h1>
 
-        {% if query.first_time=="yes" %}
         <p class="govuk-body">
           You are about to create a new export health certificate and add it to your application.
         </p>
-        <p class="govuk-body">
-          When you have finished, you can create and add more certificates. You can add up to {{data.mulitiple_max}} certificates to this application.
-        </p>
-        {% endif %}
 
       <form method="post" >
         <div class="govuk-form-group">
@@ -50,15 +45,7 @@ GOV.UK Prototype Kit
 
       <p></p>
     </div>
-    {% if query.first_time=="yes" %}
-    <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m">Before your start</h2>
-      <p class="govuk-body govuk-!-font-size-16">Your answers will go into an export health certificate: <a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">download a sample  {{data.certificate_code}} certificate </a></p>
-      <p class="govuk-body govuk-!-font-size-16">Read <a href="https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">APHA's guidance for exporters and certifiers</a></p>
-      </aside>
-    </div>
-    {% endif %}
+
   </div>
 </div>
 {% endblock %}

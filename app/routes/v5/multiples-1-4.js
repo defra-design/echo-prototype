@@ -109,7 +109,12 @@ module.exports = function(router) {
     if(req.session.data.return_check_answers){
       url =req.session.data.return_check_answers
     }
-    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+url+'?change_ehc=');
+    if (url.includes('?')){
+      var change = "&change_ehc="
+    }else{
+      var change = "?change_ehc="
+    }
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+url+change);
 
   })
 
@@ -130,10 +135,9 @@ module.exports = function(router) {
   });
 
   router.post('/' + base_url + '*/certificate/ehc-reference', function(req, res) {
-    console.log("redirectging and setting first_time to "+req.session.data.first_time)
-    console.log("and query = "+req.query.first_time)
     var page = req.query.id || 1
     var url = 'page?id='+page+'&next=2&journey=linear'
+
     if (req.query.change == "yes "){
       url = req.query.return_check_answers || 'check-your-answers'
     }
@@ -142,17 +146,22 @@ module.exports = function(router) {
   });
 
   router.post('/' + base_url + '*/certificate/delete-certificate', function(req, res) {
-    console.log("delete-certificate : "+req.body.confirm_delete_certificate )
+    // set a default alert responese
     var show_alert="no"
+    // set a default return path
+    var returnURL = 'certificate-list'
+
     if(req.body.confirm_delete_certificate == "yes"){
       console.log(req.session.data.added_certificates)
       req.session.data.added_certificates.splice(req.query.id,1)
-      console.log("-----after----")
-      console.log(req.session.data.added_certificates)
       show_alert="yes"
     }
 
-    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/certificate-list?show_alert='+show_alert+'&lalert_type=deleted');
+    if(req.query.return_remove_url){
+      returnURL = req.query.return_remove_url
+    }
+
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+returnURL+'?show_alert='+show_alert+'&alert_type=deleted');
   });
 
 
@@ -199,17 +208,16 @@ module.exports = function(router) {
     var query = ""
     var page=tools.findPage(tools.getDB(req.session.database, db).data.pages, req.query.id)
     var page_name = page.title
-    console.log("--------")
-    console.log(req.session.data)
-    console.log("--------")
+
     req.session.data.empty = []
     //check if anthing is empty
     req.session.data.empty = tools.getBlankFields(req.body)
     // console.log(tools.getDB(req.session.data.database,db).data.pages[req.query.id])
 
+
     // Show error message if the user has left anything blank and not skipped
     req.body.skip_answers = req.body.skip_answers || []
-    if (req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip') && page.exa!="yes") {
+    if (req.session.data.empty.length > 0 && !req.body.skip_answers.includes('skip') && page.exa!="yes"  && page.can_save_address !='yes') {
       // ensure this page has been removed from the skipped list (used in check your progress)
       req.session.data.skipped = req.session.data.skipped.filter(e => e !== page_name)
       return res.redirect(301, '/' + base_url + req.params[0] + '/certificate/page?id='+req.query.id+'&next='+ req.query.next+'&hasError=yes');
@@ -218,6 +226,24 @@ module.exports = function(router) {
     if (!req.session.data.skipped.includes(page_name)) {
       req.session.data.skipped.push(page_name);
     }
+    var address_input_name= page.content.fields[0].name
+    //save address from a radio button but removing the "differnt address field"
+
+    if(page.can_save_address && req.body[address_input_name] != ""){
+      // create a new array to hold the address of this type if one does not already exist
+      req.session.data[page.address_type] = req.session.data[page.address_type] || new Array();
+
+      if(req.body[address_input_name].includes("differnt_address")){
+        req.body[page.address_input_name].shift()
+      }
+
+      // Save the new address into appropriate list
+      req.session.data[page.address_type].push(req.body[page.address_input_name])
+    }
+    console.log("req.body[address_input_name+'_radio'] = "+req.body[address_input_name+'_radio'])
+
+
+
 
     //reset the sesson data object for "empty"
     req.session.data.empty = []
@@ -225,7 +251,6 @@ module.exports = function(router) {
     // when a user comes to edit a multiple we need to push the user confirm when changing content that is not repeatable.
 
     if(req.session.data.journey == "linear" && req.query.change != "yes"){
-      console.log("first_time = "+req.session.data.first_time )
       var nextPage = (req.session.data.first_time == "yes") ? getNextPage(tools.getDB(req.session.database, db).data.pages, req.query.id) : getNextRepeatablePage(tools.getDB(req.session.database, db).data.pages, req.query.id)
       if(nextPage){
         return res.redirect(301, '/' + base_url + req.params[0] + '/certificate/page?id='+nextPage+'&next='+ req.query.next+'&new='+req.query.new)

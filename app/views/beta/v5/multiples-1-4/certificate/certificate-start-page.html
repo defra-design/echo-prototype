@@ -13,21 +13,19 @@ GOV.UK Prototype Kit
       <h1 class="govuk-heading-xl">
         Create a new {{data.certificate_code or "2849"}}
         <span class="govuk-caption-l">Permanently export horses to the United Arab Emirates (UAE)</span>
-
       </h1>
-
         <p class="govuk-body">
           You are about to create an application for a new export health certificate.
         </p>
-
-
         <p class="govuk-body">
           With this type of certificate, you can create and add up to {{data.mulitiple_max}} certificates to your application.
         </p>
-
+        <h2 class="govuk-heading-m">Before your start</h2>
+      <p class="govuk-body" >Your answers will go into an export health certificate: <a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">download a sample  2849EHC_v4 certificate </a></p>
+      <p class="govuk-body">Read <a href="https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">APHA's guidance for exporters and certifiers</a></p>
       <form method="post" action="./check-your-progress" >
             <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
-        </form>
+      </form>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full govuk-body">
           <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">

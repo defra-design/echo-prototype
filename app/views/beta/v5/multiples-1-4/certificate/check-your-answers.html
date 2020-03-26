@@ -30,10 +30,17 @@ GOV.UK Prototype Kit
             </li>
             <li>
               <a href="#consignor-address-error">Redrum certificate has 1 error</a>
-            </li> 
+            </li>
           </ul>
         </div>
       </div>
+      {% endif %}
+      {% if query.show_alert == "yes"%}
+      {% if alert_type == "added"%}
+      <div class="defra-alert defra-alert--success"><p class="govuk-body govuk-!-margin-bottom-0">Successfully added a new certificate</p></div>
+      {% elseif alert_type == "deleted" %}
+      <div class="defra-alert defra-alert--success"><p class="govuk-body govuk-!-margin-bottom-0">Successfully removed certificate</p></div>
+      {% endif %}
       {% endif %}
       <!-- title -->
       <h1 class="govuk-heading-xl">
@@ -53,7 +60,7 @@ GOV.UK Prototype Kit
       </ol>
       </div>
       {% endif %}
-      <h2 id="section-application-info" class="govuk-heading-m defra-check-answers-title">1. About the application</h2>
+      <h2 id="section-application-info" class="govuk-heading-m ">About the application</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m" >
         <div class="govuk-summary-list__row">
         {% if (db.commodities | length) > 1 %}
@@ -145,7 +152,7 @@ GOV.UK Prototype Kit
 
       <!-- GET BESPOKE EXA QUESTIONS -->
 
-      <h2 id="section-application-info" class="govuk-heading-m defra-check-answers-title">2.Information needed by APHA</h2>
+      <h2 id="section-application-info" class="govuk-heading-m">Information needed by APHA</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
       {% for task in db.pages %}
       {% if task.exa == "yes" %}
@@ -173,18 +180,19 @@ GOV.UK Prototype Kit
       {% endfor %}
       </dl>
 
-            <h2 id="section-ehc-info" class="govuk-heading-m defra-check-answers-title">3. Information for the export health certificate</h2>
+            <h2 id="section-ehc-info" class="govuk-heading-m">{{(data.added_certificates | length) or "5"}} horse certificates added to application</h2>
             <!-- If multiple show only the EHC's This is now split into partials -->
             {% if db.is_multiple %}
-              <p class="govuk-body">{{(data.added_certificates | length) or "5"}} certificates added to application</p>
+              <p class="govuk-body"></p>
               {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
+              <p class="govuk-body govuk-!-margin-bottom-9"><a href="ehc-reference?first_time=no&new=yes&return_check_answers=check-your-answers?has_alert=yes&alert_type=added">Add another horse</a></p>
             {% else %}
               {% block ehcAnswers %}{% include "./partials/check-answer-ehc.html" %}{% endblock%}
             {% endif %}
             <!-- {Tasks -->
 
 
-      <h2 id="section-documents-info" class="govuk-heading-m defra-check-answers-title">Supporting documents</h2>
+      <h2 id="section-documents-info" class="govuk-heading-m">Supporting documents</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
         {% if (data.uploaded_files | length) > 0 %}
         {% for file in data.uploaded_files %}
