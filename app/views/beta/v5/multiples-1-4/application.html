@@ -129,6 +129,7 @@ GOV.UK Prototype Kit
           <tr class="govuk-table__row">
             {% if query.is_block == "yes" %}<th class="govuk-table__header">No.</th>{% endif %}
             <th class="govuk-table__header">Certificate number</th>
+            {% if query.is_group == "yes" %}<th class="govuk-table__header">Your reference</th>{% endif %}
             <th class="govuk-table__header">Actual export date</th>
             <th class="govuk-table__header">Certificate status</th>
             <th class="govuk-table__header">Actions</th>
@@ -155,6 +156,7 @@ GOV.UK Prototype Kit
             {% else %}
             <td id="cert-num" class="govuk-table__cell" scope="row">{% if query.application_status == "submitted" %}Awaiting number{% else %}19/2/022133{% endif %}</td>
             {% endif %}
+            {% if query.is_group == "yes" %}<td id="cert-num" class="govuk-table__cell" scope="row">Nijinsky</td>{% endif %}
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
             </td>
@@ -176,6 +178,7 @@ GOV.UK Prototype Kit
             <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
             {% endif %}
             <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022133</td>
+            {% if query.is_group == "yes" %}<td id="cert-num" class="govuk-table__cell" scope="row">Shergar</td>{% endif %}
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
             </td>
@@ -212,6 +215,7 @@ GOV.UK Prototype Kit
             <td id="cert-counter" class="govuk-table__cell" scope="row">4</td>
             {% endif %}
             <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022135</td>
+            {% if query.is_group == "yes" %}<td id="cert-num" class="govuk-table__cell" scope="row">Desert Orchid</td>{% endif %}
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
             </td>
@@ -226,6 +230,7 @@ GOV.UK Prototype Kit
             <td id="cert-counter" class="govuk-table__cell" scope="row">5</td>
             {% endif %}
             <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022136</td>
+            {% if query.is_group == "yes" %}<td id="cert-num" class="govuk-table__cell" scope="row">Tiger Roll</td>{% endif %}
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
             </td>
