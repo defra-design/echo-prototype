@@ -127,7 +127,7 @@ GOV.UK Prototype Kit
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            {% if query.is_block == "yes" or query.is_group =="yes"%}<th class="govuk-table__header">No.</th>{% endif %}
+            {% if query.is_block == "yes" %}<th class="govuk-table__header">No.</th>{% endif %}
             <th class="govuk-table__header">Certificate number</th>
             <th class="govuk-table__header">Actual export date</th>
             <th class="govuk-table__header">Certificate status</th>
@@ -136,7 +136,7 @@ GOV.UK Prototype Kit
         </thead>
         <tbody>
           <tr class="govuk-table__row">
-            {% if query.is_block == "yes" or query.is_group =="yes"%}
+            {% if query.is_block == "yes"%}
             <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
             {% endif %}
             {% if query.is_block != 'yes' and query.is_group !="yes" and query.is_replaced %}
@@ -172,7 +172,9 @@ GOV.UK Prototype Kit
           </tr>
           {% if query.is_block == 'yes' or query.is_group =="yes"%}
           <tr class="govuk-table__row">
-            <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
+            {% if query.is_block == "yes"%}
+            <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
+            {% endif %}
             <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022133</td>
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
@@ -187,7 +189,9 @@ GOV.UK Prototype Kit
           </tr>
           {% if query.has_cancelation %}
           <tr class="govuk-table__row">
+            {% if query.is_block == "yes"%}
             <td id="cert-counter" class="govuk-table__cell" scope="row">3</td>
+            {% endif %}
             <td id="cert-num" class="govuk-table__cell" scope="row" style="width:30%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;19/2/00869<br>
               <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by <a href="case-new">19/2/00872</a></span>
             </td>
@@ -204,7 +208,9 @@ GOV.UK Prototype Kit
           </tr>
           {% endif %}
           <tr class="govuk-table__row">
+            {% if query.is_block == "yes"%}
             <td id="cert-counter" class="govuk-table__cell" scope="row">4</td>
+            {% endif %}
             <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022135</td>
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
@@ -216,7 +222,9 @@ GOV.UK Prototype Kit
             </td>
           </tr>
           <tr class="govuk-table__row">
+            {% if query.is_block == "yes"%}
             <td id="cert-counter" class="govuk-table__cell" scope="row">5</td>
+            {% endif %}
             <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022136</td>
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Nov 2019
