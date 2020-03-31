@@ -162,7 +162,7 @@
 				"fields": [{
 					"type": "text",
 					"label": "Name of owner",
-					"hint": "This is the official owner of the horse",
+					"hint": "This information is needed for the certificate",
 					"required": "no",
 					"id": "owner_name",
 					"name": "owner_name",

@@ -163,7 +163,7 @@
 				"fields": [{
 						"type": "address",
 						"label": "Name and address of the owner",
-						"hint": "This is the official owner of the horse",
+						"hint": "This information is needed for the certificate",
 						"required": "yes",
 						"id": "owner_address",
 						"name": "owner_address",

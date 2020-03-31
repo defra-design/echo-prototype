@@ -14,7 +14,7 @@ GOV.UK Prototype Kit
     <div class="defra-alert defra-alert--success"><p class="govuk-body govuk-!-margin-bottom-0">Successfully deleted certificate</p></div>
     {% endif %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
-      {% if query.show_fake_ehc %}5{%else%}{{data.added_certificates | length}}{%endif%} horse certificate{% if (data.added_certificates | length) > 1 or  (data.added_certificates | length) == 0%}s{% endif %} added to application
+      {% if query.show_fake_ehc %}5{%else%}{{data.added_certificates | length}}{%endif%} horse certificate{% if (data.added_certificates | length) > 1 or  (data.added_certificates | length) == 0%}s{% endif %} added to this application
     </h1>
 
     </div>
@@ -30,7 +30,7 @@ GOV.UK Prototype Kit
               Do you want to add another horse?
             </h1>
           </legend>
-          <p class="govuk-body">You can add up to 25 horse certificates to an application
+          <p class="govuk-body">You can add certificates for up to 50 horses to an application
             </p>
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">

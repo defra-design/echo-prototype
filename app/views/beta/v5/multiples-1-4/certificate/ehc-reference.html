@@ -11,24 +11,23 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Create a new export health certificate for your horse
+        Add a certificate for a horse to this application
         <span class="govuk-caption-l"> {{data.certificate_code or "2849"}}: Permanently export horses to the United Arab Emirates (UAE)</span>
 
       </h1>
 
-        <p class="govuk-body">
-          You are about to create a new export health certificate and add it to your application.
-        </p>
 
       <form method="post" >
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-
+                  <p class="govuk-body">
+                    Start by entering a reference to help you manage the certficates in this application. This reference will not appear in the certificate.
+                  </p>
 
                   <div class="govuk-form-group " id="conditional-certificates">
                     <label class="govuk-label govuk-label--s" for="reference_num">Your reference for this certificate</label>
                     <span class="govuk-hint">
-                        Enter a reference such as the name of the animal or an invoice number. This reference will not appear in the certificate.
+                        Enter a reference such as the name of the animal or an invoice number
                     </span>
                     <input class="govuk-input govuk-input--width-20" id="reference_num" name="ehc_reference_num" value="{% if query.change == 'yes'%}{{ data.ehc_reference_num }}{%endif%}" type="text">
                   </div>
