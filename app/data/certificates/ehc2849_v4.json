@@ -311,7 +311,7 @@
 			"content": {
 				"header": "What is the planned date of export?",
 				"caption": "",
-				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",

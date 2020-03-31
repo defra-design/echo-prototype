@@ -16,7 +16,7 @@
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link govuk-link--no-visited-state" href="check-your-answers-ehc?&return_check_answers=check-your-answers&ehc_reference_num={{certificate.title}}&change_ehc=yes">Change <span class="govuk-visually-hidden"> {{certificate.title}}</span></a>
-      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}&return_remove_url=check-your-answers">Remove</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}&return_remove_url=check-your-answers">Delete</a>
 
     </dd>
   </div>
@@ -34,7 +34,7 @@
     </dd>
     <dd class="govuk-summary-list__actions">
       <a class="govuk-link govuk-link--no-visited-state" href="check-your-answers-ehc?&return_check_answers=check-your-answers&ehc_reference_num={{certificate.title}}&change_ehc=yes&has_warning=yes">Change <span class="govuk-visually-hidden"> Seabiscuit</span></a>
-      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Remove</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Delete</a>
 
     </dd>
   </div>
@@ -50,7 +50,7 @@
 
         Change<span class="govuk-visually-hidden"> {{field.label}}</span>
       </a>
-      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Remove</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Delete</a>
 
     </dd>
   </div>
@@ -65,7 +65,7 @@
       <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
         Change<span class="govuk-visually-hidden"> {{field.label}}</span>
       </a>
-      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Remove</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Delete</a>
 
     </dd>
   </div>
@@ -80,7 +80,7 @@
       <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
         Change<span class="govuk-visually-hidden"> {{field.label}}</span>
       </a>
-      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Remove</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Delete</a>
 
     </dd>
   </div>
@@ -100,7 +100,7 @@
       <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers">
         {% if data.has_unfinished_certificate == "yes" %}Continue{%else%}Change{%endif%}<span class="govuk-visually-hidden"> {{field.label}}</span>
       </a>
-        <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Remove</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Delete</a>
     </dd>
   </div>
   {% endif %}
