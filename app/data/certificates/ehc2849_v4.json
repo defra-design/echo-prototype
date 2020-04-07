@@ -144,7 +144,7 @@
 				"fields": [{
 						"type": "address",
 						"label": "Name and address of the owner",
-						"hint": "This information is needed for certificate",
+						"hint": "This information is needed for the certificate",
 						"required": "yes",
 						"id": "owner_address",
 						"name": "owner_address",

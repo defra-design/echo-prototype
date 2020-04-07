@@ -15,11 +15,18 @@ GOV.UK Prototype Kit
         <span class="govuk-caption-l">Permanently export horses to the United Arab Emirates (UAE)</span>
       </h1>
         <p class="govuk-body">
-          You can add certificates for up to {{data.mulitiple_max}} horses to your application.
-        </p>
+          You can add certificates for up to {{data.mulitiple_max}} horses to this application if all the horses:</p>
+          <ul class="govuk-list">
+            <li class="govuk-list--bullet">are going from the same consignor</li>
+            <li class="govuk-list--bullet">are leaving on the same day</li>
+            <li class="govuk-list--bullet">are leaving on the same day</li>
+            <li class="govuk-list--bullet">will be certified by the same official vet</li>
+            <li class="govuk-list--bullet">will be examined on the same day at the same place</li>
+          </ul>
+        
         <h2 class="govuk-heading-m">Before your start</h2>
-      <p class="govuk-body" >Your answers will go into an export health certificate: <a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">download a sample  2849EHC_v4 certificate </a>.</p>
-      <p class="govuk-body">Read <a href="https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">APHA's guidance for exporters and certifiers</a>.</p>
+      <p class="govuk-body" >Your answers will go into an export health certificate: <a href="https://assets.publishing.service.gov.uk/media/5bc45a36ed915d0ae0044a25/2849EHC_V1.pdf">view a sample certificate</a>.</p>
+      <p class="govuk-body">Read <a href="https://assets.publishing.service.gov.uk/media/5bc45a53ed915d0ad7db6c87/2849NFG.doc">Defra's guidance for exporters and certifiers</a>.</p>
       <form method="post" action="./check-your-progress" >
             <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
       </form>
