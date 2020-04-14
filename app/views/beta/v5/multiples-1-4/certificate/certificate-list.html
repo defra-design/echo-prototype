@@ -14,7 +14,7 @@ GOV.UK Prototype Kit
     <div class="defra-alert defra-alert--success"><p class="govuk-body govuk-!-margin-bottom-0">Successfully deleted certificate</p></div>
     {% endif %}
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
-      {% if query.show_fake_ehc %}5{%else%}{{data.added_certificates | length}}{%endif%} horse certificate{% if (data.added_certificates | length) > 1 or  (data.added_certificates | length) == 0%}s{% endif %} added to this application
+      You have added {% if query.show_fake_ehc %}5{%else%}{{data.added_certificates | length}}{%endif%} horse certificate{% if (data.added_certificates | length) > 1 or  (data.added_certificates | length) == 0%}s{% endif %} to your application
     </h1>
 
     </div>
@@ -27,7 +27,7 @@ GOV.UK Prototype Kit
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              Do you want to add another horse?
+              Do you want to add a certificate for another horse?
             </h1>
           </legend>
           <p class="govuk-body">You can add certificates for up to 50 horses to an application
@@ -43,7 +43,7 @@ GOV.UK Prototype Kit
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="add_another_certificate-no" name="add_another_certificate" type="radio" value="no">
               <label class="govuk-label govuk-radios__label" for="add_another_certificate-no">
-                No, I have finished adding horses
+                No, I have finished adding certificates
               </label>
             </div>
           </div>
