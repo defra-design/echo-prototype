@@ -19,11 +19,11 @@
 	}],
 	"pages": [{
 			"page": 1,
-			"title": "Identification of the horse",
-			"group_name": "Identification of the horse",
+			"title": "Horse details",
+			"group_name": "Horse details",
 			"repeatable": "yes",
 			"content": {
-				"header": "Identification of the horse",
+				"header": "Horse details",
 				"caption": "",
 				"paragraph": "",
 				"next": "",
@@ -311,7 +311,7 @@
 			"content": {
 				"header": "What is the planned date of export?",
 				"caption": "",
-				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.",
+				"paragraph": "This is the date that the consignment leaves the loading premises. This may not the same date that it leaves the UK.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
