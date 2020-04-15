@@ -17,21 +17,17 @@ Example usage:
 
 */
 
-var ehc8270 = require('./ehc-8270.json')
-var ehc8327 = require('./ehc8327.json')
-var form = require('./forms.json')
+
 module.exports = {
     "empty":[],
     "skipped"   :  ["empty"],
     "uploaded_files": [],
     "file_id_count" : 0,
     "completed" :   [],
-    "ehc8270"   :  ehc8270,
-    "ehc8327"   :  ehc8327,
     "products"   :  [],
     "certificate" : "8327EHC",
     "database": "ehc8327",
-    "forms" : form,
+    // "forms" : form,
     "printable": "yes",
     "originals": {},
     "added_certificates" : [],
