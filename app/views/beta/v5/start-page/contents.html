@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Start page design
+    </h1>
+
+    <p class="govuk-body"><a href="https://eaflood.atlassian.net/wiki/spaces/EX/pages/1767440740/Exporters+start+page"><span class="govuk-!-font-weight-bold">Confluence page</a></p>
+    <h3 class="govuk-heading-m">Form builder</h3>
+    <p class="govuk-body">This is a basic working version. Any content you write in the form bulder editor will show next time you start a certificate</p>
+    <ul class="govuk-list">
+      <li><a href="/form-builder/v1-2/index">Start here and add a new cerfificate</a> </li>
+      <li><a href="/form-builder/v1-2/manage/health-cert-editor--start-page">Start page editor in form builder (new)</a> </li>
+    </ul>
+    <h3 class="govuk-heading-m">Exporter</h3>
+    <ul class="govuk-list">
+      <li><a href="dashboard">Start from dashboard</a> </li>
+      <li><a href="select-certificate">Select certificate</a></li>
+      <li><a href="certificate-start-page?certificate=ehc2849_v4&certificate_code=2849EHC">start Page (with example content)</a></li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}
