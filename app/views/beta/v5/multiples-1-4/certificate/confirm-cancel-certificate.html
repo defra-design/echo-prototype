@@ -12,32 +12,36 @@ GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Are you sure you want to cancel this certificate?
+    </h1>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Any information you have entered will not be saved
+      </strong>
+    </div>
     <form method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
-              Are you sure you want to cancel certificte &quot;{{data.ehc_reference_num}}&quot;?
-            </h1>
-          </legend>
-          <div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-warning-text__assistive">Warning</span>
-    Any information you have added will be lost.
-  </strong>
-</div>
+          <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+            Confirm you want to cancel certificate: {{data.certificate_ref or "Seabiscuit" }}
+            </h2>
+          </legend> -->
+
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="confirm_cancel_certificate-yes" name="confirm_cancel_certificate" type="radio" value="yes" >
+              <input class="govuk-radios__input" id="confirm_cancel_certificate-yes" name="confirm_cancel_certificate" type="radio" value="yes">
               <label class="govuk-label govuk-radios__label" for="confirm_cancel_certificate-yes">
-                Yes, cancel adding this certificate
+                Yes, cancel certificate: {{data.ehc_reference_num or "Seabiscuit"}}
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="confirm_cancel_certificate-no" name="confirm_cancel_certificate" type="radio" value="no">
               <label class="govuk-label govuk-radios__label" for="confirm_cancel_certificate-no">
-                No, continue creating certificate
+                No, go back
               </label>
             </div>
           </div>
