@@ -42,8 +42,10 @@ module.exports = function(router) {
     req.session.data.completed[req.query.id] = req.query.id
     if(req.body.cta == "Save and continue" || req.body.cta == "Save and review"){
       if(product.content.product_page == "yes"){
-
-        res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+product.content.next+"&"+query);
+        if(req.query.edit == "yes"){
+          res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/product-check-answers?id=1'+"&"+query);
+        }
+        res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/'+product.content.next+"&"+query+"&new=yes");
       }else{
         var next = req.query.next || product[req.query.id].next
 

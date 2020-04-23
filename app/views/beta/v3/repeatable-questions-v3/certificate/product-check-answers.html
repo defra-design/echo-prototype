@@ -53,7 +53,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Process category</span>
                   </a>
                 </dd>
@@ -69,7 +69,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Product category</span>
                   </a>
                 </dd>
@@ -85,7 +85,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Product group</span>
                   </a>
                 </dd>
@@ -101,7 +101,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Type of meat</span>
                   </a>
                 </dd>
@@ -117,7 +117,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Type of product</span>
                   </a>
                 </dd>
@@ -133,7 +133,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Identification/Shipping mark</span>
                   </a>
                 </dd>
@@ -149,7 +149,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Type and number of packages</span>
                   </a>
                 </dd>
@@ -165,7 +165,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Net weight </span>
                   </a>
                 </dd>
@@ -183,16 +183,14 @@
                   Name, address and approval number of the slaughterhouse
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {% if data.sh_name_address-hint %}
-                  {{data.sh_name_address-hint}}
+                  {% if data.sh_name_addres %}
+                  {{data.sh_name_addres}}
                   {%else%}
                   <span class="govuk-hint"> You left this blank<span>
                   {% endif %}
-
-
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Name, address and approval number of the slaughterhouse</span>
                   </a>
                 </dd>
@@ -212,7 +210,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Name, address and approval number of the cutting plant</span>
                   </a>
                 </dd>
@@ -231,7 +229,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Name, address and approval number of the processing/ producing plant</span>
                   </a>
                 </dd>
@@ -252,7 +250,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Name, address and approval number of the final processing/producing establishment</span>
                   </a>
                 </dd>
@@ -272,7 +270,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Production dates</span>
                   </a>
                 </dd>
@@ -299,7 +297,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=3&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=3&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Country</span>
                   </a>
                 </dd>
@@ -319,7 +317,7 @@
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="page?id=3&amp;next=check-your-answers">
+                  <a class="govuk-link" href="page?id=3&amp;next=check-your-answers&edit=yes">
                     Change<span class="govuk-visually-hidden"> Foreign establishment approval numbers </span>
                   </a>
                 </dd>
