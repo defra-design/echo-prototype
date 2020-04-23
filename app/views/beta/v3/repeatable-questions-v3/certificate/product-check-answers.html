@@ -49,7 +49,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    raw product - intact
+                    {{data.Processs_category or "raw product - intact"}}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -65,7 +65,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    raw product - intact
+                    {{data.product_category or "raw product - intact"}}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -81,7 +81,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    cuts
+                    {{data.product_group or "cuts"}}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -97,7 +97,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    pork
+                    {{data.meet_type or "pork"}}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -113,7 +113,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    pork ribs
+                  {{data.product_meat_type or "pork ribs"}}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -129,7 +129,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    232321
+                    {{data.id_marking or "232321"}}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -145,7 +145,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    150 cases
+                    {{data.number_of_packages or "150 cases"}}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -161,7 +161,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                     105 kg
+                    {{data.number_of_packages or "105 kg"}}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -183,8 +183,12 @@
                   Name, address and approval number of the slaughterhouse
                 </dt>
                 <dd class="govuk-summary-list__value">
+                  {% if data.sh_name_address-hint %}
+                  {{data.sh_name_address-hint}}
+                  {%else%}
+                  <span class="govuk-hint"> You left this blank<span>
+                  {% endif %}
 
-                    5 Quinton Road
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -200,7 +204,11 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    Richard Hatton, 5 Quinton Road, coventry CV12 832
+                  {% if data.cp_name_address %}
+                  {{data.cp_name_address}}
+                  {%else%}
+                  <span class="govuk-hint"> You left this blank<span>
+                  {% endif %}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -215,8 +223,11 @@
                   Name, address and approval number of the processing/ producing plant
                 </dt>
                 <dd class="govuk-summary-list__value">
-
-                    Richard Hatton, 5 Quinton Road, coventry CV12 832
+                  {% if data.pp_name_address %}
+                  {{data.pp_name_address}}
+                  {%else%}
+                  <span class="govuk-hint"> You left this blank<span>
+                  {% endif %}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -232,7 +243,12 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    asdf
+                  {% if data.pp_number %}
+                  {{data.pp_number}}
+                  {%else%}
+                  <span class="govuk-hint"> You left this blank<span>
+                  {% endif %}
+
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -247,8 +263,12 @@
                   Production dates
                 </dt>
                 <dd class="govuk-summary-list__value">
+                  {% if data.pp_dates %}
+                  {{data.pp_dates}}
+                  {%else%}
+                  <span class="govuk-hint"> You left this blank<span>
+                  {% endif %}
 
-                    Richard Hatton, 5 Quinton Road, coventry CV12 832
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -271,7 +291,11 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 
-                    Richard Hatton, 5 Quinton Road, coventry CV12 832
+                  {% if data.non_uk_country %}
+                  {{data.non_uk_country}}
+                  {%else%}
+                  <span class="govuk-hint"> You left this blank<span>
+                  {% endif %}
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -286,7 +310,11 @@
                   Foreign establishment approval numbers
                 </dt>
                 <dd class="govuk-summary-list__value">
-
+                  {% if data.foreign_establishment %}
+                  {{data.foreign_establishment}}
+                  {%else%}
+                  <span class="govuk-hint"> You left this blank<span>
+                  {% endif %}
 
 
                 </dd>
@@ -299,7 +327,7 @@
 
             </dl>
 
-          
+
 
 
     <form method="POST">
