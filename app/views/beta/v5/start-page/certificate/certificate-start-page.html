@@ -53,13 +53,18 @@ GOV.UK Prototype Kit
     resize()
   };
   function init() {
-    if (!$('h1').hasClass(govuk - heading - xl ')){
-        $('h1').addClass('govuk-heading-l')
+    if (!$('h1').hasClass('govuk-heading-xl')){
+        $('h1').addClass('govuk-heading-l');
       }
-      $('h2').addClass('govuk-heading-m') $('h3').addClass('govuk-heading-s') $('p').addClass('govuk-body') $('ul').addClass('govuk-list govuk-list--bullet') $('ol').addClass('govuk-list govuk-list--number')
+      $('h2').addClass('govuk-heading-m');
+      $('h3').addClass('govuk-heading-s');
+      $('p').addClass('govuk-body');
+      $('ul').addClass('govuk-list govuk-list--bullet');
+      $('ol').addClass('govuk-list govuk-list--number');
     }
     defer(function() {
       init()
     });
 </script>
+
 {% endblock %}

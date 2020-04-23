@@ -1,6 +1,6 @@
 {
 	"certificate_code": "1631EHC",
-	"version": "1",
+	"version": "3",
 	"printable": "yes",
 	"destination": "USA",
 	"allow_blocks": "yes",
@@ -14,12 +14,12 @@
 	}],
 	"pages": [{
 			"page": 1,
-			"title": "What are the details of your consignment?",
+			"title": "Product details",
 			"content": {
 				"header": "What are the details of your consignment?",
 				"caption": "",
-				"paragraph": "You can add up to 3 product categories to this export health certificate. Use a new record for each category. When you move on to the next section, you need to enter the details about each product category in the same order as you have entered them here.",
-				"next": "",
+				"paragraph": "You can add up to 3 product categories to this export health certificate. Use a new record for each category.",
+				"next": "page?id=2",
 				"prev": "",
 				"product_max": "3",
 				"product_page": "yes",
@@ -110,8 +110,8 @@
 			"content": {
 				"header": "For animals slaughtered and processed in the United Kingdom",
 				"caption": "",
-				"paragraph": "Enter details of each product slaughtered and processed in the UK in this consignment. Enter details about each product in the same order as the previous page. If the animals were slaughtered and processed outside the United Kingdom, leave this blank.",
-				"next": "",
+				"paragraph": "If the animals were slaughtered and processed outside the United Kingdom, leave this blank.",
+				"next": "page?id=3",
 				"prev": "",
 				"product_page": "yes",
 				"product_max": "3",
@@ -169,8 +169,8 @@
 			"content": {
 				"header": "For animals slaughtered and processed outside the United Kingdom",
 				"caption": "",
-				"paragraph": "Enter details of each product slaughtered and processed outside the UK in this consignment. Enter details about each product in the same order as the previous page. If the animals were slaughtered and processed inside the United Kingdom, leave this blank.",
-				"next": "",
+				"paragraph": "If the animals were slaughtered and processed in the United Kingdom, leave this blank.",
+				"next": "product-check-answers?id=3",
 				"prev": "",
 				"product_page": "yes",
 				"product_max": "3",
@@ -179,8 +179,8 @@
 						"label": "Country",
 						"hint": "",
 						"required": "no",
-						"id": "pp_dates",
-						"name": "pp_dates",
+						"id": "non_uk_country",
+						"name": "non_uk_country",
 						"default": "France"
 					},
 					{
@@ -188,8 +188,8 @@
 						"label": "Foreign establishment approval numbers ",
 						"hint": "Enter the slaughterhouse number followed by other establishment approval numbers",
 						"required": "no",
-						"id": "processing_raw_milk",
-						"name": "processing_raw_milk",
+						"id": "foreign_establishment",
+						"name": "foreign_establishment",
 						"rows": 4,
 						"default": "ABC limited, France SA, Paris 039432. Registration number - FR3945-2342"
 					}

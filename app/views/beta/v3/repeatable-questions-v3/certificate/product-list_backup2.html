@@ -57,16 +57,34 @@
       </thead> -->
 
       <tbody class="govuk-table__body" id="TableBody-RepeatablePageReview">
-      {% for prod in data.product_loop %}
+      {% for prod in data.products %}
       <tr class="govuk-table__row">
         <th class="govuk-table__cell" style="width:20%;">
           Product {{ loop.index }}
         </th>
         <td class="govuk-table__cell" >
-          {{prod}}
+          {% for question in product.content.fields %}
+          {% if loop.index <= 2 %}
+          {{prod[question.name]}},
+          {% endif %}
+          {% endfor %}
+
+          <!-- <dl class="govuk-summary-list govuk-summary-list--no-border">
+            {% for question in product.content.fields %}
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    {{question.label}}
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{prod[question.name]}}
+                  </dd>
+                </div>
+              {% endfor %}
+          </dl> -->
         </td>
         <td class="govuk-table__cell govuk-table__cell--numeric" style="width:25%;">
-          <a class="govuk-link" href="product-check-answers" data-qa-id="Link-ChangeRepeatablePage" id="Link-ChangeRepeatablePage-0">Change</a>
+          <a class="govuk-link" href="page?id={{query.id or 2}}&edit={{prod.id}}&next=product-list&product_page=yes" data-qa-id="Link-ChangeRepeatablePage" id="Link-ChangeRepeatablePage-0">Change</a>
           &nbsp;&nbsp;<a class="govuk-link" href="product-list?delete={{loop.index -1}}&id={{query.id}}" id="0-deleteLink">Remove</a>
         </td>
       </tr>
@@ -76,7 +94,7 @@
 
     </table>
       {% endif %}
-    <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id=1&next=1&product_page=yes&new=yes" id="Button-AddAnother">{% if (data.products | length) == 0 %}Add{%else%}Add another{% endif %}</a>
+    <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id={{query.id or 2}}&next=1&product_page=yes&new=yes" id="Button-AddAnother">{% if (data.products | length) == 0 %}Add{%else%}Add another{% endif %}</a>
     <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
       <input type="hidden" name="crumb_csrf_token" value="nAitoNVyVGtnnzUQ-QQk78LOMzR_-9L6qqu86Lg9aRY">
       <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">

@@ -121,9 +121,7 @@ GOV.UK Prototype Kit
           {% endfor %}
         </ul>
       </li>
-      {% if data.export_date_day %}
       {% set ech_active = "yes"%}
-      {% endif %}
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">2. </span> Exporter and certifier complete this section
@@ -137,7 +135,7 @@ GOV.UK Prototype Kit
               {{task.title}}
             </span>
           </li>
-          {% else %}
+          {% elseif task.page != 2 and task.page != 3%}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               {% if not task.content.next %}
@@ -146,7 +144,7 @@ GOV.UK Prototype Kit
               {% set next_page = task.content.next %}
               {% endif %}
                  {% if task.content.product_page == 'yes' %}
-                  <a href="product-list?id={{task.page}}" class="govuk-l ink">
+                  <a href="product-list?id={{task.page}}&next={{next_page}}" class="govuk-l ink">
                  {% else%}
               <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}" aria-describedby="">
                 {% endif %}

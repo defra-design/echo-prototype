@@ -24,7 +24,7 @@ removeFromList : function (array, value) {
 addProduct :function(arr,page,post){
   // get all fields from the page
   var f = page.content.fields
-  var p = {"id":arr.length }
+  var p = {"id":page.page }
 
   for (var i = 0; i < f.length; i++) {
     // for each field create an obj with the Key being the field name
