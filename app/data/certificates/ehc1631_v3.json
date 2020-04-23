@@ -74,7 +74,7 @@
 					},
 					{
 						"type": "text",
-						"label": "Identification/Shipping mark",
+						"label": "Identification or shipping mark",
 						"hint": "Enter the marks on the container",
 						"required": "no",
 						"id": "id_marking",
@@ -144,7 +144,7 @@
 					},
 					{
 						"type": "text",
-						"label": "Name, address and approval number of the final processing/producing establishment",
+						"label": "Name, address and approval number of the final processing or producing establishment",
 						"hint": "",
 						"required": "no",
 						"id": "pp_number",
