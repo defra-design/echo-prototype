@@ -8,7 +8,7 @@ module.exports = function(router) {
 
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'experimental/ehc-8270-version2'
+  const version = 'alpha/ehc-8270-version2'
   const base_url = version + "/"
   const database = "ehc8270"
 

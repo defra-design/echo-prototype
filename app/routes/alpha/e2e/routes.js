@@ -7,9 +7,9 @@ module.exports = function(router) {
   const fs = require('fs');
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'experimental/e2e'
+  const version = 'alpha/e2e'
   const base_url = version + ""
-  const file_url = version + "experimental/e2e"
+  const file_url = version + "alpha/e2e"
   var database = "ehc8327"
   const certificate= "8327EHC"
   const db = []

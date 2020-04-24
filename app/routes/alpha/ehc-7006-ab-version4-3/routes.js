@@ -7,7 +7,7 @@ module.exports = function(router) {
 
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'experimental/ehc-7006-ab-version4-3'
+  const version = 'alpha/ehc-7006-ab-version4-2'
   const base_url = version + "/"
 
 router.post('/' + base_url + "shipping", function(req, res) {
