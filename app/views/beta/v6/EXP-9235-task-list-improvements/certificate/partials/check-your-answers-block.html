@@ -1,0 +1,53 @@
+<!-- New design to group page content together.  -->
+{% set current_group_title = "none"%}
+
+{% for task in db.pages %}
+  <!-- Display information based on type EXA or EHC -->
+  <!-- display_type is set in the parent file ("check-your-answers.html") -->
+  {% if task.page != "supporting-documents" and display_type == task.type %}
+
+    <!-- close the summary if it doesnt match previous group or doesnt have a group -->
+    {% if not task.group_name or task.group_name != current_group_title %}
+    <!-- anf NOT the first item in the loop -->
+    {% if loop.index != 0 %}
+    </dl>
+    {% endif %}
+
+    <!-- Set a new header and start new summary if this is not a grouped page or the its the same group -->
+    <h2 class="govuk-heading-m">{{task.group_name}}</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+    {% endif %}
+
+    {% for field in task.content.fields %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        {{field.label}}
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if field.type=="date" and data[field.name+'_day']%}
+          {{data[field.name+'_day']}}/{{data[field.name+'_month']}}/{{data[field.name+'_year']}}
+        {% elseif data[field.name]%}
+          {{data[field.name]}}
+        {%else%}
+          <span class="govuk-hint">You skipped this question</span>
+        {% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers{%if task.page.repeatable!='yes' %}&confirm=yes{% endif%}&change=yes">
+          Change<span class="govuk-visually-hidden"> {{field.label}}</span>
+        </a>
+      </dd>
+    </div>
+    {% endfor %}
+    <!-- Update the current_group_title if its a group page -->
+    {% if task.group_name %}
+    {% set current_group_title = task.group_name %}
+    {% endif%}
+    <!-- // if this is not part of a grouped page close the section -->
+
+
+
+  {% endif %}
+{% endfor %}
+</dl>
+<!-- {Tasks -->

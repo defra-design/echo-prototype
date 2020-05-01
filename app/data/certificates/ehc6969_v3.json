@@ -1,9 +1,9 @@
 {
 	"certificate_code": "6969EHC",
-	"version": "1",
+	"version": "3",
 	"printable": "yes",
 	"destination": "Australia",
-	"certificate_name": "Export dairy and dairy products to Australia",
+	"certificate_name": "(Experiimental) Export dairy and dairy products to Australia",
 	"commodities": [{
 		"group": "Dairy",
 		"options": [{
@@ -23,6 +23,8 @@
 	"pages": [{
 			"page": 1,
 			"title": "What is your import permit number and expiry date?",
+			"type": "EHC",
+			"group_name": "Your product",
 			"content": {
 				"header": "What is your import permit number and expiry date?",
 				"caption": "",
@@ -56,6 +58,8 @@
 		{
 			"page": 2,
 			"title": "What is the origin of your product?",
+			"type": "EHC",
+			"group_name": "Your product",
 			"content": {
 				"header": "What is the origin of your product?",
 				"caption": "",
@@ -87,6 +91,8 @@
 		}, {
 			"page": 3,
 			"title": "Where was the raw milk processed?",
+			"type": "EHC",
+			"group_name": "Your product",
 			"content": {
 				"header": "Where was the raw milk processed?",
 				"caption": "",
@@ -109,6 +115,8 @@
 		{
 			"page": 4,
 			"title": "Where was the export product processed?",
+			"type": "EHC",
+			"group_name": "Your product",
 			"content": {
 				"header": "Where was the export product processed?",
 				"caption": "",
@@ -131,6 +139,8 @@
 		{
 			"page": 5,
 			"title": "What are the details of your final product?",
+			"type": "EHC",
+			"group_name": "Your product",
 			"content": {
 				"header": "What are the details of your final product?",
 				"caption": "",
@@ -153,6 +163,8 @@
 		{
 			"page": 6,
 			"title": "What are the consignment details?",
+			"type": "EHC",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "What are the consignment details?",
 				"caption": "",
@@ -203,6 +215,8 @@
 		{
 			"page": 7,
 			"title": "What are the details of the exporter?",
+			"type": "EHC",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "What are the details of the exporter?",
 				"caption": "",
@@ -224,6 +238,8 @@
 		{
 			"page": 8,
 			"title": "What is the means of transportation?",
+			"type": "EHC",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "What is the means of transportation?",
 				"caption": "",
@@ -253,6 +269,8 @@
 		{
 			"page": 9,
 			"title": "Who is receiving the product?",
+			"type": "EHC",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "Who is receiving the product?",
 				"caption": "",
@@ -284,6 +302,7 @@
 		{
 			"page": "supporting-documents",
 			"title": "Supporting documents",
+			"type": "FILE",
 			"optional": "yes",
 			"content": {
 				"fields": []
@@ -292,7 +311,9 @@
 		{
 			"page": 11,
 			"exa": "yes",
+			"type": "EXA",
 			"title": "Where will certification take place?",
+			"group_name": "Export details",
 			"content": {
 				"header": "Where will certification take place?",
 				"caption": "",
@@ -327,7 +348,9 @@
 		},{
 			"page": 12,
 			"exa": "yes",
+			"type": "EXA",
 			"title": "What is the planned date of certification?",
+			"group_name": "Export details",
 			"content": {
 				"header": "What is the planned date of certification?",
 				"caption": "",
@@ -349,7 +372,9 @@
 		}, {
 			"page": 13,
 			"exa": "yes",
+			"type": "EXA",
 			"title": "Who is exporting the product?",
+			"group_name": "Your commodity",
 			"content": {
 				"header": "Who is exporting the product?",
 				"caption": "",
@@ -371,7 +396,9 @@
 		{
 			"page": 14,
 			"exa": "yes",
+			"type": "EXA",
 			"title": "When and where was the milk collected?",
+			"group_name": "Your commodity",
 			"content": {
 				"header": "When and where was the milk collected?",
 				"caption": "",
@@ -423,7 +450,9 @@
 		{
 			"page": 15,
 			"exa": "yes",
+			"type": "EXA",
 			"title": "What are the processing details?",
+			"group_name": "Your commodity",
 			"content": {
 				"header": "What are the processing details?",
 				"caption": "",
@@ -474,7 +503,9 @@
 		}, {
 			"page": 16,
 			"exa": "yes",
+			"type": "EXA",
 			"title": "What is the planned date of export?",
+			"group_name": "Your commodity",
 			"content": {
 				"header": "What is the planned date of export?",
 				"caption": "",
