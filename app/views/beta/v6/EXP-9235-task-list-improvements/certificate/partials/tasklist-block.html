@@ -40,9 +40,10 @@
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
           {% if task.content.product_page == 'yes' %}
-             <a href="product-list?id={{task.page}}&products=" class="govuk-link">
+            <!-- for testing I hacked the journey with has_more_pages, write this better if it gets built.  -->
+             <a href="product-list?id={{task.page}}&journey=new&has_more_pages=page?id=4&products=" class="govuk-link">
           {% else%}
-            <a href="page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}&return_url=check-your-progress" aria-describedby="">
+            <a href="page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}&return_url=check-your-progress&journey=new" aria-describedby="">
           {% endif %}
         {{task.group_name}}
             </a>

@@ -14,7 +14,9 @@
 	}],
 	"pages": [{
 			"page": 1,
-			"title": "Product details",
+			"title": "Your products",
+			"type": "EHC",
+			"group_name": "Your products",
 			"content": {
 				"header": "What are the details of your consignment?",
 				"caption": "",
@@ -107,6 +109,8 @@
 		{
 			"page": 2,
 			"title": "For animals slaughtered and processed in the United Kingdom",
+			"type": "EHC",
+			"group_name": "Your products",
 			"content": {
 				"header": "For animals slaughtered and processed in the United Kingdom",
 				"caption": "",
@@ -166,6 +170,8 @@
 		}, {
 			"page": 3,
 			"title": "For animals slaughtered and processed outside the United Kingdom",
+			"type": "EHC",
+			"group_name": "Your products",
 			"content": {
 				"header": "For animals slaughtered and processed outside the United Kingdom",
 				"caption": "",
@@ -199,6 +205,8 @@
 		{
 			"page": 4,
 			"title": "Where was the product stored?",
+			"type": "EHC",
+			"group_name": "Your products",
 			"content": {
 				"header": "Where was the product stored?",
 				"caption": "",
@@ -221,11 +229,13 @@
 		{
 			"page": 5,
 			"title": "Who is sending the consignment?",
+			"type": "EHC",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "Who is sending the consignment?",
 				"caption": "",
 				"paragraph": "Provide details of the person who will send the consignment, or their representative.",
-				"next": "",
+				"next": "page?id=6",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -243,11 +253,13 @@
 		{
 			"page": 6,
 			"title": "How will the consignment be transported?",
+			"type": "EHC",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "How will the consignment be transported?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=9",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -264,11 +276,13 @@
 		{
 			"page": 9,
 			"title": "What is the destination of this consignment?",
+			"type": "EHC",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "What is the destination of this consignment?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=10",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -286,6 +300,8 @@
 		{
 			"page": 10,
 			"title": "Who is receiving the consignment?",
+			"type": "EHC",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "Who is receiving the consignment?",
 				"caption": "",
@@ -308,6 +324,7 @@
 		{
 			"page": "supporting-documents",
 			"title": "Supporting documents",
+			"type": "UPLOAD",
 			"optional": "yes",
 			"content": {
 				"fields": []
@@ -317,11 +334,13 @@
 			"page": 11,
 			"exa": "yes",
 			"title": "Where will certification take place?",
+			"type": "EXA",
+			"group_name": "Certification",
 			"content": {
 				"header": "Where will certification take place?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=12",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -352,6 +371,8 @@
 			"page": 12,
 			"exa": "yes",
 			"title": "What is the planned date of certification?",
+			"type": "EXA",
+			"group_name": "Certification",
 			"content": {
 				"header": "What is the planned date of certification?",
 				"caption": "",
@@ -374,11 +395,13 @@
 			"page": 13,
 			"exa": "yes",
 			"title": "Who is exporting the product?",
+			"type": "EXA",
+			"group_name": "Export details",
 			"content": {
 				"header": "Who is exporting the product?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=17",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -391,16 +414,43 @@
 					"default": "ABC ltd"
 				}]
 			}
+		}
+		, {
+			"page": 17,
+			"exa": "yes",
+			"title": "What is the planned date of export?",
+			"type": "EXA",
+			"group_name": "Export details",
+			"content": {
+				"header": "What is the planned date of export?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned export date",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
 		},
 		{
 			"page": 14,
 			"exa": "yes",
 			"title": "What is the origin of the product?",
+			"type": "EXA",
+			"group_name": "Disease clearance",
 			"content": {
 				"header": "What is the origin of the product?",
 				"caption": "",
 				"paragraph": "Provide details of the origin of the animals from which the product is derived. These may originate from more than one region. We use this information to help control the spread of disease.",
-				"next": "",
+				"next": "page?id=15",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -430,11 +480,13 @@
 			"page": 15,
 			"exa": "yes",
 			"title": "When and where were the animals slaughtered?",
+			"type": "EXA",
+			"group_name": "Disease clearance",
 			"content": {
 				"header": "When and where were the animals slaughtered?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=16",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -482,6 +534,8 @@
 			"page": 16,
 			"exa": "yes",
 			"title": "When were the raw materials processed?",
+			"type": "EXA",
+			"group_name": "Disease clearance",
 			"content": {
 				"header": "When were the raw materials processed?",
 				"caption": "",
@@ -506,28 +560,6 @@
 					"id": "origin_processing_late_date",
 					"name": "origin_processing_late_date",
 					"allow": "past",
-					"default": ""
-				}]
-			}
-		}, {
-			"page": 17,
-			"exa": "yes",
-			"title": "What is the planned date of export?",
-			"content": {
-				"header": "What is the planned date of export?",
-				"caption": "",
-				"paragraph": "",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-					"type": "date",
-					"label": "Planned export date",
-					"hint": "For example, 31 08 1970",
-					"required": "yes",
-					"id": "export_date",
-					"name": "export_date",
-					"allow": "future",
 					"default": ""
 				}]
 			}

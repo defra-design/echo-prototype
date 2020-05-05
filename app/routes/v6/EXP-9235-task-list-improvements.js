@@ -168,4 +168,30 @@ module.exports = function(router) {
 
   })
 
+  router.get('/'+base_url+'*/certificate/product-check-answers', function(req, res) {
+    var id = req.query.id || 2;
+    var product = tools.findPage(tools.getDB(req.session.database,db).data.pages,id)
+    console.log("---------")
+    console.log(req.session.data.products)
+    console.log("---------")
+    res.render(base_url+req.params[0]+'/certificate/product-check-answers', {
+      "query": req.query,
+      "product":product
+    }, function(err, html) {
+      if (err) {
+        if (err.message.indexOf('template not found') !== -1) {
+          return res.render(file_url + '/certificate/product-check-answers');
+        }
+        throw err;
+      }
+      res.send(html);
+    })
+  })
+  router.post('/'+base_url+'*/certificate/product-check-answers', function(req, res, next) {
+    var product_title= (req.session.data.Processs_category) ? req.session.data.Processs_category +','+req.session.data.product_category : "Pork, Cuts";
+    req.session.data.product_loop = req.session.data.product_loop || []
+    req.session.data.product_loop.push(product_title)
+    res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/product-list?id='+req.query.id);
+  })
+
 }
