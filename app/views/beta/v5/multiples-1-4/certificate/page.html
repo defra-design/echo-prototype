@@ -47,7 +47,7 @@
     <h1 class="govuk-heading-xl">
       {{page.content.header}}
     </h1>
-    {% if query.confirm == "yes" and (data.added_certificates | length) > 0%}
+    {% if query.show_change_warning or (query.confirm == "yes" and (data.added_certificates | length) > 0 and page.repeatable != "yes") %}
     <div class="govuk-warning-text">
 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
 <strong class="govuk-warning-text__text">
