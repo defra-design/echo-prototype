@@ -20,7 +20,7 @@ GOV.UK Prototype Kit
           <span class="app-task-list__section-number">1. </span> About your application
         </h2>
         <ul class="app-task-list__items">
-          {% if (db.commodities | length) > 1 %}
+          {% if (db.commodities | length) > 1 or (db.commodities[0].options | length) > 1 %}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/your-commodity" aria-describedby="eligibility-completed">
@@ -37,7 +37,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/reference" aria-describedby="eligibility-completed">
-                Create a reference number
+                Your reference
               </a>
             </span>
             {% if not data.reference_num %}
@@ -49,7 +49,7 @@ GOV.UK Prototype Kit
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certifier" aria-describedby="eligibility-completed">
-                About your certifier
+                Your certifier
               </a>
             </span>
             {% if not data.is_certifier_address_correct %}
@@ -78,113 +78,24 @@ GOV.UK Prototype Kit
 
         </ul>
       </li>
+
       <li>
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">2. </span> Information needed by APHA
         </h2>
         <p class="govuk-body govuk-!-margin-left-6">This information does not appear on the certificate.</p>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="exa/certifer-certificate-delivery?printable={{db.printable or 'yes'}}" aria-describedby="eligibility-completed">
-                How would you like the certificate to be delivered to the certifier?
-              </a>
-            </span>
-            {% if not data.delivery_options %}
-            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
-            {% else %}
-            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-            {% endif %}
-          </li>
-          {% for task in db.pages %}
-          {% if task.exa == "yes" %}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              {% if not task.content.next %}
-              {% set next_page = 'check-your-progress' %}
-              {% else %}
-              {% set next_page = task.content.next %}
-              {% endif %}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}&first_time={%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%else%}supporting-documents?test=yes{%endif%}&return=check-your-progress&journey=step"
-                aria-describedby="">
-                {% if task.title != 'Supporting documents' %}{{task.title}}{% else %}Add supporting documents (optional){%endif%}
-              </a>
-            </span>
-            {% if data.completed[task.page] %}
-            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-            {% else%}
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-            {% endif %}
-          </li>
-          <!-- data.ech_active -->
-          {% endif %}
-          {% endfor %}
-        </ul>
+        {% set display_type = "EXA" %}
+        {% block tasklistEXA %}{% include "./partials/tasklist-block.html" %}{% endblock %}
       </li>
+
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">3. </span> Information for the export health certificate
+          <span class="app-task-list__section-number">3. </span>Information for the export health certificate
         </h2>
-        <p class="govuk-body govuk-!-margin-left-6">This information will appear on the certificate.
- {% if db.is_multiple == "yes"%} You can add certificates for up to 50 horses to this application.{%endif%}</p>
-
-        {% if db.is_multiple == "yes"%}
-
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="{% if (data.added_certificates | length) >0  %}certificate-list?first_time=no{%elseif data.has_unfinished_certificate == 'yes' %}certificate-list?first_time=no&show_fake_ehc=yes{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress&return_check_answers=certificate-list" class="govuk-link">{% if (data.added_certificates | length) == 0 %}Create your
-                export health certificate{% else %}{{ data.added_certificates | length}} horse{% if (data.added_certificates | length) > 1%}s{% endif %} added{% endif %}</a>
-            </span>
-            {% if data.has_unfinished_certificate == "yes"%}<strong class="govuk-tag app-task-list__task-completed in-progress" id="contact-details-completed">In progress</strong>
-            {% elseif (data.added_certificates | length) >0  %}
-            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-            {% else%}
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-            {% endif %}
-          </li>
-        </ul>
-
-        {% else %}
-        {% set ech_active = "yes"%}
-        <ul class="app-task-list__items">
-          {% for task in db.pages %}
-          {% if task.exa != "yes" and task.title!='Supporting documents'%}
-          {% if ech_active != "yes"%}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              {{task.title}}
-            </span>
-          </li>
-          {% else %}
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              {% if not task.content.next %}
-              {% set next_page = 'check-your-progress' %}
-              {% else %}
-              {% set next_page = task.content.next %}
-              {% endif %}
-                 {% if task.content.product_page == 'yes' %}
-                 <a href="product-list?id={{task.page}}&products=" class="govuk-link">
-                 {% else%}
-              <a href="{% if task.title!='Supporting documents' %}page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}{%endif%}" aria-describedby="">
-                {% endif %}
-                {% if task.title != 'Supporting documents' %}{{task.title}}{%endif%}
-              </a>
-            </span>
-            {% if data.completed[task.page] %}
-            <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-            {% else%}
-            <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
-            {% endif %}
-          </li>
-          {% endif %}
-          <!-- data.ech_active -->
-          {% endif %}
-          {% endfor %}
-        </ul>
-        {% endif %}
+        {% set display_type = "EHC" %}
+        {% block tasklistEHC %}{% include "./partials/tasklist-block.html" %}{% endblock %}
       </li>
+
       <!-- Hack to make part 3 active from the start -->
       <li>
         <h2 class="app-task-list__section">

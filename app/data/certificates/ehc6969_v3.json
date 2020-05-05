@@ -1,7 +1,7 @@
 {
 	"certificate_code": "6969EHC",
 	"version": "3",
-	"printable": "yes",
+	"printable": "no",
 	"destination": "Australia",
 	"certificate_name": "(Experiimental) Export dairy and dairy products to Australia",
 	"commodities": [{
@@ -29,7 +29,7 @@
 				"header": "What is your import permit number and expiry date?",
 				"caption": "",
 				"paragraph": "If an import permit has been issued to you, enter the details below.",
-				"next": "",
+				"next": "page?id=2",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -64,7 +64,7 @@
 				"header": "What is the origin of your product?",
 				"caption": "",
 				"paragraph": "You can enter more than one species and country of origin.",
-				"next": "",
+				"next": "page?id=3",
 				"prev": "",
 				"product_page": "no",
 				"product_max": "5",
@@ -97,7 +97,7 @@
 				"header": "Where was the raw milk processed?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=4",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -121,7 +121,7 @@
 				"header": "Where was the export product processed?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=5",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -169,7 +169,7 @@
 				"header": "What are the consignment details?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=7",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -221,7 +221,7 @@
 				"header": "What are the details of the exporter?",
 				"caption": "",
 				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
-				"next": "",
+				"next": "page?id=8",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -244,7 +244,7 @@
 				"header": "What is the means of transportation?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=9",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -313,12 +313,12 @@
 			"exa": "yes",
 			"type": "EXA",
 			"title": "Where will certification take place?",
-			"group_name": "Export details",
+			"group_name": "Certification",
 			"content": {
 				"header": "Where will certification take place?",
 				"caption": "",
 				"paragraph": "",
-				"next": "",
+				"next": "page?id=12",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -350,7 +350,7 @@
 			"exa": "yes",
 			"type": "EXA",
 			"title": "What is the planned date of certification?",
-			"group_name": "Export details",
+			"group_name": "Certification",
 			"content": {
 				"header": "What is the planned date of certification?",
 				"caption": "",
@@ -370,16 +370,16 @@
 				}]
 			}
 		}, {
-			"page": 13,
+			"page": 17,
 			"exa": "yes",
-			"type": "EXA",
 			"title": "Who is exporting the product?",
-			"group_name": "Your commodity",
+			"type": "EXA",
+			"group_name": "Export details",
 			"content": {
 				"header": "Who is exporting the product?",
 				"caption": "",
-				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
-				"next": "",
+				"paragraph": "",
+				"next": "page?id=13",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -392,9 +392,33 @@
 					"default": "ABC ltd"
 				}]
 			}
+		},{
+			"page": 13,
+			"exa": "yes",
+			"type": "EXA",
+			"title": "What is the planned date of export?",
+			"group_name": "Export details",
+			"content": {
+				"header": "What is the planned date of export?",
+				"caption": "",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned export date",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
 		},
 		{
-			"page": 14,
+			"page": 15,
 			"exa": "yes",
 			"type": "EXA",
 			"title": "When and where was the milk collected?",
@@ -403,7 +427,7 @@
 				"header": "When and where was the milk collected?",
 				"caption": "",
 				"paragraph": "Provide details of where and when the milk was collected. You can select more than one region. We use this information to help control the spread of disease.",
-				"next": "",
+				"next": "page?id=16",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -448,7 +472,7 @@
 			}
 		},
 		{
-			"page": 15,
+			"page": 16,
 			"exa": "yes",
 			"type": "EXA",
 			"title": "What are the processing details?",
@@ -497,30 +521,6 @@
 					"id": "origin_processing_late_date",
 					"name": "origin_processing_late_date",
 					"allow": "past",
-					"default": ""
-				}]
-			}
-		}, {
-			"page": 16,
-			"exa": "yes",
-			"type": "EXA",
-			"title": "What is the planned date of export?",
-			"group_name": "Your commodity",
-			"content": {
-				"header": "What is the planned date of export?",
-				"caption": "",
-				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
-				"next": "",
-				"prev": "",
-				"product_page": "no",
-				"fields": [{
-					"type": "date",
-					"label": "Planned export date",
-					"hint": "For example, 31 08 1970",
-					"required": "yes",
-					"id": "export_date",
-					"name": "export_date",
-					"allow": "future",
 					"default": ""
 				}]
 			}

@@ -4,7 +4,7 @@ module.exports = function(router) {
 
 
   // ADD extra routing here if needed.
-  // require('./start-page.js')(router)
+  require('./EXP-9235-task-list-improvements.js')(router)
 
 
   const fs = require('fs');

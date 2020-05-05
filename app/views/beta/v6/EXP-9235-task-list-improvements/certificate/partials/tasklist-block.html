@@ -1,0 +1,60 @@
+
+
+{% if db.is_multiple == "yes"%}
+
+  <ul class="app-task-list__items">
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="{% if (data.added_certificates | length) >0  %}certificate-list?first_time=no{%elseif data.has_unfinished_certificate == 'yes' %}certificate-list?first_time=no&show_fake_ehc=yes{%else%}ehc-reference?first_time=yes{% endif %}&return=check-your-progress&return_check_answers=certificate-list" class="govuk-link">{% if (data.added_certificates | length) == 0 %}Create your
+          export health certificate{% else %}{{ data.added_certificates | length}} horse{% if (data.added_certificates | length) > 1%}s{% endif %} added{% endif %}</a>
+      </span>
+      {% if data.has_unfinished_certificate == "yes"%}<strong class="govuk-tag app-task-list__task-completed in-progress" id="contact-details-completed">In progress</strong>
+      {% elseif (data.added_certificates | length) >0  %}
+      <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+      {% else%}
+      <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+      {% endif %}
+    </li>
+  </ul>
+
+{% else %}
+
+  {% set current_group_title = "none"%}
+  {% set next_page = task.content.next or 'check-your-progress' %}
+
+  <ul class="app-task-list__items">
+    {% for task in db.pages %}
+    <!-- display_type should be set in the parent page -->
+    {% if display_type == task.type and current_group_title != task.group_name %}
+    <!-- New group. set the current group name to the pages group_name -->
+      {% set current_group_title = task.group_name %}
+      <!-- disabled state, set this in the parent page-->
+      {% if disabled == "yes"%}
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            {{task.title}}
+          </span>
+        </li>
+      {% else %}
+      <!-- active state-->
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          {% if task.content.product_page == 'yes' %}
+             <a href="product-list?id={{task.page}}&products=" class="govuk-link">
+          {% else%}
+            <a href="page?id={{task.page}}&next={{next_page}}{%if task.content.product_page == 'yes' %}&product_page=yes{%endif%}&return_url=check-your-progress" aria-describedby="">
+          {% endif %}
+        {{task.group_name}}
+            </a>
+        </span>
+        {% if data.completed[task.page] %}
+        <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+        {% else%}
+        <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+        {% endif %}
+      </li>
+      {% endif %} <!-- IF disabled END -->
+      {% endif %} <!-- IF display_type and current_group_title END -->
+    {% endfor %}
+  </ul>
+{% endif %}<!-- IF is_multiple END -->
