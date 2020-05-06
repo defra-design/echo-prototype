@@ -77,7 +77,7 @@
     </table>
       {% endif %}
     <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id=1&next=1&product_page=yes&new=yes" id="Button-AddAnother">{% if (data.products | length) == 0 %}Add{%else%}Add another{% endif %}</a>
-    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{data.has_more_pages or page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
+    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
       <input type="hidden" name="crumb_csrf_token" value="nAitoNVyVGtnnzUQ-QQk78LOMzR_-9L6qqu86Lg9aRY">
       <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
         <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">

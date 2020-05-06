@@ -206,7 +206,7 @@
 			"page": 4,
 			"title": "Where was the product stored?",
 			"type": "EHC",
-			"group_name": "Your products",
+			"group_name": "About storage",
 			"content": {
 				"header": "Where was the product stored?",
 				"caption": "",
