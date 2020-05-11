@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Return to your applications</a>
+<style media="screen">
+  .govuk-status--warning {
+    width: auto !important;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    padding-bottom: 1px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    color: #0b0c0c;
+    background: #FFBF47;
+    border: 3px solid #FFBF47;
+  }
+</style>
+{% endblock%}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">Certificate 19/2/00869</span>
+    <h1 class="govuk-heading-xl">Certificate was replaced by 20/2/0086
+    </h1>
+    {% if data.has_replacement_multiple == "yes" %}
+    <p class="govuk-body">Your original certificate 19/2/00869 was replaced 3 times by <strong>ABC VETS LTD</strong> (certifier).</p>
+    <ol class="govuk-list govuk-list--number">
+      <li>Certificate 19/2/00869 (original) was replaced by 19/2/00869 </li>
+      <li>Certificate 19/2/00869 was replaced by 20/2/0086</li>
+      <li>Certificate 20/2/0086 was replaced by 20/2/0086 (current)</li>
+    </ol>
+    {% else %}
+    <p class="govuk-body">Your original certificate 19/2/00869 was replaced by <strong>ABC VETS LTD</strong> (certifier).</p>
+    {% endif %}
+        <p class="notice">
+          <span class="icon icon-file-download"><span class="govuk-visually-hidden">File download</span></span>
+          <strong><a href="/public/images/{{db.sample_PDF or 'ehc-2580ehc-7.6.pdf'}}" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">View replacement certificate 20/2/0086 [PDF] (opens in new tab)</a>.</strong>
+        </p>
+    <p class="govuk-body">Contact the <strong>ABC VETS LTD</strong> if you have questions.</p>
+    <p class=govuk-body"><a class="govuk-button" href="application2?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=cancelled&is_block=no&is_replaced=yes">Return to summary</a></p>
+  </div>
+</div>
+{% endblock %}

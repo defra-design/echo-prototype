@@ -140,16 +140,16 @@ GOV.UK Prototype Kit
             <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
             {% endif %}
             {% if query.is_block != 'yes' and query.is_group !="yes" and query.is_replaced %}
-            <td id="cert-num" class="govuk-table__cell" scope="row" style="width:45%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;19/2/00869<br>
-              <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by <a href="application?is_replacement_multiple=yes&application_status=cancelled">19/2/00872</a></span>
+            <td id="cert-num" class="govuk-table__cell" scope="row" style="width:40%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;19/2/00869<br>
+              <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by 20/2/00872 <a href="replacement-chain">View details</a></span>
             </td>
             {% elseif query.is_block != 'yes' and query.is_group !="yes" and query.is_replacement_multiple %}
-            <td id="cert-num" class="govuk-table__cell" scope="row" style="width:45%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp; 19/2/008722
+            <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp; 19/2/008722
               <br>
               <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">This certificate replaced <a href="application?is_replaced=yes&application_status=cancelled&has_cancelation=yes">19/2/00872</a> and has been replaced by <a href="application?is_replacement=yes&application_status=dispatched">20/2/34343</a> </span>
             </td>
             {% elseif query.is_block != 'yes' and query.is_group !="yes" and query.is_replacement %}
-            <td id="cert-num" class="govuk-table__cell" scope="row" style="width:45%;"><span class="govuk-tag govuk-tag--complete">Replacement</span>&nbsp;&nbsp; 19/2/008722
+            <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-tag govuk-tag--complete">Replacement</span>&nbsp;&nbsp; 19/2/008722
               <br>
               <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced certificate <a href="application?is_replacement_multiple=yes&is_block=no&application_status=cancelled">19/2/00869 </a> on 02 Aug 2019</span>
             </td>
@@ -175,16 +175,7 @@ GOV.UK Prototype Kit
               </a>
             </td>
           </tr>
-          <!-- <tr class="">
-            <td colspan="5" class="app-table__cell--child">
-              <p class="govuk-body">This certificate has been replaced 3 times</p>
-              <ol class="govuk-list govuk-list--number">
-                <li>Certificate 19/2/00869 (this Certificate) was replaced by 19/2/00869 on 5 Jan 2020</li>
-                <li>Certificate 19/2/00869 was replaced by 19/2/00869 on 5 Jan 2020</li>
-                <li>Certificate 19/2/00869 (this Certificate) was replaced by 19/2/00869 on 5 Jan 2020</li>
-              </ol>
-            </td>
-          </tr> -->
+
           {% if query.is_block == 'yes' or query.is_group =="yes"%}
           <tr class="govuk-table__row">
             <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
