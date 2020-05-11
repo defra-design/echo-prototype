@@ -19,6 +19,8 @@
     {% endif %}
 
     {% for field in task.content.fields %}
+      {% if db.has_repeatable == yes %}
+      {% else %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         {{field.label}}
@@ -38,6 +40,7 @@
         </a>
       </dd>
     </div>
+    {% endif %}
     {% endfor %}
     <!-- Update the current_group_title if its a group page -->
     {% if task.group_name %}

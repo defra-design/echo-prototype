@@ -4,6 +4,7 @@
 	"printable": "yes",
 	"destination": "USA",
 	"allow_blocks": "yes",
+	"has_repeatable": "yes",
 	"certificate_name": "Export fresh meat and meat products to the USA",
 	"commodities": [{
 		"group": "Meat",
