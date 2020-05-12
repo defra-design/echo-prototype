@@ -234,10 +234,7 @@ GOV.UK Prototype Kit
           <!-- display_type is used to show correct informtion from JSON file, EXA or EHC -->
           {% set display_type = "EHC"%}
           <!-- loading partial to show all repsonses for the EHC partials/check-your-answers-block -->
-          {% if db.has_repeatable == yes %}
-          {% else %}
           {% block EHCanswers %}{% include "./partials/check-your-answers-block.html" %}{% endblock %}
-          {% endif %}
           <div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
             <section class="attachment embedded govuk-!-margin-bottom-0" id="attachment_3220161">
               <div class="attachment-thumb">

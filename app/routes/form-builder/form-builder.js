@@ -12,7 +12,7 @@ module.exports = function(router) {
 
   // CHANGE VERSION each time you create a new version
   const version = 'v1-1'
-  const base_url =  "form-builder/"+version
+  const base_url =  "form-builder/"
   const file_url = "form-builder/"+version
   // var database = "ehc3987"
   // const certificate= "3987EHC"

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-form-group margin-top-30">
+        <h2 class="govuk-caption-l">EHC 2849EHC</h2>
+        <h2 class="govuk-heading-l">EHC List</h2>
+      </div>
+      <h3 class="govuk-heading-m heading-with-help">Select new status</h3>
+      <form class="case-update" style="display: inline;" action="../index" method="POST">
+        <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+        <input type="hidden" value="2849EHC" name="ehcNumber">
+
+        <div class="govuk-form-group margin-top-30">
+          <div class="govuk-radios govuk-radios--inline">
+            <div id="availabilityStatus" class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio" id="availabilityStatus-ON_HOLD" name="availabilityStatus" value="ON_HOLD">
+              <label class="govuk-label govuk-radios__label" for="availabilityStatus-ON_HOLD">On hold</label>
+            </div>
+            <div id="availabilityStatus" class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio" id="availabilityStatus-RESTRICTED" name="availabilityStatus" value="RESTRICTED">
+              <label class="govuk-label govuk-radios__label" for="availabilityStatus-RESTRICTED">Restricted</label>
+            </div>
+            <div id="availabilityStatus" class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio" id="availabilityStatus-WITHDRAWN" name="availabilityStatus" value="WITHDRAWN">
+              <label class="govuk-label govuk-radios__label" for="availabilityStatus-WITHDRAWN">Withdrawn</label>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="govuk-heading-m">Are you sure you want to change the status of this form?</h3>
+
+        <hr>
+
+        <input class="govuk-button" type="submit" id="Button-Save" value="Change this certificate status" data-qa-id="Button-Save">
+        <a class="govuk-button cancel-button margin-left-30" href="../index" id="Button-Cancel" data-qa-id="Button-Cancel">Cancel</a>
+      </form>
+    </div>
+    </div>
+{% endblock %}
