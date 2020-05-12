@@ -4,6 +4,7 @@
   "printable": "yes",
   "destination": "USA",
   "has_repeatable": "yes",
+  "sample_PDF": "ehc-1631ehc-6.5.pdf",
   "certificate_name": "Export fresh meat and meat products to the USA",
   "commodities": [{
     "group": "Meat",

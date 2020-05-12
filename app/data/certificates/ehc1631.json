@@ -5,6 +5,7 @@
 	"destination": "USA",
 	"allow_blocks": "yes",
 	"has_repeatable": "yes",
+	"sample_PDF": "ehc-2849ehc-3.1.pdf",
 	"product_max": 3,
 	"certificate_name": "Export fresh meat and meat products to the USA",
 	"commodities": [{
