@@ -31,7 +31,7 @@
 				"header": "What is your import permit number?",
 				"caption": "",
 				"paragraph": "",
-				"next": "page?id=2",
+				"next": "page?id=9",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -45,12 +45,34 @@
 				}]
 			}
 		}, {
+			"page": 9,
+			"title": "What is the origin of the product?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "What is the origin of the product?",
+				"caption": "",
+				"paragraph": "You can enter more than one species",
+				"next": "page?id=2",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Species",
+					"hint": "",
+					"required": "no",
+					"id": "Species_sdas",
+					"name": "species_sdas",
+					"default": ""
+				}]
+			}
+		}, {
 			"page": 2,
 			"title": "Where was the product manufactured?",
 			"type": "EHC",
 			"group_name": "Your product",
 			"content": {
-				"header": "Where was the product manufactured??",
+				"header": "Where was the product manufactured?",
 				"caption": "",
 				"paragraph": "You can enter details of more than one establishment. Leave blank if not applicable.",
 				"next": "page?id=3",
@@ -76,8 +98,8 @@
 			"content": {
 				"header": "What are the details of your final product?",
 				"caption": "",
-				"paragraph": "Provide details of the batches in this consignment. Use a new record for each batch. If there are more than 5 batches, leave this section blank and attach a schedule as a supporting document at the end of this application. ",
-				"next": "page?id=4",
+				"paragraph": "",
+				"next": "",
 				"prev": "",
 				"product_page": "yes",
 				"product_max": "5",
@@ -107,12 +129,12 @@
 			"page": 4,
 			"title": "What are the consignment details?",
 			"type": "EHC",
-			"group_name": "Your product",
+			"group_name": "Your consignment",
 			"content": {
 				"header": "What are the consignment details?",
 				"caption": "",
 				"paragraph": "You can skip this question if you do not know this information yet. You may find it easier to send a schedule or packing list to your certifier before certification.",
-				"next": "",
+				"next": "page?id=5",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -350,7 +372,7 @@
 			"content": {
 				"header": "What is the planned date of export?",
 				"caption": "",
-				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.",
 				"next": "",
 				"prev": "",
 				"product_page": "no",
