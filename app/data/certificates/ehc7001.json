@@ -1,0 +1,371 @@
+{
+	"certificate_code": "7001EHC",
+	"version": "1",
+	"printable": "yes",
+	"allow_blocks": "no",
+	"sample_PDF": "ehc-7006ehc-3.0.pdf",
+	"destination": "USA",
+	"certificate_name": "Export of products containing poultry ingredients with or without dairy ingredients to the USA",
+	"commodities": [{
+		"group": "Dairy",
+		"options": [{
+			"title": "Bovine",
+			"name": "Bovine"
+		}, {
+			"title": "Mixed",
+			"name": "Mixed"
+		}, {
+			"title": "Caprine",
+			"name": "Caprine"
+		}, {
+			"title": "Ovine",
+			"name": "Ovine"
+		}]
+	}],
+	"pages": [{
+			"page": 1,
+			"title": "What is your import permit number?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "What is your import permit number?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=2",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Import permit number",
+					"hint": "",
+					"required": "no",
+					"id": "import_licence_number",
+					"name": "import_licence_number",
+					"default": "3849028342"
+				}]
+			}
+		}, {
+			"page": 2,
+			"title": "Where was the product manufactured?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "Where was the product manufactured??",
+				"caption": "",
+				"paragraph": "You can enter details of more than one establishment. Leave blank if not applicable.",
+				"next": "page?id=3",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of the manufacturing establishment",
+					"hint": "",
+					"rows": 4,
+					"required": "no",
+					"id": "manufacture_establishment",
+					"name": "manufacture_establishment",
+					"default": ""
+				}]
+			}
+		},
+		{
+			"page": 3,
+			"title": "What are the details of your final product?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "What are the details of your final product?",
+				"caption": "",
+				"paragraph": "Provide details of the batches in this consignment. Use a new record for each batch. If there are more than 5 batches, leave this section blank and attach a schedule as a supporting document at the end of this application. ",
+				"next": "page?id=4",
+				"prev": "",
+				"product_page": "yes",
+				"product_max": "5",
+				"fields": [{
+						"type": "textarea",
+						"label": "Description of the product",
+						"hint": "For example, quiche",
+						"rows": 4,
+						"required": "no",
+						"id": "number_of_straws",
+						"name": "number_of_straws",
+						"default": "200"
+					},
+					{
+						"type": "textarea",
+						"label": "Ingredients and processing method",
+						"hint": "List all ingredients present in the product and how it has been processed",
+						"rows": 4,
+						"required": "no",
+						"id": "breed",
+						"name": "breed",
+						"default": "Bovine"
+					}
+				]
+			}
+		}, {
+			"page": 4,
+			"title": "What are the consignment details?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "What are the consignment details?",
+				"caption": "",
+				"paragraph": "You can skip this question if you do not know this information yet. You may find it easier to send a schedule or packing list to your certifier before certification.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Type and number of packages",
+					"hint": "",
+					"required": "no",
+					"rows": 4,
+					"id": "packages_num",
+					"name": "packages_num",
+					"default": "02498320984"
+				}, {
+					"type": "textarea",
+					"label": "Net weight of the consignment",
+					"hint": "Provide the number and the units of measurement. For example, 105kg",
+					"required": "no",
+					"rows": 4,
+					"id": "net_weight_num",
+					"name": "net_weight_num",
+					"default": "02498320984"
+				}, {
+					"type": "textarea",
+					"label": "Identification marks",
+					"hint": "Enter the serial and batch numbers. Multiple numbers can be comma separated.",
+					"required": "no",
+					"rows": 4,
+					"id": "identification_marks",
+					"name": "identification_marks",
+					"default": "02498320984"
+				}]
+			}
+		},
+		{
+			"page": 5,
+			"title": "Who is sending the consignment?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "Who is sending the consignment?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "page?id=6",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of the exporter",
+					"hint": "",
+					"required": "yes",
+					"id": "exporter_details",
+					"name": "exporter_details",
+					"rows": 4,
+					"default": ""
+				}]
+			}
+		},
+		{
+			"page": 6,
+			"title": "How will the consignment be transported?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "How will the consignment be transported?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=7",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Means of transport",
+					"hint": "Enter the method of travel and the identification of the transport. For example aeroplane ZZ1234",
+					"required": "no",
+					"id": "consignment-package-number",
+					"name": "consignment_package-number",
+					"default": "Ship"
+				}]
+			}
+		},
+		{
+			"page": 7,
+			"title": "Where is the consignment being sent to?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "Where is the consignment being sent to?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=8",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Place of unloading within the destination country",
+					"hint": "",
+					"required": "no",
+					"id": "place_unloading",
+					"name": "place_unloading",
+					"rows": 4,
+					"default": "ABC limited Australia, 637 Rowley Street, Melbourne, CIC2002 "
+				}, {
+					"type": "textarea",
+					"label": "Address of premises of destination",
+					"hint": "Leave blank if no agent has been used",
+					"required": "no",
+					"id": "consignee_representive",
+					"name": "consignee_representive",
+					"rows": 4,
+					"default": ""
+				}]
+			}
+		}, {
+			"page": 8,
+			"title": "Who is receiving the consignment?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "Who is receiving the consignment?",
+				"caption": "",
+				"paragraph": "Provide details of the person the consignment will be shipped to, or their representative.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of consignee",
+					"hint": "",
+					"required": "no",
+					"id": "consignee_details",
+					"name": "consignee_details",
+					"rows": 4,
+					"default": "ABC limited Australia, 637 Rowley Street, Melbourne, CIC2002 "
+				}]
+			}
+		},
+		{
+			"page": "supporting-documents",
+			"title": "Supporting documents",
+			"optional": "yes",
+			"type": "documents",
+			"content": {
+				"fields": []
+			}
+		},
+		{
+			"page": 10,
+			"exa": "yes",
+			"title": "Where will certification take place?",
+			"type": "EXA",
+			"group_name": "Certification",
+			"content": {
+				"header": "Where will certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=11",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					],
+					"default": "England"
+				}]
+			}
+		}, {
+			"page": 11,
+			"exa": "yes",
+			"type": "EXA",
+			"title": "What is the planned date of certification?",
+			"group_name": "Certification",
+			"content": {
+				"header": "What is the planned date of certification?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned date of certification",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "certificate_date",
+					"name": "certificate_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
+		}, {
+			"page": 17,
+			"exa": "yes",
+			"title": "Who is exporting the product?",
+			"type": "EXA",
+			"group_name": "Export details",
+			"content": {
+				"header": "Who is exporting the product?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=13",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Exporter name",
+					"hint": "",
+					"required": "yes",
+					"id": "exporter_name",
+					"name": "exporter_name",
+					"default": "ABC ltd"
+				}]
+			}
+		}, {
+			"page": 13,
+			"exa": "yes",
+			"type": "EXA",
+			"title": "What is the planned date of export?",
+			"group_name": "Export details",
+			"content": {
+				"header": "What is the planned date of export?",
+				"caption": "",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned export date",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
+		}
+
+	]
+}
