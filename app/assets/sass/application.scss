@@ -23,6 +23,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/pagination";
 @import "components/form-finder";
 @import "components/summary-card";
+@import "components/filter";
 
 .govuk-summary-list__row-error {
   padding-left: 15px;
