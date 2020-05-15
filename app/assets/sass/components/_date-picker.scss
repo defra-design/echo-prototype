@@ -1,0 +1,90 @@
+.form-date .sm-date-picker-container {
+  position: relative;
+  top: 28px; }
+  @media (min-width: 641px) {
+    .form-date .sm-date-picker-container {
+      top: 32px; } }
+  .form-date .sm-date-picker-container .sm-date-picker-input {
+    position: absolute;
+    top: 0px;
+    left: -3px;
+    border: 0;
+    width: 40px;
+    opacity: 0; }
+  .form-date .sm-date-picker-container .fa-calendar-alt {
+    position: absolute;
+    top: 0; }
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  background-image: none !important; }
+
+.ui-datepicker .ui-datepicker-prev::before,
+.ui-datepicker .ui-datepicker-next::before {
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.ui-datepicker .ui-datepicker-prev.ui-state-hover,
+.ui-datepicker .ui-datepicker-next.ui-state-hover {
+  font-weight: 700; }
+
+.ui-datepicker .ui-datepicker-prev:before {
+  content: "\f0a8"; }
+
+.ui-datepicker .ui-datepicker-next:before {
+  content: "\f0a9"; }
+
+.sm-daterange-component .sm-daterange-input-wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+  margin: 0 5px 20px 0; }
+  @media (min-width: 641px) {
+    .sm-daterange-component .sm-daterange-input-wrapper {
+      display: inline-block;
+      margin-bottom: 0;
+      width: 175px; } }
+  .sm-daterange-component .sm-daterange-input-wrapper .sm-calendar-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: auto; }
+  .sm-daterange-component .sm-daterange-input-wrapper .sm-daterange-input {
+    width: 100%;
+    padding: 5px; }
+
+.sm-daterange-component .sm-daterange-label {
+  margin: 8px 0; }
+
+.flatpickr-date-range .form-group:nth-child(1), .flatpickr-date-range .form-group:nth-child(2) {
+  width: 33%; }
+  @media (min-width: 641px) {
+    .flatpickr-date-range .form-group:nth-child(1), .flatpickr-date-range .form-group:nth-child(2) {
+      width: auto; } }
+
+.flatpickr-date-range .form-group:nth-child(3) {
+  width: 10%; }
+  @media (min-width: 641px) {
+    .flatpickr-date-range .form-group:nth-child(3) {
+      width: auto; } }
+
+.flatpickr-container {
+  position: relative; }
+  .flatpickr-container .flatpickr-label {
+    position: relative;
+    top: 28px; }
+    @media (min-width: 641px) {
+      .flatpickr-container .flatpickr-label {
+        top: 33px; } }
+  .flatpickr-container .flatpickr-input {
+    position: absolute;
+    width: 50px;
+    top: 32px;
+    opacity: 0; }
