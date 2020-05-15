@@ -115,8 +115,7 @@ GOV.UK Prototype Kit
     </div>
     <div class="govuk-grid-column-one-third">
       <div class="defra-filter--action" style="display:none">
-        <button id="defra-filter--button" class="govuk-button govuk-button--secondary govuk-!-margin-top-6 {% if data.has_filter == 'yes'%}defra-filter-button--active{% endif%}" type="button" aria-expanded="false" ><span class="defra-filter--button-content">Show filters</span>
-          {% if data.has_filter %}({{(data.filter_status | length) or '1'}}){% endif %}<span class="defra-filter__icon" ></span></button>
+        <button id="defra-filter--button" class="govuk-button govuk-button--secondary govuk-!-margin-top-6 {% if data.has_filter == 'yes'%}defra-filter-button--active{% endif%}" type="button" aria-expanded="false" ><span class="defra-filter--button-content">Show filters</span><span class="defra-filter__icon" ></span></button>
       </div>
     </div>
   </div>
@@ -132,51 +131,49 @@ GOV.UK Prototype Kit
                     Filter by status
                   </legend>
                   <div class="govuk-grid-row">
-                  <div class="govuk-checkboxes govuk-checkboxes--small govuk-grid-column-one-half">
-
-                      <div class="govuk-checkboxes__item ">
-                        <input class="govuk-checkboxes__input" id="type" name="filter_status" type="checkbox" value="dispatched" {% if data.filter_status and data.filter_status != '_unchecked' and 'dispatched' in data.filter_status %}checked="checked" {% endif %}>
-                        <label class="govuk-label govuk-checkboxes__label" for="type">
+                  <div class="govuk-radios govuk-radios--small govuk-grid-column-one-half">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="type-9" name="filter_status" type="radio" value="draft" {% if data.filter_status and data.filter_status == 'draft' %}checked="checked" {% endif %}>
+                      <label class="govuk-label govuk-radios__label" for="type-9">
+                        Draft
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="type-3" name="filter_status" type="radio" value="processing" {% if data.filter_status and data.filter_status != '_unchecked' and 'processing' in data.filter_status %}checked="checked" {% endif %}>
+                      <label class="govuk-label govuk-radios__label" for="type-3">
+                        APHA processing
+                      </label>
+                    </div>
+                      <div class="govuk-radios__item ">
+                        <input class="govuk-radios__input" id="type" name="filter_status" type="radio" value="dispatched" {% if data.filter_status and data.filter_status == 'dispatched' %}checked="checked" {% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="type">
                           Dispatched
                         </label>
                       </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-9" name="filter_status" type="checkbox" value="draft" {% if data.filter_status and data.filter_status != '_unchecked' and 'draft' in data.filter_status %}checked="checked" {% endif %}>
-                        <label class="govuk-label govuk-checkboxes__label" for="type-9">
-                          Draft
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-2" name="filter_status" type="checkbox" value="certifier action" {% if data.filter_status and data.filter_status != '_unchecked' and 'certifier action' in data.filter_status %}checked="checked" {% endif %}>
-                        <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="type-2" name="filter_status" type="radio" value="certifier action" {% if data.filter_status and data.filter_status == 'certifier action' %}checked="checked" {% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="type-2">
                           Certifier action
                         </label>
                       </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-3" name="filter_status" type="checkbox" value="processing" {% if data.filter_status and data.filter_status != '_unchecked' and 'processing' in data.filter_status %}checked="checked" {% endif %}>
-                        <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                          APHA processing
-                        </label>
                       </div>
-
-                      </div>
-                      <div class="govuk-checkboxes govuk-checkboxes--small govuk-grid-column-one-half">
-                      <div class="  govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-8" name="filter_status" type="checkbox" value="completed" {% if data.filter_status and data.filter_status != '_unchecked' and 'completed' in data.filter_status %}checked="checked" {% endif %}>
-                        <label class="govuk-label govuk-checkboxes__label" for="type-8">
+                      <div class="govuk-radios govuk-radios--small govuk-grid-column-one-half">
+                      <div class="  govuk-radios__item">
+                        <input class="govuk-radios__input" id="type-8" name="filter_status" type="radio" value="completed" {% if data.filter_status and data.filter_status == 'completed' %}checked="checked" {% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="type-8">
                           Completed
                         </label>
                       </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-4" name="filter_status" type="checkbox" value="cancelled" {% if data.filter_status and data.filter_status != '_unchecked' and 'cancelled' in data.filter_status %}checked="checked" {% endif %}>
-                        <label class="govuk-label govuk-checkboxes__label" for="type-4">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="type-4" name="filter_status" type="radio" value="cancelled" {% if data.filter_status and data.filter_status == 'cancelled' %}checked="checked" {% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="type-4">
                           Cancelled
                         </label>
                       </div>
 
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="type-6" name="filter_status" type="checkbox" value="rejected" {% if data.filter_status and data.filter_status != '_unchecked' and 'rejected' in data.filter_status %}checked="checked" {% endif %}>
-                        <label class="govuk-label govuk-checkboxes__label" for="type-6">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="type-6" name="filter_status" type="radio" value="rejected" {% if data.filter_status and data.filter_status == 'rejected' %}checked="checked" {% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="type-6">
                           Rejected
                         </label>
                       </div>
@@ -211,9 +208,7 @@ GOV.UK Prototype Kit
         <p class="govuk-body govuk-!-margin-bottom-2">
           Showing <span id="js-case-count"></span> applications {% if query.search %} matching <strong>‘{{query.search}}’</strong>{% endif %}
           {% if data.has_filter == "yes"%}
-            with status {% for filter in data.filter_status %}
-                          <strong>{{filter | capitalize}}</strong>{%if (data.filter_status|length)-1 == (loop.index) and (data.filter_status|length) != 1 %} or {% elseif (data.filter_status|length) != (loop.index)%},{%endif%}
-                          {%endfor%}
+            with status <strong>{{data.filter_status | capitalize}}</strong>
           {% endif %}
           <!-- {% if data.date_range and data.date_range != "any"%} exporting within <strong>{{data.date_range}}</strong>{% endif %} -->
           </p>
