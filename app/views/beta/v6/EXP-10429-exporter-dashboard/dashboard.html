@@ -115,7 +115,7 @@ GOV.UK Prototype Kit
     </div>
     <div class="govuk-grid-column-one-third">
       <div class="defra-filter--action" style="display:none">
-        <button id="defra-filter--button" class="govuk-button govuk-button--secondary govuk-!-margin-top-6 {% if data.has_filter == 'yes'%}defra-filter-button--active{% endif%}" type="button" aria-expanded="false" ><span class="defra-filter--button-content">Show filters</span><span class="defra-filter__icon" ></span></button>
+        <button id="defra-filter--button" class="govuk-button govuk-button--secondary govuk-!-margin-top-6 {% if data.has_filter == 'yes' and data.filter_status != 'any'%}defra-filter-button--active{% endif%}" type="button" aria-expanded="false" ><span class="defra-filter--button-content">Show filters</span><span class="defra-filter__icon" ></span></button>
       </div>
     </div>
   </div>
@@ -132,6 +132,12 @@ GOV.UK Prototype Kit
                   </legend>
                   <div class="govuk-grid-row">
                   <div class="govuk-radios govuk-radios--small govuk-grid-column-one-half">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="type-9" name="filter_status" type="radio" value="any" {% if (data.filter_status and data.filter_status == 'any') or  not data.filter_status %}checked="checked" {% endif %}>
+                      <label class="govuk-label govuk-radios__label" for="type-9">
+                        Any status
+                      </label>
+                    </div>
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="type-9" name="filter_status" type="radio" value="draft" {% if data.filter_status and data.filter_status == 'draft' %}checked="checked" {% endif %}>
                       <label class="govuk-label govuk-radios__label" for="type-9">
@@ -158,6 +164,12 @@ GOV.UK Prototype Kit
                       </div>
                       </div>
                       <div class="govuk-radios govuk-radios--small govuk-grid-column-one-half">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="type-2" name="filter_status" type="radio" value="certifier action" {% if data.filter_status and data.filter_status == 'certifier action' %}checked="checked" {% endif %}>
+                          <label class="govuk-label govuk-radios__label" for="type-2">
+                            Certifier action
+                          </label>
+                        </div>
                       <div class="  govuk-radios__item">
                         <input class="govuk-radios__input" id="type-8" name="filter_status" type="radio" value="completed" {% if data.filter_status and data.filter_status == 'completed' %}checked="checked" {% endif %}>
                         <label class="govuk-label govuk-radios__label" for="type-8">
@@ -203,7 +215,7 @@ GOV.UK Prototype Kit
       </div>
     </div>
     <div class="govuk-grid-column-full">
-      {% if data.has_filter == "yes" or query.search %}
+      {% if (data.has_filter == "yes" and data.filter_status != 'any') or query.search %}
       <div class="filter-tag--wrapper govuk-!-margin-bottom-6" data-module="track-click">
         <p class="govuk-body govuk-!-margin-bottom-2">
           Showing <span id="js-case-count"></span> applications {% if query.search %} matching <strong>‘{{query.search}}’</strong>{% endif %}
@@ -253,7 +265,7 @@ GOV.UK Prototype Kit
         {% for app in data.applications %}
 
         {%
-        if (not query.search and data.has_filter != "yes")
+        if ((not query.search and data.has_filter != "yes") or data.filter_status == "any")
         or (query.search and (query.search) == (app.applicationID))
         or (query.search and (query.search) == (app.destination))
         or (query.search and (query.search) == (app.reference))
