@@ -24,7 +24,59 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/form-finder";
 @import "components/summary-card";
 @import "components/filter";
+@import "components/date-picker";
 
+
+.link-button, .link-button:visited{
+    background: none !important;
+    color: #005ea5;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    border-bottom: 1px solid #005ea5;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.defra-link-button, .defra-link-button:visited{
+    background: none !important;
+    color: #005ea5;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline !important;
+    -webkit-font-smoothing: antialiased;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+    box-shadow: none;
+    display:inline-block;
+}
+.defra-link-button--inline{
+  margin-top: 8px;
+  margin-left: 15px;
+}
+// .govuk-radios--small .govuk-radios__label::before {
+//     top: 8px !important;
+//     width: 24px !important;
+//     height: 24px !important;
+// }
+// .govuk-radios--small .govuk-radios__label::after {
+//     top: 15px!important;
+//     left: 7px!important;
+//     border-width: 5px!important;
+// }
+// @media (min-width: 40.0625em){
+// .govuk-radios--small .govuk-radios__label {
+//     padding: 11px 15px 10px 1px !important;
+// }
+// }
+//
+// .govuk-radios--small .govuk-radios__label {
+//     margin-top: -2px !important;
+//     padding: 13px 15px 13px 1px !important;
+//     float: left !important;
+// }
 .govuk-summary-list__row-error {
   padding-left: 15px;
   border-left: 5px solid #d4351c;
@@ -60,10 +112,6 @@ $govuk-assets-path: '/govuk/assets/';
 }
 // 7006 ehc
 
-.govuk-radios.govuk-radios--small.govuk-radios--inline {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #bfc1c3;
-}
 .table__cell-status{width:146px;}
 .link-button {
   background: none !important;
@@ -83,39 +131,7 @@ $govuk-assets-path: '/govuk/assets/';
   padding-top:5px;
   margin-left:10px
 }
-.govuk-radios__input {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  margin: 0;
-  opacity: 0;
-}
 
-.govuk-radios__input + .govuk-radios__label::before {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  background: transparent;
-}
-
-.govuk-radios__label {
-  display: inline-block;
-  margin-bottom: 0;
-  padding: 8px 15px 5px!important;
-  cursor: pointer;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-}
 
 .margin-top-45 {
   margin-top: 45px;

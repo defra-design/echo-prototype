@@ -60,7 +60,11 @@
     border-color: #4c2c92;
     max-width: 100px;
   }
-
+  &.status-tag--approved {
+    color: #00703C;
+    background: #FFF;
+    border: 3px solid #00703C;
+  }
 
 
 

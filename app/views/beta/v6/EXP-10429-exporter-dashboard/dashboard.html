@@ -190,48 +190,7 @@ GOV.UK Prototype Kit
                 </fieldset>
               </div>
             </div>
-            <div class="govuk-grid-column-one-third ">
-              <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  <span class="govuk-visually-hidden">filter by </span> Export date
-                </legend>
-                <div class="govuk-radios govuk-radios--small">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="date_range" name="date_range" type="radio" value="any" {%if data.date_range and "any" in data.date_range %}checked="checked"{%endif%}>
-                    <label class="govuk-label govuk-radios__label" for="date_range">
-                      Any
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="date_range-1" name="date_range" type="radio" value="24 hours" {%if data.date_range and "24 hours" in data.date_range %}checked="checked"{%endif%}>
-                    <label class="govuk-label govuk-radios__label" for="date_range-1">
-                      Within 24 hours
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="date_range-2" name="date_range" type="radio" value="5 days" {%if data.date_range and "5 days" in data.date_range %}checked="checked"{%endif%}>
-                    <label class="govuk-label govuk-radios__label" for="date_range-2">
-                      Next 5 days
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="date_range-3" name="date_range" type="radio" value="14 days" {%if data.date_range and "14 days" in data.date_range %}checked="checked"{%endif%}>
-                    <label class="govuk-label govuk-radios__label" for="date_range-3">
-                      Next 14 days
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="date_range-4" name="date_range" type="radio" value="custom" {%if data.date_range and "custom" in data.date_range %}checked="checked"{%endif%}>
-                    <label class="govuk-label govuk-radios__label" for="date_range-4">
-                      Custom date range
-                    </label>
-                  </div>
-                </div>
-
-              </fieldset>
-            </div>
-            </div>
+            <div class="govuk-grid-column-one-third "></div>
             <div class="govuk-grid-column-full">
                 <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button" name="has_filter" value="yes">
                   Apply filter
@@ -298,14 +257,14 @@ GOV.UK Prototype Kit
 
         {% for app in data.applications %}
 
-      {%
-      if (not query.search and data.has_filter != "yes")
-      or (query.search and (query.search|upper) in (app.applicationID|upper))
-      or (query.search and (query.search|upper) in (app.destination|upper))
-      or (query.search and (query.search|upper) in (app.reference|upper))
-      or (query.search and (query.search|upper) in (app.certificate|upper))
-      or app.status in data.filter_status
-      %}
+        {%
+        if (not query.search and data.has_filter != "yes")
+        or (query.search and (query.search) == (app.applicationID))
+        or (query.search and (query.search) == (app.destination))
+        or (query.search and (query.search) == (app.reference))
+        or (query.search and (query.search) == (app.certificate))
+        or app.status in data.filter_status
+        %}
         <tr class="govuk-table__row result">
           <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
             <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed&is_pending_replacement=yes" class="govuk-link govuk-link--no-visited-state">{{app.applicationID}}</a>
@@ -406,5 +365,12 @@ GOV.UK Prototype Kit
       }
     })
   })
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    if (document.querySelectorAll('.sm-daterange-component').length) {
+      SmDateRangePicker('#from', '#to').init();
+    }
+  });
 </script>
 {% endblock %}
