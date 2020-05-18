@@ -364,14 +364,14 @@ GOV.UK Prototype Kit
       <div class="filter-tag--wrapper govuk-!-margin-bottom-6" data-module="track-click">
         <p class="govuk-body govuk-!-margin-bottom-2">
           Showing <span id="js-case-count"></span> applications {% if query.search %} matching <strong>‘{{query.search}}’</strong>{% endif %}
-          {% if data.has_filter == "yes" and data.filter_status != 'any'%}
+          {% if data.has_filter == "yes" data.filter_status != 'any' %}
             with status <strong>{{data.filter_status | capitalize}}</strong>
           {% endif %}
           {% if data.date_range and data.date_range != "any"%} exporting {% if data.date_range == "custom" %}from <strong>2 Jan 2020 </strong> to <strong>30 Jan 2020 </strong> {% else %}<strong>{{data.date_range}}</strong>{% endif %}{% endif %}
           <!-- {% if data.date_range and data.date_range != "any"%} exporting within <strong>{{data.date_range}}</strong>{% endif %} -->
           </p>
           <p class="govuk-body">
-          <a href="dashboard?filter_status=&has_filter=" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" data-module="govuk-button">
+          <a href="dashboard?filter_status=&has_filter=&date_range=" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" data-module="govuk-button">
             Clear
             {% if data.filter_status and query.search %}
             search and filter
