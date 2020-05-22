@@ -11,7 +11,7 @@ env.addFilter('shorten', function(str, count) {
 
   // ADD extra routing here if needed.
   require('./EXP-9235-task-list-improvements.js')(router)
-
+  require('./blocks.js')(router)
 
   const fs = require('fs');
 

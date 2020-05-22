@@ -5,7 +5,9 @@ GOV.UK Prototype Kit
 {% block beforeContent %}
 <div class="login-nav login-border">
   <ul class="login-nav__list">
+
     <li class="login-nav__list-item" id="Nav-DisplayName">Ann Cooper</li>
+      {% if data.show_messages_tab=="yes"%}<li class="login-nav__list-item" style="position:relative; top:-5px"> | <a href="#" class="govuk-link login-nav__link govuk-link--no-visited-state profile">Messages <span id="notifications" class="moj-notification-badge">10</span></a></li>{% endif %}
     <li class="login-nav__list-item"> | <a href="https://identity-management-app.herokuapp.com/manage/team-members/services-on-team-member-admin-account_company-exports?serviceLine=Exporter%20Service&serviceRole=Exporter&numUsers=1&numAgents=0&numServices=1&multiOrg=no&parentChild=parent"
         class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a>|</li>
     <li class="login-nav__list-item"><a href="#ß" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
@@ -19,6 +21,23 @@ GOV.UK Prototype Kit
 </style>
 
 <style>
+  /* ==========================================================================
+   #NOTIFICATION BADGE
+   ========================================================================== */
+
+.moj-notification-badge {
+
+    color: #fff;
+    display: inline-block;
+    min-width: 15px;
+    padding: 5px 8px 2px 8px;
+    border-radius: 75px;
+    background-color: #d4351c;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
   #filter-cert-org #filter-container {
         bottom: 0px;
         color: rgb(255, 255, 255);
@@ -93,8 +112,16 @@ GOV.UK Prototype Kit
 </style>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
     <h1 class="govuk-heading-xl">Your applications</h1>
-    <a class="govuk-button" href="select-certificate">Start a new application</a>
+    {% if data.show_alert == "yes"%}
+    <div class="defra-alert defra-alert--info">
+      <p class="govuk-body">Block application <a href="application"><strong>345235434553</strong></a> has used 48 of 50 certificates</p>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a href="dashboard?show_alert=no&show_block_alert=no">Dismiss notification</a> </p>
+    </div>
+    {% endif %}
+    <a class="govuk-heading-m govuk-link--no-visited-state" href="select-certificate">Start a new application</a>
+
   </div>
   </div>
   <div class="govuk-grid-row">
@@ -102,7 +129,7 @@ GOV.UK Prototype Kit
       <form method="GET">
         <div class="search-wrapper govuk-form-group">
           <label for="search-reservations" class="govuk-label">
-            Search by certificate ID, application ID, destination or reference number
+            Search by reference, destination, certificate or application number
           </label>
           <div class="search-input-wrapper">
             <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
@@ -364,7 +391,7 @@ GOV.UK Prototype Kit
       <div class="filter-tag--wrapper govuk-!-margin-bottom-6" data-module="track-click">
         <p class="govuk-body govuk-!-margin-bottom-2">
           Showing <span id="js-case-count"></span> applications {% if query.search %} matching <strong>‘{{query.search}}’</strong>{% endif %}
-          {% if data.has_filter == "yes" data.filter_status != 'any' %}
+          {% if data.has_filter == "yes" and data.filter_status != 'any'%}
             with status <strong>{{data.filter_status | capitalize}}</strong>
           {% endif %}
           {% if data.date_range and data.date_range != "any"%} exporting {% if data.date_range == "custom" %}from <strong>2 Jan 2020 </strong> to <strong>30 Jan 2020 </strong> {% else %}<strong>{{data.date_range}}</strong>{% endif %}{% endif %}

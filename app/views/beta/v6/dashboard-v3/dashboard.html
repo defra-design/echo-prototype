@@ -102,7 +102,7 @@ GOV.UK Prototype Kit
       <form method="GET">
         <div class="search-wrapper govuk-form-group">
           <label for="search-reservations" class="govuk-label">
-            Search by reference, destination, certificate or application number
+            Search by reference, destination, EHC, certificate or application number
           </label>
           <div class="search-input-wrapper">
             <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
@@ -138,8 +138,8 @@ GOV.UK Prototype Kit
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="type-9" name="filter_status" type="radio" value="draft" {% if data.filter_status and data.filter_status == 'draft' %}checked="checked" {% endif %}>
-                      <label class="govuk-label govuk-radios__label" for="type-9">
+                      <input class="govuk-radios__input" id="type-20" name="filter_status" type="radio" value="draft" {% if data.filter_status and data.filter_status == 'draft' %}checked="checked" {% endif %}>
+                      <label class="govuk-label govuk-radios__label" for="type-20">
                         Draft
                       </label>
                     </div>
@@ -394,49 +394,64 @@ GOV.UK Prototype Kit
 
     <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <table class="govuk-table">
+    <table class="govuk-table responsive-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header">
             <div class="applicationRef-column" >Application</div>
           </th>
+          <th class="govuk-table__header">EHC</th>
           <th class="govuk-table__header">Reference</th>
           <th class="govuk-table__header">Destination</th>
-          <th class="govuk-table__header">Submitted date</th>
+          <th class="govuk-table__header">Submitted on</th>
           <th class="govuk-table__header">Status</th>
+          <th class="govuk-table__header"></th>
         </tr>
       </thead>
       <tbody>
 
         {% for app in data.applications %}
-
+        {% if (data.has_filter != "yes" or data.filter_status == "any") or app.status in data.filter_status %}
         {%
-        if ((not query.search and data.has_filter != "yes") or data.filter_status == "any")
+        if not query.search
         or (query.search and (query.search) == (app.applicationID))
         or (query.search and (query.search) == (app.destination))
         or (query.search and (query.search) == (app.reference))
+        or (query.search and (query.search) == (app.EHC))
         or (query.search and (query.search) == (app.certificate))
-        or app.status in data.filter_status
         %}
+
         <tr class="govuk-table__row result">
-          <th id="1721147986456-appRef" class="b govuk-table__cell applicationRef-column" scope="row">
-            <a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed&is_pending_replacement=yes" class="govuk-link govuk-link--no-visited-state">{{app.applicationID}}</a>
+          <th id="1721147986456-appRef" class="govuk-table__cell applicationRef-column table-header" scope="row">
+            <a href="application?id={{app.index}}" class="govuk-link govuk-link--no-visited-state">  <span class="table-heading table-heading-full" aria-hidden="true">Case ID </span> {{app.applicationID}}</a>
           </th>
           <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            <span class="table-heading" aria-hidden="true">EHC </span>
+            {{app.EHC}}
+          </td>
+          <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
+            <span class="table-heading" aria-hidden="true">Reference </span>
             {{app.reference}}
           </td>
           <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            <span class="table-heading" aria-hidden="true">Destination </span>
             {{app.destination}}
           </td>
           <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            <span class="table-heading" aria-hidden="true">Submitted</span>
             {{app.date}}
           </td>
           <td id="1721147986456-status" class="govuk-table__cell" scope="row">
-            <div class="status-tag status-tag--{{app.status | lower}}">
+            <span class="table-heading" aria-hidden="true">Status</span>
+            <div class="app-status-tag app-status-tag--{{app.tag | lower}}">
               {{app.status}}
             </div>
           </td>
+          <td id="1721147986456-submitted" class="govuk-table__cell submitted-column" scope="row">
+            <a href="clone?id={{app.index}}" class="govuk-link govuk-link--no-visited-state">Clone</a>
+          </td>
         </tr>
+        {% endif %}
         {% endif %}
         {% endfor %}
 

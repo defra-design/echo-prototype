@@ -3,6 +3,7 @@
 	"version": "1",
 	"printable": "no",
 	"is_multiple": "yes",
+	"allow_blocks": "no",
 	"destination": "United Arab Emirates",
 	"certificate_name": "Export cats from United Kingdom to Australia",
 	"commodities": [{

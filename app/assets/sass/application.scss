@@ -25,7 +25,8 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/summary-card";
 @import "components/filter";
 @import "components/date-picker";
-
+@import "components/status-tags-new";
+@import "components/responsive-tables";
 
 .link-button, .link-button:visited{
     background: none !important;

@@ -1,0 +1,50 @@
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h3 class="govuk-fieldset__heading">
+        {{field.label}} {% if field.required == 'no'%}(optional ){%endif%}
+      </h3>
+
+      {% if field.hint %}<span class="govuk-hint">{{field.hint}}</span>{% endif %}
+    </legend>
+<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      {% for radio in field.options %}
+      {% if loop.index == (field.options | length) and (field.options | length) > 2 %}
+      <div class="govuk-radios__divider">or</div>
+      {% endif %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="{{field.id}}" name="{{field.name}}" type="radio" value="{{radio.value}}" {% if data[field.name] == radio.value %}checked="checked"{%endif%} {% if radio.conditional =="yes" %}data-aria-controls="conditional-{{field.id}}-conditional"{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="{{radio.value}}">
+          {{radio.title}}
+        </label>
+      </div>
+      {% if radio.conditional =="yes" %}
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-{{field.id}}-conditional">
+        <div class="govuk-form-group govuk-!-margin-bottom-6">
+          {% if radio.conditional_paragraph %}<p class="govuk-body">{{radio.conditional_paragraph }}</p>{% endif %}
+          {% for cfield in radio.conditional_fields %}
+          {% if cfield.type=="textarea"%}
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="7006EHC-0">{{cfield.label}} {% if cfield.required == 'no'%}{%endif%}</label>
+            {% if cfield.hint %}<div class="govuk-hint">{{cfield.hint}}</div>{% endif %}
+            <textarea class="govuk-textarea js-question" id="{{cfield.id}}" autocomplete="on" name="{{cfield.name}}" rows="{{cfield.rows}}" autofocus="autofocus" {% if cfield.default %}data-default="{{cfield.default}}"{% endif %} spellcheck="false" {% if query.change=="yes" or query.show_answers == "yes" %}data-filled="yes"{%endif%}>{% if query.change=="yes" %}{{ data[cfield.name] or ''}}{%endif%}</textarea>
+          </div>
+          {% elseif cfield.type=="text" %}
+          <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="{{field.id}}">
+            {{cfield.label}} {% if cfield.required == 'no'%}{%endif%}
+          </label>
+          {% if cfield.hint %}<span id="{{field.id}}-hint" class="govuk-hint">{{cfield.hint}}</span>{% endif %}
+          <input class="govuk-input js-question" id="{{cfield.id}}" name="{{cfield.name}}" type="cfield.type" {% if cfield.rows %}rows="{{cfield.rows}}"{%endif%} aria-describedby="{{field.id}}-hint"  {% if query.change=="yes" or query.show_answers == "yes" %}value="{{data[cfield.name] or ''}}" data-filled="yes"{%endif%}>
+          </div>
+          {% endif %}
+          {% endfor%}
+        </div>
+
+      </div>
+      {% endif %}
+
+    {% endfor %}
+</div>
+</fieldset>
+</div>
