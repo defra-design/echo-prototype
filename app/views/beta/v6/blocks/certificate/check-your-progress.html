@@ -149,7 +149,7 @@ GOV.UK Prototype Kit
             {% if data.is_block_application != "no" %}
             <div class="defra-alert defra-alert--info">
               {% if data.is_blank_block == 'yes'%}
-              <p class="govuk-body govuk-!-margin-bottom-0">This is a block application of <strong>{{data.certificate_request_amount or '50'}} blank certificates</strong>. You do not need to fill in this section. <a href="need-blanks">I want to fill in some sections</a></p>
+              <p class="govuk-body govuk-!-margin-bottom-0">This is a block application for <strong>{{data.certificate_request_amount or '50'}} blank certificates</strong>. You do not need to fill in this section, but you can go back if you need to <a href="need-blanks"> add some information to these certificates</a>.</p>
               {%else%}
               <p class="govuk-body">This is a block application. Anything you enter in this section will appear on <strong>all {{data.certificate_request_amount or '50'}} certificates</strong>. </p>
               <p class="govuk-body govuk-!-margin-bottom-0"> You'll be able to leave any questions about a specific consignment blank. Your certifer will fill them in for each export.</p>
