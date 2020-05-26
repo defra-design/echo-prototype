@@ -1,4 +1,38 @@
 [{
+	"_id": "5ebdac91354c762a2760b31f",
+	"index": 4,
+	"caseID": "20/58116",
+	"applicationID": 180887274722,
+	"name": "Nash Ayers",
+	"exporter": "FLEXIGEN LTD",
+	"importer": "EXOSWITCH LTD",
+	"destination": "Australia",
+	"EHC": "6969",
+"PDF" : "ehc-6969ehc-8.1.pdf",
+	"cert_info": "Export dairy and dairy products to Australia",
+	"certificate": "19/7/969766",
+	"status": "draft",
+	"tag": "grey",
+	"date": "",
+	"reference": "PO 45406 Australia"
+},{
+	"_id": "5ebdac911bda59ad750fc13c",
+	"index": 6,
+	"caseID": "19/13473",
+	"applicationID": 120664109150,
+	"name": "Ilene Harrison",
+	"exporter": "SOFTMICRO LTD",
+	"importer": "ISOPLEX LTD",
+	"destination": "Australia",
+	"EHC": "6969",
+"PDF" : "ehc-6969ehc-8.1.pdf",
+	"cert_info": "Export dairy and dairy products to Australia",
+	"certificate": "20/8/210230",
+	"status": "draft",
+	"tag": "grey",
+	"date": "",
+	"reference": "PO 86609 Australia"
+}, {
 	"_id": "5ebdac914668ff03d746e00e",
 	"index": 0,
 	"caseID": "20/32813",
@@ -26,12 +60,12 @@
 	"importer": "HARMONEY",
 	"destination": "China",
 	"EHC": "7006",
-"PDF" : "ehc-7006ehc-3.0.pdf",
-"cert_info": "Export pig meat from Great Britain to China",
+	"PDF" : "ehc-7006ehc-3.0.pdf",
+	"cert_info": "Export pig meat from Great Britain to China",
 	"certificate": "19/2/194689",
-	"status": "draft",
-	"tag": "grey",
-	"date": "",
+	"status": "Certifier action",
+	"tag": "purple",
+	"date": "16 May 2020",
 	"reference": "PO 36790 CH"
 }, {
 	"_id": "5ebdac9116e395b03467b8fb",
@@ -66,24 +100,7 @@
 	"tag": "turquoise",
 	"date": "25 Apr 2020",
 	"reference": "PO 23905 China"
-}, {
-	"_id": "5ebdac91354c762a2760b31f",
-	"index": 4,
-	"caseID": "20/58116",
-	"applicationID": 180887274722,
-	"name": "Nash Ayers",
-	"exporter": "FLEXIGEN LTD",
-	"importer": "EXOSWITCH LTD",
-	"destination": "Australia",
-	"EHC": "6969",
-"PDF" : "ehc-6969ehc-8.1.pdf",
-	"cert_info": "Export dairy and dairy products to Australia",
-	"certificate": "19/7/969766",
-	"status": "draft",
-	"tag": "grey",
-	"date": "",
-	"reference": "PO 45406 Australia"
-}, {
+},  {
 	"_id": "5ebdac911a5def40d40185b6",
 	"index": 5,
 	"caseID": "19/13207",
@@ -99,24 +116,7 @@
 	"tag": "grey",
 	"date": "20 Apr 2020",
 	"reference": "PO 52402 USA"
-}, {
-	"_id": "5ebdac911bda59ad750fc13c",
-	"index": 6,
-	"caseID": "19/13473",
-	"applicationID": 120664109150,
-	"name": "Ilene Harrison",
-	"exporter": "SOFTMICRO LTD",
-	"importer": "ISOPLEX LTD",
-	"destination": "Australia",
-	"EHC": "6969",
-"PDF" : "ehc-6969ehc-8.1.pdf",
-	"cert_info": "Export dairy and dairy products to Australia",
-	"certificate": "20/8/210230",
-	"status": "draft",
-	"tag": "grey",
-	"date": "",
-	"reference": "PO 86609 Australia"
-}, {
+},{
 	"_id": "5ebdac9112a2fec16a6dfb56",
 	"index": 7,
 	"caseID": "19/56501",
