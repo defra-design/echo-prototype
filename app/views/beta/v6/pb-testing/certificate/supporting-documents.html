@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Attach a file
+Add attachments
 {% endblock %}
 {% block beforeContent %}
 {{super()}}
@@ -24,7 +24,7 @@ Attach a file
       </div>
     </div>
     {% endif %}
-    <h1 id="supplementary-documents" class="govuk-heading-xl">Attach a file</h1>
+    <h1 id="supplementary-documents" class="govuk-heading-xl">Add attachments</h1>
     <p class="govuk-body">You can upload files to attach them your application.</p>
     <p class="govuk-body">Attach a list if you need to include 4 or more:</p>
 
@@ -34,7 +34,7 @@ Attach a file
       <li id="point_1">cutting plants</li>
       <li id="point_1">processing or production plants</li>
     </ul>
-    <p class="govuk-body">Your certifer and APHA will be able to view any files you upload here.</p>
+    <p class="govuk-body">Your certifer and APHA can view any files you upload here. You do not have to send them by email.</p>
 
     <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
       <div class="app-multi-file-upload app-multi-file-upload--enhanced">
@@ -46,7 +46,7 @@ Attach a file
         <div class="app-multi-file-upload__upload">
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="documents">
-              Upload a file
+              Upload files
             </label>
             <p class="govuk-hint">You can select multiple files to upload at the same time.</p>
 
