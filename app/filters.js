@@ -11,7 +11,6 @@ module.exports = function (env) {
   filters.appInfo = function(id,key) {
       var app = {};
       cases_list.forEach(function(item){
-          console.log(item.index)
           if (item.index == id){
             app = item;
           }

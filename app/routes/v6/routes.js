@@ -10,6 +10,7 @@ env.addFilter('shorten', function(str, count) {
 
 
   // ADD extra routing here if needed.
+  require('./pb-testing.js')(router)
   require('./EXP-9235-task-list-improvements.js')(router)
   require('./blocks.js')(router)
 
@@ -113,6 +114,7 @@ env.addFilter('shorten', function(str, count) {
 
   router.post('/' + base_url + '*/certificate/exa/certifier-confirm-address', function(req, res) {
     req.session.data.file_id_count += 1
+    
     if (req.body.is_certifier_address_correct == "yes") {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress');
     } else {

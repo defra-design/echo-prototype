@@ -1,0 +1,491 @@
+{
+	"certificate_code": "5725EHC",
+	"version": "1",
+	"printable": "no",
+	"destination": "China",
+	"certificate_name": "Export sheepskins to China",
+	"allow_blocks": "yes",
+	"has_repeatable": "yes",
+	"sample_PDF": "ehc-5725ehc-2.992.pdf",
+	"commodities": [{
+		"group": "meat",
+		"options": [{
+			"title": "Bovine",
+			"name": "Bovine"
+		}]
+	}],
+	"pages": [{
+			"page": 2,
+			"title": "When were the animals slaughtered?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "When were the animals slaughtered?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=3",
+				"prev": "",
+				"product_page": "no",
+				"product_max": "0",
+				"fields": [{
+					"type": "text",
+					"label": "Slaughter date",
+					"hint": "Enter the date, or range of dates",
+					"required": "no",
+					"id": "slaughter_dates",
+					"name": "slaughter_dates",
+					"default": "date"
+				}]
+			}
+		}, {
+			"page": 3,
+			"title": "Where was the product processed?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "Where was the product processed?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=4",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name, address and approval number of processing plant",
+					"hint": "",
+					"required": "no",
+					"id": "processing_raw_milk",
+					"name": "processing_raw_milk",
+					"rows": 4,
+					"default": "ABC limited, France SA, Paris 039432. Registration number - FR3945-2342"
+				}]
+			}
+		},
+		{
+			"page": 4,
+			"title": "Where was the export product processed?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "Where was the export product processed?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=5",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name, address and approval number of processing establishment",
+					"hint": "",
+					"required": "no",
+					"id": "processing_export_product",
+					"name": "processing_export_product",
+					"rows": 4,
+					"default": "ABC limited UK, Wendsbury, BM1 3XE (UK.HD.323.323)"
+				}]
+			}
+		},
+		{
+			"page": 1,
+			"title": "What are the details of your final product?",
+			"type": "EHC",
+			"group_name": "Your product",
+			"content": {
+				"header": "What are the details of your final product?",
+				"caption": "",
+				"paragraph": "If an import permit has been issued to you, enter the details below.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Description of the products",
+						"hint": "Include details such as product name and commodity type",
+						"required": "no",
+						"id": "description_product",
+						"name": "description_product",
+						"allow": "past",
+						"default": "003453232"
+					},
+					{
+						"type": "text",
+						"label": "Manufacturing dates of the product",
+						"hint": "Enter a date of range of dates as applicable (in format DD/MM/YY)",
+						"required": "no",
+						"id": "manufacturing_dates_product",
+						"name": "manufacturing_dates_product",
+						"allow": "past",
+						"default": "01/02/2020"
+					}
+				]
+			}
+		},
+		{
+			"page": 6,
+			"title": "What are the consignment details?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "What are the consignment details?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=7",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Identification marks",
+						"hint": "",
+						"required": "no",
+						"id": "id_marks",
+						"name": "id_marks",
+						"default": "8544 cases"
+					},
+					{
+						"type": "text",
+						"label": "Type and number of packages",
+						"hint": "",
+						"required": "no",
+						"id": "package_type_number",
+						"name": "package_type_number",
+						"default": "9262.6kg"
+					},
+					{
+						"type": "text",
+						"label": "Net weight of the consignment",
+						"hint": "Provide the number and the units of measurement",
+						"required": "no",
+						"id": "units_of_measurement",
+						"name": "units_of_measurement",
+						"default": ""
+					},
+					{
+						"type": "text",
+						"label": "Seal numbers",
+						"hint": "Multiple seal numbers can be comma separated",
+						"required": "no",
+						"id": "seal_numbers",
+						"name": "seal_numbers",
+						"default": "90485034,3290480923"
+					}
+				]
+			}
+		},
+		{
+			"page": 7,
+			"title": "What are the details of the exporter?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "What are the details of the exporter?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "page?id=8",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of exporter",
+					"hint": "",
+					"required": "no",
+					"id": "exporter_details_address",
+					"name": "exporter_details_address",
+					"default": ""
+				}]
+			}
+		},
+		{
+			"page": 8,
+			"title": "What is the means of transportation?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "What is the means of transportation?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=9",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Means of transportation",
+					"hint": "Enter the method of travel and the identification of the transport. For example Airplane ZZ1234",
+					"required": "no",
+					"id": "transport_means",
+					"name": "transport_means",
+					"default": "Sea freight"
+				}]
+			}
+		},
+		{
+			"page": 9,
+			"title": "Who is receiving the product?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "Who is receiving the product?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=10",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Name and address of consignee",
+					"hint": "Provide details of the person the consignment will be shipped to, or their representative.",
+					"required": "no",
+					"id": "consignee_details",
+					"name": "consignee_details",
+					"rows": 4,
+					"default": "ABC limited Australia, 637 Rowley Street, Melbourne, CIC2002 "
+				}]
+			}
+		},
+		{
+			"page": 10,
+			"title": "What is the place of final destination?",
+			"type": "EHC",
+			"group_name": "Your consignment",
+			"content": {
+				"header": "What is the place of final destination?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Destination port",
+					"hint": "",
+					"required": "no",
+					"id": "consignee_details",
+					"name": "consignee_details",
+					"default": "ABC limited Australia, 637 Rowley Street, Melbourne, CIC2002 "
+				}]
+			}
+		},
+		{
+			"page": "supporting-documents",
+			"title": "Supporting documents",
+			"type": "FILE",
+			"optional": "yes",
+			"content": {
+				"fields": []
+			}
+		},
+		{
+			"page": 11,
+			"exa": "yes",
+			"type": "EXA",
+			"title": "Where will certification take place?",
+			"group_name": "Certification",
+			"content": {
+				"header": "Where will certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=12",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					],
+					"default": "England"
+				}]
+			}
+		}, {
+			"page": 12,
+			"exa": "yes",
+			"type": "EXA",
+			"title": "What is the planned date of certification?",
+			"group_name": "Certification",
+			"content": {
+				"header": "What is the planned date of certification?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned date of certification",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "certificate_date",
+					"name": "certificate_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
+		}, {
+			"page": 17,
+			"exa": "yes",
+			"title": "Who is exporting the product?",
+			"type": "EXA",
+			"group_name": "Export details",
+			"content": {
+				"header": "Who is exporting the product?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=13",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Exporter name",
+					"hint": "",
+					"required": "yes",
+					"id": "exporter_name",
+					"name": "exporter_name",
+					"default": "ABC ltd"
+				}]
+			}
+		}, {
+			"page": 13,
+			"exa": "yes",
+			"type": "EXA",
+			"title": "What is the planned date of export?",
+			"group_name": "Export details",
+			"content": {
+				"header": "What is the planned date of export?",
+				"caption": "",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"next": "page?id=19",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned export date",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
+		}, {
+			"page": 19,
+			"exa": "yes",
+			"title": "What is the port of departure?",
+			"type": "EXA",
+			"group_name": "Export details",
+			"content": {
+				"header": "What is the port of departure?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Port of departure",
+					"hint": "Enter the port or airport of departure",
+					"required": "yes",
+					"id": "port_of_departure",
+					"name": "port_of_departure",
+					"default": "Southampton"
+				}]
+			}
+		},
+		{
+			"page": 15,
+			"exa": "yes",
+			"type": "EXA",
+			"title": "What is the origin of the product?",
+			"group_name": "Disease clearance",
+			"content": {
+				"header": "What is the origin of the product?",
+				"caption": "",
+				"paragraph": "Provide details of the origin of the animals from which the product is derived. These may originate from more than one region. We use this information to help control the spread of disease.",
+				"next": "page?id=16",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "checkbox",
+					"label": "Origin",
+					"hint": "Select all that apply:",
+					"required": "yes",
+					"id": "origin",
+					"name": "origin",
+					"options": [{
+							"title": "Great Britain",
+							"name": "Great Britain"
+						}, {
+							"title": "Northern Ireland",
+							"name": "Northern Ireland"
+						},
+						{
+							"title": "Outside the UK",
+							"name": "Outside the UK"
+						}
+					],
+					"default": "Great Britain"
+				}]
+			}
+		},
+		{
+			"page": 16,
+			"exa": "yes",
+			"type": "EXA",
+			"title": "What are the processing details?",
+			"group_name": "Disease clearance",
+			"content": {
+				"header": "What are the processing details?",
+				"caption": "",
+				"paragraph": "",
+				"next": "page?id=19",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "checkbox",
+					"label": "Country of processing",
+					"hint": "Select all that apply:",
+					"required": "yes",
+					"id": "origin",
+					"name": "origin",
+					"options": [{
+							"title": "Great Britain",
+							"name": "Great Britain"
+						}, {
+							"title": "Northern Ireland",
+							"name": "Northern Ireland"
+						},
+						{
+							"title": "Outside the UK",
+							"name": "Outside the UK"
+						}
+					],
+					"default": "Great Britain"
+				}, {
+					"type": "text",
+					"label": "Dates of processing",
+					"hint": "Enter a date or range of dates as applicable. (In format, DD/MM/YY)",
+					"required": "yes",
+					"id": "origin_processing_early_date",
+					"name": "origin_processing_early_date",
+					"allow": "past",
+					"default": ""
+				}]
+			}
+		}
+
+	]
+}
