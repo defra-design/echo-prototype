@@ -266,43 +266,34 @@ GOV.UK Prototype Kit
 
       <div class="app-summary-card ">
         <header class="app-summary-card--header">
-          <h4 class="app-summary-card--title">4. Supporting documents (optional)</h4>
+          <h4 class="app-summary-card--title">4. Attachments (optional)</h4>
         </header>
         <div class="app-summary-card--content">
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
-            {% if (data.uploaded_files | length) > 0 %}
+          {% if (data.uploaded_files | length) > 0 %}
+          <p class="govuk-body">{{data.uploaded_files | length}} file{% if (data.uploaded_files | length) > 1 %}s{% endif %} attached</p>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
+
+
             {% for file in data.uploaded_files %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                File name
-                <br> Description
+                File {{loop.index}}
               </dt>
               <dd class="govuk-summary-list__value">
-                {{file.name}}
-                <br>{{file.description}}
+                <a href="#"><strong>{{file}}</strong></a>
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="supporting-documents?change=yes">
-                  Change<span class="govuk-visually-hidden"> previous application number</span>
+                  Delete<span class="govuk-visually-hidden"> {{file}}</span>
                 </a>
               </dd>
             </div>
+
             {% endfor%}
+            <p class="govuk-body govuk-!-margin-top-6"><a href="supporting-documents?change=yes" class="govuk-link">Add more attachments</a></p>
             {% else %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                File name
-                <br> Description
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No documents uploaded
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="supporting-documents?change=yes">
-                  Change<span class="govuk-visually-hidden"> previous application number</span>
-                </a>
-              </dd>
-            </div>
+            <p class="govuk-body">You have uploaded no attachments</p>
+            <p class="govuk-body"><a href="supporting-documents?change=yes" class="govuk-link">Add attachments</a></p>
             {% endif %}
             <dl>
         </div>
