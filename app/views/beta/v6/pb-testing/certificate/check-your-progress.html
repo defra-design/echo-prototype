@@ -119,16 +119,16 @@ GOV.UK Prototype Kit
 
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span>File attachments (optional)
+          <span class="app-task-list__section-number">4. </span>Attach a file (optional)
         </h2>
         <ul class="app-task-list__items">
-          <p class="govuk-body">Upload any additional information or files for the certifier</p>
+          <p class="govuk-body">Upload files to attach to your application for your certifier to view</p>
           <li class="app-task-list__item">
 
               {% if ech_active != "yes"%}
-                <span class="app-task-list__task-name">upload attachements</span>
+                <span class="app-task-list__task-name">Attach a file</span>
               {% else %}
-                <span class="app-task-list__task-name"><a href="supporting-documents?test=yes" aria-describedby="">Upload attachements</a></span>
+                <span class="app-task-list__task-name"><a href="supporting-documents?test=yes" aria-describedby="">Attach a file</a></span>
                 <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
               {% endif%}
 
