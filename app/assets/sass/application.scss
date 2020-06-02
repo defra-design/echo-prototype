@@ -27,6 +27,10 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/date-picker";
 @import "components/status-tags-new";
 @import "components/responsive-tables";
+@import "components/multi-file-upload";
+@import "components/accessible-autocomplete";
+@import "components/sub-nav";
+
 
 .link-button, .link-button:visited{
     background: none !important;

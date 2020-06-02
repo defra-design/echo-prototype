@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Return to your applications</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      {% if data.is_block_application == "yes" %}Apply for a block of {{ data.certificate_request_amount or "50" }} certificates of{%else%}Apply for{%endif%}  {{db.certificate_code  or "EHC 8270"}}   {% if data.is_block_application == "yes" %}{%endif%}
+    </h1>
+    <span class="govuk-caption-l govuk-!-margin-bottom-8">{{db.certificate_name or "Export fresh or chilled hides and skins of ungulates to the European Union"}}</span>
+    <!-- <p> If this is not correct, <a href="../select-certificate">find another Export Health Certificate</a>
+    </p> -->
+
+
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> About your application
+        </h2>
+        <ul class="app-task-list__items">
+          {% if data.is_block_application == "yes"%}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="exa/certificates " aria-describedby="read-declaration-completed">
+                Number of certificates
+              </a>
+            </span>
+            {% if not data.certificate_request_amount %}
+            <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            {% endif %}
+          </li>
+          {% endif %}
+              {% if (db.commodities | length) > 1 or (db.commodities[0].options | length) > 1 %}
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="exa/your-commodity" aria-describedby="eligibility-completed">
+                    Confirm your commodity
+                  </a>
+                </span>
+                {% if not data.commodity_type %}
+                <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              {% endif %}
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="exa/reference" aria-describedby="eligibility-completed">
+                    Your reference
+                  </a>
+                </span>
+                {% if not data.reference_num %}
+                <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="exa/certifier" aria-describedby="eligibility-completed">
+                    Your certifier
+                  </a>
+                </span>
+                {% if not data.is_certifier_address_correct %}
+                <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+
+
+              {% if db.destination == "EU" %}
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="exa/export-destination" aria-describedby="eligibility-completed">
+                    Export destination
+                  </a>
+                </span>
+
+                {% if not data.export_destination_entry and not data.export_destination %}
+                <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              {% endif %}
+
+            </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Information needed by APHA
+        </h2>
+        <p class="govuk-body govuk-!-margin-left-6">This information does not appear on the certificate.</p>
+        {% set display_type = "EXA" %}
+        {% block tasklistEXA %}{% include "./partials/tasklist-block.html" %}{% endblock %}
+      </li>
+
+      {% set ech_active = "yes"%}
+      <li>
+        <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span>Information for the export health certificate
+        </h2>
+
+
+          {% set display_type = "EHC" %}
+          {% block tasklistEHC %}{% include "./partials/tasklist-block.html" %}{% endblock %}
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">4. </span>File attachments (optional)
+        </h2>
+        <ul class="app-task-list__items">
+          <p class="govuk-body">Upload any additional information or files for the certifier</p>
+          <li class="app-task-list__item">
+
+              {% if ech_active != "yes"%}
+                <span class="app-task-list__task-name">upload attachements</span>
+              {% else %}
+                <span class="app-task-list__task-name"><a href="supporting-documents?test=yes" aria-describedby="">Upload attachements</a></span>
+                <strong class="govuk-tag app-task-list__task-completed">{% if (data.uploaded_files | length) > 0 %}Documents added{% else %}None added{% endif %}</strong>
+              {% endif%}
+
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">5. </span> Check and submit your EHC information
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+              {% if ech_active != "yes"%}
+                <span class="app-task-list__task-name">Check your answers and submit application</span>
+              {% else %}
+                <span class="app-task-list__task-name"><a href="check-your-answers">Check your answers and submit application</a></span>
+                <strong class="govuk-tag app-task-list__task-completed not-started">Not started</strong>
+              {% endif%}
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</div>
+<form action="6" method="POST" enctype="application/x-www-form-urlencoded">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-body">
+      <a href="../dashboard?saveAndResumeLater=Save+and+continue+later" class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" >Save and continue later</a>
+    </div>
+  </div>
+</form>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}
