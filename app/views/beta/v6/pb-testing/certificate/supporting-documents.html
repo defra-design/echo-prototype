@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Check your answers
+Attach a file
 {% endblock %}
 {% block beforeContent %}
 {{super()}}
@@ -24,16 +24,22 @@ Check your answers
       </div>
     </div>
     {% endif %}
-    <h1 id="supplementary-documents" class="govuk-heading-xl">Attachments</h1>
-    <p class="govuk-body">You may wish to upload the following:</p>
+    <h1 id="supplementary-documents" class="govuk-heading-xl">Attach a file</h1>
+    <p class="govuk-body">You can upload files to attach them your application.</p>
+    <p class="govuk-body">Attach a list if you need to include 4 or more:</p>
+
     <ul class="govuk-list govuk-list--bullet">
-      <li id="point_0">Schedules</li>
-      <li id="point_1">something else you need <a href="download">download sample [CSV]</a></li>
+      <li id="point_0">products in your consignment</li>
+      <li id="point_1">slaughterhouses</li>
+      <li id="point_1">cutting plants</li>
+      <li id="point_1">processing or production plants</li>
     </ul>
+    <p class="govuk-body">Your certifer and APHA will be able to view any files you upload here.</p>
+
     <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
       <div class="app-multi-file-upload app-multi-file-upload--enhanced">
         <div class="app-multi-file__uploaded-files app-hidden">
-          <h2 class="govuk-heading-m">Files added</h2>
+          <h2 class="govuk-heading-m">Files uploaded</h2>
           <div class="govuk-summary-list app-multi-file-upload__list">
           </div>
         </div>
@@ -42,14 +48,16 @@ Check your answers
             <label class="govuk-label govuk-label--m" for="documents">
               Upload a file
             </label>
-            <p class="govuk-hint">Your files must in PDF, Word, Excel or JPEG format and be less than 10 megabytes (10 MB)</p>
+            <p class="govuk-hint">You can select multiple files to upload at the same time.</p>
+
+            <p class="govuk-hint">Files must be PDF, Word, Excel or JPEG and be less than 10 megabytes (10 MB).</p>
             <div class="app-multi-file-upload__dropzone"><input class="govuk-file-upload app-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
               <p class="govuk-body">Drag and drop files here or</p><label for="documents" class="govuk-button govuk-button--secondary">Choose files</label>
               <div aria-live="polite" role="status" class="govuk-visually-hidden"></div>
             </div>
           </div>
           <button type="submit" class="govuk-button govuk-button--secondary app-multi-file-upload__button" data-module="govuk-button">
-            Upload file
+            Upload
           </button>
         </div>
       </div>
