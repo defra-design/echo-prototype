@@ -25,7 +25,8 @@ Add attachments
     </div>
     {% endif %}
     <h1 id="supplementary-documents" class="govuk-heading-xl">Add attachments</h1>
-    <p class="govuk-body">You can upload files to attach them your application.</p>
+    <p class="govuk-body">You can upload files and attach them to your application.</p>
+    {% if data.certificate == "ehc1631_v3"%}
     <p class="govuk-body">Attach a list if you need to include 4 or more:</p>
 
     <ul class="govuk-list govuk-list--bullet">
@@ -34,6 +35,7 @@ Add attachments
       <li id="point_1">cutting plants</li>
       <li id="point_1">processing or production plants</li>
     </ul>
+    {% endif %}
     <p class="govuk-body">Your certifer and APHA can view any files you upload here. You do not have to send them by email.</p>
 
     <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">

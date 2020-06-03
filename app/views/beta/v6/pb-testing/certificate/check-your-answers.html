@@ -231,6 +231,12 @@ GOV.UK Prototype Kit
           <h4 class="app-summary-card--title">3. Information for the export health certificate</h4>
         </header>
         <div class="app-summary-card--content">
+          {% if data.block_version == "2" and data.is_blank_block == 'yes'%}
+          <div class="defra-alert defra-alert--info">
+            <p class="govuk-body">This is a block application. Anything you enter in this section will appear on <strong>all {{data.certificate_request_amount or '50'}} certificates</strong>. </p>
+
+          </div>
+          {% endif %}
           <!-- display_type is used to show correct informtion from JSON file, EXA or EHC -->
           {% set display_type = "EHC"%}
           <!-- loading partial to show all repsonses for the EHC partials/check-your-answers-block -->

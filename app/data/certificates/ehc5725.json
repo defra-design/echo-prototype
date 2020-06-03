@@ -70,7 +70,7 @@
 				"header": "Where was the export product processed?",
 				"caption": "",
 				"paragraph": "",
-				"next": "page?id=5",
+				"next": "page?id=1",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -361,19 +361,20 @@
 			"page": 13,
 			"exa": "yes",
 			"type": "EXA",
-			"title": "What is the planned date of export?",
+			"title": "When do you need the certificates?",
+			"skippable": "no",
 			"group_name": "Export details",
 			"content": {
-				"header": "What is the planned date of export?",
+				"header": "When do you need the certificates?",
 				"caption": "",
-				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"paragraph": "Enter the estimated date that the first export is likely to take place.",
 				"next": "page?id=19",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
 					"type": "date",
-					"label": "Planned export date",
-					"hint": "For example, 31 08 1970",
+					"label": "Planned first export date",
+					"hint": "For example, 31 08 2020",
 					"required": "yes",
 					"id": "export_date",
 					"name": "export_date",
@@ -423,8 +424,8 @@
 					"label": "Origin",
 					"hint": "Select all that apply:",
 					"required": "yes",
-					"id": "origin",
-					"name": "origin",
+					"id": "origin_product",
+					"name": "origin_product",
 					"options": [{
 							"title": "Great Britain",
 							"name": "Great Britain"
@@ -451,7 +452,7 @@
 				"header": "What are the processing details?",
 				"caption": "",
 				"paragraph": "",
-				"next": "page?id=19",
+				"next": "",
 				"prev": "",
 				"product_page": "no",
 				"fields": [{
@@ -459,8 +460,8 @@
 					"label": "Country of processing",
 					"hint": "Select all that apply:",
 					"required": "yes",
-					"id": "origin",
-					"name": "origin",
+					"id": "pro_loc",
+					"name": "pro_loc",
 					"options": [{
 							"title": "Great Britain",
 							"name": "Great Britain"

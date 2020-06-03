@@ -9,7 +9,7 @@
     <div class="govuk-checkboxes {% if field.inline == 'yes'%}govuk-radios--inline{% endif %}">
       {% for checkbox in field.options %}
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="{{field.id}}" name="{{field.name}}" type="checkbox" value="{{checkbox.title}}" {% if data[field.name] and checkbox.title in data[field.name] and query.new != 'yes' %}checked="checked" {%endif%}>
+        <input class="govuk-checkboxes__input js-question" id="{{field.id}}" name="{{field.name}}" type="checkbox" value="{{checkbox.title}}" {% if data[field.name] and checkbox.title in data[field.name] and query.new != 'yes' %}checked="checked" {%endif%}>
         <label class="govuk-label govuk-checkboxes__label" for="{{checkbox.title}}">
           {{checkbox.title}}
         </label>

@@ -3,5 +3,5 @@
     {{field.label}} <!-- {% if field.required == 'no'%}(optional){%endif%} -->
   </label>
   {% if field.hint %}<span id="{{field.id}}-hint" class="govuk-hint">{{field.hint}}</span>{% endif %}
-  <input class="govuk-input" id="{{field.id}}" name="{{field.name}}" type="text" aria-describedby="{{field.id}}-hint" {% if query.new != 'yes'%}value="{{data[field.name] or ''}}"{% endif %}>
+  <input class="govuk-input js-question" id="{{field.id}}" name="{{field.name}}" type="text" aria-describedby="{{field.id}}-hint" {% if query.new != 'yes'%}value="{{data[field.name] or ''}}"{% endif %}>
 </div>

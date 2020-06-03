@@ -6,56 +6,17 @@
 
 {% block beforeContent%}
 {{super()}}
-<style media="screen">
-  .link-button--inline{
-    display:inline-block;
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.31579;
-    padding-top:5px;
-    margin-left:10px
-  }
-</style>
-<!-- {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Your application",
-      href: "#"
-    },
-    {
-      text: "Your EHC's",
-      href: "#"
-    },
-    {
-      text: data.animal_name
-    }
-  ]
-}) }} -->
-
 <a href="{{page.content.prev or 'javascript:history.back()'}}" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-{% block errorBlank %}{% include "./partials/partial_error_blank.html" %}{% endblock %}
-    {% if data.is_multiple == "yes" and page.exa != "yes"%}<span class="govuk-caption-xl">{% if data.change_ehc != "yes"%}Create a new c{%else%}C{%endif%}ertificate for {{data.ehc_reference_num}}</span>{% endif %}
-    {% if page.exa and page.exa == "yes" %}<span class="govuk-caption-xl">Information needed by APHA</span>{% endif %}
+    {% block errorBlank %}{% include "./partials/partial_error_blank.html" %}{% endblock %}
     {% if page.content.caption %}<span class="govuk-caption-xl">{{page.content.caption}} {% if query.product_page %}{{(data.products | length)+1}} of {{page.content.product_max or 4}}{%endif%}</span>{%endif%}
     <h1 class="govuk-heading-xl">
       {{page.content.header}}
     </h1>
-    {% if query.show_change_warning or (query.confirm == "yes" and (data.added_certificates | length) > 0 and page.repeatable != "yes") %}
-    <div class="govuk-warning-text">
-<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-<strong class="govuk-warning-text__text">
-  <span class="govuk-warning-text__assistive">Warning</span>
-  Any changes you make here will update all {{data.added_certificates | length}} certificates you have added to this application.
-</strong>
-</div>
-    {% endif%}
     <p class="govuk-body">{% if page.content.paragraph %}{{page.content.paragraph}}{% endif %}</p>
     <form method="POST">
     <!-- <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST"> -->
@@ -66,26 +27,24 @@
         {% block question %}{% include type %}{% endblock%}
         {% endfor%}
 
-        {% if page.exa != "yes" %}
+        {% if page.exa == "yes" and data.is_block_application == "yes" and page.skippable !="no"%}
+          {% block leaveForm_exa %}{% include "./partials/partial_leave_section.html" %}{% endblock %}
+        {% elseif page.exa != "yes" %}
           {% block leaveForm %}{% include "./partials/partial_leave_section.html" %}{% endblock %}
         {% endif %}
-
-
         <div class="govuk-form-group govuk-!-margin-top-8">
           {% if not query.product_page %}
           <input class="govuk-button govuk-!-margin-right-1" type="submit" name="cta" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
           {% else %}
           <button class="govuk-button" type="submit" name="cta" value="Save and review"id="Button-SaveAndpreview" data-qa-id="Button-SaveAndContinue">Save and continue</button >
           {% endif%}
-          <a class="link-button--inline " href="confirm-cancel-certificate?id={{page.page}}" name="saveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Cancel</a>
         </div>
       </fieldset>
-    </form>
 
-    <p class="govuk-body"><a class="link-button" href="../dashboard?has_unfinished_certificate=yes&unfinished_certificate={{page.page}}" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+    </form>
+    <p class="govuk-body"><a class="link-button" href="dashboard" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
   </div>
 </div>
-
 {% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
 <script type="text/javascript">
   window.addEventListener('load', function() {

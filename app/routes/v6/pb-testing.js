@@ -21,28 +21,7 @@ module.exports = function(router) {
     db.push(f)
   });
   // Load any certificate within "app/data/certificates" folder
-  function addCertificate(cert,data){
-    var list= data.added_certificates
-    var newcert=[]
-    var obj = {}
-    var name = "Santa's little helper"
-    for (var i = 0; i < cert.length; i++) {
-      if(cert[i].title != "Supporting documents" && !cert[i].exa ){
-        for (var j = 0; j < cert[i].content.fields.length; j++) {
 
-
-          var field = cert[i].content.fields[j].name
-          if (field == "animal_name" && data[field]){
-            var name = data[field]
-          }
-          newcert[field] = data[field]
-        }
-      }
-
-    }
-    obj = {'title':name,'content': newcert}
-    list.push(obj)
-  }
 
   function getNextRepeatablePage(data,current){
     console.log("--- Finding REPEATABLE----")
@@ -73,7 +52,8 @@ module.exports = function(router) {
     req.session.data.file_id_count += 1
     var printable = req.session.db.printable
     if (req.body.is_certifier_address_correct == "yes") {
-      res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifer-certificate-delivery?printable='+req.session.db.printable);
+        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifer-certificate-delivery?printable='+printable);
+
     } else {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-new-address');
     }
@@ -194,7 +174,54 @@ module.exports = function(router) {
     req.session.data.product_loop.push(product_title)
     res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/product-list?id='+req.query.id);
   })
+  router.post('/'+base_url+'*/certificate/blocks', function(req, res, next) {
+    if(req.session.data.block_version == "2" && req.body.is_block_application == "yes"){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/need_blanks');
 
+    }else{
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-progress');
+    }
+
+  })
+  router.post('/'+base_url+'*/certificate/need-blanks', function(req, res, next) {
+    if(req.body.is_blank_block == "yes" && req.session.db.commodities.length <2 ){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/exa/reference');
+
+    }else if(req.body.is_blank_block == "yes" && req.session.db.commodities.length > 1 ){
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/exa/your-commodity');
+    }else{
+      res.redirect(301, '/' + base_url +req.params[0]+ '/certificate/check-your-progress');
+    }
+
+  })
+
+  router.post('/'+base_url+'*/certificate/confirmation', function(req, res, next) {
+    var len = req.session.data.applications.length
+    var obj = {
+    	"_id": "5ebdac91354c762a2760b31f",
+    	"index": 20,
+    	"caseID": "20/654"+len,
+      "is_block": req.session.data.is_block_application || "no",
+      "certs": req.session.data.certificate_request_amount || 1,
+    	"applicationID": 1808874432+len,
+    	"name": "Ann Cooper",
+    	"exporter": "FLEXIGEN LTD",
+    	"importer": "EXOSWITCH LTD",
+    	"destination": req.session.db.destination,
+    	"EHC": req.session.db.certificate_code.replace('EHC',''),
+    	"PDF" : req.session.db.sample_PDF,
+    	"cert_info": req.session.db.certificate_name,
+    	"certificate": "20/7/20020"+len,
+    	"status": "processing",
+    	"tag": "blue",
+    	"date": "10 Jun 2020",
+    	"reference": req.session.data.reference_num
+    }
+      req.session.data.applications.splice(2, 0, obj);
+      res.redirect(301, '/' + base_url +req.params[0]+ '/dashboard');
+
+
+  })
 
 
 }
