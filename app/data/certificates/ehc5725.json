@@ -5,7 +5,7 @@
 	"destination": "China",
 	"certificate_name": "Export sheepskins to China",
 	"allow_blocks": "yes",
-	"has_repeatable": "yes",
+	"has_repeatable": "no",
 	"sample_PDF": "ehc-5725ehc-2.992.pdf",
 	"commodities": [{
 		"group": "meat",

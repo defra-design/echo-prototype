@@ -195,11 +195,11 @@ module.exports = function(router) {
 
   })
 
-  router.post('/'+base_url+'*/certificate/confirmation', function(req, res, next) {
+  router.get('/'+base_url+'*/certificate/confirmation', function(req, res, next) {
     var len = req.session.data.applications.length
     var obj = {
     	"_id": "5ebdac91354c762a2760b31f",
-    	"index": 20,
+    	"index": 40,
     	"caseID": "20/654"+len,
       "is_block": req.session.data.is_block_application || "no",
       "certs": req.session.data.certificate_request_amount || 1,
@@ -218,7 +218,17 @@ module.exports = function(router) {
     	"reference": req.session.data.reference_num
     }
       req.session.data.applications.splice(2, 0, obj);
-      res.redirect(301, '/' + base_url +req.params[0]+ '/dashboard');
+      res.render(base_url+req.params[0]+'/certificate/confirmation', {
+        "query": req.query
+      }, function(err, html) {
+        if (err) {
+          if (err.message.indexOf('template not found') !== -1) {
+            return res.render(file_url + '/certificate/confirmation');
+          }
+          throw err;
+        }
+        res.send(html);
+      })
 
 
   })
