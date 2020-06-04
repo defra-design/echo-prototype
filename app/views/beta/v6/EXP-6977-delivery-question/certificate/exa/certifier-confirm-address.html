@@ -34,7 +34,7 @@ GOV.UK Prototype Kit
             {% endif %}
           </legend>
           {%if (db.printable !="yes" and data.certifier_has_cg_paper == "no") or (data.certifier_is_digital == "no" and db.printable == "yes" and data.certifier_has_cg_paper == "no") %}
-          <p class="govuk-body">This Certificate needs to be printed{% if db.printable !="yes" %} on crown gold paper{% endif %} by APHA and sent to the certifier for certification. </p>
+          <p class="govuk-body">APHA will print this certificate {% if db.printable !="yes" %} on crown gold paper {% else %} on white paper {% endif %}and send it to your certifier. </p>
           {% endif %}
           <p class="govuk-body-l govuk-!-font-weight-bold">{{data.certifier_name or 'Aberdour Vets'}}<br>
             <span id="certificate-delivery-address-line-1">{{data.certifier_addressLine1 or '182a'}} {{data.certifier_addressLine2 or 'High Street'}}</span><br>
@@ -61,18 +61,17 @@ GOV.UK Prototype Kit
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-manual-address">
                 <p class="govuk-body">
-                An authorising declaration must have been submitted by the Certifier Practice to the
-                <strong class="bold">Centre for International Trade - Carlisle</strong>
-                to enable certificates to be posted to an address other than that of the Certifier Practice address.</p>
+              To avoid delays, check if your certifier has given us permission to send the certificate to a different address.
+                </p>
                 <p class="govuk-body">
-                A declaration form can be obtained from the <strong class="bold">Centre for International Trade - Carlisle</strong> on request.
+              If they have not, they will need to contact us at <a href="mailto:exports@apha.gov.uk">exports@apha.gov.uk</a>.
               </p>
             </div>
           </div>
           {% else %}
           <div class="defra-alert defra-alert--info">
-            <h3 class="govuk-heading-s">{{data.certifier_name}} {% if data.certifier_has_cg_paper == "yes" and db.printable != "yes"%}can{%else%}will{% endif%} print this certificate {% if data.certifier_has_cg_paper == "yes" and db.printable != "yes"%} on crown gold paper{%endif%} </h3>
-            <p class="govuk-body">We will deliver a digital version of the certificate to the {{data.certifier_name}} who will then print the certificate {% if data.certifier_has_cg_paper == "yes" and db.printable != "yes"%} on crown gold paper{%endif%}</p>
+            <h3 class="govuk-heading-s">{{data.certifier_name}} {% if data.certifier_has_cg_paper == "yes" and db.printable != "yes"%}can{%else%}will{% endif%} print this certificate {% if data.certifier_has_cg_paper == "yes" and db.printable != "yes"%} on crown gold paper{%else%}on white paper{%endif%} </h3>
+            <p class="govuk-body">We will contact {{data.certifier_name}} by email when the certificate is available to download and print {% if data.certifier_has_cg_paper == "yes" and db.printable != "yes"%} on crown gold paper{%else%}on white paper{%endif%}</p>
           </div>
           <p class="govuk-body"><a href="certifier?search={{data.search or 'Crewe'}}">Change certifier</a></p>
 

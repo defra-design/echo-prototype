@@ -12,8 +12,8 @@ GOV.UK Prototype Kit
     <div>
       <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">How would you like the certificate{% if data.is_block_application != "no" %}s{% endif %} to be delivered to the certifier?</h1>
       <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
-      <span id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">The certificate{% if data.is_block_application != "no" %}s{% endif %} will be sent to your nominated address for certification. If you choose special delivery or courier you must arrange and pay the charges and we
-        will contact you for further details.</span>
+      <span id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">If you choose special delivery or courier, we will contact you to talk about how to arrange delivery and payment.</span>
+      <span id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">If you have already sent pre-paid special delivery or courier envelopes to APHA, we will use one of those.</span>
       <p>
       </p>
       <form {% if query.change=="yes" %} action="../check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% elseif data.is_blank_block == "yes" %} action="../dates" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
@@ -29,7 +29,7 @@ GOV.UK Prototype Kit
               {% if query.printable!="no"%}
               <div class="govuk-radios__item">
                 <input type="radio" class="govuk-radios__input" id="8270EHCBLOCKTEST-0" value="Email" name="delivery_options" data-qa-id="Question-radio-Email" autofocus="autofocus">
-                <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">Email</label>
+                <label class="govuk-label govuk-radios__label" for="8270EHCBLOCKTEST-0">Email my certifier when the certificate is available to download</label>
               </div>
               {% endif %}
               <div class="govuk-radios__item">
