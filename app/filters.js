@@ -19,6 +19,23 @@ module.exports = function (env) {
       return app[key];
   }
 
+  filters.showHide = function(obj,text) {
+
+
+
+    var query = text.split();
+    console.log("checking= "+query.length )
+      for(key in obj) {
+        for(var v=0; v<query.length; v++) {
+          console.log(query[v])
+        if(obj[key].indexOf(query[v])!=-1) {
+          return "show";
+        }
+      }
+      }
+      return "hide";
+  }
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
