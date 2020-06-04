@@ -2,6 +2,8 @@
 	"certificate_code": "8327EHC",
 	"version": "1",
 	"destination": "EU",
+	"allow_blocks": "yes",
+	"printable": "yes",
 	"certificate_name":	"Export fresh or chilled hides and skins of ungulates to the European Union",
 	"commodities": [{
 		"group": "Hides/Skins",

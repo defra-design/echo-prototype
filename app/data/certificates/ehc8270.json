@@ -3,6 +3,7 @@
 	"version": "1",
 	"destination": "EU",
 	"allow_blocks": "yes",
+	"printable": "yes",
 	"certificate_name": "Export fishery products intended for human consumption to the EU",
 	"commodities": [{
 		"group": "Live shellfish",

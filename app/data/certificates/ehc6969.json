@@ -1,7 +1,7 @@
 {
 	"certificate_code": "6969EHC",
 	"version": "1",
-	"printable": "yes",
+	"printable": "no",
 	"destination": "Australia",
 	"sample_PDF": "ehc-6969ehc-8.1.pdf",
 	"allow_blocks": "yes",

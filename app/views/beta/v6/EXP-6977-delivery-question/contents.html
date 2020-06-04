@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <a href="https://eaflood.atlassian.net/browse/EXP-6977">EXP-6977</a> Make Delivery Method/Address questions aware of certificate config
+    </h1>
+    <form method="get">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Setting for this story
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                Certifier is NOT digital 
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                Scotland
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                Wales
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                Northern Ireland
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+    <p class="govuk-body">Choose a confg to test with</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>New dashboard design. EHC, clone both on dashbaord.</li>
+      <li>Allow users to view colleagues applicaitons</li>
+      <li>Blocks</li>
+      <li>Task list improvements</li>
+      <li>Design update to check your answers</li>
+      <li>Supporting documents</li>
+    </ul>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+
+    <ul class="govuk-list">
+      <li><a href="dashboard?filter_status=&has_filter=&date_range=&filter_name=&show_applications_by=me&block_version=1&block_version=1">Dashboard (only your applications)</a> </li>
+      <li><a href="dashboard?filter_status=any&date_range=any&export_form_day=&export_form_month=&export_form_year=&export_to_day=&export_to_month=&export_to_year=&show_applications_by=everyone&filter_name=anyone&has_filter=yes&block_version=1">Dashboard (everyones)</a> </li>
+      <li><a href="dashboard?filter_status=&has_filter=&date_range=&filter_name=&show_applications_by=me&block_version=2">Dashboard (only your applications)</a> </li>
+        <li><br>Blocks and task list</li>
+        <li><a href="certificate/blocks?certificate=ehc1631">Is this a block application? (NEW)</a></li>
+      <li>only 3 certificates are working with this pattern</li>
+      <li><a href="certificate/check-your-progress?certificate=ehc6969_v3&is_block_application=yes&block_version=1">6969EHC (V3)</a></li>
+      <li><a href="certificate/check-your-progress?certificate=ehc1631_v3&is_block_application=yes&block_version=1">1631EHC (V3)</a></li>
+      <li><a href="certificate/check-your-progress?certificate=ehc5725&is_block_application=yes&block_version=1">5725EHC </a></li>
+      <li><br>file upload</li>
+      <li><a href="certificate/supporting-documents?test=yes&certificate=ehc5725&block_version=1">File upload  (new)</a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

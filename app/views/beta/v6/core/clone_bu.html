@@ -21,8 +21,7 @@ GOV.UK Prototype Kit
           Application
         </dt>
         <dd class="govuk-summary-list__value">
-          <!-- appInfo() can be found in app/filters.js -->
-          {{query.id | appInfo('applicationID')}}
+          {{query.application or 1651966024771}}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -30,7 +29,7 @@ GOV.UK Prototype Kit
           Reference
         </dt>
         <dd class="govuk-summary-list__value">
-          {{query.id | appInfo('reference')}}
+          {{query.reference_num or "EAU3942038"}}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -38,9 +37,9 @@ GOV.UK Prototype Kit
           EHC
         </dt>
         <dd class="govuk-summary-list__value">
-          {{query.id | appInfo('EHC')}} (version 2)
+          6969EHC (version 2)
           <br>
-          {{query.id | appInfo('cert_info')}}
+          Export dairy and dairy products to Australia
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -48,7 +47,7 @@ GOV.UK Prototype Kit
           Destination
         </dt>
         <dd class="govuk-summary-list__value">
-          {{query.id | appInfo('destination')}}
+          Australia
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -56,7 +55,7 @@ GOV.UK Prototype Kit
           Exporter
         </dt>
         <dd class="govuk-summary-list__value">
-          {{query.id | appInfo('exporter')}}
+          ABC COMPANY LTD
         </dd>
       </div>
     </dl>

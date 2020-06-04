@@ -1,7 +1,7 @@
 {
 	"certificate_code": "7001EHC",
 	"version": "1",
-	"printable": "yes",
+	"printable": "no",
 	"allow_blocks": "no",
 	"sample_PDF": "ehc-7006ehc-3.0.pdf",
 	"destination": "USA",
