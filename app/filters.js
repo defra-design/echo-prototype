@@ -20,14 +20,9 @@ module.exports = function (env) {
   }
 
   filters.showHide = function(obj,text) {
-
-
-
     var query = text.split();
-    console.log("checking= "+query.length )
       for(key in obj) {
         for(var v=0; v<query.length; v++) {
-          console.log(query[v])
         if(obj[key].indexOf(query[v])!=-1) {
           return "show";
         }
@@ -35,6 +30,18 @@ module.exports = function (env) {
       }
       return "hide";
   }
+
+  filters.increase = function(num) {
+      return num+=1;
+  }
+
+  filters.getCode = function(text) {
+
+      var regex = /[\d]{4}/g
+      var newtext = text.match(regex)
+      return newtext
+  }
+
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:

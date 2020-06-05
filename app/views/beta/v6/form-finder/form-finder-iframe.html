@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" style="height:100%">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="/public/javascripts/jquery-1.11.3.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var iframe = $("#formfinder")
+        iframe.load(function(){
+          console.log("working")
+            iframe.contents().find(".gem-c-document-list__item a").click(function(e){
+              e.preventDefault();
+               alert("test");
+             });
+            iframe.contents().on("mousedown, mouseup, click", function(e){
+                e.preventDefault()
+                alert("Click detected inside iframe.");
+            });
+        });
+    });
+
+    </script>
+  </head>
+  <body style="height:100%">
+    <iframe id="formfinder" src="https://www.gov.uk/export-health-certificates/export-dairy-and-dairy-products-to-australia-certificate-6969" width="100%" height="100%"></iframe>
+
+  </body>
+</html>
