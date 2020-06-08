@@ -2064,14 +2064,13 @@ GOV.UK Prototype Kit
             {% set cert_code = (form.title | getCode )%}
             <li class="gem-c-document-list__item "> <a data-ecommerce-path="/export-health-certificates/export-ovine-or-caprine-semen-to-the-usa-certificate-7852" data-ecommerce-row="1" data-ecommerce-index="2" data-track-category="navFinderLinkClicked"
                 data-track-action="Find an export health certificate.2" data-track-label="/export-health-certificates/export-ovine-or-caprine-semen-to-the-usa-certificate-7852" data-track-options="{&quot;dimension28&quot;:50,&quot;dimension29&quot;:&quot;Export ovine or caprine semen to the USA: certificate 7852 &quot;}"
-                class="gem-c-document-list__item-title gem-c-document-list__item-link" href="form?cert_code={{cert_code}}&cert_title={{form.title}}&cert_destination={{form.destination}}&cert_commodity={{form.commodity}}&cert_status={{form.status}}">{{form.title}} </a>
+                class="gem-c-document-list__item-title gem-c-document-list__item-link" href="form-test?cert_code={{cert_code}}&cert_title={{form.title}}&cert_destination={{form.destination}}&cert_commodity={{form.commodity}}&cert_status={{form.status}}&cert_link={{form.link}}">{{form.title}} </a>
               <ul class="gem-c-document-list__item-metadata">
                 <li class="gem-c-document-list__attribute"> {{form.destination}} </li>
                 <li class="gem-c-document-list__attribute"> {{form.commodity}}</li>
                 <li class="gem-c-document-list__attribute"> {{form.status}}  </li>
               </ul>
             </li>
-
             {% set count = (count | increase) %}
             {% endif %}
 

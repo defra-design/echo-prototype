@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXP-10569-business-name-address
+    </h1>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <ul class="govuk-list">
+      <li><a href="certificate/exa/certifier-confirm-address">Confirm delivery address - (updated)</a> </li>
+      <li><a href="certificate/exa/certifier-new-address">Add a different address with business name (updated)</a> </li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

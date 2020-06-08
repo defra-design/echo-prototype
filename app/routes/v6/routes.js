@@ -145,7 +145,7 @@ env.addFilter('shorten', function(str, count) {
     if (req.body.certificate != "different") {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress?certificate='+req.body.certificate);
     } else {
-      res.redirect(301, '/' + base_url + req.params[0] + '/select-certificate?find_certificate=yes');
+      res.redirect(301, '/' + base_url + req.params[0] + '/form-finder?logged_in=yes');
     }
   })
 

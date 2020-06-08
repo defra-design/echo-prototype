@@ -1,8 +1,8 @@
 module.exports = function(router) {
   // Load helper functions
   var tools = require('../tools.js')
-
-
+  const cheerio = require('cheerio')
+  const $ = cheerio.load('https://www.gov.uk/export-health-certificates/export-dairy-and-dairy-products-to-australia-certificate-6969')
   // ADD extra routing here if needed.
   // require('./extra-stories.js')(router)
   const fs = require('fs');
@@ -12,6 +12,10 @@ module.exports = function(router) {
   const base_url = version + "/form-finder"
   const file_url = version + "/core"
   const db = []
+
+
+  const rp = require('request-promise');
+
   var normalizedPath = require("path").join(__dirname, "../../data/certificates");
   fs.readdirSync(normalizedPath).forEach(function(file) {
     // require("./routes/" + file);
@@ -23,10 +27,10 @@ module.exports = function(router) {
   // Load any certificate within "app/data/certificates" folder
 
 
-  router.post('/' + base_url + '*/form-finder', function(req, res) {
-    r
-  })
+
+
   router.get('/'+base_url+'*/form-finder', function(req, res) {
+    console.log($.html())
     var forms = require('../../data/forms.json')
     res.render(base_url+req.params[0]+'/form-finder', {
       "query": req.query,
@@ -42,6 +46,36 @@ module.exports = function(router) {
       res.send(html);
     })
   })
+
+  router.get('/'+base_url+'*/form-test', function(req, res) {
+    var url = req.query.cert_link
+
+    rp(url)
+      .then(function(page){
+        //success!
+        newHTML = cheerio.load(page)
+        var next = (req.session.data.logged_in=="yes")? 'certificate/check-your-progress?certificate=ehc'+req.query.cert_code : "./gov-sign-in?certificate=ehc"+req.query.cert_code
+        newHTML('.gem-c-button').attr('href',next)
+        res.render(base_url+req.params[0]+'/form-test', {
+          "query": req.query,
+          "page":newHTML.html()
+        }, function(err, html) {
+          if (err) {
+            if (err.message.indexOf('template not found') !== -1) {
+              return res.render(file_url + '/form-test', {"query": req.query,
+              "page":newHTML.html()});
+            }
+            throw err;
+          }
+          res.send(html);
+        })
+      })
+      .catch(function(err){
+        //handle error
+      });
+
+  })
+
 
 
 }
