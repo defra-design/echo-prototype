@@ -25,15 +25,15 @@ GOV.UK Prototype Kit
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
-            <!-- In this version we treat non digital the same as digital. version 2 of this flow was to post white paper certificate to non-digital certifier -->
-            {%if db.printable !="yes" and data.certifier_has_cg_paper == "no"
+            {%if data.certifier_is_digital == "no"
+              or (data.certifier_is_digital == "yes" and db.printable !="yes" and data.certifier_has_cg_paper == "no")
             %}
               <h1 class="govuk-fieldset__heading">Is this the right delivery address for your certificate?</h1>
             {% else %}
               <h1 class="govuk-fieldset__heading">Confirm the certifer</h1>
             {% endif %}
           </legend>
-          {%if db.printable !="yes" and data.certifier_has_cg_paper == "no" %}
+          {%if (db.printable !="yes" and data.certifier_has_cg_paper == "no") or (data.certifier_is_digital == "no" and db.printable == "yes" and data.certifier_has_cg_paper == "no") %}
           <p class="govuk-body">APHA will print this certificate {% if db.printable !="yes" %} on crown gold paper {% else %} on white paper {% endif %}and send it to your certifier. </p>
           {% endif %}
           <p class="govuk-body-l govuk-!-font-weight-bold">{{data.certifier_name or 'Aberdour Vets'}}<br>
@@ -43,7 +43,9 @@ GOV.UK Prototype Kit
             <span id="certificate-delivery-address-country">{{data.certifier_county or 'Kent'}}</span><br>
             <span id="certificate-delivery-address-postcode">{{data.certifier_postcode or 'BR3 1EW'}}</span><br>
           </p>
-            {%if  db.printable !="yes" and data.certifier_has_cg_paper == "no"%}
+            {%if data.certifier_is_digital == "no"
+              or (data.certifier_is_digital == "yes" and db.printable !="yes" and data.certifier_has_cg_paper == "no")
+            %}
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="default-address-option" name="is_certifier_address_correct" type="radio" value="yes">
@@ -77,7 +79,7 @@ GOV.UK Prototype Kit
         </fieldset>
       </div>
       <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
-        {%if db.printable !="yes" and data.certifier_has_cg_paper == "no"%}
+        {%if data.certifier_is_digital == "yes" and db.printable !="yes" and data.certifier_has_cg_paper == "no"%}
         <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-CertificateDeliveryAddressSaveAndContinue" data-qa-id="Button-SaveAndContinue">
         {% else %}
         <input class="govuk-button" type="submit" name="saveAndContinue" value="Confirm and continue" id="Button-CertificateDeliveryAddressSaveAndContinue" data-qa-id="Button-SaveAndContinue">
