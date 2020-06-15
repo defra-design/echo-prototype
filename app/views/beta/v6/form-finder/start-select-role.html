@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EHC online
+{% endblock %}
+
+{% block beforeContent %}
+<a href="service-start-page" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form  method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-9">
+                <h1 class="govuk-fieldset__heading">
+                  Are you an exporter or a vet?
+                </h1>
+              </legend>
+              <p>If you don't haven an account your will first need to register with Government Gateway usually takes about 10 minutes. It works best if you have:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>your National Insurance number</li>
+                <li>a recent payslip or P60 or a valid UK passport</li>
+              </ul>
+                <!-- radios use radioButtonRedirect  for routing https://github.com/abbott567/radio-button-redirect -->
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="account_type_exporter" name="account_type" type="radio" value="exporter~gov-sign-in">
+                  <label class="govuk-label govuk-radios__label" for="account_type_exporter">
+                    I am an exporter
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="account_type_vet" name="account_type" type="radio" value="vet~https://exports-certifiers-prototype.herokuapp.com/1-6/certifier/gov-sign-in">
+                  <label class="govuk-label govuk-radios__label" for="account_type_vet">
+                    I am a vet
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+  </div>
+
+</div>
+{% endblock %}
