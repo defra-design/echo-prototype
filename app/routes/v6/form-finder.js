@@ -6,6 +6,8 @@ module.exports = function(router) {
   // ADD extra routing here if needed.
   // require('./extra-stories.js')(router)
   const fs = require('fs');
+  const radioButtonRedirect = require('radio-button-redirect')
+  router.use(radioButtonRedirect)
 
   // CHANGE VERSION TO THE VERSION
   const version = 'beta/v6'
@@ -27,7 +29,7 @@ module.exports = function(router) {
   // Load any certificate within "app/data/certificates" folder
 
 
-
+  
 
   router.get('/'+base_url+'*/form-finder', function(req, res) {
     console.log($.html())
@@ -46,6 +48,7 @@ module.exports = function(router) {
       res.send(html);
     })
   })
+
 
   router.get('/'+base_url+'*/form-test', function(req, res) {
     var url = req.query.cert_link
