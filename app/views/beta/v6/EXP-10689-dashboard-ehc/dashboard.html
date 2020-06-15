@@ -124,13 +124,13 @@ GOV.UK Prototype Kit
       <div class="derfa-filter--content" >
         <form method="get">
           <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-third">
-              <div class="govuk-form-group">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group govuk-grid-row">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                     Filter by status
                   </legend>
-                  <div class="govuk-radios govuk-radios--small ">
+                  <div class="govuk-radios govuk-radios--small govuk-grid-column-one-half">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="type-9" name="filter_status" type="radio" value="any" {% if (data.filter_status and data.filter_status == 'any') or  not data.filter_status %}checked="checked" {% endif %}>
                       <label class="govuk-label govuk-radios__label" for="type-9">
@@ -156,7 +156,7 @@ GOV.UK Prototype Kit
                         </label>
                       </div>
                       </div>
-                      <div class="govuk-radios govuk-radios--small">
+                      <div class="govuk-radios govuk-radios--small govuk-grid-column-one-half">
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="type-2" name="filter_status" type="radio" value="certifier action" {% if data.filter_status and data.filter_status == 'certifier action' %}checked="checked" {% endif %}>
                           <label class="govuk-label govuk-radios__label" for="type-2">
@@ -190,161 +190,7 @@ GOV.UK Prototype Kit
                 </fieldset>
               </div>
             </div>
-            <div class="govuk-grid-column-two-thirds ">
-
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    <span class="govuk-visually-hidden">Filter by</span> Export date
-                  </legend>
-                  <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="date_range" name="date_range" type="radio" value="any" {%if (data.date_range and data.date_range == "any" ) or not data.date_range  %}checked="checked" {%endif%}>
-                      <label class="govuk-label govuk-radios__label" for="date_range">
-                        Any
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="date_range-1" name="date_range" type="radio" value="today" {%if data.date_range and data.date_range == "today" %}checked="checked" {%endif%}>
-                      <label class="govuk-label govuk-radios__label" for="date_range-1">
-                        Today
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="date_range-3" name="date_range" type="radio" value="tomorrow" {%if data.date_range and data.date_range == "tomorrow" %}checked="checked" {%endif%}>
-                      <label class="govuk-label govuk-radios__label" for="date_range-3">
-                        Tomorrow
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="date_range-2" name="date_range" type="radio" value="in the next 7 days" {%if data.date_range and data.date_range == "in next 7 days" %}checked="checked" {%endif%}>
-                      <label class="govuk-label govuk-radios__label" for="date_range-2">
-                        Next 7 days
-                      </label>
-                    </div>
-
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="date_range-4" name="date_range" type="radio" value="custom" {%if data.date_range and  data.date_range  == "custom" %}checked="checked" {%endif%} data-aria-controls="conditional-how-contacted-conditional-2">
-                      <label class="govuk-label govuk-radios__label" for="date_range-4">
-                        Custom date range
-                      </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half ">
-                          <div class="govuk-form-group">
-                            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                <h1 class="govuk-fieldset__heading">
-                                  From
-                                </h1>
-                              </legend>
-                              <span id="passport-issued-hint" class="govuk-hint">
-                              </span>
-                              <div class="govuk-date-input" id="passport-issued">
-                                <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="export_form_day">
-                                      Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="export_form_day" name="export_form_day" type="text" pattern="[0-9]*" inputmode="numeric">
-                                  </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="export_form_month">
-                                      Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="export_form_month" name="export_form_month" type="text" pattern="[0-9]*" inputmode="numeric">
-                                  </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                      Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="export_form_year" name="export_form_year" type="text" pattern="[0-9]*" inputmode="numeric">
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-                          </div>
-                        </div>
-                        <div class="govuk-grid-column-one-half ">
-                          <div class="govuk-form-group">
-                            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                <h1 class="govuk-fieldset__heading">
-                                  to
-                                </h1>
-                              </legend>
-                              <span id="passport-issued-hint" class="govuk-hint">
-                              </span>
-                              <div class="govuk-date-input" id="passport-issued">
-                                <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="export_to_day">
-                                      Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="export_to_day" name="export_to_day" type="text" pattern="[0-9]*" inputmode="numeric">
-                                  </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="export_to_month">
-                                      Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="export_to_month" name="export_to_month" type="text" pattern="[0-9]*" inputmode="numeric">
-                                  </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="export_to_year">
-                                      Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="export_to_year" name="export_to_year" type="text" pattern="[0-9]*" inputmode="numeric">
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-
-                </fieldset>
-
-
-
-              </div>
-
-              <!-- <div class="govuk-form-group">
-                <div class="form-date">
-          <div class="sm-daterange-component">
-
-            <label for="from" class="sm-daterange-label  govuk-label from">From</label>
-            <div class="sm-daterange-input-wrapper from">
-              <input type="text" id="from" name="from" placeholder="DD/MM/YYYY" class="govuk-input sm-daterange-input from" autocomplete="off">
-              <span class="sm-calendar-icon">
-                <i class="far fa-calendar-alt"><span class="visually-hidden">From date range</span></i>
-              </span>
-            </div>
-
-            <label for="to" class="sm-daterange-label govuk-label to">to</label>
-            <div class="sm-daterange-input-wrapper to">
-              <input type="text" id="to" name="to" placeholder="DD/MM/YYYY" class="govuk-input sm-daterange-input to" autocomplete="off">
-              <span class="sm-calendar-icon">
-                <i class="far fa-calendar-alt"><span class="visually-hidden">To date range</span></i>
-              </span>
-            </div>
-
-          </div>
-        </div>
-              </div> -->
-            </div>
+      
             <div class="govuk-grid-column-full">
                 <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button" name="has_filter" value="yes">
                   Apply filter
@@ -443,7 +289,8 @@ GOV.UK Prototype Kit
           </td>
           <td id="1721147986456-status" class="govuk-table__cell" scope="row">
             <span class="table-heading" aria-hidden="true">Status</span>
-            <div class="app-status-tag app-status-tag--{{app.tag | lower}}">
+
+            <div class="status-tag status-tag--{{app.status | lower}}">
               {{app.status}}
             </div>
           </td>
