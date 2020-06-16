@@ -15,6 +15,7 @@ env.addFilter('shorten', function(str, count) {
   require('./EXP-9235-task-list-improvements.js')(router)
   require('./EXP-6977-delivery-question.js')(router)
   require('./blocks.js')(router)
+  require('./EXP-10691-choose-previous-ehc.js')(router)
 
   const fs = require('fs');
 
@@ -114,6 +115,7 @@ env.addFilter('shorten', function(str, count) {
   });
 
 
+
   router.post('/' + base_url + '*/certificate/exa/certifier-confirm-address', function(req, res) {
     req.session.data.file_id_count += 1
 
@@ -145,7 +147,7 @@ env.addFilter('shorten', function(str, count) {
     if (req.body.certificate != "different") {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress?certificate='+req.body.certificate);
     } else {
-      res.redirect(301, '/' + base_url + req.params[0] + '/form-finder?logged_in=yes');
+      res.redirect(301, '/' + base_url + req.params[0] + '/form-finder?logged_in=yes&keywords=');
     }
   })
 
