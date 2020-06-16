@@ -48,6 +48,7 @@
     "radio-button-redirect": "^1.2.0",
     "request-promise": "^4.2.5",
     "require-dir": "^1.0.0",
+    "showdown": "^1.9.1",
     "sync-request": "^6.0.0",
     "universal-analytics": "^0.4.16",
     "uuid": "^3.2.1"

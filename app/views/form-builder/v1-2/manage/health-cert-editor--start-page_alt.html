@@ -4,70 +4,13 @@ GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
 <style media="screen">
-  main .CodeMirror{
-    font-family: "GDS Transport",Arial,sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-font-weight: 400;
-font-size: 16px;
-font-size: 1rem;
-line-height: 1.25;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
-display: block;
-width: 100%;
-min-height: 40px;
-margin-bottom: 20px;
-padding: 5px;
-resize: vertical;
-border: 2px solid #0b0c0c;
-border-radius: 0;
--webkit-appearance: none;
+  .cke_chrome{
+    border: 2px solid #0b0c0c;
   }
-  main .editor-statusbar{
-    font-family: "GDS Transport",Arial,sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.25;
-    display: block;
-    margin-bottom: 15px;
-    color: #626a6e;
-    margin-top: 0;
-margin-bottom: 0;
-  }
-  main .editor-statusbar{
-    text-align: left;
-    padding:0
-  }
-
-  main .editor-statusbar span {
-    display: inline-block;
-    min-width: 4em;
-    margin-right: 1em;
-    margin-left: 0;
-}
-main .editor-statusbar .autosave, main .editor-statusbar .cursor{
-  display: none;
-}
-
-  @media (min-width: 40.0625em){
-    main .CodeMirror, main .editor-statusbar {
-        font-size: 19px;
-        font-size: 1.1875rem;
-        line-height: 1.25;
-    }
-
-  }
-
   .cke_editable{
     font-size: 19px!important;
   }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     {% if query.show_alert %}
@@ -84,9 +27,8 @@ main .editor-statusbar .autosave, main .editor-statusbar .cursor{
     <span class="govuk-caption-xl">Create a new health certificate</span>
     <h1 class="govuk-heading-xl heading-with-help">Start page</h1>
     <p class="govuk-body">Provide a summary of key points on how to complete the certificate. This will show before the user starts a new certificate.</p>
-    <p class="govuk-body">Use markdown to add formating. <a href="https://www.markdownguide.org/basic-syntax/">Get help with markdown</a></p>
-
-    <form class="case-update" method="POST">
+    <p class="govuk-body">To help, you can <a href="#">start with a basic templete</a></p>
+    <form class="case-update" action="health-cert-editor--settings" method="POST">
 
       <div class="govuk-form-group">
         <!-- <label class="govuk-label" for="more-detail">
@@ -116,13 +58,41 @@ main .editor-statusbar .autosave, main .editor-statusbar .cursor{
     </form>
   </div>
 </div>
-<script>
-  var simplemde = new SimpleMDE({
-    element: document.getElementById("more-detail"),
-    autofocus: false,
-    toolbar: false,
-    spellChecker: false
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+  CKEDITOR.replace('editor1');
+  CKEDITOR.stylesSet.add('my_styles', [
+    // Block-level styles.
+    {
+      name: 'Blue Title',
+      element: 'h2',
+      styles: {
+        color: 'Blue'
+      }
+    },
+    {
+      name: 'Red Title',
+      element: 'h3',
+      styles: {
+        color: 'Red'
+      }
+    },
 
-  });
+    // Inline styles.
+    {
+      name: 'CSS Style',
+      element: 'span',
+      attributes: {
+        'class': 'my_style'
+      }
+    },
+    {
+      name: 'Marker: Yellow',
+      element: 'span',
+      styles: {
+        'background-color': 'Yellow'
+      }
+    }
+  ]);
 </script>
 {% endblock %}

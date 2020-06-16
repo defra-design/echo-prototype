@@ -1,13 +1,32 @@
 module.exports = function(router) {
   // Load helper functions
   var tools = require('../tools.js')
-  // require('./repeatable-questions-v3.js')(router)
-  // require('./EXP-8639-update-clone-journey.js')(router)
-  // require('./EXP-8648-keep-reference-number.js')(router)
-  // require('./EXP-8649-invalid-clone-items.js')(router)
+  // To convert markdown
+  var showdown  = require('showdown')
+
+  const classMap = {
+  h1: 'govuk-heading-xl',
+  h2: 'govuk-heading-l',
+  h3: 'govuk-heading-m',
+  h4: 'govuk-heading-s',
+  ul: 'govuk-list govuk-list--bullet',
+  ol: 'govuk-list govuk-list--number',
+  a: 'govuk-link',
+  p: 'govuk-body',
+  }
+  const bindings = Object.keys(classMap)
+  .map(key => ({
+    type: 'output',
+    regex: new RegExp(`<${key}(.*)>`, 'g'),
+    replace: `<${key} class="${classMap[key]}" $1>`
+  }));
+  const converter = new showdown.Converter({
+    extensions: bindings
+  })
 
   // ADD extra routing here if needed.
   // require('./extra-stories.js')(router)
+
   const fs = require('fs');
 
   // CHANGE VERSION each time you create a new version
@@ -31,7 +50,12 @@ module.exports = function(router) {
     db.push(f)
   });
 
+  // **** cloning ***
+  router.post('/'+base_url+'*/manage/health-cert-editor--start-page-2', function(req, res) {
+    req.session.data.start_page_content=converter.makeHtml(req.body.editor1);
+    res.redirect(301, '/' + base_url +req.params[0]+'/manage/health-cert-editor--settings');
 
+  })
   // MIDDLEWARE: Called every time a page is rendered
   router.use(function(req, res, next) {
     // this makes sure a certificate is loaded
