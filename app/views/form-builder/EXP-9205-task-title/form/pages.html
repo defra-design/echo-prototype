@@ -121,11 +121,11 @@ border-color: #1d70b8 transparent transparent transparent;
                 How will the horse be identified?
               </th>
               <td id="7606-title" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
-                Horse identification
+                {% if query.updated_id == "2" %}{{query.task_title}}{%else%}Horse identification{%endif%}
               </td>
 
               <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
-                <a id="7612-editLink" class="govuk-link app-link--action" href="page-edit?page_title=How will the horse be identified?&task_title=Product details">Change</a>
+                <a id="7612-editLink" class="govuk-link app-link--action" href="page-edit?page_title=How will the horse be identified?&task_title=Product details&updated_id=2">Change</a>
                 <a id="7612-viewQuestionsLink" class="govuk-link app-link--action" href="#">View
                   questions</a>
                 <a id="7612-deleteLink" class="govuk-link app-link--action" href="delete-page">Delete</a>

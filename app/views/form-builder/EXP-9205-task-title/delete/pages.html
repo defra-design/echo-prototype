@@ -46,7 +46,7 @@ GOV.UK Prototype Kit
                 2
               </td>
               <td id="7607-title" class="govuk-table__cell" scope="row">
-                How will the horse be identified?
+                {% query.updated_id == 2 %}updated_id{%else%}How will the horse be identified?{%endif%}
               </td>
               <td class="govuk-table__cell actions-column">
                 <a id="7607-editLink" class="govuk-link" href="/protected/forms/2849EHC/versions/3.2/pages/7607">edit</a>
