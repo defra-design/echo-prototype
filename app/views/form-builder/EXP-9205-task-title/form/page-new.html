@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div>
+          <h2 class="govuk-heading-xl heading-with-help">New page</h2>
+        </div>
+
+        <form class="case-update" style="display: inline;" action="pages" method="POST">
+          <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+
+          <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="title">Page title</label>
+            <input class="govuk-input" id="title" name="title" data-qa-id="Input-title" value="">
+          </div>
+          <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="title">Task list title (optional)</label>
+            <span class="govuk-hint">This will only show on the task list. If empty the page title will be displayed on the task list instead</span>
+            <input class="govuk-input" id="title" name="title" data-qa-id="Input-title" value="">
+          </div>
+          <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="subtitle">Subtitle</label>
+            <input class="govuk-input" id="subtitle" name="subtitle" data-qa-id="Input-subtitle" value="">
+          </div>
+
+          <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="hint">Hint</label>
+            <input class="govuk-input" id="hint" name="hint" data-qa-id="Input-hint" value="">
+          </div>
+          <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+
+    <p class="govuk-body">Answers to questions on this page are:<p>
+    <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+          <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+            the same for all certificates in this application
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+            different for each certificate
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+          <input type="hidden" name="pageOrder" value="2">
+
+
+          <input class="govuk-button" type="submit" id="Button-Save-Page" value="Save page" name="save_page">
+        </form>
+      </div>
+    </div>
+{% endblock %}
