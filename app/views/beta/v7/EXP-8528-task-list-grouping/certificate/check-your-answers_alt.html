@@ -92,9 +92,11 @@ GOV.UK Prototype Kit
         Please check that the answers you've provided are correct.
       </p>
 
-
-
-
+      <div class="app-summary-card ">
+        <header class="app-summary-card--header">
+          <h4 class="app-summary-card--title">1. About the application</h4>
+        </header>
+        <div class="app-summary-card--content">
           <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
             {% if (db.commodities | length) > 1 %}
 
@@ -203,19 +205,24 @@ GOV.UK Prototype Kit
               </dd>
             </div>
           </dl>
-
-
+        </div>
+      </div>
 
       <!-- -------------------------
         EXA RESPONSES
         -------------------------- -->
-
+      <div class="app-summary-card ">
+        <header class="app-summary-card--header">
+          <h4 class="app-summary-card--title">2. Information needed by APHA </h4>
+        </header>
+        <div class="app-summary-card--content">
           <p class="govuk-hint">This infomation does not appear on the certificate.</p>
           <!-- display_type is used to show correct informtion from JSON file, EXA or EHC -->
           {% set display_type = "EXA"%}
           <!-- loading partial to show all repsonses for the EXA partials/check-your-answers-block -->
           {% block EXAanswers %}{% include "./partials/check-your-answers-block.html" %}{% endblock %}
-
+        </div>
+      </div>
       <!-- -------------------------
         EHC RESPONSES
         -------------------------- -->
