@@ -61,6 +61,8 @@ Only shows on the task list. If empty the page title will show on the task list.
           if(confirmed){
             $(".defra-alert").show()
             $(".task-linked-page-name").text(confirmed)
+          }else{
+            $(".defra-alert").hide()
           }
 
         }
@@ -68,7 +70,7 @@ Only shows on the task list. If empty the page title will show on the task list.
           element: element,
           id: id,
           showAllValues: true,
-          tNoResults:function(){return "add new group or task name"},
+          tNoResults:function(){return "Add new group or task name"},
           showNoOptionsFound: true,
           onConfirm: showGrouping,
           defaultValue: d,

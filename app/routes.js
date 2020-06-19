@@ -1,6 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
+
+// IDM re-route back to a page I moved.
+router.get('/e2e/confirmation', function(req, res) {
+  return res.redirect(301, '/alpha/e2e/confirmation');
+})
+
+
 require('./routes/alpha/e2e/routes.js')(router);
 
 //form builder Admin
