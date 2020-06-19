@@ -58,24 +58,29 @@ Only shows on the task list. If empty the page title will show on the task list.
         var id = 'task-group-title'
         var d = document.getElementById('task-group-title-backup').value
         function showGrouping(confirmed){
-          if(confirmed){
-            $(".defra-alert").show()
-            $(".task-linked-page-name").text(confirmed)
-          }else{
-            $(".defra-alert").hide()
+          console.log($('#task-group-title').is(':focus'))
+          if($('#task-group-title').is(':focus')){
+            console.log("ShowingGrouping")
+            console.log("val= "+ $('#task-group-title').val())
+            console.log("confirmed= "+ confirmed)
+            if(confirmed == $('#task-group-title').val()){
+              $(".defra-alert").show()
+              $(".task-linked-page-name").text(confirmed)
+              return
+            }else{
+              $(".defra-alert").hide()
+            }
           }
+
 
         }
         accessibleAutocomplete({
           element: element,
           id: id,
           showAllValues: true,
-          tNoResults:function(){return "Add new group or task name"},
-          showNoOptionsFound: true,
-          onConfirm: showGrouping,
+          showNoOptionsFound: false,
           defaultValue: d,
           source: groups
-
         })
       })
 
