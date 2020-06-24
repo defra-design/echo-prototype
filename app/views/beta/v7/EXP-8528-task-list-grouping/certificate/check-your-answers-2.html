@@ -92,9 +92,11 @@ GOV.UK Prototype Kit
         Please check that the answers you've provided are correct.
       </p>
 
-
-
-
+      <div class="app-summary-card ">
+        <header class="app-summary-card--header">
+          <h4 class="app-summary-card--title">1. About the application</h4>
+        </header>
+        <div class="app-summary-card--content">
           <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
             {% if (db.commodities | length) > 1 %}
 
@@ -203,27 +205,61 @@ GOV.UK Prototype Kit
               </dd>
             </div>
           </dl>
-
-
+        </div>
+      </div>
 
       <!-- -------------------------
         EXA RESPONSES
         -------------------------- -->
-
+      <div class="app-summary-card ">
+        <header class="app-summary-card--header">
+          <h4 class="app-summary-card--title">2. Information needed by APHA </h4>
+        </header>
+        <div class="app-summary-card--content">
+          <p class="govuk-hint">This infomation does not appear on the certificate.</p>
           <!-- display_type is used to show correct informtion from JSON file, EXA or EHC -->
           {% set display_type = "EXA"%}
           <!-- loading partial to show all repsonses for the EXA partials/check-your-answers-block -->
           {% block EXAanswers %}{% include "./partials/check-your-answers-block.html" %}{% endblock %}
-
+        </div>
+      </div>
       <!-- -------------------------
         EHC RESPONSES
         -------------------------- -->
+      <div class="app-summary-card ">
+        <header class="app-summary-card--header">
+          <h4 class="app-summary-card--title">3. Information for the export health certificate</h4>
+        </header>
+        <div class="app-summary-card--content">
+          {% if data.block_version == "2" and data.is_blank_block == 'yes'%}
+          <div class="defra-alert defra-alert--info">
+            <p class="govuk-body">This is a block application. Anything you enter in this section will appear on <strong>all {{data.certificate_request_amount or '50'}} certificates</strong>. </p>
 
-
+          </div>
+          {% endif %}
           <!-- display_type is used to show correct informtion from JSON file, EXA or EHC -->
           {% set display_type = "EHC"%}
           <!-- loading partial to show all repsonses for the EHC partials/check-your-answers-block -->
           {% block EHCanswers %}{% include "./partials/check-your-answers-block.html" %}{% endblock %}
+          <div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+            <section class="attachment embedded govuk-!-margin-bottom-0" id="attachment_3220161">
+              <div class="attachment-thumb">
+                <a aria-hidden="true" class="thumbnail" tabindex="-1" href="/public/images/{{db.sample_PDF or 'ehc-2580ehc-7.6.pdf'}}"><img alt="" src="/public/images/specimin_thumb.png"></a>
+              </div>
+              <div class="attachment-details">
+                <p class="govuk-body">See what all {{data.certificate_request_amount or '50'}} certificates will look like by <a aria-describedby="attachment-3220161-accessibility-help" href="/public/images/{{db.sample_PDF or 'ehc-2580ehc-7.6.pdf'}}">previewing
+                    your answers in a specimen certificate (opens in a new tab)</a></p>
+                <p class="metadata">
+                  <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span class="file-size">784KB</span>, <span class="page-length">2 pages</span> <br>This file may not be suitable for users of assistive technology.
+                </p>
+
+                <p class="govuk-body">
+
+                </p>
+
+              </div>
+            </section>
+          </div>
           <!-- <div class="defra-alert defra-alert--info govuk-!-margin-bottom-0">
             <p class="download-a-document">
               <span class="download-a-document-image"><img class="" src="/public/images/icon-file-download.png" alt="your answers in a specimen certificate"><span class="govuk-visually-hidden">File download</span></span>
@@ -231,53 +267,43 @@ GOV.UK Prototype Kit
                 <br>(opens in a new tab)</strong>
             </p>
           </div> -->
+        </div>
+      </div>
+
+      <div class="app-summary-card ">
+        <header class="app-summary-card--header">
+          <h4 class="app-summary-card--title">4. Attachments (optional)</h4>
+        </header>
+        <div class="app-summary-card--content">
+          {% if (data.uploaded_files | length) > 0 %}
+          <p class="govuk-body">{{data.uploaded_files | length}} file{% if (data.uploaded_files | length) > 1 %}s{% endif %} attached</p>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
 
 
-
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
-            {% if (data.uploaded_files | length) > 0 %}
             {% for file in data.uploaded_files %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                File name
-                <br> Description
+                File {{loop.index}}
               </dt>
               <dd class="govuk-summary-list__value">
-                {{file.name}}
-                <br>{{file.description}}
+                <a href="#"><strong>{{file}}</strong></a>
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="supporting-documents?change=yes">
-                  Change<span class="govuk-visually-hidden"> previous application number</span>
+                  Delete<span class="govuk-visually-hidden"> {{file}}</span>
                 </a>
               </dd>
             </div>
+
             {% endfor%}
+            <p class="govuk-body govuk-!-margin-top-6"><a href="supporting-documents?change=yes" class="govuk-link">Add more attachments</a></p>
             {% else %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                File name
-                <br> Description
-              </dt>
-              <dd class="govuk-summary-list__value">
-                No documents uploaded
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="supporting-documents?change=yes">
-                  Change<span class="govuk-visually-hidden"> previous application number</span>
-                </a>
-              </dd>
-            </div>
+            <p class="govuk-body">You have uploaded no attachments</p>
+            <p class="govuk-body"><a href="supporting-documents?change=yes" class="govuk-link">Add attachments</a></p>
             {% endif %}
             <dl>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <p class="notice">
-        <span class="icon icon-file-download"><span class="govuk-visually-hidden">File download</span></span>
-        <strong>Preview your answers in a <a href="/public/images/{{db.sample_PDF or 'ehc-2580ehc-7.6.pdf'}}" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
-      </p>
+        </div>
+      </div>
     </div>
   </div>
   <div class="govuk-grid-row">
