@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<form action="versions" method="POST" enctype="multipart/form-data">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl"></h1>
+            <h2 class="govuk-heading-l heading-with-help disabled">
+              <span class="govuk-caption-l">2849EHC</span>
+              Clone an EHC version
+            </h2>
+
+            <div class="govuk-form-group margin-top-30">
+              <h3 class="govuk-heading-m">Upload a new EHC</h3>
+
+            </div>
+
+            <div class="govuk-form-group">
+              <div class="form-text-box">
+                <div class="govuk-form-group margin-top-30 ">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="document-version">Enter
+                    version</label>
+                  <input id="document-version" name="document-version" class="govuk-input govuk-input--width-4" value="" type="text" data-qa-id="TextField-documentVersion" autofocus="autofocus">
+                </div>
+              </div>
+            </div>
+
+            <div id="file-upload-container" class="">
+              <label class="govuk-!-font-weight-bold govuk-hint" for="uploaded-file-input">Upload
+                should be PDF and no larger than 10MB</label>
+              <input class="govuk-file-upload" id="uploaded-file-input" name="file" accept="application/pdf" type="file">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      <div class="govuk-form-group">
+        <a href="pages" class="govuk-button margin-top-30" type="submit" value="Save and manage EHC form pages" id="button-save-and-manage-form" name="button-save-and-manage-form" data-qa-id="button-SaveManageVersion">Save and manage EHC form pages</a>
+
+        <a href="versions?cloned=yes" class="margin-top-30 margin-left-30 govuk-button grey-button" type="submit" value="Save EHC as draft" id="button-save-as-draft" name="button-save-as-draft" data-qa-id="button-SaveDraftVersion">Save EHC as draft</a>
+      </div>
+    </form>
+  {% endblock %}
