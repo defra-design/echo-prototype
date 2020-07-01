@@ -146,22 +146,22 @@ GOV.UK Prototype Kit
     {% if task.title != "Supporting documents" and task.exa != "yes" %}
     <h2 class="govuk-heading-m">{{task.title}}</h2>
     {% if task.content.product_page == 'yes' %}
-
+    <p class="govuk-body">You have added {{( data.products | length )}} products</p>
     {% if data.products %}
     {% for product in data.products %}
     <div class="app-summary-card ">
       <header class="app-summary-card--header">
-        <h3 class="app-summary-card--title">{{loop.index}}. {{product[task.content.fields[0].name]}}</h3>
+        <h3 class="app-summary-card--title">{{task.content.product_name or 'Product'}} {{loop.index}}</h3>
         <div class="app-summary-card__actions">
           <ul class="app-summary-card__actions-list">
             <li class="app-summary-card__actions-list-item">
               <a class="govuk-link" href="#">
-                Delete<span class="govuk-visually-hidden"></span>
+                Delete product<span class="govuk-visually-hidden"> (The University of Gloucestershire)</span>
               </a>
             </li>
             <li class="app-summary-card__actions-list-item">
-              <a class="govuk-link" href="page?id={{task.page or 2}}&edit={{product.id}}&next=check-your-answers&product_page=yes&change=yes">
-                Change<span class="govuk-visually-hidden"></span>
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> (The University of Gloucestershire)</span>
               </a>
             </li>
           </ul>
@@ -176,11 +176,7 @@ GOV.UK Prototype Kit
               {{question.label}}
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if product[question.name]%}
-                {{product[question.name]}}
-                {%else%}
-                <span class="govuk-hint">You skipped this question</span>
-              {% endif %}
+              {{product[question.name]}}
             </dd>
           </div>
           {% endfor %}
@@ -190,11 +186,7 @@ GOV.UK Prototype Kit
         {% endfor %}
 
     {% endif %}
-    {% if (data.products | length) < 4 %}
-    <p class="govuk-body"><a class="govuk-link" href="page?id={{task.page}}&next=check-your-answers&product_page=yes&new=yes">Add another</a></p>
-    {% else %}
-    You have added a maximum of 5. If you need to add more you can upload details in supporting documents
-    {% endif %}
+    <p class="govuk-body"><a class="govuk-link" href="product-list">Add another {{task.content.product_name or 'product'}}</a></p>
     {% else %}
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
       {% for field in task.content.fields %}

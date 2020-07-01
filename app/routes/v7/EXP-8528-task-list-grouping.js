@@ -9,7 +9,7 @@ module.exports = function(router) {
 
   // CHANGE VERSION TO THE VERSION
   const version = 'beta/v7'
-  const base_url = version + "/EXP-9235-task-list-improvements"
+  const base_url = version + "/EXP-8528-task-list-grouping"
   const file_url = version + "/core"
   const db = []
   var normalizedPath = require("path").join(__dirname, "../../data/certificates");

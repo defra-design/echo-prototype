@@ -4,19 +4,16 @@ GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
 <a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
-<div class="govuk-width-container">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-xl">
         Review your answers
       </h1>
-      <div class="govuk-details__text">
-        <strong class="govuk-body ">
+        <p class="govuk-body">
           Your application for a health certificate is now ready to be submitted.<br>
           Please check that the answers you've provided are correct.
-        </strong>
-      </div>
-      <br /><br />
+        </p>
+
       {% if (db.commodities | length) > 1 %}
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
 
@@ -240,6 +237,5 @@ GOV.UK Prototype Kit
       </div>
     </div>
   </div>
-</div>
 {% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
 {% endblock %}
