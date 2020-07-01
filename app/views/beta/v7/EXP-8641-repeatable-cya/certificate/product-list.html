@@ -75,7 +75,8 @@
       {% if (data.products | length ) < 5 %}
     <a class="govuk-button grey-black-text"  style="color:#000000" href="page?id={{query.id or 2}}&next=product-list&product_page=yes&new=yes" id="Button-AddAnother">{% if (data.products | length) == 0 %}Add{%else%}Add another{% endif %}</a>
     {% else %}
-    <p class="govuk-body">You have added the maximum of 5</p>
+    <p class="govuk-body">You have added the maximum number of products. If you need to add more, upload a <a href="exa/supporting-documents" class="govuk-link">supporting document</a> at the end of this application.</p>
+
 
     {% endif %}
     <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
