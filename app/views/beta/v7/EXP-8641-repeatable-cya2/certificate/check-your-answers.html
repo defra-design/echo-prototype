@@ -1,0 +1,998 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+          
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">
+      Review your answers
+    </h1>
+    <p class="govuk-body">
+      Your application for a health certificate is now ready to be submitted.<br>
+      Please check that the answers you've provided are correct.
+    </p>
+
+    <h2 class="govuk-heading-m">Do you want to provide an applicant reference number?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Create a reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          no reference
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="exa/reference?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Change</a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Where are you exporting to?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Point of entry into the European Economic Area
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="exa/export-destination?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Destination in the European Economic Area
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="exa/export-destination?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-2">Change</a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Select the certifier practice to include with your application</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Select the certifier practice to include with your application
+        </dt>
+        <dd class="govuk-summary-list__value">CBA VETS LIMITED
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="exa/certifier?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Select certificate delivery address
+        </dt>
+        <dd class="govuk-summary-list__value"> , , ,
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="exa/certifier-confirm-address?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">How would you like the certificate to be delivered to the certifier?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Delivery method
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Change</a>
+        </dd>
+      </div>
+    </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2 class="govuk-heading-m">Where will certification take place?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Certification region
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=11&amp;next=check-your-answers">Change<span class="govuk-visually-hidden"> Certification region</span></a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+    <h2 class="govuk-heading-m">Who is exporting the product?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Exporter name
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=12&amp;next=check-your-answers">Change<span class="govuk-visually-hidden"> Exporter name</span></a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+    <h2 class="govuk-heading-m">What is the origin of the product?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Origin
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=13&amp;next=check-your-answers">Change<span class="govuk-visually-hidden"> Origin</span></a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+    <h2 class="govuk-heading-m">What is the planned date of export?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Planned export date
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          //
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=14&amp;next=check-your-answers">Change<span class="govuk-visually-hidden"> Planned export date</span></a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+    <!-- GET BESPOKE EXA QUESTIONS -->
+
+
+    <h2 class="govuk-heading-m">What are the commodity details?</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Commodity code
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Commodity code</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Description of commodity
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Description of commodity</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Net and gross weight of consignment
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Net and gross weight of consignment</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Number of packages
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Number of packages</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type of packaging
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Type of packaging</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Temperature of commodity
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Temperature of commodity</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Intended use of commodity
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Intended use of commodity</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+    <h2 class="govuk-heading-m">What are the details of the product?</h2>
+
+
+
+
+    <div class="app-summary-card ">
+      <header class="app-summary-card--header">
+        <h3 class="app-summary-card--title">1</h3>
+        <!-- <div class="app-summary-card__actions">
+          <ul class="app-summary-card__actions-list">
+            <li class="app-summary-card__actions-list-item">
+              <a class="govuk-link" href="#">
+                Delete<span class="govuk-visually-hidden"></span>
+              </a>
+            </li>
+            <li class="app-summary-card__actions-list-item">
+              <a class="govuk-link" href="page?id=2&edit=2&next=check-your-answers&product_page=yes&change=yes">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </li>
+          </ul>
+        </div> -->
+      </header>
+      <div class="app-summary-card--content">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Scientific species name
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                Dolphin
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Manufacturing plant
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                Slaughter house 5
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Batch number
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                978432432
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of packages
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                erfwerfwerf
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Net weight
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                15kg
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </div>
+
+    <div class="app-summary-card ">
+      <header class="app-summary-card--header">
+        <h3 class="app-summary-card--title">2</h3>
+        <!-- <div class="app-summary-card__actions">
+          <ul class="app-summary-card__actions-list">
+            <li class="app-summary-card__actions-list-item">
+              <a class="govuk-link" href="#">
+                Delete<span class="govuk-visually-hidden"></span>
+              </a>
+            </li>
+            <li class="app-summary-card__actions-list-item">
+              <a class="govuk-link" href="page?id=2&edit=2&next=check-your-answers&product_page=yes&change=yes">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </li>
+          </ul>
+        </div> -->
+      </header>
+      <div class="app-summary-card--content">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Scientific species name
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                Dolphin
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Manufacturing plant
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                sdf
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Batch number
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                sadf
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of packages
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                23
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Net weight
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                foiasdfjasdfaisdjfoijasd
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="page?id=2&amp;next=check-your-answers">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <h2 class="govuk-heading-m">What is the dispatch establishment?</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name of dispatch establishment
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=3&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Name of dispatch establishment</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address of dispatch establishment
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=3&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Address of dispatch establishment</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Approval number of dispatch establishment
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=3&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Approval number of dispatch establishment</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+    <h2 class="govuk-heading-m">Who is sending the consignment?</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consignor name
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=4&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Consignor name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consignor address
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=4&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Consignor address</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consignor telephone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=4&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Consignor telephone number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consignor country
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=4&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Consignor country</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+    <h2 class="govuk-heading-m">Where will the consignment be loaded?</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of loading
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=6&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Place of loading</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+    <h2 class="govuk-heading-m">How will the consignment be transported?</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Expected date of departure from the UK
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=7&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Expected date of departure from the UK</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Means of transport to the BIP
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=7&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Means of transport to the BIP</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Identification of the transport
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=7&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Identification of the transport</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Documentary reference number for the transport
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=7&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Documentary reference number for the transport</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Container and seal numbers
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=7&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Container and seal numbers</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+    <h2 class="govuk-heading-m">What is the destination country of this consignment?</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Destination country in the EU
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=15&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Destination country in the EU</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ISO code of destination country
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=15&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> ISO code of destination country</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+    <h2 class="govuk-heading-m">Which Border Inspection Post (BIP) will the consignment arrive at?</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name of the BIP
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=16&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Name of the BIP</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          BIP unit number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=16&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> BIP unit number</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+    <h2 class="govuk-heading-m">Who is receiving the consignment?</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consignee name
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=8&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Consignee name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consignee address
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=8&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Consignee address</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consignee telephone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=8&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Consignee telephone number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Consignee country
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=8&amp;next=check-your-answers">
+            Change<span class="govuk-visually-hidden"> Consignee country</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- {Tasks -->
+    <h2 class="govuk-heading-m">Supporting documents</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          File name
+          <br> Description
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No documents uploaded
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="supporting-documents?change=yes">
+            Change<span class="govuk-visually-hidden"> previous application number</span>
+          </a>
+        </dd>
+      </div>
+
+      <dl>
+  </dl></dl></div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="notice">
+      <span class="icon icon-file-download"><span class="govuk-visually-hidden">File download</span></span>
+      <strong>Preview your answers in a <a href="/public/images/ehc-2580ehc-7.6.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
+    </p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div>
+      <form action="review" method="POST">
+        <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+        <input type="hidden" name="applicationFormStatus" value="">
+        <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue" data-qa-id="Button-Continue">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}
