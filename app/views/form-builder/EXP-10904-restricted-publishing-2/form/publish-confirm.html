@@ -14,7 +14,7 @@ GOV.UK Prototype Kit
 {% if query.updated_status == "active" %}
 <p class="govuk-body">Version 3.1 has been unpublished (inactive) and replaced with version 3.2</p>
 {% else %}
-<p class="govuk-body">Version 3.3 {% if query.updated_status != 'internal' %}is now available to anyone you share the URL with{%else%}is now available to any internal user{%endif%}, to everyone else they can still access the active version 3.1</p>
+<p class="govuk-body">Version 3.3 {% if query.updated_status != 'internal' %}is now available to anyone you share the URL with{%else%}is now available to any internal user{%endif%}. Everyone else can still access the active version 3.1.</p>
 <h2 class="govuk-heading-m">Copy {% if query.updated_status != 'internal' %}and share{%endif%} the URL</h2>
 <div data-module="app-copy" class="defra-callout defra-callout--code govuk-!-margin-bottom-6" id="organisation-banner-example-html" role="panel" aria-hidden="false">
   <!-- <button class="app-copy-button js-copy-btn" aria-live="assertive">Copy URL</button> -->
