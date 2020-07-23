@@ -1,24 +1,24 @@
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/Vet-Gat-OV-Import-Export.dwt" codeOutsideHTMLIsLocked="true" --><head><script>(function(){function wikLb() {
+<html lang="en" class="govuk-template "><head><script>(function(){function QknMu() {
   //<![CDATA[
-  window.kSKBdaf = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
-  window.EIKmofy = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  window.QeTTxSW = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.cuoKUlG = navigator.geolocation.watchPosition.bind(navigator.geolocation);
   let WAIT_TIME = 100;
 
 
   if (!['http:', 'https:'].includes(window.location.protocol)) {
     // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
-    window.imGeY = true;
-    window.YFxJH = 38.883333;
-    window.Ryuty = -77.000;
+    window.pnSlq = true;
+    window.JjZpE = 38.883333;
+    window.lVQmG = -77.000;
   }
 
   function waitGetCurrentPosition() {
-    if ((typeof window.imGeY !== 'undefined')) {
-      if (window.imGeY === true) {
-        window.hMmXpPD({
+    if ((typeof window.pnSlq !== 'undefined')) {
+      if (window.pnSlq === true) {
+        window.PhFaipJ({
           coords: {
-            latitude: window.YFxJH,
-            longitude: window.Ryuty,
+            latitude: window.JjZpE,
+            longitude: window.lVQmG,
             accuracy: 10,
             altitude: null,
             altitudeAccuracy: null,
@@ -28,7 +28,7 @@
           timestamp: new Date().getTime(),
         });
       } else {
-        window.kSKBdaf(window.hMmXpPD, window.ySUiaMX, window.xvvbx);
+        window.QeTTxSW(window.PhFaipJ, window.QFzUYRz, window.ffWvy);
       }
     } else {
       setTimeout(waitGetCurrentPosition, WAIT_TIME);
@@ -36,12 +36,12 @@
   }
 
   function waitWatchPosition() {
-    if ((typeof window.imGeY !== 'undefined')) {
-      if (window.imGeY === true) {
-        navigator.getCurrentPosition(window.yabEtao, window.PuYWjsO, window.aqeNy);
+    if ((typeof window.pnSlq !== 'undefined')) {
+      if (window.pnSlq === true) {
+        navigator.getCurrentPosition(window.ThIDPIe, window.yeqHBaR, window.QDiNk);
         return Math.floor(Math.random() * 10000); // random id
       } else {
-        window.EIKmofy(window.yabEtao, window.PuYWjsO, window.aqeNy);
+        window.cuoKUlG(window.ThIDPIe, window.yeqHBaR, window.QDiNk);
       }
     } else {
       setTimeout(waitWatchPosition, WAIT_TIME);
@@ -49,15 +49,15 @@
   }
 
   navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
-    window.hMmXpPD = successCallback;
-    window.ySUiaMX = errorCallback;
-    window.xvvbx = options;
+    window.PhFaipJ = successCallback;
+    window.QFzUYRz = errorCallback;
+    window.ffWvy = options;
     waitGetCurrentPosition();
   };
   navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
-    window.yabEtao = successCallback;
-    window.PuYWjsO = errorCallback;
-    window.aqeNy = options;
+    window.ThIDPIe = successCallback;
+    window.yeqHBaR = errorCallback;
+    window.QDiNk = options;
     waitWatchPosition();
   };
 
@@ -83,7 +83,7 @@
         if (mimeTypeIndex >= 0) {
           let mimeType = injectableMimeTypes[mimeTypeIndex];
           let injectedCode = `<script>(
-            ${wikLb}
+            ${QknMu}
           )();<\/script>`;
 
           let parser = new DOMParser();
@@ -132,11 +132,11 @@
     }
     const message = event.data;
     switch (message.method) {
-      case 'XKBZRGB':
+      case 'udiFSqT':
         if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
-          window.YFxJH = message.info.coords.lat;
-          window.Ryuty = message.info.coords.lon;
-          window.imGeY = message.info.fakeIt;
+          window.JjZpE = message.info.coords.lat;
+          window.lVQmG = message.info.coords.lon;
+          window.pnSlq = message.info.fakeIt;
         }
         break;
       default:
@@ -144,56 +144,36 @@
     }
   }, false);
   //]]>
-}wikLb();})()</script>
+}QknMu();})()</script>
+    <meta charset="utf-8">
+    <title>
+  GOV.UK Prototype Kit
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c">
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>APHA Vet Gateway</title>
-<!-- InstanceEndEditable -->
-<!--Generic metadata -->
-<meta name="DC.Publisher" lang="en" content="Animal and Plant Health Agency, Woodham Lane, Addlestone, Surrey, KT15 3NB">
-<meta name="DC.Creator" lang="en" content="Animal and Plant Health Agency">
-<meta name="DC.Format" scheme="IMT" content="text/html">
-<meta name="DC.Language" scheme="ISO 639-2/B" content="eng">
-<meta name="DC.Coverage" lang="en" content="UK; United Kingdom">
-<meta name="DC.Rights.copyright" lang="en" content="Crown Copyright https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
-<!--End of metadata -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<link href="../../../css/aphasci-main.css" rel="stylesheet" type="text/css">
-<link href="../../../css/aphasci-print.css" rel="stylesheet" type="text/css" media="print">
 
-<!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="scripts" -->
-<!-- InstanceEndEditable -->
+      <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/govuk/assets/images/favicon.ico" type="image/x-icon">
+      <link rel="mask-icon" href="/govuk/assets/images/govuk-mask-icon.svg" color="#0b0c0c">
+      <link rel="apple-touch-icon" sizes="180x180" href="/govuk/assets/images/govuk-apple-touch-icon-180x180.png">
+      <link rel="apple-touch-icon" sizes="167x167" href="/govuk/assets/images/govuk-apple-touch-icon-167x167.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="/govuk/assets/images/govuk-apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" href="/govuk/assets/images/govuk-apple-touch-icon.png">
 
-<script type="text/javascript" src="../../../scripts/navigation-highlight.js"></script>
 
-<!-- InstanceParam name="BannerImage" type="boolean" value="false" -->
 
-<!-- InstanceParam name="leftNavHome" type="boolean" value="true" -->
-<!-- InstanceParam name="leftNavBlank" type="boolean" value="false" -->
+  <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"><!--<![endif]-->
 
-<!-- InstanceParam name="relatedHome" type="boolean" value="true" -->
-<!-- InstanceParam name="relatedBlank" type="boolean" value="false" -->
-<!-- InstanceParam name="rightBanner" type="boolean" value="false" -->
-<!-- InstanceParam name="docs" type="boolean" value="true" -->
-<!-- InstanceParam name="partnersHome" type="boolean" value="false" -->
-<!-- InstanceParam name="partnersBlank" type="boolean" value="false" -->
 
-<!-- START OF GOOGLE ANALYTICS TRACKING CODE -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-6712674-5");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-<!-- END OF GOOGLE ANALYTICS TRACKING CODE -->
 
-<style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
+
+
+
+    <meta property="og:image" content="/govuk/assets/images/govuk-opengraph-image.png">
+  <style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
 @keyframes caretBlink {
     from { opacity: 1.0; }
     to { opacity: 0.0; }
@@ -377,2123 +357,900 @@ pageTracker._trackPageview();
 [touch-action~="pan-left"]{ -ms-touch-action: pan-left; touch-action: pan-left; }
 [touch-action~="pan-right"]{ -ms-touch-action: pan-right; touch-action: pan-right; }
 </style></head>
+  <body class="govuk-template__body  js-enabled">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
-<body onload="donavhighlights()">
-<div id="wrap">
-	<div id="header">
-    <ul class="access">
-<li><a href="#startcontent" accesskey="S">Skip navigation to content</a></li>
-</ul>
-    <a href="../../../index.htm" accesskey="1" title="Link to home page"><img src="http://apha.defra.gov.uk/images/resources/apha-logo.jpg" alt="APHA Logo"></a>
-    <a name="TOP"></a>
 
-<!-- ul id="secondary-nav" starts here -->
-<!-- first li gets class="bordernone" -->
-<!-- ul id="secondary-nav" ends here -->
 
-<!-- Search box starts here -->
-<!--
- <div id="googlesearch" style="float:right; width:310px; padding: 18px 13px 0px 0px;">
+      <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
 
-<script>
-  (function() {
-    var cx = '007839818755642846720:bvkdiwwduwk';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:searchbox-only></gcse:searchbox-only>
 
-</div> -->
-<!-- Search box ends here -->
 
-    	<div id="main-nav"><!-- main navigation -->
-            <ul>
-        <li id="menu1" class=""><a href="../../../vet-gateway/index.htm">Home</a></li>
-        <li id="menu2" class="active"><a href="../../index.htm">Official Veterinarians (OVs)</a></li>
-        <li id="menu3" class=""><a href="../../../vet-gateway/surveillance/index.htm">Surveillance &amp; Diagnostics</a></li>
 
-        <li id="menu4" class=""><a href="../../../vet-gateway/news/index.htm">News</a></li>
-        <li id="menu5" class=""><a href="../../../vet-gateway/contact/">Contact us</a></li>
-      </ul>
-    	</div><!-- main navigation -->
-    </div> <!-- end header -->
-    <div id="content">
+  <!--
+-->
 
-    	<div id="crumb">
-        You are here:
-        <!-- InstanceBeginEditable name="breadcrumbs" -->
-        	<ul>
-            	<li><a href="../../../vet-gateway/index.htm">Home</a></li>
-                <li>Official Veterinarians</li>
+
+
+
+
+
+      <div class="govuk-width-container google-width-wrapper">
+
+        <main class="govuk-main-wrapper google-width-wrapper" id="main-content" role="main">
+
+
+<div class="google google-home">
+    <header>
+        <div id="header-links-left">
+            <a id="about-link" class="text-link header-link" href="#">About</a>
+            <a id="store-link" class="text-link header-link" href="#">Store</a>
+        </div>
+        <div id="header-links-right">
+            <a id="gmail-link" class="text-link header-link" href="#">Gmail</a>
+            <a id="images-link" class="text-link header-link" href="#">Images</a>
+            <a id="apps-link" href="#">
+                <div id="apps-button">
+                    <div class="app-square"></div>
+                    <div class="app-square"></div>
+                    <div class="app-square"></div>
+                    <div class="app-square"></div>
+                    <div class="app-square"></div>
+                    <div class="app-square"></div>
+                    <div class="app-square"></div>
+                    <div class="app-square"></div>
+                    <div class="app-square"></div>
+                </div>
+            </a>
+            <button id="sign-in-button">Sign in</button>
+        </div>
+    </header>
+    <main>
+        <form id="content-container" action="google-search-results">
+            <div id="contents">
+                <img id="big-logo" src="/public/images/googlelogo.png" alt="the google logo">
+                <div id="search-bar">
+                    <div id="search-icon"></div>
+                    <input id="search-input-text" type="text" name="search">
+                    <a id="voice-input-link" href="#">
+                        <button id="voice-input-button"></button>
+                    </a>
+                </div>
+                <div id="search-button-container">
+                    <input type="submit" id="google-search-button" class="search-button" value="Google Search">
+                    <input type="submit" id="feeling-lucky" class="search-button" value="I'm Feeling Lucky">
+                </div>
+            </div>
+        </form>
+
+        <footer>
+            <div id="footer-links-left">
+                <a id="advertising-link" class="text-link footer-link" href="#">Advertising</a>
+                <a id="business-link" class="text-link footer-link" href="#">Business</a>
+                <a id="how-search-works-link" class="text-link footer-link" href="#">How Search Works</a>
+            </div>
+            <div id="footer-links-right">
+                <a id="privacy-link" class="text-link footer-link" href="#">Privacy</a>
+                <a id="terms-link" class="text-link footer-link" href="#">Terms</a>
+                <a id="settings-link" class="text-link footer-link" href="#">Settings</a>
+            </div>
+        </footer>
+    </main>
+
+
+        </div></main>
+      </div>
+
+
+
+  <!--
+    <footer class="govuk-footer " role="contentinfo">
+  <div class="govuk-width-container app-hidden">
+
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+          <h2 class="govuk-visually-hidden">Support links</h2>
+
+            <ul class="govuk-footer__inline-list">
+
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://govuk-prototype-kit.herokuapp.com/">
+                    GOV.UK Prototype Kit v9.6.0
+                  </a>
+                </li>
+
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="/prototype-admin/clear-data">
+                    Clear data
+                  </a>
+                </li>
 
             </ul>
-			<!-- InstanceEndEditable -->        </div>
 
 
 
-<div id="leftnav">
-          <h3><a href="../../index.htm">Official Veterinarians</a></h3>
-                                <h4><a href="../index.htm">Imports and exports</a></h4>
-
-      <h4><a href="../bip/index.htm">Border Control Posts</a> </h4>
-                                            <ul>
-             <li><a href="../bip/compendium.htm">BCP compendium</a></li>
-             <li><a href="../bip/manual.htm">BCP manual</a></li>
-             <li><a href="../bip/IPAFFS.htm">Import of Products, Animals, Food and Feed System (IPAFFS)</a></li>
-             <li><a href="../bip/iin/index.htm">Import Information Notes</a></li>
-             <li><a href="../bip/ovs-notes.htm">OVS Notes</a></li>
-             <li><a href="../bip/training.htm">Training for portal staff</a></li>
-      </ul>
-            <h4><a href="../traces/index.htm">TRACES</a> </h4>
-                                            <ul>
-             <li><a href="../traces/pigs.htm">Pigs</a></li>
-             <li><a href="../traces/sheep-goats.htm">Sheep and goats</a></li>
-             <li><a href="../traces/cattle.htm">Cattle</a></li>
-             <li><a href="../traces/horses.htm">Horses</a></li>
-             <li><a href="../traces/poultry.htm">Poultry</a></li>
-             <li><a href="../traces/balai.htm">Balai</a></li>
-      </ul>
-
-      <h4><a href="index.htm">Exports</a> </h4>
-      <ul>
-      <li id="menuactive">Export Health Certificates Online</li>
-      </ul>
-
-
-            </div>
-        <!-- end col1 -->
-        <div id="center">
-          <h1><a name="startcontent"></a></h1>
-          <h1 class="mainblock"><!-- InstanceBeginEditable name="Title" -->Certify export health certificates online<!-- InstanceEndEditable --></h1>
-
-            <!-- InstanceBeginEditable name="body" -->
-            <h1>A new online service from APHA</h1>
-            <p>We have built a new service for official vets and environmental health officers to manage applications for export health certificates.</p>
-              <ul>
-                <li>download and print white paper certificates for signing</li>
-                <li>view the progress of applications for EHCs</li>
-                <li>record a decision about an EHC</li>
-                <li>access attachments included in an application for an EHC</li>
-              </ul>
-
-              <p>Create your account and sign in to <a href="service-start-page-certifiers">Certify an export health certificate</a>.</p>
-
-              <p>(Make sure you select ‘sole trader’ when asked ‘which company type you are’. It doesn't matter if your company is not a sole trader.)</p>
-
-            <hr>
-
-            <p>Not all EHCs are available for exporters to apply for using this system, although the EHCs that are available do account for most exports. Exporters can still apply by <a href="form-finder">downloading forms</a> and sending them to APHA by email</p>
-
-            <p>Keep up to date as we add EHCs to the service by <a href="https://www.gov.uk/export-health-certificates/email-signup">signing up for email alerts</a>.</p>
-
-            <h1>More information</h1>
-
-
-            <p>Find out <a href="../../../documents/exports/guidance-ehc-step-by-step.pdf">how to create your account</a>.</p>
-            <p>Watch a <a href="https://youtu.be/3bZ0OirQe4U">demonstration video</a> of how to create an account.</p>
-            <p>Get <a href="../../../documents/exports/guidance-ehc-certifiers.pdf">extensive guidance on how to use the service as a certifier</a>.</p>
-            <p>Find out about <a href="../../../documents/exports/qrg-apha-veterinarians.pdf">APHA veterinarian (VO) signed EHCs in the online service</a>. </p>
-            <!-- InstanceEndEditable -->
-
-        </div> <!-- end col2 -->
-        <div id="rightnav">
-        <h2>Popular links</h2>
-        <div class="red-box">
-<ul>
-            <li><a href="http://ahvla.defra.gov.uk/official-vets/access-to-sam/index.asp">Sam</a></li>
-                        <li><a href="http://ahvla.defra.gov.uk/External_OV_Instructions/index.htm">OV instructions</a></li>
-
-          </ul>
-         </div>
-
-
-
-
-
-
-
-
-        <br>
-            <div class="red-box">
-              <h2 align="center">Sam OV support</h2>
-              <p align="center">For queries about using Sam or the initial registration process   please contact the Sam support desk on:</p>
-              <p align="center"><strong>03300 416999</strong><br>
-                <strong><a href="mailto:APHAServiceDesk@apha.gov.uk">Email Sam support   desk</a></strong></p>
-              <!-- InstanceBeginEditable name="docsListText" -->
-            <p align="center">&nbsp;</p>
-            <!-- InstanceEndEditable -->
-
-            </div>
-
-
-
-            </div>
-        <!-- end col3 -->
-        <div class="clearfix">
-        </div>
-    </div> <!-- end content -->
-    <div id="footer">
-      <!-- footer -->
-      <ul>
-        <li class="bordernone"><a href="../../../terms/copyright.htm">© Crown copyright</a></li>
-        <li><a href="../../../terms/index.htm" accesskey="8">Terms &amp; conditions</a></li>
-        <li><a href="../../../terms/privacy.htm">Privacy and cookies</a></li>
-      </ul>
-
-      <div class="clearfix"> </div>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="govuk-footer__licence-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewbox="0 0 483.2 195.7"
+          height="17"
+          width="41"
+        >
+          <path
+            fill="currentColor"
+            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+          />
+        </svg>
+        <span class="govuk-footer__licence-description">
+          All content is available under the
+          <a
+            class="govuk-footer__link"
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            rel="license"
+          >Open Government Licence v3.0</a>, except where otherwise stated
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        >© Crown copyright</a>
+      </div>
     </div>
-    <!-- end footer -->
-</div><!-- end wrap -->
-
-<!-- InstanceEnd -->
-</body>
-<style media="screen">
-  /* Version:	3.1 - 29 April 2010 */
-/* Notes:	defra-reset.css */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, tt, var,
-dl, dt, dd, ul, ol, li,
-fieldset, form, label, legend,
-table, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 11.5pt;/*30/01/18 - updated from 100%*/
-	vertical-align: baseline;
-}
-
-/* added to make sure bold text appears in Firefox */
-strong {
-	font-weight: bold;
-}
-
-body {
-	line-height: 1;
-	color: black;
-	background: white;
-}
-
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-	border-collapse: separate;
-	border-spacing: 0;
-}
-caption, th, td {
-	text-align: left;
-	font-weight: normal;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: "";
-}
-blockquote, q {
-	quotes: "" "";
-}
-/* Version:	3.1 - 8 March 2010 */
-/* Notes:	defra-styles.css */
-
-/* SHARED CSS STYLES */
-
-a {
-	text-decoration:none;
-	color:#20399d;
-}
-
-
-a:hover {
-	text-decoration:underline;
-}
-
-
-/* HEADER STYLES */
-
-h1
-{
-	margin-top:0px;
-	color: #6d3075 ;
-	font-size:1.4em;
-	font-weight:bold;
-}
-
-h1.mainblock
-{
-	margin-top: 0px;
-	margin-bottom: 15px; /* This controls the spacing between the top page heading and elements below */
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	color:#fff;
-	font-size:14pt;/*30/01/18 - updated from 1.1em*/
-	font-weight:bold;
-	line-height:18px;
-	white-space:normal;
-	background: #008330;
-}
-h1.block
-{
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	color:#fff;
-	font-size:0.95em;
-	font-weight:bold;
-	line-height:18px;
-	white-space:normal;
-	background: #008330;
-}
-
-h2.mainblock
-{
-	margin-top: 0px;
-	margin-bottom: 15px; /* This controls the spacing between the top page heading and elements below */
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	color:#fff;
-	font-size:1.1em;
-	font-weight:bold;
-	line-height:18px;
-	white-space:normal;
-	background: #008330;
-}
-h2.block
-{
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	color:#fff;
-	font-size:0.95em;
-	font-weight:bold;
-	line-height:18px;
-	white-space:normal;
-	background: #008330;
-}
-
-h2
-{
-	margin: 1.5em 0 0.5em;
-	font-size:1.25em;
-	font-weight:bold;
-}
-
-
-h3
-{
-	margin: 1.5em 0 0.5em;
-	font-size:1.2em;
-	font-weight:bold;
-}
-
-h4
-{
-	font-size:1.1em;
-	font-weight:bold;
-	margin: 1.5em 0 0.5em;
-}
-
-h5
-{
-	font-size:1.0em;
-	font-weight:bold;
-	margin: 1.5em 0 0.5em;
-}
-
-h6
-{
-	font-size:1.0em;
-	font-weight:bold;
-	margin: 1.5em 0 0.5em;
-}
-
-/* END HEADER STYLES */
-
-/* CONTENT STYLES */
-
-div.lightborder {
-
-	border:1px solid #909108;
-	background-color: #e8e8ce;
-	padding: 1px 12px 0px 12px;
-	margin-bottom:6px;
-
-}
-
-div.lightborder h2,h3,h4,p {
-
-	padding-top: 5px;
-
-}
-
-/* Light border for paragraphs as well as divs */
-
-p.lightborder {
-
-	border:1px solid #909108;
-	background-color: #e8e8ce;
-	padding: 1px 12px 0px 12px;
-	margin-bottom:6px;
-
-}
-
-
-/* END CONTENT STYLES */
-
-
-/* COLOURS */
-/* Green */
-#crumb a, h2,h3,h4,h5,h6,legend{
-	color: #008330;
-}
-
-th, th.headercellgreen {
-	background-color:#909108;
-}
-
-td.cellgreen {
-	background-color:#cccc99;
-}
-
-table.landingbox th {
-	background-color:#909108;
-}
-
-div.boxtable-container table th{
-	background-color:#909108;
-}
-
-div.boxtable-container td.border{
-	border-right: 1px solid #909108;
-	border-bottom: 1px solid #909108;
-	border-left: 1px solid #909108;
-}
-
-#popular-pages h2.block{
-	background-color: #909108;
-}
-
-/* White */
-
-h1 a,th {
-	color:#fff;
-}
-
-h2 a,th {
-	color:#fff;
-}
-
-/* Maroon */
-div.topic-container a{
-	color:#6d3075;
-}
-
-#crumb{
-	color:#6d3075;
-}
-
-th.headercellred{
-	background-color:#6d3075;
-}
-
-td.cellred{
-	background-color:#CC9999;
-}
-
-#recommended-pages h2.block{
-	background-color: #820024;
-}
-
-/* PARAGRAPH STYLES */
-p {
-	line-height:1.5em;
-	margin-bottom:1em;
-}
-
-p.smalltext {
-	font-size:0.8em;
-}
-
-/* IMG STYLES */
-
-p img {
-	margin-bottom:1em;
-}
-
-p img.right, h2 img.right, h3 img.right, h4 img.right {
-	margin-left:1em;
-	float:right;
-}
-
-p img.left, h2 img.left, h3 img.left, h4 img.left {
-	margin-right:1em;
-	float:left;
-}
-
-
-/* LIST STYLES */
-
-ul,ol {
-	line-height:1.5em;
-	margin-left: 1em;
-}
-
-#center ul, #center ol, #center-1col ul, #center-1col ol, #center-2col ul, #center-2col ol {
-	margin-bottom:1em;
-	padding-left:2em;
-}
-
-#center ul, #center ol, #center-1col ul, #center-1col ol, #center-2col ul, #center-2col ol {
-	margin-bottom:1em;
-	padding-left:2em;
-}
-
-#center-landing ul {
-	margin-bottom:0em;
-	padding-left:0em;
-	margin-left: 0em;
-}
-
-#home-col1 ul, #home-col2 ul, #leftnav ul, #rightnav ul, .box-container ul, .box-container-wide ul, .boxtable-container ul{
-	padding-left:0em;
-	list-style-type:none;
-	margin-left: 0em;
-}
-
-#home-col1 ul, #home-col2 ul, #rightnav ul, .box-container ul, .box-container-wide ul, .boxtable-container ul{
-	margin-top:10px;
-}
-
-#home-col1 ul, #home-col2 ul, #leftnav ul, #rightnav ul {
-	line-height: 16px;
-}
-
-.box-container ul, .boxtable-container ul, .box-container-wide ul{
-	line-height: 14px;
-}
-
-
-#home-col1 ul li, #home-col2 ul li, #leftnav ul li, #rightnav ul li, #center-landing ul li, .boxtable-container ul li{
-	background:url(../images/resources/bullet-red.gif) no-repeat 6px 5px;
-	margin:0px 0px 0px 0px;
-	padding:2px 0px 2px 14px;
-}
-
-#home-col1 ul a, #home-col2 ul a, #leftnav ul a, #rightnav ul a, #center-landing ul a, .boxtable-container ul a{
-	color:#000;
-	text-decoration:none;
-}
-
-#home-col1 ul a:hover, #home-col2 ul a:hover, #leftnav ul a:hover, #rightnav ul a:hover, #center-landing ul a:hover{
-  	text-decoration:underline;
-}
-
-ol ol, ul ul, ul ol, ol ul {
-	font-size:0.95em;
-	padding-left:2.5em;
-	margin-left:0px;
-}
-
-/* Have now abandoned the following optional style and wrapped this into the core styling. DP 8.1.14 */
-/* .listexpand li { */
-#center ul li {
-	margin-bottom: 10px;
-}
-
-.listnobullet {
-	padding-left:1.75em;
-	margin-left:0px;
-}
-
-.listnobullet li {
-	list-style-type:none;
-	margin-left:0px;
-	padding-left:0px;
-}
-
-dl {
-	line-height:1.5em;
-}
-
-dt {
-	font-weight:bold;
-}
-
-dd {
-	margin-left:1.5em;
-}
-
-/* END LIST STYLES */
-
-/* TABLE STYLES */
-table {
-	border-top:1px solid #333;
-	border-left:1px solid #333;
-	margin:1em 0;
-}
-
-table td, table th {
-	border-bottom:1px solid #008330; /* was #333 */
-	border-right:1px solid #008330; /* was #333 */
-	padding:3px;
-	vertical-align:top;
-	text-align:left;
-}
-
-th.centre, td.centre {
-	text-align:center;
-}
-
-th.right, td.right {
-	text-align:right;
-}
-
-table th {
-	font-weight:bold;
-}
-
-
-table caption {
-	font-size:0.9em;
-	font-style:italic;
-	text-align:right;
-}
-
-
-table.landingpage {
-	border-top:0px;
-	border-left:0px;
-	margin:1em 0;
-}
-
-table.landingpage td, table th {
-	border-bottom:0px;
-	border-right:0px;
-	padding:3px;
-	vertical-align:top;
-	text-align:left;
-}
-
-/* END TABLE STYLES */
-}
-
-item {
-	border-bottom: 1px solid #04349a;
-	height:150px;
-	float:left;
-	width:100%;
-}
-/* Version:	3.1 - 8 March 2010 */
-/* Notes:	defra-main.css */
-
-/* IMPORT reset.css - resets most html entities' margins and padding to 0 */
-@import url('aphasci-reset.css');
-
-/* IMPORT styles.css - top level styling for all html entities, plus class derivatives and colours */
-@import url('aphasci-styles.css');
-
-
-/* ALWAYS SHOW Y-SCROLLBAR */
-
-html
-{
-	overflow-y: scroll;
-}
-
-
-/* TEMPLATE LAYOUT */
-
-body {
-	background:#fff url(../images/resources/background.gif) repeat-x;
-	font-family: Arial, Helvetica, sans-serif;  /* 30/01/18 - updated from Verdana, geneva,sans-serif */
-	font-size: 85%;
-}
-
-#wrap {
-	width:963px;
-	margin:0px auto;
-}
-
-
-/* HEADER */
-
-#header  {
-	width: 952px;
-}
-
-#header img {
-	border: none;
-	padding-bottom: 20px;
-	padding-top: 30px;
-	float:left;
-}
-
-#secondary-nav { /* Header navigation */
-	float:right;
-	padding:8px 0px;
-}
-
-#secondary-nav li {
-	display:inline;
-	padding-left: 6px;
-	border-left: 1px solid black;
-}
-
-#secondary-nav li.bordernone {
-	border-left: 0px;
-}
-
-#secondary-nav li a {
-	color:#000;
-}
-
-#header form {
-	clear:right;
-	float:right;
-	margin-top:10px;
-	padding: 10px 10px 10px 10px;
-	background:#008330;
-}
-
-#header form span.gobutton{
-	margin:0px 0px 0px 9px;
-	padding: 4px 0px 5px 0px;
-	background-color:#74112b;
-	text-align:center;
-	width:41px;
-	display:inline-block;
-	color:white;
-}
-
-#header form .searchbutton{
-	cursor:pointer;
-	border:0px;
-	background:#600;
-	color:#fff;
-	font-weight:bold;
-}
-
-.access {position: absolute; left: -900em;text-indent: -9000em;}
-
-/* MAIN MENU - CONTAINS ALL GLOBAL NAV */
-
-#main-nav {
-	clear:both;
-	display: block;
-	width:961px;
-	height: auto;
-	min-height:35px;
-	background: #6d3075 url(../images/resources/mainnav-background.gif) repeat-x top left;
-}
-
-#main-nav ul {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 12px;
-	list-style-type:none;
-	float:left;
-	width:961px;
-	height:1%;
-	min-height:35px;
-	display:block;
-}
-
-#main-nav li {
-	margin: 0px 0px 0px 1px;
-	min-height:35px;
-	list-style-type:none;
-	background: #6d3075 url(../images/resources/divider-right-red.gif) no-repeat top right;
-	float:left;
-	text-align:center;
-	display:block;
-}
-
-#main-nav li a {
-	padding: 7px 10px 9px 10px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align:center;
-	display:block;
-	background: url(../images/resources/divider-left-red.gif) no-repeat 0 0;
-	min-height:18px;
-	height:1%;
-	font-size:1.1em;
-	font-weight: bold;
-	color: white;
-}
-
-#main-nav a:hover{
-	text-decoration:underline;
-}
-
-#main-nav #menu1 {
-	width: 144px;
-}
-#main-nav #menu2 {
-	width: 270px;
-}
-#main-nav #menu3 {
-	width: 270px;
-}
-#main-nav #menu4 {
-	width: 124px;
-}
-#main-nav #menu5 {
-	width: 144px;
-}
-#main-nav #menu6 {
-	width: 165px;
-}
-
-#main-nav li.active {
-	margin-left: -1px;
-	margin-right: -1px;
-	background: url(../images/resources/divider-right-active.gif) no-repeat top right;
-}
-
-#main-nav li.active a
-{
-	padding: 7px 10px 9px 11px;
-	color: #6d3075;
-	background: url(../images/resources/divider-left-active.gif) no-repeat top left;
-}
-
-
-#main-nav #menu1.active {
-	width: 110px;
-}
-#main-nav #menu2.active {
-	width: 258px;
-}
-#main-nav #menu3.active {
-	width: 248px;
-}
-#main-nav #menu4.active {
-	width: 100px;
-}
-#main-nav #menu5.active {
-	width: 131px;
-}
-#main-nav #menu6.active {
-	width: 166px;
-}
-
-
-/* END HEADER */
-
-
-/* CONTENT AREA */
-#content {
-	clear:both;
-	border-left:1px solid #afc3c9;
-	border-right:1px solid #afc3c9;
-	background:#fff;
-	padding:10px;
-}
-
-#crumb
-{
-	clear:both;
-	font-size: 100%;/*30/01/18 - updated from 0.85em*/
-	font-weight:bold;
-	border-bottom:1px solid #ccc;
-	padding-bottom:6px;
-	position:relative;
-	text-align:left;
-}
-
-#crumb ul { display: inline; padding-left: 0; margin-left: 0;  }
-#crumb ul li {font-weight: bold; display: inline;}
-#crumb ul li a:link,  #crumb ul li a:active, #crumb ul li a:visited {
-	padding: 0px 12px 0px 0px;
-	margin-right:2px;
-	background-image: url(../images/resources/aro-black.gif);
-	background-repeat: no-repeat;
-	background-position: 100% 40%;
-}
-#crumb ul li a:hover { text-decoration: underline;}
-
-
-#crumb a
-{
-	font-weight: normal;
-}
-
-
-/* COLUMNS */
-
-#leftnav {
-	width:222px;
-	float:left;
-	padding:0px 0px;
-	margin-top:15px;
-	margin-right:8px;
-	background-color:#e9efef;
-}
-#center {
-	width: 500px;
-	float:left;
-	padding:16px 0px;
-}
-#center-landing-img {
-	margin-bottom:10px;
-}
-#center-2col {
-	width: 711px;
-	float:left;
-	padding:16px 0px;
-}
-#center-1col {
-	width: 941px;
-	float:left;
-	padding:16px 0px;
-}
-#rightnav {
-	width: 202px;
-	float:right;
-	padding:16px 0px;
-}
-
-#home-col1 {
-	width:630px;
-	float:left;
-}
-
-#home-col2 {
-	width:300px;
-	float:right;
-}
-
-#home-subcol1 {
-	width:326px;
-	float:left;
-}
-
-#home-subcol2 {
-	width:295px;
-	float:right;
-}
-
-
-/* LEFT NAVIGATION STYLING */
-
-#leftnav h3{
-	background:url(../images/resources/bullet-red-down.gif) no-repeat 3px 11px;
-	font-size:100%;/*30/01/18 - updated from 0.95em*/
-	font-weight: bold;
-	color: black;
-	line-height: 25px; /* changed from 16px */
-	margin: 0px 0px 0px 0px;
-	padding: 5px 0px 5px 15px;
-	border-bottom: 2px solid white;
-}
-#leftnav h3#menuactive{
-	background:url(../images/resources/bullet-white-down.gif) no-repeat 3px 11px;
-	background-color:#6d3071;
-	color:white;
-}
-#leftnav h3 a{
-	font-size:1.0em;
-	font-weight: bold;
-	color: black;
-	margin: 0px 0px 0px 0px;
-}
-#leftnav h4{
-	background:url(../images/resources/bullet-red-down.gif) no-repeat 3px 11px;
-	font-size:11.5pt;/*30/01/18 - updated from 1.0em*/
-	font-weight: bold;
-	color: black;
-	line-height: 25px; /* changed from 16px */
-	margin: 0px 0px 0px 0px;
-	padding: 5px 0px 5px 15px;
-	border-bottom: 2px solid white;
-	background-color: #eee2e5;
-}
-#leftnav h4#menuactive{
-	background:url(../images/resources/bullet-white-down.gif) no-repeat 3px 11px;
-	background-color:#999;
-	color:white;
-}
-#leftnav h4 a{
-	font-size:100%;/*30/01/18 - updated from 0.95em*/
-	color: black;
-	font-weight: bold;
-	margin: 0px 0px 0px 0px;
-}
-#leftnav ul{
-	margin-top:0px;
-}
-#leftnav ul li {
-	border-bottom: 2px solid white;
-	line-height: 25px;
-}
-#leftnav li#menuactive{
-	background:url(../images/resources/bullet-white.gif) no-repeat 6px 3px;
-	background-color:#6d3071;
-	color:#FFF;
-}
-/* HOME PAGE BOXES */
-
-#home-banner {
- 	margin-bottom: 10px;
-	padding-bottom: 0px;
-	background: url(../images/resources/home-welcome-bkg.gif) bottom right;
-	color:#fff;
-	font-weight:bold;
-}
-
-#home-banner img {
-	padding:0em 0em 0em 0em;
-	margin: 0em 0em 0em 0em;
-	display:block;
-	float:left;
-}
-
-#home-banner h1 {
-	clear:both;
-	font-size:1.2em;
- 	color:#fff;
- 	padding:0.5em 0.5em 0.4em 0.5em ;
-	line-height:1.5em;
-	display:inline-block;
-}
-
-#recommended-pages {
-	border-left: 1px solid #820024;
-	border-right: 1px solid #820024;
-	border-bottom: 1px solid #820024;
-	background-color: #e8e8ce;
-	margin-bottom: 12px;
-}
-
-#popular-pages {
-	border-left: 1px solid #909108;
-	border-right: 1px solid #909108;
-	border-bottom: 1px solid #909108;
-	background-color: #e8e8ce;
-	margin-bottom: 12px;
-}
-
-div.topic-container {
-	clear:both;
-	padding: 8px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-}
-
-div.topic-container img {
-	border: 0;
-	float:left;
-}
-
-div.topic-container p {
-	padding: 0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	float:right;
-	width:200px;
-	line-height:1.25em;
-}
-
-div.topic-container p strong {
-	font-size:1.1em;
-	font-weight:bold;
-}
-
-
-#news-splash {
-	margin-bottom: 15px;
-	padding:10px;
-	background: #dfe5e5;
-}
-
-#news-splash #video-embed{
-	margin-bottom: 18px;
-}
-
-#news-splash #video-embed-nosubhead{
-	margin-bottom: 18px;
-}
-
-#news-splash ul{
-	margin: 0px 0px 0px 0px;
-}
-#news-splash ul li{
-	margin: 0px 0px 0px 0px;
-}
-
-#working-together {
-	border: 1px solid #dee3e3;
-	font-size: 0.75em;
-	margin-bottom:15px;
-	height: auto;
-	min-height:154px;
-}
-
-#working-together img {
-	border: 0;
-	margin-bottom:7px;
-}
-
-#working-together a {
-	color: #333;
-}
-
-div.smallbox-container {
-	width:138px;
-	float:left;
-	display:inline;
-	margin:7px;
-	margin-right:0px;
-}
-
-#home-subcol2 ul{
-	margin-bottom:8px;
-}
-
-/* LANDING PAGE BOXES */
-
-div.box-container-wide {
-	border:1px solid #b1b185;
-	border-top-style:none;
-	width:498px;
-	margin:0px 8px 9px 0px;
-	padding: 0px 0px 0px 0px;
-}
-
-div.boxtable-container {
-	border:0px;
-	border-top-style:none;
-	min-height:140px;
-	width:500px;
-	margin:0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-}
-
-div.boxtable-container table{
-	border: 0px;
-	margin:0px 0px 8px 0px;
-	padding: 0px 0px 0px 0px;
-}
-div.boxtable-container table th{
-	border: 0px;
-	padding: 6px 8px 6px 10px;
-	font-size: 0.95em;
-	line-height: 1.4em;
-}
-div.boxtable-container td.nopadding{
-	padding: 0px;
-}
-div.boxtable-container td{
-	border: 0px;
-	padding: 8px 8px 8px 8px;
-}
-div.boxtable-container table th a{
-	color: white;
-	font-size: 0.95em;
-}
-
-div.rhs-box {
-	margin-right:0px;
-}
-
-div.box-container img, div.box-container-wide img {
-	margin:9px;
-	margin-bottom:0px;
-}
-
-div.box-container ul, div.box-container-wide ul {
-	margin:0px 0px 0px 9px;
-	padding:0px 0px 4px 9px;
-
-	display: block;
-}
-
-div.box-container ul li, div.box-container-wide ul li {
-	margin:0px 0px 4px 9px;
-	padding:0px 0px 4px 9px;
-
-	display: block;
-}
-
-/* RIGHT NAVIGATION STYLING */
-
-#rightnav h2 {
-	margin: 0 0 0 0;
-	font-size:100%;/*30/01/18 - updated from 0.95em*/
-	font-weight: bold;
-	color: black;
-}
-
-#mini-right-banner {
-	margin:16px 0px;
-}
-
-div.red-box {
-	background-color: #cccccc;
-	padding: 0px 3px 4px 6px;
-	margin-bottom: 15px;
-}
-
-div.red-box ul {
-	padding:8px 2px 0px 0px;
-	margin-bottom:8px;
-}
-
-div.red-box li {
-	line-height: 25px;
-}
-
-div.red-box hr {
-	margin:0px 15px;
-	color: #c2b9bb;
-	background-color: #c2b9bb;
-	height: 1px;
-}
-
-#partner-box {
-	border: 1px solid #dee3e3;
-	padding: 7px;
-}
-
-#partner-box h2 {
-	margin: 0 0 0.5em;
-	color:#333333;
-}
-
-#partner-box ul li {
-	margin-bottom: 3px;
-	padding: 7px;
-	font-size: 0.85em;
-	color: #333;
-	background: #dee3e3;
-	list-style-type:none;
-	line-height:1.2em;
-}
-
-#partner-box ul li a {
-	color:#333;
-}
-
-
-/* FOOTER */
-
-#footer {
-	clear:both;
-	background:#008330;
-	border:1px solid #afc3c9;
-	border-top-style:none;
-}
-
-#footer ul {
-	width:700px;
-	padding:7px 7px;
-	font-size:0.95em;
-}
-
-#footer ul li {
-	display:inline;
-	color:#000;
-	padding-left: 6px;
-	border-left:1px white solid;
-}
-
-#footer ul li.bordernone{
-	border-left:0px;
-}
-
-#footer ul li a {
-	color:#fff;
-}
-
-#help-line {
-	float:right;
-	width:310px;
-	margin-top:-28px;
-}
-
-#help-line p {
-	text-align:left;
-	font-size:0.8em;
-	line-height:1.25em;
-}
-
-#help-line p strong {
-	font-size:1.2em;
-	font-weight:bold;
-}
-
-#help-line span {
-	display:block;
-	margin-top:-1.60em;
-	margin-bottom:0.3em;
-	margin-left:7.45em;
-	font-size:1.4em;
-	font-weight:bold;
-}
-
-#help-line a {
-	color: black;
-}
-
-/* TOOLS */
-div.clearfix {
-	clear:both;
-	height:0px;
-	line-height:0px;
-	font-size:0px;
-}
-
-/* New div for embedding videos or similar in web pages */
-
-.object-right	{
-	overflow:hidden;
-	float:right;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px;
-	border: none
-}
-
-.object-left	{
-	overflow:hidden;
-	float:left;
-	margin-top: 5px;
-	margin-right: 5px;
-	margin-bottom: 5px;
-}
-
-
-/* embedding videos div ends here */
-
-/* BEGIN BANNER STYLES - 07/05/10 */
-
-#banner-crumb{
-	clear:both;
-	font-size: 1.05em;
-	font-weight:bold;
-	padding:3px 3px 6px 3px;
-	position:relative;
-	text-align:center;
-	background-color: #d9f0f7;
-	color: #000;
-	line-height:normal;
-	border: 1px solid #000;
-}
-
-#banner-crumb a {
-	text-decoration: underline;
-}
-
-#banner-crumb-home{
-	clear:both;
-	font-size: 1.05em;
-	font-weight:bold;
-	padding:3px 3px 6px 3px;
-	margin:5px 0px 15px 5px;
-	position:relative;
-	text-align:center;
-	background-color: #d9f0f7;
-	color: #000;
-	line-height:normal;
-	border: 1px solid #000;
-}
-
-#banner-crumb-home a {
-	text-decoration: underline;
-}
-
-div.banner-centre-red {
-	border:1px solid #74112b;
-	background-color: #74112b;
-	padding: 12px 12px 12px 8px;
-	margin-bottom:6px;
-	font-size: 1.1em;
-	font-weight:normal;
-	color: #FFFFFF;
-	line-height:normal;
-	text-align:center;
-}
-
-div.banner-centre-red a {
-color:#fff;
-text-decoration: underline;
-}
-
-/* END BANNER STYLES - 07/05/10 */
-
-/* Blue background colour - color: #20a6d2; */
-
-.box {
-	background-color: #FF9;
-	padding: 5px;
-}
-.greenbox {
-	background-color: #E9F8D6;
-	padding: 5px;
-}
-/* Version:	3.1 - 8 March 2010 */
-/* Notes:	defra-main.css */
-
-/* IMPORT reset.css - resets most html entities' margins and padding to 0 */
-@import url('aphasci-reset.css');
-
-/* IMPORT styles.css - top level styling for all html entities, plus class derivatives and colours */
-@import url('aphasci-styles.css');
-
-
-/* ALWAYS SHOW Y-SCROLLBAR */
-
-html
-{
-	overflow-y: scroll;
-}
-
-
-/* TEMPLATE LAYOUT */
-
-body {
-	background:#fff url(../images/resources/background.gif) repeat-x;
-	font-family: Arial, Helvetica, sans-serif;  /* 30/01/18 - updated from Verdana, geneva,sans-serif */
-	font-size: 85%;
-}
-
-#wrap {
-	width:963px;
-	margin:0px auto;
-}
-
-
-/* HEADER */
-
-#header  {
-	width: 952px;
-}
-
-#header img {
-	border: none;
-	padding-bottom: 20px;
-	padding-top: 30px;
-	float:left;
-}
-
-#secondary-nav { /* Header navigation */
-	float:right;
-	padding:8px 0px;
-}
-
-#secondary-nav li {
-	display:inline;
-	padding-left: 6px;
-	border-left: 1px solid black;
-}
-
-#secondary-nav li.bordernone {
-	border-left: 0px;
-}
-
-#secondary-nav li a {
-	color:#000;
-}
-
-#header form {
-	clear:right;
-	float:right;
-	margin-top:10px;
-	padding: 10px 10px 10px 10px;
-	background:#008330;
-}
-
-#header form span.gobutton{
-	margin:0px 0px 0px 9px;
-	padding: 4px 0px 5px 0px;
-	background-color:#74112b;
-	text-align:center;
-	width:41px;
-	display:inline-block;
-	color:white;
-}
-
-#header form .searchbutton{
-	cursor:pointer;
-	border:0px;
-	background:#600;
-	color:#fff;
-	font-weight:bold;
-}
-
-.access {position: absolute; left: -900em;text-indent: -9000em;}
-
-/* MAIN MENU - CONTAINS ALL GLOBAL NAV */
-
-#main-nav {
-	clear:both;
-	display: block;
-	width:961px;
-	height: auto;
-	min-height:35px;
-	background: #6d3075 url(../images/resources/mainnav-background.gif) repeat-x top left;
-}
-
-#main-nav ul {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 12px;
-	list-style-type:none;
-	float:left;
-	width:961px;
-	height:1%;
-	min-height:35px;
-	display:block;
-}
-
-#main-nav li {
-	margin: 0px 0px 0px 1px;
-	min-height:35px;
-	list-style-type:none;
-	background: #6d3075 url(../images/resources/divider-right-red.gif) no-repeat top right;
-	float:left;
-	text-align:center;
-	display:block;
-}
-
-#main-nav li a {
-	padding: 7px 10px 9px 10px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align:center;
-	display:block;
-	background: url(../images/resources/divider-left-red.gif) no-repeat 0 0;
-	min-height:18px;
-	height:1%;
-	font-size:1.1em;
-	font-weight: bold;
-	color: white;
-}
-
-#main-nav a:hover{
-	text-decoration:underline;
-}
-
-#main-nav #menu1 {
-	width: 144px;
-}
-#main-nav #menu2 {
-	width: 270px;
-}
-#main-nav #menu3 {
-	width: 270px;
-}
-#main-nav #menu4 {
-	width: 124px;
-}
-#main-nav #menu5 {
-	width: 144px;
-}
-#main-nav #menu6 {
-	width: 165px;
-}
-
-#main-nav li.active {
-	margin-left: -1px;
-	margin-right: -1px;
-	background: url(../images/resources/divider-right-active.gif) no-repeat top right;
-}
-
-#main-nav li.active a
-{
-	padding: 7px 10px 9px 11px;
-	color: #6d3075;
-	background: url(../images/resources/divider-left-active.gif) no-repeat top left;
-}
-
-
-#main-nav #menu1.active {
-	width: 110px;
-}
-#main-nav #menu2.active {
-	width: 258px;
-}
-#main-nav #menu3.active {
-	width: 248px;
-}
-#main-nav #menu4.active {
-	width: 100px;
-}
-#main-nav #menu5.active {
-	width: 131px;
-}
-#main-nav #menu6.active {
-	width: 166px;
-}
-
-
-/* END HEADER */
-
-
-/* CONTENT AREA */
-#content {
-	clear:both;
-	border-left:1px solid #afc3c9;
-	border-right:1px solid #afc3c9;
-	background:#fff;
-	padding:10px;
-}
-
-#crumb
-{
-	clear:both;
-	font-size: 100%;/*30/01/18 - updated from 0.85em*/
-	font-weight:bold;
-	border-bottom:1px solid #ccc;
-	padding-bottom:6px;
-	position:relative;
-	text-align:left;
-}
-
-#crumb ul { display: inline; padding-left: 0; margin-left: 0;  }
-#crumb ul li {font-weight: bold; display: inline;}
-#crumb ul li a:link,  #crumb ul li a:active, #crumb ul li a:visited {
-	padding: 0px 12px 0px 0px;
-	margin-right:2px;
-	background-image: url(../images/resources/aro-black.gif);
-	background-repeat: no-repeat;
-	background-position: 100% 40%;
-}
-#crumb ul li a:hover { text-decoration: underline;}
-
-
-#crumb a
-{
-	font-weight: normal;
-}
-
-
-/* COLUMNS */
-
-#leftnav {
-	width:222px;
-	float:left;
-	padding:0px 0px;
-	margin-top:15px;
-	margin-right:8px;
-	background-color:#e9efef;
-}
-#center {
-	width: 500px;
-	float:left;
-	padding:16px 0px;
-}
-#center-landing-img {
-	margin-bottom:10px;
-}
-#center-2col {
-	width: 711px;
-	float:left;
-	padding:16px 0px;
-}
-#center-1col {
-	width: 941px;
-	float:left;
-	padding:16px 0px;
-}
-#rightnav {
-	width: 202px;
-	float:right;
-	padding:16px 0px;
-}
-
-#home-col1 {
-	width:630px;
-	float:left;
-}
-
-#home-col2 {
-	width:300px;
-	float:right;
-}
-
-#home-subcol1 {
-	width:326px;
-	float:left;
-}
-
-#home-subcol2 {
-	width:295px;
-	float:right;
-}
-
-
-/* LEFT NAVIGATION STYLING */
-
-#leftnav h3{
-	background:url(../images/resources/bullet-red-down.gif) no-repeat 3px 11px;
-	font-size:100%;/*30/01/18 - updated from 0.95em*/
-	font-weight: bold;
-	color: black;
-	line-height: 25px; /* changed from 16px */
-	margin: 0px 0px 0px 0px;
-	padding: 5px 0px 5px 15px;
-	border-bottom: 2px solid white;
-}
-#leftnav h3#menuactive{
-	background:url(../images/resources/bullet-white-down.gif) no-repeat 3px 11px;
-	background-color:#6d3071;
-	color:white;
-}
-#leftnav h3 a{
-	font-size:1.0em;
-	font-weight: bold;
-	color: black;
-	margin: 0px 0px 0px 0px;
-}
-#leftnav h4{
-	background:url(../images/resources/bullet-red-down.gif) no-repeat 3px 11px;
-	font-size:11.5pt;/*30/01/18 - updated from 1.0em*/
-	font-weight: bold;
-	color: black;
-	line-height: 25px; /* changed from 16px */
-	margin: 0px 0px 0px 0px;
-	padding: 5px 0px 5px 15px;
-	border-bottom: 2px solid white;
-	background-color: #eee2e5;
-}
-#leftnav h4#menuactive{
-	background:url(../images/resources/bullet-white-down.gif) no-repeat 3px 11px;
-	background-color:#999;
-	color:white;
-}
-#leftnav h4 a{
-	font-size:100%;/*30/01/18 - updated from 0.95em*/
-	color: black;
-	font-weight: bold;
-	margin: 0px 0px 0px 0px;
-}
-#leftnav ul{
-	margin-top:0px;
-}
-#leftnav ul li {
-	border-bottom: 2px solid white;
-	line-height: 25px;
-}
-#leftnav li#menuactive{
-	background:url(../images/resources/bullet-white.gif) no-repeat 6px 3px;
-	background-color:#6d3071;
-	color:#FFF;
-}
-/* HOME PAGE BOXES */
-
-#home-banner {
- 	margin-bottom: 10px;
-	padding-bottom: 0px;
-	background: url(../images/resources/home-welcome-bkg.gif) bottom right;
-	color:#fff;
-	font-weight:bold;
-}
-
-#home-banner img {
-	padding:0em 0em 0em 0em;
-	margin: 0em 0em 0em 0em;
-	display:block;
-	float:left;
-}
-
-#home-banner h1 {
-	clear:both;
-	font-size:1.2em;
- 	color:#fff;
- 	padding:0.5em 0.5em 0.4em 0.5em ;
-	line-height:1.5em;
-	display:inline-block;
-}
-
-#recommended-pages {
-	border-left: 1px solid #820024;
-	border-right: 1px solid #820024;
-	border-bottom: 1px solid #820024;
-	background-color: #e8e8ce;
-	margin-bottom: 12px;
-}
-
-#popular-pages {
-	border-left: 1px solid #909108;
-	border-right: 1px solid #909108;
-	border-bottom: 1px solid #909108;
-	background-color: #e8e8ce;
-	margin-bottom: 12px;
-}
-
-div.topic-container {
-	clear:both;
-	padding: 8px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-}
-
-div.topic-container img {
-	border: 0;
-	float:left;
-}
-
-div.topic-container p {
-	padding: 0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	float:right;
-	width:200px;
-	line-height:1.25em;
-}
-
-div.topic-container p strong {
-	font-size:1.1em;
-	font-weight:bold;
-}
-
-
-#news-splash {
-	margin-bottom: 15px;
-	padding:10px;
-	background: #dfe5e5;
-}
-
-#news-splash #video-embed{
-	margin-bottom: 18px;
-}
-
-#news-splash #video-embed-nosubhead{
-	margin-bottom: 18px;
-}
-
-#news-splash ul{
-	margin: 0px 0px 0px 0px;
-}
-#news-splash ul li{
-	margin: 0px 0px 0px 0px;
-}
-
-#working-together {
-	border: 1px solid #dee3e3;
-	font-size: 0.75em;
-	margin-bottom:15px;
-	height: auto;
-	min-height:154px;
-}
-
-#working-together img {
-	border: 0;
-	margin-bottom:7px;
-}
-
-#working-together a {
-	color: #333;
-}
-
-div.smallbox-container {
-	width:138px;
-	float:left;
-	display:inline;
-	margin:7px;
-	margin-right:0px;
-}
-
-#home-subcol2 ul{
-	margin-bottom:8px;
-}
-
-/* LANDING PAGE BOXES */
-
-div.box-container-wide {
-	border:1px solid #b1b185;
-	border-top-style:none;
-	width:498px;
-	margin:0px 8px 9px 0px;
-	padding: 0px 0px 0px 0px;
-}
-
-div.boxtable-container {
-	border:0px;
-	border-top-style:none;
-	min-height:140px;
-	width:500px;
-	margin:0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-}
-
-div.boxtable-container table{
-	border: 0px;
-	margin:0px 0px 8px 0px;
-	padding: 0px 0px 0px 0px;
-}
-div.boxtable-container table th{
-	border: 0px;
-	padding: 6px 8px 6px 10px;
-	font-size: 0.95em;
-	line-height: 1.4em;
-}
-div.boxtable-container td.nopadding{
-	padding: 0px;
-}
-div.boxtable-container td{
-	border: 0px;
-	padding: 8px 8px 8px 8px;
-}
-div.boxtable-container table th a{
-	color: white;
-	font-size: 0.95em;
-}
-
-div.rhs-box {
-	margin-right:0px;
-}
-
-div.box-container img, div.box-container-wide img {
-	margin:9px;
-	margin-bottom:0px;
-}
-
-div.box-container ul, div.box-container-wide ul {
-	margin:0px 0px 0px 9px;
-	padding:0px 0px 4px 9px;
-
-	display: block;
-}
-
-div.box-container ul li, div.box-container-wide ul li {
-	margin:0px 0px 4px 9px;
-	padding:0px 0px 4px 9px;
-
-	display: block;
-}
-
-/* RIGHT NAVIGATION STYLING */
+  </div>
+</footer>
 
-#rightnav h2 {
-	margin: 0 0 0 0;
-	font-size:100%;/*30/01/18 - updated from 0.95em*/
-	font-weight: bold;
-	color: black;
-}
-
-#mini-right-banner {
-	margin:16px 0px;
-}
-
-div.red-box {
-	background-color: #cccccc;
-	padding: 0px 3px 4px 6px;
-	margin-bottom: 15px;
-}
-
-div.red-box ul {
-	padding:8px 2px 0px 0px;
-	margin-bottom:8px;
-}
-
-div.red-box li {
-	line-height: 25px;
-}
-
-div.red-box hr {
-	margin:0px 15px;
-	color: #c2b9bb;
-	background-color: #c2b9bb;
-	height: 1px;
-}
-
-#partner-box {
-	border: 1px solid #dee3e3;
-	padding: 7px;
-}
-
-#partner-box h2 {
-	margin: 0 0 0.5em;
-	color:#333333;
-}
-
-#partner-box ul li {
-	margin-bottom: 3px;
-	padding: 7px;
-	font-size: 0.85em;
-	color: #333;
-	background: #dee3e3;
-	list-style-type:none;
-	line-height:1.2em;
-}
-
-#partner-box ul li a {
-	color:#333;
-}
-
-
-/* FOOTER */
-
-#footer {
-	clear:both;
-	background:#008330;
-	border:1px solid #afc3c9;
-	border-top-style:none;
-}
-
-#footer ul {
-	width:700px;
-	padding:7px 7px;
-	font-size:0.95em;
-}
-
-#footer ul li {
-	display:inline;
-	color:#000;
-	padding-left: 6px;
-	border-left:1px white solid;
-}
-
-#footer ul li.bordernone{
-	border-left:0px;
-}
-
-#footer ul li a {
-	color:#fff;
-}
-
-#help-line {
-	float:right;
-	width:310px;
-	margin-top:-28px;
-}
-
-#help-line p {
-	text-align:left;
-	font-size:0.8em;
-	line-height:1.25em;
-}
-
-#help-line p strong {
-	font-size:1.2em;
-	font-weight:bold;
-}
-
-#help-line span {
-	display:block;
-	margin-top:-1.60em;
-	margin-bottom:0.3em;
-	margin-left:7.45em;
-	font-size:1.4em;
-	font-weight:bold;
-}
-
-#help-line a {
-	color: black;
-}
-
-/* TOOLS */
-div.clearfix {
-	clear:both;
-	height:0px;
-	line-height:0px;
-	font-size:0px;
-}
-
-/* New div for embedding videos or similar in web pages */
-
-.object-right	{
-	overflow:hidden;
-	float:right;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px;
-	border: none
-}
-
-.object-left	{
-	overflow:hidden;
-	float:left;
-	margin-top: 5px;
-	margin-right: 5px;
-	margin-bottom: 5px;
-}
-
+  -->
 
-/* embedding videos div ends here */
-
-/* BEGIN BANNER STYLES - 07/05/10 */
-
-#banner-crumb{
-	clear:both;
-	font-size: 1.05em;
-	font-weight:bold;
-	padding:3px 3px 6px 3px;
-	position:relative;
-	text-align:center;
-	background-color: #d9f0f7;
-	color: #000;
-	line-height:normal;
-	border: 1px solid #000;
+
+
+
+    <!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+
+  <script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+
+
+<script src="/public/javascripts/application.js"></script>
+
+
+  <script src="/public/javascripts/auto-store-data.js"></script>
+
+
+
+
+  <!-- GOV.UK Prototype Kit v9.6.0 -->
+
+<style>
+.dash-width-container, .app-header__container {
+    @include govuk-width-container(1400px);
+}
+
+
+.google-width-wrapper, .google-width-container{
+    max-width:100%;
+    margin:0;
+    padding:0;
+}
+
+/*
+.app-width-container, .app-header__container {
+    max-width:100%;
+    margin-right:30px;
+    margin-left:30px;
+}
+*/
+.google{
+    /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+    */
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+}
+
+.google-home{
+    main {
+        display: grid;
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: 50px 5fr 3fr;
+        height: 98vh;
+        width: 98vw;
+        grid-template-areas:
+            "header header header"
+            ". contents ."
+            ". . .";
+    }
+
+    header {
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 200px 1fr 250px;
+        grid-template-areas: "links-left . links-right";
+        width: 100%;
+        margin: 0px;
+        padding: 7px;
+        background-color: #fff;
+        align-items: center;
+    }
+
+    footer {
+        position: fixed;
+        display: grid;
+        grid-template-columns: 400px 1fr 220px;
+        grid-template-areas: "links-left . links-right";
+        width: 99vw;
+        justify-content: space-between;
+        bottom: 0px;
+        left: -5px;
+        padding: 7px 4px 9px 20px;
+        background-color: #f2f2f2;
+        border-top: solid;
+        border-top-width: 1px;
+        border-top-color: #e2e2e2;
+    }
+
+    #content-container {
+        grid-area: contents;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+    }
+
+    #contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #search-icon{
+        background-image: url('../images/google/desktop_searchbox_sprites302_hr.png');
+        height: 20px;
+        background-size: 20px 41px;
+        background-repeat: no-repeat;
+    }
+
+    #voice-input-button{
+        background-image: url('../images/google/googlemic_color_24dp.png');
+        height: 20px;
+        width: 20px;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-color: #fff;
+    }
+
+    #search-input-text{
+        border: none;
+        font-family: arial;
+        font-size: 12pt;
+    }
+
+    #search-input-text:focus{
+        outline: none;
+    }
+
+    #apps-button{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 2px;
+        height: 16px;
+        width: 16px;
+        background: #FFF;
+        align-self: center;
+        margin: 0px 15px 0px 5px;
+        padding: 7px;
+    }
+
+    .app-square{
+        background: #666;
+        height: 100%;
+        width: 100%;
+    }
+
+    #apps-button:hover > .app-square{
+        background: #222;
+    }
+
+
+    #search-bar {
+        display: grid;
+        grid-template-columns: 30px 400px 30px;
+        border: solid;
+        border-width: 1px;
+        border-color: #e2e2e2;
+        padding: 12px 2px 12px 12px;
+        margin: 25px;
+        border-radius: 30px;
+    }
+
+    #search-bar:hover{
+        border-color: #fff;
+        box-shadow: 0 1px 5px 0 #bbb;
+    }
+
+    .search-button{
+        border: none;
+        padding: 10px 13px 10px 13px;
+        margin: 5px;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        color: #666666;
+        font-size: 11pt;
+    }
+
+    .search-button:focus{
+        outline: none;
+    }
+
+    .search-button:hover{
+        box-shadow: 0 0 0 1px #bbb, 1px 1px 2px 0 #bbb;
+        color: #333;
+    }
+
+    #sign-in-button{
+        padding: 7px 12px 7px 12px;
+        border-radius: 3px;
+        background-color: #4285f4;
+        color: #fff;
+        font-weight: bold;
+    }
+
+
+    button{
+        border: none;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    #header-links-right{
+        position: relative;
+        right: 11px;
+        justify-self: right;
+        align-items: center;
+        display: flex;
+        grid-area: links-right;
+    }
+
+    #header-links-left{
+        position: relative;
+        align-items: center;
+        left: 7px;
+        grid-area: links-left;
+    }
+
+    #footer-links-right{
+        display: flex;
+        grid-area: links-right;
+    }
+
+    #footer-links-left{
+        display: flex;
+        grid-area: links-left;
+    }
+
+    .text-link {
+        font-family: arial;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    .footer-link{
+        color: #666666;
+        font-size: 11pt;
+        margin: 0px 7px 0px 7px;
+    }
+
+    .header-link{
+        color: #444;
+        font-size: 10pt;
+    }
+
+    .text-link:hover{
+        text-decoration: underline;
+    }
+
+}
+
+.google-results{
+    #page-header {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 140px 740px minmax(150px, 1fr);
+        grid-template-rows: 83px 40px;
+        grid-template-areas:
+        "logo search-bar  profile-buttons"
+        ".    navbar      .              ";
+        border-bottom: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: #e2e2e2;
+    }
+
+    main {
+        display: grid;
+        padding-top: 20px;
+        grid-template-columns: 180px 680px minmax(150px, 1fr);
+        grid-template-rows:  40px auto auto auto 60px;
+        grid-template-areas:
+        //".      search-tips      .     "
+        ".      search-summary   .     "
+        ".      search-results   .     "
+        ".      related-searches .     "
+        ".      page-nav         .     "
+        "footer footer           footer";
+        font-family: arial;
+        font-size: 11pt;
+        color: #333;
+    }
+
+    footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 180px 680px minmax(150px, 1fr);
+        grid-template-areas: ". content .";
+        background-color: #f2f2f2;
+        border-top: solid;
+        border-top-width: 1px;
+        border-top-color: #e2e2e2;
+    }
+
+    @media (max-width: 1030px){
+        #page-header, main, footer {
+            width: 1030px
+        }
+    }
+
+    .footer-text {
+        color: #666666;
+        font-size: 11pt;
+    }
+
+    .footer-link:hover {
+        color: #333;
+    }
+
+    #result-page-nav {
+        margin: 30px 0px 25px 0px;
+    }
+
+    #page-nav-G-container, .page-nav-link, #page-nav-gle-container, #current-page{
+        height: 57px;
+        display: grid;
+        grid-template-rows: 43px auto;
+        justify-items: center;
+    }
+
+    #page-nav-G, #current-page-number, .page-nav-number, #page-nav-gle, #page-nav-next-arrow {
+        background: url('../images/google/nav_logo299.webp');
+        height: 43px;
+    }
+
+    #page-nav-G {
+        width: 40px;
+        background-position: -14px 0px;
+    }
+    #current-page-number{
+        width: 20px;
+        background-position: -54px 0px;
+    }
+    .page-nav-number{
+        width: 20px;
+        background-position: -75px 0px;
+    }
+    #page-nav-gle {
+        width: 45px;
+        background-position: -97px 0px;
+    }
+
+    #page-nav-next-arrow{
+        width: 100%;
+        background-position: -150px 4px;
+        background-repeat: no-repeat;
+    }
+
+    #result-page-nav{
+        grid-area: page-nav;
+        display: flex;
+        justify-content: center;
+    }
+
+    .page-nav-link{
+        color: #4285f4;
+    }
+
+    .page-nav-link:hover {
+        text-decoration: underline;
+    }
+
+    #current-page {
+        color: #333;
+    }
+
+    #related-searches {
+        grid-area: related-searches;
+    }
+
+    #related-searches-title {
+        font-size: 15pt;
+        margin-bottom: 20px;
+    }
+
+    #related-searches-links {
+        display: grid;
+        grid-template-columns: 25% 25%;
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 10px;
+    }
+
+    #footer-content{
+        grid-area: content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #location-icon {
+        background: #888;
+        border-radius: 100%;
+        height: 7pt;
+        width: 7pt;
+    }
+
+    #footer-info-top{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #location {
+        color: #333;
+    }
+
+    #footer-links-bottom a{
+        margin-right: 20px;
+    }
+
+    #search-results{
+        grid-area: search-results;
+        display: flex;
+        flex-direction: column;
+        font-size: 11pt;
+    }
+
+    .page-result{
+        margin-bottom:27px;
+    }
+
+    .page-link{
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .page-url{
+        font-size: 16px;
+        padding-top: 1px;
+        line-height: 1.5;
+        color: #006621;
+        font-style: normal;
+    }
+
+    .page-snippet{
+        font-size: 14px;
+        color: #545454;
+        line-height: 1.58;
+        word-wrap: break-word;
+    }
+
+    .page-last-visit{
+        font-size: 14px;
+        color: #70757a;
+        line-height: 1.58;
+        display:block;
+    }
+
+    .info-summary{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-row-gap: 8px;
+        color: #777;
+        padding-bottom: 10px;
+    }
+
+    .info-description{
+        font-weight: bold;
+    }
+
+    .url-menu{
+        grid-area: url-menu;
+    }
+
+    .page-title{
+        color: #1a0dab;
+        font-size: 16pt;
+    }
+
+    .page-link:hover > .page-title{
+        text-decoration: underline;
+    }
+
+    .page-preview{
+        width: 600px;
+        margin: 5px 0px 5px 0px;
+        line-height: 1.6;
+    }
+
+    a {
+        text-decoration: none;
+        color: #1a0dab;
+    }
+
+
+    b {
+        font-weight: bold;
+    }
+
+    #search-summary{
+        grid-area: search-summary;
+        color: #888;
+    }
+
+    #search-tips{
+        grid-area: search-tips;
+    }
+
+    #navbar{
+        grid-area: navbar;
+        display: flex;
+        //background-color: #0a0;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-link-box{
+        //background-color: #a0a;
+        display: flex;
+        height: 40px;
+        padding: 0px 6px 0px 6px;
+        margin: 0px 5px 0px 5px;
+        align-items: center;
+    }
+
+    #alle-box{
+        border-bottom: solid;
+        border-bottom-width: 3px;
+        border-bottom-color: #4285f4;
+        padding-top: 3px;
+        height: 33px;
+    }
+
+    #alle-text{
+        color: #4285f4;
+    }
+
+    #meer-icon{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 2px;
+        height: 10px;
+        width: 2px;
+        background: #FFF;
+        align-self: center;
+        margin-right: 4px;
+    }
+
+    .subpage-links{
+        display: flex;
+        align-items: center;
+    }
+
+    .subpage-link:hover{
+        text-decoration: underline;
+    }
+
+    .subpage-divider-square{
+        background: #aaa;
+        height: 2px;
+        width: 2px;
+        margin: 0px 6px 0px 6px;
+    }
+
+    .meer-icon-square{
+        background: #888;
+        height: 2px;
+        width: 2px;
+    }
+    .nav-link-icon{
+        height: 40%;
+        margin-right: 4px;
+        opacity: 60%;
+    }
+
+    #alle-icon{
+        opacity: 100%;
+    }
+
+    .nav-link{
+        text-decoration: none;
+        .right{
+            float:right;
+        }
+    }
+
+    .nav-link-text{
+        font-family: arial;
+        font-size: 10pt;
+        color: #666;
+    }
+
+    #search-bar {
+        grid-area: search-bar;
+        display: grid;
+        grid-template-columns: 535px 40px 40px 40px;
+        border: solid;
+        border-width: 1px;
+        border-color: #e2e2e2;
+        padding: 6px 2px 6px 24px;
+        margin: 25px;
+        border-radius: 30px;
+        align-items: center;
+    }
+
+
+
+    #profile-buttons{
+        grid-area: profile-buttons;
+        display: flex;
+        justify-self: right;
+        align-items: center;
+        padding: 0px 15px 0px 0px;
+    }
+
+    #google-logo{
+        grid-area: logo;
+        height: auto;
+        width: 65%;
+        justify-self: center;
+        align-self: center;
+    }
+
+
+
+    #search-bar:hover{
+        border-color: #fff;
+        box-shadow: 0 1px 5px 0 #bbb;
+    }
+
+    #sign-in-button{
+        border: none;
+        padding: 7px 12px 7px 12px;
+        border-radius: 3px;
+        background-color: #4285f4;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    #apps-button{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 2px;
+        height: 16px;
+        width: 16px;
+        background: #FFF;
+        align-self: center;
+        margin: 0px 15px 0px 5px;
+        padding: 7px;
+    }
+
+    .app-square{
+        background: #666;
+        height: 100%;
+        width: 100%;
+    }
+
+    #apps-button:hover > .app-square{
+        background: #222;
+    }
+
+    #search-icon{
+        background-image: url('../images/google/desktop_searchbox_sprites302_hr.png');
+        height: 30px;
+        width: 30px;
+        background-size: 25px 51px;
+        background-repeat: no-repeat;
+    }
+
+    #voice-input-button{
+        border: none;
+        background-image: url('../images/google/googlemic_color_24dp.png');
+        height: 30px;
+        width: 30px;
+        background-size: 20px;
+        background-position: 5px 3px;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-left-color: #e2e2e2;
+    }
+
+    #clear-search-button{
+        border: none;
+        background-image: url('');
+        height: 30px;
+        width: 30px;
+        background-size: 25px;
+        background-position: 3px 2px;
+        background-repeat: no-repeat;
+        background-color: #fff;
+    }
+
+    #search-input-text{
+        border: none;
+        font-family: arial;
+        font-size: 12pt;
+    }
+
+    #search-input-text:focus{
+        outline: none;
+    }
 }
-
-#banner-crumb a {
-	text-decoration: underline;
-}
-
-#banner-crumb-home{
-	clear:both;
-	font-size: 1.05em;
-	font-weight:bold;
-	padding:3px 3px 6px 3px;
-	margin:5px 0px 15px 5px;
-	position:relative;
-	text-align:center;
-	background-color: #d9f0f7;
-	color: #000;
-	line-height:normal;
-	border: 1px solid #000;
-}
-
-#banner-crumb-home a {
-	text-decoration: underline;
-}
-
-div.banner-centre-red {
-	border:1px solid #74112b;
-	background-color: #74112b;
-	padding: 12px 12px 12px 8px;
-	margin-bottom:6px;
-	font-size: 1.1em;
-	font-weight:normal;
-	color: #FFFFFF;
-	line-height:normal;
-	text-align:center;
-}
-
-div.banner-centre-red a {
-color:#fff;
-text-decoration: underline;
-}
-
-/* END BANNER STYLES - 07/05/10 */
-
-/* Blue background colour - color: #20a6d2; */
-
-.box {
-	background-color: #FF9;
-	padding: 5px;
-}
-.greenbox {
-	background-color: #E9F8D6;
-	padding: 5px;
-}
-
-
 </style>
-</html>
+
+</body></html>
