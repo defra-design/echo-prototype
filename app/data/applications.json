@@ -94,6 +94,7 @@
 	"destination": "Turkey",
 	"EHC": "6062",
 	"can_pre_cert": "yes",
+	"PDF" : "20.2.301830PX (A3 C).pdf",
 	"cert_info": "Veterinary health certificate for hatching eggs other than of ratites intended for dispatch to the Republic of Turkey",
 	"certificate": "19/11/350532",
 	"status": "dispatched",

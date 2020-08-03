@@ -181,8 +181,8 @@ GOV.UK Prototype Kit
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               {% if (query.id | appInfo('can_pre_cert')) == 'yes' %}
-              <a id="view_cert_19/2/008722" href="/public/images/{{query.id | appInfo('PDF')}}" target="_blank">
-                 {% if query.application_status =="draft" or query.application_status =="submitted"  %}{%else%}Download Pre-certificate{% endif%}
+              <a id="view_cert_19/2/008722" href="/public/images/{{query.id | appInfo('PDF')}}" download>
+                 {% if query.application_status =="draft" or query.application_status =="submitted"  %}{%else%}Download pre-certificate{% endif%}
               </a>
               <br>
               {% endif %}
