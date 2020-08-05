@@ -36,7 +36,7 @@ Add attachments
       <li id="point_1">processing or production plants</li>
     </ul>
     {% endif %}
-    <p class="govuk-body">Your certifer and APHA can view any files you upload here. You do not have to send them by email.</p>
+    <p class="govuk-body">Your certifier and APHA can view any files you upload here. You do not have to send them by email.</p>
 
     <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
       <div class="app-multi-file-upload app-multi-file-upload--enhanced">

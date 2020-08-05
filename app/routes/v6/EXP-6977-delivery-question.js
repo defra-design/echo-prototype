@@ -31,7 +31,7 @@ module.exports = function(router) {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress');
     }
     if (req.body.is_certifier_address_correct == "yes") {
-        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifer-certificate-delivery?printable='+printable);
+        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-certificate-delivery?printable='+printable);
 
     } else {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-new-address');
@@ -44,7 +44,7 @@ module.exports = function(router) {
     if (req.session.data.certifier_has_cg_paper == "yes" || (req.session.data.certifier_is_digital == "yes" && printable == "yes") ) {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress');
     }else{
-        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifer-certificate-delivery?printable='+printable);
+        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-certificate-delivery?printable='+printable);
     }
 
   })

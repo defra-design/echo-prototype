@@ -30,7 +30,7 @@ GOV.UK Prototype Kit
             %}
               <h1 class="govuk-fieldset__heading">Is this the right delivery address for your certificate?</h1>
             {% else %}
-              <h1 class="govuk-fieldset__heading">Confirm the certifer</h1>
+              <h1 class="govuk-fieldset__heading">Confirm the certifier</h1>
             {% endif %}
           </legend>
           {%if (db.printable !="yes" and data.certifier_has_cg_paper == "no") or (data.certifier_is_digital == "no" and db.printable == "yes" and data.certifier_has_cg_paper == "no") %}
