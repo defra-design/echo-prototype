@@ -52,7 +52,7 @@ module.exports = function(router) {
     req.session.data.file_id_count += 1
     var printable = req.session.db.printable
     if (req.body.is_certifier_address_correct == "yes") {
-        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifer-certificate-delivery?printable='+printable);
+        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-certificate-delivery?printable='+printable);
 
     } else {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-new-address');
