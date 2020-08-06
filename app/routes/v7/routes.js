@@ -5,7 +5,7 @@ module.exports = function(router) {
 var env = new nunjucks.Environment();
 
 require('./EXP-8528-task-list-grouping.js')(router)
-
+require('./form-finder.js')(router)
 
 env.addFilter('shorten', function(str, count) {
     return str.slice(0, count || 5);
@@ -301,7 +301,7 @@ env.addFilter('shorten', function(str, count) {
     }
     res.redirect(301, '/' + base_url + req.params[0] + 'certificate/supporting-documents' + query);
   })
-  router.post('/' + base_url + '*start-page/google-search', function(req, res) {
+  router.post('/' + base_url + '*start-page/google-search*', function(req, res) {
     console.log("----- searching -----")
     var s = req.body.search.toUpperCase()
     console.log("search term = "+s)
@@ -311,6 +311,16 @@ env.addFilter('shorten', function(str, count) {
       res.redirect(301, '/' + base_url + req.params[0] + 'start-page/google-search-results?search='+req.body.search);
     }
   })
+  // router.post('/' + base_url + '*start-page/govuk-*', function(req, res) {
+  //   console.log("----- searching -----")
+  //   var s = req.body.keywords.toUpperCase()
+  //   console.log("search term = "+s)
+  //   if(s.includes('CERTIFY') || s.includes('CERTIFIER') || s.includes('VET') || s.includes('OV') || s.includes('INSPECT') || s.includes('EHO')){
+  //     res.redirect(301, '/' + base_url + req.params[0] + 'start-page/govuk-search-results?search='+req.body.search);
+  //   }else{
+  //     res.redirect(301, '/' + base_url + req.params[0] + 'start-page/google-search-results?search='+req.body.search);
+  //   }
+  // })
 
   // this adds query to all pages and will be used if no other get routing exists to override this.
   router.get('/' + base_url + '*', function(req, res) {
