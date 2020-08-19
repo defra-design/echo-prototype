@@ -28,4 +28,5 @@ require('./routes/v4/routes.js')(router);
 require('./routes/v5/routes.js')(router);
 require('./routes/v6/routes.js')(router);
 require('./routes/v7/routes.js')(router);
+require('./routes/v8/routes.js')(router);
 module.exports = router
