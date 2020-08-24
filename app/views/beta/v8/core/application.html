@@ -137,197 +137,197 @@ GOV.UK Prototype Kit
 </div>
 {% if (query.id | appInfo('status')) != 'draft' %}
 <div class="govuk-tabs" data-module="govuk-tabs">
-  <h2 class="govuk-tabs__title">
-    Contents
-  </h2>
-  <ul class="govuk-tabs__list">
-    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#ehc-tab">
-        Export health certificates {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}(4){%else%}(1){%endif%}
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#attachment-tab">
-        Attachments (<span class="file_count">{% if (query.id | appInfo('has_attachments')) == 'no' %}0{%else%}3{%endif%}</span>)
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-tabs__panel" id="ehc-tab">
-    <h2 class="govuk-heading-l">{% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}4{%else%}1{%endif%} certificate</h2>
-    {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}<p class="govuk-body"><a href="#" class="govuk-link"> Download all 4 certificates [PDF]</a></p>{% endif %}
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}<th class="govuk-table__header">No.</th>{% endif %}
-          <th class="govuk-table__header">Certificate number</th>
-          <th class="govuk-table__header">Actual export date</th>
-          <th class="govuk-table__header">Certificate status</th>
-          <th class="govuk-table__header">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="govuk-table__row">
-          {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}
-          <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
-          {% endif %}
-          {% if (query.id | appInfo('is_block')) == 'yes' and query.is_group !="yes" and query.is_replaced %}
-          <td id="cert-num" class="govuk-table__cell" scope="row" style="width:30%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;{{query.id | appInfo('certificate') }}<br>
-            <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by <a href="case-new">19/2/00872</a></span>
-          </td>
-          {% elseif (query.id | appInfo('is_block')) != 'yes' and query.is_group !="yes" and query.is_replacement %}
-          <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-tag govuk-tag--complete">Replacement</span>&nbsp;&nbsp; {{query.id | appInfo('certificate') }}
-            <br>
-            <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced certificate <a href="application?has_cancelation=yes&is_block=yes&application_status=dispatched">19/2/00869 </a> on 02 Aug 2019</span>
-          </td>
-          {% elseif query.is_pending_replacement %}
-          <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-status govuk-status--warning">pending replacement</span>&nbsp;&nbsp;{{query.id | appInfo('certificate') }}<br>
-            <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Requested to cancel and replace on 2 Dec 2019</span>
-          </td>
-          {% else %}
-          <td id="cert-num" class="govuk-table__cell" scope="row">{% if (query.id | appInfo('status')) == 'submitted' %}Awaiting number{% else %}{{query.id | appInfo('certificate') }}{% endif %}</td>
-          {% endif %}
-          <td id="actual-export-date" class="govuk-table__cell" scope="row">
-            30 Nov 2019
-          </td>
-          <td id="status" class="govuk-table__cell" scope="row">
-            {% if not query.has_cancelation %}
-            {% if (query.id | appInfo('certificate')) == "completed"%}CERTIFIED{%else%}{{ ((query.id | appInfo('status'))|upper) or "DISPATCHED"}}{% endif%}
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#ehc-tab">
+            Export health certificates {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}(4){%else%}(1){%endif%}
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#attachment-tab">
+            Attachments (<span class="file_count">{% if (query.id | appInfo('has_attachments')) == 'no' %}0{%else%}3{%endif%}</span>)
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel" id="ehc-tab">
+        <h2 class="govuk-heading-l">{% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}4{%else%}1{%endif%} certificate</h2>
+        {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}<p class="govuk-body"><a href="#" class="govuk-link"> Download all 4 certificates [PDF]</a></p>{% endif %}
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}<th class="govuk-table__header">No.</th>{% endif %}
+              <th class="govuk-table__header">Certificate number</th>
+              <th class="govuk-table__header">Actual export date</th>
+              <th class="govuk-table__header">Certificate status</th>
+              <th class="govuk-table__header">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="govuk-table__row">
+              {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}
+              <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
+              {% endif %}
+              {% if (query.id | appInfo('is_block')) == 'yes' and query.is_group !="yes" and query.is_replaced %}
+              <td id="cert-num" class="govuk-table__cell" scope="row" style="width:30%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;{{query.id | appInfo('certificate') }}<br>
+                <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by <a href="case-new">19/2/00872</a></span>
+              </td>
+              {% elseif (query.id | appInfo('is_block')) != 'yes' and query.is_group !="yes" and query.is_replacement %}
+              <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-tag govuk-tag--complete">Replacement</span>&nbsp;&nbsp; {{query.id | appInfo('certificate') }}
+                <br>
+                <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced certificate <a href="application?has_cancelation=yes&is_block=yes&application_status=dispatched">19/2/00869 </a> on 02 Aug 2019</span>
+              </td>
+              {% elseif query.is_pending_replacement %}
+              <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-status govuk-status--warning">pending replacement</span>&nbsp;&nbsp;{{query.id | appInfo('certificate') }}<br>
+                  <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Requested to cancel and replace on 2 Dec 2019</span>
+              </td>
+              {% else %}
+              <td id="cert-num" class="govuk-table__cell" scope="row">{% if (query.id | appInfo('status')) == 'submitted' %}Awaiting number{% else %}{{query.id | appInfo('certificate') }}{% endif %}</td>
+              {% endif %}
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Nov 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">
+                {% if not query.has_cancelation %}
+                {% if (query.id | appInfo('certificate')) == "completed"%}CERTIFIED{%else%}{{ ((query.id | appInfo('status'))|upper) or "DISPATCHED"}}{% endif%}
 
-            {% endif %}
-          </td>
-          <td id="actions" class="govuk-table__cell" scope="row">
-            <a id="view_cert_19/2/008722" href="/public/images/{{query.id | appInfo('PDF')}}" target="_blank">
-              {% if query.application_status =="draft" or query.application_status =="submitted" %}{%else%}View certificate{% endif%}
-            </a>
-          </td>
-        </tr>
-        {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}
-        <tr class="govuk-table__row">
-          <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
-          <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022133</td>
-          <td id="actual-export-date" class="govuk-table__cell" scope="row">
-            30 Nov 2019
-          </td>
-          <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}CERTIFIED{%endif%}
-          </td>
-          <td id="actions" class="govuk-table__cell" scope="row">
-            <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" target="_blank">
-              View certificate
-            </a>
-          </td>
-        </tr>
-        {% if query.has_cancelation %}
-        <tr class="govuk-table__row">
-          <td id="cert-counter" class="govuk-table__cell" scope="row">3</td>
-          <td id="cert-num" class="govuk-table__cell" scope="row" style="width:30%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;19/2/00869<br>
-            <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by <a href="case-new">19/2/00872</a></span>
-          </td>
-          <td id="actual-export-date" class="govuk-table__cell" scope="row">
-            02 Aug 2019
-          </td>
-          <td id="status" class="govuk-table__cell" scope="row">CANCELLED
-          </td>
-          <td id="actions" class="govuk-table__cell" scope="row">
-            <!-- <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" target="_blank">
+                {% endif %}
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+                <a id="view_cert_19/2/008722" href="/public/images/{{query.id | appInfo('PDF')}}" target="_blank">
+                   {% if query.application_status =="draft" or query.application_status =="submitted"  %}{%else%}View certificate{% endif%}
+                </a>
+              </td>
+            </tr>
+            {% if (query.id | appInfo('is_block')) == 'yes' or query.is_group =="yes"%}
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022133</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Nov 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}CERTIFIED{%endif%}
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+                <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" target="_blank">
+                  View certificate
+                </a>
+              </td>
+            </tr>
+            {% if query.has_cancelation %}
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">3</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row" style="width:30%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;19/2/00869<br>
+                <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by <a href="case-new">19/2/00872</a></span>
+              </td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                02 Aug 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">CANCELLED
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+                <!-- <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" target="_blank">
                   View certificate
                 </a> -->
-          </td>
-        </tr>
+              </td>
+            </tr>
+            {% endif %}
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">4</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022135</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Nov 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}DISPATCHED{%endif%}
+              </td>
+              <td id="actions" class="certificateActions govuk-table__cell" scope="row">
+                <a id="view_cert_19/2/022135" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c3ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View certificate</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">5</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022136</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Nov 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}DISPATCHED{%endif%}
+              </td>
+              <td id="actions" class="certificateActions govuk-table__cell" scope="row">
+                <a id="view_cert_19/2/022136" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c4ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View certificate</a>
+              </td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+      <div class="govuk-tabs__panel" id="attachment-tab">
+        {% if (query.id | appInfo('has_attachments')) == 'no' %}
+        <h2 class="govuk-heading-l"><span class="file_count">0</span> attachments</h2>
+        <p class="govuk-body">You have not added any attachments to this application</p>
+        <p class="govuk-body"><a class="govuk-link--no-visited-state"href="certificate/supporting-documents?return_to=../../summary/case-dispached-new-group#attachment-tab{%if query.delete_file == 'yes'%}&file={%endif%}">Add attachments</a></p>
+
+        {% else %}
+                <h2 class="govuk-heading-l"><span class="file_count">3</span> attachments</h2>
+                <!-- <p class="govuk-body">You cannot delete any file uploaded by the exporter</p> -->
+                <p class="govuk-body"><a href="#" class="govuk-link">Download all <span class="file_count">3</span> files [zip]</a></p>
+                <dl class="govuk-summary-list ">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-summary-list__40">
+                        <a href="#"><strong>test_support.docx</strong></a>
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        This is a description of the file
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download <span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 14.05.02.png</span>
+                        </a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-summary-list__40">
+                        <a href="#"><strong>test_support.docx</strong></a>
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Packing list
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.10.45.png</span>
+                        </a>
+                      </dd>
+                    </div>
+
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-summary-list__40">
+                        <a href="#"><strong>test_support.docx</strong></a>
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Passport for all horses
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.14.14.png</span>
+                        </a>
+                      </dd>
+                    </div>
+
+
+
+
+
+                    <!-- <p class="govuk-body govuk-!-margin-top-6"><a href="../certificates/2849EHC/supporting-documents?change=yes" class="govuk-link">Add more attachments</a></p> -->
+
+                    </dl>
+                    <p class="govuk-body"><a class="govuk-link--no-visited-state"href="certificate/supporting-documents?return_to=../../summary/case-dispached-new-group#attachment-tab{%if query.delete_file == 'yes'%}&file={%endif%}">Add attachments</a></p>
         {% endif %}
-        <tr class="govuk-table__row">
-          <td id="cert-counter" class="govuk-table__cell" scope="row">4</td>
-          <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022135</td>
-          <td id="actual-export-date" class="govuk-table__cell" scope="row">
-            30 Nov 2019
-          </td>
-          <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}DISPATCHED{%endif%}
-          </td>
-          <td id="actions" class="certificateActions govuk-table__cell" scope="row">
-            <a id="view_cert_19/2/022135" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c3ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View certificate</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td id="cert-counter" class="govuk-table__cell" scope="row">5</td>
-          <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022136</td>
-          <td id="actual-export-date" class="govuk-table__cell" scope="row">
-            30 Nov 2019
-          </td>
-          <td id="status" class="govuk-table__cell" scope="row">{% if query.is_group =="yes"%}{{query.application_status | upper}}{%else%}DISPATCHED{%endif%}
-          </td>
-          <td id="actions" class="certificateActions govuk-table__cell" scope="row">
-            <a id="view_cert_19/2/022136" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c4ae2920-05f7-e911-a813-000d3ab0f933?printView=true" target="_blank">View certificate</a>
-          </td>
-        </tr>
-        {% endif %}
-      </tbody>
-    </table>
+      </div>
+
+
+
   </div>
-  <div class="govuk-tabs__panel" id="attachment-tab">
-    {% if (query.id | appInfo('has_attachments')) == 'no' %}
-    <h2 class="govuk-heading-l"><span class="file_count">0</span> attachments</h2>
-    <p class="govuk-body">You have not added any attachments to this application</p>
-    <p class="govuk-body"><a class="govuk-link--no-visited-state" href="certificate/supporting-documents?return_to=../../summary/case-dispached-new-group#attachment-tab{%if query.delete_file == 'yes'%}&file={%endif%}">Add attachments</a></p>
-
-    {% else %}
-    <h2 class="govuk-heading-l"><span class="file_count">3</span> attachments</h2>
-    <!-- <p class="govuk-body">You cannot delete any file uploaded by the exporter</p> -->
-    <p class="govuk-body"><a href="#" class="govuk-link">Download all <span class="file_count">3</span> files [zip]</a></p>
-    <dl class="govuk-summary-list ">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-summary-list__40">
-          <a href="#"><strong>test_support.docx</strong></a>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          This is a description of the file
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="supporting-documents?change=yes">
-            Download <span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 14.05.02.png</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-summary-list__40">
-          <a href="#"><strong>test_support.docx</strong></a>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Packing list
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="supporting-documents?change=yes">
-            Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.10.45.png</span>
-          </a>
-        </dd>
-      </div>
-
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-summary-list__40">
-          <a href="#"><strong>test_support.docx</strong></a>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Passport for all horses
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="supporting-documents?change=yes">
-            Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.14.14.png</span>
-          </a>
-        </dd>
-      </div>
-
-
-
-
-
-      <!-- <p class="govuk-body govuk-!-margin-top-6"><a href="../certificates/2849EHC/supporting-documents?change=yes" class="govuk-link">Add more attachments</a></p> -->
-
-    </dl>
-    <p class="govuk-body"><a class="govuk-link--no-visited-state" href="certificate/supporting-documents?return_to=../../summary/case-dispached-new-group#attachment-tab{%if query.delete_file == 'yes'%}&file={%endif%}">Add attachments</a></p>
-    {% endif %}
-  </div>
-
-
-
-</div>
 {% endif %}
 {% endblock %}
