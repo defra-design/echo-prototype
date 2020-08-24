@@ -15,7 +15,7 @@ GOV.UK Prototype Kit
       <span class="govuk-hint">
         Enter a reference up to 20 letters or numbers long, such as an invoice number or consignee
       </span>
-      <form {% if query.change=="yes" %} action="../check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
+      <form {% if query.change=="yes" %} action="../check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% elseif data.is_blank_block == "yes" %} action="certifier" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
         <div class="govuk-form-group">
           <label class="govuk-label" for="reference_num">Your reference for this application</label>
           <input class="govuk-input govuk-input--width-20" id="reference_num" name="reference_num" value="{{ data.reference_num }}" type="text" data-qa-id="Question-7006EHC-1">

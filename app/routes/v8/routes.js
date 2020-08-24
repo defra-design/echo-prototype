@@ -138,15 +138,30 @@ module.exports = function(router) {
   });
 
 
-
   router.post('/' + base_url + '*/certificate/exa/certifier-confirm-address', function(req, res) {
     req.session.data.file_id_count += 1
-
-    if (req.body.is_certifier_address_correct == "yes") {
+    var printable = req.session.db.printable
+    console.log("printable= "+printable)
+    if (req.session.data.certifier_has_cg_paper == "yes" || (req.session.data.certifier_is_digital == "yes" && printable == "yes") ) {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress');
+    }
+    if (req.body.is_certifier_address_correct == "yes") {
+        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-certificate-delivery?printable='+printable);
+
     } else {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-new-address');
     }
+  })
+  router.post('/' + base_url + '*/certificate/exa/certifier-new-address', function(req, res) {
+    req.session.data.file_id_count += 1
+    var printable = req.session.db.printable
+
+    if (req.session.data.certifier_has_cg_paper == "yes" || (req.session.data.certifier_is_digital == "yes" && printable == "yes") ) {
+      res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress');
+    }else{
+        res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-certificate-delivery?printable='+printable);
+    }
+
   })
 
   router.get('/' + base_url + '*/select-certificate', function(req, res) {

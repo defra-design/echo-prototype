@@ -13,13 +13,19 @@ GOV.UK Prototype Kit
 <!--start-->
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-          <form {% if query.change=="yes" %} action="../check-your-answers" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %} method="POST">
+          <form method="POST">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
                 Where would you like your certificate to be delivered?
               </h1>
             </legend>
+            <p class="govuk-body">
+              We will check our records to make sure your certifier has given us permission to send the certificate to a different address.
+            </p>
+            <p class="govuk-body">
+              If you are not sure, contact your certifier to find out. This will avoid any delays.
+            </p>
             <br>
             <div class="govuk-form-group ">
               <label class="govuk-label" for="certifier-address-line-1">

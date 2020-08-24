@@ -102,18 +102,24 @@ GOV.UK Prototype Kit
 
 
           <li class="app-task-list__item">
+            {% if not data.is_certifier_address_correct %}
             <span class="app-task-list__task-name">
               <a href="exa/certifier" aria-describedby="eligibility-completed">
                 About your certifier
               </a>
             </span>
-            {% if not data.is_certifier_address_correct %}
+
             <strong class="govuk-tag app-task-list__task-completed not-started" id="contact-details-completed">Not started</strong>
             {% else %}
+            <span class="app-task-list__task-name">
+              <a href="exa/certifier-confirm-address" aria-describedby="eligibility-completed">
+                About your certifier
+              </a>
+            </span>
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
           </li>
-          <li class="app-task-list__item">
+          <!-- <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="exa/certifier-certificate-delivery?printable={{db.printable or 'yes'}}" aria-describedby="eligibility-completed">
                 How would you like the certificate{% if data.is_block_application == "yes" %}s{%endif%} to be delivered to the certifier?
@@ -124,7 +130,7 @@ GOV.UK Prototype Kit
             {% else %}
             <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
             {% endif %}
-          </li>
+          </li> -->
 
         </ul>
       </li>
