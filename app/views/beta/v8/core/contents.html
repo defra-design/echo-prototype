@@ -22,7 +22,7 @@ GOV.UK Prototype Kit
       <span class="govuk-caption-xl">Version 8</span>
     </h1>
 
-    <p><a href="google-search?logged_in=no" ><strong>Start with Google search</strong></a></p>
+    <p><a href="start/google-search?logged_in=no"><strong>Start with Google search</strong></a></p>
     <p>You can trigger a search to show certifier based results if the search contains in full or in part the following:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>certify</li>
@@ -34,11 +34,11 @@ GOV.UK Prototype Kit
     </ul>
     <h3 class="govuk-heading-m">Start end to end joureny</h3>
     <ul class="govuk-list">
-        <li><a href="govuk-home?logged_in=no">Start from govuk </a></li>
-        <li><a href="service-start-page?logged_in=no">Service start exporter</a></li>
-        <li><a href="form-finder?logged_in=no">Form finder</a>
-          <span class="govuk-hint">Only selected forms are available in the prototype. Please check the <a href="select-certificate">certificate selector page</a> to see which forms are available in the prototype</span>
-        </li>
+      <li><a href="start/govuk-home?logged_in=no">Start from govuk </a></li>
+      <li><a href="start/service-start-page?logged_in=no">Service start exporter</a></li>
+      <li><a href="start/form-finder?logged_in=no">Form finder</a>
+        <span class="govuk-hint">Only selected forms are available in the prototype. Please check the <a href="select-certificate">certificate selector page</a> to see which forms are available in the prototype</span>
+      </li>
     </ul>
     <h3 class="govuk-heading-m">Core pages</h3>
 
@@ -54,11 +54,11 @@ GOV.UK Prototype Kit
     <h2 class="govuk-heading-m">Forms</h2>
     <p class="govuk-body">This prototype contains the following certificates</p>
     <ul class="govuk-list">
-        {% for d in db %}
-        {% if d.data.version == "1" %}
-          <li><a href="certificate/check-your-progress?certificate={{d.id}}">{{d.id | replace("ehc","")}} EHC</a></li>
-        {% endif %}
-        {% endfor %}
+      {% for d in db %}
+      {% if d.data.version == "1" %}
+      <li><a href="certificate/check-your-progress?certificate={{d.id}}">{{d.id | replace("ehc","")}} EHC</a></li>
+      {% endif %}
+      {% endfor %}
   </div>
 </div>
 

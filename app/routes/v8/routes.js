@@ -41,7 +41,7 @@ module.exports = function(router) {
 
   // MIDDLEWARE: Called every time a page is rendered
   router.use(function(req, res, next) {
-    console.log("working")
+
     // this makes sure a certificate is loaded
     if (req.query.certificate && req.session.database != req.query.certificate) {
       req.session.database = req.query.certificate
@@ -188,7 +188,7 @@ module.exports = function(router) {
     if (req.body.certificate != "different") {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress?certificate=' + req.body.certificate);
     } else {
-      res.redirect(301, '/' + base_url + req.params[0] + '/form-finder?logged_in=yes&keywords=');
+      res.redirect(301, '/' + base_url + req.params[0] + '/start/form-finder?logged_in=yes&keywords=');
     }
   })
 
@@ -305,7 +305,6 @@ module.exports = function(router) {
   })
 
   router.get('/' + base_url + '*/certificate/supporting-documents', function(req, res) {
-    console.log("WORKING")
     if (req.query.delete) {
       tools.removeFromList(req.session.data.uploaded_files, req.query.delete)
     }
@@ -344,10 +343,8 @@ module.exports = function(router) {
     }
     res.redirect(301, '/' + base_url + req.params[0] + 'certificate/supporting-documents' + query);
   })
-  router.post('/' + base_url + '*start-page/google-search*', function(req, res) {
-    console.log("----- searching -----")
+  router.post('/' + base_url + '*start-page/google-search-results', function(req, res) {
     var s = req.body.search.toUpperCase()
-    console.log("search term = " + s)
     if (s.includes('CERTIFY') || s.includes('CERTIFIER') || s.includes('VET') || s.includes('OV') || s.includes('INSPECT') || s.includes('EHO')) {
       res.redirect(301, '/' + base_url + req.params[0] + 'start-page/google-search-results-certifier?search=' + req.body.search);
     } else {

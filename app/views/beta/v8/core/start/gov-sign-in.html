@@ -25,11 +25,16 @@ GOV.UK Prototype Kit
         </label>
         <input class="govuk-input govuk-input--width-10" id="password" name="password" type="text">
       </div>
-      <a class="govuk-button" href="certificate/check-your-progress?certificate={{query.certificate or 'ehc8327'}}">
+      {% if query.signin_url %}
+      <a class="govuk-button" href="{{query.signin_url}}">
         Sign in
       </a>
-      <p class="govuk-body"><a href="https://identity-management-app.herokuapp.com/scp/email-address?serviceLine=Exporter%20Service&serviceRole=Certifier&userType=new&regSuccess=success&serviceQuestions=no&numUsers=1&numAgents=0&numServices=1" class="govuk-link">Create
-          sign in details</a></p>
+      {% else %}
+      <a class="govuk-button" href="../certificate/check-your-progress?certificate={{query.certificate or 'ehc8327'}}">
+        Sign in
+      </a>
+      {% endif %}
+      <p class="govuk-body"><a href="https://identity-management-app.herokuapp.com/scp/email-address?serviceLine=Exporter%20Service&serviceRole=Certifier&userType=new&regSuccess=success&serviceQuestions=no&numUsers=1&numAgents=0&numServices=1" class="govuk-link">Create sign in details</a></p>
       <br>
       <br>
       <h2 class="govuk-heading-m">Problems signing in</h2>
