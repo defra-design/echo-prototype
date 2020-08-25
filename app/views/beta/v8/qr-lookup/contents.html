@@ -87,6 +87,8 @@ GOV.UK Prototype Kit
 
     function onScanSuccess(qrCodeMessage) {
       if (qrCodeMessage !== lastResult) {
+
+        window.location.href = qrCodeMessage;
         ++countResults;
         lastResult = qrCodeMessage;
         resultContainer.innerHTML += `<div>[${countResults}] - ${qrCodeMessage}</div>`;
