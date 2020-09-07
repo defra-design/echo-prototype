@@ -51,6 +51,7 @@ module.exports = function(router) {
     req.session.db = req.session.db || tools.getDB(req.session.data.database, db).data
     req.session.data.is_multiple = req.session.db.is_multiple
     req.session.data.certificate_code = req.session.db.certificate_code
+    req.session.data.currentURL = req.path
     next()
   })
 
