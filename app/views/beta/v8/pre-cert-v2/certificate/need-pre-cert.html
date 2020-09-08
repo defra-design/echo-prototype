@@ -28,10 +28,10 @@ GOV.UK Prototype Kit
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-percert-yes">
                 <p class="govuk-body">
-                  {%if db.printable =="yes" or data.certifier_has_cg_paper == "yes" %}
-                  {{ data.certifier or 'Your certifier' }} will be notified once you submit your application, They will be able to download and print the pre-certificate from their dashboard.
+                  {%if db.printable =="yes" or data.certifier_has_cg_paper == "yes" or query.printable =="yes" %}
+                  {{ data.certifier_name or 'Your certifier' }} will be notified once you submit your application, They will be able to download and print the pre-certificate from their dashboard.
                   {% else%}
-                  We will print a pre-certificate as soon as we receive the the request. This will be printed on crown gold paper and posted to {{ data.certifier or 'your certifier' }}
+                  We will print a pre-certificate as soon as we receive the the request. This will be printed on crown gold paper and posted to {{ data.certifier_name or 'your certifier' }}
                   {% endif %}
               </p>
             </div>
