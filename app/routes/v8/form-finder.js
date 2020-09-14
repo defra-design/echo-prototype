@@ -10,8 +10,8 @@ module.exports = function(router) {
   router.use(radioButtonRedirect)
 
   // CHANGE VERSION TO THE VERSION
-  const version = 'beta/v7'
-  const base_url = version + "/start-page"
+  const version = 'beta/v8'
+  const base_url = version + "/"
   const file_url = version + "/core"
   const db = []
 
@@ -31,16 +31,16 @@ module.exports = function(router) {
 
 
 
-  router.get('/'+base_url+'*/form-finder', function(req, res) {
-    console.log($.html())
+  router.get('/'+base_url+'*/start/form-finder', function(req, res) {
+    console.log("woooooooookring!")
     var forms = require('../../data/forms.json')
-    res.render(base_url+req.params[0]+'/form-finder', {
+    res.render(base_url+req.params[0]+'/start/form-finder', {
       "query": req.query,
       "forms":forms
     }, function(err, html) {
       if (err) {
         if (err.message.indexOf('template not found') !== -1) {
-          return res.render(file_url + '/form-finder', {"query": req.query,
+          return res.render(file_url + '/start/form-finder', {"query": req.query,
           "forms":forms});
         }
         throw err;
@@ -50,7 +50,7 @@ module.exports = function(router) {
   })
 
 
-  router.get('/'+base_url+'*/form-test', function(req, res) {
+  router.get('/'+base_url+'*/start/form-test', function(req, res) {
     var url = req.query.cert_link
 
     rp(url)
@@ -59,13 +59,13 @@ module.exports = function(router) {
         newHTML = cheerio.load(page)
         var next = (req.session.data.logged_in=="yes")? 'certificate/check-your-progress?certificate=ehc'+req.query.cert_code : "./gov-sign-in?certificate=ehc"+req.query.cert_code
         newHTML('.gem-c-button').attr('href',next)
-        res.render(base_url+req.params[0]+'/form-test', {
+        res.render(base_url+req.params[0]+'start/form-test', {
           "query": req.query,
           "page":newHTML.html()
         }, function(err, html) {
           if (err) {
             if (err.message.indexOf('template not found') !== -1) {
-              return res.render(file_url + '/form-test', {"query": req.query,
+              return res.render(file_url + '/start/form-test', {"query": req.query,
               "page":newHTML.html()});
             }
             throw err;
