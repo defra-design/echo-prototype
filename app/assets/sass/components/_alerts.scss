@@ -1,4 +1,4 @@
-.defra-alert{
+.app-alert{
   //default is grey
   background-color:#f3f2f1;
   padding:20px;
@@ -9,23 +9,23 @@
   margin-bottom:20px;
 
 }
-.defra-alert p:last-child{
+.app-alert p:last-child{
   margin-bottom: 0;
 }
-.defra-alert--success{
+.app-alert--success{
   background-color:#EAF6F5;
   border-color: #30A197;
 }
-.defra-alert--info{
+.app-alert--info{
   background:#E7F5F9;
   border-color: #0090C1;
 }
-.defra-alert--warning{
+.app-alert--warning{
   background:#FFF7E7;
   border-color: #FFBF45;
   padding: 20px 20px 5px;
 }
-.defra-alert--error{
+.app-alert--error{
   background:#faebe8;
   border-color: #942514;
   padding: 20px 20px;
