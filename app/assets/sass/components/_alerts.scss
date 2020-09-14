@@ -9,6 +9,9 @@
   margin-bottom:20px;
 
 }
+.defra-alert p:last-child{
+  margin-bottom: 0;
+}
 .defra-alert--success{
   background-color:#EAF6F5;
   border-color: #30A197;
