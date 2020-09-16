@@ -131,8 +131,22 @@ GOV.UK Prototype Kit
           <a class="govuk-link" href="need-pre-cert?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
         </dd>
       </div>
-    </dl>
+
+    {% if db.can_pre_cert == "yes" and (db.printbale != "yes" or query.printable =="no" ) and data.certifier_has_cg_paper != "yes" %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">How to print your pre-certificate
+        </dt>
+        <dd class="govuk-summary-list__value">{{data.needs_pre_cert_paper or 'Crown gold paper'}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="need-pre-cert-paper?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
+        </dd>
+      </div>
+
     {% endif %}
+    </dl>
+      {% endif %}
     {% for task in db.pages %}
     {% if task.exa == "yes" %}
     <h2 class="govuk-heading-m">{{task.title}}</h2>

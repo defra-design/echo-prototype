@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a href="javascript: window.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
+              <h1 class="govuk-fieldset__heading">How do you want your pre-certificate printed?</h1>
+          </legend>
+          <p class="govuk-body">Choosing to print the pre-certificate on white paper would mean {{data.certifier_name or "your certifier"}} can print it immeditaly. If you choose Crown gold paper, We will print a pre-certificate on crown gold paper and post it to {{ data.certifier_name or 'your certifier' }}</p>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="default-address-option" name="needs_pre_cert_paper" type="radio" value="Crown gold paper" data-aria-controls="conditional-percert-yes" {% if data.needs_pre_cert_paper=='Crown gold paper' %}checked{%endif%}>
+              <label id="default-address-option-label" class="govuk-label govuk-radios__label" for="default-address-option">
+                Pre-certificate printed on crown gold paper
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="manual-address-option" name="needs_pre_cert_paper" type="radio" value="White paper" aria-describedby="manual-address-option-hint" data-aria-controls="conditional-manual-address" {% if data.needs_pre_cert_paper=='White paper' %}checked{%endif%}>
+              <label id="manual-address-option-label" class="govuk-label govuk-radios__label " for="manual-address-option">
+                {{data.certifier_name or "My certifier"}} can print the pre-cerificate on white paper
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
+        <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-CertificateDeliveryAddressSaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+<br>
+{% endblock %}

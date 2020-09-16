@@ -11,7 +11,7 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
+    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% elseif (db.printable !="yes" or query.printable !="yes") and data.certifier_has_cg_paper != "yes" %}{% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -26,15 +26,13 @@ GOV.UK Prototype Kit
                 Yes, I need a pre-certified copy of the certificate
               </label>
             </div>
+            {%if db.printable =="yes" or data.certifier_has_cg_paper == "yes" or query.printable =="yes" %}
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-percert-yes">
                 <p class="govuk-body">
-                  {%if db.printable =="yes" or data.certifier_has_cg_paper == "yes" or query.printable =="yes" %}
                   {{ data.certifier_name or 'Your certifier' }} will be notified once you submit your application, They will be able to download and print the pre-certificate from their dashboard.
-                  {% else%}
-                  We will print a pre-certificate as soon as we receive the the request. This will be printed on crown gold paper and posted to {{ data.certifier_name or 'your certifier' }}
-                  {% endif %}
               </p>
             </div>
+            {% endif %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="manual-address-option" name="needs_pre_cert" type="radio" value="no" aria-describedby="manual-address-option-hint" data-aria-controls="conditional-manual-address" {% if data.needs_pre_cert=='no' %}checked{%endif%}>
               <label id="manual-address-option-label" class="govuk-label govuk-radios__label " for="manual-address-option">

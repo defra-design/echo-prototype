@@ -108,6 +108,18 @@ module.exports = function(router) {
       res.redirect(301, '/' + base_url + req.params[0] + '/certificate/exa/certifier-new-address');
     }
   })
+  router.post('/' + base_url + '*/certificate/need-pre-cert', function(req, res) {
+    var printable = req.session.db.printable
+    if((req.query.change =="yes" )){
+      res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-answers');
+    }
+    if((printable != "yes" || req.query.printable =="no" ) && req.session.data.certifier_has_cg_paper != "yes" && req.body.needs_pre_cert == "yes"){
+      res.redirect(301, '/' + base_url + req.params[0] + '/certificate/need-pre-cert-paper');
+    }
+    else {
+      res.redirect(301, '/' + base_url + req.params[0] + '/certificate/check-your-progress');
+    }
+  })
   router.post('/' + base_url + '*/certificate/exa/certifier-new-address', function(req, res) {
     req.session.data.file_id_count += 1
     var printable = req.session.db.printable
