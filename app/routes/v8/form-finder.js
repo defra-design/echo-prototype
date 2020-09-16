@@ -57,7 +57,7 @@ module.exports = function(router) {
       .then(function(page){
         //success!
         newHTML = cheerio.load(page)
-        var next = (req.session.data.logged_in=="yes")? 'certificate/check-your-progress?certificate=ehc'+req.query.cert_code : "./gov-sign-in?certificate=ehc"+req.query.cert_code
+        var next = (req.session.data.logged_in=="yes")? '../certificate/check-your-progress?certificate=ehc'+req.query.cert_code : "./gov-sign-in?certificate=ehc"+req.query.cert_code
         newHTML('.gem-c-button').attr('href',next)
         res.render(base_url+req.params[0]+'start/form-test', {
           "query": req.query,
