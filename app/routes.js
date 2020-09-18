@@ -1,10 +1,18 @@
 const express = require('express')
 const router = express.Router()
 
+//please update this version each time you version the prototype.
+const current_version = "/beta/v8/core/"
 
 // IDM re-route back to a page I moved.
 router.get('/e2e/confirmation', function(req, res) {
   return res.redirect(301, '/alpha/e2e/confirmation');
+})
+//set up a redirect for any link containing "latest" correspoding page in "current_version".
+router.get('/latest/*', function(req, res) {
+  // req.params[0] = what ever is typed after /latest/ represented by the *
+
+  return res.redirect(301, current_version+req.params[0]);
 })
 
 
