@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<br>
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+{% endblock%}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Multiples
+    </h1>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8907">View Jira ticket</a></p> -->
+    <h2 class="govuk-heading-m">Exporter</h2>
+    <ul class="govuk-list">
+      <li>Dashboard</li>
+      <li><a href="dashboard">Start from dashaboard (no multiple)</a></li>
+      <li><a href="dashboard?has_multiple=yes&has_unfinnished_certificate=">Dashaboard (with multiple)</a></li>
+      <li><a href="application?reference_num=AUS03402342-KXC&application_id=100098786484&application_status=processing&is_block=no&is_group=yes">Summary page with multiples</a></li>
+
+      <li><br>Task list (UPDATED)</li>
+      <li><a href="certificate/check-your-progress?certificate=ehc2849_v4&has_unfinnished_certificate=">Start new certificate 2849EHC (Multiple)</a></li>
+      <li><a href="certificate/check-your-progress?certificate=ehc6969">Start new certificate 6969EHC (Single)</a></li>
+      <li><br>Create new EHC (NEW)</li>
+      <li><a href="certificate/ehc-reference?first_time=yes&return=check-your-progress&return_check_answers=certificate-list&certificate=ehc2849_v4">Create a new EHC - First time</a></li>
+      <li><a href="certificate/ehc-reference?first_time=no&return=check-your-progress&return_check_answers=certificate-list&certificate=ehc2849_v4">Create a new EHC</a></li>
+      <li><a href="certificate/confirm-cancel-certificate?id=2&return_check_answers=certificate-list&certificate=ehc2849_v4">Cancel certificate midway through - confirmation</a></li>
+      <li><br>Check answers to appear on EHC (NEW)</li>
+      <li><a href="certificate/check-your-answers-ehc?certificate=ehc2849_v4">Check your answers for EHC</a></li>
+      <li><a href="certificate/check-your-answers-ehc?change_id=0&change_ehc=yes&return_check_answers&certificate=ehc2849_v4">Update your answers for EHC (change)</a></li>
+      <li><a href="certificate/page?id=3&next=check-your-answers-ehc&confirm=yes&change=yes&show_change_warning=yes&certificate=ehc2849_v4">Change answer for repeatable question - changes all certs (NEW)</a></li>
+      <li><br>Certificate list (NEW)</li>
+      <li><a href="certificate/certificate-list?show_fake_ehc=yes&certificate=ehc2849_v4">Certificates added to applciation</a></li>
+      <li><a href="certificate/certificate-list-with-error2?show_fake_ehc=yes&certificate=ehc2849_v4">Error, cannot add more certificates</a></li>
+      <li><a href="certificate/certificate-list?show_fake_ehc=no&added_certificates=&certificate=ehc2849_v4"">Certificates list - none added </a></li>
+      <li><a href="certificate/certificate-list?show_fake_ehc=yes&certificate=ehc2849_v4&has_unfinished_certificate=yes"">Certificates list - has unfinished certificate</a></li>
+      <br>
+      <li><a href="certificate/delete-certificate?id=0&title=Santa%27s%20little%20helper&return_remove_url=check-your-answers">Delete certificate confirmation</a></li>
+
+      <li><a href="certificate/certificate-list?show_fake_ehc=yes&certificate=ehc2849_v4&show_alert=yes&lalert_type=deleted">Certificates deleted</a></li>
+      <li><br>Check your application answers (UPDATED)</li>
+      <li><a href="certificate/check-your-answers?certificate=ehc2849_v4&has_unfinished_certificate=no&show_fake_ehc=yes">Check your answers</a></li>
+      <li><a href="certificate/check-your-answers?certificate=ehc2849_v4&has_unfinished_certificate=yes&show_fake_ehc=yes">Check your answers - with unfinished certificate</a></li>
+      <li><a href="certificate/check-your-answers?certificate=ehc2849_v4&added_certificates=&has_error=yes&error_type=certificates&show_fake_ehc=yes">Check your answers - with errors</a></li>
+
+      <li><br>Other pages</li>
+      <li><a href="certificate/delete-certificate?id=1&title=Billy&certificate=ehc2849_v4">Delete certifictes</a></li>
+      <li><a href="certificate/confirm-cancel-certificate?id=1&certificate=ehc2849_v4">Cancel adding a certificate</a></li>
+
+  </div>
+</div>
+
+{% endblock %}

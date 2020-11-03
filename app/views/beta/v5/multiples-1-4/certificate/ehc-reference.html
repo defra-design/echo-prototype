@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Add a certificate for a horse to this application
+        <span class="govuk-caption-l"> {{data.certificate_code or "2849"}}: Permanently export horses to the United Arab Emirates (UAE)</span>
+
+      </h1>
+
+
+      <form method="post" >
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                  <p class="govuk-body">
+                    Enter a reference to help you manage the certificates in this application, such as the horse name.
+                  </p>
+
+                  <div class="govuk-form-group " id="conditional-certificates">
+                    <label class="govuk-label govuk-label--s" for="reference_num">Your reference for this certificate</label>
+                    <span class="govuk-hint">
+                        This reference will not appear in the certificate
+                    </span>
+                    <input class="govuk-input govuk-input--width-20" id="reference_num" name="ehc_reference_num" value="{% if query.change == 'yes'%}{{ data.ehc_reference_num }}{%endif%}" type="text">
+                  </div>
+              </fieldset>
+            </div>
+            <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
+        </form>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </div>
+      </div>
+
+
+      <p></p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

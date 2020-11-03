@@ -1,0 +1,353 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!--start-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Who will certify this certificate?
+    </h1>
+    <p id="Hint-CertifierOrganisation" class="govuk-body">
+      Select the organisation that will be carrying out the certification for this application.
+      This might be an Official Veterinarian (OV) or an Environmental Health Officer (EHO).
+    </p>
+    <form method="GET" action="certifier">
+      <div class="search-wrapper govuk-form-group">
+        <!-- <label class="govuk-label defra-search__label govuk-!-font-weight-bold " for="search">
+          Find the organisation
+        </label> -->
+        <label for="search-reservations" class="govuk-label">
+          Search by organisation name, address or location
+        </label>
+        <div class="search-input-wrapper">
+          <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
+          <div class="search-input-submit-wrapper">
+            <button type="submit" class="search-submit">Search</button>
+          </div>
+        </div>
+        {% if query.search and query.search != 'no vets' %}
+        <p class="govuk-body govuk-!-margin-top-2"><a href="certifier?search=" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
+        {% endif %}
+      </div>
+
+    </form>
+  </div>
+    </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+  {% if query.search and query.search != 'no vets' %}
+  <!-- <p class="govuk-body"><a href="certifier?search=" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">Clear search</a></p> -->
+  <p class="govuk-body">{%if query.single %}There is 1 organisation{% else %}There are 8 organisations{% endif %}  matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
+  <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER" id="certifyingOrganisations">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header">Name</th>
+        <th class="govuk-table__header">Address</th>
+        <th class="govuk-table__header">Area</th>
+        <th class="govuk-table__header"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      {% if query.single %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          ADM ACCOUNTING LIMITED Hornbeam House CW12 3ER
+        </td>
+        <td class="govuk-table__cell wrap">
+          Hornbeam House
+          Electra Way
+
+          Crewe
+          CW12 3ER
+        </td>
+        <td class="govuk-table__cell">
+
+        </td>
+        <td class="govuk-table__cell">
+          <a class="govuk-link" href="certifier-confirm-address" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">Select</a>
+        </td>
+      </tr>
+      {% else %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          ABC VETS LIMITED
+        </td>
+        <td class="govuk-table__cell wrap">
+          Electra Way
+          Crewe Business Park
+
+          Crewe
+          CW1 6GJ
+        </td>
+        <td class="govuk-table__cell">
+
+        </td>
+        <td class="govuk-table__cell">
+          <form action="./certifier-confirm-address" method="get">
+            <input type="hidden" name="crumb_csrf_token" value="2FYI7US8eR-8lgwfysGI9rLdTdygM2ne1EofHfWSOnV">
+            <input type="hidden" name="ehcNumber" value="7003EHC">
+            <input type="hidden" name="applicationFormId" value="1721148010134">
+            <input type="hidden" name="pageSequence" value="3">
+            <input id="certifier-organisation-name-field-1" type="hidden" name="certifier_name" value="ABC VETS LIMITED">
+            <input id="certifier-organisation-address-1-field-1" type="hidden" name="certifier_addressLine1" value="Electra Way">
+            <input id="certifier-organisation-address-2-field-1" type="hidden" name="certifier_addressLine2" value="Crewe Business Park">
+            <input id="certifier-organisation-address-3-field-1" type="hidden" name="certifier_addressLine3" value="">
+            <input id="certifier-organisation-certifier_town-field-1" type="hidden" name="certifier_town" value="Crewe ">
+            <input id="certifier-organisation-certifier_county-field-1" type="hidden" name="certifier_county" value="">
+            <input id="certifier-organisation-certifier_postcode-field-1" type="hidden" name="certifier_postcode" value="CW1 6GJ">
+            <input id="certifier-organisation-address-id-field-1" type="hidden" name="addressId" value="b519e437-39ef-e911-a812-000d3ab11761">
+            <input id="certifier-organisation-id-field-1" type="hidden" name="certifierOrganisationId" value="b419e437-39ef-e911-a812-000d3ab11761">
+            <input class="link-button" type="submit" name="saveAndContinue" value="Select" aria-label="select" id="Button-SaveAndContinue-1" data-qa-id="Button-SaveAndContinue">
+          </form>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          ESKKAY LIMITED
+        </td>
+        <td class="govuk-table__cell wrap">
+          1
+          Crewe
+
+          Crewe
+          CW1 2FF
+        </td>
+        <td class="govuk-table__cell">
+
+        </td>
+        <td class="govuk-table__cell">
+          <form action="./certifier-confirm-address" method="get">
+            <input type="hidden" name="crumb_csrf_token" value="2FYI7US8eR-8lgwfysGI9rLdTdygM2ne1EofHfWSOnV">
+            <input type="hidden" name="ehcNumber" value="7003EHC">
+            <input type="hidden" name="applicationFormId" value="1721148010134">
+            <input type="hidden" name="pageSequence" value="3">
+            <input id="certifier-organisation-name-field-5" type="hidden" name="certifier_name" value="ESKKAY LIMITED">
+            <input id="certifier-organisation-address-1-field-5" type="hidden" name="certifier_addressLine1" value="1">
+            <input id="certifier-organisation-address-2-field-5" type="hidden" name="certifier_addressLine2" value="Crewe">
+            <input id="certifier-organisation-address-3-field-5" type="hidden" name="certifier_addressLine3" value="">
+            <input id="certifier-organisation-certifier_town-field-5" type="hidden" name="certifier_town" value="Crewe">
+            <input id="certifier-organisation-certifier_county-field-5" type="hidden" name="certifier_county" value="">
+            <input id="certifier-organisation-certifier_postcode-field-5" type="hidden" name="certifier_postcode" value="CW1 2FF">
+            <input class="link-button" type="submit" name="saveAndContinue" value="Select" aria-label="select" id="Button-SaveAndContinue-5" data-qa-id="Button-SaveAndContinue">
+          </form>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          IKVETS Crewe
+        </td>
+        <td class="govuk-table__cell wrap">
+          Crewe
+          Joe Bloggs Road
+
+          Crewe
+          CW1 6GJ
+        </td>
+        <td class="govuk-table__cell">
+          Cheshire
+        </td>
+        <td class="govuk-table__cell">
+          <form action="./certifier-confirm-address" method="get">
+            <input type="hidden" name="crumb_csrf_token" value="2FYI7US8eR-8lgwfysGI9rLdTdygM2ne1EofHfWSOnV">
+            <input type="hidden" name="ehcNumber" value="7003EHC">
+            <input type="hidden" name="applicationFormId" value="1721148010134">
+            <input type="hidden" name="pageSequence" value="3">
+            <input id="certifier-organisation-name-field-6" type="hidden" name="certifier_name" value="IKVETS Crewe ">
+            <input id="certifier-organisation-address-1-field-6" type="hidden" name="certifier_addressLine1" value="Crewe">
+            <input id="certifier-organisation-address-2-field-6" type="hidden" name="certifier_addressLine2" value="Joe Bloggs Road">
+            <input id="certifier-organisation-address-3-field-6" type="hidden" name="certifier_addressLine3" value="">
+            <input id="certifier-organisation-certifier_town-field-6" type="hidden" name="certifier_town" value="Crewe">
+            <input id="certifier-organisation-certifier_county-field-6" type="hidden" name="certifier_county" value="test">
+            <input id="certifier-organisation-certifier_postcode-field-6" type="hidden" name="certifier_postcode" value="CW1 6GJ">
+            <input id="certifier-organisation-address-id-field-6" type="hidden" name="addressId" value="ac394239-9416-ea11-a811-000d3ab1160e">
+            <input id="certifier-organisation-id-field-6" type="hidden" name="certifierOrganisationId" value="ab394239-9416-ea11-a811-000d3ab1160e">
+            <input class="link-button" type="submit" name="saveAndContinue" value="Select" aria-label="select" id="Button-SaveAndContinue-6" data-qa-id="Button-SaveAndContinue">
+          </form>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          Munnas Natural England
+        </td>
+        <td class="govuk-table__cell wrap">
+          Natural England
+          Electra Way
+
+          Crewe
+          CW1 6GJ
+        </td>
+        <td class="govuk-table__cell">
+
+        </td>
+        <td class="govuk-table__cell">
+          <form action="./certifier-confirm-address" method="get">
+            <input type="hidden" name="crumb_csrf_token" value="2FYI7US8eR-8lgwfysGI9rLdTdygM2ne1EofHfWSOnV">
+            <input type="hidden" name="ehcNumber" value="7003EHC">
+            <input type="hidden" name="applicationFormId" value="1721148010134">
+            <input type="hidden" name="pageSequence" value="3">
+            <input id="certifier-organisation-name-field-9" type="hidden" name="certifier_name" value="Munnas Natural England ">
+            <input id="certifier-organisation-address-1-field-9" type="hidden" name="certifier_addressLine1" value="Natural England">
+            <input id="certifier-organisation-address-2-field-9" type="hidden" name="certifier_addressLine2" value="Electra Way ">
+            <input id="certifier-organisation-address-3-field-9" type="hidden" name="certifier_addressLine3" value="">
+            <input id="certifier-organisation-certifier_town-field-9" type="hidden" name="certifier_town" value="Crewe">
+            <input id="certifier-organisation-certifier_county-field-9" type="hidden" name="certifier_county" value="">
+            <input id="certifier-organisation-certifier_postcode-field-9" type="hidden" name="certifier_postcode" value="CW1 6GJ">
+            <input id="certifier-organisation-address-id-field-9" type="hidden" name="addressId" value="48b4b51c-0e36-ea11-a813-000d3ab118a3">
+            <input id="certifier-organisation-id-field-9" type="hidden" name="certifierOrganisationId" value="47b4b51c-0e36-ea11-a813-000d3ab118a3">
+            <input class="link-button" type="submit" name="saveAndContinue" value="Select" aria-label="select" id="Button-SaveAndContinue-9" data-qa-id="Button-SaveAndContinue">
+          </form>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          RH Vets (Manchester)
+        </td>
+        <td class="govuk-table__cell wrap">
+          10
+          Pillory Street
+          Nantwich
+          Nr Crewe
+          CW1 2FF
+        </td>
+        <td class="govuk-table__cell">
+          Cheshire
+        </td>
+        <td class="govuk-table__cell">
+          <form action="./certifier-confirm-address" method="get">
+            <input type="hidden" name="crumb_csrf_token" value="2FYI7US8eR-8lgwfysGI9rLdTdygM2ne1EofHfWSOnV">
+            <input type="hidden" name="ehcNumber" value="7003EHC">
+            <input type="hidden" name="applicationFormId" value="1721148010134">
+            <input type="hidden" name="pageSequence" value="3">
+            <input id="certifier-organisation-name-field-10" type="hidden" name="certifier_name" value="RH Vets ">
+            <input id="certifier-organisation-address-1-field-10" type="hidden" name="certifier_addressLine1" value="10">
+            <input id="certifier-organisation-address-2-field-10" type="hidden" name="certifier_addressLine2" value="Pillory Street">
+            <input id="certifier-organisation-address-3-field-10" type="hidden" name="certifier_addressLine3" value="Nantwich">
+            <input id="certifier-organisation-certifier_town-field-10" type="hidden" name="certifier_town" value="Nr Crewe">
+            <input id="certifier-organisation-certifier_county-field-10" type="hidden" name="certifier_county" value="Cheshire">
+            <input id="certifier-organisation-certifier_postcode-field-10" type="hidden" name="certifier_postcode" value="CW1 2FF">
+            <input id="certifier-organisation-address-id-field-10" type="hidden" name="addressId" value="2651c0f0-bfe5-e911-a812-000d3ab11e51">
+            <input id="certifier-organisation-id-field-10" type="hidden" name="certifierOrganisationId" value="2551c0f0-bfe5-e911-a812-000d3ab11e51">
+            <input class="link-button" type="submit" name="saveAndContinue" value="Select" aria-label="select" id="Button-SaveAndContinue-10" data-qa-id="Button-SaveAndContinue">
+          </form>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          HATCHETS LIMITED
+        </td>
+        <td class="govuk-table__cell wrap">
+          152
+          Stoke Newington Road,
+
+          London
+          N16 7XA
+        </td>
+        <td class="govuk-table__cell">
+
+        </td>
+        <td class="govuk-table__cell">
+          <form action="/protected/form/1631EHC/application/1721148009075/page/3/organisation-search" method="POST">
+            <input type="hidden" name="crumb_csrf_token" value="2FYI7US8eR-8lgwfysGI9rLdTdygM2ne1EofHfWSOnV">
+            <input type="hidden" name="ehcNumber" value="1631EHC">
+            <input type="hidden" name="applicationFormId" value="1721148009075">
+            <input type="hidden" name="pageSequence" value="3">
+            <input id="certifier-organisation-name-field-19" type="hidden" name="certifier_name" value="HATCHETS LIMITED">
+            <input id="certifier-organisation-address-1-field-19" type="hidden" name="certifier_addressLine1" value="152 ">
+            <input id="certifier-organisation-address-2-field-19" type="hidden" name="certifier_addressLine1" value="Stoke Newington Road, ">
+            <input id="certifier-organisation-address-3-field-19" type="hidden" name="certifier_addressLine1" value="">
+            <input id="certifier-organisation-town-field-19" type="hidden" name="certifier_town" value="London">
+            <input id="certifier-organisation-county-field-19" type="hidden" name="certifier_county" value="">
+            <input id="certifier-organisation-postcode-field-19" type="hidden" name="certifier_postcode" value="N16 7XA">
+            <input id="certifier-organisation-address-id-field-19" type="hidden" name="certifier_addressId" value="2b6d1e56-0011-ea11-a811-000d3ab1160e">
+            <input id="certifier-organisation-id-field-19" type="hidden" name="certifierOrganisationId" value="2a6d1e56-0011-ea11-a811-000d3ab1160e">
+            <input class="link-button" type="submit" name="saveAndContinue" value="Select" aria-label="select" id="Button-SaveAndContinue-19" data-qa-id="Button-SaveAndContinue">
+          </form>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          TH Vets (Northwich)
+        </td>
+        <td class="govuk-table__cell wrap">
+          10
+          Pillory Street
+          Nantwich
+          Nr Crewe
+          CW1 2FF
+        </td>
+        <td class="govuk-table__cell">
+          Cheshire
+        </td>
+        <td class="govuk-table__cell">
+          <form action="./certifier-confirm-address" method="get">
+            <input type="hidden" name="crumb_csrf_token" value="2FYI7US8eR-8lgwfysGI9rLdTdygM2ne1EofHfWSOnV">
+            <input type="hidden" name="ehcNumber" value="7003EHC">
+            <input type="hidden" name="applicationFormId" value="1721148010134">
+            <input type="hidden" name="pageSequence" value="3">
+            <input id="certifier-organisation-name-field-11" type="hidden" name="certifier_name" value="TH Vets (Northwich)">
+            <input id="certifier-organisation-address-1-field-11" type="hidden" name="certifier_addressLine1" value="10">
+            <input id="certifier-organisation-address-2-field-11" type="hidden" name="certifier_addressLine2" value="Pillory Street">
+            <input id="certifier-organisation-address-3-field-11" type="hidden" name="certifier_addressLine3" value="Nantwich">
+            <input id="certifier-organisation-certifier_town-field-11" type="hidden" name="certifier_town" value="Nr Crewe">
+            <input id="certifier-organisation-certifier_county-field-11" type="hidden" name="certifier_county" value="Cheshire">
+            <input id="certifier-organisation-certifier_postcode-field-11" type="hidden" name="certifier_postcode" value="CW1 2FF">
+            <input id="certifier-organisation-address-id-field-11" type="hidden" name="addressId" value="87e7fc0a-38da-e911-a812-000d3ab11026">
+            <input id="certifier-organisation-id-field-11" type="hidden" name="certifierOrganisationId" value="86e7fc0a-38da-e911-a812-000d3ab11026">
+            <input class="link-button" type="submit" name="saveAndContinue" value="Select" aria-label="select" id="Button-SaveAndContinue-11" data-qa-id="Button-SaveAndContinue">
+          </form>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          TJ Vets (Barbridge)
+        </td>
+        <td class="govuk-table__cell wrap">
+          10
+          Pillory Street
+          Nantwich
+          Crewe
+          CW1 2FF
+        </td>
+        <td class="govuk-table__cell">
+          Cheshire
+        </td>
+        <td class="govuk-table__cell">
+          <form action="./certifier-confirm-address" method="get">
+            <input type="hidden" name="crumb_csrf_token" value="2FYI7US8eR-8lgwfysGI9rLdTdygM2ne1EofHfWSOnV">
+            <input type="hidden" name="ehcNumber" value="7003EHC">
+            <input type="hidden" name="applicationFormId" value="1721148010134">
+            <input type="hidden" name="pageSequence" value="3">
+            <input id="certifier-organisation-name-field-12" type="hidden" name="certifier_name" value="TJ Vets">
+            <input id="certifier-organisation-address-1-field-12" type="hidden" name="certifier_addressLine1" value="10">
+            <input id="certifier-organisation-address-2-field-12" type="hidden" name="certifier_addressLine2" value="Pillory Street">
+            <input id="certifier-organisation-address-3-field-12" type="hidden" name="certifier_addressLine3" value="Nantwich">
+            <input id="certifier-organisation-certifier_town-field-12" type="hidden" name="certifier_town" value="Crewe">
+            <input id="certifier-organisation-certifier_county-field-12" type="hidden" name="certifier_county" value="Cheshire">
+            <input id="certifier-organisation-certifier_postcode-field-12" type="hidden" name="certifier_postcode" value="CW1 2FF">
+            <input id="certifier-organisation-address-id-field-12" type="hidden" name="addressId" value="e7c9f037-78df-e911-a812-000d3ab11761">
+            <input id="certifier-organisation-id-field-12" type="hidden" name="certifierOrganisationId" value="e6c9f037-78df-e911-a812-000d3ab11761">
+            <input class="link-button" type="submit" name="saveAndContinue" value="Select" aria-label="select" id="Button-SaveAndContinue-12" data-qa-id="Button-SaveAndContinue">
+          </form>
+        </td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+  {% elseif query.search=="no vets" %}
+  <!-- <p class="govuk-body"><a href="certifier?search=" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">Clear search</a></p> -->
+  <p class="govuk-body">0 organisations matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
+  {% endif %}
+  </div>
+  </div>
+
+  {% endblock %}

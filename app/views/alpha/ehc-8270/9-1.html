@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .govuk-radios__label{
+
+          }
+          .govuk-radios__item {
+
+            margin-bottom: 10px!important;
+
+        }</style>
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="9-2" method="POST">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
+          <h1 class="govuk-fieldset__heading">
+            What type of commodity are you exporting?
+          </h1>
+        </legend>
+        <div class="govuk-form-group">
+          <div class="govuk-radios ">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="commodity_type_fishery" name="commodity_type" type="radio" value="Fishery products">
+              <label class="govuk-label govuk-radios__label" for="commodity_type_fishery">
+                Fishery products
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="commodity_type_live" name="commodity_type" type="radio" value="Live shellfish">
+              <label class="govuk-label govuk-radios__label" for="commodity_type_live">
+                Live shellfish
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+      <p class="govuk-body">
+        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+      </p>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  window.onload = function() {
+    $(document).ready(function() {
+      $("#watch-me").click(function() {
+        $("#show-me:hidden").show('slow');
+      });
+      $("#watch-me").click(function() {
+        if ($('watch-me').prop('checked') === false) {
+          $('#show-me').hide();
+        }
+      });
+    });
+    $(document).ready(function() {
+      $("#watch-me2").click(function() {
+        $("#show-me2:hidden").show('slow');
+      });
+      $("#watch-me2").click(function() {
+        if ($('watch-me2').prop('checked') === false) {
+          $('#show-me2').hide();
+        }
+      });
+    });
+
+
+
+  }
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EHC online
+{% endblock %}
+
+{% block beforeContent %}
+<a href="service-start-page" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form  method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-9">
+                <h1 class="govuk-fieldset__heading">
+                  What do you need to do?
+                </h1>
+              </legend>
+              <p>You'll need to register with Government Gateway if you don't already have an account. You will need:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>your National Insurance number</li>
+                <li>a recent payslip or P60 or a valid UK passport</li>
+              </ul>
+                <!-- radios use radioButtonRedirect  for routing https://github.com/abbott567/radio-button-redirect -->
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="account_type_exporter" name="account_type" type="radio" value="exporter~gov-sign-in">
+                  <label class="govuk-label govuk-radios__label" for="account_type_exporter">
+                    I need to apply or manage an application for an export health certificate
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="account_type_vet" name="account_type" type="radio" value="vet~https://exports-certifiers-prototype.herokuapp.com/1-6/certifier/gov-sign-in">
+                  <label class="govuk-label govuk-radios__label" for="account_type_vet">
+                    I need to certify an export health certificate
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+  </div>
+
+</div>
+{% endblock %}

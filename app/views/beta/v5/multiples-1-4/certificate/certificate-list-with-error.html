@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#max-reached-error">You cannot add any more certificates to this application, if you need to clone or create a new application.</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      You have added {% if query.show_fake_ehc %}5{%else%}{{data.added_certificates | length}}{%endif%} horse certificate{% if query.show_fake_ehc == yes or (data.added_certificates | length) != 1 %}s{% endif %} to your application
+    </h1>
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
+    <!-- <p class="govuk-body govuk-!-margin-bottom-8"><a href="add-new-certificate?completed=">Add another certificate</a></p> -->
+    <form method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to add a certificate for another horse?
+            </h1>
+          </legend>
+          <p class="govuk-body">You can add certificates for up to 5 horses to an application
+          </p>
+          <span id="max-reached-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> You cannot add any more certificates to this application, if you need to clone or create a new application.
+            </span>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add_another_certificate-yes" name="add_another_certificate" type="radio" value="yes" aria-controls="conditional-certificates" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="add_another_certificate-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add_another_certificate-no" name="add_another_certificate" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="add_another_certificate-no">
+                No, I have finished adding certificates
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}

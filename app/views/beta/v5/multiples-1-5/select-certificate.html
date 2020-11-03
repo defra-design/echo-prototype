@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        {% if query.find_certificate == "yes"%}
+          <h1 class="govuk-heading-xl">Find a new certificate</h1>
+        {% else %}
+          <h1 class="govuk-heading-xl">What certificate do you want apply for?</h1>
+        {% endif %}
+
+        <form method="GET" action="select-certificate">
+          <div class="search-wrapper govuk-form-group ">
+            <!-- <label class="govuk-label defra-search__label govuk-!-font-weight-bold " for="search">
+              Find the organisation
+            </label> -->
+            <label for="search-reservations" class="govuk-label">
+              Search by certificate, name or destination
+            </label>
+            <div class="search-input-wrapper">
+              <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input ">
+              <div class="search-input-submit-wrapper">
+                <button type="submit" class="search-submit">Search</button>
+              </div>
+            </div>
+            {% if query.search and query.search != 'no vets' %}
+            <p class="govuk-body govuk-!-margin-top-2"><a href="select-certificate?search=" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
+            {% endif %}
+          </div>
+
+        </form>
+        {% if query.search and query.search != 'no vets' %}
+        <!-- <p class="govuk-body"><a href="certifier?search=" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">Clear search</a></p> -->
+        <p class="govuk-body">{%if query.single %}There is <span id="search-count">1</span> certificate{% else %}There are <span id="search-count">8</span> certificates{% endif %}  matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
+        {% endif %}
+          <table class="govuk-table">
+            <!-- <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Certificate</th>
+              <th class="govuk-table__header">desc</th>
+              <th class="govuk-table__header">Action</th>
+            </tr>
+            </thead> -->
+            <tbody>
+              {% for d in db %}
+              {% if not query.search  or (query.search in d.data.certificate_code or query.search in d.data.certificate_name )%}
+              <tr class="govuk-table__row">
+                <td id="1651966024771-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  {{d.data.certificate_code}} {% if d.data.version != "1" %}(V{{d.data.version}}){% endif %}
+                </td>
+                <td id="1651966024771-ehc" class="govuk-table__cell" scope="row">
+                  {{d.data.certificate_name}}
+                </td>
+                <td id="1651966024771-commodity" class="govuk-table__cell commodity-column" scope="row">
+                  <a href="certificate/certificate-start-page?certificate={{d.id}}" class="govuk-link govuk-link--no-visited-state">Select</a>
+                </td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+          <p>
+
+        </p>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('load', function() {
+          var count = $('.govuk-table__row').length
+          $('#search-count').text(count)
+      });
+    </script>
+
+
+
+
+
+{% endblock %}

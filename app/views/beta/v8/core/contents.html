@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Main core Prototype
+      <span class="govuk-caption-xl">Version 8</span>
+    </h1>
+
+    <p><a href="start/google-search?logged_in=no"><strong>Start with Google search</strong></a></p>
+    <p>You can trigger a search to show certifier based results if the search contains in full or in part the following:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>certify</li>
+      <li>certifier</li>
+      <li>vet</li>
+      <li>OV</li>
+      <li>EHO</li>
+      <li>Inspect</li>
+    </ul>
+    <h3 class="govuk-heading-m">Start end to end joureny</h3>
+    <ul class="govuk-list">
+      <li><a href="start/govuk-home?logged_in=no">Start from govuk </a></li>
+      <li><a href="start/service-start-page?logged_in=no">Service start exporter</a></li>
+      <li><a href="start/form-finder?logged_in=no">Form finder</a>
+        <span class="govuk-hint">Only selected forms are available in the prototype. Please check the <a href="select-certificate">certificate selector page</a> to see which forms are available in the prototype</span>
+      </li>
+    </ul>
+    <h3 class="govuk-heading-m">Core pages</h3>
+
+    <ul class="govuk-list">
+      <li><a href="dashboard">Dashboard</a> </li>
+      <li><a href="application?reference_num=AUS03402342-KXC&application_id=100065956486&application_status=completed&is_pending_replacement=yes">Application page</a></li>
+      <li><a href="select-certificate">Select certificate</a> (only seen on preprod)</li>
+      <li><a href="clone">clone</a></li>
+
+    </ul>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Forms</h2>
+    <p class="govuk-body">This prototype contains the following certificates</p>
+    <ul class="govuk-list">
+      {% for d in db %}
+      {% if d.data.version == "1" %}
+      <li><a href="certificate/check-your-progress?certificate={{d.id}}">{{d.id | replace("ehc","")}} EHC</a></li>
+      {% endif %}
+      {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

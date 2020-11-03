@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Start page
+    </h1>
+    <p><a href="google-search?logged_in=no" ><strong>Start with Google search</strong></a></p>
+    <p>You can trigger a search to show certifier based results if the search contains in full or in part the following:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>certify</li>
+      <li>certifier</li>
+      <li>vet</li>
+      <li>OV</li>
+      <li>EHO</li>
+      <li>Inspect</li>
+    </ul>
+
+    <h3 class="govuk-heading-m">Start page exporter</h3>
+    <ul class="govuk-list">
+
+        <li><a href="govuk-home?logged_in=no">Start from govuk </a></li>
+        <li><a href="service-start-page?logged_in=no">Service start exporter</a></li>
+    </ul>
+    <h3 class="govuk-heading-m">Start page certifier</h3>
+    <ul class="govuk-list"  >
+        <li><a href="apha?logged_in=no">Start from APHA page</a></li>
+        <li><a href="service-start-page-certifiers?logged_in=no">Certifier - service start certifier</a></li>
+    </ul>
+    <h3 class="govuk-heading-m">Version with live page links</h3>
+    <p class="govuk-body">Same as above, but links navigate to live production pages</p>
+    <ul class="govuk-list">
+
+        <li><a href="live-service-start-page">Exporter start page</a></li>
+        <li><a href="live-service-start-page-certifiers">Certifier start page</a></li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<div class="govuk-width-container">
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div>
+                <h1 class="govuk-heading-xl margin-bottom-0">Terms & Conditions</h1>
+            </div>
+            <div class="margin-top-30">
+                <p class="govuk-body" lang="en">
+                    By completing the registration form, you are agreeing to <a href="terms-conditions" target="_blank"> Terms and Conditions</a> and you agree to comply with them.
+</p><p class="govuk-body" lang="en">
+                    Please read <a href="terms-conditions" target="_blank"> Terms and Conditions</a> carefully before you start to use this website (being https://www.gov.uk/export-health-certificates/ and all sections and pages). You may access and use this website if you agree to be legally bound by these terms and conditions set out here. If you do not agree to be legally bound by these terms and conditions please do not access and/or use this website.
+
+
+                </p>
+            </div>
+        </div>
+
+        <div class="govuk-grid-column-full">
+            <form class="review-form" action="confirmation1" method="POST">
+                <div class="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" type="checkbox" autofocus="autofocus" name="confirm" id="confirm">
+                        <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="confirm">
+                            I confirm to agree to the Terms and Conditions
+                        </label>
+                    </div>
+                </div>
+                <input type="hidden" name="crumb_csrf_token" value="-OFEIl7HkGmNi3ZbrlI4BeayEl-1-jTpR6CRsveyix5">
+                <input name="submissionDate" type="hidden" value="25 July 2019">
+                <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-SubmitApplication">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

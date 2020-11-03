@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if query.show_alert == "yes"%}
+    <div class="defra-alert defra-alert--success"><p class="govuk-body govuk-!-margin-bottom-0">Successfully deleted certificate</p></div>
+    {% endif %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      You have added {% if query.show_fake_ehc %}5{%else%}{{data.added_certificates | length}}{%endif%} horse certificate{% if (data.added_certificates | length) > 1 or  (data.added_certificates | length) == 0%}s{% endif %} to your application
+    </h1>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
+
+<!-- <p class="govuk-body govuk-!-margin-bottom-8"><a href="add-new-certificate?completed=">Add another certificate</a></p> -->
+<form method="post">
+  <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to add a certificate for another horse?
+            </h1>
+          </legend>
+          <p class="govuk-body">You can add certificates for up to 50 horses to an application
+            </p>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add_another_certificate-yes" name="add_another_certificate" type="radio" value="yes" aria-controls="conditional-certificates" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="add_another_certificate-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add_another_certificate-no" name="add_another_certificate" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="add_another_certificate-no">
+                No, I have finished adding certificates
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
+  </form>
+    </div>
+  </div>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}

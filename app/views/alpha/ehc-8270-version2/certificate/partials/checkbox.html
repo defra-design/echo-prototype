@@ -1,0 +1,20 @@
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xs">
+      <h3 class="govuk-fieldset__heading">
+        {{field.label}} {% if field.required == 'no'%}(optional ){%endif%}
+      </h3>
+      {% if field.hint %}<span id="{{field.id}}-hint" class="govuk-hint">{{field.hint}}</span>{% endif %}
+    </legend>
+    <div class="govuk-checkboxes {% if field.inline == 'yes'%}govuk-radios--inline{% endif %}">
+      {% for checkbox in field.options %}
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="{{field.id}}" name="{{field.name}}" type="checkbox" value="{{checkbox.title}}" {% if data[checkbox.title] and checkbox.title in data[checkbox.title] %}checked="checked" {%endif%}>
+        <label class="govuk-label govuk-checkboxes__label" for="{{checkbox.title}}">
+          {{checkbox.title}}
+        </label>
+      </div>
+      {% endfor %}
+    </div>
+  </fieldset>
+</div>

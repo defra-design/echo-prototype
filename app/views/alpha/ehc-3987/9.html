@@ -1,0 +1,213 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div>
+                <span class="govuk-caption-xl">
+       Adding a product step 2 of 3
+        </span>
+                <h1 id="questionPageHeading" class="govuk-heading-xl"  style="margin-bottom: 10px">Cutting plant details</h1>
+                <h2 style="font-weight: 300" class="govuk-heading-m">What are the details of the slaughterhouse of origin?</h2><form action="11-minus" method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+
+                <!-- @formatter:off -->
+                <div class="govuk-form-group ">
+<br>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="full-name">
+                            Provide cutting plant name
+                        </label>
+                        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+                    </div>
+
+
+
+
+
+
+
+
+                    <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
+                        Cutting plant address
+                    </h2>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-postcode">
+                            Postcode
+                        </label>
+                        <input class="govuk-input govuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" value="" aria-describedby="address-postcode-error">
+                    </div>
+                    <a href="#" type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+                        Find address
+                    </a>
+
+                    <div class="govuk-link">
+                        <a class="govuk-link govuk-\!-margin-3" style="font-size: 1.1875rem;" href="#">Enter my address manually</a>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <div class="govuk-form-group margin-top-45">
+                        <label class="govuk-label" for="full-name">
+                            Provide veterinary approval number
+                        </label>
+                        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+                    </div>
+
+
+                </div>
+
+
+
+                <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px;margin-bottom:0px">
+                    What are the range of cutting dates?
+                </h2>
+                <div class="govuk-hint">From earliest to latest</div>
+
+                <!-- @formatter:off -->
+                <div class="govuk-form-group ">
+
+                </div>
+                <div class="govuk-form-group" {{ data['production-dates'] }}>
+                <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        From date
+                    </label>
+
+                         <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2007
+    </span>
+                    <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        To date
+                    </label>
+
+                         <span id="passport-issued-hint" class="govuk-hint">
+      For example, 27 4 2007
+    </span>
+                    <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+
+
+
+
+            <div class="govuk-grid-row margin-top-30"></div>
+            <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+            </div>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-body">
+                    <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            </form>
+
+            <p></p>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,210 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-xl">
+
+
+    What are the details of the product?</h1>
+
+
+
+
+
+
+                    <form action="8" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+
+
+
+
+<p>Provide details of the products in this consignment. Use a new record for each product. If there are more than 5 products, attach a schedule as a supporting document at the end of this application.</p>
+
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="event-name">
+                                Scientific species name
+                            </label>
+                            <input class="govuk-input" id="event-name" name="event-name" type="text">
+                        </div>
+
+
+
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                    <label class="govuk-label" for="event-name">
+                                        Nature of the commodity
+                                    </label>
+                                </legend>
+
+                                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                         Aquaculture
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="contact-by-email">
+                                             Wild origin
+                                            </label>
+                                            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+
+
+
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                    <label class="govuk-label" for="event-name">
+                                        Treatment type
+                                    </label>
+                                </legend>
+
+                                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                       <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                            Live
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                            Chilled
+                                        </label>
+                                    </div>
+
+
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                                            Frozen
+                                        </label>
+                                    </div>
+
+                                    <p class="form-block" style="padding-left:10px">or</p>
+
+
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                                        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                                            Processed
+                                        </label>
+                                    </div>
+
+
+
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="event-name">
+                                Approval number of the manufacturing plant
+                            </label>
+  <span id="event-name-hint" class="govuk-hint">
+  This may be a factory vessel, freezer vessel, cold store or processing plant
+  </span>
+                            <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+                        </div>
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="event-name">
+                               Number of packages
+                            </label>
+
+                            <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+                        </div>
+
+
+
+
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="event-name">
+                                Net weight
+                            </label>
+  <span id="event-name-hint" class="govuk-hint">
+  Provide the number and the units of measurement. For example, 105.5 kg
+  </span>
+                            <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+                        </div>
+
+
+
+
+
+
+                        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                            <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                        </div>
+
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full govuk-body">
+                                <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                            </div>
+                        </div>
+
+
+
+
+
+                    </form>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+        </div>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

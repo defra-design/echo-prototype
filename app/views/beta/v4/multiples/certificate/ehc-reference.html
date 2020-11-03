@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="app-content__header">
+        <h1 class="govuk-heading-xl">
+          New certificate reference
+        </h1>
+      </div>
+      <p id="changed-name-hint" class="govuk-body">
+        Enter a refernece for this certificate. This can be the name of the animal or unique ID.
+      </p>
+
+      <form method="POST">
+        <div class="govuk-form-group">
+          <div class="govuk-from-group">
+            <label class="govuk-label" for="reference_num">Certificate reference</label>
+            <input class="govuk-input govuk-input--width-20" id="reference_num" name="ehc_reference_num" value="{% if query.change == 'yes'%}{{ data.ehc_reference_num }}{%endif%}" type="text">
+          </div>
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        </div>
+      </form>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </div>
+      </div>
+      <p></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

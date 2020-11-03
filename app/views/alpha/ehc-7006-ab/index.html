@@ -1,0 +1,105 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div>
+                    <h1 id="questionPageHeading" class="govuk-heading-l">Begin your application</h1>
+                    <p>
+                    </p><form action="1" method="POST" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+
+
+
+                    <h2 class="govuk-heading-m govuk-\!-margin-bottom-0 govuk-\!-margin-top-9" style="margin-top: 50px">
+                        I want to apply for:
+                    </h2>
+
+                    <p>Export Health Certificate 7006GB: Export frozen raw pork from England, Scotland or Wales to the People's Republic of China</p>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+                            </legend>
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england" checked>
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                     Yes
+                                    </label>
+                                </div>
+
+                                <p class="form-block" style="padding-left:10px;margin-top: 20px">or</p>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                       No, let me choose another certificate
+                                    </label>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                        </div>
+                    </div>
+
+                </form>
+
+                    <p></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+        <script>
+
+            window.onload = function(){
+          $(document).ready(function () {
+                $("#watch-me").click(function() {
+                    $("#show-me:hidden").show('slow');
+                });
+                $("#watch-me").click(function(){
+                    if($('watch-me').prop('checked')===false) {
+                        $('#show-me').hide();}
+                });
+            });
+
+
+
+                $(document).ready(function () {
+                    $("#watch-me2").click(function() {
+                        $("#show-me2:hidden").show('slow');
+                    });
+                    $("#watch-me2").click(function(){
+                        if($('watch-me2').prop('checked')===false) {
+                            $('#show-me2').hide();}
+                    });
+                });
+
+
+
+            }
+        </script>
+
+
+{% endblock %}

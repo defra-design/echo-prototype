@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXP-9205 setting task list for form
+    </h1>{{releaseVersion | log }}
+
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <h3 class="govuk-heading-m">Form builder</h3>
+    <p class="govuk-body">Use version 3.3 for this prototype. last version in the list. </p>
+    <ul class="govuk-list">
+      <li><br>Version page</li>
+      <li><a href="form/versions?updated=&unpublished=&form_version=&updated_status=">Version 3.3 as draft</a> </li>
+      <li><a href="form/versions?updated=yes&unpublished=&form_version=3.3&updated_status=internal">Version 3.3 published to internal users</a> </li>
+      <li><br>Publish page</li>
+      <li><a href="form/publish?form_version=3.3&status=draft">Publish from draft</a> </li>
+      <li><a href="form/publish?form_version=3.3&status=internal">Publish from internal</a> </li>
+      <li><br>Publish confirmation page</li>
+      <li><a href="form/publish-confirm?updated_status=internal&updated=yes&old_status=draft">Confirmed - Published to internal users</a> </li>
+      <li><br>Other pages</li>
+      <li><a href="form/unpublish?form_version=3.3">Unpublish a internally published page</a></li>
+      <li><a href="form/get-url?form_version=3.3">Copy link for internally published page</a></li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

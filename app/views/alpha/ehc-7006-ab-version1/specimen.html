@@ -1,0 +1,77 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+
+                <h1 class="govuk-heading-l">
+                    Preview your certificate
+                </h1>
+                <form action="review" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <div class="govuk-warning-text">
+                            <span class="govuk-visually-hidden">File download</span>
+                            <strong class="govuk-body govuk-!-font-weight-regular">Preview your<a href="/public/images/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link"> specimen certificate </a>.</strong>
+
+
+                            <div class="govuk-form-group margin-top-30">
+<img src="/public/images/specimen.jpg" style="width: 400px"><br>
+
+
+
+                                   <span class="govuk-!-font-weight-bold"> Email me the specimen certificate (optional)</span>
+
+
+
+
+                                <label class="govuk-label" for="email">
+                                    Email address
+                                </label>
+                                <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                        </div>
+                    </div>
+
+</form>
+
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

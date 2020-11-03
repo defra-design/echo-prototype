@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXP-8641 repeatable questions imporvements
+    </h1>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <ul class="govuk-list">
+      <li>Certificates with repeatable questions</li>
+      <li><a href="certificate/check-your-progress?certificate=ehc8270">8270EHC</a></li>
+      <li><a href="certificate/check-your-progress?certificate=ehc1631">1631EHC</a></li>
+      <li><a href="certificate/check-your-progress?certificate=ehc8284">8284EHC</a></li>
+      <br>
+      <li><a href="certificate/product-list?id=2&products=&certificate=ehc8284">Repeatable questions list</a></li>
+      <li><a href="certificate/product-list?id=2&products=Dolphin,Sheep,Cow&certificate=ehc8284">Repeatable questions list - with content</a></li>
+      <li><a href="certificate/check-your-answers?certificate=ehc8284">Check your answers (improved design)</a></li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

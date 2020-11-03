@@ -1,0 +1,260 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>.govuk-radios__item {
+
+            margin-bottom: 10px!important;
+
+        }</style>
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <h1 class="govuk-heading-xl">What is the specific commodity you are exporting?
+                </h1> -->
+
+    <form action="4-plus" method="POST" enctype="application/x-www-form-urlencoded">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
+          <h1 class="govuk-fieldset__heading">
+            What "{{data.commodity_type or "Live shellfish"}}" are you exporting?
+          </h1>
+        </legend>
+        <div class="govuk-form-group">
+          <div class="govuk-radios">
+
+            {% if data.commodity_type == "Live shellfish" or not data.commodity_type %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="commodityName-cd81d52e-f3ee-46e5-adb7-d248b4fedc4e" name="selectedCommodityNameOrCommodityType" type="radio" value="e64d28b3-473b-4612-b0c1-d134cf2f3c1f/cd81d52e-f3ee-46e5-adb7-d248b4fedc4e">
+              <label class="govuk-label govuk-radios__label" for="commodityName-cd81d52e-f3ee-46e5-adb7-d248b4fedc4e">
+                crabs
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="commodityName-7b6bc4a0-5c47-407b-93f8-bcf0ae2f4946" name="selectedCommodityNameOrCommodityType" type="radio" value="e64d28b3-473b-4612-b0c1-d134cf2f3c1f/7b6bc4a0-5c47-407b-93f8-bcf0ae2f4946">
+              <label class="govuk-label govuk-radios__label" for="commodityName-7b6bc4a0-5c47-407b-93f8-bcf0ae2f4946">
+                crayfish
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="commodityName-a7a76ed7-a675-45a1-b714-fa10b87f513d" name="selectedCommodityNameOrCommodityType" type="radio" value="e64d28b3-473b-4612-b0c1-d134cf2f3c1f/a7a76ed7-a675-45a1-b714-fa10b87f513d">
+              <label class="govuk-label govuk-radios__label" for="commodityName-a7a76ed7-a675-45a1-b714-fa10b87f513d">
+                lobster
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="commodityName-3e390606-db28-4915-bb4b-11f867efca07" name="selectedCommodityNameOrCommodityType" type="radio" value="e64d28b3-473b-4612-b0c1-d134cf2f3c1f/3e390606-db28-4915-bb4b-11f867efca07">
+              <label class="govuk-label govuk-radios__label" for="commodityName-3e390606-db28-4915-bb4b-11f867efca07">
+                prawns
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="commodityName-ca1d28cb-3abc-4985-ae95-b6bca7d25c84" name="selectedCommodityNameOrCommodityType" type="radio" value="e64d28b3-473b-4612-b0c1-d134cf2f3c1f/ca1d28cb-3abc-4985-ae95-b6bca7d25c84">
+              <label class="govuk-label govuk-radios__label" for="commodityName-ca1d28cb-3abc-4985-ae95-b6bca7d25c84">
+                mixed shellfish
+              </label>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="commodityName-ccae6a28-6277-44de-b64b-c8c9351420cb" name="selectedCommodityNameOrCommodityType" type="radio" value="e64d28b3-473b-4612-b0c1-d134cf2f3c1f/ccae6a28-6277-44de-b64b-c8c9351420cb">
+              <label class="govuk-label govuk-radios__label" for="commodityName-ccae6a28-6277-44de-b64b-c8c9351420cb">
+                other
+              </label>
+            </div>
+          </div>
+          {% else %}
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-1286b029-d4e4-4632-889b-78fd5472f457" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/1286b029-d4e4-4632-889b-78fd5472f457">
+            <label class="govuk-label govuk-radios__label" for="commodityName-1286b029-d4e4-4632-889b-78fd5472f457">
+              clams
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-9ecdbc9e-4085-457f-ae5e-510742727b66" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/9ecdbc9e-4085-457f-ae5e-510742727b66">
+            <label class="govuk-label govuk-radios__label" for="commodityName-9ecdbc9e-4085-457f-ae5e-510742727b66">
+              cod
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-44dd1008-f3ef-4317-b1be-09330d08e4d2" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/44dd1008-f3ef-4317-b1be-09330d08e4d2">
+            <label class="govuk-label govuk-radios__label" for="commodityName-44dd1008-f3ef-4317-b1be-09330d08e4d2">
+              crab
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-02872c16-545a-490c-909a-116bbbf301c8" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/02872c16-545a-490c-909a-116bbbf301c8">
+            <label class="govuk-label govuk-radios__label" for="commodityName-02872c16-545a-490c-909a-116bbbf301c8">
+              crayfish
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-3d008eb5-0c01-438d-bf88-6e4d5788d44d" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/3d008eb5-0c01-438d-bf88-6e4d5788d44d">
+            <label class="govuk-label govuk-radios__label" for="commodityName-3d008eb5-0c01-438d-bf88-6e4d5788d44d">
+              fish oil
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-32a6cd56-fd8a-4c87-bda6-d36acd0f2eaa" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/32a6cd56-fd8a-4c87-bda6-d36acd0f2eaa">
+            <label class="govuk-label govuk-radios__label" for="commodityName-32a6cd56-fd8a-4c87-bda6-d36acd0f2eaa">
+              haddock
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-1d9d0710-add3-4d84-bef9-e5c0bca49779" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/1d9d0710-add3-4d84-bef9-e5c0bca49779">
+            <label class="govuk-label govuk-radios__label" for="commodityName-1d9d0710-add3-4d84-bef9-e5c0bca49779">
+              halibut
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-350c5492-d11a-4cba-986b-5ce11fee3ee8" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/350c5492-d11a-4cba-986b-5ce11fee3ee8">
+            <label class="govuk-label govuk-radios__label" for="commodityName-350c5492-d11a-4cba-986b-5ce11fee3ee8">
+              langoustines
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-58c02a6f-e719-4871-9cc1-9bf0cf869c6f" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/58c02a6f-e719-4871-9cc1-9bf0cf869c6f">
+            <label class="govuk-label govuk-radios__label" for="commodityName-58c02a6f-e719-4871-9cc1-9bf0cf869c6f">
+              lobster
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-d8934740-5bce-4aed-8e5d-6f36c235c2a6" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/d8934740-5bce-4aed-8e5d-6f36c235c2a6">
+            <label class="govuk-label govuk-radios__label" for="commodityName-d8934740-5bce-4aed-8e5d-6f36c235c2a6">
+              mackerel
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-e6408b9e-c69d-499e-a091-412469e02b69" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/e6408b9e-c69d-499e-a091-412469e02b69">
+            <label class="govuk-label govuk-radios__label" for="commodityName-e6408b9e-c69d-499e-a091-412469e02b69">
+              mixed products
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-5a665035-0b47-4f25-977c-0a911dfdbdd0" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/5a665035-0b47-4f25-977c-0a911dfdbdd0">
+            <label class="govuk-label govuk-radios__label" for="commodityName-5a665035-0b47-4f25-977c-0a911dfdbdd0">
+              molluscs
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-49e6807e-8df7-42f9-9946-2184a2150b29" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/49e6807e-8df7-42f9-9946-2184a2150b29">
+            <label class="govuk-label govuk-radios__label" for="commodityName-49e6807e-8df7-42f9-9946-2184a2150b29">
+              mussels
+            </label>
+          </div>
+
+
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-bd22785b-134f-498d-b539-a475764e50c8" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/bd22785b-134f-498d-b539-a475764e50c8">
+            <label class="govuk-label govuk-radios__label" for="commodityName-bd22785b-134f-498d-b539-a475764e50c8">
+              oysters
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-f9506699-cfdf-46ef-9820-853229a3d631" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/f9506699-cfdf-46ef-9820-853229a3d631">
+            <label class="govuk-label govuk-radios__label" for="commodityName-f9506699-cfdf-46ef-9820-853229a3d631">
+              prawns
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-d04fca84-5364-45ce-a30d-a1d004e3a514" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/d04fca84-5364-45ce-a30d-a1d004e3a514">
+            <label class="govuk-label govuk-radios__label" for="commodityName-d04fca84-5364-45ce-a30d-a1d004e3a514">
+              salmon
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-8c20b5ac-3400-48cb-8543-076b6375bdee" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/8c20b5ac-3400-48cb-8543-076b6375bdee">
+            <label class="govuk-label govuk-radios__label" for="commodityName-8c20b5ac-3400-48cb-8543-076b6375bdee">
+              trout
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-26bc174a-2890-4c5e-86a8-e75af593ab19" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/26bc174a-2890-4c5e-86a8-e75af593ab19">
+            <label class="govuk-label govuk-radios__label" for="commodityName-26bc174a-2890-4c5e-86a8-e75af593ab19">
+              whelks
+            </label>
+          </div>
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="commodityName-01534988-fd7f-499e-82cc-0747452516ae" name="selectedCommodityNameOrCommodityType" type="radio" value="69a4f906-9631-4bf2-aa06-b14c7ce0a6b7/01534988-fd7f-499e-82cc-0747452516ae">
+            <label class="govuk-label govuk-radios__label" for="commodityName-01534988-fd7f-499e-82cc-0747452516ae">
+              other
+            </label>
+          </div>
+
+          {% endif%}
+        </div>
+
+      </fieldset>
+      <div class="govuk-form-group">
+        <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        <p class="govuk-body"><input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater"></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+  window.onload = function() {
+    $(document).ready(function() {
+      $("#watch-me").click(function() {
+        $("#show-me:hidden").show('slow');
+      });
+      $("#watch-me").click(function() {
+        if ($('watch-me').prop('checked') === false) {
+          $('#show-me').hide();
+        }
+      });
+    });
+
+
+
+    $(document).ready(function() {
+      $("#watch-me2").click(function() {
+        $("#show-me2:hidden").show('slow');
+      });
+      $("#watch-me2").click(function() {
+        if ($('watch-me2').prop('checked') === false) {
+          $('#show-me2').hide();
+        }
+      });
+    });
+
+
+
+  }
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="23" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 id="supplementary-documents" class="govuk-heading-l">Supporting documents</h1>
+                <div class="govuk-width-container">
+                    <div class="govuk-body">
+                        <div id="paragraph" class="margin-top-20">
+                            <p>If you wish to attach any supporting documents to your application, you can upload them here. Otherwise, please click 'Save and continue' to skip this section.</p>
+                        </div>
+                        <div class="margin-top-20">
+                            <label id="subTitle" class="govuk-label">You can only upload one at a time. Each file must: </label>
+                        </div>
+                        <div>
+                            <ul id="bulletPoints">
+                                <li id="point_0">be in PDF, Word, Excel or JPEG format</li>
+                                <li id="point_1">be less than 10 megabytes (10 MB)</li>
+                                <li id="point_2">have a unique, meaningful file name</li>
+                                <li id="point_3">uploaded with a file description</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <main class="govuk-main-wrapper app-main-class" id="main-content" role="main" data-qa-page="Page-Uploaded_File_List">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-body govuk-!-margin-0">
+                                <div class="govuk-grid-row ">
+                                    <div class="govuk-grid-column-three-quarters">
+                                        <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-half">File name</div>
+                                            <div class="govuk-grid-column-one-half">File description</div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-grid-column-one-quarter">Action</div>
+                                </div>
+                                <div class="govuk-grid-row"><div class="govuk-grid-column-full"><hr></div></div>
+                            </div>          <div class="govuk-body govuk-!-margin-0">
+                            <form action="" method="POST" enctype="multipart/form-data">
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-full">
+                                    </div>
+                                </div>
+                                <div class="govuk-grid-row">
+                                    <div class="govuk-grid-column-three-quarters">
+                                        <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-half">
+                                                <input class="inputfile " id="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg" type="file">
+                                            </div>
+                                            <div class="govuk-grid-column-one-half">
+                                                <textarea rows="2" id="description" name="file-description" class="govuk-textarea margin-bottom-0" maxlength="100">{{ data['file-description'] }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-grid-column-one-quarter">
+                                        <input class="link-button" type="submit" name="upload" value="Upload" id="Upload" data-qa-id="Button-Upload">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>        </div>
+                        <div class="govuk-grid-row margin-top-30">
+                            <div class="govuk-grid-column-one-quarter">
+                                <div class="govuk-grid-row">
+                                    <form action="check-your-answers" method="GET">
+                                        <input class="govuk-button" type="submit" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

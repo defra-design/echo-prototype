@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<br>
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+{% endblock%}
+
+{% block content %}
+        <style>.app-tabs {
+            border: 1px solid #b58840;
+        }
+        .app-tabs:hover {
+            border: 1px solid #1d70b8	;
+        }
+       </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Improved certificate selection
+      </h1>
+      <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8907">View Jira ticket</a></p> -->
+        <ul class="govuk-list">
+          <li><a href="dashboard">Start from dashaboard</a></li>
+          <li><a href="choose-certificate">Choose certificate</a></li>
+          <li><h3 class="govuk-heading-sm">New search on "Find a certificate" (first time)</h3></li>
+          <li><a href="select-certificate?search=">Find ceftificate (first time)</a></li>
+          <li><a href="select-certificate?search=Australia">Find ceftificate (with search)</a></li>
+          <li><h3 class="govuk-heading-sm">Find a certificate, already have applied for certificates. From choose certificate page</h3></li>
+          <li><a href="select-certificate?search=">Find ceftificate</a></li>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if query.show_alert == "yes"%}
+    <div class="defra-alert defra-alert--success"><p class="govuk-body govuk-!-margin-bottom-0">Successfully deleted certificate</p></div>
+    {% endif %}
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      {% if query.show_fake_ehc %}1{%else%}{{data.added_certificates | length}}{%endif%} certificate{% if (data.added_certificates | length) > 1 or  (data.added_certificates | length) == 0%}s{% endif %} added to application
+    </h1>
+
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <table class="govuk-table">
+
+    <tbody class="govuk-table__body">
+      <!-- for passing designs to developers show a EHC -->
+      {% if query.show_fake_ehc %}
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">1.</td>
+        <td class="govuk-table__cell">Billy<br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" class="govuk-link">View certificate (opens in a new window or tab)</a></td>
+        <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="#">Change</a></td>
+      </tr>
+      {% endif %}
+
+      {% for certificate in data.added_certificates %}
+
+  <!-- <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class"></th>
+      <th scope="col" class="govuk-table__header app-custom-class">Certificate</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Actions</th>
+    </tr>
+  </thead> -->
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__header">{{loop.index}}.</td>
+      <td class="govuk-table__cell">{{certificate.title}}<br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank">Preview certificate (opens in a new tab or window)</a></td>
+      <td class="govuk-table__cell"><a href="delete-certificate?id={{loop.index -1}}&title={{certificate.title}}">Delete</a>&nbsp;&nbsp;<a href="check-your-answers-ehc?change_id={{loop.index -1}}&change_ehc=yes&return_check_answers=certificate-list">Change</a></td>
+    </tr>
+      {% endfor%}
+      {% if data.has_unfinished_certificate == "yes" %}
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">{% if (data.added_certificates | length) > 0 %}{{(data.added_certificates | length)+1}}{% else %}2{%endif%}.</td>
+        <td class="govuk-table__cell">Last suspect<br><span class="govuk-status govuk-status--warning" style="margin-right:10px;">Incomplete</span><br><a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" class="govuk-link">View certificate(opens in new tab)</a></td>
+        <td class="govuk-table__cell"><a href="#">Delete</a>&nbsp;&nbsp;<a href="page?id=1&ehc_reference_num=Last suspect&animal_name=Last suspect&animal_breed=horse&animal_age=2016&animal_colour=Black&animal_gender=Stallion&show_answers=yes&new=no&journey=linear&first_time=no">Continue</a></td>
+      </tr>
+      {% endif %}
+  </tbody>
+</table>
+<!-- <p class="govuk-body govuk-!-margin-bottom-8"><a href="add-new-certificate?completed=">Add another certificate</a></p> -->
+<form method="post">
+  <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to add another certificate?
+            </h1>
+          </legend>
+          <p class="govuk-body">You can add up to 50 certificates to an application
+            </p>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add_another_certificate-yes" name="add_another_certificate" type="radio" value="yes" aria-controls="conditional-certificates" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="add_another_certificate-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add_another_certificate-no" name="add_another_certificate" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="add_another_certificate-no">
+                No, I have finished adding certificates
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
+  </form>
+    </div>
+  </div>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Pre-certificates
+    </h1>
+    <p class="govuk-body">Please use 6062EHC which allows pre-certs</p>
+    <p class="govuk-body">Changes from <a href="/beta/v7/pre-cert/contents?certificate=ehc6062">version 1</a></p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>More about the exporter triggering this</li>
+      <li>Updated content</li>
+      <li>Added a version to enter a date for the precert</li>
+      <li>Added a 2 core variations, in main task list and end of the joureny</li>
+    </ul>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <ul class="govuk-list">
+
+
+      <li><br><strong>Version 2</strong> - Request pre-cert from task list</li>
+      <li><a href="dashboard?precert_journey=2">From dashboard</a></li>
+      <li><a href="certificate/check-your-progress?certificate=ehc6062&precert_journey=2">From task list (6062EHC, allows pre-certificates)</a></li>
+      <br>
+      <li>Do you need a precert?</li>
+      <li><a href="certificate/need-pre-cert?precert_journey=2&certificate=ehc6062&certifier_name=&certifier_has_cg_paper=no">Need a pre-cert - crown gold (no certifier selected)</a></li>
+      <li><a href="certificate/need-pre-cert?printable=yes&certificate=ehc6062&certifier_name=YOUR VETS LTD&certifier_has_cg_paper=no">Need a pre-cert  - crown gold, certifer selected</a></li>
+      <li><a href="certificate/need-pre-cert?certifier_name=YOUR VETS LTD&certifier_has_cg_paper=no&certificate=ehc6062">Need a pre-cert  - crown gold, certifer selected & can print on crown gold</a></li>
+      <li><a href="certificate/need-pre-cert?certifier_name=YOUR VETS LTD&certifier_has_cg_paper=yes&certificate=ehc6062">Need a pre-cert  - white paper</a></li>
+        <br>
+      <li>How to print pre-cert (only shows if its crown gold paper)</li>
+      <li><a href="certificate/need-pre-cert-paper?precert_journey=2&certificate=ehc6062&certifier_name=&certifier_has_cg_paper=no">Need a pre-cert - crown gold (no certifier selected)</a></li>
+      <li><a href="certificate/need-pre-cert-paper?printable=yes&certificate=ehc6062&certifier_name=YOUR VETS LTD&certifier_has_cg_paper=no">Need a pre-cert  - crown gold, certifer selected</a></li>
+      <br>
+      <li><a href="certificate/check-your-answers?certificate=ehc6062?">Check your answers (6062EHC, allows pre-certificates)</a></li>
+      <br>
+      <li><a href="certificate/confirmation?needs_pre_cert=yes&ertifier_has_cg_paper=no&printable=no&certificate=ehc6062">Confirmation page - with pre-certificate on CG</a></li>
+      <li><a href="certificate/confirmation?needs_pre_cert=yes&printable=yes&certificate=ehc6062">Confirmation page - with pre-certificate on white paper</a></li>
+      <li><a href="certificate/confirmation?needs_pre_cert=yes&printable=no&certifier_has_cg_paper=yes&certificate=ehc6062">Confirmation page - with pre-certificate on white paper</a></li>
+      <!-- <li><a href="application?id=31">Application page - EHC allows pre-certs (updated)</a></li> -->
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

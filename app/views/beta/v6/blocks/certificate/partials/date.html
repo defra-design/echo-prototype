@@ -1,0 +1,36 @@
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="{{field.id}}-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h3 class="govuk-fieldset__heading">
+    {{field.label}}     <!-- {% if field.required == 'no'%}(optional){%endif%} -->
+      </h3>
+    </legend>
+    {% if field.hint %}<span id="{{field.id}}-hint" class="govuk-hint">{{field.hint}}</span>{% endif %}
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="{{field.id}}-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="p{{field.id}}day" name="{{field.name}}_day" type="number" pattern="[0-9]*" value="{{data[field.name+'_day'] or ''}}">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="{{field.id}}-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="p{{field.id}}-month" name="{{field.name}}_month" type="number" pattern="[0-9]*" value="{{(data[field.name+'_month']) or ''}}">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="{{field.id}}-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="{{field.id}}-year" name="{{field.name}}_year" type="number" pattern="[0-9]*" value="{{data[field.name+'_year'] or ''}}">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

@@ -1,0 +1,272 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{page.title}} - GOV.UK
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="{{page.content.prev or 'javascript:history.back()'}}" class="govuk-back-link">Back</a>
+<style media="screen">
+  .govuk-summary-list {
+    margin-bottom: 0;
+}
+  .govuk-summary-list__key {
+    width: 50%;
+}
+@media (min-width: 40.0625em){
+  .govuk-summary-list__value:last-child {
+      width: 50%;
+  }
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Check the product details
+    </h1>
+    <h2 class="govuk-heading-m">What are the details of your consignment?</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Process category
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.Processs_category or "raw product - intact"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Process category</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Product category
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.product_category or "raw product - intact"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Product category</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Product group
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.product_group or "cuts"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Product group</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type of meat
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.meet_type or "pork"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Type of meat</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type of product
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.product_meat_type or "pork ribs"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Type of product</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Identification/Shipping mark
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.id_marking or "232321"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Identification/Shipping mark</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type and number of packages
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.number_of_packages or "150 cases"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Type and number of packages</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Net weight
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data.number_of_packages or "105 kg"}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=1&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Net weight </span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">For animals slaughtered and processed in the United Kingdom</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name, address and approval number of the slaughterhouse
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.sh_name_addres %}
+          {{data.sh_name_addres}}
+          {%else%}
+          <span class="govuk-hint"> You left this blank<span>
+              {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Name, address and approval number of the slaughterhouse</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name, address and approval number of the cutting plant
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.cp_name_address %}
+          {{data.cp_name_address}}
+          {%else%}
+          <span class="govuk-hint"> You left this blank<span>
+              {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Name, address and approval number of the cutting plant</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name, address and approval number of the processing/ producing plant
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.pp_name_address %}
+          {{data.pp_name_address}}
+          {%else%}
+          <span class="govuk-hint"> You left this blank<span>
+              {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Name, address and approval number of the processing/ producing plant</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name, address and approval number of the final processing/producing establishment
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.pp_number %}
+          {{data.pp_number}}
+          {%else%}
+          <span class="govuk-hint"> You left this blank<span>
+              {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Name, address and approval number of the final processing/producing establishment</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Production dates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.pp_dates %}
+          {{data.pp_dates}}
+          {%else%}
+          <span class="govuk-hint"> You left this blank<span>
+              {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=2&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Production dates</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">For animals slaughtered and processed outside the United Kingdom</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Country
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.non_uk_country %}
+          {{data.non_uk_country}}
+          {%else%}
+          <span class="govuk-hint"> You left this blank<span>
+              {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=3&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Country</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Foreign establishment approval numbers
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data.foreign_establishment %}
+          {{data.foreign_establishment}}
+          {%else%}
+          <span class="govuk-hint"> You left this blank<span>
+              {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="page?id=3&amp;next=check-your-answers&edit=yes">
+            Change<span class="govuk-visually-hidden"> Foreign establishment approval numbers </span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <form method="POST">
+      <input type="hidden" name="crumb_csrf_token" value="nAitoNVyVGtnnzUQ-QQk78LOMzR_-9L6qqu86Lg9aRY">
+      <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
+        <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </div>
+      </div>
+    </form>
+  </div>
+  {% endblock %}

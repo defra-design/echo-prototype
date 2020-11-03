@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Pre-certificates
+    </h1>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <ul class="govuk-list">
+
+      <li><a href="certificate/check-your-answers?certificate=ehc6062">Check your answers - EHC allows pre-certificates</a></li>
+      <li><a href="certificate/need-pre-cert">Do you need a pre-cert (new)</a></li>
+      <li><a href="certificate/confirmation?needs_pre_cert=yes">Confirmation page - exporter wants a pre-certificate (updated)</a></li>
+
+      <li><a href="application?id=31">Application page - EHC allows pre-certs (updated)</a></li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

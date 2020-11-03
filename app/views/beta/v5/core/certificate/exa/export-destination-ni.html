@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div>
+      <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Where are you exporting to?</h1>
+      <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+      <div id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">Tell us about the destination country, and how your export will get there. This will allow us to supply duplicate certificates in the relevant foreign languages.</div>
+
+      <form {% if query.change=="yes" %} action="../check-your-answers" {% elseif query.change=="product" %} action="product-list" {% else %} action="../check-your-progress" {% endif %} method="POST">
+        <input type="hidden" name="crumb_csrf_token" value="mDxXFBtYSY-zABf2SJreWQHGFB25Ah3rhH5AoTaQ7kO">
+        <input type="hidden" name="certificate" value="">
+
+
+        <!-- @formatter:off -->
+        <div class="govuk-form-group ">
+          <fieldset id="7003EHC-0" class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend" for="7003EHC-0">
+              <span class="govuk-label govuk-!-font-weight-bold">Destination country</span>
+            </legend>
+
+            <div class="govuk-hint">In the case of transit consignments, select the country of storage, or departure from the economic bloc.</div>
+
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="7003EHC-0-0" value="Guernsey" name="export_destination_entry" data-qa-id="Question-radio-Guernsey" autofocus="autofocus">
+                <label class="govuk-label govuk-radios__label" for="7003EHC-0-0">Guernsey</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="7003EHC-0-1" value="Isle Of Man" name="export_destination_entry" data-qa-id="Question-radio-Isle Of Man">
+                <label class="govuk-label govuk-radios__label" for="7003EHC-0-1">Isle Of Man</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="7003EHC-0-2" value="Jersey" name="export_destination_entry" data-qa-id="Question-radio-Jersey">
+                <label class="govuk-label govuk-radios__label" for="7003EHC-0-2">Jersey</label>
+              </div>
+              <p class="govuk-body">or</p>
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="7003EHC-0-3" value="Northern Ireland" name="export_destination_entry" data-qa-id="Question-radio-Northern Ireland">
+                <label class="govuk-label govuk-radios__label" for="7003EHC-0-3">Northern Ireland</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-grid-row margin-top-30"></div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" aria-label="save and continue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-body">
+              <input class="link-button" type="submit" value="Save and continue later" aria-label="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% block chatbot %}{% include "../../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}

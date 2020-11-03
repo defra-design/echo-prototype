@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Where will certification take place?
+    </h1>
+    <p class="govuk-body"></p>
+    <form action="../check-your-progress" method="POST">
+      <!-- <form  action="check-your-progress"  method="POST"> -->
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xs">
+              <h3 class="govuk-fieldset__heading">
+                Certification region
+              </h3>
+              <span class="govuk-hint">Select the region in which the certification will take place:</span>
+            </legend>
+            <div class="govuk-radios ">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="England" name="certification_place" type="radio" value="England">
+                <label class="govuk-label govuk-radios__label" for="England">
+                  England
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="Scotland" name="certification_place" type="radio" value="Scotland">
+                <label class="govuk-label govuk-radios__label" for="Scotland">
+                  Scotland
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="Wales" name="certification_place" type="radio" value="Wales">
+                <label class="govuk-label govuk-radios__label" for="Wales">
+                  Wales
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+          {% if data.journey=="new" %}
+          <p class="govuk-body"><a class="link-button" href="../../dashboard-1?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+          {% else %}
+          <p class="govuk-body"><a class="link-button" href="../../{{data.return_url or 'dashboard'}}?draft=yes" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+          {% endif %}
+        </div>
+      </fieldset>
+    </form>
+    <p class="govuk-body"><a class="link-button" href="dashboard" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">Save and continue later</a></p>
+  </div>
+  </div>
+  {% endblock %}

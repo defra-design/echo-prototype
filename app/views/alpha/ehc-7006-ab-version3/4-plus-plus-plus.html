@@ -1,0 +1,465 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+
+
+
+
+
+
+    <!--start-->
+
+
+    <div class="govuk-width-container">
+
+
+    <div class="" id="Form-Organisation">
+        <fieldset class="govuk-fieldset">
+
+
+            <span class="govuk-caption-xl">
+          Step 1 of 2
+        </span>
+
+            <h1 id="questionPageHeading" class="govuk-heading-xl">
+                Confirm your
+             Official Vet or Certifier you will be working with</h1>
+
+
+
+
+
+
+        <span id="manual-address-option-hint" class="govuk-hint govuk-radios__hint">Filter by name, address, location or specialism</span>
+
+        </fieldset>
+
+
+    </div>
+
+
+
+    <style>
+
+
+        #filter-cert-org #filter-container {
+            bottom: 0px;
+            color: rgb(255, 255, 255);
+            height: 40px;
+            left: 0px;
+            position: relative;
+            right: 0px;
+            text-decoration: none solid rgb(255, 255, 255);
+            text-size-adjust: 100%;
+            top: 0px;
+            width: 300px;
+            column-rule-color: rgb(255, 255, 255);
+            perspective-origin: 150px 20px;
+            transform-origin: 150px 20px;
+            caret-color: rgb(255, 255, 255);
+            background: rgb(0, 94, 165) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='white'%3E%3C/path%3E%3C/svg%3E") no-repeat scroll 0% 0% / 40px 40px padding-box border-box;
+            border: 0px none rgb(255, 255, 255);
+            font: normal normal 400 normal 16px / normal "Times New Roman";
+            outline: rgb(255, 255, 255) none 0px;
+        }/*#filter-container*/
+
+        #filter-cert-org #filter-container:after {
+            color: rgb(255, 255, 255);
+            text-decoration: none solid rgb(255, 255, 255);
+            text-size-adjust: 100%;
+            column-rule-color: rgb(255, 255, 255);
+            caret-color: rgb(255, 255, 255);
+            border: 0px none rgb(255, 255, 255);
+            font: normal normal 400 normal 16px / normal "Times New Roman";
+            outline: rgb(255, 255, 255) none 0px;
+        }/*#DIV_4:after*/
+
+        #filter-cert-org #filter-container:before {
+            color: rgb(255, 255, 255);
+            text-decoration: none solid rgb(255, 255, 255);
+            text-size-adjust: 100%;
+            column-rule-color: rgb(255, 255, 255);
+            caret-color: rgb(255, 255, 255);
+            border: 0px none rgb(255, 255, 255);
+            font: normal normal 400 normal 16px / normal "Times New Roman";
+            outline: rgb(255, 255, 255) none 0px;
+        }/*#DIV_4:before*/
+
+
+        #filter-cert-org #filter-input {
+            bottom: 0px;
+            height: 22px;
+            left: 0px;
+            position: relative;
+            right: 0px;
+            text-size-adjust: 100%;
+            top: 0px;
+            width: 260px;
+            perspective-origin: 130px 20px;
+            transform-origin: 130px 20px;
+            border: 2px solid rgb(255, 255, 255);
+            font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+            margin: 0px 0px 0px 40px;
+            padding: 9px 10px 5px;
+            border: solid 2px #000;
+            outline: none;
+        }/*#filter-input*/
+
+        #filter-cert-org #filter-input:focus {
+            border: solid 2px #ffbf47;
+            outline: none;
+        }/*#filter-input*/
+
+        #filter-cert-org #filter-input:after {
+            text-size-adjust: 100%;
+            font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+        }/*#filter-input:after*/
+
+        #filter-cert-org #filter-input:before {
+            text-size-adjust: 100%;
+            font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
+        }/*#filter-input:before*/
+
+
+            .govuk-input, .gem-c-feedback input[type="text"] {
+                font-size: 19px;
+                line-height: 1.3157894737;
+            }
+
+
+            .govuk-input, .gem-c-feedback input[type="text"] {
+                font-family: "nta", Arial, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.25;
+                box-sizing: border-box;
+                width: 100%;
+                height: 40px;
+                margin-top: 0;
+                padding: 5px;
+                border: 2px solid #0b0c0c;
+                border-radius: 0;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+
+
+
+        .gem-c-input--search-icon {
+            padding-left: 30px;
+            background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E") no-repeat -5px -3px;
+            width: 66.6666%;
+
+        }
+
+
+
+    </style>
+
+
+
+
+            <input name="keywords" value="CE12 3ER" class="gem-c-input govuk-input gem-c-input--search-icon" id="finder-keyword-search" type="search" aria-controls="js-search-results-info">
+
+
+
+
+
+
+
+
+    <p style="margin-top: 25px;font-size: 1.8rem">Search results for <span style="font-weight: 700"> "CE12 3ER"</span></p>
+
+
+
+    <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER" style="margin-top: 20px">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header">Select OV or certifier</th>
+            <th class="govuk-table__header">Name</th>
+            <th class="govuk-table__header">Address</th>
+
+        </tr>
+        </thead>
+
+
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">
+                <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+
+                        </label>
+                    </div>
+                </div>
+            </td>
+
+            <td class="govuk-table__cell">
+                A1 Export
+            </td>
+            <td class="govuk-table__cell wrap">
+                <span>22 Coventry Road</span>
+                <span>Coventry</span>
+                <span></span>
+                <span></span>
+                <span>CV18 7YT</span>
+            </td>
+
+            <td class="govuk-table__cell">
+                <form action="15c" method="POST">
+
+                    <input type="hidden" name="address1" value="123 Address Line1">
+                    <input type="hidden" name="address2" value="1">
+                    <input type="hidden" name="city" value="1">
+                    <input type="hidden" name="county" value="d">
+                    <input type="hidden" name="postcode" value="POSTCODE">
+
+                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                    <input type="hidden" name="ehcNumber" value="7006EHC">
+                    <input type="hidden" name="applicationFormId" value="1721147986171">
+                    <input type="hidden" name="pageSequence" value="1">
+                    <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
+
+                    <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
+                    <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
+
+                </form>
+            </td>
+        </tr>
+
+
+
+
+        <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">
+                <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+
+                        </label>
+                    </div>
+                </div>
+            </td>
+
+            <td class="govuk-table__cell">
+                ADM exports Ltd.
+            </td>
+            <td class="govuk-table__cell wrap">
+                <span>Hornbeam House Electra Way Crewe CE12 3ER</span>
+
+            </td>
+            <td class="govuk-table__cell">
+
+            </td>
+
+            <td class="govuk-table__cell">
+                <form action="15c" method="POST">
+
+
+
+                    <input type="hidden" name="address1" value="Hornbeam House">
+                    <input type="hidden" name="address2" value="Electra Way">
+                    <input type="hidden" name="city" value="Crewe">
+                    <input type="hidden" name="county" value="">
+                    <input type="hidden" name="postcode" value="CW12 3ER">
+
+                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                    <input type="hidden" name="ehcNumber" value="7006EHC">
+                    <input type="hidden" name="applicationFormId" value="1721147986171">
+                    <input type="hidden" name="pageSequence" value="1">
+                    <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
+
+                    <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
+                    <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
+
+                </form></td>
+        </tr>
+
+
+
+
+        <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">
+                <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+
+                        </label>
+                    </div>
+                </div>
+            </td>
+
+            <td class="govuk-table__cell">
+                Chinese Wall Traders
+            </td>
+            <td class="govuk-table__cell wrap">
+                <span>Seaside Drive Blackpool BL89 0LD</span>
+
+            </td>
+            <td class="govuk-table__cell">
+
+            </td>
+
+            <td class="govuk-table__cell">
+                <form action="15c" method="POST">
+
+
+
+                    <input type="hidden" name="address1" value="Hornbeam House">
+                    <input type="hidden" name="address2" value="Electra Way">
+                    <input type="hidden" name="city" value="Crewe">
+                    <input type="hidden" name="county" value="">
+                    <input type="hidden" name="postcode" value="CW12 3ER">
+
+                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                    <input type="hidden" name="ehcNumber" value="7006EHC">
+                    <input type="hidden" name="applicationFormId" value="1721147986171">
+                    <input type="hidden" name="pageSequence" value="1">
+                    <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
+
+                    <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
+                    <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
+
+                </form></td>
+        </tr>
+
+
+
+
+
+        <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">
+                <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+
+                        </label>
+                    </div>
+                </div>
+            </td>
+
+            <td class="govuk-table__cell">
+                Exports Fresh Produce
+            </td>
+            <td class="govuk-table__cell wrap">
+                <span>Horserider Avenue Birmingham B28 6KL</span>
+
+            </td>
+            <td class="govuk-table__cell">
+
+            </td>
+
+            <td class="govuk-table__cell">
+                <form action="15c" method="POST">
+
+
+
+                    <input type="hidden" name="address1" value="Hornbeam House">
+                    <input type="hidden" name="address2" value="Electra Way">
+                    <input type="hidden" name="city" value="Crewe">
+                    <input type="hidden" name="county" value="">
+                    <input type="hidden" name="postcode" value="CW12 3ER">
+
+                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+                    <input type="hidden" name="ehcNumber" value="7006EHC">
+                    <input type="hidden" name="applicationFormId" value="1721147986171">
+                    <input type="hidden" name="pageSequence" value="1">
+                    <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="Amsa 123 Address Line1  POSTCODE  ">
+
+                    <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="a14e40ea-568d-e911-a95f-000d3ab6488a">
+                    <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="b3194990-568d-e911-a95f-000d3ab6488a">
+
+                </form></td>
+        </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+
+    <div class="govuk-grid-row margin-top-30"></div>
+
+    <!--<div id="js-pagination" style="float: right">
+        <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
+            <a href="#" class="gem-c-pagination__link" rel="next" data-track-category="contentsClicked" data-track-action="next" data-track-label="/search/all?keywords=test&amp;order=relevance&amp;page=2" data-track-dimension="next" data-track-dimension-index="29">
+          <span class="gem-c-pagination__link-title">
+            <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+            <span class="gem-c-pagination__link-text">
+              Next page<span class="gem-c-pagination__link-divider visually-hidden">:</span>
+            </span>
+          </span><br>
+
+                <span class="gem-c-pagination__link-label">1 of 2</span>
+            </a>
+
+        </nav>
+
+    </div>-->
+
+
+    <form action="3-plus" method="POST">
+
+    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0" style="margin-top: 70px">
+
+        <!--<p> OR</p><p>
+            You can add, remove or update the Certifiers you work with on your account <a href="#">dashboard</a>.</p>
+
+        <p style="position: relative;top: 20px"> You can find<a href="#"> general advice about working with OVs</a>.</p>-->
+
+
+        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue-0" data-qa-id="Button-SaveAndContinue">
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+        </div>
+    </div>
+
+</form>
+
+
+
+    </div>
+
+
+
+    <!-- HERE --->
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

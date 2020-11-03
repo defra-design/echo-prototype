@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<style media="screen">
+  .outline-blue-tag{
+    color: #144e81;
+background: #d2e2f1;
+  }
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l" data-qa-id="publish-form-heading">EHC 2849EHC</span>
+    <h1 class="govuk-heading-xl">Publish form version {{query.form_version or '3.2'}}</h1>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          EHC version
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{query.form_version or '3.2'}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          PDF
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ehc-2849ehc-{{query.form_version or '3.2'}}.pdf
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if query.status == "internal"%}
+          <span class="govuk-tag outline-blue-tag">Internal</span>
+          {% elseif query.status == "restricted"%}
+          <span class="govuk-tag">PRIVATE</span>
+          {% elseif query.status == "inactive" %}
+          <span class="phase-tag red-tag">INACTIVE</span>
+          {% else %}
+          <span class="phase-tag orange-tag">DRAFT</span>
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+    <form class="case-update" style="display: inline;" action="./publish-confirm" method="GET">
+      <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+      <input type="hidden" value="2849EHC" name="documentNumber">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Who will be able to see this form?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live" name="updated_status" type="radio" value="active">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                Everyone
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="updated_status" type="radio" value="restricted" {% if query.status == "restricted"%}checked="checked"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                Only those with the private link
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="updated_status" type="radio" value="internal" {% if query.status == "internal"%}checked="checked"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                Only internal users (for testing)
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <input type="hidden" name="updated" value="yes">
+      <input type="hidden" name="old_status" value="{{query.status or 'draft'}}">
+      <input class="govuk-button" type="submit" value="Submit" data-qa-id="Button-Save">
+      <a class="link-button--inline" href="versions" data-qa-id="Button-Cancel">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

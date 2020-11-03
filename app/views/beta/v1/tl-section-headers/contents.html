@@ -1,0 +1,31 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <style>.app-tabs {
+            border: 1px solid #b58840;
+        }
+        .app-tabs:hover {
+            border: 1px solid #1d70b8	;
+        }
+       </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Shortened titles
+      </h1>{{releaseVersion | log }}
+      <p class="govuk-body">No jira ticket available yet</p>
+        <ul class="govuk-list">
+          <li><a href="certificate/check-your-progress?certificate=ehc8327&export_date_day=1&products=">Task list with 4 sections</a></li>
+          <li><a href="certificate/check-your-progress-5?certificate=ehc8327&export_date_day=1&products=">Task list with 5 sections (seperate supporting documents)</a></li>
+          <li><a href="certificate/check-your-progress-5?certificate=ehc8327_v2&export_date_day=1&products=">Task list with 5 sections and improved list titles`</a></li>
+
+    </div>
+</div>
+
+{% endblock %}

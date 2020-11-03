@@ -1,0 +1,21 @@
+.no-border {
+    border: 0;
+}
+
+.border-box {
+  border: 1px solid #bfc1c3;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding: 20px 20px 0px;
+  position: relative;
+}
+.green-tag {
+    background-color: #006435 !important;
+}
+.red-tag {
+    background-color: #b10e1e !important;
+}
+.govuk-button.cancel-button {
+    background-color: #bfc1c3;
+    color: #0b0c0c;
+}

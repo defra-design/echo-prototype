@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% set title = "Set up recovery information" %}
+
+{% block pageTitle %}
+{{title}} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" id="memorable" action="user-id-confirmation-page">
+      <h1 class="govuk-heading-xl">{{title}}</h1>
+      <p>We'll use this information if you need help to get access with Government Gateway in the future.</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="email">
+          Recovery word
+        </label>
+        <p>The word must:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>be between 6 and 12 characters</li>
+          <li>not contain spaces or special characters</li>
+          <li>not contain numbers</li>
+        </ul>
+        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="text">
+      </div>
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="email">
+          Recovery word hint
+        </label>
+        <p>Your hint will be displayed to remind you of your recovery word.</p>
+        <span class="govuk-hint">
+          You cannot include your recovery word in your hint.
+        </span>
+        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="text">
+      </div>
+
+      {{ govukButton({
+          text: "Continue"
+        }) }}
+    </form>
+
+
+    <p><a href="/request-help/support?service=hmrc&amp;referrer=">Get help</a></p>
+  </div>
+</div>
+
+{% endblock %}

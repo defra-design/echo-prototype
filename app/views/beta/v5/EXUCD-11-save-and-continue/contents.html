@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXUCD-11 Save and continue later improvement
+    </h1>{{releaseVersion | log }}
+    <p class="govuk-body">This prototype should be as close to the live service. Updated with in development or soon to be released features.</p>
+
+    <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXUCD-11"><span class="govuk-!-font-weight-bold">Jira:</span> EXUCD-11 Save and continue later improvement</a></p>
+    <ul class="govuk-list">
+      <li><a href="dashboard?has_unfinished_certificate=no">Dashboard</a> </li>
+      <li><a href="certificate/check-your-progress?certificate=ehc6969&has_unfinished_certificate=no">From check your answers</a></li>
+      <li><a href="certificate/save-and-continue-later?save_return=certificate/check-your-progress">Confirm you want to save and continue later (NEW)</a></li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}

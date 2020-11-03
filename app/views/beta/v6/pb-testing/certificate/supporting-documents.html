@@ -1,0 +1,195 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Add attachments
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if query.hasError %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          {% if query.errorType == "duplicate" %}
+          <li>
+            File names need to be different - rename the file and try again
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+    <h1 id="supplementary-documents" class="govuk-heading-xl">Add attachments</h1>
+    <p class="govuk-body">You can upload files and attach them to your application.</p>
+    {% if data.certificate == "ehc1631_v3"%}
+    <p class="govuk-body">Attach a list if you need to include 4 or more:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li id="point_0">products in your consignment</li>
+      <li id="point_1">slaughterhouses</li>
+      <li id="point_1">cutting plants</li>
+      <li id="point_1">processing or production plants</li>
+    </ul>
+    {% endif %}
+    <p class="govuk-body">Your certifier and APHA can view any files you upload here. You do not have to send them by email.</p>
+
+    <form {% if query.change=="yes" %} action="check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or 'check-your-progress'}}" {% endif %} method="POST">
+      <div class="app-multi-file-upload app-multi-file-upload--enhanced">
+        <div class="app-multi-file__uploaded-files app-hidden">
+          <h2 class="govuk-heading-m">Files uploaded</h2>
+          <div class="govuk-summary-list app-multi-file-upload__list">
+          </div>
+        </div>
+        <div class="app-multi-file-upload__upload">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="documents">
+              Upload files
+            </label>
+            <p class="govuk-hint">You can select multiple files to upload at the same time.</p>
+
+            <p class="govuk-hint">Files must be PDF, Word, Excel or JPEG and be less than 10 megabytes (10 MB).</p>
+            <div class="app-multi-file-upload__dropzone"><input class="govuk-file-upload app-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+              <p class="govuk-body">Drag and drop files here or</p><label for="documents" class="govuk-button govuk-button--secondary">Choose files</label>
+              <div aria-live="polite" role="status" class="govuk-visually-hidden"></div>
+            </div>
+          </div>
+          <button type="submit" class="govuk-button govuk-button--secondary app-multi-file-upload__button" data-module="govuk-button">
+            Upload
+          </button>
+        </div>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+    window.addEventListener('load', function() {
+            $('.app-multi-file__uploaded-files').hide()
+            $('input[type="file"]').change(function(e){
+                var list = ""
+                var files = []
+                  for(var i = 0; i < e.target.files.length;i++){
+                    list+= '<div class="govuk-summary-list__row app-multi-file-upload__row"> <dd class="govuk-summary-list__value app-multi-file-upload__message"><span class="app-multi-file-upload__success"> <svg class="app-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> <a href="public/uploads/8577167719845c54675ba21dcb6f1481" class="govuk-link"> '+e.target.files[i].name+'</a> has been uploaded</span></dd><dd class="govuk-summary-list__actions app-multi-file-upload__actions"><button class="app-multi-file-upload__delete govuk-button govuk-button--secondary govuk-!-margin-bottom-0" type="button" name="delete" value="8577167719845c54675ba21dcb6f1481">Delete <span class="govuk-visually-hidden">'+e.target.files[i].name+'</span></button></dd></div><input type="hidden" class="govuk-input" id="app-uploaded-files" name="uploaded_files" value="'+e.target.files[i].name+'">';
+                    files.push(e.target.files[i].name)
+                  }
+                  $('#app-uploaded-files').val(files)
+                  $('.app-multi-file__uploaded-files').show()
+                  if($('.app-multi-file-upload__list').children().length > 0 ){
+                    $('.moj-multi-file-upload__list').append(list)
+                  }else{
+                      var html = '<div class="govuk-summary-list moj-multi-file-upload__list"> '
+                        html+=list
+                      html+="</div>"
+                  }
+                $('.app-multi-file-upload__list').html(html)
+            });
+
+          // preventing page from redirecting
+          $("html").on("dragover", function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              $("h1").text("Drag here");
+          });
+
+          $("html").on("drop", function(e) { e.preventDefault(); e.stopPropagation(); });
+
+          // Drag enter
+          $('.app-multi-file-upload__dropzone').on('dragenter', function (e) {
+              e.stopPropagation();
+              e.preventDefault();
+              $("h1").text("Drop");
+          });
+
+          // Drag over
+          $('.app-multi-file-upload__dropzone').on('dragover', function (e) {
+              e.stopPropagation();
+              e.preventDefault();
+              $("h1").text("Drop");
+          });
+
+          // Drop
+          $('.app-multi-file-upload__dropzone').on('drop', function (e) {
+              e.stopPropagation();
+              e.preventDefault();
+
+              $("h1").text("Upload");
+
+              var file = e.originalEvent.dataTransfer.files;
+              var fd = new FormData();
+
+              fd.append('file', file[0]);
+
+              uploadData(fd);
+          });
+
+          // Open file selector on div click
+          $("#uploadfile").click(function(){
+              $("#file").click();
+          });
+
+          // file selected
+          $("#file").change(function(){
+              var fd = new FormData();
+
+              var files = $('#file')[0].files[0];
+
+              fd.append('file',files);
+
+              uploadData(fd);
+          });
+      });
+
+      // Sending AJAX request and upload file
+      function uploadData(formdata){
+
+          $.ajax({
+              url: 'upload.php',
+              type: 'post',
+              data: formdata,
+              contentType: false,
+              processData: false,
+              dataType: 'json',
+              success: function(response){
+                  addThumbnail(response);
+              }
+          });
+      }
+
+      // Added thumbnail
+      function addThumbnail(data){
+          $("#uploadfile h1").remove();
+          var len = $("#uploadfile div.thumbnail").length;
+
+          var num = Number(len);
+          num = num + 1;
+
+          var name = data.name;
+          var size = convertSize(data.size);
+          var src = data.src;
+
+          // Creating an thumbnail
+          $("#uploadfile").append('<div id="thumbnail_'+num+'" class="thumbnail"></div>');
+          $("#thumbnail_"+num).append('<img src="'+src+'" width="100%" height="78%">');
+          $("#thumbnail_"+num).append('<span class="size">'+size+'<span>');
+
+      }
+
+      // Bytes conversion
+      function convertSize(size) {
+          var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+          if (size == 0) return '0 Byte';
+          var i = parseInt(Math.floor(Math.log(size) / Math.log(1024)));
+          return Math.round(size / Math.pow(1024, i), 2) + ' ' + sizes[i];
+      }
+
+</script>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}

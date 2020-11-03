@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div>
+                    <h1 id="questionPageHeading" class="govuk-heading-l">7006EHC</h1>
+                    <p>
+                    </p><form action="16" method="POST" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="crumb_csrf_token" value="gTlLBKyL-1hcIX_eIlqttNqVHhFrTHmuqTG5yTJsotb">
+
+                    <!-- @formatter:off -->
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label govuk-!-font-weight-bold" for="7006EHC-0">What are the dates of production? (optional)</label>
+                        <div class="govuk-hint">Enter the range of dates</div>
+                        <textarea class="govuk-textarea" id="7006EHC-0" name="0" rows="3" autofocus="autofocus" data-qa-id="Question-7006EHC-0" spellcheck="false"></textarea>
+                    </div>
+                    <input type="hidden" name="0-formQuestionId" value="235">
+                    <input type="hidden" name="0-questionId" value="106">
+                    <input type="hidden" name="0-formName" value="7006EHC">
+                    <input type="hidden" name="0-questionText" value="What are the dates of production? (optional)">
+                    <input type="hidden" name="0-questionType" value="textarea">
+                    <input type="hidden" name="0-questionOrder" value="13">
+                    <input type="hidden" name="0-questionScope" value="BOTH">
+                    <input type="hidden" name="questionSequence-235" value="0">            <!-- @formatter:on -->
+                    <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="1">
+                    <div class="govuk-grid-row margin-top-30"></div>
+                    <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                        <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full govuk-body">
+                            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                        </div>
+                    </div>
+
+                </form>
+
+                    <p></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

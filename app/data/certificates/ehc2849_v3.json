@@ -1,0 +1,435 @@
+{
+	"certificate_code": "2849EHC_v3",
+	"version": "3",
+	"printable": "no",
+	"is_multiple": "yes",
+	"allow_blocks": "no",
+	"destination": "United Arab Emirates",
+	"sample_PDF": "ehc-2849ehc-3.1.pdf",
+	"certificate_name": "Permanently export horses to the United Arab Emirates (UAE)",
+	"commodities": [{
+		"group": "Equine",
+		"options": [{
+			"title": "Registered",
+			"name": "registered"
+		}, {
+			"title": "Unregistered",
+			"name": "unregistered"
+		}]
+	}],
+	"pages": [{
+			"page": 1,
+			"title": "Identification of the horse",
+			"group_name": "Identification of the horse",
+			"repeatable": "yes",
+			"content": {
+				"header": "Identification of the horse",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "text",
+						"label": "Horse name",
+						"hint": "",
+						"required": "yes",
+						"id": "animal_name",
+						"name": "animal_name",
+						"allow": "past",
+						"default": "003453232"
+					},
+					{
+						"type": "text",
+						"label": "Breed",
+						"hint": "",
+						"required": "no",
+						"id": "animal_breed",
+						"name": "animal_breed",
+						"allow": "past",
+						"default": "01/02/2020"
+					},
+					{
+						"type": "text",
+						"label": "Age",
+						"hint": "",
+						"required": "no",
+						"id": "animal_age",
+						"name": "animal_age",
+						"allow": "past",
+						"default": "003453232"
+					},
+					{
+						"type": "text",
+						"label": "Colour",
+						"hint": "",
+						"required": "no",
+						"id": "animal_colour",
+						"name": "animal_colour",
+						"allow": "past",
+						"default": "003453232"
+					},
+					{
+						"type": "text",
+						"label": "Sex",
+						"hint": "For example, gelding or stallion",
+						"required": "no",
+						"id": "animal_gender",
+						"name": "animal_gender",
+						"allow": "past",
+						"default": "003453232"
+					}
+				]
+			}
+		},
+		{
+			"page": 2,
+			"title": "Identification of the horse",
+			"group_name": "Identification of the horse",
+			"repeatable": "yes",
+			"content": {
+				"header": "How will the horse be identified?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [
+					{
+						"type": "conditional",
+						"inline": "no",
+						"label": "Method of identification",
+						"hint": "",
+						"required": "yes",
+						"id": "certification_place",
+						"name": "certification_place",
+						"options": [{
+								"title": "Passport",
+								"value": "passport",
+								"conditional": "yes",
+								"conditional_paragraph": "",
+								"conditional_fields" : [
+									{
+										"type": "text",
+										"label": "Passport number",
+										"hint": "",
+										"required": "yes",
+										"id": "Passport_number",
+										"name": "passport_number",
+										"allow": "past",
+										"default": "123456678"
+									},
+									{
+										"type": "text",
+										"label": "Passport issuer",
+										"hint": "",
+										"required": "no",
+										"id": "passport_issuer",
+										"name": "passport_issuer",
+										"default": "UK"
+									}
+								]
+							},
+							{
+									"title": "Microchip",
+									"value": "microchip",
+									"conditional": "no",
+									"conditional_paragraph": "",
+									"conditional_fields" : []
+								}
+						],
+						"default": "Passport"
+					}
+
+				]
+			}
+		},
+		{
+			"page": 3,
+			"title": "Horse owner",
+			"group_name": "Origin of horse",
+			"has_address": "yes",
+			"can_save_address": "yes",
+			"address_type": "export_address",
+			"address_input_name" : "owner_address",
+			"repeatable": "yes",
+			"content": {
+				"header": "Horse owner",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+						"type": "address",
+						"label": "Name and address of the owner",
+						"hint": "This information is needed for the certificate",
+						"required": "yes",
+						"id": "owner_address",
+						"name": "owner_address",
+						"rows": "4",
+						"default": ""
+					}
+				]
+			}
+		},
+		{
+			"page": 4,
+			"title": "Exporter and examination",
+			"group_name": "Origin of horse",
+			"repeatable": "no",
+			"content": {
+				"header": "Exporter and examination",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "textarea",
+					"label": "Address of the premises of examination",
+					"hint": "",
+					"required": "no",
+					"id": "examination_details",
+					"name": "examination_details",
+					"rows": "4",
+					"default": ""
+				},
+				{
+					"type": "textarea",
+					"label": "Name and address of exporter",
+					"hint": "",
+					"required": "no",
+					"id": "product-species",
+					"name": "product_species",
+					"rows": "4",
+					"default": "ABC HORSES LTD, 24 edendhurst ave, London, SW6 5EU"
+				}]
+			}
+		},
+		{
+			"page": 6,
+			"title": "Transport and destination",
+			"group_name": "Transport and destination",
+			"content": {
+				"header": "Transport and destination",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "How will the horse be transported?",
+					"hint": "For example, aeroplane, ship, road",
+					"required": "no",
+					"id": "transport_means",
+					"name": "transport_means",
+					"default": "Ship"
+				},{
+					"type": "textarea",
+					"label": "Address of destination",
+					"hint": "",
+					"required": "no",
+					"id": "destination_address",
+					"name": "destination_address",
+					"rows": 4,
+					"default": "ABC limited, UAE, 039432. Registration number - UAE3945-2342"
+				},{
+					"type": "textarea",
+					"label": "Name and address of consignee",
+					"hint": "",
+					"required": "no",
+					"id": "consignee_details",
+					"name": "consignee_details",
+					"rows": 4,
+					"default": "ABC limited, UAE, 039432. Registration number - UAE3945-2342"
+				}]
+			}
+		},
+
+		{
+			"page": "supporting-documents",
+			"title": "Supporting documents",
+			"optional": "yes",
+			"content": {
+				"fields": [{
+					"type": "textarea",
+					"label": "Not used",
+					"hint": "",
+					"required": "no",
+					"id": "processing_export_product",
+					"name": "processing_export_product",
+					"rows": 4,
+					"default": "ABC limited UK, Wendsbury, BM1 3XE (UK.HD.323.323)"
+				}]
+			}
+		},
+		{
+			"page": 10,
+			"exa": "yes",
+			"title": "In which region will the certification take place?",
+			"content": {
+				"header": "In which region will the certification take place?",
+				"caption": "",
+				"paragraph": "",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "radio",
+					"inline": "no",
+					"label": "Certification region",
+					"hint": "Select the region in which the certification will take place:",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [{
+							"title": "England",
+							"value": "England"
+						},
+						{
+							"title": "Scotland",
+							"value": "Scotland"
+						},
+						{
+							"title": "Wales",
+							"value": "Wales"
+						}
+					],
+					"default": "England"
+				}]
+			}
+		},
+		{
+			"page": 11,
+			"exa": "yes",
+			"title": "Who is exporting the horse?",
+			"content": {
+				"header": "Who is exporting the horse?",
+				"caption": "",
+				"paragraph": "If you are the exporter, provide your name or business name. If you are an agent representing someone else, provide their name or business name.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "text",
+					"label": "Exporter name",
+					"hint": "",
+					"required": "yes",
+					"id": "exporter_name",
+					"name": "exporter_name",
+					"allow": "future",
+					"default": "ABC EXPORTER LTD"
+				}]
+			}
+		},
+		{
+			"page": 12,
+			"exa": "yes",
+			"title": "Where have the horses been for the last 60 days?",
+			"has_address": "yes",
+			"can_save_address": "yes",
+			"address_type": "premises_of_origin",
+			"content": {
+				"header": "Where have the horses been for the last 60 days?",
+				"caption": "",
+				"paragraph": "APHA uses this information to help control the spread of disease.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [ {
+					"type": "conditional",
+					"inline": "no",
+					"label": "If there is more than one horse in this application, have they been together for the last 60 days?",
+					"hint": "",
+					"required": "yes",
+					"id": "certification_place",
+					"name": "certification_place",
+					"options": [
+						{
+							"title": "Yes",
+							"value": "yes"
+						},
+						{"conditional": "yes",
+						"conditional_paragraph": "You need to make separate applications for each of your horses. You cannot apply for multiple certificates unless the horses have been together for the last 60 days.",
+						"conditional_fields" : [
+							{
+							}
+							],
+							"title": "no",
+							"value": "no"
+
+						},	{
+								"title": "There is only one horse in this application",
+								"value": "one_horse"
+							}
+					]
+				},{
+					"type": "textarea",
+					"label": "Premises of origin",
+					"hint": "Enter the address and postcode",
+					"required": "yes",
+					"id": "premises_of_origin",
+					"name": "premises_of_origin",
+					"rows": "4",
+					"default": ""
+				},{
+					"type": "conditional",
+					"inline": "no",
+					"label": "Have the horses in this application been in more than one place in the last 60 days?",
+					"hint": "",
+					"required": "yes",
+					"id": "additinal_certification_place",
+					"name": "additinal_certification_place",
+					"options": [
+						{
+							"title": "Yes",
+							"value": "yes"
+						},
+						{"conditional": "yes",
+						"conditional_paragraph": "",
+						"conditional_fields" : [
+							{
+								"type": "textarea",
+								"label": "Additional premises detail",
+								"hint": "If you have answered no to the question above, list all addresses and postcodes of premises where the horse has been resident in the last 60 days",
+								"required": "no",
+								"id": "additional_premises_details",
+								"name": "additional_premises_details",
+								"rows": "5",
+								"default": ""
+							}
+							],
+							"title": "no",
+							"value": "no"
+
+						}
+					]
+				}]
+			}
+		}, {
+			"page": 16,
+			"exa": "yes",
+			"title": "What is the planned date of export?",
+			"content": {
+				"header": "What is the planned date of export?",
+				"caption": "",
+				"paragraph": "This is the date that the consignment leaves the loading premises  This may not the same date that it leaves the UK.  For block applications, enter the estimated date that the first export is likely to take place.",
+				"next": "",
+				"prev": "",
+				"product_page": "no",
+				"fields": [{
+					"type": "date",
+					"label": "Planned export date",
+					"hint": "For example, 31 08 1970",
+					"required": "yes",
+					"id": "export_date",
+					"name": "export_date",
+					"allow": "future",
+					"default": ""
+				}]
+			}
+		}
+	]
+}

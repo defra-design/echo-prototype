@@ -1,0 +1,390 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<style media="screen">
+  .govuk-table__cell{
+    position:relative;
+    vertical-align: middle;
+  }
+  .app-link--up, .app-link--down{    display: inline-block;
+    position: relative;
+    margin-bottom: 0px;
+    padding-left:20px;
+    color: #1d70b8 !important;
+    cursor: pointer;}
+  .app-link--up:before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+width: 0;
+height: 0;
+border-style: solid;
+border-color: transparent;
+-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+border-width: 0 7px 12.124px 7px;
+border-color: transparent transparent #1d70b8 transparent;
+  }
+  .app-link--down:before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+width: 0;
+height: 0;
+border-style: solid;
+border-color: transparent;
+-webkit-clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+border-width: 12.124px 7px 0 7px;
+border-color: #1d70b8 transparent transparent transparent;
+  }
+.app-link--action{
+  display:block;
+  margin-bottom:5px;
+}
+</style>
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl heading">Pages for form 2849EHC Version 3.2 </h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" colspan="2">Order</th>
+
+              <th class="govuk-table__header " >Page Title</th>
+              <th class="govuk-table__header" >Task title</th>
+              <th class="govuk-table__header" >Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="govuk-table__row">
+
+              <td id="7606-pageOrder" class="govuk-table__cell applicationRef-column " width="5%" scope="row">
+                1
+
+              </td>
+              <td class="govuk-table__cell" width="5%">
+              <a id="7612-moveUpLink" class="govuk-link app-link--up" title="move up" href="#"><span class="govuk-visually-hidden">move up</span></a><br>
+              <a id="7612-moveDownLink" class="govuk-link app-link--down" title="move down"  href="#"><span class="govuk-visually-hidden">move down</span></a>
+              </td>
+              <th id="7606-title" class="govuk-table__cell" scope="row">
+                What are the details of the horse?
+              </th>
+              <td id="7606-title" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+                Product details
+              </td>
+
+              <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                <a id="7612-editLink" class="govuk-link app-link--action"  href="page-edit?page_title=What are the details of the horse?&task_title=Product details">Change</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link app-link--action" href="#">View
+                  questions</a>
+                <a id="7612-deleteLink" class="govuk-link app-link--action" href="delete-page">Delete</a>
+
+
+
+
+              </td>
+
+            </tr>
+            <tr class="govuk-table__row">
+
+              <td id="7606-pageOrder" class="govuk-table__cell applicationRef-column " width="5%" scope="row">
+                2
+
+              </td>
+              <td class="govuk-table__cell" width="5%">
+              <a id="7612-moveUpLink" class="govuk-link app-link--up" title="move up" href="#"><span class="govuk-visually-hidden">move up</span></a><br>
+              <a id="7612-moveDownLink" class="govuk-link app-link--down" title="move down"  href="#"><span class="govuk-visually-hidden">move down</span></a>
+              </td>
+              <th id="7606-title" class="govuk-table__cell" scope="row">
+                How will the horse be identified?
+              </th>
+              <td id="7606-title" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+                {% if query.updated_id == "2" %}{{query.task_title}}{%else%}Horse identification{%endif%}
+              </td>
+
+              <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                <a id="7612-editLink" class="govuk-link app-link--action" href="page-edit?page_title=How will the horse be identified?&task_title=Product details&updated_id=2">Change</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link app-link--action" href="#">View
+                  questions</a>
+                <a id="7612-deleteLink" class="govuk-link app-link--action" href="delete-page">Delete</a>
+
+
+
+
+              </td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+
+              <td id="7606-pageOrder" class="govuk-table__cell applicationRef-column " width="5%" scope="row">
+                3
+
+              </td>
+              <td class="govuk-table__cell" width="5%">
+              <a id="7612-moveUpLink" class="govuk-link app-link--up" title="move up" href="#"><span class="govuk-visually-hidden">move up</span></a><br>
+              <a id="7612-moveDownLink" class="govuk-link app-link--down" title="move down"  href="#"><span class="govuk-visually-hidden">move down</span></a>
+              </td>
+              <th id="7606-title" class="govuk-table__cell" scope="row">
+                Who owns the horse?
+              </th>
+              <td id="7606-title" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+                Horse owner
+              </td>
+
+              <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                <a id="7612-editLink" class="govuk-link app-link--action" href="page-edit">Change</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link app-link--action" href="#">View
+                  questions</a>
+                <a id="7612-deleteLink" class="govuk-link app-link--action" href="delete-page">Delete</a>
+
+
+
+
+              </td>
+
+            </tr>
+            <tr class="govuk-table__row">
+
+              <td id="7606-pageOrder" class="govuk-table__cell applicationRef-column " width="5%" scope="row">
+                4
+
+              </td>
+              <td class="govuk-table__cell" width="5%">
+              <a id="7612-moveUpLink" class="govuk-link app-link--up" title="move up" href="#"><span class="govuk-visually-hidden">move up</span></a><br>
+              <a id="7612-moveDownLink" class="govuk-link app-link--down" title="move down"  href="#"><span class="govuk-visually-hidden">move down</span></a>
+              </td>
+              <th id="7606-title" class="govuk-table__cell" scope="row">
+                Where was the horse examined?
+              </th>
+              <td id="7606-title" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+                Examination details
+              </td>
+
+              <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                <a id="7612-editLink" class="govuk-link app-link--action" href="page-edit">Change</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link app-link--action" href="#">View
+                  questions</a>
+                <a id="7612-deleteLink" class="govuk-link app-link--action" href="delete-page">Delete</a>
+
+
+
+
+              </td>
+
+            </tr>
+            <tr class="govuk-table__row">
+
+              <td id="7606-pageOrder" class="govuk-table__cell applicationRef-column " width="5%" scope="row">
+                5
+
+              </td>
+              <td class="govuk-table__cell" width="5%">
+              <a id="7612-moveUpLink" class="govuk-link app-link--up" title="move up" href="#"><span class="govuk-visually-hidden">move up</span></a><br>
+              <a id="7612-moveDownLink" class="govuk-link app-link--down" title="move down"  href="#"><span class="govuk-visually-hidden">move down</span></a>
+              </td>
+              <th id="7606-title" class="govuk-table__cell" scope="row">
+                  Who is sending the consignment?
+              </th>
+              <td id="7606-title" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+               Consignor
+              </td>
+
+              <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                <a id="7612-editLink" class="govuk-link app-link--action" href="page-edit">Change</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link app-link--action" href="#">View
+                  questions</a>
+                <a id="7612-deleteLink" class="govuk-link app-link--action" href="delete-page">Delete</a>
+
+
+
+
+              </td>
+
+            </tr>
+            <tr class="govuk-table__row">
+
+              <td id="7606-pageOrder" class="govuk-table__cell applicationRef-column " width="5%" scope="row">
+                6
+
+              </td>
+              <td class="govuk-table__cell" width="5%">
+              <a id="7612-moveUpLink" class="govuk-link app-link--up" title="move up" href="#"><span class="govuk-visually-hidden">move up</span></a><br>
+              <a id="7612-moveDownLink" class="govuk-link app-link--down" title="move down"  href="#"><span class="govuk-visually-hidden">move down</span></a>
+              </td>
+              <th id="7606-title" class="govuk-table__cell" scope="row">
+                Who is receiving the consignment?
+              </th>
+              <td id="7606-title" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+                Consignee
+              </td>
+
+              <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                <a id="7612-editLink" class="govuk-link app-link--action" href="page-edit">Change</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link app-link--action" href="#">View
+                  questions</a>
+                <a id="7612-deleteLink" class="govuk-link app-link--action" href="delete-page">Delete</a>
+
+
+
+
+              </td>
+
+            </tr>
+            <!-- <tr class="govuk-table__row">
+
+              <td id="7607-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+                2
+              </td>
+              <th id="7607-title" class="govuk-table__cell" scope="row">
+                <a id="7612-viewQuestionsLink" class="govuk-link" href="#">How will the horse be identified? </a>
+              </th>
+
+              <td id="7606-title" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+                <a id="7612-moveUpLink" class="govuk-link app-link--up" href="#">move up</a><br>
+                <a id="7612-moveDownLink" class="govuk-link app-link--down" href="#">move down</a>
+              </td>
+              <td class="govuk-table__cell actions-column">
+
+                <a id="7612-editLink" class="govuk-link" href="page-edit">Edit</a>
+                View
+                  questions</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="7608-title" class="govuk-table__cell" scope="row">
+                Who owns the horse?
+              </td>
+              <td id="7608-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+                3
+              </td>
+
+              <td id="7606-title" class="govuk-table__cell" scope="row"><a id="7612-moveUpLink" class="govuk-link" href="#">move up</a><br>
+                <a id="7612-moveDownLink" class="govuk-link" href="#">move down</a>
+              </td>
+              <td class="govuk-table__cell actions-column">
+                <a id="7612-editLink" class="govuk-link" href="page-edit">edit</a>
+                <a id="7612-deleteLink" class="govuk-link" href="delete-page">delete</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link" href="#">view
+                  questions</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="7609-title" class="govuk-table__cell" scope="row">
+                Where was the horse examined?
+              </td>
+              <td id="7609-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+                4
+              </td>
+
+              <td id="7606-title" class="govuk-table__cell" scope="row"><a id="7612-moveUpLink" class="govuk-link" href="#">move up</a><br>
+                <a id="7612-moveDownLink" class="govuk-link" href="#">move down</a>
+              </td>
+              <td class="govuk-table__cell actions-column">
+                <a id="7612-editLink" class="govuk-link" href="page-edit">edit</a>
+                <a id="7612-deleteLink" class="govuk-link" href="delete-page">delete</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link" href="#">view
+                  questions</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="7610-title" class="govuk-table__cell" scope="row">
+                Who is sending the consignment?
+              </td>
+              <td id="7610-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+                5
+              </td>
+
+              <td id="7606-title" class="govuk-table__cell" scope="row">
+                <a id="7612-moveUpLink" class="govuk-link" href="#">move up</a><br>
+                <a id="7612-moveDownLink" class="govuk-link" href="#">move down</a>
+              </td>
+              <td class="govuk-table__cell actions-column">
+                <a id="7612-editLink" class="govuk-link" href="page-edit">edit</a>
+                <a id="7612-deleteLink" class="govuk-link" href="delete-page">delete</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link" href="#">view
+                  questions</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="7611-title" class="govuk-table__cell" scope="row">
+                How will the horse be transported?
+              </td>
+              <td id="7611-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+                6
+              </td>
+
+              <td id="7606-title" class="govuk-table__cell" scope="row">
+                <a id="7612-moveUpLink" class="govuk-link" href="#">move up</a><br>
+                <a id="7612-moveDownLink" class="govuk-link" href="#">move down</a>
+              </td>
+              <td class="govuk-table__cell actions-column">
+                <a id="7612-editLink" class="govuk-link" href="page-edit">edit</a>
+                <a id="7612-deleteLink" class="govuk-link" href="delete-page">delete</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link" href="#">view
+                  questions</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="7612-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+                7
+              </td>
+              <td id="7612-title" class="govuk-table__cell" scope="row">
+                Where is the consignment being sent to?
+              </td>
+              <td id="7606-title" class="govuk-table__cell" scope="row"> <a id="7612-moveUpLink" class="govuk-link" href="#">move up</a><br>
+                <a id="7612-moveDownLink" class="govuk-link" href="#">move down</a>
+              </td>
+              <td class="govuk-table__cell actions-column">
+                <a id="7612-editLink" class="govuk-link" href="page-edit">edit</a>
+                <a id="7612-deleteLink" class="govuk-link" href="delete-page">delete</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link" href="#">view
+                  questions</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="7613-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+                8
+              </td>
+              <td id="7613-title" class="govuk-table__cell" scope="row">
+                Who is receiving the consignment?
+              </td>
+              <td id="7606-title" class="govuk-table__cell" scope="row"> <a id="7612-moveUpLink" class="govuk-link" href="#">move up</a><br>
+                <a id="7612-moveDownLink" class="govuk-link app-link--up" href="#" >move down</a>
+              </td>
+              <td class="govuk-table__cell actions-column">
+                <a id="7612-editLink" class="govuk-link" href="page-edit">edit</a>
+                <a id="7612-deleteLink" class="govuk-link" href="delete-page">delete</a>
+                <a id="7612-viewQuestionsLink" class="govuk-link" href="#">view
+                  questions</a>
+              </td>
+            </tr> -->
+            </tbody>
+          </table>
+
+          <a id="link-createNewPage" href="page-new" class="govuk-button">Create new page</a>
+        </div>
+      </div>
+{% endblock %}

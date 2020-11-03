@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Task list improvements
+    </h1>{{releaseVersion | log }}
+<p class="govuk-body">This also contains improvements to the repeatable questions section (1631EHC).</p>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <h3 class="govuk-heading-m">Exports</h3>
+    <ul class="govuk-list">
+      <li><a href="dashboard"">Dashboard</a> </li>
+      <li>only 3 certificates are working with this pattern</li>
+      <li><a href="certificate/check-your-progress?certificate=ehc6969_v3">6969EHC (V3)</a></li>
+      <li><a href="certificate/check-your-progress?certificate=ehc1631_v3">1631EHC (V3)</a></li>
+      <li><a href="certificate/check-your-progress?certificate=ehc5725">5725EHC</a></li>
+      <li><a href="select-certificate">Select certificate (old stub version)</a></li>
+      <br>
+      <li><a href="certificate/check-your-answers?certificate=ehc5725">Check your answers</a></li>
+      <li><a href="certificate/check-your-answers-2?certificate=ehc5725">Check your answers (improved design)</a></li>
+    </ul>
+    <h3 class="govuk-heading-m">Form builder</h3>
+    <ul class="govuk-list">
+      <li ><a href="/form-builder/tasklist-grouping/form/pages">Certificate pages (updated)</li>
+      <li ><a href="/form-builder/tasklist-grouping/form/pages-edit">Page edit (updated)</li>
+      <li ><a href="/form-builder/tasklist-grouping/form/pages-edit">Page new (updated)</li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

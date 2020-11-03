@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div>
+      <h1 class="govuk-heading-l heading-with-help">Health Certificate Editor</h1>
+    </div>
+
+    <div class="govuk-checkboxes margin-top-30">
+      <form class="case-update" action="./health-cert-editor--settings" method="POST">
+        <fieldset class="govuk-fieldset">
+          <legend>
+            <label class="govuk-label">Which commodity type/name does this certificate relate
+              to?</label>
+          </legend>
+          <div class="margin-top-30">
+
+            <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+
+            <div class="govuk-form-group">
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input commodityType" id="Select-Registered" name="selectedCommodityTypeIds" checked="" value="befa3a40-902f-e911-a96d-000d3a2cbd60" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label">
+                    <strong> Registered</strong>
+                  </label>
+                </div>
+              </div>
+
+              <div class="govuk-checkboxes margin-left-30 margin-top-30">
+              </div>
+
+            </div>
+            <div class="govuk-form-group">
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input commodityType" id="Select-Unregistered" name="selectedCommodityTypeIds" value="889c76cf-cc5c-4785-8f42-5149b1a6ee48" type="checkbox">
+                  <label class="govuk-label govuk-checkboxes__label">
+                    <strong> Unregistered</strong>
+                  </label>
+                </div>
+              </div>
+
+              <div class="govuk-checkboxes margin-left-30 margin-top-30">
+              </div>
+
+            </div>
+            <input class="form-control" id="actionType" type="hidden" name="actionType" value="validate-commodity-types-page">
+            <input type="hidden" value="2849EHC" name="ehcNumber">
+            <input type="hidden" value="Permanent export of horses from the United Kingdom to the United Arab Emirates" name="ehcTitle">
+            <input type="hidden" value="AE" name="destinationCountry">
+            <input type="hidden" value="1e115957-7b2f-e911-a969-000d3a29ba60" name="commodityGroupGUID">
+
+            <input type="hidden" value="EXA04 - Equine" name="exaTitle">
+            <input type="hidden" value="exa04 - equine" name="exaNumber">
+            <input class="govuk-button" type="submit" value="Continue" id="continue-button" name="continue-button">
+
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

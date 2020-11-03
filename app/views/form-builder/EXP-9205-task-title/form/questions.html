@@ -1,0 +1,417 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <span class="govuk-caption-l">2849EHC v3.2</span>
+        <h2 id="formEditorHeading" class="govuk-heading-l heading-with-help">EHC form editor</h2>
+        <form action="" method="POST">
+          <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+
+          <table id="form-table" class="govuk-table margin-top-30">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Form Question Text</th>
+              <th class="govuk-table__header" scope="col">Form Question</th>
+              <th class="govuk-table__header" scope="col">Page</th>
+              <th class="govuk-table__header" scope="col">Certificate Fields</th>
+              <th class="govuk-table__header" scope="col">Behaviours</th>
+              <th class="govuk-table__header" scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody id="form-table-body" class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15997" id="Text-15997">Name
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15997" id="QuestionID-15997">942
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15997" id="PageInfo-15997">1:What are the details of the horse?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15997" id="Name-15997">
+                Horse Name<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15997" id="Constraint-15997">
+                <ul class="govuk-list">
+                  <li id="page-order-942">Order: 1</li>
+                  <li id="mandatory-942">Mandatory: No</li>
+                  <li id="min-length-942">Min. chars: 1</li>
+                  <li id="max-length-942">Max. chars: 68</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-0">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15997/delete" class="link-button" id="Link-DeSelect-Question-0" data-qa-id="Link-DeSelect-Question-15997">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15997" class="link-button" id="Link-Manage-Behaviours-0" data-qa-id="Link-Manage-Behaviours-15997">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15998" id="Text-15998">Breed
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15998" id="QuestionID-15998">943
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15998" id="PageInfo-15998">1:What are the details of the horse?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15998" id="Name-15998">
+                Horse Breed<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15998" id="Constraint-15998">
+                <ul class="govuk-list">
+                  <li id="page-order-943">Order: 2</li>
+                  <li id="mandatory-943">Mandatory: No</li>
+                  <li id="min-length-943">Min. chars: 1</li>
+                  <li id="max-length-943">Max. chars: 48</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-1">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15998/delete" class="link-button" id="Link-DeSelect-Question-1" data-qa-id="Link-DeSelect-Question-15998">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15998" class="link-button" id="Link-Manage-Behaviours-1" data-qa-id="Link-Manage-Behaviours-15998">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15987" id="Text-15987">Age
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15987" id="QuestionID-15987">944
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15987" id="PageInfo-15987">1:What are the details of the horse?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15987" id="Name-15987">
+                Horse Age<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15987" id="Constraint-15987">
+                <ul class="govuk-list">
+                  <li id="page-order-944">Order: 3</li>
+                  <li id="mandatory-944">Mandatory: No</li>
+                  <li id="min-length-944">Min. chars: 1</li>
+                  <li id="max-length-944">Max. chars: 15</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-2">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15987/delete" class="link-button" id="Link-DeSelect-Question-2" data-qa-id="Link-DeSelect-Question-15987">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15987" class="link-button" id="Link-Manage-Behaviours-2" data-qa-id="Link-Manage-Behaviours-15987">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15999" id="Text-15999">Colour
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15999" id="QuestionID-15999">945
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15999" id="PageInfo-15999">1:What are the details of the horse?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15999" id="Name-15999">
+                Horse Colour<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15999" id="Constraint-15999">
+                <ul class="govuk-list">
+                  <li id="page-order-945">Order: 4</li>
+                  <li id="mandatory-945">Mandatory: No</li>
+                  <li id="min-length-945">Min. chars: 1</li>
+                  <li id="max-length-945">Max. chars: 42</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-3">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15999/delete" class="link-button" id="Link-DeSelect-Question-3" data-qa-id="Link-DeSelect-Question-15999">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15999" class="link-button" id="Link-Manage-Behaviours-3" data-qa-id="Link-Manage-Behaviours-15999">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-16000" id="Text-16000">Sex
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-16000" id="QuestionID-16000">946
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-16000" id="PageInfo-16000">1:What are the details of the horse?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-16000" id="Name-16000">
+                Horse Sex<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-16000" id="Constraint-16000">
+                <ul class="govuk-list">
+                  <li id="page-order-946">Order: 5</li>
+                  <li id="mandatory-946">Mandatory: No</li>
+                  <li id="min-length-946">Min. chars: 1</li>
+                  <li id="max-length-946">Max. chars: 30</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-4">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/16000/delete" class="link-button" id="Link-DeSelect-Question-4" data-qa-id="Link-DeSelect-Question-16000">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/16000" class="link-button" id="Link-Manage-Behaviours-4" data-qa-id="Link-Manage-Behaviours-16000">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15988" id="Text-15988">Method of identification
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15988" id="QuestionID-15988">1008
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15988" id="PageInfo-15988">2:How will the horse be identified?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15988" id="Name-15988">
+                method of identification<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15988" id="Constraint-15988">
+                <ul class="govuk-list">
+                  <li id="page-order-1008">Order: 1</li>
+                  <li id="mandatory-1008">Mandatory: No</li>
+                  <li id="min-length-1008">Min. chars: 1</li>
+                  <li id="max-length-1008">Max. chars: 85</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-5">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15988/delete" class="link-button" id="Link-DeSelect-Question-5" data-qa-id="Link-DeSelect-Question-15988">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15988" class="link-button" id="Link-Manage-Behaviours-5" data-qa-id="Link-Manage-Behaviours-15988">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15989" id="Text-15989">Passport number
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15989" id="QuestionID-15989">1009
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15989" id="PageInfo-15989">2:How will the horse be identified?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15989" id="Name-15989">
+                passport number<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15989" id="Constraint-15989">
+                <ul class="govuk-list">
+                  <li id="page-order-1009">Order: 2</li>
+                  <li id="mandatory-1009">Mandatory: No</li>
+                  <li id="min-length-1009">Min. chars: 1</li>
+                  <li id="max-length-1009">Max. chars: 97</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-6">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15989/delete" class="link-button" id="Link-DeSelect-Question-6" data-qa-id="Link-DeSelect-Question-15989">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15989" class="link-button" id="Link-Manage-Behaviours-6" data-qa-id="Link-Manage-Behaviours-15989">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15990" id="Text-15990">Passport issuer
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15990" id="QuestionID-15990">1010
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15990" id="PageInfo-15990">2:How will the horse be identified?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15990" id="Name-15990">
+                passport issued by<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15990" id="Constraint-15990">
+                <ul class="govuk-list">
+                  <li id="page-order-1010">Order: 3</li>
+                  <li id="mandatory-1010">Mandatory: No</li>
+                  <li id="min-length-1010">Min. chars: 1</li>
+                  <li id="max-length-1010">Max. chars: 104</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-7">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15990/delete" class="link-button" id="Link-DeSelect-Question-7" data-qa-id="Link-DeSelect-Question-15990">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15990" class="link-button" id="Link-Manage-Behaviours-7" data-qa-id="Link-Manage-Behaviours-15990">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15991" id="Text-15991">Name and address of the owner
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15991" id="QuestionID-15991">958
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15991" id="PageInfo-15991">3:Who owns the horse?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15991" id="Name-15991">
+                Name and address of owner<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15991" id="Constraint-15991">
+                <ul class="govuk-list">
+                  <li id="page-order-958">Order: 1</li>
+                  <li id="mandatory-958">Mandatory: No</li>
+                  <li id="min-length-958">Min. chars: 1</li>
+                  <li id="max-length-958">Max. chars: 240</li>
+                  <li id="max-carriage-returns-958">Max. Carriage Returns: 1</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-8">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15991/delete" class="link-button" id="Link-DeSelect-Question-8" data-qa-id="Link-DeSelect-Question-15991">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15991" class="link-button" id="Link-Manage-Behaviours-8" data-qa-id="Link-Manage-Behaviours-15991">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15992" id="Text-15992">Address of the premises of examination
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15992" id="QuestionID-15992">1011
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15992" id="PageInfo-15992">4:Where was the horse examined?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15992" id="Name-15992">
+                premises where horse examined<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15992" id="Constraint-15992">
+                <ul class="govuk-list">
+                  <li id="page-order-1011">Order: 1</li>
+                  <li id="mandatory-1011">Mandatory: No</li>
+                  <li id="min-length-1011">Min. chars: 1</li>
+                  <li id="max-length-1011">Max. chars: 240</li>
+                  <li id="max-carriage-returns-1011">Max. Carriage Returns: 1</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-9">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15992/delete" class="link-button" id="Link-DeSelect-Question-9" data-qa-id="Link-DeSelect-Question-15992">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15992" class="link-button" id="Link-Manage-Behaviours-9" data-qa-id="Link-Manage-Behaviours-15992">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15993" id="Text-15993">Name and address of exporter
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15993" id="QuestionID-15993">657
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15993" id="PageInfo-15993">5:Who is sending the consignment?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15993" id="Name-15993">
+                Exporter name and address<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15993" id="Constraint-15993">
+                <ul class="govuk-list">
+                  <li id="page-order-657">Order: 1</li>
+                  <li id="mandatory-657">Mandatory: Yes</li>
+                  <li id="min-length-657">Min. chars: 1</li>
+                  <li id="max-length-657">Max. chars: 240</li>
+                  <li id="max-carriage-returns-657">Max. Carriage Returns: 1</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-10">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15993/delete" class="link-button" id="Link-DeSelect-Question-10" data-qa-id="Link-DeSelect-Question-15993">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15993" class="link-button" id="Link-Manage-Behaviours-10" data-qa-id="Link-Manage-Behaviours-15993">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15994" id="Text-15994">Means of transport
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15994" id="QuestionID-15994">815
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15994" id="PageInfo-15994">6:How will the horse be transported?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15994" id="Name-15994">
+                Means of transport<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15994" id="Constraint-15994">
+                <ul class="govuk-list">
+                  <li id="page-order-815">Order: 1</li>
+                  <li id="mandatory-815">Mandatory: No</li>
+                  <li id="min-length-815">Min. chars: 1</li>
+                  <li id="max-length-815">Max. chars: 86</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-11">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15994/delete" class="link-button" id="Link-DeSelect-Question-11" data-qa-id="Link-DeSelect-Question-15994">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15994" class="link-button" id="Link-Manage-Behaviours-11" data-qa-id="Link-Manage-Behaviours-15994">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15995" id="Text-15995">Address of destination
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15995" id="QuestionID-15995">957
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15995" id="PageInfo-15995">7:Where is the consignment being sent to?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15995" id="Name-15995">
+                Address of animal destination<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15995" id="Constraint-15995">
+                <ul class="govuk-list">
+                  <li id="page-order-957">Order: 1</li>
+                  <li id="mandatory-957">Mandatory: No</li>
+                  <li id="min-length-957">Min. chars: 1</li>
+                  <li id="max-length-957">Max. chars: 240</li>
+                  <li id="max-carriage-returns-957">Max. Carriage Returns: 1</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-12">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15995/delete" class="link-button" id="Link-DeSelect-Question-12" data-qa-id="Link-DeSelect-Question-15995">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15995" class="link-button" id="Link-Manage-Behaviours-12" data-qa-id="Link-Manage-Behaviours-15995">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-15996" id="Text-15996">Name and address of consignee
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-15996" id="QuestionID-15996">659
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-15996" id="PageInfo-15996">8:Who is receiving the consignment?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-15996" id="Name-15996">
+                Name and address of consignee<br>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-15996" id="Constraint-15996">
+                <ul class="govuk-list">
+                  <li id="page-order-659">Order: 1</li>
+                  <li id="mandatory-659">Mandatory: No</li>
+                  <li id="min-length-659">Min. chars: 1</li>
+                  <li id="max-length-659">Max. chars: 240</li>
+                  <li id="max-carriage-returns-659">Max. Carriage Returns: 1</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-13">
+                <button type="submit" formaction="/protected/health-certificates/2849EHC/versions/3.2/form-questions/15996/delete" class="link-button" id="Link-DeSelect-Question-13" data-qa-id="Link-DeSelect-Question-15996">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="/protected/forms/2849EHC/versions/3.2/formQuestions/15996" class="link-button" id="Link-Manage-Behaviours-13" data-qa-id="Link-Manage-Behaviours-15996">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+    <div>
+      <a href="questions-full" class="govuk-button margin-top-30" id="Button-AddQuestion" data-qa-id="Button-finish">Add Question</a>
+      <a href="versions" class="govuk-button margin-top-30" id="Button-Finish" data-qa-id="Button-finish">Finish</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form  method="post" novalidate action="find-application">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-4">
+            <h1 class="govuk-fieldset__heading">
+              What do you want to clone ?
+            </h1>
+          </legend>
+          <div class="govuk-checkboxess" data-module="govuk-checkboxes">
+
+            {% for d in db.pages %}
+            <p>Hi</p>
+            {% for f in d.content.fields %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="{{f.label.id}}" name="selected_certificate" type="checkbox" value="{{f.name}}">
+              <label class="govuk-label govuk-checkboxes__label" for="application_type_clone">
+                <span class="govuk-!-font-weight-bold">{{f.label}}</span>
+              </label>
+            </div>
+            {% endfor %}
+            {% endfor %}
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

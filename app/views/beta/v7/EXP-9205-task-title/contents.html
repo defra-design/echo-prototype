@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXP-9205 setting task list for form
+    </h1>{{releaseVersion | log }}
+
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <h3 class="govuk-heading-m">Form builder</h3>
+    <ul class="govuk-list">
+      <li><a href="/form-builder/EXP-9205-task-title/form/versions">Start from a certificate versions page </a> </li>
+      <li><a href="/form-builder/EXP-9205-task-title/form/pages">Pages with (updated designs)</a> </li>
+      <li><a href="/form-builder/EXP-9205-task-title/form/page-edit">Edit pages (updated designs)</a> </li>
+      <li><a href="/form-builder/EXP-9205-task-title/form/page-new">New pages (updated designs)</a> </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

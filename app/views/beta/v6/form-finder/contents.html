@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Form finder
+    </h1>
+    <p class="govuk-body">This prototype is to add form finder as part of creating a new certificate, and to show improvements we should make.</p>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <h3 class="govuk-heading-m">Start journey</h3>
+    <ul class="govuk-list">
+
+      <li><a href="form-finder?logged_in=no">Form finder - NOT logged in</a> </li>
+      <li><a href="form-finder?logged_in=yes">Form finder -  logged in</a> </li>
+      <li><a href="form-test?cert_code=6969&cert_title=Export%20dairy%20and%20dairy%20products%20to%20Australia:%20certificate%206969&cert_destination=Destination:%20Australia&cert_commodity=Commodity:%20Animal%20products%20including%20food&cert_status=Certificate%20status:%20Active&cert_link=https://www.gov.uk/export-health-certificates/export-dairy-and-dairy-products-to-australia-certificate-6969">Health certificate example page (6969)</a> </li>
+      <li>Basic pattern</li>
+      <li><a href="dashboard?show_alert=no&show_messages_tab=no">Start on dashboard</a> </li>
+      <li><a href="form-finder/choose-certificate?logged_in=yes">Choose certificate (NEW)</a> </li>
+    </ul>
+    <h3 class="govuk-heading-m">Start page exporter</h3>
+    <ul class="govuk-list">
+        <li><a href="google-search?logged_in=no">Start with google search</a></li>
+        <li><a href="govuk-home?logged_in=no">Start from govuk</a></li>
+        <li><a href="service-start-page?logged_in=no">Service start exporter</a></li>
+    </ul>
+    <h3 class="govuk-heading-m">start page certifier</h3>
+    <ul class="govuk-list">
+        <li><a href="google-search-certifier?logged_in=no">Start with google search</a></li>
+        <li><a href="apha?logged_in=no">Start from APHA page</a></li>
+        <li><a href="service-start-page-certifiers?logged_in=no">Certifier - service start certifier</a></li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}

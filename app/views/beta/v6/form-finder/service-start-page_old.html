@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EHC online
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs ">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Keeping farmed animals</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Animal welfare</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">EHC online</h1>
+
+    <p class="govuk-body">Exporters, official vets and local health inspectors can use this service to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>apply for an export health certificate (EHC)</li>
+      <li>copy existing applications</li>
+      <li>certify export health certificates</li>
+    </ul>
+
+
+    <a href="start-select-role" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+      Start now
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+    <p class="govuk-body">You'll need to register for Government Gateway and Defra ID to use this service. You'll be guided to create these accounts if you do not already have them.</p>
+
+    <p class="govuk-body">Not every EHC is available to apply for online. <a href="https://www.gov.uk/export-health-certificates">Check if the EHC you want to apply for is available</a>.</p>
+
+    <p class="govuk-body">You can still apply by sending your application to APHA by email or uploading it for DAERA in Northern Ireland.</p>
+
+    <p class="govuk-body">Your official vet or inspector will need to <a href="http://apha.defra.gov.uk/official-vets/Guidance/exports/ehc-online.htm">register to use the service</a>.</p>
+
+    <p class="govuk-body"><a href="https://certifier.apply-export-health-certificate.service.gov.uk/">Sign in as an official vet or inspector</a>.</p>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Subsection
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link" href="#">
+              Related link
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">
+              Related link
+            </a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link govuk-!-font-weight-bold">
+              More <span class="govuk-visually-hidden">in Subsection</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</div>
+{% endblock %}

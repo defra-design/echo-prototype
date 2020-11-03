@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="app-content__header">
+        <h1 class="govuk-heading-xl">
+          Your reference
+        </h1>
+      </div>
+      <p class="govuk-hint">
+  Enter a reference for your records, such as the consignee, invoice number or destination country
+      </p>
+
+      <form {% if query.change=="yes" %} action="../check-your-answers" {% elseif page.content.prodcut and query.change=="product" %} action="product-list" {% else %} action="{{page.content.next or '../check-your-progress'}}" {% endif %} method="POST">
+        <div class="govuk-form-group">
+          <div class="govuk-from-group">
+            <label class="govuk-label" for="reference_num">Your reference for this application</label>
+            <input class="govuk-input govuk-input--width-20" id="reference_num" name="reference_num" value="{{ data.reference_num }}" type="text" data-qa-id="Question-7006EHC-1">
+          </div>
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        </div>
+      </form>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+        </div>
+      </div>
+      <p></p>
+    </div>
+  </div>
+</div>
+{% block chatbot %}{% include "../../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}

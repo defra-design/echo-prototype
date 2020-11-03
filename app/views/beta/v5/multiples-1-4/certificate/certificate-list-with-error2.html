@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      You have added {% if query.show_fake_ehc %}5{%else%}{{data.added_certificates | length}}{%endif%} horse certificate{% if query.show_fake_ehc == yes or (data.added_certificates | length) != 1 %}s{% endif %} to your application
+    </h1>
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <div class="defra-alert defra-alert--info">
+      <p class="govuk-body govuk-!-margin-bottom-0">You cannot add any more horses to this application.If you need to create more certificates, you will need to start a new application.</p>
+    </div>
+    {% block ehcAnswersMultiple %}{% include "./partials/check-answer-ehc-multiple.html" %}{% endblock%}
+    <!-- <p class="govuk-body govuk-!-margin-bottom-8"><a href="add-new-certificate?completed=">Add another certificate</a></p> -->
+    
+    <form method="post">
+      <p class="govuk-body"><button type="submit" class="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+{% block chatbot %}{% include "../../../../includes/chat.html" %}{%endblock%}
+{% endblock %}

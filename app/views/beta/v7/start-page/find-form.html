@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EHC online
+{% endblock %}
+
+{% block beforeContent %}
+<a href="service-start-page" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form  method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-9">
+                <h1 class="govuk-fieldset__heading">
+                  Is the form you want to use online
+                </h1>
+              </legend>
+              <p>Not all EHC forms are currently online please check to see if you can get one</p>
+
+                <!-- radios use radioButtonRedirect  for routing https://github.com/abbott567/radio-button-redirect -->
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="account_type_exporter" name="account_type" type="radio" value="exporter~gov-sign-in">
+                  <label class="govuk-label govuk-radios__label" for="account_type_exporter">
+                    Yes the form I want to use it online
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="account_type_vet" name="account_type" type="radio" value="vet~form-finder">
+                  <label class="govuk-label govuk-radios__label" for="account_type_vet">
+                    No, I will need to find a form
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+  </div>
+
+</div>
+{% endblock %}

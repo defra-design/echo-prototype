@@ -1,0 +1,34 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+        <style>.app-tabs {
+            border: 1px solid #b58840;
+        }
+        .app-tabs:hover {
+            border: 1px solid #1d70b8	;
+        }
+       </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        EXP-8650 - Style validation failures as ‘soft errors’ when landing on Review Your Answers page
+      </h1>{{releaseVersion | log }}
+      <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8650"><span class="govuk-!-font-weight-bold">Jira:</span> Style validation failures as ‘soft errors’ when landing on Review Your Answers page</a></p>
+      <p class="govuk-body">This inludes <a href="https://eaflood.atlassian.net/browse/EXP-8648">EXP-8639</a> jounery</p>
+<h3 class="govuk-heading-m">Content</h3>
+      <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+        <ul class="govuk-list">
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=&certificate=ehc6969&certificate_date_day=&origin_earliest_date_day=&origin_latest_date_day=&export_date_day=&certificate_date_day=&origin_processing_early_date_day=&origin_processing_late_date_day=">Check your answers (with full list)</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=&certificate=ehc6969&certificate_date_day=01&origin_earliest_date_day=01&origin_latest_date_day=01&export_date_day=01&certificate_date_day=01&origin_processing_early_date_day=01&origin_processing_late_date_day=01">Check your answers (completed todo list)</a></li>
+          <li><a class="govuk-link--no-visited-state" href="certificate/check-your-answers-cloned?copy_as_new=yes&&data=&certificate=ehc6969&cloned=yes&alert=cloned">Cloned: Check your answers (with alert)</a></li>
+          </ul>
+      </div>
+    </div>
+
+{% endblock %}

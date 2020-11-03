@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="javascript:history.back()" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+
+
+
+
+            <div class="govuk-form-group ">
+                <!-- @formatter:off -->
+                <fieldset id="7006EHC-2" class="govuk-fieldset">
+                    <!-- @formatter:on -->
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                 <span class="govuk-caption-xl">
+          Step 2 of 2
+        </span>
+                        <h1 class="govuk-heading-xl">
+                            In which region will the certification take&nbsp;place?
+                        </h1>
+
+                    </legend>
+
+
+
+
+                    <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="England" value="England" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="England">England</label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Scotland" value="Scotland" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Scotland">Scotland</label>
+                        </div>
+                        <p class="form-block" style="padding-left:10px">or</p>
+                        <div class="govuk-radios__item">
+                            <input type="radio" class="govuk-radios__input" id="Wales" value="Wales" name="region" data-qa-id="Question-radio-">
+                            <label class="govuk-label govuk-radios__label" for="Wales">Wales</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="govuk-grid-row">
+                <form action="check-your-progress3" method="GET">
+                    <input class="govuk-button" type="submit" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+                </form>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full govuk-body">
+                        <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater" disabled="">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
