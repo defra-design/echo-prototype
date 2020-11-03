@@ -41,7 +41,7 @@
         </form>
         {% if query.search and query.search != 'no vets' %}
         <!-- <p class="govuk-body"><a href="certifier?search=" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">Clear search</a></p> -->
-        <p class="govuk-body">{%if query.single %}There is <span id="search-count">1</span> certificate{% else %}There are <span id="search-count">8</span> certifcates{% endif %}  matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
+        <p class="govuk-body">{%if query.single %}There is <span id="search-count">1</span> certificate{% else %}There are <span id="search-count">8</span> certificates{% endif %}  matching <span class="govuk-!-font-weight-bold">"{{query.search}}"</span></p>
         {% endif %}
           <table class="govuk-table">
             <!-- <thead class="govuk-table__head">
