@@ -18,7 +18,7 @@ GOV.UK Prototype Kit
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
               <h1 class="govuk-fieldset__heading">Request a pre-certified certificate</h1>
           </legend>
-          <p class="govuk-body">Some exports for this EHC need to provide their importer a certificate before shipping in order to get a import permit</p>
+          <p class="govuk-body">Your importer may need a pre-certified certificate before shipping to get a import permit</p>
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="default-address-option" name="needs_pre_cert" type="radio" value="yes" data-aria-controls="conditional-percert-yes" {% if data.needs_pre_cert=='yes' %}checked{%endif%}>
@@ -29,14 +29,14 @@ GOV.UK Prototype Kit
             {%if db.printable =="yes" or data.certifier_has_cg_paper == "yes" or query.printable =="yes" %}
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-percert-yes">
                 <p class="govuk-body">
-                  {{ data.certifier_name or 'Your certifier' }} will be notified once you submit your application, They will be able to download and print the pre-certificate from their dashboard.
+                  We will notify {{ data.certifier_name or 'Your certifier' }} as soon as you submit this application so they can download and print the pre-certificate
               </p>
             </div>
             {% endif %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="manual-address-option" name="needs_pre_cert" type="radio" value="no" aria-describedby="manual-address-option-hint" data-aria-controls="conditional-manual-address" {% if data.needs_pre_cert=='no' %}checked{%endif%}>
               <label id="manual-address-option-label" class="govuk-label govuk-radios__label " for="manual-address-option">
-                No, I dont need one
+                No, I do not need one
               </label>
             </div>
 
