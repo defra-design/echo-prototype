@@ -1,5 +1,0 @@
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-label--s" for="7006EHC-0">{{field.label}} <!--{% if field.required == 'no'%}(optional){%endif%}--></label>
-  {% if field.hint %}<div class="govuk-hint">{{field.hint}}</div>{% endif %}
-  <textarea class="govuk-textarea" id="{{field.id}}" name="{{field.name}}" rows="{{field.rows}}" autofocus="autofocus" spellcheck="false">{{ data[field.name] or ''}}</textarea>
-</div>

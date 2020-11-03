@@ -1,9 +1,0 @@
-<div class="govuk-form-group">
-  <label class="govuk-label" for="{{field.id}}">
-
-    {{field.label}}
-    {% if field.required == 'yes'%}<br><strong class="govuk-tag govuk-tag--yellow" id="eligibility-completed">Required</strong>{%endif%}
-  </label>
-  {% if field.hint %}<span id="{{field.id}}-hint" class="govuk-hint">{{field.hint}}</span>{% endif %}
-  <input class="govuk-input" id="{{field.id}}" name="{{field.name}}" type="text" aria-describedby="{{field.id}}-hint" {% if query.new != 'yes'%}value="{{data[field.name] or field.default}}"{% endif %}>
-</div>

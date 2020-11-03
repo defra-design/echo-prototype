@@ -1,7 +1,0 @@
-<div class="govuk-form-group">
-  <label class="govuk-label" for="{{field.id}}">
-    {{field.label}} {% if field.required == 'no'%}(optional){%endif%}
-  </label>
-  {% if field.hint %}<span id="{{field.id}}-hint" class="govuk-hint">{{field.hint}}</span>{% endif %}
-  <input class="govuk-input" id="{{field.id}}" name="{{field.name}}" type="text" aria-describedby="{{field.id}}-hint" value="{{data[field.name] or ''}}">
-</div>
