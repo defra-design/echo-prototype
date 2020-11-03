@@ -455,6 +455,16 @@ button.blue-button:hover {
   padding: 0;
   border: 0;
 }
+.govuk-tag--blue {
+    color: #144e81;
+    background: #d2e2f1;
+}
+@media (min-width: 28.125em){.app-task-list__tag, .app-task-list__task-completed {
+    float: right;
+    margin-top: 0;
+    margin-bottom: 0;
+}}
+
 
 .app-tabs {
   margin: -1px auto;
