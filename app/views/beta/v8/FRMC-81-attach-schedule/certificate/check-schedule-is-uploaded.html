@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{page.title}} - GOV.UK
+{% endblock %}
+
+{% block beforeContent%}
+{{super()}}
+<a href="{{page.content.prev or 'javascript:history.back()'}}" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post" class="form">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-9">
+            <h1 class="govuk-fieldset__heading">
+              You havent uploaded your schedule
+            </h1>
+          </legend>
+          <p class="govuk-body">You will need to upload your schedule before submiting this appliction</p>
+
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue to upload schedule
+      </button>
+
+
+    </form>
+  </div>
+</div>
+{% endblock %}

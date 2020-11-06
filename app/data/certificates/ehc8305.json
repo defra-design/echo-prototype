@@ -459,6 +459,7 @@
 		{
 			"page": 18,
 			"title": "For consignments transiting EU countries, who is responsible for the consignment when in the EU?",
+			"page_skippable": "yes",
 			"content": {
 				"header": "For consignments transiting EU countries, who is responsible for the consignment when in the EU?",
 				"caption": "",

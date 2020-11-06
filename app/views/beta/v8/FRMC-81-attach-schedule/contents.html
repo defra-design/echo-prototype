@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+  .app-tabs {
+    border: 1px solid #b58840;
+  }
+
+  .app-tabs:hover {
+    border: 1px solid #1d70b8;
+  }
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      FRMC 81 attach schedule
+    </h1>
+    <p class="govuk-body">Users confused at having to add an I28 record to get past the question, if they are attaching a schedule. <a href="https://eaflood.atlassian.net/browse/FRMC-81">View on jira</a> </p>
+
+    <p class="govuk-body"> </p>
+    <!-- <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8086"><span class="govuk-!-font-weight-bold">Jira:</span> Increase prominence of 'Search' CTA on the 'Certifier Search' page</a></p> -->
+    <ul class="govuk-list">
+
+
+
+      <li><a href="certificate/check-your-progress?certificate=ehc7001&">From the task list</a> <span class="govuk-hint">The example uses 7001EHC. Please choose "What are the details of your final product?"</span></li>
+      <li><a href="http://localhost:3000/beta/v8/FRMC-81-attach-schedule/certificate/how-to-add-products?id=3&title=What%20are%20the%20details%20of%20your%20final%20product?">Do you want to add a schedule? (NEW) </a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}
