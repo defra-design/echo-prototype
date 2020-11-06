@@ -334,9 +334,11 @@ module.exports = function(router) {
       res.redirect(301, '/' + base_url + req.params[0] + 'start-page/google-search-results?search=' + req.body.search);
     }
   })
+
+
   router.post('/' + base_url + '*certificate/how-to-add-products', function(req, res) {
     if (req.body.add_product_method == "manually") {
-      res.redirect(301, '/' + base_url + req.params[0] + 'certificate/product-list?id='+req.query.id);
+      res.redirect(301, '/' + base_url + req.params[0] + 'certificate/page?id='+req.query.id+"&next=product-list&product_page=yes&new=no");
     } else {
       res.redirect(301, '/' + base_url + req.params[0] + 'certificate/supporting-documents?test=yes;');
     }

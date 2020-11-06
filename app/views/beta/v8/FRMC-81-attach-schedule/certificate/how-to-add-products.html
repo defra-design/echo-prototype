@@ -15,38 +15,36 @@
       <form method="post" class="form">
         <div class="govuk-form-group">
           <h1 class="govuk-heading-xl">
-            {{query.title or 'What are the details of the product?'}}
+            {{ data.title or 'Your products'}}
           </h1>
+
+          <p class="govuk-body">{{ data.paragraph }}</p>
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
-              <h2 class="govuk-fieldset__heading">
-                Do you want to add a schedule?
-              </h2>
+                Do you want to add manually or upload a schedule?
             </legend>
-
-            <p class="govuk-body">You can add up to 5 manually, if you need to add more, you can attach a schedule.</p>
             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="how-contacted-conditional" name="add_product_method" type="radio" value="manually" {% if data.add_product_method == 'manually' %}checked{% endif %}>
                 <label class="govuk-label govuk-radios__label" for="one-at-a-time">
-                  No, add manually (up to maximum of 5)
+                  add manually (recommended for up to {{data.max or "5"}})
                 </label>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="how-contacted-conditional" name="add_product_method" type="radio" value="upload" data-aria-controls="conditional-how-add-products" {% if data.add_product_method == 'upload' %}checked{% endif %}>
                 <label class="govuk-label govuk-radios__label" for="upload-a-file">
-                  Yes, attach a schedule (recommended for more than 5)
+                  upload a schedule
                 </label>
               </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-add-products">
-                <p class="govuk-body">You can upload your schedule on the next screen, or just continue and upload it later.</p>
-              </div>
+              <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-add-products">
+                <p class="govuk-body">You </p>
+              </div> -->
             </div>
           </fieldset>
         </div>
-<button class="govuk-button" data-module="govuk-button">
-Continue
-</button>
+        <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+        </button>
 
 
       </form>

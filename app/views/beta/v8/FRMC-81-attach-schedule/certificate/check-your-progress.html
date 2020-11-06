@@ -206,9 +206,9 @@ GOV.UK Prototype Kit
               {% endif %}
                  {% if task.content.product_page == 'yes' %}
                   {% if data.add_product_method == "upload" or not data.add_product_method %}
-                  <a href="how-to-add-products?id={{task.page}}&title={{task.title}}" class="govuk-link">
+                  <a href="how-to-add-products?id={{task.page}}&title={{task.title}}&paragraph={{task.content.paragraph}}&max={{task.content.product_max}}" class="govuk-link">
                   {% else %}
-                  <a href="product-list?id={{task.page}}&products=" class="govuk-link">
+                  <a href="product-list?id={{task.page}}" class="govuk-link">
                   {% endif %}
 
                  {% else%}
