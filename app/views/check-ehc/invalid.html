@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+{% endblock %}
+{% block content %}
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+
+            <div class="govuk-panel govuk-panel--red">
+             <h1 class="govuk-panel__title">
+               Certificate is not valid
+             </h1>
+
+           </div>
+
+
+
+           <p class="govuk-body">Additional information about what happens next</p>
+
+
+    <h2 class="govuk-heading-s">Need help or the presented certificate does not match this report?</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>call APHA on (+44)01234 56789</li>
+      <li>email <a href="mailto:example@example.com">example@example.com</a></li>
+    </ul>
+
+         </div>
+        </div>
+
+
+
+{% endblock %}

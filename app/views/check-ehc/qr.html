@@ -1,0 +1,35 @@
+{% extends "qr-layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+{% endblock %}
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Scan a QR code</h1>
+      <!--  <div class="govuk-inset-text">
+    You must use a mobile device with a camera to access the QR scanner.
+  </div>-->
+        <div id="container">
+
+
+            <a id="btn-scan-qr">
+                <img src="https://uploads.sitepoint.com/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+            <a/>
+
+            <canvas hidden="" id="qr-canvas"></canvas>
+
+            <div id="qr-result" hidden="">
+                <b>Data:</b> <span id="outputData"></span>
+            </div>
+        </div>
+
+        <script src="./src/qrCodeScanner.js"></script>
+
+    </div>
+
+</div>
+{% endblock %}
