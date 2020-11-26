@@ -19,16 +19,21 @@ GOV.UK Prototype Kit
           scanner.addListener('scan', function (content) {
             console.log(content);
           });
+
           Instascan.Camera.getCameras().then(function (cameras) {
 
             if (cameras.length > 0) {
-              var constraints = {
-    facingMode: { exact: "environment" }
-  };
-              scanner.start(cameras[0]);
-            } else {
-              console.error('No cameras found.');
-            }
+                   var selectedCam = cameras[0];
+                   $.each(cameras, (i, c) => {
+                       if (c.name.indexOf('back') !== -1) {
+                           selectedCam = c;
+                           return false;
+                       }
+                   });
+
+                   scanner.start(selectedCam);
+               }
+            
           }).catch(function (e) {
             console.error(e);
           });
