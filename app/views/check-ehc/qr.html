@@ -20,20 +20,12 @@ GOV.UK Prototype Kit
             console.log(content);
           });
           Instascan.Camera.getCameras().then(function (cameras) {
+  
             if (cameras.length > 0) {
-  var selectedCam = cameras[0];
-  $.each(cameras, (i, c) => {
-    if (c.name.indexOf('back') != -1) {
-      selectedCam = c;
-      return false;
-    }
-  });
-  scanner.start(selectedCam);
-
-else {
-  console.error('No cameras found.');
-}
-      
+              scanner.start(cameras[0]);
+            } else {
+              console.error('No cameras found.');
+            }
           }).catch(function (e) {
             console.error(e);
           });
