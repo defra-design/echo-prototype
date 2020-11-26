@@ -3,6 +3,8 @@
 GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent%}
+<a href="/check-ehc/" class="govuk-back-link">Back</a>
+
 {{super()}}
 {% endblock %}
 {% block content %}
@@ -10,11 +12,14 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form method="post" novalidate>
-        <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="certificate-number">
+
+  <h1 class="govuk-heading-l">
     What is the certificate number?
-    </label>
   </h1>
+  <div class="govuk-form-group">
+  <label class="govuk-label govuk-!-font-weight-bold" for="full-name">
+    Certicate number
+  </label>
   <input class="govuk-input" id="certificate-number" name="certificate-number" type="text">
 </div>
 
