@@ -33,6 +33,15 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/google-search";
 
 //GOV UK PANEL red-tag.govuk-panel--confirmation {
+
+#preview{
+   width:500px;
+   height: 500px;
+   margin:0px auto;
+   border-color: #000;
+   border: 1px solid;
+}
+
   .govuk-panel--red {
     color: #ffffff;
     background: #d4351c;
