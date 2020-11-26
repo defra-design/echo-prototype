@@ -10,8 +10,9 @@ module.exports = function(router) {
     return str.slice(0, count || 5);
   });
 
+//Certificate number post
   router.post("/check-ehc/certificate-number", function(req, res) {
-    console.log("The post is working")
+    console.log("Posted");
       res.redirect("/check-ehc/qr");
   });
 
