@@ -100,6 +100,36 @@ GOV.UK Prototype Kit
       </p>
     </div>
     {% endif %}
+    {% if data.show_feature_notification_one == "yes"%}
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.<br/>
+      <a class="govuk-notification-banner__link" href="?show_feature_notification_one=no">Dismiss notification</a>
+    </p>
+  </div>
+</div>
+    {% endif %}
+    {% if data.show_feature_notification_two == "yes"%}
+    <div class="app-alert-green app-alert--warning">
+      <p class="govuk-body govuk-!-margin-bottom-4">
+        You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application. <br> <a href="?show_feature_notification_two=no" class="govuk-link">Dismiss notification</a>
+      </p>
+    </div>
+    {% endif %}
+
+    {% if data.show_feature_notification_three == "yes"%}
+    <div class="app-alert-blue app-alert--warning">
+      <p class="govuk-body govuk-!-margin-bottom-4">
+        You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application. <br> <a href="?show_feature_notification_three=no" class="govuk-link">Dismiss notification</a>
+      </p>
+    </div>
+    {% endif %}
       <h1 class="govuk-heading-xl">Your applications</h1>
       <a class="govuk-button" href="choose-certificate" style="display: inline-block;">Start a new application</a>
     </div>
