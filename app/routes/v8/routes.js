@@ -5,6 +5,7 @@ module.exports = function(router) {
   var nunjucks = require('nunjucks');
   var env = new nunjucks.Environment();
 
+  var certificatefallback;
 
   env.addFilter('shorten', function(str, count) {
     return str.slice(0, count || 5);
@@ -21,6 +22,7 @@ module.exports = function(router) {
   const version = 'beta/v8'
   const base_url = version + "/"
   const file_url = version + "/core"
+
 
   // Load any certificate within "app/data/certificates" folder
   const db = []
@@ -55,7 +57,27 @@ module.exports = function(router) {
     next()
   })
 
+  // **** Certificate number ***
+  router.post('/certificate-number-handler', function (req, res) {
 
+    if (certificatefallback == true) {
+      res.redirect('/beta/v8/qr-lookup/unique-code')
+    } else {
+        res.redirect('/beta/v8/qr-lookup/contents')
+    }
+  })
+
+  router.get('/beta/v8/qr-lookup/before-you-start', function (req, res) {
+    req.session.certificatefallback = false;
+    certificatefallback = req.session.certificatefallback
+    res.render('beta/v8/qr-lookup/before-you-start', { certificatefallback })
+  })
+
+  router.get('/beta/v8/qr-lookup/before-you-start-fallback', function (req, res) {
+    req.session.certificatefallback = true;
+    certificatefallback = req.session.certificatefallback
+    res.render('beta/v8/qr-lookup/before-you-start', { certificatefallback })
+  })
   // **** cloning ***
   router.post('/' + base_url + '*/clone', function(req, res) {
     var copy = req.session.data.copy_as_new || ""

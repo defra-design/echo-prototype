@@ -11,18 +11,18 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      What certificate do you want to authenticate?
+      What is the unique code?
     </h1>
 
-    <form method="post" action="/certificate-number-handler">
+    <form action="/check-ehc/valid" method="POST">
       <!-- <form  action="check-your-progress"  method="POST"> -->
       <fieldset class="govuk-fieldset">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-!-font-weight-bold" for="certificate-number">
-            Certificate number
+          <label class="govuk-label govuk-!-font-weight-bold" for="unique-code">
+            Unique code
           </label>
-      <p class="govuk-body">Enter the number on the certificate that starts with with "No:"</p>
-          <input class="govuk-input govuk-input--width-20" id="certificate-number" name="certificate-number" type="text" aria-describedby="certificate-number-hint" value="">
+
+          <input class="govuk-input govuk-input--width-20" id="exporter_name" name="unique-code" type="text" aria-describedby="exporter_name-hint" value="">
         </div>
         <input class="govuk-button" type="submit" name="saveAndContinue" value="continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
 
