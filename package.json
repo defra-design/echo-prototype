@@ -25,6 +25,7 @@
     "cross-spawn": "^6.0.5",
     "del": "^3.0.0",
     "dotenv": "^6.0.0",
+    "download-pdf": "^0.1.6",
     "express": "4.16.3",
     "express-session": "^1.13.0",
     "express-writer": "0.0.4",
