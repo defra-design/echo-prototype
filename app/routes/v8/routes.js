@@ -70,12 +70,14 @@ module.exports = function(router) {
   router.get('/beta/v8/qr-lookup/before-you-start', function (req, res) {
     req.session.certificatefallback = false;
     certificatefallback = req.session.certificatefallback
+    console.log(certificatefallback);
     res.render('beta/v8/qr-lookup/before-you-start', { certificatefallback })
   })
 
   router.get('/beta/v8/qr-lookup/before-you-start-fallback', function (req, res) {
     req.session.certificatefallback = true;
     certificatefallback = req.session.certificatefallback
+    console.log(certificatefallback);
     res.render('beta/v8/qr-lookup/before-you-start', { certificatefallback })
   })
   // **** cloning ***
