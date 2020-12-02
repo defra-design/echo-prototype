@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-GOV.UK Prototype Kit
+What is the unique code? - Check an export health certificate - GOV.UK
 {% endblock %}
 {% block beforeContent %}
 {{super()}}
@@ -22,7 +22,7 @@ GOV.UK Prototype Kit
           <label class="govuk-label govuk-!-font-weight-bold" for="unique-code">
             Unique code
           </label>
-
+          <p class="govuk-hint">Enter the unique 20 letter code from the QR code on the certificate</p>
           <input class="govuk-input govuk-input--width-20" id="exporter_name" name="unique-code" type="text" aria-describedby="exporter_name-hint" value="">
         </div>
         <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">

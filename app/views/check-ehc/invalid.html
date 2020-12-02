@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-GOV.UK Prototype Kit
+Certificate is not valid - Check an export health certificate - GOV.UK
 {% endblock %}
 {% block beforeContent%}
 {{super()}}
@@ -14,16 +14,21 @@ GOV.UK Prototype Kit
 
             <div class="govuk-panel govuk-panel--red">
              <h1 class="govuk-panel__title">
-               Certificate is not valid
+               No, this certificate is not valid
              </h1>
 
            </div>
 
 
+           {% if certificatefallback %}
+             <p class="govuk-body">The certificate number you entered does not match our records for this certificate.</p>
+             {% else %}
+             <p class="govuk-body">The QR code you scanned does not match our records for this certificate.</p>
+           {% endif %}
 
-           <p class="govuk-body">The serial number you entered and QR code on the certificate do not match our records.</p>
 
-           <p class="govuk-body">If you think you could have made a mistake, <a href="/check-ehc/certificate-number">enter the serial number again</a>.</p>
+
+           <p class="govuk-body">If you think you've made a mistake, <a href="/beta/v8/qr-lookup/certificate-number">enter the certificate number again</a>.</p>
 
 
            <h2 class="govuk-heading-s">Get help</h2>

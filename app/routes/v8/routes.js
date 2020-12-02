@@ -70,15 +70,29 @@ module.exports = function(router) {
   router.get('/beta/v8/qr-lookup/before-you-start', function (req, res) {
     req.session.certificatefallback = false;
     certificatefallback = req.session.certificatefallback
-    console.log(certificatefallback);
     res.render('beta/v8/qr-lookup/before-you-start', { certificatefallback })
+  })
+
+  router.get('/beta/v8/qr-lookup/unique-code', function (req, res) {
+    req.session.certificatefallback = true;
+    certificatefallback = req.session.certificatefallback
+    res.render('beta/v8/qr-lookup/unique-code', { certificatefallback })
+  })
+
+  router.get('/beta/v8/qr-lookup/contents', function (req, res) {
+    req.session.certificatefallback = false;
+    certificatefallback = req.session.certificatefallback
+    res.render('beta/v8/qr-lookup/contents', { certificatefallback })
   })
 
   router.get('/beta/v8/qr-lookup/before-you-start-fallback', function (req, res) {
     req.session.certificatefallback = true;
     certificatefallback = req.session.certificatefallback
-    console.log(certificatefallback);
     res.render('beta/v8/qr-lookup/before-you-start', { certificatefallback })
+  })
+
+  router.get('/check-ehc/invalid', function (req, res) {
+    res.render('check-ehc/invalid', { certificatefallback })
   })
   // **** cloning ***
   router.post('/' + base_url + '*/clone', function(req, res) {

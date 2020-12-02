@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-GOV.UK Prototype Kit
+What certificate do you want to check? - Check an export health certificate - GOV.UK
 {% endblock %}
 {% block beforeContent %}
 {{super()}}
@@ -11,7 +11,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      What certificate do you want to authenticate?
+      What certificate do you want to check?
     </h1>
     <img src="/public/images/cert-number-illustration.jpg" alt="Certificate number illustration" style="max-width:100%;
 max-height:100%;">
@@ -22,7 +22,7 @@ max-height:100%;">
           <label class="govuk-label govuk-!-font-weight-bold" for="certificate-number">
             Certificate number
           </label>
-      <p class="govuk-body">Enter the number on the certificate that starts with with "No:"</p>
+      <p class="govuk-hint">Enter the 9 digit number from the certificate</p>
           <input class="govuk-input govuk-input--width-20" id="certificate-number" name="certificate-number" type="text" aria-describedby="certificate-number-hint" value="">
         </div>
         <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
