@@ -60,9 +60,20 @@ Scan the QR code - Check an export health certificate - GOV.UK
 
       }
 </style>
-<h1 class="govuk-heading-xl">Scan the QR code</h1>
+<h1 class="govuk-heading-xl" id="scanqr">Scan the QR code</h1>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <noscript>
+      <style>
+         #qr-reader {display:none;}
+          #qr-reader-results {display:none;}
+          #scanqr {display:none;}
+          #qrfallback {display:none;}.
+     </style>
+      <h1 class="govuk-heading-l">Javascript is turned off</h1>
+      <p class="govuk-body">The QR code scanner uses to javascript. Turn on javascript or <a href="unique-code">manually enter the unique code</a>.</p>
+    </noscript>
+
     <div id="qr-reader" ></div>
     <div id="qr-reader-results"></div>
   </div>
@@ -104,6 +115,6 @@ Scan the QR code - Check an export health certificate - GOV.UK
   });
 </script>
 <br/>
-<a href="unique-code" class="govuk-link">I cannot use the QR scanner</a>
+<a href="unique-code" class="govuk-link" id="qrfallback">I cannot use the QR scanner</a>
 
 {% endblock %}
