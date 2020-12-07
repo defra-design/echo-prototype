@@ -46,6 +46,7 @@ Scan the QR code - Check an export health certificate - GOV.UK
     position: relative;
     margin-top: 0;
     margin-bottom: 22px;
+    margin-right: 20px;
     padding: 8px 10px 7px;
     border: 2px solid transparent;
     border-radius: 0;
@@ -57,18 +58,24 @@ Scan the QR code - Check an export health certificate - GOV.UK
     vertical-align: top;
     cursor: pointer;
     -webkit-appearance: none;
+}
+#qr-reader__dashboard_section_swaplink {
+  margin-right: 19px;
+}
 
-      }
 </style>
-<h1 class="govuk-heading-xl" id="scanqr">Scan the QR code</h1>
+<h1 class="govuk-heading-xl" id="scan-qr-heading">Scan the QR code</h1>
 <div class="govuk-grid-row">
+  <img src="/public/images/scanqr.jpg" alt="Scan QR code illustration" style="max-width:100%;
+max-height:100%;" id="scan-qr-image">
   <div class="govuk-grid-column-two-thirds">
     <noscript>
       <style>
          #qr-reader {display:none;}
           #qr-reader-results {display:none;}
-          #scanqr {display:none;}
-          #qrfallback {display:none;}.
+          #scan-qr-heading {display:none;}
+          #scan-qr-image {display:none;}
+          #qr-fallback {display:none;}.
      </style>
       <h1 class="govuk-heading-l">Javascript is turned off</h1>
       <p class="govuk-body">The QR code scanner uses to javascript. Turn on javascript or <a href="unique-code">manually enter the unique code</a>.</p>
@@ -115,6 +122,6 @@ Scan the QR code - Check an export health certificate - GOV.UK
   });
 </script>
 <br/>
-<a href="unique-code" class="govuk-link" id="qrfallback">I cannot use the QR scanner</a>
+<a href="unique-code" class="govuk-link" id="qr-fallback">I cannot use the QR scanner</a>
 
 {% endblock %}
