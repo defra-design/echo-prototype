@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+
 {% block pageTitle %}
 Certificate is not valid - Check an export health certificate - GOV.UK
 {% endblock %}
@@ -6,16 +7,29 @@ Certificate is not valid - Check an export health certificate - GOV.UK
 {{super()}}
 {% endblock %}
 {% block content %}
+<style type="text/css">
 
+  #invalid {
+
+      font-size: 3.5em;
+        margin-bottom: 15px;
+        font-weight: bolder;
+}
+  </style>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
 
             <div class="govuk-panel govuk-panel--red">
+
+
+<div id="invalid">X</div>
+
              <h1 class="govuk-panel__title">
-               No, this certificate is not valid
+              No, this certificate is not valid
              </h1>
+
 
            </div>
 

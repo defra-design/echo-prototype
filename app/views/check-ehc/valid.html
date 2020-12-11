@@ -6,27 +6,32 @@ Certificate is valid - Check an export health certificate - GOV.UK
 {{super()}}
 {% endblock %}
 {% block content %}
-
+<style type="text/css">
+  #valid {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  </style>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
 
         <div class="govuk-panel govuk-panel--confirmation">
-         <h1 class="govuk-panel__title">
+
+           <div id="valid">&#10003;</div>
+           <h1 class="govuk-panel__title">
            Yes, this certificate is valid
          </h1>
          <div class="govuk-panel__body">
-           The certificate number is <br><strong>33/3/333333</strong>
+           The certificate number is <br><strong>20/02/013960</strong>
          </div>
        </div>
 
        <h2 class="govuk-heading-m">Certificate details</h2>
 
-        <p class="govuk-body">Cattle skins or hides to the People's Republic of China</p>
-        <p class="govuk-body">Certified: 03/10/2019</p>
-        <p class="govuk-body">Exported: 04/10/2019</p>
-        <p class="govuk-body">Applicant: Exporter Ltd, 29 Bleasey Road, Warrington WA1 1AA</p>
-        <p class="govuk-body">Certified by: Certifiers Ltd, 21 Rock Salts Lane, Poulton-Le-Fylde FY6 7AB, UK.</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Destination country:</span> People’s Republic of China</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Certificate:</span> Hides & Skins of Cattle to China</p>
+
 
 <h2 class="govuk-heading-s">Something wrong with this certificate?</h2>
 
