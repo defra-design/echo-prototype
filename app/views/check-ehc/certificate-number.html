@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+What certificate do you want to check? - Check an export health certificate - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<!--start-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      What is the certificate number?
+    </h1>
+    <img src="/public/images/cert-number-illustration-no-qr.jpg" style="max-width:100%;
+max-height:100%;" alt="Diagram showing location of the certificate number on the Export Health Certificate">
+    <form method="post" action="/certificate-number-handler">
+      <!-- <form  action="check-your-progress"  method="POST"> -->
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="certificate-number">
+            Certificate number
+          </label>
+      <p class="govuk-hint">Enter the 9 digit number from the certificate, for example 12/3/456789</p>
+          <input class="govuk-input govuk-input--width-20" id="certificate-number" name="certificate-number" type="text" aria-describedby="certificate-number-hint" value="">
+        </div>
+        <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+      </fieldset>
+    </form>
+    <p class="govuk-body">
+
+  </div>
+</div>
+{% endblock %}
