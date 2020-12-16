@@ -3,7 +3,9 @@
 {% block pageTitle %}
 Scan the QR code - Check an export health certificate - GOV.UK
 {% endblock %}
-
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 {% block content %}
 <script src="/public/javascripts/html5-qrcode.min.js"></script>
 <style media="screen">
