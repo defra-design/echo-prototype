@@ -66,6 +66,7 @@ module.exports = function(router) {
 
   router.post('/check-ehc/unique-code', function (req, res) {
     var reference = req.session.data['unique-code'];
+    certificatefallback = true;
     console.log(reference);
     switch(reference) {
   case "1234-5678-9101":

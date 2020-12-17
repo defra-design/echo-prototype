@@ -8,14 +8,28 @@ Certificate is not valid - Check an export health certificate - GOV.UK
 {% endblock %}
 {% block content %}
 <style type="text/css">
+  @media only screen and (max-device-width: 480px) {
+#invalid {
 
-  #invalid {
-
-      font-size: 3.5em;
-        margin-bottom: 5px;
-        margin-top: -28px;
-        font-weight: bolder;
 }
+#invalid-image {
+  max-width:12%;
+  margin-bottom: 10px;
+}
+  }
+
+  @media only screen and (min-device-width: 480px) {
+#invalid {
+  margin-bottom: 5px;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+#invalid-image {
+  max-width:9%;
+  margin-bottom: 15px;
+}
+  }
+
   </style>
 
         <div class="govuk-grid-row">
@@ -26,8 +40,7 @@ Certificate is not valid - Check an export health certificate - GOV.UK
 
 
 <div id="invalid">
-  <img src="/public/images/invalid.png" alt="Invalid certificate" style="max-width:10%;
-  ">
+  <img src="/public/images/invalid.png" alt="Invalid certificate" id="invalid-image" style=""/>
 </div>
 
              <h1 class="govuk-panel__title">
