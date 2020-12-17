@@ -15,7 +15,7 @@ What is the unique code? - Check an export health certificate - GOV.UK
     </h1>
     <img src="/public/images/certificate-reference-no-qr.jpg" style="max-width:100%;
     max-height:100%;" alt="Diagram showing location of the 12 digit number on the Export Health Certificate below the QR code">
-    <form action="/check-ehc/valid" method="POST">
+    <form method="POST">
       <!-- <form  action="check-your-progress"  method="POST"> -->
       <fieldset class="govuk-fieldset">
         <div class="govuk-form-group">
@@ -23,7 +23,7 @@ What is the unique code? - Check an export health certificate - GOV.UK
             12 digit number
           </label>
           <p class="govuk-hint">This is in the top right corner of the EHC, for example 1234-5678-9101</p>
-          <input class="govuk-input govuk-input--width-20" id="exporter_name" name="unique-code" type="text" aria-describedby="exporter_name-hint" value="">
+          <input class="govuk-input govuk-input--width-20" id="unique-code" name="unique-code" type="text" aria-describedby="exporter_name-hint" value="">
         </div>
         <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
 

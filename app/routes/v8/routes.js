@@ -57,9 +57,37 @@ module.exports = function(router) {
     next()
   })
 
+
+  //No-QR journey
+  // **** Certificate number ***
+  router.post('/check-ehc/certificate-number', function (req, res) {
+      res.redirect('/check-ehc/unique-code')
+  })
+
+  router.post('/check-ehc/unique-code', function (req, res) {
+    var reference = req.session.data['unique-code'];
+    console.log(reference);
+    switch(reference) {
+  case "1234-5678-9101":
+    res.redirect('/check-ehc/valid');
+    break;
+  case "123456789101":
+    res.redirect('/check-ehc/valid');
+    break;
+  case "1567-2876-9982":
+    res.redirect('/check-ehc/valid');
+    break;
+  case "156728769982":
+    res.redirect('/check-ehc/valid');
+    break;
+  default:
+  res.redirect('/check-ehc/invalid');
+}
+
+  })
+
   // **** Certificate number ***
   router.post('/certificate-number-handler', function (req, res) {
-
     if (certificatefallback == true) {
       res.redirect('/beta/v8/qr-lookup/unique-code')
     } else {
