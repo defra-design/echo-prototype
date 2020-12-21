@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">SOPHIE123EHC</span>
+    <h1 id="versionsHeading" class="govuk-heading-l disabled">Manage behaviour</h1>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">ID</th>
+          <th scope="col" class="govuk-table__header">Question</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">305</th>
+          <td class="govuk-table__cell">Approval number: place of origin</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">Choose Page</h3>
+        </legend>
+
+
+        <select class="govuk-select" id="select-form-page" name="formPageId">
+          <option value="">Select</option>
+          <option value="13970" selected>1
+            Test page
+          </option>
+        </select>
+      </fieldset>
+    </div>
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-heading-m">
+            Who is this question for?
+          </h2>
+        </legend>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="applicant" name="audience" type="radio" value="applicant">
+            <label class="govuk-label govuk-radios__label" for="applicant">
+              Applicant
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="certifier" name="audience" type="radio" value="certifier">
+            <label class="govuk-label govuk-radios__label" for="certifier">
+              Certifier
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="both" name="audience" type="radio" value="both">
+            <label class="govuk-label govuk-radios__label" for="both">
+              Both
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-heading-m">Mandatory/optional behaviour</h2>
+        </legend>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mandatory" name="mandatory-optional" type="radio" value="mandatory">
+            <label class="govuk-label govuk-radios__label" for="mandatory">
+              Mandatory
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="optional" name="mandatory-optional" type="radio" value="optional">
+            <label class="govuk-label govuk-radios__label" for="optional">
+              Optional
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">Field length behaviour</h3>
+        </legend>
+
+        <div id="min-and-max-container" class="">
+
+          <div id="min-container" class="">
+            <label class="govuk-label" for="minLength">Minimum field length</label>
+            <span class="govuk-hint">This is the minimum length of answer required</span>
+            <input class="govuk-input column-one-half" id="minLength" name="minLength" data-qa-id="Input-MinLength" value="100" type="number" step="1" />
+          </div>
+
+          <div id="max-container" class="govuk-!-margin-top-3">
+            <label class="govuk-label" for="maxLength">Maximum field length</label>
+            <span class="govuk-hint">This is the maximum length of answer required</span>
+            <input class="govuk-input column-one-half" id="maxLength" name="maxLength" data-qa-id="Input-MaxLength" value="150" type="number" step="1" />
+          </div>
+        </div>
+        <div id="min-and-max-validation-message-container" class="govuk-!-margin-top-3 ">
+          <label class="govuk-label" for="minMaxMessage">Error validation message</label>
+          <textarea class="govuk-textarea" id="minMaxMessage" name="minMaxMessage" data-qa-id="Input-MinMaxMessage" rows="3">This is a mandatory question</textarea>
+        </div>
+
+
+      </fieldset>
+    </div>
+
+
+    <form action="javascript:alert('Not in prototype');" method="GET">
+        <div>
+            <input class="govuk-button margin-top-30"
+                   type="submit"
+                   value="Save and continue"
+                   id="Button-CreateNewDocumentVersion"
+                   data-qa-id="Button-CreateNewEHCDocumentVersion">
+        </div>
+    </form>
+
+
+
+
+  </div>
+  {% endblock %}

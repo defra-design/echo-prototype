@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">SOPHIE123EHC</span>
+    <h1 id="versionsHeading" class="govuk-heading-l disabled">Manage rules</h1>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">ID</th>
+          <th scope="col" class="govuk-table__header">Question</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">305</th>
+          <td class="govuk-table__cell">Approval number: place of origin</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-heading-m">If the response to the question<br/>"Question Title"<br/>is:</h2>
+        </legend>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="show" name="visibility" type="radio" value="show">
+            <label class="govuk-label govuk-radios__label" for="show">
+              Equal to
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Not equal to
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Greater than
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Less than
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Earlier than
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Later than
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="value">
+      Value
+    </label>
+  </h2>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-heading-m">What do you want to do to the question?<br/>"Question Title"<br/></h2>
+        </legend>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="show" name="visibility" type="radio" value="show">
+            <label class="govuk-label govuk-radios__label" for="show">
+              Show
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Hide
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+    <form action="javascript:alert('Not in prototype');" method="GET">
+        <div>
+            <input class="govuk-button margin-top-30"
+                   type="submit"
+                   value="Save and continue"
+                   id="Button-CreateNewDocumentVersion"
+                   data-qa-id="Button-CreateNewEHCDocumentVersion">
+        </div>
+    </form>
+
+
+
+
+
+
+
+  </div>
+  {% endblock %}

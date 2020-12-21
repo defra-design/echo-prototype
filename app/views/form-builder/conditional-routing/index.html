@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">SOPHIE123EHC</span>
+                <h1 id="versionsHeading" class="govuk-heading-l disabled">Manage EHC versions</h1>
+
+                <table class="govuk-table" aria-describedby="Document version explained">
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col">EHC version</th>
+                        <th class="govuk-table__header" scope="col">PDF</th>
+                        <th class="govuk-table__header" scope="col">Status</th>
+                        <th class="govuk-table__header" id="EHC-document-cws">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="govuk-table__row" data-qa-id="grid-row-version-1.0">
+                        <td class="govuk-table__cell" id="EHC-document-version-0"
+                            data-qa-id="version-text-1.0">1.0
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-0">
+                            ehc-sophie123ehc-1.0.pdf
+                        </td>
+
+                        <td class="govuk-table__cell"
+                            id="EHC-document-status-0"
+                            data-qa-id="status-column">
+                            <strong class="orange-tag">DRAFT</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="javascript:alert('Not in prototype');"
+                                   id="document-action-draft-manage-pages-1.0" class="action-link" data-qa-id="document-action-draft-manage-pages-1.0"
+                                   target="_self">Manage pages</a>
+                            </div>
+                            <div>
+                                <a href="/form-builder/conditional-routing/manage-questions/index"
+                                   id="document-action-draft-manage-1.0" class="action-link" data-qa-id="document-action-draft-manage-1.0"
+                                   target="_self">Manage questions</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype');"
+                                   id="document-action-draft-publish-1.0" class="action-link" data-qa-id="document-action-draft-publish-1.0"
+                                   target="_self">Publish form</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype');"
+                                   id="document-action-draft-delete-1.0" class="action-link" data-qa-id="document-action-draft-delete-1.0"
+                                   target="_self">Delete form</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype');"
+                                   id="document-action-draft-preview-1.0" class="action-link" data-qa-id="document-action-draft-preview-1.0"
+                                   target="_blank">Preview form</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype');"
+                                   id="document-action-clone-1.0" class="action-link" data-qa-id="document-action-clone-1.0"
+                                   target="_self">Clone form</a>
+                            </div>
+                        </td>
+                    </tbody>
+                </table>
+                <form action="javascript:alert('Not in prototype');" method="GET">
+                    <div>
+                        <input class="govuk-button margin-top-30"
+                               type="submit"
+                               value="Create new EHC version"
+                               id="Button-CreateNewDocumentVersion"
+                               data-qa-id="Button-CreateNewEHCDocumentVersion">
+                    </div>
+                </form>
+
+  </div>
+</div>
+{% endblock %}

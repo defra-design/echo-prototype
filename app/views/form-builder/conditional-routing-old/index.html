@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l heading-with-help">Form questions</h1>
+    <form action="manage/health-cert-editor" method="GET">
+      <div>
+        <input class="govuk-button" type="submit" id="Button-CreateNewCertificate" value="Create new question">
+      </div>
+    </form>
+    <form name="search-form" action="" method="GET">
+      <div class="border-box govuk-grid-column-full">
+        <div class="govuk-grid-column-one-half govuk-form-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="filter">Filter</label>
+            <input class="govuk-input" id="filter" type="text" name="filter" data-qa-id="TextField-filter" value="{{query.filter}}" placeholder="ID, Text, Question type, Form type">
+          </div>
+        </div>
+        <div class="govuk-form-group govuk-grid-column-one-quarter">
+          <div class="govuk-label margin-top-45">
+            <button type="submit" name="name" value="" class="link-button" id="Button-Search" data-qa-id="Button-Search">
+              Search
+            </button>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sort">Sort By</label>
+          <select class="govuk-select" id="sort" name="sort" data-qa-id="Select-">
+            <option value="">Please Select</option>
+            <option value="ID_NUMBER:DESC">ID descending</option>
+            <option value="ID_NUMBER:ASC">ID ascending</option>
+            <option value="TEXT:DESC">Text descending</option>
+            <option value="TEXT:ASC">Text ascending</option>
+            <option value="QUESTION_TYPE:DESC">Question type descending</option>
+            <option value="QUESTION_TYPE:ASC">Question type ascending</option>
+            <option value="FORM_TYPE:DESC">Form type descending</option>
+            <option value="FORM_TYPE:ASC">Form type ascending</option>
+
+          </select>
+        </div>
+      </div>
+    </form>
+    {% if query.filter %}
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">ID</th>
+          <th class="govuk-table__header">Form type</th>
+          <th class="govuk-table__header">Question type</th>
+          <th class="govuk-table__header">Text</th>
+          <th class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="govuk-table__row" data-qa-id="Row-HealthCertificate-X005-2849EHC">
+          <td class="govuk-table__cell no-border">1</td>
+          <td class="govuk-table__cell no-border">EXA</td>
+          <td class="govuk-table__cell no-border">Single line text</td>
+          <td class="govuk-table__cell no-border">What are the dates of processing of the product?</td>
+          <td class="govuk-table__cell actions-cell no-border">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell no-border">2</td>
+          <td class="govuk-table__cell no-border">EXA</td>
+          <td class="govuk-table__cell no-border">Multi line text</td>
+          <td class="govuk-table__cell no-border">What are the batch numbers?</td>
+          <td class="govuk-table__cell actions-cell no-border">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell no-border">3</td>
+          <td class="govuk-table__cell no-border">EXA</td>
+          <td class="govuk-table__cell no-border">Single select</td>
+          <td class="govuk-table__cell no-border">Are you the exporter or the agent of the exporter?</td>
+          <td class="govuk-table__cell actions-cell no-border">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell no-border">4</td>
+          <td class="govuk-table__cell no-border">EXA</td>
+          <td class="govuk-table__cell no-border">Multi select</td>
+          <td class="govuk-table__cell no-border">What is the origin of the raw materials?</td>
+          <td class="govuk-table__cell actions-cell no-border">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell no-border">5</td>
+          <td class="govuk-table__cell no-border">EHC</td>
+          <td class="govuk-table__cell no-border">Date</td>
+          <td class="govuk-table__cell no-border">When will the certificate be issued?</td>
+          <td class="govuk-table__cell actions-cell no-border">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

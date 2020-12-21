@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">SOPHIE123EHC</span>
+    <h1 id="versionsHeading" class="govuk-heading-l disabled">Manage rules</h1>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">ID</th>
+          <th scope="col" class="govuk-table__header">Question</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">305</th>
+          <td class="govuk-table__cell">Approval number: place of origin</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">What is the dependent question?</h3>
+
+        </legend>
+        <p class="govuk-hint">
+        The result of this question will affect whether your question is shown or hidden
+        </p>
+        <select class="govuk-select" id="select-form-page" name="formPageId">
+          <option value="">Select</option>
+          <option value="1">Q1 - What is the planned date of certification?</option>
+          <option value="2">Q2 - What is the name of the exporter?</option>
+          <option value="3">Q3 - Are you the exporter or the agent of the exporter?</option>
+        </select>
+      </fieldset>
+    </div>
+
+    <form action="javascript:alert('Not in prototype');" method="GET">
+        <div>
+            <input class="govuk-button margin-top-30"
+                   type="submit"
+                   value="Save and continue"
+                   id="Button-CreateNewDocumentVersion"
+                   data-qa-id="Button-CreateNewEHCDocumentVersion">
+        </div>
+    </form>
+
+
+
+
+
+
+
+  </div>
+  {% endblock %}
