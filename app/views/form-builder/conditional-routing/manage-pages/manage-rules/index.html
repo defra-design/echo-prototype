@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l ">8270EHC v2.56</span>
+    <h1 id="formEditorHeading" class="govuk-heading-l heading-with-help">Manage rules</h1>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page title:    </span>For consignments transiting EU countries, who is responsible for the consignment when in the EU?</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page ID:    </span>13</p>
+    {% if activerules %}
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">Active rules</h2>
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Question ID</th>
+      <th scope="col" class="govuk-table__header">Question</th>
+      <th scope="col" class="govuk-table__header">Operator</th>
+      <th scope="col" class="govuk-table__header">Response</th>
+      <th scope="col" class="govuk-table__header">Action</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">723</td>
+      <td class="govuk-table__cell">If "Is the destination of your consignment the EU or a third country?""</td>
+      <td class="govuk-table__cell">{{ data['rule-operator'] }}</td>
+      <td class="govuk-table__cell">{{ data['rule-response'] }}</td>
+        <td class="govuk-table__cell">{{ data['rule-action'] }}</td>
+      <td class="govuk-table__cell">
+        <a href="/form-builder/conditional-routing/manage-pages/manage-rules/create-rule-2">Edit</a><br/>
+        <form method="post" action="/form-builder/conditional-routing/manage-pages/manage-rules/delete">
+          <div>
+              <input class="link-button"
+                     type="submit"
+                     value="Delete"
+                     >
+          </div>
+        </form>
+    </tr>
+
+  </tbody>
+</table>
+{% endif %}
+
+<a id="link-createNewPage" href="/form-builder/conditional-routing/manage-pages/manage-rules/create-rule-1"
+   class="govuk-button govuk-!-margin-top-6">Create a new rule</a>
+  </div>
+</div>
+{% endblock %}

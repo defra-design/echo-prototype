@@ -23,187 +23,1729 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">SOPHIE123EHC</span>
-                <h1 id="versionsHeading" class="govuk-heading-l disabled">EHC form editor</h1>
-                <div class="app-summary-card ">
-          <header class="app-summary-card--header">
-            <h2 class="app-summary-card--title">305</h2>
-            <div class="app-summary-card__actions">
-              <ul class="app-summary-card__actions-list">
-                <li class="app-summary-card__actions-list-item">
-                  <a class="govuk-link" href="">
-                    Delete<span class="govuk-visually-hidden"></span>
-                  </a>
-                </li>
+    <div class="govuk-grid-column-full">
+        <span class="govuk-caption-l ">8270EHC v2.56</span>
+        <h2 id="formEditorHeading" class="govuk-heading-l heading-with-help">EHC form editor</h2>
+        <form action="" method="POST">
+          <input type="hidden" name="crumb_csrf_token" value="4yGKh59pc5XYb_1FG9wL-xjcrhyBwOqVZKjZnCMOuNA"/>
 
-              </ul>
-            </div>
-          </header>
-          <div class="app-summary-card--content">
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
-              <tr class="govuk-table__row">
-<h3 class="govuk-heading-m">Behaviours</h3>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Form question
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                    Approval number of place of origin
-
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Page
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                    1: Test page
-
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Certificate fields
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                    Description of products 2 69
-
-                </dd>
-              </div>
-
-
-
-
-
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Order
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                    1
-
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Audience
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                    Exporter
-
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Mandatory
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                  Yes
-
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Min characters
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                    100
-
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Max characters
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                    150
-
-                </dd>
-              </div>
-
-              <h3 class="govuk-heading-m govuk-!-margin-top-9">Rules</h3>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Dependent question ID
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-                    1
-
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Dependent question
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-
-
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Operator
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-
-
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Response
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-
-
-                </dd>
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Action
-                </dt>
-                <dd class="govuk-summary-list__value">
-
-
-
-                </dd>
-              </div>
-
-            </dl>
-          </div>
-        </div>
-        <p><a href="#" class="govuk-link">Add a question</a></p>
-                <form action="javascript:alert('Not in prototype');" method="GET">
-                    <div>
-                        <input class="govuk-button margin-top-30"
-                               type="submit"
-                               value="Save and continue"
-                               id="Button-CreateNewDocumentVersion"
-                               data-qa-id="Button-CreateNewEHCDocumentVersion">
-                    </div>
-                </form>
-
+          <table id="form-table" class="govuk-table margin-top-30">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Form Question Text</th>
+              <th class="govuk-table__header" scope="col">Form Question</th>
+              <th class="govuk-table__header" scope="col">Page</th>
+              <th class="govuk-table__header" scope="col">Certificate Fields</th>
+              <th class="govuk-table__header" scope="col">Behaviours</th>
+              <th class="govuk-table__header" scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody id="form-table-body" class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29548" id="Text-29548">Commodity code
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29548"
+                  id="QuestionID-29548">579
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29548"
+                  id="PageInfo-29548">1:What are the commodity details?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29548" id="Name-29548">
+                  No<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29548"
+                  id="Constraint-29548">
+                <ul class="govuk-list">
+                  <li id="page-order-579">Order: 1</li>
+                  <li id="mandatory-579">Mandatory: No</li>
+                  <li id="min-length-579">Min. chars: 4</li>
+                  <li id="max-length-579">Max. chars: 10</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-0">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-0"
+                        data-qa-id="Link-DeSelect-Question-29548">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-0"
+                   data-qa-id="Link-Manage-Behaviours-29548">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29549" id="Text-29549">Description of commodity
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29549"
+                  id="QuestionID-29549">757
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29549"
+                  id="PageInfo-29549">1:What are the commodity details?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29549" id="Name-29549">
+                  Cn Code<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29549"
+                  id="Constraint-29549">
+                <ul class="govuk-list">
+                  <li id="page-order-757">Order: 2</li>
+                  <li id="mandatory-757">Mandatory: No</li>
+                  <li id="min-length-757">Min. chars: 1</li>
+                  <li id="max-length-757">Max. chars: 35</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-1">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-1"
+                        data-qa-id="Link-DeSelect-Question-29549">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-1"
+                   data-qa-id="Link-Manage-Behaviours-29549">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29550" id="Text-29550">Production area for frozen or processed bivalve molluscs
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29550"
+                  id="QuestionID-29550">581
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29550"
+                  id="PageInfo-29550">1:What are the commodity details?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29550" id="Name-29550">
+                  Region of Origin<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29550"
+                  id="Constraint-29550">
+                <ul class="govuk-list">
+                  <li id="page-order-581">Order: 3</li>
+                  <li id="mandatory-581">Mandatory: No</li>
+                  <li id="min-length-581">Min. chars: 1</li>
+                  <li id="max-length-581">Max. chars: 21</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-2">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-2"
+                        data-qa-id="Link-DeSelect-Question-29550">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-2"
+                   data-qa-id="Link-Manage-Behaviours-29550">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29551" id="Text-29551">Net weight of consignment
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29551"
+                  id="QuestionID-29551">758
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29551"
+                  id="PageInfo-29551">1:What are the commodity details?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29551" id="Name-29551">
+                  Total Nt Weight<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29551"
+                  id="Constraint-29551">
+                <ul class="govuk-list">
+                  <li id="page-order-758">Order: 4</li>
+                  <li id="mandatory-758">Mandatory: No</li>
+                  <li id="min-length-758">Min. chars: 1</li>
+                  <li id="max-length-758">Max. chars: 29</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-3">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-3"
+                        data-qa-id="Link-DeSelect-Question-29551">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-3"
+                   data-qa-id="Link-Manage-Behaviours-29551">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29552" id="Text-29552">Gross weight of consignment
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29552"
+                  id="QuestionID-29552">759
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29552"
+                  id="PageInfo-29552">1:What are the commodity details?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29552" id="Name-29552">
+                  Total Gross Weight<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29552"
+                  id="Constraint-29552">
+                <ul class="govuk-list">
+                  <li id="page-order-759">Order: 5</li>
+                  <li id="mandatory-759">Mandatory: No</li>
+                  <li id="min-length-759">Min. chars: 1</li>
+                  <li id="max-length-759">Max. chars: 25</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-4">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-4"
+                        data-qa-id="Link-DeSelect-Question-29552">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-4"
+                   data-qa-id="Link-Manage-Behaviours-29552">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29553" id="Text-29553">Temperature of commodity
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29553"
+                  id="QuestionID-29553">583
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29553"
+                  id="PageInfo-29553">1:What are the commodity details?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29553" id="Name-29553">
+                  Temperature Chilled<br/>
+                  Temperature Ambient<br/>
+                  Temperature Frozen<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29553"
+                  id="Constraint-29553">
+                <ul class="govuk-list">
+                  <li id="page-order-583">Order: 6</li>
+                  <li id="mandatory-583">Mandatory: No</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-5">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-5"
+                        data-qa-id="Link-DeSelect-Question-29553">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-5"
+                   data-qa-id="Link-Manage-Behaviours-29553">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29554" id="Text-29554">Intended use
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29554"
+                  id="QuestionID-29554">760
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29554"
+                  id="PageInfo-29554">2:What is the intended use of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29554" id="Name-29554">
+                  Certified for 1<br/>
+                  Certified for 2<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29554"
+                  id="Constraint-29554">
+                <ul class="govuk-list">
+                  <li id="page-order-760">Order: 1</li>
+                  <li id="mandatory-760">Mandatory: No</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-6">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-6"
+                        data-qa-id="Link-DeSelect-Question-29554">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-6"
+                   data-qa-id="Link-Manage-Behaviours-29554">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29555" id="Text-29555">Scientific species name
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29555"
+                  id="QuestionID-29555">584
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29555"
+                  id="PageInfo-29555">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29555" id="Name-29555">
+                  Species1<br/>
+                  Species2<br/>
+                  Species3<br/>
+                  Species4<br/>
+                  Species5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29555"
+                  id="Constraint-29555">
+                <ul class="govuk-list">
+                  <li id="page-order-584">Order: 1</li>
+                  <li id="mandatory-584">Mandatory: No</li>
+                  <li id="min-length-584">Min. chars: 1</li>
+                  <li id="max-length-584">Max. chars: 28</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-7">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-7"
+                        data-qa-id="Link-DeSelect-Question-29555">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-7"
+                   data-qa-id="Link-Manage-Behaviours-29555">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29556" id="Text-29556">Nature of the commodity
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29556"
+                  id="QuestionID-29556">585
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29556"
+                  id="PageInfo-29556">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29556" id="Name-29556">
+                  Nature1<br/>
+                  Nature2<br/>
+                  Nature3<br/>
+                  Nature4<br/>
+                  Nature5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29556"
+                  id="Constraint-29556">
+                <ul class="govuk-list">
+                  <li id="page-order-585">Order: 2</li>
+                  <li id="mandatory-585">Mandatory: No</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-8">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-8"
+                        data-qa-id="Link-DeSelect-Question-29556">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-8"
+                   data-qa-id="Link-Manage-Behaviours-29556">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29557" id="Text-29557">Treatment type
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29557"
+                  id="QuestionID-29557">614
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29557"
+                  id="PageInfo-29557">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29557" id="Name-29557">
+                  Treatment1<br/>
+                  Treatment2<br/>
+                  Treatment3<br/>
+                  Treatment4<br/>
+                  Treatment5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29557"
+                  id="Constraint-29557">
+                <ul class="govuk-list">
+                  <li id="page-order-614">Order: 3</li>
+                  <li id="mandatory-614">Mandatory: No</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-9">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-9"
+                        data-qa-id="Link-DeSelect-Question-29557">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-9"
+                   data-qa-id="Link-Manage-Behaviours-29557">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29558" id="Text-29558">Approval number of the vessel and manufacturing plant
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29558"
+                  id="QuestionID-29558">761
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29558"
+                  id="PageInfo-29558">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29558" id="Name-29558">
+                  Plant1<br/>
+                  Plant2<br/>
+                  Plant3<br/>
+                  Plant4<br/>
+                  Plant5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29558"
+                  id="Constraint-29558">
+                <ul class="govuk-list">
+                  <li id="page-order-761">Order: 4</li>
+                  <li id="mandatory-761">Mandatory: No</li>
+                  <li id="min-length-761">Min. chars: 1</li>
+                  <li id="max-length-761">Max. chars: 34</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-10">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-10"
+                        data-qa-id="Link-DeSelect-Question-29558">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-10"
+                   data-qa-id="Link-Manage-Behaviours-29558">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29559" id="Text-29559">Approval number of cold store
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29559"
+                  id="QuestionID-29559">329
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29559"
+                  id="PageInfo-29559">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29559" id="Name-29559">
+                  Store1<br/>
+                  Store2<br/>
+                  Store3<br/>
+                  Store4<br/>
+                  Store5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29559"
+                  id="Constraint-29559">
+                <ul class="govuk-list">
+                  <li id="page-order-329">Order: 5</li>
+                  <li id="mandatory-329">Mandatory: No</li>
+                  <li id="min-length-329">Min. chars: 1</li>
+                  <li id="max-length-329">Max. chars: 16</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-11">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-11"
+                        data-qa-id="Link-DeSelect-Question-29559">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-11"
+                   data-qa-id="Link-Manage-Behaviours-29559">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29560" id="Text-29560">Number of packages
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29560"
+                  id="QuestionID-29560">587
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29560"
+                  id="PageInfo-29560">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29560" id="Name-29560">
+                  Number of Packages1<br/>
+                  Number of Packages2<br/>
+                  Number of Packages3<br/>
+                  Number of Packages4<br/>
+                  Number of Packages5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29560"
+                  id="Constraint-29560">
+                <ul class="govuk-list">
+                  <li id="page-order-587">Order: 6</li>
+                  <li id="mandatory-587">Mandatory: No</li>
+                  <li id="min-length-587">Min. chars: 1</li>
+                  <li id="max-length-587">Max. chars: 18</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-12">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-12"
+                        data-qa-id="Link-DeSelect-Question-29560">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-12"
+                   data-qa-id="Link-Manage-Behaviours-29560">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29561" id="Text-29561">Type of packaging
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29561"
+                  id="QuestionID-29561">590
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29561"
+                  id="PageInfo-29561">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29561" id="Name-29561">
+                  Packagingt1<br/>
+                  Packagingt2<br/>
+                  Packagingt3<br/>
+                  Packagingt4<br/>
+                  Packagingt5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29561"
+                  id="Constraint-29561">
+                <ul class="govuk-list">
+                  <li id="page-order-590">Order: 7</li>
+                  <li id="mandatory-590">Mandatory: No</li>
+                  <li id="min-length-590">Min. chars: 1</li>
+                  <li id="max-length-590">Max. chars: 20</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-13">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-13"
+                        data-qa-id="Link-DeSelect-Question-29561">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-13"
+                   data-qa-id="Link-Manage-Behaviours-29561">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29562" id="Text-29562">Net weight
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29562"
+                  id="QuestionID-29562">619
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29562"
+                  id="PageInfo-29562">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29562" id="Name-29562">
+                  Weight1<br/>
+                  Weight2<br/>
+                  Weight3<br/>
+                  Weight4<br/>
+                  Weight5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29562"
+                  id="Constraint-29562">
+                <ul class="govuk-list">
+                  <li id="page-order-619">Order: 8</li>
+                  <li id="mandatory-619">Mandatory: No</li>
+                  <li id="min-length-619">Min. chars: 1</li>
+                  <li id="max-length-619">Max. chars: 12</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-14">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-14"
+                        data-qa-id="Link-DeSelect-Question-29562">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-14"
+                   data-qa-id="Link-Manage-Behaviours-29562">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29563" id="Text-29563">Batch Number
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29563"
+                  id="QuestionID-29563">762
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29563"
+                  id="PageInfo-29563">3:What are the details of the product?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29563" id="Name-29563">
+                  Batch1<br/>
+                  Batch2<br/>
+                  Batch3<br/>
+                  Batch4<br/>
+                  Batch5<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29563"
+                  id="Constraint-29563">
+                <ul class="govuk-list">
+                  <li id="page-order-762">Order: 9</li>
+                  <li id="mandatory-762">Mandatory: No</li>
+                  <li id="min-length-762">Min. chars: 1</li>
+                  <li id="max-length-762">Max. chars: 12</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-15">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-15"
+                        data-qa-id="Link-DeSelect-Question-29563">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-15"
+                   data-qa-id="Link-Manage-Behaviours-29563">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29564" id="Text-29564">Name of dispatch establishment
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29564"
+                  id="QuestionID-29564">1420
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29564"
+                  id="PageInfo-29564">4:What is the place of origin of the consignment?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29564" id="Name-29564">
+                  Place of Origin Name<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29564"
+                  id="Constraint-29564">
+                <ul class="govuk-list">
+                  <li id="page-order-1420">Order: 4</li>
+                  <li id="mandatory-1420">Mandatory: No</li>
+                  <li id="min-length-1420">Min. chars: 1</li>
+                  <li id="max-length-1420">Max. chars: 20</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-16">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-16"
+                        data-qa-id="Link-DeSelect-Question-29564">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-16"
+                   data-qa-id="Link-Manage-Behaviours-29564">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29565" id="Text-29565">Address of dispatch establishment
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29565"
+                  id="QuestionID-29565">1421
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29565"
+                  id="PageInfo-29565">4:What is the place of origin of the consignment?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29565" id="Name-29565">
+                  Place of Origin Address<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29565"
+                  id="Constraint-29565">
+                <ul class="govuk-list">
+                  <li id="page-order-1421">Order: 5</li>
+                  <li id="mandatory-1421">Mandatory: No</li>
+                  <li id="min-length-1421">Min. chars: 1</li>
+                  <li id="max-length-1421">Max. chars: 200</li>
+                  <li id="max-carriage-returns-1421">Max. Carriage Returns: 3</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-17">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-17"
+                        data-qa-id="Link-DeSelect-Question-29565">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-17"
+                   data-qa-id="Link-Manage-Behaviours-29565">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29566" id="Text-29566">Approval number of dispatch establishment
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29566"
+                  id="QuestionID-29566">1422
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29566"
+                  id="PageInfo-29566">4:What is the place of origin of the consignment?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29566" id="Name-29566">
+                  Place of Origin Approval Number<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29566"
+                  id="Constraint-29566">
+                <ul class="govuk-list">
+                  <li id="page-order-1422">Order: 6</li>
+                  <li id="mandatory-1422">Mandatory: No</li>
+                  <li id="min-length-1422">Min. chars: 1</li>
+                  <li id="max-length-1422">Max. chars: 13</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-18">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-18"
+                        data-qa-id="Link-DeSelect-Question-29566">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-18"
+                   data-qa-id="Link-Manage-Behaviours-29566">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29567" id="Text-29567">Exporter name
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29567"
+                  id="QuestionID-29567">763
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29567"
+                  id="PageInfo-29567">5:Who is the exporter?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29567" id="Name-29567">
+                  Consignor Name<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29567"
+                  id="Constraint-29567">
+                <ul class="govuk-list">
+                  <li id="page-order-763">Order: 1</li>
+                  <li id="mandatory-763">Mandatory: Yes</li>
+                  <li id="min-length-763">Min. chars: 1</li>
+                  <li id="max-length-763">Max. chars: 48</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-19">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-19"
+                        data-qa-id="Link-DeSelect-Question-29567">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-19"
+                   data-qa-id="Link-Manage-Behaviours-29567">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29568" id="Text-29568">Exporter address
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29568"
+                  id="QuestionID-29568">764
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29568"
+                  id="PageInfo-29568">5:Who is the exporter?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29568" id="Name-29568">
+                  Consignor Address<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29568"
+                  id="Constraint-29568">
+                <ul class="govuk-list">
+                  <li id="page-order-764">Order: 2</li>
+                  <li id="mandatory-764">Mandatory: Yes</li>
+                  <li id="min-length-764">Min. chars: 1</li>
+                  <li id="max-length-764">Max. chars: 192</li>
+                  <li id="max-carriage-returns-764">Max. Carriage Returns: 3</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-20">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-20"
+                        data-qa-id="Link-DeSelect-Question-29568">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-20"
+                   data-qa-id="Link-Manage-Behaviours-29568">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29569" id="Text-29569">Exporter telephone number
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29569"
+                  id="QuestionID-29569">765
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29569"
+                  id="PageInfo-29569">5:Who is the exporter?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29569" id="Name-29569">
+                  Consignor Phone<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29569"
+                  id="Constraint-29569">
+                <ul class="govuk-list">
+                  <li id="page-order-765">Order: 3</li>
+                  <li id="mandatory-765">Mandatory: No</li>
+                  <li id="min-length-765">Min. chars: 1</li>
+                  <li id="max-length-765">Max. chars: 48</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-21">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-21"
+                        data-qa-id="Link-DeSelect-Question-29569">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-21"
+                   data-qa-id="Link-Manage-Behaviours-29569">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29570" id="Text-29570">Packaged for final consumer
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29570"
+                  id="QuestionID-29570">766
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29570"
+                  id="PageInfo-29570">6:Will the product be packaged for the final consumer?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29570" id="Name-29570">
+                  Final Consumer<br/>
+                  Final Consumer No<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29570"
+                  id="Constraint-29570">
+                <ul class="govuk-list">
+                  <li id="page-order-766">Order: 1</li>
+                  <li id="mandatory-766">Mandatory: No</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-22">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-22"
+                        data-qa-id="Link-DeSelect-Question-29570">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-22"
+                   data-qa-id="Link-Manage-Behaviours-29570">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29571" id="Text-29571">Total number of packages in the consignment
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29571"
+                  id="QuestionID-29571">589
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29571"
+                  id="PageInfo-29571">6:Will the product be packaged for the final consumer?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29571" id="Name-29571">
+                  Total Number of Packages<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29571"
+                  id="Constraint-29571">
+                <ul class="govuk-list">
+                  <li id="page-order-589">Order: 2</li>
+                  <li id="mandatory-589">Mandatory: No</li>
+                  <li id="min-length-589">Min. chars: 1</li>
+                  <li id="max-length-589">Max. chars: 31</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-23">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-23"
+                        data-qa-id="Link-DeSelect-Question-29571">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-23"
+                   data-qa-id="Link-Manage-Behaviours-29571">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29572" id="Text-29572">Place of loading
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29572"
+                  id="QuestionID-29572">767
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29572"
+                  id="PageInfo-29572">7:Where will the consignment be loaded?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29572" id="Name-29572">
+                  Place of Loading Address<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29572"
+                  id="Constraint-29572">
+                <ul class="govuk-list">
+                  <li id="page-order-767">Order: 1</li>
+                  <li id="mandatory-767">Mandatory: No</li>
+                  <li id="min-length-767">Min. chars: 1</li>
+                  <li id="max-length-767">Max. chars: 60</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-24">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-24"
+                        data-qa-id="Link-DeSelect-Question-29572">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-24"
+                   data-qa-id="Link-Manage-Behaviours-29572">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29573" id="Text-29573">Expected date of departure from the UK
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29573"
+                  id="QuestionID-29573">609
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29573"
+                  id="PageInfo-29573">8:How will the consignment be transported?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29573" id="Name-29573">
+                  Date of Departure<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29573"
+                  id="Constraint-29573">
+                <ul class="govuk-list">
+                  <li id="page-order-609">Order: 1</li>
+                  <li id="mandatory-609">Mandatory: No</li>
+                  <li id="lower-date-boundary-609">Min. date: 0</li>
+                  <li id="upper-date-boundary-609">Max. date: 365</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-25">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-25"
+                        data-qa-id="Link-DeSelect-Question-29573">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-25"
+                   data-qa-id="Link-Manage-Behaviours-29573">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29574" id="Text-29574">Means of transport to the BCP
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29574"
+                  id="QuestionID-29574">768
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29574"
+                  id="PageInfo-29574">8:How will the consignment be transported?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29574" id="Name-29574">
+                  Means of Transport Ship<br/>
+                  Means of Transport Railway Wagon<br/>
+                  Means of Transport Air<br/>
+                  Means of Transport Other<br/>
+                  Means of Transport Road Vehicle<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29574"
+                  id="Constraint-29574">
+                <ul class="govuk-list">
+                  <li id="page-order-768">Order: 2</li>
+                  <li id="mandatory-768">Mandatory: No</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-26">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-26"
+                        data-qa-id="Link-DeSelect-Question-29574">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-26"
+                   data-qa-id="Link-Manage-Behaviours-29574">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29575" id="Text-29575">Identification of the transport
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29575"
+                  id="QuestionID-29575">611
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29575"
+                  id="PageInfo-29575">8:How will the consignment be transported?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29575" id="Name-29575">
+                  Means of Transport Identification<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29575"
+                  id="Constraint-29575">
+                <ul class="govuk-list">
+                  <li id="page-order-611">Order: 3</li>
+                  <li id="mandatory-611">Mandatory: No</li>
+                  <li id="min-length-611">Min. chars: 1</li>
+                  <li id="max-length-611">Max. chars: 43</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-27">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-27"
+                        data-qa-id="Link-DeSelect-Question-29575">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-27"
+                   data-qa-id="Link-Manage-Behaviours-29575">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29576" id="Text-29576">Transport documents
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29576"
+                  id="QuestionID-29576">769
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29576"
+                  id="PageInfo-29576">8:How will the consignment be transported?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29576" id="Name-29576">
+                  Accompanying Document Typ<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29576"
+                  id="Constraint-29576">
+                <ul class="govuk-list">
+                  <li id="page-order-769">Order: 4</li>
+                  <li id="mandatory-769">Mandatory: No</li>
+                  <li id="min-length-769">Min. chars: 1</li>
+                  <li id="max-length-769">Max. chars: 42</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-28">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-28"
+                        data-qa-id="Link-DeSelect-Question-29576">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-28"
+                   data-qa-id="Link-Manage-Behaviours-29576">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29577" id="Text-29577">Documentary reference numbers for transport
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29577"
+                  id="QuestionID-29577">770
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29577"
+                  id="PageInfo-29577">8:How will the consignment be transported?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29577" id="Name-29577">
+                  Accompanying Document No<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29577"
+                  id="Constraint-29577">
+                <ul class="govuk-list">
+                  <li id="page-order-770">Order: 5</li>
+                  <li id="mandatory-770">Mandatory: No</li>
+                  <li id="min-length-770">Min. chars: 1</li>
+                  <li id="max-length-770">Max. chars: 294</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-29">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-29"
+                        data-qa-id="Link-DeSelect-Question-29577">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-29"
+                   data-qa-id="Link-Manage-Behaviours-29577">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29578" id="Text-29578">Container and seal numbers
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29578"
+                  id="QuestionID-29578">613
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29578"
+                  id="PageInfo-29578">8:How will the consignment be transported?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29578" id="Name-29578">
+                  Seal/container Number<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29578"
+                  id="Constraint-29578">
+                <ul class="govuk-list">
+                  <li id="page-order-613">Order: 6</li>
+                  <li id="mandatory-613">Mandatory: No</li>
+                  <li id="min-length-613">Min. chars: 1</li>
+                  <li id="max-length-613">Max. chars: 122</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-30">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-30"
+                        data-qa-id="Link-DeSelect-Question-29578">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-30"
+                   data-qa-id="Link-Manage-Behaviours-29578">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29579" id="Text-29579">Final destination
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29579"
+                  id="QuestionID-29579">723
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29579"
+                  id="PageInfo-29579">9:Is the destination of your consignment the EU or a third country?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29579" id="Name-29579">
+                  Internalmart1<br/>
+                  Fortransit<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29579"
+                  id="Constraint-29579">
+                <ul class="govuk-list">
+                  <li id="page-order-723">Order: 1</li>
+                  <li id="mandatory-723">Mandatory: No</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-31">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-31"
+                        data-qa-id="Link-DeSelect-Question-29579">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href=""
+                   class="link-button"
+                   id="Link-Manage-Behaviours-31"
+                   data-qa-id="Link-Manage-Behaviours-29579">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29580" id="Text-29580">Destination country in the EU
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29580"
+                  id="QuestionID-29580">724
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29580"
+                  id="PageInfo-29580">10:What is the final destination in the EU of this consignment?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29580" id="Name-29580">
+                  Country of Destination<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29580"
+                  id="Constraint-29580">
+                <ul class="govuk-list">
+                  <li id="page-order-724">Order: 1</li>
+                  <li id="mandatory-724">Mandatory: No</li>
+                  <li id="min-length-724">Min. chars: 1</li>
+                  <li id="max-length-724">Max. chars: 20</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-32">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-32"
+                        data-qa-id="Link-DeSelect-Question-29580">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-32"
+                   data-qa-id="Link-Manage-Behaviours-29580">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29581" id="Text-29581">ISO code of destination country
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29581"
+                  id="QuestionID-29581">605
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29581"
+                  id="PageInfo-29581">10:What is the final destination in the EU of this consignment?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29581" id="Name-29581">
+                  Country of Destination ISO Code<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29581"
+                  id="Constraint-29581">
+                <ul class="govuk-list">
+                  <li id="page-order-605">Order: 2</li>
+                  <li id="mandatory-605">Mandatory: No</li>
+                  <li id="min-length-605">Min. chars: 2</li>
+                  <li id="max-length-605">Max. chars: 2</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-33">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-33"
+                        data-qa-id="Link-DeSelect-Question-29581">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-33"
+                   data-qa-id="Link-Manage-Behaviours-29581">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29582" id="Text-29582">Name and identification code of the BCP
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29582"
+                  id="QuestionID-29582">771
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29582"
+                  id="PageInfo-29582">11:Which border control post (BCP) will the consignment arrive at?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29582" id="Name-29582">
+                  Entry Bcp in EU<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29582"
+                  id="Constraint-29582">
+                <ul class="govuk-list">
+                  <li id="page-order-771">Order: 1</li>
+                  <li id="mandatory-771">Mandatory: No</li>
+                  <li id="min-length-771">Min. chars: 1</li>
+                  <li id="max-length-771">Max. chars: 54</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-34">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-34"
+                        data-qa-id="Link-DeSelect-Question-29582">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-34"
+                   data-qa-id="Link-Manage-Behaviours-29582">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29583" id="Text-29583">Third country of destination
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29583"
+                  id="QuestionID-29583">725
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29583"
+                  id="PageInfo-29583">12:What is the destination third country?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29583" id="Name-29583">
+                  3rdcountry of Destination<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29583"
+                  id="Constraint-29583">
+                <ul class="govuk-list">
+                  <li id="page-order-725">Order: 1</li>
+                  <li id="mandatory-725">Mandatory: No</li>
+                  <li id="min-length-725">Min. chars: 1</li>
+                  <li id="max-length-725">Max. chars: 20</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-35">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-35"
+                        data-qa-id="Link-DeSelect-Question-29583">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-35"
+                   data-qa-id="Link-Manage-Behaviours-29583">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29584" id="Text-29584">ISO code of third country
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29584"
+                  id="QuestionID-29584">726
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29584"
+                  id="PageInfo-29584">12:What is the destination third country?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29584" id="Name-29584">
+                  3rdcountry of Destination ISO Code<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29584"
+                  id="Constraint-29584">
+                <ul class="govuk-list">
+                  <li id="page-order-726">Order: 2</li>
+                  <li id="mandatory-726">Mandatory: No</li>
+                  <li id="min-length-726">Min. chars: 2</li>
+                  <li id="max-length-726">Max. chars: 2</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-36">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-36"
+                        data-qa-id="Link-DeSelect-Question-29584">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-36"
+                   data-qa-id="Link-Manage-Behaviours-29584">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29585" id="Text-29585">Name of person responsible for consignment in the EU
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29585"
+                  id="QuestionID-29585">1476
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29585"
+                  id="PageInfo-29585">13:For consignments transiting EU countries, who is responsible for the consignment when in the EU?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29585" id="Name-29585">
+                  Operator Responsible Name<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29585"
+                  id="Constraint-29585">
+                <ul class="govuk-list">
+                  <li id="page-order-1476">Order: 1</li>
+                  <li id="mandatory-1476">Mandatory: No</li>
+                  <li id="min-length-1476">Min. chars: 1</li>
+                  <li id="max-length-1476">Max. chars: 45</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-37">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-37"
+                        data-qa-id="Link-DeSelect-Question-29585">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-37"
+                   data-qa-id="Link-Manage-Behaviours-29585">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29586" id="Text-29586">Address of person responsible for consignment in the EU
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29586"
+                  id="QuestionID-29586">1477
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29586"
+                  id="PageInfo-29586">13:For consignments transiting EU countries, who is responsible for the consignment when in the EU?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29586" id="Name-29586">
+                  Operator Responsible Address<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29586"
+                  id="Constraint-29586">
+                <ul class="govuk-list">
+                  <li id="page-order-1477">Order: 2</li>
+                  <li id="mandatory-1477">Mandatory: No</li>
+                  <li id="min-length-1477">Min. chars: 1</li>
+                  <li id="max-length-1477">Max. chars: 135</li>
+                  <li id="max-carriage-returns-1477">Max. Carriage Returns: 2</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-38">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-38"
+                        data-qa-id="Link-DeSelect-Question-29586">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-38"
+                   data-qa-id="Link-Manage-Behaviours-29586">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29587" id="Text-29587">Postcode
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29587"
+                  id="QuestionID-29587">1479
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29587"
+                  id="PageInfo-29587">13:For consignments transiting EU countries, who is responsible for the consignment when in the EU?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29587" id="Name-29587">
+                  Operator Responsible Postcode<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29587"
+                  id="Constraint-29587">
+                <ul class="govuk-list">
+                  <li id="page-order-1479">Order: 3</li>
+                  <li id="mandatory-1479">Mandatory: No</li>
+                  <li id="min-length-1479">Min. chars: 1</li>
+                  <li id="max-length-1479">Max. chars: 45</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-39">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-39"
+                        data-qa-id="Link-DeSelect-Question-29587">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-39"
+                   data-qa-id="Link-Manage-Behaviours-29587">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29588" id="Text-29588">Name of the place of storage in the EU
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29588"
+                  id="QuestionID-29588">1549
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29588"
+                  id="PageInfo-29588">14:Where will the consignment be stored during transit?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29588" id="Name-29588">
+                  Place of Destination Name<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29588"
+                  id="Constraint-29588">
+                <ul class="govuk-list">
+                  <li id="page-order-1549">Order: 1</li>
+                  <li id="mandatory-1549">Mandatory: No</li>
+                  <li id="min-length-1549">Min. chars: 1</li>
+                  <li id="max-length-1549">Max. chars: 48</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-40">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-40"
+                        data-qa-id="Link-DeSelect-Question-29588">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-40"
+                   data-qa-id="Link-Manage-Behaviours-29588">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29589" id="Text-29589">Address of the place of storage in the EU
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29589"
+                  id="QuestionID-29589">1550
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29589"
+                  id="PageInfo-29589">14:Where will the consignment be stored during transit?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29589" id="Name-29589">
+                  Place of Destination Address<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29589"
+                  id="Constraint-29589">
+                <ul class="govuk-list">
+                  <li id="page-order-1550">Order: 2</li>
+                  <li id="mandatory-1550">Mandatory: No</li>
+                  <li id="min-length-1550">Min. chars: 1</li>
+                  <li id="max-length-1550">Max. chars: 192</li>
+                  <li id="max-carriage-returns-1550">Max. Carriage Returns: 3</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-41">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-41"
+                        data-qa-id="Link-DeSelect-Question-29589">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-41"
+                   data-qa-id="Link-Manage-Behaviours-29589">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29590" id="Text-29590">Importer name
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29590"
+                  id="QuestionID-29590">773
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29590"
+                  id="PageInfo-29590">15:Who is the importer?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29590" id="Name-29590">
+                  Consignee Name<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29590"
+                  id="Constraint-29590">
+                <ul class="govuk-list">
+                  <li id="page-order-773">Order: 1</li>
+                  <li id="mandatory-773">Mandatory: No</li>
+                  <li id="min-length-773">Min. chars: 1</li>
+                  <li id="max-length-773">Max. chars: 45</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-42">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-42"
+                        data-qa-id="Link-DeSelect-Question-29590">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-42"
+                   data-qa-id="Link-Manage-Behaviours-29590">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29591" id="Text-29591">Importer address
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29591"
+                  id="QuestionID-29591">774
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29591"
+                  id="PageInfo-29591">15:Who is the importer?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29591" id="Name-29591">
+                  Consignee Address<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29591"
+                  id="Constraint-29591">
+                <ul class="govuk-list">
+                  <li id="page-order-774">Order: 2</li>
+                  <li id="mandatory-774">Mandatory: No</li>
+                  <li id="min-length-774">Min. chars: 1</li>
+                  <li id="max-length-774">Max. chars: 90</li>
+                  <li id="max-carriage-returns-774">Max. Carriage Returns: 1</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-43">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-43"
+                        data-qa-id="Link-DeSelect-Question-29591">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-43"
+                   data-qa-id="Link-Manage-Behaviours-29591">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29592" id="Text-29592">Importer postcode
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29592"
+                  id="QuestionID-29592">775
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29592"
+                  id="PageInfo-29592">15:Who is the importer?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29592" id="Name-29592">
+                  Consignee Country<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29592"
+                  id="Constraint-29592">
+                <ul class="govuk-list">
+                  <li id="page-order-775">Order: 3</li>
+                  <li id="mandatory-775">Mandatory: No</li>
+                  <li id="min-length-775">Min. chars: 1</li>
+                  <li id="max-length-775">Max. chars: 45</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-44">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-44"
+                        data-qa-id="Link-DeSelect-Question-29592">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-44"
+                   data-qa-id="Link-Manage-Behaviours-29592">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-qa-id="Text-29593" id="Text-29593">Importer telephone number
+              </td>
+              <td class="govuk-table__cell" data-qa-id="QuestionID-29593"
+                  id="QuestionID-29593">776
+              </td>
+              <td class="govuk-table__cell" data-qa-id="PageInfo-29593"
+                  id="PageInfo-29593">15:Who is the importer?
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Name-29593" id="Name-29593">
+                  Consignee Phone<br/>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Constraint-29593"
+                  id="Constraint-29593">
+                <ul class="govuk-list">
+                  <li id="page-order-776">Order: 4</li>
+                  <li id="mandatory-776">Mandatory: No</li>
+                  <li id="min-length-776">Min. chars: 1</li>
+                  <li id="max-length-776">Max. chars: 45</li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell" data-qa-id="Select-Question-45">
+                <button type="submit" formaction=""
+                        class="link-button"
+                        id="Link-DeSelect-Question-45"
+                        data-qa-id="Link-DeSelect-Question-29593">
+                  Remove&nbsp;this&nbsp;question
+                </button>
+                <a href="javascript:alert('Not in prototype!');"
+                   class="link-button"
+                   id="Link-Manage-Behaviours-45"
+                   data-qa-id="Link-Manage-Behaviours-29593">
+                  Manage&nbsp;behaviours
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+    <div>
+      <a href="javascript:alert('Not in prototype!');" class="govuk-button margin-top-30"
+         id="Button-AddQuestion"
+         data-qa-id="Button-finish">Add Question</a>
+      <a href="javascript:alert('Not in prototype!');" class="govuk-button margin-top-30"
+         id="Button-Finish"
+         data-qa-id="Button-finish">Finish</a>
+    </div>
   </div>
 </div>
 {% endblock %}

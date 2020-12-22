@@ -6,6 +6,8 @@ module.exports = function(router) {
   var env = new nunjucks.Environment();
 
   var certificatefallback;
+  var searchresults;
+  var activerules;
 
   env.addFilter('shorten', function(str, count) {
     return str.slice(0, count || 5);
@@ -57,6 +59,49 @@ module.exports = function(router) {
     next()
   })
 
+//Manage rules journey
+
+router.post('/form-builder/conditional-routing/manage-pages/index', function (req, res) {
+req.session.searchresults = false;
+  searchresults = req.session.searchresults;
+  console.log(searchresults);
+  res.redirect('/form-builder/conditional-routing/manage-pages/manage-rules/index')
+})
+
+router.get('/manage-rules/select-question-loader', function (req, res) {
+  searchresults = req.session.searchresults;
+  req.session.searchresults = true;
+  res.render('form-builder/conditional-routing/manage-pages/manage-rules/create-rule-1', { searchresults })
+})
+
+router.get('/manage-rules/index-deleted-items', function (req, res) {
+  console.log("GET IS WORKING");
+  res.render('form-builder/conditional-routing/manage-pages/manage-rules/index', { activerules })
+})
+
+router.post('/form-builder/conditional-routing/manage-pages/manage-rules/delete', function (req, res) {
+  res.redirect('/form-builder/conditional-routing/manage-pages/manage-rules/delete')
+})
+
+router.post('/manage-rules/delete-rule', function (req, res) {
+  if (req.session.data['deleterule']=="Yes"){
+    activerules= false;
+    console.log(activerules);
+  }
+  else {
+    activerules= true;
+    console.log(activerules);
+  }
+  res.redirect('/manage-rules/index-deleted-items')
+})
+
+
+router.get('/manage-rules/index-with-results', function (req, res) {
+  req.session.activerules = true;
+  activerules = req.session.activerules;
+  console.log(activerules);
+  res.render('form-builder/conditional-routing/manage-pages/manage-rules/index', { activerules })
+})
 
   //No-QR journey
   // **** Certificate number ***

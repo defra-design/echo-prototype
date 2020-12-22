@@ -1,0 +1,222 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">SOPHIE123EHC</span>
+    <h1 id="versionsHeading" class="govuk-heading-l disabled">Manage rules</h1>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">ID</th>
+          <th scope="col" class="govuk-table__header">Question</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">305</th>
+          <td class="govuk-table__cell">Approval number: place of origin</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">What is the dependent question?</h3>
+
+        </legend>
+        <p class="govuk-hint">
+        The result of this question will affect whether your question is shown or hidden
+        </p>
+        <select class="govuk-select" id="select-question" name="select-question" onclick="createUserJsObject.ShowPrivileges();">
+          <option value="">Select</option>
+          <option value="date">Q1 - What is the planned date of certification?</option>
+          <option value="text">Q2 - What is the name of the exporter?</option>
+          <option value="radio">Q3 - Are you the exporter or the agent of the exporter?</option>
+        </select>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group operator">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-heading-m">If the response is:</h2>
+        </legend>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="equal" name="operator_options" type="radio" value="equal to">
+            <label class="govuk-label govuk-radios__label" for="equal">
+              Equal to
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="not_equal" name="operator_options" type="radio" value="not equal to">
+            <label class="govuk-label govuk-radios__label" for="not_equal">
+              Not equal to
+            </label>
+          </div>
+          <!--<div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Greater than
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Less than
+            </label>
+          </div>-->
+          <div class="govuk-radios__item date">
+            <input class="govuk-radios__input" id="earlier" name="operator_options" type="radio" value="earlier than">
+            <label class="govuk-label govuk-radios__label" for="earlier">
+              Earlier than
+            </label>
+          </div>
+          <div class="govuk-radios__item date">
+            <input class="govuk-radios__input" id="later" name="operator_options" type="radio" value="later than">
+            <label class="govuk-label govuk-radios__label" for="later">
+              Later than
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group radio_value">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-heading-m">Value</h2>
+        </legend>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="exporter" name="radio_option" type="radio" value="exporter">
+            <label class="govuk-label govuk-radios__label" for="exporter">
+              Exporter
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="agent" name="radio_options" type="radio" value="agent">
+            <label class="govuk-label govuk-radios__label" for="agent">
+              Agent
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group text">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="value">
+      Value
+    </label>
+  </h2>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+<div class="govuk-form-group date">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Date
+      </h1>
+    </legend>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="date-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-day" name="date-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="date-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="date-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+    <div class="govuk-form-group response_visibility">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-heading-m">What do you want to do to the question?<br/>"Question Title"<br/></h2>
+        </legend>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="show" name="visibility" type="radio" value="show">
+            <label class="govuk-label govuk-radios__label" for="show">
+              Show
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hide" name="visibility" type="radio" value="hide">
+            <label class="govuk-label govuk-radios__label" for="hide">
+              Hide
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+    <form action="javascript:alert('Not in prototype');" method="GET">
+        <div>
+            <input class="govuk-button margin-top-30"
+                   type="submit"
+                   value="Save and continue"
+                   id="Button-CreateNewDocumentVersion"
+                   data-qa-id="Button-CreateNewEHCDocumentVersion">
+        </div>
+    </form>
+
+
+
+
+
+
+
+  </div>
+
+  {% endblock %}
