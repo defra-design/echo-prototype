@@ -59,8 +59,40 @@ module.exports = function(router) {
     next()
   })
 
-//Manage rules journey
+//Manage rule journey - single
+router.post('/form-builder/conditional-routing/manage-pages/index-single-rule', function (req, res) {
+req.session.searchresults = false;
+  searchresults = req.session.searchresults;
+  console.log(searchresults);
+  res.redirect('/form-builder/conditional-routing/manage-pages/manage-rules-single/create-rule-1')
+})
 
+router.get('/manage-rules-single/index-with-results', function (req, res) {
+  req.session.activerules = true;
+  activerules = req.session.activerules;
+  console.log(activerules);
+  res.render('form-builder/conditional-routing/manage-pages/index-single-rule', { activerules })
+})
+
+router.post('/manage-rules-single/delete-rule', function (req, res) {
+  if (req.session.data['deleterule']=="Yes"){
+    activerules= false;
+    console.log(activerules);
+  }
+  else {
+    activerules= true;
+    console.log(activerules);
+  }
+  res.redirect('/manage-rules-single/index-deleted-items')
+})
+
+router.get('/manage-rules-single/index-deleted-items', function (req, res) {
+  console.log("GET IS WORKING");
+  res.render('form-builder/conditional-routing/manage-pages/index-single-rule', { activerules })
+})
+
+
+//Manage rules journey - Multiple
 router.post('/form-builder/conditional-routing/manage-pages/index', function (req, res) {
 req.session.searchresults = false;
   searchresults = req.session.searchresults;
