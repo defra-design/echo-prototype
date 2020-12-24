@@ -59,6 +59,20 @@ module.exports = function(router) {
     next()
   })
 
+//Conditonal routing - send certificate to different destination dependent on commodity
+router.post('/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-details', function (req, res) {
+if (req.session.data.diseaseClearanceRequired == "RULE"){
+  res.redirect('/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-routing-alt')
+}
+else {
+  res.redirect('/form-builder/conditional-routing/certificate-destination/new-certificate/upload')
+}
+})
+
+router.post('/form-builder/conditional-routing/certificate-destination/new-certificate/commodity-types', function (req, res) {
+  res.redirect('/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-details')
+})
+
 //Manage rule journey - single
 router.post('/form-builder/conditional-routing/manage-pages/index-single-rule', function (req, res) {
 req.session.searchresults = false;

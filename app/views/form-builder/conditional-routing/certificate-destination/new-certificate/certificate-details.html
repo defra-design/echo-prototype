@@ -1,0 +1,224 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+                    <div>
+                        <h1 class="govuk-heading-l govuk-!-margin-top-6">Health Certificate Editor</h1>
+                    </div>
+
+                    <form method="POST" action="/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-details">
+                        <input type="hidden" name="crumb_csrf_token" value="4yGKh59pc5XYb_1FG9wL-xjcrhyBwOqVZKjZnCMOuNA">
+
+                        <div class="govuk-form-group margin-top-30 ">
+                            <fieldset id="multipleBlocks" class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend" for="counterSignatureFieldSet">
+                                    <label class="govuk-label">What type of EHC application is this?</label>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--conditional">
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="multipleBlocksSingle" value="SINGLE_APPLICATION" name="multipleBlocks" >
+                                        <label class="govuk-label govuk-radios__label" for="multipleBlocksSingle" id="multipleBlocksSingleLabel">Single application</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="multipleBlocksMultiple" value="MULTIPLE_APPLICATION" name="multipleBlocks" data-qa-id="Question-radio-No">
+                                        <label class="govuk-label govuk-radios__label" for="multipleBlocksMultiple" id="multipleBlocksMultipleLabel">Multiple application</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="multipleBlocksBlock" value="BLOCK_APPLICATON" name="multipleBlocks" data-qa-id="Question-radio-No">
+                                        <label class="govuk-label govuk-radios__label" for="multipleBlocksBlock" id="multipleBlocksBlockLabel">Block application</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group margin-top-30 ">
+                            <label class="govuk-label" for="maxEhc">What’s the maximum number of certificates they can apply for?</label>
+                            <span class="govuk-hint">This is the number of EHC that the exporter/agent is allowed to apply for with the EXA selected</span>
+                            <input class="govuk-input govuk-input--width-5 " id="maxEhc" name="maxEhc" data-qa-id="Input-maxEhc" value="">
+                        </div>
+
+                        <div class="govuk-form-group margin-top-30 ">
+                            <fieldset id="counterSignatureFieldSet" class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend" for="counterSignatureFieldSet">
+                                    <label class="govuk-label">Does it need a pre-certificate?</label>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--inline">
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="preCertAllowedYes" value="YES" name="preCertAllowed" data-qa-id="preCertAllowed-radio-Yes">
+                                        <label class="govuk-label govuk-radios__label" for="preCertAllowedYes" id="preCertAllowedYesLabel">Yes</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="preCertAllowedNo" value="NO" name="preCertAllowed" data-qa-id="preCertAllowed-radio-No" >
+                                        <label class="govuk-label govuk-radios__label" for="preCertAllowedNo" id="preCertAllowedNoLabel">No</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group margin-top-30 ">
+                            <fieldset id="preCheckFieldSet" class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend" for="preCheckFieldSet">
+                                    <label class="govuk-label">Does it need a certifier pre-check?</label>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--inline">
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="preCheckAllowedYes" value="YES" name="preCheck" data-qa-id="preCheck-radio-Yes">
+                                        <label class="govuk-label govuk-radios__label" for="preCheckAllowedYes" id="preCheckAllowedYesLabel">Yes</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="preCheckAllowedNo" value="NO" name="preCheck" data-qa-id="preCheckAllowed-radio-No" >
+                                        <label class="govuk-label govuk-radios__label" for="preCheckAllowedNo" id="preCheckAllowedNoLabel">No</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group margin-top-30">
+                            <fieldset id="diseaseClearanceFieldSet" class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend" for="diseaseClearanceFieldSet">
+                                    <label class="govuk-label">Who will do the disease clearance check?</label>
+                                </legend>
+                                <div class="govuk-radios govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="diseaseClearanceCertifier" value="CERTIFIER" name="diseaseClearanceRequired" data-qa-id="diseaseCheck-radio-Certifier">
+                                        <label class="govuk-label govuk-radios__label" for="diseaseClearanceCertifier" id="diseaseClearanceCertifierLabel">Certifier</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="diseaseClearanceCaseworker" value="CASEWORKER" name="diseaseClearanceRequired" data-qa-id="diseaseCheck-radio-Caseworker">
+                                        <label class="govuk-label govuk-radios__label" for="diseaseClearanceCaseworker" id="diseaseClearanceCaseworkerLabel">Case worker</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="diseaseClearanceNeither" value="NEITHER" name="diseaseClearanceRequired" data-qa-id="diseaseCheck-radio-Neither" >
+                                        <label class="govuk-label govuk-radios__label" for="diseaseClearanceNeither" id="diseaseClearanceNeitherLabel">Disease clearance check is not needed</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="diseaseClearanceCreateRule" value="RULE" name="diseaseClearanceRequired"  >
+                                        <label class="govuk-label govuk-radios__label" for="diseaseClearanceCreateRule" id="diseaseClearanceCreateRuleLabel">It depends on the commodity</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <fieldset id="additonalChecksFieldSet" class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend" for="counterSignatureFieldSet">
+                                <label class="govuk-label">Does the case worker need to do any additional checks?</label>
+                            </legend>
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="additonalChecks_journeyLog" name="additonalChecks_journeyLog" type="checkbox" value="journeyLog">
+                                    <label class="govuk-label govuk-checkboxes__label" for="additonalChecks_journeyLog" id="additonalChecks_label_journeyLog">Journey Log</label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="additonalChecks_approvals" name="additonalChecks_approvals" type="checkbox" value="approvals">
+                                    <label class="govuk-label govuk-checkboxes__label" for="additonalChecks_approvals" id="additonalChecks_label_approvals">Approvals</label>
+                                </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="additonalChecks_others" name="additonalChecks_others" type="checkbox" value="others">
+                                            <label class="govuk-label govuk-checkboxes__label" for="additonalChecks_others" id="additonalChecks_label_others">Others</label>
+                                        </div>
+
+                        </fieldset>
+
+                        <div class="govuk-form-group margin-top-30 ">
+                            <fieldset id="vetSignatureFieldSet" class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend" for="vetSignatureFieldSet">
+                                    <label class="govuk-label">Does a veterinary officer need to sign it?</label>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--inline">
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="vetSignatureYes" value="YES" name="vetSignature" data-qa-id="Question-radio-Yes">
+                                        <label class="govuk-label govuk-radios__label" for="vetSignatureYes" id="vetSignatureYesLabel">Yes</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="vetSignatureNo" value="NO" name="vetSignature" data-qa-id="Question-radio-No">
+                                        <label class="govuk-label govuk-radios__label" for="vetSignatureNo" id="vetSignatureNoLabel">No</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group margin-top-30 ">
+                            <fieldset id="preCertAllowedFieldSet" class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend" for="preCeretAllowedFieldSet">
+                                    <label class="govuk-label">Does a veterinary officer need to countersign it?</label>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--inline">
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="counterSignatureYes" value="YES" name="counterSignature" data-qa-id="Question-radio-Yes">
+                                        <label class="govuk-label govuk-radios__label" for="counterSignatureYes" id="counterSignatureYesLabel">Yes</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="counterSignatureNo" value="NO" name="counterSignature" data-qa-id="Question-radio-No" >
+                                        <label class="govuk-label govuk-radios__label" for="counterSignatureNo" id="counterSignatureNoLabel">No</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group margin-top-30 ">
+                            <fieldset id="papertTypeFieldSet" class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend" for="paperTypeFieldSet">
+                                    <label class="govuk-label">What paper should it be printed on?</label>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--inline">
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="paperTypeCROWN_VELLUM" value="CROWN_VELLUM" name="paperType" data-qa-id="paperType-radio-CROWN_VELLUM">
+                                        <label class="govuk-label govuk-radios__label" for="paperTypeCROWN_VELLUM" id="paperTypeCROWN_VELLUMLabel">Crown vellum watermarked paper</label>
+                                    </div>
+
+                                    <div class="govuk-radios__item">
+                                        <input type="radio" class="govuk-radios__input" id="paperTypePLAIN_PAPER" value="PLAIN_PAPER" name="paperType" data-qa-id="paperType-radio-PLAIN_PAPER" >
+                                        <label class="govuk-label govuk-radios__label" for="paperTypePLAIN_PAPER" id="paperTypePLAIN_PAPERLabel">Plain paper ( if plain paper sent to certifier via email )</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <input class="form-control" id="actionType" type="hidden" name="actionType" value="save">
+                        <input type="hidden" value="1234EHC" name="ehcNumber">
+                        <input type="hidden" value="gfgf" name="ehcTitle">
+                        <input type="hidden" value="DZ" name="destinationCountry">
+                        <input type="hidden" value="95da867f-529e-49a4-9985-a83f9d0ded57" name="commodityGroupGUID">
+
+                        <input type="hidden" value="%5B%7B%22typeId%22%3A%22a27c6864-1e4e-4871-9a68-0e187ec3e380%22%2C%22commodityNameIds%22%3A%5B%22610fe478-51ea-4431-831e-9a6dd8bfd998%22%5D%7D%2C%7B%22typeId%22%3A%2201337fcd-9ce5-459c-bef2-fe1efe4cbce8%22%2C%22commodityNameIds%22%3A%5B%22a8b3e60d-1bb6-44cf-9cc7-c4a4605d9aeb%22%2C%2240f77d3b-ec4e-48d9-a30b-57215fc2ae98%22%5D%7D%5D" name="commodityTypes">
+
+                        <input type="hidden" value="EXA07 - Eggs and egg products" name="exaTitle">
+                        <input type="hidden" value="exa07 - eggs and egg products" name="exaNumber">
+
+                        <input class="govuk-button" type="submit" value="Save and continue" data-qa-id="Button-Save-Create-New-Version" id="Button-Save-Create-New-Version" name="save_create_new_version">
+
+                    </form>
+
+
+
+    </div>
+</div>
+{% endblock %}

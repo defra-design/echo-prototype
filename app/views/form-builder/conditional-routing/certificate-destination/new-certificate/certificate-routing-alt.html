@@ -1,0 +1,242 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+          <div>
+            <h1 class="govuk-heading-l govuk-!-margin-top-6">Health Certificate Editor</h1>
+          </div>
+
+
+            <form class="case-update" action="/form-builder/conditional-routing/certificate-destination/new-certificate/upload" method="post">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Who will complete the disease check?
+      </h2>
+    </legend>
+    <h3 class="govuk-heading-m govuk-!-margin-top-6">
+      Collagen/gelatine
+    </h3>
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h4 class="govuk-heading-s">
+        Avian
+      </h1>
+    </legend>
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="collagen-avian-certifier" name="collagen-avian-routing" type="radio" value="certifier">
+        <label class="govuk-label govuk-radios__label" for="collagen-avian-certifier">
+          Certifier
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="collagen-avian-caseworker" name="collagen-avian-routing" type="radio" value="caseworker">
+        <label class="govuk-label govuk-radios__label" for="collagen-avian-caseworker">
+          Case worker
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="collagen-avian-none" name="collagen-avian-routing" type="radio" value="none">
+        <label class="govuk-label govuk-radios__label" for="collagen-avian-none">
+          Disease check not needed
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h4 class="govuk-heading-s">
+    Bovine
+  </h1>
+</legend>
+
+<div class="govuk-radios govuk-radios--inline">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="collagen-bovine-certifier" name="collagen-bovine-routing" type="radio" value="certifier">
+    <label class="govuk-label govuk-radios__label" for="collagen-bovine-certifier">
+      Certifier
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="collagen-bovine-caseworker" name="collagen-bovine-routing" type="radio" value="caseworker">
+    <label class="govuk-label govuk-radios__label" for="collagen-bovine-caseworker">
+      Case worker
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="collagen-bovine-none" name="collagen-bovine-routing" type="radio" value="none">
+    <label class="govuk-label govuk-radios__label" for="collagen-bovine-none">
+      Disease check not needed
+    </label>
+  </div>
+</div>
+
+</fieldset>
+</div>
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h4 class="govuk-heading-s">
+    Porcine
+  </h1>
+</legend>
+
+<div class="govuk-radios govuk-radios--inline">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="collagen-porcine-certifier" name="collagen-porcine-routing" type="radio" value="certifier">
+    <label class="govuk-label govuk-radios__label" for="collagen-porcine-certifier">
+      Certifier
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="collagen-porcine-caseworker" name="collagen-porcine-routing" type="radio" value="caseworker">
+    <label class="govuk-label govuk-radios__label" for="collagen-porcine-caseworker">
+      Case worker
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="collagen-porcine-none" name="collagen-porcine-routing" type="radio" value="none">
+    <label class="govuk-label govuk-radios__label" for="collagen-porcine-none">
+      Disease check not needed
+    </label>
+  </div>
+</div>
+
+</fieldset>
+</div>
+<h3 class="govuk-heading-m govuk-!-margin-top-8">
+  Egg products
+</h3>
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h4 class="govuk-heading-s">
+    Avian
+  </h1>
+</legend>
+
+<div class="govuk-radios govuk-radios--inline">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="egg-avian-certifier" name="egg-avian-routing" type="radio" value="certifier">
+    <label class="govuk-label govuk-radios__label" for="egg-avian-certifier">
+      Certifier
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="egg-avian-caseworker" name="egg-avian-routing" type="radio" value="caseworker">
+    <label class="govuk-label govuk-radios__label" for="egg-avian-caseworker">
+      Case worker
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="egg-avian-none" name="egg-avian-routing" type="radio" value="none">
+    <label class="govuk-label govuk-radios__label" for="egg-avian-none">
+      Disease check not needed
+    </label>
+  </div>
+</div>
+
+</fieldset>
+</div>
+
+<h3 class="govuk-heading-m govuk-!-margin-top-8">
+  Ship stores
+</h3>
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h4 class="govuk-heading-s">
+    Mixed
+  </h1>
+</legend>
+
+<div class="govuk-radios govuk-radios--inline">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="ship-stores-mixed-certifier" name="ship-stores-mixed-routing" type="radio" value="certifier">
+    <label class="govuk-label govuk-radios__label" for="ship-stores-mixed-certifier">
+      Certifier
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="ship-stores-mixed-caseworker" name="ship-stores-mixed-routing" type="radio" value="certifier">
+    <label class="govuk-label govuk-radios__label" for="ship-stores-mixed-caseworker">
+      Case worker
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="ship-stores-mixed-none" name="ship-stores-mixed-routing" type="radio" value="none">
+    <label class="govuk-label govuk-radios__label" for="ship-stores-mixed-none">
+      Disease check not needed
+    </label>
+  </div>
+</div>
+
+</fieldset>
+</div>
+
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h4 class="govuk-heading-s">
+    Ovine
+  </h1>
+</legend>
+
+<div class="govuk-radios govuk-radios--inline">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="ship-stores-ovine-certifier" name="ship-stores-ovine-routing" type="radio" value="certifier">
+    <label class="govuk-label govuk-radios__label" for="ship-stores-ovine-certifier">
+      Certifier
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="ship-stores-ovine-caseworker" name="ship-stores-ovine-routing" type="radio" value="caseworker">
+    <label class="govuk-label govuk-radios__label" for="ship-stores-ovine-caseworker">
+      Case worker
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="ship-stores-ovine-none" name="ship-stores-ovine-routing" type="radio" value="none">
+    <label class="govuk-label govuk-radios__label" for="ship-stores-ovine-none">
+      Disease check not needed
+    </label>
+  </div>
+</div>
+
+</fieldset>
+</div>
+  <input class="govuk-button" type="submit" value="Save and continue" id="continue-button" name="continue-button">
+            </form>
+
+
+    </div>
+</div>
+{% endblock %}

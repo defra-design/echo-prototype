@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+          <div>
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+              <tr>
+
+              </tbody>
+            </table>
+            <h1 class="govuk-heading-l heading govuk-!-margin-top-6">Pages for form 4240EHC Version 1.0</h1>
+          </div>
+          <div>
+            <table class="govuk-table" id="form-pages">
+              <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" colspan="2">Order</th>
+                <th class="govuk-table__header ">Page Title</th>
+                <th class="govuk-table__header">Group or task title</th>
+                <th class="govuk-table__header">Actions</th>
+              </tr>
+              </thead>
+              </tbody>
+            </table>
+
+            <a id="link-createNewPage" href="/protected/forms/12345EHC/versions/1.0/pages/new"
+               class="govuk-button">Create new page</a>
+          </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

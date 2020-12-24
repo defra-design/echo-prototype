@@ -1,0 +1,501 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+          <div>
+            <h1 class="govuk-heading-l govuk-!-margin-top-6">Health Certificate Editor</h1>
+          </div>
+
+          <div class="govuk-checkboxes margin-top-30">
+            <form class="case-update" action="/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-routing-case-worker" method="post">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        For which commododites will the disease check be completed by the certifier?
+      </h2>
+    </legend>
+                <div class="margin-top-30">
+
+                  <input type="hidden" name="crumb_csrf_token" value="4yGKh59pc5XYb_1FG9wL-xjcrhyBwOqVZKjZnCMOuNA">
+
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input commodityType" id="Select-Collagen/gelatine" name="commodityTypeGelatine" value="Collagen/gelatine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          <strong> Collagen/gelatine</strong>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-!-margin-left-6 govuk-!-margin-top-6">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Avian" name="commodityNamesGelatine" value="Avian" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Avian
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Bovine" name="commodityNamesGelatine" value="Bovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Bovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Caprine" name="commodityNamesGelatine" value="Caprine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Caprine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Game" name="commodityNamesGelatine" value="Game" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Game
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Mixed" name="commodityNamesGelatine" value="Mixed" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Mixed
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Ovine" name="commodityNamesGelatine" value="Ovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Ovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Piscine" name="commodityNamesGelatine" value="Piscine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Piscine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Porcine" name="commodityNamesGelatine" value="Porcine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Porcine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Collagen/gelatine-Unknown" name="commodityNamesGelatine" value="Unknown" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Unknown
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input commodityType" id="Select-Composite food" name="commodityTypeCompositeFood" value="Composite food" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          <strong> Composite food</strong>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-!-margin-left-6 govuk-!-margin-top-6">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Composite food-Avian" name="commodityNamesCompositeFood" value="Avian" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Avian
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Composite food-Bovine" name="commodityNamesCompositeFood" value="Bovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Bovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Composite food-Caprine" name="commodityNamesCompositeFood" value="Caprine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Caprine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Composite food-Game" name="commodityNamesCompositeFood" value="Game" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Game
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Composite food-Mixed" name="commodityNamesCompositeFood" value="Mixed" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Mixed
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Composite food-Ovine" name="commodityNamesCompositeFood" value="Ovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Ovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Composite food-Porcine" name="commodityNamesCompositeFood" value="Porcine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Porcine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Composite food-Unknown" name="commodityNamesCompositeFood" value="Unknown" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Unknown
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input commodityType" id="Select-Dairy" name="commodityNamesCompositeFood" value="Dairy" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          <strong> Dairy</strong>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-checkboxes govuk-!-margin-left-6 govuk-!-margin-top-6">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Dairy-Bovine" name="commodityNamesCompositeFood" value="Bovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Bovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Dairy-Caprine" name="commodityNamesCompositeFood" value="Caprine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Caprine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Dairy-Mixed" name="commodityNamesCompositeFood" value="Mixed" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Mixed
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Dairy-Ovine" name="commodityNamesCompositeFood" value="Ovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Ovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Dairy-Unknown" name="commodityNamesCompositeFood" value="Unknown" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Unknown
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input commodityType" id="Select-Egg products" name="commodityTypeEgg" value="Egg products" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          <strong> Egg products</strong>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-!-margin-left-6 govuk-!-margin-top-6">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Egg products-Avian" name="commodityNamesEgg" value="Avian" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Avian
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input commodityType" id="Select-Meat" name="commodityNamesEgg" value="Meat" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          <strong> Meat</strong>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-!-margin-left-6 govuk-!-margin-top-6">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Anura" name="commodityNamesEgg" value="Anura" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Anura
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Avian" name="commodityNamesEgg" value="Avian" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Avian
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Bovine" name="commodityNamesEgg" value="Bovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Bovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Caprine" name="commodityNamesEgg" value="Caprine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Caprine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Equine" name="commodityNamesEgg" value="Equine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Equine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Game" name="commodityNamesEgg" value="Game" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Game
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Gastropod" name="commodityNamesEgg" value="Gastropod" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Gastropod
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Insect" name="commodityNamesEgg" value="Insect" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Insect
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Mixed" name="commodityNamesEgg" value="Mixed" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Mixed
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Other mammals" name="commodityNamesEgg" value="Other mammals" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Other mammals
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Ovine" name="commodityNamesEgg" value="Ovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Ovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Porcine" name="commodityNamesEgg" value="Porcine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Porcine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Reptile" name="commodityNamesEgg" value="Reptile" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Reptile
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Meat-Unknown" name="commodityNamesEgg" value="Unknown" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Unknown
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input commodityType" id="Select-Ship stores" name="commodityTypeShipStores" value="Ship stores" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          <strong> Ship stores</strong>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="govuk-checkboxes govuk-!-margin-left-6 govuk-!-margin-top-6">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Ship stores-Avian" name="commodityNamesShipStores" value="Avian" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Avian
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Ship stores-Bovine" name="commodityNamesShipStores" value="Bovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Bovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Ship stores-Caprine" name="commodityNamesShipStores" value="Caprine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Caprine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Ship stores-Game" name="commodityNamesShipStores" value="Game" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Game
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Ship stores-Mixed" name="commodityNamesShipStores" value="Mixed" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Mixed
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Ship stores-Ovine" name="commodityNamesShipStores" value="Ovine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Ovine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Ship stores-Porcine" name="commodityNamesShipStores" value="Porcine" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Porcine
+                        </label>
+                      </div>
+
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Select-Ship stores-Unknown" name="commodityNamesShipStores" value="Unknown" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label">
+                          Unknown
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <input class="form-control" id="actionType" type="hidden" name="actionType" value="validate-commodity-types-page">
+                  <input type="hidden" value="1234EHC" name="ehcNumber">
+                  <input type="hidden" value="gfgf" name="ehcTitle">
+                  <input type="hidden" value="DZ" name="destinationCountry">
+                  <input type="hidden" value="95da867f-529e-49a4-9985-a83f9d0ded57" name="commodityGroupGUID">
+
+                  <input type="hidden" value="EXA07 - Eggs and egg products" name="exaTitle">
+                  <input type="hidden" value="exa07 - eggs and egg products" name="exaNumber">
+                  <input class="govuk-button" type="submit" value="Continue" id="continue-button" name="continue-button">
+
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+    </div>
+</div>
+{% endblock %}
