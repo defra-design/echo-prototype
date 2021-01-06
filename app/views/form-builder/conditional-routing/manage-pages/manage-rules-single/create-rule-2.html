@@ -29,20 +29,21 @@ GOV.UK Prototype Kit
     <div class="govuk-form-group operator govuk-!-margin-top-6">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-heading-m">If the response to:<br/>"Is the destination of your consignment the EU or a third country?"<br/>is</h2>
+          <h2 class="govuk-heading-m">Show this page when:<br/>"Is the destination of your consignment the EU or a third country?"<br/>is equal to:</h2>
+      
         </legend>
 
         <div class="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="equal" name="rule-operator" type="radio" value="is equal to">
-            <label class="govuk-label govuk-radios__label" for="equal">
-              Equal to
+            <input class="govuk-radios__input" id="eu" name="rule-response" type="radio" value="EU">
+            <label class="govuk-label govuk-radios__label" for="eu">
+              EU
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="not_equal" name="rule-operator" type="radio" value="is not equal to">
-            <label class="govuk-label govuk-radios__label" for="not_equal">
-              Not equal to
+            <input class="govuk-radios__input" id="third-country" name="rule-response" type="radio" value="third country">
+            <label class="govuk-label govuk-radios__label" for="third-country">
+              Third country
             </label>
           </div>
 
@@ -50,48 +51,7 @@ GOV.UK Prototype Kit
 
 
 
-  <div class="govuk-form-group govuk-!-margin-top-6">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h2 class="govuk-heading-m">Select value</h2>
-      </legend>
 
-      <div class="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="eu" name="rule-response" type="radio" value="EU">
-          <label class="govuk-label govuk-radios__label" for="eu">
-            EU
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="third-country" name="rule-response" type="radio" value="third country">
-          <label class="govuk-label govuk-radios__label" for="third-country">
-            Third country
-          </label>
-        </div>
-        </div>
-
-        <div class="govuk-form-group operator govuk-!-margin-top-6">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-heading-m">What would you like to do to the page?</h2>
-            </legend>
-
-            <div class="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="show" name="rule-action" type="radio" value="show the page">
-                <label class="govuk-label govuk-radios__label" for="show">
-                  Show the page
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="hide" name="rule-action" type="radio" value="hide the page">
-                <label class="govuk-label govuk-radios__label" for="hide">
-                  Hide the page
-                </label>
-              </div>
-
-      </div>
 
           <div>
               <input class="govuk-button govuk-!-margin-top-8"

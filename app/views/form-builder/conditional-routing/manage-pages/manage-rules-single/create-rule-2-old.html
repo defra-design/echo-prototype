@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l ">8270EHC v2.56</span>
+    <h1 id="formEditorHeading" class="govuk-heading-l heading-with-help">Manage rules</h1>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page title:    </span>For consignments transiting EU countries, who is responsible for the consignment when in the EU?</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page ID:    </span>13</p>
+
+<form method="POST" action="/manage-rules-single/index-with-results">
+    <div class="govuk-form-group operator govuk-!-margin-top-6">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-heading-m">If the response to:<br/>"Is the destination of your consignment the EU or a third country?"<br/>is</h2>
+        </legend>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="equal" name="rule-operator" type="radio" value="is equal to">
+            <label class="govuk-label govuk-radios__label" for="equal">
+              Equal to
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="not_equal" name="rule-operator" type="radio" value="is not equal to">
+            <label class="govuk-label govuk-radios__label" for="not_equal">
+              Not equal to
+            </label>
+          </div>
+
+  </div>
+
+
+
+  <div class="govuk-form-group govuk-!-margin-top-6">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-heading-m">Select value</h2>
+      </legend>
+
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="eu" name="rule-response" type="radio" value="EU">
+          <label class="govuk-label govuk-radios__label" for="eu">
+            EU
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="third-country" name="rule-response" type="radio" value="third country">
+          <label class="govuk-label govuk-radios__label" for="third-country">
+            Third country
+          </label>
+        </div>
+        </div>
+
+        <div class="govuk-form-group operator govuk-!-margin-top-6">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-heading-m">What would you like to do to the page?</h2>
+            </legend>
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="show" name="rule-action" type="radio" value="show the page">
+                <label class="govuk-label govuk-radios__label" for="show">
+                  Show the page
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="hide" name="rule-action" type="radio" value="hide the page">
+                <label class="govuk-label govuk-radios__label" for="hide">
+                  Hide the page
+                </label>
+              </div>
+
+      </div>
+
+          <div>
+              <input class="govuk-button govuk-!-margin-top-8"
+                     type="submit"
+                     value="Save and continue"
+                     >
+          </div>
+      </form>
+
+</div>
+</div>
+{% endblock %}
