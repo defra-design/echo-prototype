@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l ">8270EHC v2.56</span>
+    <h1 id="formEditorHeading" class="govuk-heading-l heading-with-help">Manage rules</h1>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page title:    </span>For consignments transiting EU countries, who is responsible for the consignment when in the EU?</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page ID:    </span>13</p>
+    </div>
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-6">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold"
+                           for="filter">What is the dependent question?</label>
+                    <input class="govuk-input" id="dependent_question" type="text"
+                           name="filter"
+                           data-qa-id="TextField-filter" value="" placeholder="Form question, Form question text, Page">
+                  </div>
+                </div>
+
+                <div class="govuk-form-group govuk-grid-column-one-quarter govuk-!-margin-top-6">
+                  <div class="govuk-label margin-top-45">
+                    <form method="post" action="/manage-rules/select-question-loader">
+                      <div>
+                          <input class="link-button"
+                                 type="submit"
+                                 value="Search"
+                                 >
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+            <div class="govuk-grid-column-full">
+{% if searchresults %}
+                <table class="govuk-table search_results">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Question ID</th>
+                  <th scope="col" class="govuk-table__header">Question text</th>
+                  <th scope="col" class="govuk-table__header">Page ID</th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">723</td>
+                  <td class="govuk-table__cell">Is the destination of your consignment the EU or a third country?</td>
+                  <td class="govuk-table__cell">9</td>
+                  <td class="govuk-table__cell">
+                    <a href="/form-builder/conditional-routing/manage-pages/manage-rules/create-rule-2">Select question</a></td>
+                </tr>
+
+              </tbody>
+
+            </table>
+            {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,330 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<style type="text/css">
+  .valign-top {
+    vertical-align: 20%;
+    font-size: 14px;
+    font-weight: bold;
+}
+  </style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l ">autoehc-2020-12-28-483
+v1.0</span>
+    <h1 id="formEditorHeading" class="govuk-heading-xl heading-with-help">Create rule</h1>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page title:    </span>For consignments transiting EU countries, who is responsible for the consignment when in the EU?</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page ID:    </span>13</p>
+    <h2 class="govuk-heading-m">Select dependent question</h2>
+<!--
+    <form name="search-form" action="" method="GET">
+              <div class="border-box govuk-grid-column-full">
+
+
+                <div class="govuk-grid-column-one-half govuk-form-group">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold"
+                           for="filter">Filter</label>
+                    <input class="govuk-input" id="filter" type="text"
+                           name="filter"
+                           data-qa-id="TextField-filter" value="" placeholder="Id, Text, Question type, Form type">
+                  </div>
+                </div>
+
+                <div class="govuk-form-group govuk-grid-column-one-quarter">
+                  <div class="govuk-label margin-top-45">
+                    <button type="submit" name="name" value="" class="link-button" id="Button-Search" data-qa-id="Button-Search">
+                      Search
+                    </button>
+                  </div>
+                </div>
+
+                <div class="govuk-grid-column-one-quarter">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="sort">Sort By</label>
+                  <select class="govuk-select" id="sort" name="sort" data-qa-id="Select-">
+                    <option value="">Please Select</option>
+                    <option value="ID:DESC" >Id descending</option>
+                    <option value="ID:ASC" >Id ascending</option>
+                    <option value="TEXT:DESC" >Text descending</option>
+                    <option value="TEXT:ASC" >Text ascending</option>
+                    <option value="QUESTION_TYPE:DESC" >Question type descending</option>
+                    <option value="QUESTION_TYPE:ASC" >Question type ascending</option>
+                    <option value="FORM_TYPE:DESC" >Form type descending</option>
+                    <option value="FORM_TYPE:ASC" >Form type ascending</option>
+                  </select>
+                </div>
+
+              </div>
+            </form> -->
+            <table class="govuk-table" data-qa-id='TABLE_FORM_QUESTIONS'>
+            <thead class="govuk-table__head" class="margin-top-30">
+            <tr class="govuk-table__row" class="valign-top">
+              <th class="govuk-table__header" align="right">ID</th>
+              <th class="govuk-table__header">Question Type</th>
+              <th class="govuk-table__header">Text</th>
+              <th class="govuk-table__header">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell " align="right"
+                  id="question-id-1"
+                  >
+              <span class="govuk-body">1</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell " id="question-type-1"
+                  >
+              <span class="govuk-body" id="questionType-1">Single line text</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell " id="question-test-1"
+                  >
+              You can give your application a reference number to allow you to easily identify it. If you would like to do so, enter it here.
+              </td>
+              <td class="govuk-table__cell " id="manage-question-1">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell no-border" align="right"
+                  id="question-id-2"
+                  >
+              <span class="govuk-body">2</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell no-border" id="question-type-2"
+                  >
+              <span class="govuk-body" id="questionType-2">Single select</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell no-border" id="question-test-2"
+                  >
+              The paper certificate will be sent to your nominated address for certification. How would you like the certificate to be delivered?
+              </td>
+              <td class="govuk-table__cell no-border" id="manage-question-2">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell valign-top" colspan="5" id="mapped-to-2"
+                  >
+              Mapped to:
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell no-border" align="right"
+                  id="question-id-3"
+                  >
+              <span class="govuk-body">3</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell no-border" id="question-type-3"
+                  >
+              <span class="govuk-body" id="questionType-3">Date</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell no-border" id="question-test-3"
+                  >
+              What is the planned export date of the consignment?
+              </td>
+              <td class="govuk-table__cell no-border" id="manage-question-3">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell valign-top" colspan="5" id="mapped-to-3"
+                  >
+              Mapped to: Export date
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell no-border" align="right"
+                  id="question-id-4"
+                  >
+              <span class="govuk-body">4</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell no-border" id="question-type-4"
+                  >
+              <span class="govuk-body" id="questionType-4">Single select</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell no-border" id="question-test-4"
+                  >
+              In which region will the certification take place?
+              </td>
+              <td class="govuk-table__cell no-border" id="manage-question-4">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell valign-top" colspan="5" id="mapped-to-4"
+                  >
+              Mapped to: Country of export
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell no-border" align="right"
+                  id="question-id-5"
+                  >
+              <span class="govuk-body">5</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell no-border" id="question-type-5"
+                  >
+              <span class="govuk-body" id="questionType-5">Date</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell no-border" id="question-test-5"
+                  >
+              What is the planned date of certification?
+              </td>
+              <td class="govuk-table__cell no-border" id="manage-question-5">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell valign-top" colspan="5" id="mapped-to-5"
+                  >
+              Mapped to: Required by date
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell no-border" align="right"
+                  id="question-id-6"
+                  >
+              <span class="govuk-body">6</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell no-border" id="question-type-6"
+                  >
+              <span class="govuk-body" id="questionType-6">Single line text</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell no-border" id="question-test-6"
+                  >
+              What is the name of the exporter?
+              </td>
+              <td class="govuk-table__cell no-border" id="manage-question-6">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell valign-top" colspan="5" id="mapped-to-6"
+                  >
+              Mapped to: Exporter/Trader
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell " align="right"
+                  id="question-id-7"
+                  >
+              <span class="govuk-body">7</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell " id="question-type-7"
+                  >
+              <span class="govuk-body" id="questionType-7">Single select</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell " id="question-test-7"
+                  >
+              Are you the exporter or the agent of the exporter?
+              </td>
+              <td class="govuk-table__cell " id="manage-question-7">
+              <a  href="/form-builder/conditional-routing/manage-pages/manage-rules-single-exa/create-rule-2">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell " align="right"
+                  id="question-id-8"
+                  >
+              <span class="govuk-body">8</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell " id="question-type-8"
+                  >
+              <span class="govuk-body" id="questionType-8">Multi select</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell " id="question-test-8"
+                  >
+              What is the origin of the raw materials?
+              </td>
+              <td class="govuk-table__cell " id="manage-question-8">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell " align="right"
+                  id="question-id-9"
+                  >
+              <span class="govuk-body">9</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell " id="question-type-9"
+                  >
+              <span class="govuk-body" id="questionType-9">Multi select</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell " id="question-test-9"
+                  >
+              Where has the product been processed?
+              </td>
+              <td class="govuk-table__cell " id="manage-question-9">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell " align="right"
+                  id="question-id-10"
+                  >
+              <span class="govuk-body">10</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell " id="question-type-10"
+                  >
+              <span class="govuk-body" id="questionType-10">Single line text</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell " id="question-test-10"
+                  >
+              What are the dates of collection of the raw materials?
+              </td>
+              <td class="govuk-table__cell " id="manage-question-10">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row table-data-row" class="valign-top">
+              <td class="govuk-table__cell id-table-cell " align="right"
+                  id="question-id-11"
+                  >
+              <span class="govuk-body">11</span>
+              </td>
+
+              <td class="govuk-table__cell question-type-table-cell " id="question-type-11"
+                  >
+              <span class="govuk-body" id="questionType-11">Single line text</span>
+              </td>
+              <td class="govuk-table__cell text-table-cell " id="question-test-11"
+                  >
+              What are the dates of processing of the product?
+              </td>
+              <td class="govuk-table__cell " id="manage-question-11">
+              <a  href="javascript:alert('Use question 7 for prototype journey!!');">Select</a>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+                </div>
+  </div>
+</div>
+{% endblock %}

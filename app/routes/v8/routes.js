@@ -73,7 +73,31 @@ router.post('/form-builder/conditional-routing/certificate-destination/new-certi
   res.redirect('/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-details')
 })
 
-//Manage rule journey - single
+//Manage rule journey - single rule - EXA
+router.get('/manage-rules-single-exa/index-with-results', function (req, res) {
+  req.session.activerules = true;
+  activerules = req.session.activerules;
+  console.log(activerules);
+  res.render('form-builder/conditional-routing/manage-pages/manage-rules-single-exa/pages-list', { activerules })
+})
+
+router.post('/manage-rules-single-exa/delete-rule', function (req, res) {
+  if (req.session.data['deleterule']=="Yes"){
+    activerules= false;
+    console.log(activerules);
+  }
+  else {
+    activerules= true;
+    console.log(activerules);
+  }
+  res.redirect('/manage-rules-single-exa/index-deleted-items')
+})
+
+router.get('/manage-rules-single-exa/index-deleted-items', function (req, res) {
+  res.render('form-builder/conditional-routing/manage-pages/manage-rules-single-exa/pages-list', { activerules })
+})
+
+//Manage rule journey - single rule - EHC
 router.post('/form-builder/conditional-routing/manage-pages/index-single-rule', function (req, res) {
 req.session.searchresults = false;
   searchresults = req.session.searchresults;

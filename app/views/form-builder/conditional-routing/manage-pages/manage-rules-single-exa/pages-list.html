@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<style type="text/css">
+  .app-link--up, .app-link--down {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 0px;
+      padding-left: 20px;
+      color: #1d70b8 !important;
+      cursor: pointer;
+  }
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div>
+
+             <h1 class="govuk-heading-xl heading">Pages for autoehc-2020-12-28-483<br/>Version 1.0</h1>
+           </div>
+           <div>
+             <table class="govuk-table" id="form-pages">
+               <thead class="govuk-table__head">
+               <tr class="govuk-table__row">
+                 <th class="govuk-table__header" colspan="2">Order</th>
+                 <th class="govuk-table__header ">Page Title</th>
+                 <th class="govuk-table__header">Group or task title</th>
+                 <th class="govuk-table__header">Rule</th>
+                 <th class="govuk-table__header">Actions</th>
+               </tr>
+               </thead>
+               <tbody>
+
+               <tr class="govuk-table__row">
+                 <td id="12097-pageOrder" class="govuk-table__cell applicationRef-column" width="5%" scope="row">
+                   1
+                 </td>
+                 <td class="govuk-table__cell" width="5%">
+
+                     <a id="12097-moveUpLink" class="govuk-link app-link--up" title="move up" href="">
+                       <span class="govuk-visually-hidden">move up</span><p></p>
+                     </a><br>
+                     <a id="12097-moveDownLink" class="govuk-link app-link--down" title="move down" href="">
+                       <span class="govuk-visually-hidden">move down</span><p></p>
+                     </a>
+             </td>
+                 <th id="12097-title" class="govuk-table__cell" scope="row">
+                   Page 1
+                 </th>
+                 <td id="12097-taskTitle" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+                   {% if activerules %}
+                   Show this page if 7 is equal to {{ data['exa-rule-response'] }}
+                   {% endif %}
+                   </span>
+                 </td>
+                 <td class="govuk-table__cell" scope="row"></td>
+                 <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                   <a id="12097-editLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">Change</a><br/>
+                   <a id="12097-viewQuestionsLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">View questions</a><br/>
+                   {% if not activerules %}
+                   <a class="govuk-link app-link--action" href="/form-builder/conditional-routing/manage-pages/manage-rules-single-exa/create-rule-1">Create rule</a><br/>
+                   {% endif %}
+                   {% if activerules %}
+                   <a class="govuk-link app-link--action" href="/form-builder/conditional-routing/manage-pages/manage-rules-single-exa/create-rule-2">Edit rule</a><br/>
+                   <a class="govuk-link app-link--action" href="/form-builder/conditional-routing/manage-pages/manage-rules-single-exa/delete">Delete rule</a><br/>
+                   {% endif %}
+                   <a id="12097-deleteLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">Delete</a>
+
+                 </td>
+               </tr>
+
+               <tbody>
+
+               <tr class="govuk-table__row">
+                 <td id="12098-pageOrder" class="govuk-table__cell applicationRef-column" width="5%" scope="row">
+                   2
+                 </td>
+                 <td class="govuk-table__cell" width="5%">
+
+                     <a id="12098-moveUpLink" class="govuk-link app-link--up" title="move up" href="/protected/forms/8270EHC/versions/2.56/pages/12098/change-order?direction&#x3D;UP">
+                       <span class="govuk-visually-hidden">move up</span><p></p>
+                     </a><br>
+                     <a id="12098-moveDownLink" class="govuk-link app-link--down" title="move down" href="/protected/forms/8270EHC/versions/2.56/pages/12098/change-order?direction&#x3D;DOWN">
+                       <span class="govuk-visually-hidden">move down</span><p></p>
+                     </a>
+             </td>
+                 <th id="12098-title" class="govuk-table__cell" scope="row">
+                   Page 2
+                 </th>
+                 <td id="12098-taskTitle" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+
+                   </span>
+                 </td>
+                  <td class="govuk-table__cell" scope="row"></td>
+                 <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                   <a id="12097-editLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">Change</a><br/>
+                   <a id="12097-viewQuestionsLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">View questions</a><br/>
+                   <a class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">Create rule</a><br/>
+                   <a id="12097-deleteLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">Delete</a>
+
+                 </td>
+               </tr>
+
+               <tbody>
+
+               <tr class="govuk-table__row">
+                 <td id="12099-pageOrder" class="govuk-table__cell applicationRef-column" width="5%" scope="row">
+                   3
+                 </td>
+                 <td class="govuk-table__cell" width="5%">
+
+                     <a id="12099-moveUpLink" class="govuk-link app-link--up" title="move up" href="/protected/forms/8270EHC/versions/2.56/pages/12099/change-order?direction&#x3D;UP">
+                       <span class="govuk-visually-hidden">move up</span><p></p>
+                     </a><br>
+                     <a id="12099-moveDownLink" class="govuk-link app-link--down" title="move down" href="/protected/forms/8270EHC/versions/2.56/pages/12099/change-order?direction&#x3D;DOWN">
+                       <span class="govuk-visually-hidden">move down</span><p></p>
+                     </a>
+             </td>
+                 <th id="12099-title" class="govuk-table__cell" scope="row">
+                   Page 3
+                 </th>
+                 <td id="12099-taskTitle" class="govuk-table__cell govuk-!-width-one-quarter" scope="row">
+
+                   </span>
+                 </td>
+                  <td class="govuk-table__cell" scope="row"></td>
+                 <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+                   <a id="12097-editLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">Change</a><br/>
+                   <a id="12097-viewQuestionsLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">View questions</a><br/>
+                   <a class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">Create rule</a><br/>
+                   <a id="12097-deleteLink" class="govuk-link app-link--action" href="javascript:alert('Not in prototype');">Delete</a>
+
+                 </td>
+               </tr>
+
+
+             </table>
+
+             <a id="link-createNewPage" href="/protected/forms/8270EHC/versions/2.56/pages/new"
+                class="govuk-button">Create new page</a>
+           </div>
+         </div>
+       </div>
+
+  </div>
+</div>
+{% endblock %}

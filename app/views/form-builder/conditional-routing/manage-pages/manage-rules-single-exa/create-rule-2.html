@@ -20,30 +20,31 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-l ">8270EHC v2.56</span>
+    <span class="govuk-caption-l ">autoehc-2020-12-28-483
+v1.0</span>
     <h1 id="formEditorHeading" class="govuk-heading-xl heading-with-help">Manage rules</h1>
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page title:    </span>For consignments transiting EU countries, who is responsible for the consignment when in the EU?</p>
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page ID:    </span>13</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page title:    </span>Page 1</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Page ID:    </span>1</p>
 
-<form method="POST" action="/manage-rules-single/index-with-results">
+<form method="POST" action="/manage-rules-single-exa/index-with-results">
     <div class="govuk-form-group operator govuk-!-margin-top-6">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-heading-m">Show this page when:<br/>"Is the destination of your consignment the EU or a third country?"<br/>is equal to:</h2>
+          <h2 class="govuk-heading-m">Show this page when:<br/>"Are you the exporter or the agent of the exporter?"<br/>is equal to:</h2>
 
         </legend>
 
         <div class="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eu" name="rule-response" type="radio" value="EU">
-            <label class="govuk-label govuk-radios__label" for="eu">
-              EU
+            <input class="govuk-radios__input" id="exporter" name="exa-rule-response" type="radio" value="exporter">
+            <label class="govuk-label govuk-radios__label" for="exporter">
+              Exporter
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="third-country" name="rule-response" type="radio" value="third country">
-            <label class="govuk-label govuk-radios__label" for="third-country">
-              Third country
+            <input class="govuk-radios__input" id="agent" name="exa-rule-response" type="radio" value="agent">
+            <label class="govuk-label govuk-radios__label" for="agent">
+              Agent
             </label>
           </div>
 
