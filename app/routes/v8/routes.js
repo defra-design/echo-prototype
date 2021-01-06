@@ -82,7 +82,7 @@ router.get('/manage-rules-single-exa/index-with-results', function (req, res) {
 })
 
 router.post('/manage-rules-single-exa/delete-rule', function (req, res) {
-  if (req.session.data['deleterule']=="Yes"){
+  if (req.session.data['deleteruleexa']=="Yes"){
     activerules= false;
     console.log(activerules);
   }
@@ -94,6 +94,7 @@ router.post('/manage-rules-single-exa/delete-rule', function (req, res) {
 })
 
 router.get('/manage-rules-single-exa/index-deleted-items', function (req, res) {
+  console.log(activerules);
   res.render('form-builder/conditional-routing/manage-pages/manage-rules-single-exa/pages-list', { activerules })
 })
 
