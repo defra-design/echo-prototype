@@ -79,7 +79,7 @@ router.get('/delete-notification', function (req, res) {
   res.render('form-builder/notifications/index', { activenotifications })
 }
 else {
-  activenotificatons= true;
+  activenotifications= true;
   console.log(activenotifications);
   res.render('form-builder/notifications/index', { activenotifications })
 }
@@ -92,7 +92,7 @@ router.post('/delete-notification', function (req, res) {
     res.redirect('/form-builder/notifications/index')
   }
   else {
-    activenotificatons= true;
+    activenotifications= true;
     console.log(activenotifications);
     res.redirect('/index-with-notifications')
   }
