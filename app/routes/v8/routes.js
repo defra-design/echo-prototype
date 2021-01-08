@@ -72,10 +72,23 @@ router.post('/form-builder/notifications/add', function (req, res) {
   res.redirect('/index-with-notifications')
 })
 
-router.post('/delete-notification', function (req, res) {
+router.get('/delete-notification', function (req, res) {
   if (req.session.data['deletenotification']=="Yes"){
     activenotifications= false;
     console.log(activenotificatons);
+  res.render('form-builder/notifications/index', { activenotifications })
+}
+else {
+  activenotificatons= true;
+  console.log(activenotifications);
+  res.render('form-builder/notifications/index', { activenotifications })
+}
+})
+
+router.post('/delete-notification', function (req, res) {
+  if (req.session.data['deletenotification']=="Yes"){
+    activenotifications= false;
+    console.log(activenotifications);
     res.redirect('/form-builder/notifications/index')
   }
   else {
