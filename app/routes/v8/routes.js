@@ -8,6 +8,7 @@ module.exports = function(router) {
   var certificatefallback;
   var searchresults;
   var activerules;
+  var activenotifications;
 
   env.addFilter('shorten', function(str, count) {
     return str.slice(0, count || 5);
@@ -59,6 +60,31 @@ module.exports = function(router) {
     next()
   })
 
+//Downtime notification admin
+router.get('/index-with-notifications', function (req, res) {
+  req.session.activenotifications = true;
+    activenotifications = req.session.activenotifications;
+  res.render('form-builder/notifications/index', { activenotifications })
+})
+
+
+router.post('/form-builder/notifications/add', function (req, res) {
+  res.redirect('/index-with-notifications')
+})
+
+router.post('/delete-notification', function (req, res) {
+  if (req.session.data['deletenotification']=="Yes"){
+    activenotifications= false;
+    console.log(activenotificatons);
+    res.redirect('/form-builder/notifications/index')
+  }
+  else {
+    activenotificatons= true;
+    console.log(activenotifications);
+    res.redirect('/index-with-notifications')
+  }
+
+})
 //Conditonal routing - send certificate to different destination dependent on commodity
 router.post('/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-details', function (req, res) {
 if (req.session.data.diseaseClearanceRequired == "RULE"){
