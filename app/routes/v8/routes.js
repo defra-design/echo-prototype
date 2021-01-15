@@ -60,6 +60,11 @@ module.exports = function(router) {
     next()
   })
 
+  //Conditional questions
+  router.post('/beta/v8/conditional-questions/question', function (req, res) {
+    console.log(req.session.data['final-destination']);
+    res.redirect('/beta/v8/conditional-questions/index')
+  })
 //Downtime notification admin
 router.get('/index-with-notifications', function (req, res) {
   req.session.activenotifications = true;
