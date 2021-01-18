@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Certificate is not valid - Check an export health certificate - GOV.UK
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+{% endblock %}
+{% block content %}
+<style type="text/css">
+  @media only screen and (max-device-width: 480px) {
+#invalid {
+
+}
+#invalid-image {
+  max-width:12%;
+  margin-bottom: 10px;
+}
+  }
+
+  @media only screen and (min-device-width: 480px) {
+#invalid {
+  margin-bottom: 5px;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+#invalid-image {
+  max-width:9%;
+  margin-bottom: 15px;
+}
+  }
+
+  </style>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+
+            <div class="govuk-panel govuk-panel--red">
+
+
+<div id="invalid">
+  <img src="/public/images/invalid.png" alt="Invalid certificate" id="invalid-image" style=""/>
+</div>
+
+             <h1 class="govuk-panel__title">
+              No, this certificate is not valid
+             </h1>
+
+
+
+           </div>
+
+
+           {% if certificatefallback %}
+             <p class="govuk-body">The certificate number you entered does not match our records for this certificate.</p>
+             {% else %}
+             <p class="govuk-body">The QR code you scanned does not match our records for this certificate.</p>
+           {% endif %}
+
+           <p class="govuk-body">If you think you've made a mistake, <a href="/check-ehc-v2/unique-code">enter the certificate number again</a>.</p>
+
+
+           <h2 class="govuk-heading-l">Certificate details</h2>
+           <p class="govuk-body"><span class="govuk-!-font-weight-bold">Certificate number:</span> {{ data['certificate-number'] }}</p>
+           <p class="govuk-body"><span class="govuk-!-font-weight-bold">12 digit number:</span> {{ data['unique-code'] }}</p>
+
+
+
+           <p><a href="/check-ehc-v2/unique-code">
+             Check another certificate
+             </a></p>
+
+           <h2 class="govuk-heading-s">Get help</h2>
+
+           <ul class="govuk-list govuk-list--bullet">
+             <li>call APHA on +44 (0) 3000 200 301</li>
+             <li>email <a href="mailto:example@example.com">exports@apha.gov.uk</a></li>
+           </ul>
+
+         </div>
+        </div>
+
+
+
+{% endblock %}

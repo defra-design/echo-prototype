@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+What certificate do you want to check? - Check an export health certificate - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<!--start-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if certificatenumbererror %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#certificate-number-error">Enter a certificate number in the correct format</a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% endif %}
+    <h1 class="govuk-heading-xl">
+      What is the certificate number?
+    </h1>
+    <img src="/public/images/cert-number-illustration-no-qr.jpg" style="max-width:100%;
+max-height:100%;" alt="Diagram showing location of the certificate number on the Export Health Certificate">
+    <form method="post">
+      <!-- <form  action="check-your-progress"  method="POST"> -->
+  <fieldset class="govuk-fieldset">
+      <div class="govuk-form-group   {% if certificatenumbererror %}govuk-form-group--error{% endif %}">
+        <label class="govuk-label govuk-!-font-weight-bold" for="certificate-number">
+          Certificate number
+        </label>
+        <div id="certificate-number-hint" class="govuk-hint">
+          Enter the 9 digit number from the certificate, for example 12/3/456789.
+        </div>
+        {% if certificatenumbererror %}
+        <span id="certificate-number-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Enter a certificate number in the correct format
+        </span>
+        {% endif %}
+        <input class="govuk-input {% if certificatenumbererror %}govuk-input--error{% endif %}" id="certificate-number" name="certificate-number" type="text" aria-describedby="certificate-number-hint certificate-number-error">
+      </div>
+  </fieldset>
+        <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

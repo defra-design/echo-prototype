@@ -9,6 +9,14 @@ module.exports = function(router) {
   var searchresults;
   var activerules;
   var activenotifications;
+  var uniquecode;
+  var uniquecodeparsed;
+  var uniquecodecorrect;
+  var certificatenumbercorrect;
+  var uniquecodeerror;
+  var certificatenumber;
+  var certificatenumbererror;
+  var certificatenumberparsed;
 
   env.addFilter('shorten', function(str, count) {
     return str.slice(0, count || 5);
@@ -217,6 +225,98 @@ router.get('/manage-rules/index-with-results', function (req, res) {
   console.log(activerules);
   res.render('form-builder/conditional-routing/manage-pages/manage-rules/index', { activerules })
 })
+
+//No-QR journey v2
+// **** Certificate number ***
+router.get('/check-ehc-v2/unique-code', function (req, res) {
+  res.render('check-ehc-v2/unique-code', { uniquecodeerror })
+})
+router.post('/check-ehc-v2/unique-code', function (req, res) {
+  uniquecode = req.session.data['unique-code'];
+  uniquecodeparsed = uniquecode.replace(/-/g, "");
+  if (uniquecodeparsed.length !== 12 ){
+    uniquecodeerror = true;
+    if (uniquecodeparsed == "156728769982" || uniquecodeparsed == "123456789101"){
+      uniquecodecorrect = true;
+      console.log("Correct unique code");
+    }
+    else {
+      uniquecodecorrect = false;
+      console.log("Incorrect unique code");
+    }
+    res.redirect('/check-ehc-v2/unique-code');
+  }
+else {
+  uniquecodeerror = false;
+  if (uniquecodeparsed == "156728769982" || uniquecodeparsed == "123456789101"){
+    uniquecodecorrect = true;
+    console.log("Correct unique code");
+  }
+  else {
+    console.log("Incorrect code");
+    uniquecodecorrect = false;
+  }
+res.redirect('/check-ehc-v2/certificate-number');
+}
+})
+
+router.get('/check-ehc-v2/certificate-number', function (req, res) {
+  res.render('check-ehc-v2/certificate-number', { certificatenumbererror })
+})
+
+router.post('/check-ehc-v2/certificate-number', function (req, res) {
+  certificatenumber = req.session.data['certificate-number'];
+  certificatenumberparsed = certificatenumber.replace(/\//g, "");
+    console.log(certificatenumberparsed);
+  if (certificatenumberparsed.length !== 9 ){
+    certificatenumbererror = true;
+    res.redirect('/check-ehc-v2/certificate-number');
+  }
+else {
+  console.log("Second if block");
+  certificatenumbererror = false;
+  if (certificatenumberparsed == "202176582"){
+    certificatenumbercorrect = true;
+    console.log("Correct certificate number");
+    if (uniquecodecorrect == true) {
+      res.redirect('/check-ehc-v2/valid');
+    }
+    else {
+      res.redirect('/check-ehc-v2/invalid');
+    }
+  }
+  else {
+    certificatenumbercorrect = false;
+    console.log("Incorrect certificate number");
+    res.redirect('/check-ehc-v2/invalid');
+  }
+
+}
+})
+
+router.post('/check-ehc-v2/unique-code', function (req, res) {
+  var reference = req.session.data['unique-code'];
+  certificatefallback = true;
+  console.log(reference);
+  switch(reference) {
+case "1234-5678-9101":
+  res.redirect('/check-ehc-v2/valid');
+  break;
+case "123456789101":
+  res.redirect('/check-ehc-v2/valid');
+  break;
+case "1567-2876-9982":
+  res.redirect('/check-ehc-v2/valid');
+  break;
+case "156728769982":
+  res.redirect('/check-ehc-v2/valid');
+  break;
+default:
+res.redirect('/check-ehc-v2/invalid');
+}
+
+})
+
 
   //No-QR journey
   // **** Certificate number ***
