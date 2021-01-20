@@ -234,7 +234,11 @@ router.get('/check-ehc-v2/unique-code', function (req, res) {
 router.post('/check-ehc-v2/unique-code', function (req, res) {
   uniquecode = req.session.data['unique-code'];
   uniquecodeparsed = uniquecode.replace(/-/g, "");
-  if (uniquecodeparsed.length !== 12 ){
+  console.log(uniquecodeparsed.charAt(0));
+  if (uniquecodeparsed.charAt(0) == 3){
+    res.redirect('/check-ehc-v2/daera');
+  }
+  else if (uniquecodeparsed.length !== 12 ){
     uniquecodeerror = true;
     if (uniquecodeparsed == "156728769982" || uniquecodeparsed == "123456789101"){
       uniquecodecorrect = true;
