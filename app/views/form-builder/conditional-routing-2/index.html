@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l govuk-!-margin-top-0" data-qa-id="Heading-Applications">
+         Exports Application Administration
+       </h1>
+       <ul class="govuk-list govuk-list--bullet">
+         <li><a class="govuk-link" href="javascript:alert('Not in prototype!');">Health Certificates</a>
+         </li>
+       </ul>
+       <ul class="govuk-list govuk-list--bullet">
+         <li><a class="govuk-link" href="javascript:alert('Not in prototype!');">EXA Documents</a></li>
+       </ul>
+       <ul class="govuk-list govuk-list--bullet">
+         <li><a class="govuk-link" href="javascript:alert('Not in prototype!');">Form Questions</a></li>
+       </ul>
+       <ul class="govuk-list govuk-list--bullet">
+         <li><a class="govuk-link" href="/form-builder/conditional-routing-2/reference-data/index">Reference data</a></li>
+       </ul>
+  </div>
+</div>
+{% endblock %}
