@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Certificate is valid - Check an export health certificate - GOV.UK
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+{% endblock %}
+{% block content %}
+<style type="text/css">
+  #valid {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  </style>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <div class="govuk-panel govuk-panel--confirmation">
+
+           <div id="valid">&#10003;</div>
+           <h1 class="govuk-panel__title">
+           Yes, this certificate is valid
+         </h1>
+
+       </div>
+       <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Certificate was checked previously error.
+  </strong>
+</div>
+          <h2 class="govuk-heading-l">Certificate details</h2>
+         <p class="govuk-body"><span class="govuk-!-font-weight-bold">Certificate number:</span> {{ data['certificate-number'] }}</p>
+         <p class="govuk-body"><span class="govuk-!-font-weight-bold">12 digit number:</span> {{ data['unique-code'] }}</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Destination country:</span> Philippines</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Certificate:</span> Non bovine meat to the Philippines </p>
+        <p><a href="/check-ehc-v2/unique-code">
+          Check another certificate
+          </a></p>
+
+<h2 class="govuk-heading-s">Something wrong with this certificate?</h2>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>call APHA on +44 (0) 3000 200 301</li>
+  <li>email <a href="mailto:example@example.com">exports@apha.gov.uk</a></li>
+</ul>
+
+     </div>
+    </div>
+
+</div>
+{% endblock %}

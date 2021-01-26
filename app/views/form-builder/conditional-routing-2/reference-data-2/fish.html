@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l ">Fish</span>
+    <h1 class="govuk-heading-l">Manage certificate routing</h1>
+
+
+<form method="post" action="/form-builder/conditional-routing-2/reference-data/fish">
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Live shellfish
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Clams</br>
+                  Crabs</br>
+                  Crayfish</br>
+                  Lobster</br>
+                  Mixed shellfish</br>
+                  Molluscs</br>
+                  Mussels</br>
+                  Oysters</br>
+                  Prawns</br>
+                  Whelks</br>
+                  Other
+                </dd>
+                <dd class="govuk-summary-list__value">
+              Certifier</br>
+              Certifier</br>
+              Certifier</br>
+              Caseworker</br>
+              Certifier</br>
+              Certifier</br>
+              Certifier</br>
+              Certifier</br>
+              Certifier</br>
+              Certifier</br>
+              Certifier
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/form-builder/conditional-routing-2/reference-data/disease-check">
+                    Change<span class="govuk-visually-hidden"> certificate routing</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Fishery products
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Clams<br/>
+                  Cod<br/>
+                  Crab<br/>
+                  Crayfish<br/>
+                  Fish oil<br/>
+                  Haddock<br/>
+                  Halibut<br/>
+                  Langoustines<br/>
+                  Lobster<br/>
+                  Mackerel<br/>
+                  Mixed products<br/>
+                  Molluscs<br/>
+                  Mussels<br/>
+                  Other<br/>
+                  Oysters<br/>
+                  Prawns<br/>
+                  Salmon<br/>
+                  Trout <br/>
+                  Whelks<br/>
+                </dd>
+                <dd class="govuk-summary-list__value">
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Caseworker</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Certifier</br>
+                  Not needed</br>
+                  Certifier
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> certificate routing</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+            <input class="govuk-button"
+                   type="submit"
+                   value="Save and continue"
+                   >
+            </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="POST" action="/form-builder/conditional-routing-2/reference-data-2/fish">
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+          <h1 class="govuk-heading-l">
+            For which commodity group do you want to manage certificate routing?
+          </h1>
+
+        </legend>
+
+
+        <div class="govuk-radios">
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group" name="commodity-group" type="radio" value="equine">
+                <label class="govuk-label govuk-radios__label" for="commodity-group">
+              Equine
+            </label>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group-2" name="commodity-group" type="radio" value="fish and fish products">
+                <label class="govuk-label govuk-radios__label" for="commodity-group-2">
+              Fish and fish products
+            </label>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group-3" name="commodity-group" type="radio" value="germplasm">
+                <label class="govuk-label govuk-radios__label" for="commodity-group-3">
+              Germplasm
+            </label>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group-4" name="commodity-group" type="radio" value="live animals">
+                <label class="govuk-label govuk-radios__label" for="commodity-group-4">
+              Live animals
+            </label>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group-5" name="commodity-group" type="radio" value="livestock">
+                <label class="govuk-label govuk-radios__label" for="commodity-group-5">
+              Livestock
+            </label>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group-6" name="commodity-group" type="radio" value="meat and dairy">
+                <label class="govuk-label govuk-radios__label" for="commodity-group-6">
+              Meat and dairy
+            </label>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group-7" name="commodity-group" type="radio" value="miscellaneous">
+                <label class="govuk-label govuk-radios__label" for="commodity-group-7">
+              Miscellaneous products
+            </label>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group-8" name="commodity-group" type="radio" value="pets">
+                <label class="govuk-label govuk-radios__label" for="commodity-group-8">
+              Pets
+            </label>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="commodity-group-9" name="commodity-group" type="radio" value="poultry">
+                <label class="govuk-label govuk-radios__label" for="commodity-group-9">
+              Poultry
+            </label>
+
+              </div>
+
+
+
+
+        </div>
+
+
+      </fieldset>
+
+
+      </div>
+<input class="govuk-button govuk-!-margin-top-3"
+       type="submit"
+       value="Save and continue"
+       >
+</form>
+  </div>
+</div>
+{% endblock %}

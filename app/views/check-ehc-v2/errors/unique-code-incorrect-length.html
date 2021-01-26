@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+What is the unique code? - Check an export health certificate - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<!--start-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#unique-code-error">12 digit number field incorrect length - error message</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    <h1 class="govuk-heading-xl">
+    What is the 12 digit number?
+    </h1>
+    <img src="/public/images/certificate-reference-no-qr.jpg" style="max-width:100%;
+    max-height:100%;" alt="Diagram showing location of the 12 digit number on the Export Health Certificate below the QR code">
+    <form method="POST">
+      <!-- <form  action="check-your-progress"  method="POST"> -->
+
+      <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group govuk-form-group--error">
+            <label class="govuk-label govuk-!-font-weight-bold" for="unique-code">
+              Enter the 12 digit number
+            </label>
+            <div id="certificate-number-hint" class="govuk-hint">
+              The 12 digit number is on the top right corner of the EHC. For example, 1234-5678-9101
+            </div>
+
+            <span id="unique-code-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> 12 digit number incorrect length - error message
+            </span>
+
+            <input class="govuk-input govuk-input--error" id="unique-code" name="unique-code" type="text" aria-describedby="unique-code-hint unique-code-error">
+          </div>
+      </fieldset>
+      <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+
+    </form>
+
+
+
+  </div>
+</div>
+{% endblock %}

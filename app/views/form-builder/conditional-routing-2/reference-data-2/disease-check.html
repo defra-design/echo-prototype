@@ -1,0 +1,391 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form method="POST" action="/form-builder/conditional-routing-2/reference-data/fish">
+
+
+          <span class="govuk-caption-l ">Live shellfish</span>
+          <h1 class="govuk-heading-l">Who will do the disease clearance check?</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Clams
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-clams-certifier" name="disease-clearance-clams" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-clams-caseworker" name="disease-clearance-clams" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-clams-no" name="disease-clearance-clams" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Crabs
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-crabs-certifier" name="disease-clearance-crabs" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-crabs-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-crabs-caseworker" name="disease-clearance-crabs" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-crabs-no" name="disease-clearance-crabs" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Crayfish
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-crayfish-certifier" name="disease-clearance-crayfish" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-crayfish-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-crayfish-caseworker" name="disease-clearance-crayfish" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-crayfish-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-crayfish-no" name="disease-clearance-crayfish" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Lobster
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-lobster-certifier" name="disease-clearance-lobster" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-lobster-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-lobster-caseworker" name="disease-clearance-lobster" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-lobster-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-lobster-no" name="disease-clearance-lobster" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-lobster-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                Mixed shellfish
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-mixedshellfish-certifier" name="disease-clearance-mixedshellfish" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-mixedshellfish-caseworker" name="disease-clearance-mixedshellfish" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-mixedshellfish-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-mixedshellfish-no" name="disease-clearance-mixedshellfish" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-mixedshellfish-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Molluscs
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-molluscs-certifier" name="disease-clearance-molluscs" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-molluscs-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-molluscss-caseworker" name="disease-clearance-molluscs" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-molluscs-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-molluscs-no" name="disease-clearance-molluscs" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-molluscs-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Mussels
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-mussels-certifier" name="disease-clearance-mussels" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-mussels-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-mussels-caseworker" name="disease-clearance-mussels" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-mussels-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-mussels-no" name="disease-clearance-mussels" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-mussels-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Oysters
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-oysters-certifier" name="disease-clearance-oysters" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-oysters-caseworker" name="disease-clearance-oysters" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-oysters-no" name="disease-clearance-oysters" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Prawns
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-prawns-certifier" name="disease-clearance-prawns" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-prawns-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-prawns-caseworker" name="disease-clearance-prawns" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-prawns-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-prawns-no" name="disease-clearance-prawns" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Whelks
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-whelks-certifier" name="disease-clearance-whelks" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-whelks-caseworker" name="disease-clearance-whelks" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-whelks-no" name="disease-clearance-whelks" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-clams-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Other
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-other-certifier" name="disease-clearance-other" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-other-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-other-caseworker" name="disease-clearance-other" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-other-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-others-no" name="disease-clearance-other" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-other-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+
+<input class="govuk-button govuk-!-margin-top-3"
+       type="submit"
+       value="Save and continue"
+       >
+</form>
+  </div>
+</div>
+{% endblock %}
