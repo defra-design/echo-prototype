@@ -240,7 +240,7 @@ router.post('/check-ehc-v2/unique-code', function (req, res) {
   }
   else if (uniquecodeparsed.length !== 12 ){
     uniquecodeerror = true;
-    if (uniquecodeparsed == "156728769982" || uniquecodeparsed == "123456789101"){
+    if (uniquecodeparsed == "212345678905"){
       uniquecodecorrect = true;
       console.log("Correct unique code");
     }
@@ -252,7 +252,7 @@ router.post('/check-ehc-v2/unique-code', function (req, res) {
   }
 else {
   uniquecodeerror = false;
-  if (uniquecodeparsed == "156728769982" || uniquecodeparsed == "123456789101"){
+  if (uniquecodeparsed == "212345678905"){
     uniquecodecorrect = true;
     console.log("Correct unique code");
   }
