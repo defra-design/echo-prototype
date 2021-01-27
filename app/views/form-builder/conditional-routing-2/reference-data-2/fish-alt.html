@@ -4,9 +4,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent %}
 <style media="screen">
-.align_top {
-  valign: top !important;
-}
+
 </style>
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
@@ -28,7 +26,7 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-l">Manage certificate routing</h1>
 
 
-<form method="post" action="/form-builder/conditional-routing-2/reference-data/fish">
+<form method="post" action="/form-builder/conditional-routing-2/index">
   <table class="govuk-table">
 <thead class="govuk-table__head">
 <tr class="govuk-table__row">
@@ -39,21 +37,77 @@ GOV.UK Prototype Kit
 </tr>
 </thead>
 <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+  <td class="govuk-table__cell" valign="top">Live shellfish</td>
+  <td class="govuk-table__cell" valign="top">Clams</br>
+                                            Crabs</br>
+                                            Crayfish</br>
+                                            Lobster</br>
+                                            Mixed shellfish</br>
+                                            Molluscs</br>
+                                            Mussels</br>
+                                            Oysters</br>
+                                            Prawns</br>
+                                            Whelks</br>
+                                            Other</td>
+  <td class="govuk-table__cell" valign="top">{{ data['disease-clearance-clams'] }}<br/>
+    {{ data['disease-clearance-crabs'] }}<br/>
+    {{ data['disease-clearance-crayfish'] }}<br/>
+    {{ data['disease-clearance-lobster'] }}<br/>
+    {{ data['disease-clearance-mixedshellfish'] }}<br/>
+    {{ data['disease-clearance-molluscs'] }}<br/>
+    {{ data['disease-clearance-mussels'] }}<br/>
+    {{ data['disease-clearance-oysters'] }}<br/>
+    {{ data['disease-clearance-prawns'] }}<br/>
+    {{ data['disease-clearance-whelks'] }}<br/>
+    {{ data['disease-clearance-other'] }}<br/>
+
+  </td>
+  <td class="govuk-table__cell" valign="top"><a href="disease-check">Change</a></td>
+</tr>
 <tr class="govuk-table__row">
-<td class="align_top govuk-table__row ">Live shellfish</th>
-<td class="govuk-table__row">Clams</br>
-Crabs</br>
-Crayfish</br>
-Lobster</br>
-Mixed shellfish</br>
-Molluscs</br>
-Mussels</br>
-Oysters</br>
-Prawns</br>
-Whelks</br>
-Other</td>
-<td class="govuk-table__row">First 6 weeks</th>
-<td class="govuk-table__row">£109.80 per week</td>
+<td class="govuk-table__cell" valign="top">Fishery products</td>
+<td class="govuk-table__cell" valign="top">Clams<br/>
+Cod<br/>
+Crab<br/>
+Crayfish<br/>
+Fish oil<br/>
+Haddock<br/>
+Halibut<br/>
+Langoustines<br/>
+Lobster<br/>
+Mackerel<br/>
+Mixed products<br/>
+Molluscs<br/>
+Mussels<br/>
+Other<br/>
+Oysters<br/>
+Prawns<br/>
+Salmon<br/>
+Trout <br/>
+Whelks
+<td class="govuk-table__cell" valign="top">
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Not needed<br/>
+  Case worker<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Certifier<br/>
+  Case worker
+</td>
+<td class="govuk-table__cell" valign="top"><a href="javascript:alert('Not in prototype!');">Change</a></td>
 </tr>
 </tbody>
 </table>

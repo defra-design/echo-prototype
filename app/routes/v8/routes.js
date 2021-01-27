@@ -68,6 +68,23 @@ module.exports = function(router) {
     next()
   })
 
+  //Conditional routing of certificates
+  router.get('/conditional-routing-2/set-variables', function (req, res) {
+  console.log("The GET is running1");
+    req.session.data['disease-clearance-clams']="Certifier";
+    req.session.data['disease-clearance-crabs']="Certifier";
+    req.session.data['disease-clearance-crayfish']="Certifier";
+    req.session.data['disease-clearance-lobster']="Certifier";
+    req.session.data['disease-clearance-mixedshellfish']="Certifier";
+    req.session.data['disease-clearance-molluscs']="Certifier";
+    req.session.data['disease-clearance-mussels']="Certifier";
+    req.session.data['disease-clearance-oysters']="Certifier";
+    req.session.data['disease-clearance-prawns']="Certifier";
+    req.session.data['disease-clearance-whelks']="Certifier";
+    req.session.data['disease-clearance-other']="Certifier";
+    res.render('form-builder/conditional-routing-2/reference-data-2/index')
+  })
+
   //Conditional questions
   router.post('/beta/v8/conditional-questions/question', function (req, res) {
     console.log(req.session.data['final-destination']);
