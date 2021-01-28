@@ -25,15 +25,40 @@ Certificate is valid - Check an export health certificate - GOV.UK
 
        </div>
           <h2 class="govuk-heading-l">Certificate details</h2>
+
+          <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">12 digit number</th>
+          <td class="govuk-table__cell">{{ data['unique-code'] }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Certificate number</th>
+          <td class="govuk-table__cell">{{ data['certificate-number'] }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Destination country</th>
+          <td class="govuk-table__cell">Philippines</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Certificate</th>
+          <td class="govuk-table__cell">Non bovine meat to the Philippines</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+<!--
          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Certificate number:</span> {{ data['certificate-number'] }}</p>
          <p class="govuk-body"><span class="govuk-!-font-weight-bold">12 digit number:</span> {{ data['unique-code'] }}</p>
         <p class="govuk-body"><span class="govuk-!-font-weight-bold">Destination country:</span> Philippines</p>
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Certificate:</span> Non bovine meat to the Philippines </p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Certificate:</span>  </p>
+        -->
         <p><a href="/check-ehc-v2/unique-code">
           Check another certificate
           </a></p>
 
-          <h2 class="govuk-heading-s">Advice on certificate authenticity</h2>
+          <h2 class="govuk-heading-m">Advice on certificate authenticity</h2>
 
           <p class="govuk-body">If you are concerned that this certificate is not authentic, contact <a href="mailto:exports@apha.gov.uk">exports@apha.gov.uk</a> for advice. You must include a photo or scan of the certificate.</p<
 
