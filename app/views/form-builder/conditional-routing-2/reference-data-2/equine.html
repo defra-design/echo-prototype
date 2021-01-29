@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l ">Equine</span>
+    <h1 class="govuk-heading-l">Manage certificate routing</h1>
+
+
+<form method="post" action="/form-builder/disease-clearance/2/equine">
+  <table class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th scope="col" class="govuk-table__header">Commodity type</th>
+<th scope="col" class="govuk-table__header">Commodity name</th>
+<th scope="col" class="govuk-table__header">Certificate destination</th>
+<th scope="col" class="govuk-table__header"></th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+  <td class="govuk-table__cell" valign="top">Registered</td>
+  <td class="govuk-table__cell" valign="top">Clams</br>
+                                            </td>
+  <td class="govuk-table__cell" valign="top">{{ data['disease-clearance-clams'] }}
+
+  </td>
+  <td class="govuk-table__cell" valign="top"><a href="disease-check">Change</a></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell" valign="top">Unregistered</td>
+<td class="govuk-table__cell" valign="top">Clams</td>
+<td class="govuk-table__cell" valign="top">
+  Certifier
+</td>
+<td class="govuk-table__cell" valign="top"><a href="javascript:alert('Not in prototype!');">Change</a></td>
+</tr>
+</tbody>
+</table>
+            <input class="govuk-button"
+                   type="submit"
+                   value="Save and continue"
+                   >
+            </form>
+  </div>
+</div>
+{% endblock %}

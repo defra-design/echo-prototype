@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form method="POST" action="/form-builder/disease-clearance/2/equine">
+
+
+          <span class="govuk-caption-l">Equine</span>
+          <h1 class="govuk-heading-l">Who will do the disease clearance check?</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Registered
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-equine-certifier" name="disease-clearance-equine" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-equine-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-equine-caseworker" name="disease-clearance-equine" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-equine-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-equine-no" name="disease-clearance-equine" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-equine-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+
+
+
+            </fieldset>
+          </div>
+
+
+<input class="govuk-button govuk-!-margin-top-3"
+       type="submit"
+       value="Save and continue"
+       >
+</form>
+  </div>
+</div>
+{% endblock %}

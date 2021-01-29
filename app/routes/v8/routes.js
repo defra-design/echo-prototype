@@ -69,8 +69,44 @@ module.exports = function(router) {
   })
 
   //Conditional routing of certificates
+  router.get('/disease-clearance-1/set-variables', function (req, res) {
+  console.log("The GET is running1");
+    req.session.data['disease-clearance-equine']="Certifier";
+    req.session.data['disease-clearance-shellfish-group']="Certifier";
+    req.session.data['disease-clearance-clams']="Certifier";
+    req.session.data['disease-clearance-crabs']="Certifier";
+    req.session.data['disease-clearance-crayfish']="Certifier";
+    req.session.data['disease-clearance-lobster']="Certifier";
+    req.session.data['disease-clearance-mixedshellfish']="Certifier";
+    req.session.data['disease-clearance-molluscs']="Certifier";
+    req.session.data['disease-clearance-mussels']="Certifier";
+    req.session.data['disease-clearance-oysters']="Certifier";
+    req.session.data['disease-clearance-prawns']="Certifier";
+    req.session.data['disease-clearance-whelks']="Certifier";
+    req.session.data['disease-clearance-other']="Certifier";
+    res.render('form-builder/disease-clearance/1/commodity-group')
+  })
+  router.get('/disease-clearance-2/set-variables', function (req, res) {
+  console.log("The GET is running1");
+  req.session.data['disease-clearance-equine']="Certifier";
+  req.session.data['disease-clearance-shellfish-group']="Certifier";
+
+    req.session.data['disease-clearance-clams']="Certifier";
+    req.session.data['disease-clearance-crabs']="Certifier";
+    req.session.data['disease-clearance-crayfish']="Certifier";
+    req.session.data['disease-clearance-lobster']="Certifier";
+    req.session.data['disease-clearance-mixedshellfish']="Certifier";
+    req.session.data['disease-clearance-molluscs']="Certifier";
+    req.session.data['disease-clearance-mussels']="Certifier";
+    req.session.data['disease-clearance-oysters']="Certifier";
+    req.session.data['disease-clearance-prawns']="Certifier";
+    req.session.data['disease-clearance-whelks']="Certifier";
+    req.session.data['disease-clearance-other']="Certifier";
+    res.render('form-builder/disease-clearance/2/commodity-group')
+  })
   router.get('/conditional-routing-2/set-variables', function (req, res) {
   console.log("The GET is running1");
+  req.session.data['disease-clearance-equine']="Certifier";
     req.session.data['disease-clearance-clams']="Certifier";
     req.session.data['disease-clearance-crabs']="Certifier";
     req.session.data['disease-clearance-crayfish']="Certifier";
@@ -84,6 +120,18 @@ module.exports = function(router) {
     req.session.data['disease-clearance-other']="Certifier";
     res.render('form-builder/conditional-routing-2/reference-data-2/index')
   })
+
+  router.post('/disease-clearance-2/commodity-routing', function (req, res) {
+    console.log(req.session.data['commodity-group']);
+    if (req.session.data['commodity-group']=="equine"){
+res.redirect('/form-builder/disease-clearance/2/equine');
+    }
+    else {
+res.redirect('/form-builder/disease-clearance/2/fish')
+    }
+
+  })
+
 
   //Conditional questions
   router.post('/beta/v8/conditional-questions/question', function (req, res) {

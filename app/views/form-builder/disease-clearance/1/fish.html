@@ -21,18 +21,17 @@ GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <span class="govuk-caption-l ">Fish</span>
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l ">Fish and fish products</span>
     <h1 class="govuk-heading-l">Manage disease clearance routing</h1>
 
 
-<form method="post" action="/form-builder/conditional-routing-2/index">
+<form method="post" action="/form-builder/disease-clearance/1/index">
   <table class="govuk-table">
 <thead class="govuk-table__head">
 <tr class="govuk-table__row">
 <th scope="col" class="govuk-table__header">Commodity type</th>
-<th scope="col" class="govuk-table__header">Certificate destination</th>
-<th scope="col" class="govuk-table__header"></th>
+
 <th scope="col" class="govuk-table__header">Commodity name</th>
 <th scope="col" class="govuk-table__header">Certificate destination</th>
 <th scope="col" class="govuk-table__header"></th>
@@ -41,8 +40,16 @@ GOV.UK Prototype Kit
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
   <td class="govuk-table__cell" valign="top">Live shellfish</td>
-  <td class="govuk-table__cell" valign="top">Certifier</td>
-    <td class="govuk-table__cell" valign="top"><a href="disease-check">Change</a></td>
+
+  <td class="govuk-table__cell" valign="top">
+  <td class="govuk-table__cell" valign="top">{{ data['disease-clearance-shellfish-group'] }}
+
+  </td>
+  <td class="govuk-table__cell" valign="top"><a href="disease-check-shellfish-group">Change</a></td>
+</tr>
+  <tr class="govuk-table__row">
+  <td class="govuk-table__cell" valign="top"></td>
+
   <td class="govuk-table__cell" valign="top">Clams</br>
                                             Crabs</br>
                                             Crayfish</br>
@@ -71,8 +78,14 @@ GOV.UK Prototype Kit
 </tr>
 <tr class="govuk-table__row">
 <td class="govuk-table__cell" valign="top">Fishery products</td>
-<td class="govuk-table__cell" valign="top">Certifier</td>
+<td class="govuk-table__cell" valign="top">
+<td class="govuk-table__cell" valign="top">
+  Certifier
+</td>
 <td class="govuk-table__cell" valign="top"><a href="javascript:alert('Not in prototype!');">Change</a></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell" valign="top"></td>
 <td class="govuk-table__cell" valign="top">Clams<br/>
 Cod<br/>
 Crab<br/>

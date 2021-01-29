@@ -22,17 +22,47 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form method="POST" action="/form-builder/conditional-routing-2/reference-data-2/fish-alt">
+    <form method="POST" action="/form-builder/disease-clearance/2/fish">
 
 
-          <span class="govuk-caption-l ">Live shellfish</span>
+          <span class="govuk-caption-l">Live shellfish</span>
           <h1 class="govuk-heading-l">Who will do the disease clearance check?</h1>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Clams
+                  Live shellfish
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-group-certifier" name="disease-clearance-shellfish-group" type="radio" value="Certifier">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-group-certifier">
+                    Certifier
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-group-caseworker" name="disease-clearance-shellfish-group" type="radio" value="Case worker">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-group-caseworker">
+                    Case worker
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="disease-clearance-group-no" name="disease-clearance-shellfish-group" type="radio" value="Not needed">
+                  <label class="govuk-label govuk-radios__label" for="disease-clearance-group-no">
+                    Disease clearance not needed
+                  </label>
+                </div>
+              </div>
+              </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Live shellfish: Clams
                 </h1>
               </legend>
 
@@ -64,7 +94,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Crabs
+                  Live shellfish: Crabs
                 </h1>
               </legend>
 
@@ -96,7 +126,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Crayfish
+                  Live shellfish: Crayfish
                 </h1>
               </legend>
 
@@ -128,7 +158,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Lobster
+                  Live shellfish: Lobster
                 </h1>
               </legend>
 
@@ -160,7 +190,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                Mixed shellfish
+                Live shellfish: Mixed shellfish
                 </h1>
               </legend>
 
@@ -192,7 +222,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Molluscs
+                  Live shellfish: Molluscs
                 </h1>
               </legend>
 
@@ -224,7 +254,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Mussels
+                  Live shellfish: Mussels
                 </h1>
               </legend>
 
@@ -256,7 +286,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Oysters
+                  Live shellfish: Oysters
                 </h1>
               </legend>
 
@@ -288,7 +318,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Prawns
+                  Live shellfish: Prawns
                 </h1>
               </legend>
 
@@ -320,7 +350,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Whelks
+                  Live shellfish: Whelks
                 </h1>
               </legend>
 
@@ -352,7 +382,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h1 class="govuk-fieldset__heading">
-                  Other
+                  Live shellfish: Other
                 </h1>
               </legend>
 

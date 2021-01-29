@@ -21,40 +21,36 @@ GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <span class="govuk-caption-l ">Fish</span>
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l ">Fish and fish products</span>
     <h1 class="govuk-heading-l">Manage disease clearance routing</h1>
 
 
-<form method="post" action="/form-builder/conditional-routing-2/index">
+<form method="post" action="/form-builder/disease-clearance/2/index">
   <table class="govuk-table">
 <thead class="govuk-table__head">
 <tr class="govuk-table__row">
-<th scope="col" class="govuk-table__header">Commodity type</th>
-<th scope="col" class="govuk-table__header">Certificate destination</th>
-<th scope="col" class="govuk-table__header"></th>
-<th scope="col" class="govuk-table__header">Commodity name</th>
+<th scope="col" class="govuk-table__header">Commodity</th>
 <th scope="col" class="govuk-table__header">Certificate destination</th>
 <th scope="col" class="govuk-table__header"></th>
 </tr>
 </thead>
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
-  <td class="govuk-table__cell" valign="top">Live shellfish</td>
-  <td class="govuk-table__cell" valign="top">Certifier</td>
-    <td class="govuk-table__cell" valign="top"><a href="disease-check">Change</a></td>
-  <td class="govuk-table__cell" valign="top">Clams</br>
-                                            Crabs</br>
-                                            Crayfish</br>
-                                            Lobster</br>
-                                            Mixed shellfish</br>
-                                            Molluscs</br>
-                                            Mussels</br>
-                                            Oysters</br>
-                                            Prawns</br>
-                                            Whelks</br>
-                                            Other</td>
-  <td class="govuk-table__cell" valign="top">{{ data['disease-clearance-clams'] }}<br/>
+
+  <td class="govuk-table__cell" valign="top">Live shellfish<br/>
+                                            Live shellfish:     Clams</br>
+                                            Live shellfish:     Crabs</br>
+                                            Live shellfish:     Crayfish</br>
+                                            Live shellfish:     Lobster</br>
+                                            Live shellfish:     Mixed shellfish</br>
+                                            Live shellfish:     Molluscs</br>
+                                            Live shellfish:     Mussels</br>
+                                            Live shellfish:     Oysters</br>
+                                            Live shellfish:     Prawns</br>
+                                            Live shellfish:     Whelks</br>
+                                            Live shellfish:     Other</td>
+  <td class="govuk-table__cell" valign="top">{{ data['disease-clearance-shellfish-group'] }}<br/>{{ data['disease-clearance-clams'] }}<br/>
     {{ data['disease-clearance-crabs'] }}<br/>
     {{ data['disease-clearance-crayfish'] }}<br/>
     {{ data['disease-clearance-lobster'] }}<br/>
@@ -69,29 +65,29 @@ GOV.UK Prototype Kit
   </td>
   <td class="govuk-table__cell" valign="top"><a href="disease-check">Change</a></td>
 </tr>
+
 <tr class="govuk-table__row">
-<td class="govuk-table__cell" valign="top">Fishery products</td>
-<td class="govuk-table__cell" valign="top">Certifier</td>
-<td class="govuk-table__cell" valign="top"><a href="javascript:alert('Not in prototype!');">Change</a></td>
-<td class="govuk-table__cell" valign="top">Clams<br/>
-Cod<br/>
-Crab<br/>
-Crayfish<br/>
-Fish oil<br/>
-Haddock<br/>
-Halibut<br/>
-Langoustines<br/>
-Lobster<br/>
-Mackerel<br/>
-Mixed products<br/>
-Molluscs<br/>
-Mussels<br/>
-Other<br/>
-Oysters<br/>
-Prawns<br/>
-Salmon<br/>
-Trout <br/>
-Whelks
+
+<td class="govuk-table__cell" valign="top">Fishery products<br/>
+
+Fishery products:  Clams<br/>
+Fishery products:  Cod<br/>
+Fishery products:  Crab<br/>
+Fishery products:  Fish oil<br/>
+Fishery products:  Haddock<br/>
+Fishery products:  Halibut<br/>
+Fishery products:  Langoustines<br/>
+Fishery products:  Lobster<br/>
+Fishery products:  Mackerel<br/>
+Fishery products:  Mixed products<br/>
+Fishery products:  Molluscs<br/>
+Fishery products:  Mussels<br/>
+Fishery products:  Other<br/>
+Fishery products:  Oysters<br/>
+Fishery products:  Prawns<br/>
+Fishery products:  Salmon<br/>
+Fishery products:  Trout <br/>
+Fishery products:  Whelks
 <td class="govuk-table__cell" valign="top">
   Certifier<br/>
   Certifier<br/>
