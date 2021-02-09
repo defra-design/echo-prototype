@@ -18,6 +18,7 @@ module.exports = function(router) {
   var certificatenumbererror;
   var certificatenumberparsed;
 
+
   env.addFilter('shorten', function(str, count) {
     return str.slice(0, count || 5);
   });
@@ -135,9 +136,15 @@ res.redirect('/form-builder/disease-clearance/2/fish')
 
   //Conditional questions
   router.post('/beta/v8/conditional-questions/question', function (req, res) {
-    console.log(req.session.data['final-destination']);
-    res.redirect('/beta/v8/conditional-questions/index')
+    if (req.session.data['final-destination']=="EU"){
+      res.redirect('/beta/v8/conditional-questions/index-result-eu')
+    }
+    else {
+      res.redirect('/beta/v8/conditional-questions/index-result-third')
+    }
   })
+
+
 //Downtime notification admin
 router.get('/index-with-notifications', function (req, res) {
   req.session.activenotifications = true;
