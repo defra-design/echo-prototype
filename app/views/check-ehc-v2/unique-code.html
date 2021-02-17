@@ -11,8 +11,8 @@ What is the unique code? - Check an export health certificate - GOV.UK
 <div class="govuk-grid-column-two-thirds">
 {% if showlanguages %}
 <ul class="language-toggle govuk-list govuk-!-margin-top-4">
-   <li> English </li>
-   <li> <a href="/check-ehc-internationalisation/select-language" lang="cy" class="govuk-link">Change language</a> </li>
+   <li> {{languageselected}} </li>
+   <li> <a href="/check-ehc-internationalisation/select-language" lang="cy" class="govuk-link">{{languagechange}}</a> </li>
   </ul>
   {% endif %}
   </div>

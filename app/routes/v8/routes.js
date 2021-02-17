@@ -19,6 +19,8 @@ module.exports = function(router) {
   var certificatenumbererror;
   var certificatenumberparsed;
   var showlanguages;
+  var languageselected;
+  var languagechange;
 
 
   env.addFilter('shorten', function(str, count) {
@@ -318,7 +320,7 @@ router.get('/check-ehc-v2/before-you-start', function (req, res) {
 })
 
 router.get('/check-ehc-v2/unique-code', function (req, res) {
-  res.render('check-ehc-v2/unique-code', { uniquecodeerror, showlanguages})
+  res.render('check-ehc-v2/unique-code', { uniquecodeerror, showlanguages, languageselected, languagechange})
 })
 router.post('/check-ehc-v2/unique-code', function (req, res) {
   uniquecode = req.session.data['unique-code'];
@@ -354,7 +356,7 @@ res.redirect('/check-ehc-v2/certificate-number');
 })
 
 router.get('/check-ehc-v2/certificate-number', function (req, res) {
-  res.render('check-ehc-v2/certificate-number', { certificatenumbererror, showlanguages })
+  res.render('check-ehc-v2/certificate-number', { certificatenumbererror, showlanguages, languageselected, languagechange })
 })
 
 router.post('/check-ehc-v2/certificate-number', function (req, res) {
@@ -413,6 +415,14 @@ res.redirect('/check-ehc-v2/invalid');
 
 router.post('/check-ehc-internationalisation/select-language', function (req, res) {
 showlanguages = true;
+if (req.session.data['language-select']=="language-select-10"){
+  languageselected = "Français"
+  languagechange = "Changer de langue"
+}
+else {
+  languageselected = "English"
+  languagechange = "Change language"
+}
   res.redirect('/check-ehc-v2/unique-code')
 })
 
