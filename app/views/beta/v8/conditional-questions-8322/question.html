@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check an export health certificate - GOV.UK
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<div class="govuk-phase-banner govuk-width-container" id="beta-banner">
+  <p class="govuk-phase-banner__content"><strong
+      class="govuk-tag govuk-phase-banner__content__tag ">
+    beta
+  </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+
+
+    </span>
+  </p>
+</div>
+<div class="govuk-width-container">
+   <div class="login-nav login-border">
+    <ul class="login-nav__list">
+      <li class="login-nav__list-item" id="Nav-DisplayName"></li>
+      <li class="login-nav__list-item"> | <a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+      <li class="login-nav__list-item"><a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+    </ul>
+  </div>
+  </div>
+  <a class="govuk-back-link" id="link-back" href="/beta/v8/conditional-questions/index">Back</a>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div>
+          <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Is the destination of your consignment the EU or a third country?</h1>
+          <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+
+            <form method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="zWfKAhRgjZliMncBxwGpvLUkn1mueMAQmpvQR29x_AF"/>
+              <input type="hidden" name="certificate" value=""/>
+              <input type="hidden" name="formPageId" value=""/>
+
+              <input type="hidden" name="ehcNumber" value="8270EHC"/>
+
+<!-- @formatter:off -->
+   <div class="govuk-form-group ">
+     <fieldset id="8270EHC-0" class="govuk-fieldset">
+       <legend class="govuk-fieldset__legend" for="8270EHC-0">
+         <span class="govuk-label govuk-!-font-weight-bold">Final destination</span>
+       </legend>
+
+
+       <div class="govuk-radios govuk-radios--inline">
+         <div class="govuk-radios__item">
+           <input type="radio"
+                  class="govuk-radios__input"
+                  id="final-destination-eu"
+                  value="EU"
+                  name="final-destination"
+                  data-qa-id="Question-radio-EU"
+                  autofocus="autofocus"
+
+           />
+           <label class="govuk-label govuk-radios__label" for="final-destination-eu">EU</label>
+         </div>
+         <div class="govuk-radios__item">
+           <input type="radio"
+                  class="govuk-radios__input"
+                  id="final-destination-third-country"
+                  value="Third country"
+                  name="final-destination"
+                  data-qa-id="Question-radio-Third country"
+
+           />
+           <label class="govuk-label govuk-radios__label" for="final-destination-third-country">Third country</label>
+         </div>
+       </div>
+     </fieldset>
+   </div>
+
+<input type="hidden" name="0-formQuestionId" value="29019"/>
+<input type="hidden" name="0-questionId" value="723"/>
+<input type="hidden" name="0-formName" value="8270EHC"/>
+<input type="hidden" name="0-questionText" value="Final destination"/>
+<input type="hidden" name="0-questionType" value="single_select"/>
+<input type="hidden" name="0-questionOrder" value="1"/>
+<input type="hidden" name="0-questionScope" value="BOTH"/>
+<input type="hidden" name="questionSequence-29019" value="0"/><!-- @formatter:on -->
+              <div id="skip-question-box" class="govuk-form-group defra-callout ">
+                <h3 class="govuk-heading-m">You do not have to answer every question</h3>
+                <input type="hidden" id="skipQuestionText" value="I&#x27;m skipping this question">
+                <input type="hidden" id="allQuestionsAnswered" value="false">
+                <p class="govuk-body">
+                  You can skip questions if you do not have the information right now. You can fill in any blanks before you submit, or leave them for your certifier to fill in.
+                </p>
+                <div id="skip_question_answers" class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="skip_answers" name="skip_answers" type="checkbox" />
+                    <label class="govuk-label govuk-checkboxes__label" for="skip_answers">
+                      I&#x27;m skipping this question
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage"
+                     value="1"/>
+              <div class="govuk-grid-row margin-top-30"></div>
+              <div class="govuk-grid-column-one-half govuk-!-margin-left-0 govuk-!-padding-0">
+                <input class="govuk-button margin-top-30"
+                       type="submit"
+                       name="saveAndContinue"
+                       aria-label="save and continue"
+                       value="Save and continue"
+                       id="Button-SaveAndContinue"
+                       data-qa-id="Button-SaveAndContinue">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-body">
+                  <input class="link-button"
+                         type="submit"
+                         value="Save and continue later"
+                         aria-label="Save and continue later"
+                         name="saveAndResumeLater"
+                         data-qa-id="Button-SaveAndResumeLater"
+                         id="Button-SaveAndResumeLater" />
+                </div>
+              </div>
+
+
+              </div>
+            </form>
+
+        </div>
+
+</div>
+</div>
+{% endblock %}
