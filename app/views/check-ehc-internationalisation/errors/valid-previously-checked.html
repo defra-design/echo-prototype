@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Certificate is valid - Check an export health certificate - GOV.UK
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+{% endblock %}
+{% block content %}
+<style type="text/css">
+  #valid {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  </style>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <div class="govuk-panel govuk-panel--confirmation">
+
+           <div id="valid">&#10003;</div>
+           <h1 class="govuk-panel__title">
+           Yes, this certificate is valid
+         </h1>
+
+       </div>
+       <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    This certificate was previously checked on 2 January 2021.
+  </strong>
+</div>
+          <h2 class="govuk-heading-l">Certificate details</h2>
+          <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">12 digit number</th>
+          <td class="govuk-table__cell">2123-4567-8905</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Certificate number</th>
+          <td class="govuk-table__cell">20/2/176582</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Destination country</th>
+          <td class="govuk-table__cell">Philippines</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Certificate</th>
+          <td class="govuk-table__cell">Non bovine meat to the Philippines</td>
+        </tr>
+      </tbody>
+    </table>
+        <p><a href="/check-ehc-v2/unique-code">
+          Check another certificate
+          </a></p>
+
+          <h2 class="govuk-heading-m">Advice on certificate authenticity</h2>
+
+          <p class="govuk-body">If you are concerned that this certificate is not authentic, contact <a href="mailto:exports@apha.gov.uk">exports@apha.gov.uk</a> for advice. You must include a photo or scan of the certificate.</p<
+
+
+
+     </div>
+    </div>
+
+</div>
+{% endblock %}
