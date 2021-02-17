@@ -32,6 +32,23 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/sub-nav";
 @import "components/google-search";
 
+//Language language-toggle
+ul.language-toggle {
+    float: right;
+    text-align: right; }
+    ul.language-toggle li {
+      display: inline-block;
+      padding-left: 1rem;
+      border-left: .1rem solid currentColor;
+      margin-left: 1rem; }
+      ul.language-toggle li:first-child {
+        padding-left: 0;
+        border-left: none;
+        margin-left: 0; }
+    @media (max-width: 640px) {
+      ul.language-toggle {
+        float: none;
+        width: 100%; } }
 
 //New Notification pattern
 .govuk-notification-banner {

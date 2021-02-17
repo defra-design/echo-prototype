@@ -18,6 +18,7 @@ module.exports = function(router) {
   var certificatenumber;
   var certificatenumbererror;
   var certificatenumberparsed;
+  var showlanguages;
 
 
   env.addFilter('shorten', function(str, count) {
@@ -148,10 +149,10 @@ res.redirect('/form-builder/disease-clearance/2/fish')
   //Conditional questions
   router.post('/beta/v8/conditional-questions-8322/question', function (req, res) {
     if (req.session.data['final-destination']=="EU"){
-      res.redirect('/beta/v8/conditional-questions-8322/index-result-eu')
+      res.redirect('/beta/v8/conditional-questions-8322ß/index-result-eu')
     }
     else {
-      res.redirect('/beta/v8/conditional-questions-8322/index-result-third')
+      res.redirect('/beta/v8/conditional-questions-8270/index-result-third')
     }
   })
 
@@ -311,8 +312,13 @@ router.get('/manage-rules/index-with-results', function (req, res) {
 
 //No-QR journey v2
 // **** Certificate number ***
+router.get('/check-ehc-v2/before-you-start', function (req, res) {
+  showlanguages = false;
+  res.render('check-ehc-v2/before-you-start', { uniquecodeerror, showlanguages})
+})
+
 router.get('/check-ehc-v2/unique-code', function (req, res) {
-  res.render('check-ehc-v2/unique-code', { uniquecodeerror })
+  res.render('check-ehc-v2/unique-code', { uniquecodeerror, showlanguages})
 })
 router.post('/check-ehc-v2/unique-code', function (req, res) {
   uniquecode = req.session.data['unique-code'];
@@ -348,7 +354,7 @@ res.redirect('/check-ehc-v2/certificate-number');
 })
 
 router.get('/check-ehc-v2/certificate-number', function (req, res) {
-  res.render('check-ehc-v2/certificate-number', { certificatenumbererror })
+  res.render('check-ehc-v2/certificate-number', { certificatenumbererror, showlanguages })
 })
 
 router.post('/check-ehc-v2/certificate-number', function (req, res) {
@@ -402,6 +408,12 @@ default:
 res.redirect('/check-ehc-v2/invalid');
 }
 
+})
+
+
+router.post('/check-ehc-internationalisation/select-language', function (req, res) {
+showlanguages = true;
+  res.redirect('/check-ehc-v2/unique-code')
 })
 
 

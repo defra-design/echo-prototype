@@ -4,7 +4,19 @@ What is the unique code? - Check an export health certificate - GOV.UK
 {% endblock %}
 {% block beforeContent %}
 {{super()}}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+</div>
+<div class="govuk-grid-column-two-thirds">
+{% if showlanguages %}
+<ul class="language-toggle govuk-list govuk-!-margin-top-4">
+   <li> English </li>
+   <li> <a href="/check-ehc-internationalisation/select-language" lang="cy" class="govuk-link">Change language</a> </li>
+  </ul>
+  {% endif %}
+  </div>
+  </div>
 {% endblock %}
 {% block content %}
 <!--start-->

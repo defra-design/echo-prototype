@@ -4,21 +4,18 @@ Check an export health certificate - GOV.UK
 {% endblock %}
 {% block beforeContent%}
 {{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Select a language</h1>
-    <p class="govuk-body">You can read the questions in a different language, but your answers must be in English.</p>
-    <p class="govuk-body">All words used in any translation are there to help. The English version of the questions will be used to assess your application.</p<
 <form method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <p class="govuk-body">
-              Select your language
-            </p>
+
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
@@ -140,9 +137,13 @@ Check an export health certificate - GOV.UK
         </div>
       </div>
 </div>
-        </fieldset>
-        <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
 
+        </fieldset>
+        <input class="govuk-button margin-top-30"
+               type="submit"
+               value="Save and continue"
+               id="Button-CreateNewDocumentVersion"
+               data-qa-id="Button-CreateNewEHCDocumentVersion">
         </form>
       </div>
 </div>
