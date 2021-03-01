@@ -151,10 +151,10 @@ res.redirect('/form-builder/disease-clearance/2/fish')
   //Conditional questions
   router.post('/beta/v8/conditional-questions-8322/question', function (req, res) {
     if (req.session.data['final-destination']=="EU"){
-      res.redirect('/beta/v8/conditional-questions-8322ß/index-result-eu')
+      res.redirect('/beta/v8/conditional-questions-8322/index-result-eu')
     }
     else {
-      res.redirect('/beta/v8/conditional-questions-8270/index-result-third')
+      res.redirect('/beta/v8/conditional-questions-8322/index-result-third')
     }
   })
 
