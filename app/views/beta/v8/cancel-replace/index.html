@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Export Health Certificate
+
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+
+<div class="govuk-phase-banner govuk-width-container" id="beta-banner">
+  <p class="govuk-phase-banner__content"><strong
+      class="govuk-tag govuk-phase-banner__content__tag ">
+    beta
+  </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+
+
+    </span>
+  </p>
+</div>
+<div class="govuk-width-container">
+   <div class="login-nav login-border">
+    <ul class="login-nav__list">
+      <li class="login-nav__list-item" id="Nav-DisplayName"></li>
+      <li class="login-nav__list-item"> | <a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+      <li class="login-nav__list-item"><a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+    </ul>
+  </div>
+  <div>
+        <a class="govuk-back-link" id="link-back" href="">Back</a>
+    </div>
+  </div>
+{% endblock %}
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <h1 class="govuk-heading-xl">Manage case 21/1099</h1>
+                    <p class="govuk-body">1 certificate</p>
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-summary-list__40">
+                                EHC
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                8218EHC: Dogs, cats and ferrets for commercial purposes
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-summary-list__40">
+                                Exporter
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ExportUser Research
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-summary-list__40">
+                                Destination
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Switzerland
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-summary-list__40">
+                                Proposed Export Date
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__40" id="proposed-export-date">30 Mar 2021</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-tabs" data-module="govuk-tabs">
+                    <h2 class="govuk-tabs__title">
+                        Certifier Summary
+                    </h2>
+                    <ul class="govuk-tabs__list" role="tablist">
+                        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+                            <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#ehc-tab" id="tab_ehc-tab" role="tab" aria-controls="ehc-tab" tabindex="0" aria-selected="true">
+                                Export health certificate
+                            </a>
+                        </li>
+                        <li class="govuk-tabs__list-item" role="presentation">
+                            <a class="govuk-tabs__tab" href="#attachment-tab" id="tab_attachment-tab" role="tab" aria-controls="attachment-tab" tabindex="-1" aria-selected="false">
+                                Attachments
+                                   (0)
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="govuk-tabs__panel" id="ehc-tab" role="tabpanel" aria-labelledby="tab_ehc-tab">
+                        <h2 class="govuk-heading-l" id="certifier-certs">1 certificate</h2>
+                        <p class="govuk-body">
+                            <a href="#" class="govuk-link">
+                            </a>
+                        </p>
+                        <form id="table-select-certificates"  method="POST" action="summary">
+                            <table class="govuk-table">
+                                <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                           <th class="govuk-table__header">Certificate</th>
+                                           <th class="govuk-table__header">Actual export date</th>
+                                           <th class="govuk-table__header">Certificate status</th>
+                                           <th class="govuk-table__header">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="govuk-table__row">
+
+
+                                        <td id="cert-num" class="govuk-table__cell" scope="row">21/2/007155<br/>
+                                                                                                                            <span class=></span>
+                                        </td>
+
+
+                                        <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                                            30 Mar 2021
+                                        </td>
+                                        <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
+                                        </td>
+                                        <td id="actions" class="certificateActions govuk-table__cell" scope="row">
+
+
+                                            <a class="govuk-link" id="cancel_and_replace_21/2/007155" href="request-replacement">
+                                                Cancel and replace</a>
+                                            <div><a id="view_cert_21/2/007155" class="printViewCertificatePdfLink govuk-link"
+                                                    href="javascript:alert('Not in prototype!');"
+                                                    target="_blank">View certificate [PDF]</a></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="attachment-tab" role="tabpanel" aria-labelledby="tab_attachment-tab">
+                        <h2 class="govuk-heading-l">
+                               Attachments
+                        </h2>
+                        <dl class="govuk-summary-list ">
+                            <p class="govuk-body">The exporter has not added any attachments to this application.</p>
+                        </dl>
+                        <p class="govuk-body">
+                            <a class="govuk-link--no-visited-state" data-qa-id="Link-AddAttachment" href="/protected/form/8218EHC/application/1651965956486/supplementary-documents">
+                                Add attachments
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+</div>
+</div>
+{% endblock %}

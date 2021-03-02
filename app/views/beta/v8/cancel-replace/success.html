@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Export Health Certificate
+
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+
+<div class="govuk-phase-banner govuk-width-container" id="beta-banner">
+  <p class="govuk-phase-banner__content"><strong
+      class="govuk-tag govuk-phase-banner__content__tag ">
+    beta
+  </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+
+
+    </span>
+  </p>
+</div>
+<div class="govuk-width-container">
+   <div class="login-nav login-border">
+    <ul class="login-nav__list">
+      <li class="login-nav__list-item" id="Nav-DisplayName"></li>
+      <li class="login-nav__list-item"> | <a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+      <li class="login-nav__list-item"><a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+    </ul>
+  </div>
+
+  </div>
+{% endblock %}
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                  <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+          <h1 class="govuk-panel__title">
+            You have successfully submitted your request to replace certificate 21/2/007155
+          </h1>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <ul class="govuk-list govuk-list--number">
+          <li>if we can, we will send the new certificate to you</li>
+          <li>if we cannot, we will contact you and the exporter to let you know why</li>
+        </ul>
+        <p class="govuk-body"><a id="link-cancelAndReplaceConfirmationPage-viewYourApplications2" href="javascript:alert('Prototype');">View your cases</a> to check progress.
+            </p>
+            <h2 class="govuk-heading-m">Get help</h2>
+            <p class="govuk-body">
+          If you need help, contact us:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><span id="phoneNumber">03000 200 301</span>, Monday to Friday 8.30am to 5pm</li>
+          <li><a href="mailto:exports@apha.gov.uk" class="govuk-link" id="emailLink">exports@apha.gov.uk</a></li>
+        </ul>
+</div>
+</div>
+{% endblock %}

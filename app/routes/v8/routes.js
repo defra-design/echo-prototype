@@ -73,6 +73,17 @@ module.exports = function(router) {
     next()
   })
 
+//Cancel and replace
+router.post('/beta/v8/cancel-replace/request-replacement', function (req, res) {
+  console.log(req.session.data['cancelAndReplaceDecision']);
+  if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
+res.redirect('/beta/v8/cancel-replace/update-answers');
+  }
+  else {
+res.redirect('/beta/v8/cancel-replace/index')
+  }
+})
+
   //Conditional routing of certificates
   router.get('/disease-clearance-1/set-variables', function (req, res) {
   console.log("The GET is running1");
