@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check an export health certificate - GOV.UK
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Security check</h1>
+    <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+    <button class="g-recaptcha"
+           data-sitekey="reCAPTCHA_site_key"
+           data-callback='onSubmit'
+           data-action='submit'>Submit</button>
+<form method="post">
+
+
+
+        </fieldset>
+        <input class="govuk-button margin-top-30"
+               type="submit"
+               value="Save and continue"
+               id="Button-CreateNewDocumentVersion"
+               data-qa-id="Button-CreateNewEHCDocumentVersion">
+        </form>
+      </div>
+</div>
+
+</div>
+{% endblock %}
