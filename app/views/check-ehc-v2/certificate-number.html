@@ -20,6 +20,8 @@ What certificate do you want to check? - Check an export health certificate - GO
 {% endblock %}
 {% block content %}
 <!--start-->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -69,7 +71,11 @@ max-height:100%;" alt="Diagram showing location of the certificate number on the
         <input class="govuk-input {% if certificatenumbererror %}govuk-input--error{% endif %}" id="certificate-number" name="certificate-number" type="text" aria-describedby="certificate-number-hint certificate-number-error">
       </div>
   </fieldset>
-        <input class="govuk-button" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+  {% if showlanguages %}
+  <div class="g-recaptcha" data-sitekey="6LdZXHEaAAAAAOy1r6hqCWl2z4aRw7HOmMAHBm6l
+"></div>
+{% endif %}
+        <input class="govuk-button govuk-!-margin-top-3" type="submit" name="saveAndContinue" value="Continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
 
 
     </form>
