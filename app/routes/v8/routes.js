@@ -313,7 +313,7 @@ router.get('/manage-rules/index-with-results', function (req, res) {
   res.render('form-builder/conditional-routing/manage-pages/manage-rules/index', { activerules })
 })
 
-//No-QR journey v2
+//Check and EHC - No-QR journey v2
 // **** Certificate number ***
 router.get('/check-ehc-v2/before-you-start', function (req, res) {
   showlanguages = false;
@@ -413,7 +413,7 @@ res.redirect('/check-ehc-v2/invalid');
 
 })
 
-
+//CHECK an EHC - Internationalisaton 
 router.post('/check-ehc-internationalisation/select-language', function (req, res) {
 showlanguages = true;
 if (req.session.data['language-select']=="language-select-10"){
