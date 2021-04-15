@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+<div class="login-nav login-border">
+	<ul class="login-nav__list">
+		<li class="login-nav__list-item" id="Nav-DisplayName"></li>
+		<li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+		<li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+	</ul>
+</div>
+
+{{ govukBackLink({
+	"text": "Back",
+	"href": "javascript: window.history.go(-1)"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+    <form method="GET">
+      <div class="govuk-form-group">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
+              <h1 class="govuk-fieldset__heading">Confirm the certifier</h1>
+
+            </legend>
+
+            <p class="govuk-body-l govuk-!-font-weight-bold">4.5.1 vets<br>
+              <span id="certificate-delivery-address-line-1">Address1</span><br>
+
+              <span id="certificate-delivery-address-town">Hyderabad</span><br>
+              <span id="certificate-delivery-address-country"></span><br>
+              <span id="certificate-delivery-address-postcode">aa11aa</span><br>
+            </p>
+
+            <div class="govuk-inset-text">
+              <h3 class="govuk-heading-s">4.5.1 vets will print this certificate on white paper</h3>
+              <p class="govuk-body">We will contact 4.5.1 vets by email when the certificate is available to download and print on white paper</p>
+            </div>
+            <p class="govuk-body">
+              <a href="about-your-certifier?filter=" id="changeCertifierLink">Change certifier</a>
+            </p>
+          </fieldset>
+        </div>
+
+        {{govukButton({
+          href: "task-list",
+          text: "Confirm and continue",
+          classes: "govuk-!-margin-top-6"
+        })}}
+
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

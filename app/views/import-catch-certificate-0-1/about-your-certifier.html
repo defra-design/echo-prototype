@@ -1,0 +1,711 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+<div class="login-nav login-border">
+	<ul class="login-nav__list">
+		<li class="login-nav__list-item" id="Nav-DisplayName"></li>
+		<li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+		<li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+	</ul>
+</div>
+
+{{ govukBackLink({
+	"text": "Back",
+  "href": "task-list"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Who will certify this certificate?</h1>
+    <p id="Hint-CertifierOrganisation" class="govuk-body">
+      Select the organisation that will be carrying out the certification for this application.
+      This might be an Official Veterinarian (OV) or an Environmental Health Officer (EHO).
+    </p>
+
+    <form name="search-form" method="GET">
+      <div class="search-wrapper govuk-form-group">
+
+        <label class="govuk-label" for="filter">Search by organisation name, address or location</label>
+
+        <div class="search-input-wrapper">
+          <input class="govuk-input" id="filter" type="search" name="filter" aria-label="Filter" data-qa-id="TextField-filter" value="{{data['filter']}}" placeholder="">
+          <div class="search-input-submit-wrapper">
+            <button type="submit" name="name" value="" class="search-submit" id="Button-Search" data-qa-id="Button-Search">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% if data['filter'] %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p id="filterResultsMessage" class="govuk-body">There are 18 organisations matching <span class="govuk-!-font-weight-bold">"{{data['filter']}}"</span></p>
+
+    <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER" id="certifyingOrganisations">
+      <thead class="govuk-table__head margin-top-30">
+        <tr class="govuk-table__row valign-top">
+          <th class="govuk-table__header">Name</th>
+          <th class="govuk-table__header">Address</th>
+          <th class="govuk-table__header">Area</th>
+          <th class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            4.5.1 vets
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="4.5.1 vets">
+              <input id="certifier-organisation-address-1-field-0" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-0" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-0" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-0" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-0" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-0" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="475028f7-1020-ea11-a810-000d3ab11b53">
+              <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="465028f7-1020-ea11-a810-000d3ab11b53">
+              <input id="digital-flag-0" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-0" type="hidden" name="hasCrownGoldPaper" value="true">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            4.5.2
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-1" type="hidden" name="certifierName" value="4.5.2">
+              <input id="certifier-organisation-address-1-field-1" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-1" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-1" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-1" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-1" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-1" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-1" type="hidden" name="addressId" value="d5a20d4f-1320-ea11-a810-000d3ab118a3">
+              <input id="certifier-organisation-id-field-1" type="hidden" name="certifierOrganisationId" value="d4a20d4f-1320-ea11-a810-000d3ab118a3">
+              <input id="digital-flag-1" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-1" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            BA&amp;A Ltd
+          </td>
+          <td class="govuk-table__cell wrap">
+            17
+            Reading Road
+
+            Henley-on-Thames
+            RG9 1AB
+          </td>
+          <td class="govuk-table__cell">
+            England
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-2" type="hidden" name="certifierName" value="BA&amp;A Ltd">
+              <input id="certifier-organisation-address-1-field-2" type="hidden" name="addressLine1" value="17">
+              <input id="certifier-organisation-address-2-field-2" type="hidden" name="addressLine2" value="Reading Road">
+              <input id="certifier-organisation-address-3-field-2" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-2" type="hidden" name="town" value="Henley-on-Thames">
+              <input id="certifier-organisation-county-field-2" type="hidden" name="county" value="England">
+              <input id="certifier-organisation-postcode-field-2" type="hidden" name="postcode" value="RG9 1AB">
+              <input id="certifier-organisation-address-id-field-2" type="hidden" name="addressId" value="8c6e3848-e17f-ea11-a811-000d3ad91369">
+              <input id="certifier-organisation-id-field-2" type="hidden" name="certifierOrganisationId" value="8b6e3848-e17f-ea11-a811-000d3ad91369">
+              <input id="digital-flag-2" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-2" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            Best Vets Ever
+          </td>
+          <td class="govuk-table__cell wrap">
+            3 Wheatsheaf Court
+            Abbeytown
+
+            Wigton
+            CA7 4PX
+          </td>
+          <td class="govuk-table__cell">
+            Cumbria
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-3" type="hidden" name="certifierName" value="Best Vets Ever">
+              <input id="certifier-organisation-address-1-field-3" type="hidden" name="addressLine1" value="3 Wheatsheaf Court">
+              <input id="certifier-organisation-address-2-field-3" type="hidden" name="addressLine2" value="Abbeytown">
+              <input id="certifier-organisation-address-3-field-3" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-3" type="hidden" name="town" value="Wigton">
+              <input id="certifier-organisation-county-field-3" type="hidden" name="county" value="Cumbria">
+              <input id="certifier-organisation-postcode-field-3" type="hidden" name="postcode" value="CA7 4PX">
+              <input id="certifier-organisation-address-id-field-3" type="hidden" name="addressId" value="6acb05f0-843e-ea11-a812-000d3ab118a3">
+              <input id="certifier-organisation-id-field-3" type="hidden" name="certifierOrganisationId" value="69cb05f0-843e-ea11-a812-000d3ab118a3">
+              <input id="digital-flag-3" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-3" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            certbiz
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-4" type="hidden" name="certifierName" value="certbiz">
+              <input id="certifier-organisation-address-1-field-4" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-4" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-4" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-4" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-4" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-4" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-4" type="hidden" name="addressId" value="5b0cd978-325e-ea11-a811-000d3ab11e51">
+              <input id="certifier-organisation-id-field-4" type="hidden" name="certifierOrganisationId" value="5a0cd978-325e-ea11-a811-000d3ab11e51">
+              <input id="digital-flag-4" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-4" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            Certifier MEB686
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-5" type="hidden" name="certifierName" value="Certifier MEB686">
+              <input id="certifier-organisation-address-1-field-5" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-5" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-5" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-5" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-5" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-5" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-5" type="hidden" name="addressId" value="4ec7557d-9d22-eb11-a813-000d3ad91369">
+              <input id="certifier-organisation-id-field-5" type="hidden" name="certifierOrganisationId" value="4dc7557d-9d22-eb11-a813-000d3ad91369">
+              <input id="digital-flag-5" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-5" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            Certifier User Research
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-6" type="hidden" name="certifierName" value="Certifier User Research">
+              <input id="certifier-organisation-address-1-field-6" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-6" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-6" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-6" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-6" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-6" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-6" type="hidden" name="addressId" value="6be5409b-1f8e-ea11-a811-000d3ad91369">
+              <input id="certifier-organisation-id-field-6" type="hidden" name="certifierOrganisationId" value="6ae5409b-1f8e-ea11-a811-000d3ad91369">
+              <input id="digital-flag-6" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-6" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            ComUat5Vets
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-7" type="hidden" name="certifierName" value="ComUat5Vets">
+              <input id="certifier-organisation-address-1-field-7" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-7" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-7" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-7" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-7" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-7" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-7" type="hidden" name="addressId" value="1e45c4a5-76f2-e911-a813-000d3ab1160e">
+              <input id="certifier-organisation-id-field-7" type="hidden" name="certifierOrganisationId" value="1d45c4a5-76f2-e911-a813-000d3ab1160e">
+              <input id="digital-flag-7" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-7" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            cp45
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-8" type="hidden" name="certifierName" value="cp45">
+              <input id="certifier-organisation-address-1-field-8" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-8" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-8" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-8" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-8" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-8" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-8" type="hidden" name="addressId" value="2ecafc06-9c37-ea11-a813-000d3ab11761">
+              <input id="certifier-organisation-id-field-8" type="hidden" name="certifierOrganisationId" value="2dcafc06-9c37-ea11-a813-000d3ab11761">
+              <input id="digital-flag-8" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-8" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            CP46
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-9" type="hidden" name="certifierName" value="CP46">
+              <input id="certifier-organisation-address-1-field-9" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-9" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-9" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-9" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-9" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-9" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-9" type="hidden" name="addressId" value="94234b9f-9b37-ea11-a813-000d3ab11761">
+              <input id="certifier-organisation-id-field-9" type="hidden" name="certifierOrganisationId" value="93234b9f-9b37-ea11-a813-000d3ab11761">
+              <input id="digital-flag-9" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-9" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            CP49 org 1
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-10" type="hidden" name="certifierName" value="CP49 org 1">
+              <input id="certifier-organisation-address-1-field-10" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-10" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-10" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-10" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-10" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-10" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-10" type="hidden" name="addressId" value="8f7dccd6-12e6-ea11-a817-000d3ad91369">
+              <input id="certifier-organisation-id-field-10" type="hidden" name="certifierOrganisationId" value="8d7dccd6-12e6-ea11-a817-000d3ad91369">
+              <input id="digital-flag-10" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-10" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            CP51 Certifier
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-11" type="hidden" name="certifierName" value="CP51 Certifier">
+              <input id="certifier-organisation-address-1-field-11" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-11" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-11" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-11" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-11" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-11" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-11" type="hidden" name="addressId" value="9486de35-b416-eb11-a813-000d3ada58ce">
+              <input id="certifier-organisation-id-field-11" type="hidden" name="certifierOrganisationId" value="9386de35-b416-eb11-a813-000d3ada58ce">
+              <input id="digital-flag-11" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-11" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            Crispy Duck
+          </td>
+          <td class="govuk-table__cell wrap">
+            122 Boroughbridge Rd
+            york
+
+            York
+            YO26 6AB
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-12" type="hidden" name="certifierName" value="Crispy Duck">
+              <input id="certifier-organisation-address-1-field-12" type="hidden" name="addressLine1" value="122 Boroughbridge Rd">
+              <input id="certifier-organisation-address-2-field-12" type="hidden" name="addressLine2" value="york">
+              <input id="certifier-organisation-address-3-field-12" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-12" type="hidden" name="town" value="York">
+              <input id="certifier-organisation-county-field-12" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-12" type="hidden" name="postcode" value="YO26 6AB">
+              <input id="certifier-organisation-address-id-field-12" type="hidden" name="addressId" value="43c42f12-c1f0-e911-a812-000d3ab11b53">
+              <input id="certifier-organisation-id-field-12" type="hidden" name="certifierOrganisationId" value="42c42f12-c1f0-e911-a812-000d3ab11b53">
+              <input id="digital-flag-12" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-12" type="hidden" name="hasCrownGoldPaper" value="true">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            FAB MEDIA
+          </td>
+          <td class="govuk-table__cell wrap">
+            4 Heath Square
+            Boltro Road
+
+            Haywards Heath
+            RH16 1BL
+          </td>
+          <td class="govuk-table__cell">
+            Wessex Sussex
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-13" type="hidden" name="certifierName" value="FAB MEDIA">
+              <input id="certifier-organisation-address-1-field-13" type="hidden" name="addressLine1" value="4 Heath Square">
+              <input id="certifier-organisation-address-2-field-13" type="hidden" name="addressLine2" value="Boltro Road">
+              <input id="certifier-organisation-address-3-field-13" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-13" type="hidden" name="town" value="Haywards Heath">
+              <input id="certifier-organisation-county-field-13" type="hidden" name="county" value="Wessex Sussex">
+              <input id="certifier-organisation-postcode-field-13" type="hidden" name="postcode" value="RH16 1BL">
+              <input id="certifier-organisation-address-id-field-13" type="hidden" name="addressId" value="d5e2c342-b75f-ea11-a811-000d3ab11e51">
+              <input id="certifier-organisation-id-field-13" type="hidden" name="certifierOrganisationId" value="d4e2c342-b75f-ea11-a811-000d3ab11e51">
+              <input id="digital-flag-13" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-13" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            Steve Cert
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-14" type="hidden" name="certifierName" value="Steve Cert">
+              <input id="certifier-organisation-address-1-field-14" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-14" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-14" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-14" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-14" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-14" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-14" type="hidden" name="addressId" value="3d214702-a75c-ea11-a811-000d3ab74d3d">
+              <input id="certifier-organisation-id-field-14" type="hidden" name="certifierOrganisationId" value="3c214702-a75c-ea11-a811-000d3ab74d3d">
+              <input id="digital-flag-14" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-14" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            Test Co
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-15" type="hidden" name="certifierName" value="Test Co">
+              <input id="certifier-organisation-address-1-field-15" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-15" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-15" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-15" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-15" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-15" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-15" type="hidden" name="addressId" value="770ac44c-e632-ea11-a813-000d3ab11026">
+              <input id="certifier-organisation-id-field-15" type="hidden" name="certifierOrganisationId" value="760ac44c-e632-ea11-a813-000d3ab11026">
+              <input id="digital-flag-15" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-15" type="hidden" name="hasCrownGoldPaper" value="true">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            UATCOM
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-16" type="hidden" name="certifierName" value="UATCOM">
+              <input id="certifier-organisation-address-1-field-16" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-16" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-16" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-16" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-16" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-16" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-16" type="hidden" name="addressId" value="c38eda9a-77f2-e911-a813-000d3ab1160e">
+              <input id="certifier-organisation-id-field-16" type="hidden" name="certifierOrganisationId" value="c28eda9a-77f2-e911-a813-000d3ab1160e">
+              <input id="digital-flag-16" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-16" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            User Research Certifier
+          </td>
+          <td class="govuk-table__cell wrap">
+            Address1
+            Address2
+
+            Hyderabad
+            aa11aa
+          </td>
+          <td class="govuk-table__cell">
+            <span class="govuk-visually-hidden">Blank cell</span>
+          </td>
+          <td class="govuk-table__cell">
+            <form action="/protected/form/8270EHC/application/1651965957431/page/4/organisation-search" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+              <input type="hidden" name="ehcNumber" value="8270EHC">
+              <input type="hidden" name="applicationFormId" value="1651965957431">
+              <input type="hidden" name="pageSequence" value="4">
+              <input id="certifier-organisation-name-field-17" type="hidden" name="certifierName" value="User Research Certifier">
+              <input id="certifier-organisation-address-1-field-17" type="hidden" name="addressLine1" value="Address1">
+              <input id="certifier-organisation-address-2-field-17" type="hidden" name="addressLine2" value="Address2">
+              <input id="certifier-organisation-address-3-field-17" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-17" type="hidden" name="town" value="Hyderabad">
+              <input id="certifier-organisation-county-field-17" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-17" type="hidden" name="postcode" value="aa11aa">
+              <input id="certifier-organisation-address-id-field-17" type="hidden" name="addressId" value="996e70fc-1f36-eb11-a813-000d3ab00da8">
+              <input id="certifier-organisation-id-field-17" type="hidden" name="certifierOrganisationId" value="986e70fc-1f36-eb11-a813-000d3ab00da8">
+              <input id="digital-flag-17" type="hidden" name="digitalFlag" value="false">
+              <input id="has-crown-gold-paper-17" type="hidden" name="hasCrownGoldPaper" value="false">
+              <a href="confirm-certifier">Select</a>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script>
+  simpleAccessibleAutocomplete ('event-type', {
+    defaultValue: '',
+    autoselect: false,
+    showAllValues: true
+  })
+</script>
+{% endblock %}

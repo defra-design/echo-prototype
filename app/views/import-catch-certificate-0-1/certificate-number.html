@@ -1,0 +1,64 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+{{ govukBackLink({
+	"text": "Back",
+	"href": "javascript: window.history.go(-1)"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form method="post">
+			{% set numberHtml %}
+			{{ govukInput({
+				id: "catch-certificate-number",
+				name: "catch-certificate-number",
+				type: "tel",
+				classes: "govuk-!-width-one-half",
+				label:
+				{
+					text: "Enter catch certificate number"
+				}
+			}) }}
+			{% endset -%}
+
+			{{ govukRadios({
+				idPrefix: "import-certificate",
+				name: "import-certificate",
+				fieldset:
+				{
+					legend:
+					{
+						text: "Do you want to import from a catch certificate?",
+						isPageHeading: true,
+						classes: "govuk-fieldset__legend--xl"
+					}
+				},
+				items: [
+				{
+					value: "yes",
+					text: "Yes",
+					conditional:
+					{
+						html: numberHtml
+					}
+				},
+				{
+					value: "no",
+					text: "No"
+				}
+				]
+			}) }}
+
+			{{govukButton({
+				text: "Continue"
+			})}}
+		</form>
+	</div>
+</div>
+{% endblock %}

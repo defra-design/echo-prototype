@@ -1,0 +1,183 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+<div class="login-nav login-border">
+	<ul class="login-nav__list">
+		<li class="login-nav__list-item" id="Nav-DisplayName"></li>
+		<li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+		<li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+	</ul>
+</div>
+
+{{ govukBackLink({
+	"text": "Back",
+	"href": "javascript: window.history.go(-1)"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+       
+        <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Where are you exporting to?</h1>
+        <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+        <div id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">Tell us about the destination country, and how your export will get there. This will allow us to supply duplicate certificates in the relevant foreign languages.</div>
+
+        <form method="post">
+          <input type="hidden" name="crumb_csrf_token" value="Jg1OK7isyiu8Ce6ueA4wUP3Gn_MRl31zwV60KkKkjmv">
+          <input type="hidden" name="certificate" value="">
+          <input type="hidden" name="formPageId" value="">
+
+          <input type="hidden" name="ehcNumber" value="8270EHC">
+
+          <!-- @formatter:off -->
+
+          <div class="govuk-form-group ">
+           <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend" s="" for="8270EHC-0">
+               <label class="govuk-label govuk-!-font-weight-bold">Point of entry into the European Economic Area</label>
+           </legend>
+           
+           <div class="govuk-hint">We need to know this so that we can print the certificate in the right language for inspection at the border.</div>
+           
+           <div>
+               <select id="8270EHC-0" name="0" class="govuk-select" autofocus="autofocus" data-qa-id="Question-8270EHC-0">
+                 <option value="">Please select</option>
+                 <option value="Andorra">Andorra</option>
+                 <option value="Austria">Austria</option>
+                 <option value="Belgium">Belgium</option>
+                 <option value="Bulgaria">Bulgaria</option>
+                 <option value="Croatia">Croatia</option>
+                 <option value="Cyprus">Cyprus</option>
+                 <option value="Czech Republic">Czech Republic</option>
+                 <option value="Denmark">Denmark</option>
+                 <option value="Estonia">Estonia</option>
+                 <option value="Faroe Islands">Faroe Islands</option>
+                 <option value="Finland">Finland</option>
+                 <option value="France">France</option>
+                 <option value="Germany">Germany</option>
+                 <option value="Greece">Greece</option>
+                 <option value="Greenland">Greenland</option>
+                 <option value="Hungary">Hungary</option>
+                 <option value="Iceland">Iceland</option>
+                 <option value="Italy">Italy</option>
+                 <option value="Latvia">Latvia</option>
+                 <option value="Liechtenstein">Liechtenstein</option>
+                 <option value="Lithuania">Lithuania</option>
+                 <option value="Luxembourg">Luxembourg</option>
+                 <option value="Malta">Malta</option>
+                 <option value="Netherlands">Netherlands</option>
+                 <option value="Northern Ireland">Northern Ireland</option>
+                 <option value="Norway">Norway</option>
+                 <option value="Poland">Poland</option>
+                 <option value="Portugal">Portugal</option>
+                 <option value="Republic of Ireland">Republic of Ireland</option>
+                 <option value="Romania">Romania</option>
+                 <option value="San Marino">San Marino</option>
+                 <option value="Slovakia">Slovakia</option>
+                 <option value="Slovenia">Slovenia</option>
+                 <option value="Spain">Spain</option>
+                 <option value="Sweden">Sweden</option>
+                 <option value="Switzerland">Switzerland</option>
+             </select>
+         </div>
+         
+     </fieldset>
+     
+ </div>
+ <input type="hidden" name="0-formQuestionId" value="-7">
+ <input type="hidden" name="0-questionId" value="-7">
+ <input type="hidden" name="0-formName" value="8270EHC">
+ <input type="hidden" name="0-questionText" value="Point of entry into the European Economic Area">
+ <input type="hidden" name="0-questionType" value="single_select">
+ <input type="hidden" name="0-questionOrder" value="1">
+ <input type="hidden" name="0-questionScope" value="APPLICANT">
+ <input type="hidden" name="questionSequence--7" value="0">
+ <div class="govuk-form-group ">
+   <fieldset class="govuk-fieldset">
+     <legend class="govuk-fieldset__legend" s="" for="8270EHC-1">
+       <label class="govuk-label govuk-!-font-weight-bold">Destination country</label>
+   </legend>
+   
+   <div class="govuk-hint">In the case of transit consignments, select the country of storage, or departure from the economic bloc.</div>
+   
+   <div>
+       <select id="8270EHC-1" name="1" class="govuk-select" data-qa-id="Question-8270EHC-1">
+         <option value="">Please select</option>
+         <option value="Andorra">Andorra</option>
+         <option value="Austria">Austria</option>
+         <option value="Belgium">Belgium</option>
+         <option value="Bulgaria">Bulgaria</option>
+         <option value="Croatia">Croatia</option>
+         <option value="Cyprus">Cyprus</option>
+         <option value="Czech Republic">Czech Republic</option>
+         <option value="Denmark">Denmark</option>
+         <option value="Estonia">Estonia</option>
+         <option value="Faroe Islands">Faroe Islands</option>
+         <option value="Finland">Finland</option>
+         <option value="France">France</option>
+         <option value="Germany">Germany</option>
+         <option value="Greece">Greece</option>
+         <option value="Greenland">Greenland</option>
+         <option value="Hungary">Hungary</option>
+         <option value="Iceland">Iceland</option>
+         <option value="Italy">Italy</option>
+         <option value="Latvia">Latvia</option>
+         <option value="Liechtenstein">Liechtenstein</option>
+         <option value="Lithuania">Lithuania</option>
+         <option value="Luxembourg">Luxembourg</option>
+         <option value="Malta">Malta</option>
+         <option value="Netherlands">Netherlands</option>
+         <option value="Northern Ireland">Northern Ireland</option>
+         <option value="Norway">Norway</option>
+         <option value="Poland">Poland</option>
+         <option value="Portugal">Portugal</option>
+         <option value="Republic of Ireland">Republic of Ireland</option>
+         <option value="Romania">Romania</option>
+         <option value="San Marino">San Marino</option>
+         <option value="Slovakia">Slovakia</option>
+         <option value="Slovenia">Slovenia</option>
+         <option value="Spain">Spain</option>
+         <option value="Sweden">Sweden</option>
+         <option value="Switzerland">Switzerland</option>
+     </select>
+ </div>
+ 
+</fieldset>
+
+</div>
+<input type="hidden" name="1-formQuestionId" value="-3">
+<input type="hidden" name="1-questionId" value="-3">
+<input type="hidden" name="1-formName" value="exa169 same day">
+<input type="hidden" name="1-questionText" value="Destination country">
+<input type="hidden" name="1-questionType" value="single_select">
+<input type="hidden" name="1-questionOrder" value="1">
+<input type="hidden" name="1-questionScope" value="APPLICANT">
+<input type="hidden" name="questionSequence--3" value="1"><!-- @formatter:on -->
+
+<input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="2">
+<div class="govuk-grid-row margin-top-30"></div>
+
+
+{{govukButton({
+    text: "Save and continue"
+})}}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-body">
+      <a href="task-list">Save and return to application</a>
+  </div>
+
+
+
+</div>
+</form>
+
+
+</div>
+</div>
+{% endblock %}

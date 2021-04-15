@@ -27,6 +27,8 @@ require('./routes/alpha/ehc-7006-ab-version4-1/routes.js')(router);
 require('./routes/alpha/ehc-7006-ab-version4-2/routes.js')(router);
 require('./routes/alpha/ehc-7006-ab-version4-3/routes.js')(router);
 require('./routes/alpha/ehc-8270-version2/routes.js')(router);
+require('./routes/import-catch-certificate-0-1/routes.js')(router);
+
 
 // beta
 require('./routes/v1/routes.js')(router);

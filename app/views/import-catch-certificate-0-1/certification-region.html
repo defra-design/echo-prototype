@@ -1,0 +1,88 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+<div class="login-nav login-border">
+	<ul class="login-nav__list">
+		<li class="login-nav__list-item" id="Nav-DisplayName"></li>
+		<li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+		<li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+	</ul>
+</div>
+
+{{ govukBackLink({
+	"text": "Back",
+	"href": "javascript: window.history.go(-1)"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+		<h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Where will certification take place?</h1>
+		<span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+
+		<form action="/protected/form/8270EHC/application/1651965957431/page/5" method="POST" enctype="application/x-www-form-urlencoded">
+			<input type="hidden" name="crumb_csrf_token" value="GKRTDProjznBhiXLz3wQiCix_VZNPi8qlwlq_RkCYtx">
+			<input type="hidden" name="certificate" value="">
+			<input type="hidden" name="formPageId" value="">
+
+			<input type="hidden" name="ehcNumber" value="8270EHC">
+
+			<!-- @formatter:off -->
+			<div class="govuk-form-group ">
+				<fieldset id="8270EHC-0" class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend" for="8270EHC-0">
+						<span class="govuk-label govuk-!-font-weight-bold">Certification region </span>
+					</legend>
+
+					<div class="govuk-hint">Select the region in which the certification will take place:</div>
+
+					<div class="govuk-radios govuk-radios">
+						<div class="govuk-radios__item">
+							<input type="radio" class="govuk-radios__input" id="8270EHC-0-0" value="England" name="0" data-qa-id="Question-radio-England" autofocus="autofocus">
+							<label class="govuk-label govuk-radios__label" for="8270EHC-0-0">England</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input type="radio" class="govuk-radios__input" id="8270EHC-0-1" value="Scotland" name="0" data-qa-id="Question-radio-Scotland">
+							<label class="govuk-label govuk-radios__label" for="8270EHC-0-1">Scotland</label>
+						</div>
+						<p class="govuk-body">or</p>
+						<div class="govuk-radios__item">
+							<input type="radio" class="govuk-radios__input" id="8270EHC-0-2" value="Wales" name="0" data-qa-id="Question-radio-Wales">
+							<label class="govuk-label govuk-radios__label" for="8270EHC-0-2">Wales</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<input type="hidden" name="0-formQuestionId" value="29594">
+			<input type="hidden" name="0-questionId" value="575">
+			<input type="hidden" name="0-formName" value="exa169 same day">
+			<input type="hidden" name="0-questionText" value="Certification region ">
+			<input type="hidden" name="0-questionType" value="single_select">
+			<input type="hidden" name="0-questionOrder" value="1">
+			<input type="hidden" name="0-questionScope" value="APPLICANT">
+			<input type="hidden" name="questionSequence-29594" value="0"><!-- @formatter:on -->
+
+			<input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="1">
+			<div class="govuk-grid-row margin-top-30"></div>
+			<div class="govuk-grid-column-one-half govuk-!-margin-left-0 govuk-!-padding-0">
+				<input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" aria-label="save and continue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+				<div class="govuk-grid-row">
+					<div class="govuk-grid-column-full govuk-body">
+						<a href="task-list">Save and return to application</a>
+					</div>
+				</div>
+
+
+			</div>
+		</form>
+
+
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,178 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+<div class="login-nav login-border">
+	<ul class="login-nav__list">
+		<li class="login-nav__list-item" id="Nav-DisplayName"></li>
+		<li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+		<li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+	</ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<h1 class="govuk-heading-xl">
+			Your applications
+		</h1>
+
+		<form method="post">
+			{{govukButton({
+				text: "Start a new application"
+			})}}
+		</form>
+
+		<label for="filter" class="govuk-label">
+			Search by application ID, destination, submission date or reference number
+		</label>
+
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-two-thirds govuk-form-group search-wrapper">
+				<div class="search-input-wrapper">
+					<input type="search" id="filter" name="filter" value="" title="Search" class="govuk-input" autofocus="autofocus">
+					<div class="search-input-submit-wrapper">
+						<button type="submit" class="search-submit" id="Button-Search">Search</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="govuk-grid-column-one-third" id="show-filters-button-wrapper">
+				<div class="defra-filter--action" id="defra-filter-button-wrapper">
+					<button id="filters-toggle" class="govuk-button govuk-button--secondary defra-filter-button--active" type="button" aria-expanded="false">
+						<span class="defra-filter--button-content" id="filters-button-text-wrapper"><span id="filters-button-text">Show filters </span><span id="number-of-filters-text"></span></span>
+						<span class="defra-filter__icon"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="filter-tag--wrapper govuk-!-margin-bottom-6">
+			<span>
+				<p class="govuk-body govuk-!-margin-bottom-2" id="filterInfoMessage">
+					5 applications with status <strong class="bold">Any</strong>						
+				</p>
+			</span>
+		</div>
+	</div>
+</div>
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<table class="govuk-table responsive-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header">
+						<div class="applicationRef-column">Application</div>
+					</th>
+					<th class="govuk-table__header">EHC</th>
+					<th class="govuk-table__header">Reference</th>
+					<th class="govuk-table__header">Destination</th>
+					<th class="govuk-table__header">Submitted date</th>
+					<th class="govuk-table__header">Status</th>
+					<th class="govuk-table__header"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="govuk-table__row application_form_row">
+					<th id="1651965957386-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+						<a class="govuk-link" href="/protected/application/1651965957386/summary" id="1651965957386-summary-link">1651965957386</a>
+					</th>
+					<td id="1651965957386-ech-number" class="govuk-table__cell">
+						8270
+					</td>
+					<td id="1651965957386-group-number" class="govuk-table__cell">
+						abc
+					</td>
+					<td id="1651965957386-destination" class="govuk-table__cell">
+						Italy
+					</td>
+					<td id="1651965957386-submitted" class="govuk-table__cell submitted-column">
+						<span class="govuk-visually-hidden">Blank cell</span>
+					</td>
+
+					<td id="1651965957386-status" class="govuk-table__cell">
+						<div class="status-cell">
+							<div class="govuk-tag govuk-tag--grey">
+								DRAFT
+							</div>
+						</div>
+					</td>
+					<td id="1651965957386-clone" class="govuk-table__cell">
+						<a class="govuk-link govuk-link--no-visited-state" href="clone">Clone</a>
+					</td>
+				</tr>
+				<tr class="govuk-table__row application_form_row">
+					<th id="1651965957359-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+						<a class="govuk-link" href="/protected/application/1651965957359/summary" id="1651965957359-summary-link">1651965957359</a>
+					</th>
+					<td id="1651965957359-ech-number" class="govuk-table__cell">
+						8270
+					</td>
+					<td id="1651965957359-group-number" class="govuk-table__cell">
+						abc123
+					</td>
+					<td id="1651965957359-destination" class="govuk-table__cell">
+						Poland
+					</td>
+					<td id="1651965957359-submitted" class="govuk-table__cell submitted-column">
+						<span class="govuk-visually-hidden">Blank cell</span>
+					</td>
+
+					<td id="1651965957359-status" class="govuk-table__cell">
+						<div class="status-cell">
+							<div class="govuk-tag govuk-tag--grey">
+								DRAFT
+							</div>
+						</div>
+					</td>
+					<td id="1651965957359-clone" class="govuk-table__cell">
+						<a class="govuk-link govuk-link--no-visited-state" href="clone">Clone</a>
+					</td>
+				</tr>
+				<tr class="govuk-table__row application_form_row">
+					<th id="1651965956930-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+						<a class="govuk-link" href="/protected/application/1651965956930/summary" id="1651965956930-summary-link">1651965956930</a>
+					</th>
+					<td id="1651965956930-ech-number" class="govuk-table__cell">
+						8270
+					</td>
+					<td id="1651965956930-group-number" class="govuk-table__cell">
+						abc123
+					</td>
+					<td id="1651965956930-destination" class="govuk-table__cell">
+						Poland
+					</td>
+					<td id="1651965956930-submitted" class="govuk-table__cell submitted-column">
+						<span class="govuk-visually-hidden">Blank cell</span>
+					</td>
+
+					<td id="1651965956930-status" class="govuk-table__cell">
+						<div class="status-cell">
+							<div class="govuk-tag govuk-tag--grey">
+								DRAFT
+							</div>
+						</div>
+					</td>
+					<td id="1651965956930-clone" class="govuk-table__cell">
+						<a class="govuk-link govuk-link--no-visited-state" href="clone">Clone</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<nav class="defra-pagination" id="pagination-label">
+			<p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+			<ul class="defra-pagination__list">
+				<li class="defra-pagination__item defra-pagination__item--active">
+					<a class="defra-pagination__link pagination_style" href="?selectedStatuses=ANY&amp;pageNumber=1">1</a>
+				</li>	
+			</ul>
+			<p class="defra-pagination__results govuk-body">Showing <b>1</b> to <b>3</b> of <b>3</b> results</p>
+		</nav>
+	</div>
+</div>
+{% endblock %}
