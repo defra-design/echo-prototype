@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">AutoEHC-2021-03-11-446</span>
+    <h1 class="govuk-heading-xl">
+      Why did you make these changes?
+    </h1>
+    <p class="govuk-body"></p>
+
+
+<!-- 
+   	Font size of approval number in I.13 amended from size 12 to size 6	Error in PDF build	
+ -->
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3.82
+        </dd>
+<!--         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd> -->
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          UNRESTRICTED
+        </dd>
+<!--         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd> -->
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          New version
+        </dd>
+<!--         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> address</span>
+          </a>
+        </dd> -->
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Commodity group
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Poultry</p>
+        </dd>
+<!--         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a>
+        </dd> -->
+      </div>
+    </dl>
+
+    <form action="../check-your-progress" method="POST">
+
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xs">
+              <h3 class="govuk-fieldset__heading">
+                Reason for change
+              </h3>
+             <!--  <span class="govuk-hint">Select the region in which the certification will take place:</span> -->
+            </legend>
+            <textarea class="govuk-textarea" id="more-detail" name="editor1" rows="9" aria-describedby="more-detail-hint"></textarea>
+
+          </fieldset>
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+
+
+        </div>
+      </fieldset>
+      <button class="govuk-button" type="submit">Save</button>
+    </form>
+
+  </div>
+  </div>
+  {% endblock %}
