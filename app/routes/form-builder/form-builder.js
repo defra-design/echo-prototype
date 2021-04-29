@@ -4,6 +4,9 @@ module.exports = function(router) {
   // To convert markdown
   var showdown  = require('showdown')
 
+  //require('./EXP-12730-audit.js')(router);
+
+
   const classMap = {
   h1: 'govuk-heading-xl',
   h2: 'govuk-heading-l',
@@ -70,10 +73,26 @@ module.exports = function(router) {
     next()
   })
 
+  router.get('/form-builder/EXP-12730-audit/change-history', function (req, res) {
+    console.log("The GET is running!");
+   let results = [
+     {version:"3.83", user:"Robert", changeType:"New version", reason:"Change \"production date\" single date input to line of free text so applicant can enter a range of dates based on user feedback", status:"Unrestricted", dateChanged:"21/07/2020", datePublished:"06/08/2020"},
+     {version:"3.82", user:"Liam", changeType:"Config change", reason:"Change to white paper: COVID measures", status:"Withdrawn", dateChanged:"11/05/2020", datePublished:"14/05/2020"},
+     {version:"3.82", user:"Liam", changeType:"New version", reason:"New function in system: Change to paper type", status:"", dateChanged:"04/02/2020", datePublished:"03/03/2020"},
+     {version:"3.81", user:"Robert", changeType:"New version", reason:"Format of repeat question loop has changed. \"Save and review\" is no longer an option.", status:"Unrestricted", dateChanged:"18/12/2019", datePublished:"19/12/2019"},
+     {version:"3.7", user:"Liam", changeType:"New form", reason:"Initial certificate creation", status:"On hold", dateChanged:"14/11/2019", datePublished:""},
+     {version:"1.1", user:"Liam", changeType: "Status change", reason:"To restrict use in private Beta", status:"Restricted", dateChanged:"19/12/2019", datePublished:"19/12/2019"},
+     {version:"1.0", user:"Liam", changeType: "New version", reason:"Added a question for certifying department", status:"Restricted", dateChanged:"11/12/2019", datePublished:"13/12/2019"},
+    ];
+
+    res.render('form-builder/EXP-12730-audit/change-history', {
+      results
+    })
+  });
 
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function(req, res) {
-    console.log("default get routing page for: " + base_url + req.params[0])
+    console.log("default get routing page forfb: " + base_url + req.params[0])
     var dir = req.params[0].split(/\/+/g);
     // Remove the main folder
     dir.shift()
