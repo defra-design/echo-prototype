@@ -1,0 +1,196 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+{{ govukBackLink({
+	"text": "Back",
+	"href": "javascript: window.history.go(-1)"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form method="post">
+			<h1 class="govuk-heading-xl govuk-!-margin-bottom-">
+				<span class="govuk-caption-l">
+					Catch certificate {{data['catch-certificate-number']}}
+				</span>
+				Check catch certificate details
+			</h1>
+
+			<!-- <div class="govuk-inset-text">
+				<b>Catch certificate number:</b> {{data['catch-certificate-number']}}
+			</div> -->
+
+			<h2 class="govuk-heading-m">
+				Who is exporting the product?
+			</h2>
+			{{ govukSummaryList({
+				classes: "govuk-!-margin-bottom-8",
+				rows: [
+				{
+					key:
+					{
+						text: "Exporter name"
+					},
+					value:
+					{
+						text: "Freshest Seafoods"
+					}
+				}
+				]
+			})}}
+
+			<h2 class="govuk-heading-m">
+				What are the commodity details?
+			</h2>
+			{{ govukSummaryList({
+				classes: "govuk-!-margin-bottom-8",
+				rows: [
+				{
+					key:
+					{
+						text: "Commodity code"
+					},
+					value:
+					{
+						text: "0305410010"
+					}
+				},
+				{
+					key:
+					{
+						text: "Net weight of consignment"
+					},
+					value:
+					{
+						text: "900kg"
+					}
+				}
+				]
+			})}}
+
+			<h2 class="govuk-heading-m">
+				What are the details of the product?
+			</h2>
+			{{ govukSummaryList({
+				classes: "govuk-!-margin-bottom-8",
+				rows: [
+				{
+					key:
+					{
+						text: "Scientific species name"
+					},
+					value:
+					{
+						text: "Salmo salar"
+					}
+				},
+				{
+					key:
+					{
+						text: "Net weight"
+					},
+					value:
+					{
+						text: "900 kg"
+					}
+				}
+				]
+			})}}
+
+			<h2 class="govuk-heading-m">
+				Who is the exporter?
+			</h2>
+			{{ govukSummaryList({
+				classes: "govuk-!-margin-bottom-8",
+				rows: [
+				{
+					key:
+					{
+						text: "Exporter name"
+					},
+					value:
+					{
+						html: "Freshest Seafoods"
+					}
+				},
+				{
+					key:
+					{
+						text: "Exporter address"
+					},
+					value:
+					{
+						html: "24 Docklands Way<br>Peterhead<br>Scotland<br>AB42 1DW"
+					}
+				}
+				]
+			})}}
+
+			<h2 class="govuk-heading-m">
+				How will the consignment be transported?
+			</h2>
+			{{ govukSummaryList({
+				classes: "govuk-!-margin-bottom-8",
+				rows: [
+				{
+					key:
+					{
+						text: "Identification of the transport"
+					},
+					value:
+					{
+						html: "CRG 2356"
+					}
+				},
+				{
+					key:
+					{
+						text: "Transport documents"
+					},
+					value:
+					{
+						html: "Bill of lading"
+					}
+				},
+				{
+					key:
+					{
+						text: "Documentary reference numbers for transport"
+					},
+					value:
+					{
+						html: "BL456AB3"
+					}
+				},
+				{
+					key:
+					{
+						text: "Container and seal numbers"
+					},
+					value:
+					{
+						html: "CN23455432"
+					}
+				}
+				]
+			}) }}
+
+			<h3 class="govuk-heading-m">
+				Now confirm you want to use this certificate
+			</h3>
+			<p>
+				We'll add the details from this catch certificate to your 8270EHC application when you've confirmed these details are correct.
+			</p>
+
+			{{govukButton({
+				text: "Confirm and continue"
+			})}}
+		</form>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+<div class="login-nav login-border">
+	<ul class="login-nav__list">
+		<li class="login-nav__list-item" id="Nav-DisplayName"></li>
+		<li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+		<li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+	</ul>
+</div>
+
+{{ govukBackLink({
+	"text": "Back",
+	"href": "javascript: window.history.go(-1)"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Successfully cloned application 123242137123
+        </h3>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-xl">
+      Do you want to reuse the same application reference?
+    </h1>
+
+    <form method="post">
+      {{ govukRadios({
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset:
+        {
+          legend:
+          {
+            text: "Reference: abc",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "yes",
+          text: "Yes, use abc"
+        },
+        {
+          value: "no",
+          text: "No, a different reference"
+        }
+        ]
+      }) }}
+
+      {{govukButton({
+        text: "Save and continue"
+      })}}
+
+
+    </form>
+  </div>
+</div>
+{% endblock %}

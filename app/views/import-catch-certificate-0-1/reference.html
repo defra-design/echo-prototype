@@ -1,0 +1,68 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+<div class="login-nav login-border">
+	<ul class="login-nav__list">
+		<li class="login-nav__list-item" id="Nav-DisplayName"></li>
+		<li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+		<li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+	</ul>
+</div>
+
+{{ govukBackLink({
+	"text": "Back",
+	"href": "javascript: window.history.go(-1)"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+    <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Your reference</h1>
+    <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+    <div id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">Enter a reference up to 20 letters or numbers long, such as an invoice number or consignee</div>
+
+    <form method="post">
+      <input type="hidden" name="crumb_csrf_token" value="Jg1OK7isyiu8Ce6ueA4wUP3Gn_MRl31zwV60KkKkjmv">
+      <input type="hidden" name="certificate" value="">
+      <input type="hidden" name="formPageId" value="">
+
+      <input type="hidden" name="ehcNumber" value="8270EHC">
+
+      <!-- @formatter:off -->
+      <div class="govuk-form-group ">
+        <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-0">Your reference for this application</label>
+        <input class="govuk-input govuk-input--width-20 form-control-3-4" id="8270EHC-0" name="0" value="" type="text" autofocus="autofocus" data-qa-id="Question-8270EHC-0">
+      </div>
+
+      <input type="hidden" name="0-formQuestionId" value="-6">
+      <input type="hidden" name="0-questionId" value="-6">
+      <input type="hidden" name="0-formName" value="exa169 same day">
+      <input type="hidden" name="0-questionText" value="Your reference for this application">
+      <input type="hidden" name="0-questionType" value="text">
+      <input type="hidden" name="0-questionOrder" value="1">
+      <input type="hidden" name="0-questionScope" value="APPLICANT">
+      <input type="hidden" name="questionSequence--6" value="0"><!-- @formatter:on -->
+
+      <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="1">
+      <div class="govuk-grid-row margin-top-30"></div>
+
+      {{govukButton({
+        text: "Save and continue"
+      })}}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-body">
+          <a href="task-list">Save and return to application</a>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+</div>
+{% endblock %}

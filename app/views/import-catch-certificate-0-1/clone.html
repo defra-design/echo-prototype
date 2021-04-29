@@ -1,0 +1,107 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './includes/_phase-banner--beta.html' %}
+
+<div class="login-nav login-border">
+	<ul class="login-nav__list">
+		<li class="login-nav__list-item" id="Nav-DisplayName"></li>
+		<li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+		<li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+	</ul>
+</div>
+
+{{ govukBackLink({
+	"text": "Back",
+	"href": "javascript: window.history.go(-1)"
+})}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      You are about to clone this application
+    </h1>
+
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application
+        </dt>
+        <dd class="govuk-summary-list__value" id="1721148244809-appRef">
+          1721148244809
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reference
+        </dt>
+        <dd class="govuk-summary-list__value" id="1721148244809-reference">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          EHC
+        </dt>
+        <dd class="govuk-summary-list__value" id="1721148244809-ehc">
+          8270EHC (version 2.57)
+          <br>
+          Fishery products to EU
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Destination
+        </dt>
+        <dd class="govuk-summary-list__value" id="1721148244809-destination">
+          Italy
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Exporter
+        </dt>
+        <dd class="govuk-summary-list__value" id="1721148244809-organisation">
+          Not entered
+        </dd>
+      </div>
+    </dl>
+    <form method="POST">
+      {{ govukRadios({
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset:
+        {
+          legend:
+          {
+            text: "Would you like to proceed?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+        ]
+      }) }}
+
+      {{govukButton({
+        text: "Continue"
+      })}}
+    </form>
+
+  </form>
+</div>
+</div>
+{% endblock %}
