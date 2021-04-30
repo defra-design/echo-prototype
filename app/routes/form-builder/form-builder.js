@@ -73,13 +73,13 @@ module.exports = function (router) {
   router.get('/form-builder/EXP-12730-audit/change-history', function (req, res) {
     console.log("The GET is running!");
     let results = [
-      { version: "3.83", user: "Robert", changeType: "New version", reason: "Change \"production date\" single date input to line of free text so applicant can enter a range of dates based on user feedback", status: "Unrestricted", dateImplemented: "21 Jul 2020", datePublished: "06 Aug 2020" },
-      { version: "3.82", user: "Liam", changeType: "Config change", reason: "Change to white paper: COVID measures", status: "Withdrawn", dateImplemented: "11 May 2020", datePublished: "14 May 2020" },
-      { version: "3.82", user: "Liam", changeType: "New version", reason: "New function in system: Change to paper type", status: "", dateImplemented: "04 Feb 2020", datePublished: "03 Mar 2020" },
-      { version: "3.81", user: "Robert", changeType: "New version", reason: "Format of repeat question loop has changed. \"Save and review\" is no longer an option.", status: "Unrestricted", dateImplemented: "18 Dec 2019", datePublished: "19 Dec 2019" },
-      { version: "3.7", user: "Liam", changeType: "New form", reason: "Initial certificate creation", status: "On hold", dateImplemented: "14 Nov 2019", datePublished: "" },
-      { version: "1.1", user: "Liam", changeType: "Status change", reason: "To restrict use in private Beta", status: "Restricted", dateImplemented: "19 Dec 2019", datePublished: "19 Dec 2019" },
-      { version: "1.0", user: "Liam", changeType: "New version", reason: "Added a question for certifying department", status: "Restricted", dateImplemented: "11 Dec 2019", datePublished: "13 Dec 2019" },
+      { version: "3.83", user: "Robert Frost", changeType: "New version", reason: "Change \"production date\" single date input to line of free text so applicant can enter a range of dates based on user feedback", status: "Unrestricted", dateImplemented: "21 Jul 2020", datePublished: "06 Aug 2020" },
+      { version: "3.82", user: "Liam Bancroft", changeType: "Config change", reason: "Change to white paper: COVID measures", status: "Withdrawn", dateImplemented: "11 May 2020", datePublished: "14 May 2020" },
+      { version: "3.82*", user: "Liam Bancroft", changeType: "New version", reason: "New function in system: Change to paper type", status: "", dateImplemented: "04 Feb 2020", datePublished: "03 Mar 2020" },
+      { version: "3.81", user: "Robert Frost", changeType: "New version", reason: "Format of repeat question loop has changed. \"Save and review\" is no longer an option.", status: "Unrestricted", dateImplemented: "18 Dec 2019", datePublished: "19 Dec 2019" },
+      { version: "3.7", user: "Liam Bancroft", changeType: "New form", reason: "Initial certificate creation", status: "On hold", dateImplemented: "14 Nov 2019", datePublished: "" },
+      { version: "1.1", user: "Liam Bancroft", changeType: "Status change", reason: "To restrict use in private Beta", status: "Restricted", dateImplemented: "19 Dec 2019", datePublished: "19 Dec 2019" },
+      { version: "1.0", user: "Liam Bancroft", changeType: "New version", reason: "Added a question for certifying department", status: "Restricted", dateImplemented: "11 Dec 2019", datePublished: "13 Dec 2019" },
     ];
 
     res.render('form-builder/EXP-12730-audit/change-history', {
@@ -89,7 +89,7 @@ module.exports = function (router) {
 
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function (req, res) {
-    console.log("default get routing page forfb: " + base_url + req.params[0])
+    console.log("default get routing page for form-builder: " + base_url + req.params[0])
     var dir = req.params[0].split(/\/+/g);
     // Remove the main folder
     dir.shift()
