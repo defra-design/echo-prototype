@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">AutoEHC-2021-03-11-446</span>
+                <h1 id="versionsHeading" class="govuk-heading-l disabled">Change details for v2.55</h1>
+
+
+                <table class="govuk-table">
+                  <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header"></th>
+                      <th scope="col" class="govuk-table__header">New</th>
+                      <th scope="col" class="govuk-table__header">Previous</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Date</th>
+                      <td class="govuk-table__cell">21 Apr 201</td>
+                      <td class="govuk-table__cell">17 Apr 2021</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Time</th>
+                      <td class="govuk-table__cell">15:34</td>
+                      <td class="govuk-table__cell">10:16</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">User</th>
+                      <td class="govuk-table__cell">Victoria Young</td>
+                      <td class="govuk-table__cell">Victoria Young</td>
+                    </tr>
+<!--                     <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Version</th>
+                      <td class="govuk-table__cell">2.56</td>
+                      <td class="govuk-table__cell">2.55</td>
+                    </tr> -->
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Change type</th>
+                      <td class="govuk-table__cell">Status change</td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Content</th>
+                      <td class="govuk-table__cell">Unrestricted</td>
+                      <td class="govuk-table__cell">On hold</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+  </div>
+</div>
+{% endblock %}
