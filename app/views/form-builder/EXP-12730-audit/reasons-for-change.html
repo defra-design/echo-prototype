@@ -26,7 +26,7 @@ GOV.UK Prototype Kit
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> name</span>
+            Change<span class="govuk-visually-hidden"> version</span>
           </a>
         </dd>
       </div>
@@ -35,11 +35,11 @@ GOV.UK Prototype Kit
           Status
         </dt>
         <dd class="govuk-summary-list__value">
-          UNRESTRICTED
+            UNRESTRICTED
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
+            Change<span class="govuk-visually-hidden"> status</span>
           </a>
         </dd>
       </div>
@@ -53,11 +53,7 @@ GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions">
           
         </dd>
-<!--         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> address</span>
-          </a>
-        </dd> -->
+
       </div>
 
     </dl>
@@ -65,16 +61,22 @@ GOV.UK Prototype Kit
     <form action="../check-your-progress" method="POST">
 
       <fieldset class="govuk-fieldset">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xs">
-              <h3 class="govuk-fieldset__heading">
-                Reason for change
-              </h3>
-            </legend>
-            <textarea class="govuk-textarea" id="more-detail" name="editor1" rows="9" aria-describedby="more-detail-hint"></textarea>
-
-          </fieldset>
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
+                Reason for change?
+              </label>
+            </h1>
+<!--             <div id="with-hint-hint" class="govuk-hint">
+              Do not include personal or financial information like your National Insurance number or credit card details.
+            </div> -->
+            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+          </div>
+        
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 150 characters
+          </div>
+        
         </div>
         <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
 
