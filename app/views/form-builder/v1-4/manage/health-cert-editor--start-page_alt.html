@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<style media="screen">
+  .cke_chrome{
+    border: 2px solid #0b0c0c;
+  }
+  .cke_editable{
+    font-size: 19px!important;
+  }
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if query.show_alert %}
+    <span>
+              <div id="infoMessage" class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span id="infoMessageText" class="govuk-warning-text__assistive">Information</span>
+                  Health certificate X005-2849EHC updated.
+                </strong>
+              </div>
+        </span>
+        {% endif %}
+        <span class="govuk-caption-xl">Create a new health certificate</span>
+        <h1 class="govuk-heading-xl heading-with-help">Start page</h1>
+        <p class="govuk-body">Provide a summary of key points on how to complete the certificate. This will show before the user starts a new certificate.</p>
+        <p class="govuk-body">To help, you can <a href="#">start with a basic templete</a></p>
+    <form class="case-update" action="health-cert-editor--settings" method="POST">
+
+      <div class="govuk-form-group">
+  <!-- <label class="govuk-label" for="more-detail">
+    Start page
+  </label>
+  <span id="more-detail-hint" class="govuk-hint">
+    Do not include personal or financial information, like your National Insurance number or credit card details.
+  </span> -->
+  <textarea class="govuk-textarea" id="more-detail" name="editor1" rows="9" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+
+      <input class="form-control" id="actionType" type="hidden" name="actionType" value="save">
+      <input type="hidden" value="2849EHC" name="ehcNumber">
+      <input type="hidden" value="Permanent export of horses from the United Kingdom to the United Arab Emirates" name="ehcTitle">
+      <input type="hidden" value="AE" name="destinationCountry">
+      <input type="hidden" value="1e115957-7b2f-e911-a969-000d3a29ba60" name="commodityGroupGUID">
+
+      <input type="hidden" value="%5B%7B%22typeId%22%3A%22befa3a40-902f-e911-a96d-000d3a2cbd60%22%2C%22commodityNameIds%22%3A%5B%5D%7D%5D" name="commodityTypes">
+
+      <input type="hidden" value="EXA04 - Equine" name="exaTitle">
+      <input type="hidden" value="exa04 - equine" name="exaNumber">
+
+      <input class="govuk-button" type="submit" value="Continue" data-qa-id="Button-Save-Create-New-Version" id="Button-Save-Create-New-Version" name="save_create_new_version">
+
+      <input class="margin-left-30 govuk-button grey-button" type="submit" value="Skip" data-qa-id="Button-SaveCertificate" id="Button-SaveCertificate">
+    </form>
+  </div>
+</div>
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<script type="text/javascript">
+
+
+  CKEDITOR.replace( 'editor1' );
+  CKEDITOR.stylesSet.add( 'my_styles', [
+    // Block-level styles.
+    { name: 'Blue Title', element: 'h2', styles: { color: 'Blue' } },
+    { name: 'Red Title',  element: 'h3', styles: { color: 'Red' } },
+
+    // Inline styles.
+    { name: 'CSS Style', element: 'span', attributes: { 'class': 'my_style' } },
+    { name: 'Marker: Yellow', element: 'span', styles: { 'background-color': 'Yellow' } }
+]);
+</script>
+{% endblock %}
