@@ -64,6 +64,12 @@ GOV.UK Prototype Kit
                 Only those with the private link
               </label>
             </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="updated_status" type="radio" value="restricted" {% if query.status == "restricted"%}checked="checked"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                Only internal users (for testing)
+              </label>
+            </div>
           </div>
         </fieldset>
       </div>
