@@ -1,10 +1,15 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-GOV.UK Prototype Kit
+Manage EHC versions
 {% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
-<style media="screen">
-</style>
+
 <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <span class="govuk-caption-l" data-qa-id="list-versions-2849EHC">2849EHC</span>
