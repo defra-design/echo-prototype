@@ -108,6 +108,12 @@ GOV.UK Prototype Kit
                             <div>
                                 <a href="/protected/health-certificates/2849EHC/versions/11.1/preview" id="document-action-draft-preview-11.1" class="action-link" data-qa-id="document-action-draft-preview-11.1" target="_blank">Preview form</a>
                             </div>
+                            <div>
+                                <a href="" id="" class="action-link" >Manage country templates</a>
+                            </div>
+                            <div>
+                                <a href="" id="" class="action-link" >Clone form</a>
+                            </div>
                         </td>
                     </tr><tr class="govuk-table__row" data-qa-id="grid-row-version-2.7">
                         <td class="govuk-table__cell" id="EHC-document-version-4" data-qa-id="version-text-2.7">2.7 (v1.2 cloned)
@@ -136,6 +142,12 @@ GOV.UK Prototype Kit
                             </div>
                             <div>
                                 <a href="/protected/health-certificates/2849EHC/versions/2.7/preview" id="document-action-draft-preview-2.7" class="action-link" data-qa-id="document-action-draft-preview-2.7" target="_blank">Preview form</a>
+                            </div>
+                            <div>
+                                <a href="" id="" class="action-link" >Manage country templates</a>
+                            </div>
+                            <div>
+                                <a href="" id="" class="action-link" >Clone form</a>
                             </div>
                         </td>
                     </tr><tr class="govuk-table__row" data-qa-id="grid-row-version-2.8">
@@ -223,6 +235,9 @@ GOV.UK Prototype Kit
                             <div>
                                 <a href="clone" id="document-action-active-clone-3.1" class="action-link" data-qa-id="document-action-active-clone-3.1" target="_self">Clone form</a>
                             </div>
+                            <div>
+                                <a href="pages" id="" class="action-link">View pages</a>
+                            </div>
                             {% endif %}
                         </td>
                     </tr>
@@ -238,7 +253,11 @@ GOV.UK Prototype Kit
                           </td>
 
                           <td class="govuk-table__cell " id="EHC-document-status-8" data-qa-id="status-column">
-                              {% if query.updated=="yes" and query.old_status=="restricted" and query.updated_status != query.old_status%}<strong class="green-tag">ACTIVE</strong>{%else%}<strong class="govuk-tag light-green-tag">PRIVATE</strong>{%endif%}
+                              {% if query.updated=="yes" and query.old_status=="restricted" and query.updated_status != query.old_status%}
+                              <strong class="green-tag">ACTIVE</strong>
+                              {%else%}
+                              <strong class="govuk-tag light-green-tag">PRIVATE</strong>
+                              {%endif%}
                           </td>
 
 
@@ -260,6 +279,9 @@ GOV.UK Prototype Kit
                             </div>
                             <div>
                                 <a href="clone" id="document-action-active-clone-3.1" class="action-link" data-qa-id="document-action-active-clone-3.1" target="_self">Clone form</a>
+                            </div>
+                            <div>
+                                <a href="pages" id="" class="action-link">View pages</a>
                             </div>
                         </td>
                     </tr>
@@ -296,7 +318,11 @@ GOV.UK Prototype Kit
                         </td>
 
                         <td class="govuk-table__cell" id="EHC-document-status-9" data-qa-id="status-column">
-                            {% if query.updated=="yes" and query.old_status=="draft"%}<strong class="green-tag">ACTIVE</strong>{%else%}<strong class="orange-tag">DRAFT</strong>{%endif%}
+                            {% if query.updated=="yes" and query.old_status=="draft"%}
+                            <strong class="green-tag">ACTIVE</strong>
+                            {%else%}
+                            <strong class="orange-tag">DRAFT</strong>
+                            {%endif%}
                         </td>
 
                         <td class="govuk-table__cell">
@@ -314,6 +340,12 @@ GOV.UK Prototype Kit
                             </div>
                             <div>
                                 <a href="/protected/health-certificates/2849EHC/versions/3.2/preview" id="document-action-draft-preview-3.3" class="action-link" data-qa-id="document-action-draft-preview-3.3" target="_blank">Preview form</a>
+                            </div>
+                            <div>
+                                <a href="" id="" class="action-link" >Manage country templates</a>
+                            </div>
+                            <div>
+                                <a href="" id="" class="action-link" >Clone form</a>
                             </div>
                         </td>
                     </tr></tbody>
