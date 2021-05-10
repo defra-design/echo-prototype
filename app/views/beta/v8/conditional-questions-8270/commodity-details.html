@@ -1,0 +1,227 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+{% include "includes/beta-banner.html" %}
+<div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item" id="Nav-DisplayName"></li>
+    <li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+    <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+
+{% include "includes/back-link.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div>
+      <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">What are the commodity details?</h1>
+      <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+      <div id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">If you have more than one commodity code you can upload a schedule or packing list at the end of this application</div>
+
+        <form action="/protected/form/8270EHC/application/1651965959369/page/9" method="POST" enctype="application/x-www-form-urlencoded">
+          <input type="hidden" name="crumb_csrf_token" value="woI5BchACzzPQv3BkEKWcwyH889eV5pt28aJT7uglTi"/>
+          <input type="hidden" name="certificate" value=""/>
+          <input type="hidden" name="formPageId" value=""/>
+
+          <input type="hidden" name="ehcNumber" value="8270EHC"/>
+
+<!-- @formatter:off -->
+<div class="govuk-form-group ">
+<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-0">Commodity code</label>
+<div class="govuk-hint">You can use the trade tariff search on GOV.UK to find this. This code is between 4 and 10 digits, for example 0308305000</div>
+<input class="govuk-input govuk-input--width- form-control-3-4"
+     id="8270EHC-0"
+     name="0"
+     value=""
+     type="text"
+     autofocus="autofocus" 
+data-qa-id="Question-8270EHC-0"/>
+</div><input type="hidden" name="0-formQuestionId" value="35890"/>
+<input type="hidden" name="0-questionId" value="579"/>
+<input type="hidden" name="0-formName" value="8270EHC"/>
+<input type="hidden" name="0-questionText" value="Commodity code"/>
+<input type="hidden" name="0-questionType" value="text"/>
+<input type="hidden" name="0-questionOrder" value="1"/>
+<input type="hidden" name="0-questionScope" value="BOTH"/>
+<input type="hidden" name="questionSequence-35890" value="0"/><div class="govuk-form-group ">
+<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-1">Description of commodity</label>
+<div class="govuk-hint">For example, live fish</div>
+<input class="govuk-input govuk-input--width- form-control-3-4"
+     id="8270EHC-1"
+     name="1"
+     value=""
+     type="text"
+     
+data-qa-id="Question-8270EHC-1"/>
+</div><input type="hidden" name="1-formQuestionId" value="35891"/>
+<input type="hidden" name="1-questionId" value="757"/>
+<input type="hidden" name="1-formName" value="8270EHC"/>
+<input type="hidden" name="1-questionText" value="Description of commodity"/>
+<input type="hidden" name="1-questionType" value="text"/>
+<input type="hidden" name="1-questionOrder" value="2"/>
+<input type="hidden" name="1-questionScope" value="BOTH"/>
+<input type="hidden" name="questionSequence-35891" value="1"/><div class="govuk-form-group ">
+<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-2">Production area for frozen or processed bivalve molluscs </label>
+<div class="govuk-hint">If not applicable, leave blank</div>
+<input class="govuk-input govuk-input--width- form-control-3-4"
+     id="8270EHC-2"
+     name="2"
+     value=""
+     type="text"
+     
+data-qa-id="Question-8270EHC-2"/>
+</div><input type="hidden" name="2-formQuestionId" value="35892"/>
+<input type="hidden" name="2-questionId" value="581"/>
+<input type="hidden" name="2-formName" value="8270EHC"/>
+<input type="hidden" name="2-questionText" value="Production area for frozen or processed bivalve molluscs "/>
+<input type="hidden" name="2-questionType" value="text"/>
+<input type="hidden" name="2-questionOrder" value="3"/>
+<input type="hidden" name="2-questionScope" value="BOTH"/>
+<input type="hidden" name="questionSequence-35892" value="2"/><div class="govuk-form-group ">
+<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-3">Net weight of consignment</label>
+<div class="govuk-hint">Provide the number and the units of measurement.  For example, 500 kg</div>
+<input class="govuk-input govuk-input--width- form-control-3-4"
+     id="8270EHC-3"
+     name="3"
+     value=""
+     type="text"
+     
+data-qa-id="Question-8270EHC-3"/>
+</div><input type="hidden" name="3-formQuestionId" value="35893"/>
+<input type="hidden" name="3-questionId" value="758"/>
+<input type="hidden" name="3-formName" value="8270EHC"/>
+<input type="hidden" name="3-questionText" value="Net weight of consignment"/>
+<input type="hidden" name="3-questionType" value="text"/>
+<input type="hidden" name="3-questionOrder" value="4"/>
+<input type="hidden" name="3-questionScope" value="BOTH"/>
+<input type="hidden" name="questionSequence-35893" value="3"/><div class="govuk-form-group ">
+<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-4">Gross weight of consignment</label>
+<div class="govuk-hint">Provide the number and the units of measurement.  For example, 560 kg</div>
+<input class="govuk-input govuk-input--width- form-control-3-4"
+     id="8270EHC-4"
+     name="4"
+     value=""
+     type="text"
+     
+data-qa-id="Question-8270EHC-4"/>
+</div><input type="hidden" name="4-formQuestionId" value="35894"/>
+<input type="hidden" name="4-questionId" value="759"/>
+<input type="hidden" name="4-formName" value="8270EHC"/>
+<input type="hidden" name="4-questionText" value="Gross weight of consignment"/>
+<input type="hidden" name="4-questionType" value="text"/>
+<input type="hidden" name="4-questionOrder" value="5"/>
+<input type="hidden" name="4-questionScope" value="BOTH"/>
+<input type="hidden" name="questionSequence-35894" value="4"/>   <div class="govuk-form-group ">
+ <fieldset id="8270EHC-5" class="govuk-fieldset">
+   <legend class="govuk-fieldset__legend" for="8270EHC-5">
+     <span class="govuk-label govuk-!-font-weight-bold">Temperature of commodity</span>
+   </legend>
+
+
+   <div class="govuk-radios govuk-radios">
+     <div class="govuk-radios__item">
+       <input type="radio"
+              class="govuk-radios__input"
+              id="8270EHC-5-0"
+              value="Ambient"
+              name="5"
+              data-qa-id="Question-radio-Ambient"
+              
+       
+       />
+       <label class="govuk-label govuk-radios__label" for="8270EHC-5-0">Ambient</label>
+     </div>
+     <div class="govuk-radios__item">
+       <input type="radio"
+              class="govuk-radios__input"
+              id="8270EHC-5-1"
+              value="Chilled"
+              name="5"
+              data-qa-id="Question-radio-Chilled"
+       
+       />
+       <label class="govuk-label govuk-radios__label" for="8270EHC-5-1">Chilled</label>
+     </div>
+     <p class="govuk-body">or</p>
+     <div class="govuk-radios__item">
+       <input type="radio"
+              class="govuk-radios__input"
+              id="8270EHC-5-2"
+              value="Frozen"
+              name="5"
+              data-qa-id="Question-radio-Frozen"
+       
+       />
+       <label class="govuk-label govuk-radios__label" for="8270EHC-5-2">Frozen</label>
+     </div>
+   </div>
+ </fieldset>
+</div>
+
+<input type="hidden" name="5-formQuestionId" value="35895"/>
+<input type="hidden" name="5-questionId" value="583"/>
+<input type="hidden" name="5-formName" value="8270EHC"/>
+<input type="hidden" name="5-questionText" value="Temperature of commodity"/>
+<input type="hidden" name="5-questionType" value="single_select"/>
+<input type="hidden" name="5-questionOrder" value="6"/>
+<input type="hidden" name="5-questionScope" value="BOTH"/>
+<input type="hidden" name="questionSequence-35895" value="5"/><!-- @formatter:on -->
+          <div id="skip-question-box" class="govuk-form-group defra-callout ">
+            <h3 class="govuk-heading-m">You do not have to answer every question</h3>
+            <input type="hidden" id="skipQuestionText" value="I&#x27;ve answered as many questions as I can on this page">
+            <input type="hidden" id="allQuestionsAnswered" value="false">
+            <p class="govuk-body">
+              You can skip questions if you do not have the information right now. You can fill in any blanks before you submit, or leave them for your certifier to fill in.
+            </p>
+            <div id="skip_question_answers" class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="skip_answers" name="skip_answers" type="checkbox" />
+                <label class="govuk-label govuk-checkboxes__label" for="skip_answers">
+                  I&#x27;ve answered as many questions as I can on this page
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage"
+                 value="6"/>
+          <div class="govuk-grid-row margin-top-30"></div>
+          <div class="govuk-grid-column-one-half govuk-!-margin-left-0 govuk-!-padding-0">
+            <input class="govuk-button margin-top-30"
+                   type="submit"
+                   name="saveAndContinue"
+                   aria-label="save and continue"
+                   value="Save and continue"
+                   id="Button-SaveAndContinue"
+                   data-qa-id="Button-SaveAndContinue">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-body">
+              <input class="link-button"
+                     type="submit"
+                     value="Save and continue later"
+                     aria-label="Save and continue later"
+                     name="saveAndResumeLater"
+                     data-qa-id="Button-SaveAndResumeLater"
+                     id="Button-SaveAndResumeLater" />
+            </div>
+          </div>
+
+
+          </div>
+        </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
