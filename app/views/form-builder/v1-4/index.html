@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-GOV.UK Prototype Kit
+List all health certificates
 {% endblock %}
 {% block beforeContent %}
 <style media="screen">
@@ -9,7 +9,7 @@ GOV.UK Prototype Kit
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
-      alpha
+      beta
     </strong>
     <span class="govuk-phase-banner__text">
       This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -80,10 +80,17 @@ GOV.UK Prototype Kit
           <td class="govuk-table__cell actions-cell no-border" rowspan="2">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage</a>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage Certificate</a>
+              </li>
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-version">Manage versions</a>
+              </li>
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/change-status">Change Status</a>
               </li>
             </ul>
           </td>
+
         </tr>
         <tr>
           <td class="govuk-table__cell" colspan="7" id="friendly-url-0">https://apply-export-health-certificate-exporter-int-snd.azure.defra.cloud:443/forms/X005-2849EHC</td>
@@ -101,11 +108,17 @@ GOV.UK Prototype Kit
           <td class="govuk-table__cell no-border">AE</td>
           <td class="govuk-table__cell no-border">Equine</td>
           <td class="govuk-table__cell actions-cell no-border" rowspan="2">
-            <ul class="govuk-list">
-              <li>
-                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage</a>
-              </li>
-            </ul>
+              <ul class="govuk-list">
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage Certificate</a>
+                </li>
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-version">Manage versions</a>
+                </li>
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/change-status">Change Status</a>
+                </li>
+              </ul>
           </td>
         </tr>
         <tr>
