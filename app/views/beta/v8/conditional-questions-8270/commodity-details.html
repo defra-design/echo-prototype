@@ -30,36 +30,25 @@ EHC 8270- What are the commodity details?
     <div>
       <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">What are the commodity details?</h1>
       <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
-      <div id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">If you have more than one
-        commodity code you can upload a schedule or packing list at the end of this application</div>
+      <div id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">
+        If you have more than one commodity code you can upload a schedule or packing list at the end of this application
+      </div>
 
       <form action="index" method="GET" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="crumb_csrf_token" value="woI5BchACzzPQv3BkEKWcwyH889eV5pt28aJT7uglTi" />
         <input type="hidden" name="certificate" value="" />
         <input type="hidden" name="formPageId" value="" />
-
         <input type="hidden" name="ehcNumber" value="8270EHC" />
 
         <!-- @formatter:off -->
         <div class="govuk-form-group ">
-          <label class="govuk-label govuk-!-font-weight-bold" for="autocomplete-progressiveEnhancement-2">Commodity
-            code</label>
-          <div class="govuk-body">You can use the GOV.UK<a href="https://www.gov.uk/trade-tariff" target="_blank"> trade
-              tariff search </a> (opens in new tab) to find this. This code is between 4 and 10 digits, for example
-            0308305000</div>
-          <!-- 
-  <input class="govuk-input govuk-input--width- form-control-3-4"
-      id="8270EHC-0"
-      name="0"
-      value=""
-      type="text"
-      autofocus="autofocus" 
-  data-qa-id="Question-8270EHC-0"/>
- -->
+          <label class="govuk-label govuk-!-font-weight-bold" for="autocomplete-progressiveEnhancement-2">Commodity code</label>
+          <div class="govuk-body">You can use the GOV.UK<a href="https://www.gov.uk/trade-tariff" target="_blank"> trade tariff search </a> (opens in new tab) to find this. This code is between 4 and 10 digits, for example 0308305000</div>
+
 
           <div class="govuk-form-group autocomplete-wrapper ">
             <select id="autocomplete-progressiveEnhancement-2"
-              class="govuk-select  govuk-input--width- form-control-3-4" id="sort" name="countrySelect">
+              class="govuk-select form-control-3-4" id="sort" name="commodityCodeSelect">
               <option value="none"></option>
               <option value="AF">03 Fish and crustaceans, molluscs and other aquatic invertebrates</option>
               <option value="AX">0301 Live fish </option>
