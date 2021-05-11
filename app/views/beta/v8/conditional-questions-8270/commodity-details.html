@@ -10,8 +10,11 @@ GOV.UK Prototype Kit
 <div class="login-nav login-border">
   <ul class="login-nav__list">
     <li class="login-nav__list-item" id="Nav-DisplayName"></li>
-    <li class="login-nav__list-item"> | <a href="/account-management" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
-    <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+    <li class="login-nav__list-item"> | <a href="/account-management"
+        class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount"
+        target="_blank">Manage account</a>|</li>
+    <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state"
+        id="Link-SignOut">Sign out</a></li>
   </ul>
 </div>
 
@@ -27,20 +30,24 @@ GOV.UK Prototype Kit
     <div>
       <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">What are the commodity details?</h1>
       <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
-      <div id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">If you have more than one commodity code you can upload a schedule or packing list at the end of this application</div>
+      <div id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">If you have more than one
+        commodity code you can upload a schedule or packing list at the end of this application</div>
 
-        <form action="index" method="GET" enctype="application/x-www-form-urlencoded">
-          <input type="hidden" name="crumb_csrf_token" value="woI5BchACzzPQv3BkEKWcwyH889eV5pt28aJT7uglTi"/>
-          <input type="hidden" name="certificate" value=""/>
-          <input type="hidden" name="formPageId" value=""/>
+      <form action="index" method="GET" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="crumb_csrf_token" value="woI5BchACzzPQv3BkEKWcwyH889eV5pt28aJT7uglTi" />
+        <input type="hidden" name="certificate" value="" />
+        <input type="hidden" name="formPageId" value="" />
 
-          <input type="hidden" name="ehcNumber" value="8270EHC"/>
+        <input type="hidden" name="ehcNumber" value="8270EHC" />
 
-<!-- @formatter:off -->
-<div class="govuk-form-group ">
-  <label class="govuk-label govuk-!-font-weight-bold" for="autocomplete-progressiveEnhancement-2">Commodity code</label>
-  <div class="govuk-body">You can use the GOV.UK <a href="https://www.gov.uk/trade-tariff" target="_blank">trade tariff search </a> (opens in new tab) to find this. This code is between 4 and 10 digits, for example 0308305000</div>
-<!-- 
+        <!-- @formatter:off -->
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="autocomplete-progressiveEnhancement-2">Commodity
+            code</label>
+          <div class="govuk-body">You can use the GOV.UK <a href="https://www.gov.uk/trade-tariff" target="_blank">trade
+              tariff search </a> (opens in new tab) to find this. This code is between 4 and 10 digits, for example
+            0308305000</div>
+          <!-- 
   <input class="govuk-input govuk-input--width- form-control-3-4"
       id="8270EHC-0"
       name="0"
@@ -49,223 +56,190 @@ GOV.UK Prototype Kit
       autofocus="autofocus" 
   data-qa-id="Question-8270EHC-0"/>
  -->
-  
-  <div class="govuk-form-group autocomplete-wrapper " >
-    <select id="autocomplete-progressiveEnhancement-2" class="govuk-select  govuk-input--width- form-control-3-4" id="sort" name="countrySelect">
-      <option value="none"></option>
-      <option value="AF">03 Fish and crustaceans, molluscs and other aquatic invertebrates</option>
-      <option value="AX">0301 Live fish </option>
-      <option value="AL">030111000 Ornamental, freshwater</option>
-      <option value="DZ">0301190000 Ornamental, other</option>
-      <option value="AS">0301091 Other live fish, Trout</option>
-      <option value="AD">0301911000 Other live fish,(Oncorhynchus apache or Oncorhynchus chrysogaster)</option>
-      <option value="AO">03019190 Other live fish, Trout, other</option>
-      <option value="AI">0301919011 Other live fish, trout, Of the species Oncorhynchus mykiss</option>
-      <option value="AI">0301919011 Other live fish, trout, Of the species Oncorhynchus mykiss, weighing less htan 1.2 kg</option>
-      <option value="AI">0301919011 Other live fish, trout, Of the species Oncorhynchus mykiss, other weight</option>
-      <option value="AI">0301919090 Other live fish, trout, Other than 'Of the species Oncorhynchus mykiss'</option>
-      <option value="AS">030192 Eels (Anguilla spp.)</option>
-      <option value="AS">03019210000 Eels, Of a length of less than 12 cm</option>
-      <option value="AS">03019230000 Eels, Of a length of 12 cm or more but less than 20 cm</option>
-      <option value="AS">0301929000 Eels, Of a length of 20 cm or more</option>
-      <option value="AS">0301930000 Carp</option>
-      <option value="AS">030194 Atlantic and Pacific bluefin tuna (Thunnus thynnus, Thunnus orientalis)</option>
-      <option value="AS">0301941000 Atlantic bluefin tuna (Thunnus thynnus)</option>
-      <option value="AS">0301949000 Pacific bluefin tuna (Thunnus orientalis)</option>
-      <option value="AS">0301950000 Southern bluefin tuna (Thunnus maccoyii)</option>
-      <option value="AS">030199 Other live fish, other</option>
-      <option value="AS">03019911 Other live fish, other, freshwater</option>
-      <option value="AS">03019911 Other live fish, other, freshwater, Pacific salmon, Atlantic salmon and Danube salmon</option>
-      <option value="AS">03019911 Other live fish, other, freshwater, other</option>
-      <option value="AS">03019985 Other live fish, other, other</option>
-      <option value="AS">0301998510 Other live fish, other, other, Sharks (Squalus spp.)</option>
-      <option value="AS">0301998522 Other live fish, other, other, European sea bass (Dicentrarchus labrax)</option>
-      <option value="AS">0301998530 Other live fish, other, other, Porbeagle shark (Lamna nasus)</option>
-      <option value="AS">0301998540 Other live fish, other, other, Lesser or Greenland halibut (Reinhardtius hippoglossoides)</option>
-      <option value="AS">0301998550 Other live fish, other, other, Atlantic halibut (Hippoglossus hippoglossus)</option>
-      <option value="AS">0301998560 Other live fish, other, other, Gilt-head sea bream (Sparus aurata)</option>
-      <option value="AS">0301998570 Other live fish, other, other, Swordfish (Xiphias gladius)</option>
-      <option value="AS">0301998575 Other live fish, other, other, Bigeye tuna (Thunnus obesus)</option>
-      <option value="AS">0301998580 Other live fish, other, other, Sea bream (Dentex dentex, Pagellus spp.)</option>
-      <option value="AS">0301998590 Other live fish, other, other, other</option>
-    </select>
-  </div>
-</div>
+
+          <div class="govuk-form-group autocomplete-wrapper ">
+            <select id="autocomplete-progressiveEnhancement-2"
+              class="govuk-select  govuk-input--width- form-control-3-4" id="sort" name="countrySelect">
+              <option value="none"></option>
+              <option value="AF">03 Fish and crustaceans, molluscs and other aquatic invertebrates</option>
+              <option value="AX">0301 Live fish </option>
+              <option value="AL">030111000 Ornamental, freshwater</option>
+              <option value="DZ">0301190000 Ornamental, other</option>
+              <option value="AS">0301091 Other live fish, Trout</option>
+              <option value="AD">0301911000 Other live fish,(Oncorhynchus apache or Oncorhynchus chrysogaster)</option>
+              <option value="AO">03019190 Other live fish, Trout, other</option>
+              <option value="AI">0301919011 Other live fish, trout, Of the species Oncorhynchus mykiss</option>
+              <option value="AI">0301919011 Other live fish, trout, Of the species Oncorhynchus mykiss, weighing less
+                htan 1.2 kg</option>
+              <option value="AI">0301919011 Other live fish, trout, Of the species Oncorhynchus mykiss, other weight
+              </option>
+              <option value="AI">0301919090 Other live fish, trout, Other than 'Of the species Oncorhynchus mykiss'
+              </option>
+              <option value="AS">030192 Eels (Anguilla spp.)</option>
+              <option value="AS">03019210000 Eels, Of a length of less than 12 cm</option>
+              <option value="AS">03019230000 Eels, Of a length of 12 cm or more but less than 20 cm</option>
+              <option value="AS">0301929000 Eels, Of a length of 20 cm or more</option>
+              <option value="AS">0301930000 Carp</option>
+              <option value="AS">030194 Atlantic and Pacific bluefin tuna (Thunnus thynnus, Thunnus orientalis)</option>
+              <option value="AS">0301941000 Atlantic bluefin tuna (Thunnus thynnus)</option>
+              <option value="AS">0301949000 Pacific bluefin tuna (Thunnus orientalis)</option>
+              <option value="AS">0301950000 Southern bluefin tuna (Thunnus maccoyii)</option>
+              <option value="AS">030199 Other live fish, other</option>
+              <option value="AS">03019911 Other live fish, other, freshwater</option>
+              <option value="AS">03019911 Other live fish, other, freshwater, Pacific salmon, Atlantic salmon and Danube
+                salmon</option>
+              <option value="AS">03019911 Other live fish, other, freshwater, other</option>
+              <option value="AS">03019985 Other live fish, other, other</option>
+              <option value="AS">0301998510 Other live fish, other, other, Sharks (Squalus spp.)</option>
+              <option value="AS">0301998522 Other live fish, other, other, European sea bass (Dicentrarchus labrax)
+              </option>
+              <option value="AS">0301998530 Other live fish, other, other, Porbeagle shark (Lamna nasus)</option>
+              <option value="AS">0301998540 Other live fish, other, other, Lesser or Greenland halibut (Reinhardtius
+                hippoglossoides)</option>
+              <option value="AS">0301998550 Other live fish, other, other, Atlantic halibut (Hippoglossus hippoglossus)
+              </option>
+              <option value="AS">0301998560 Other live fish, other, other, Gilt-head sea bream (Sparus aurata)</option>
+              <option value="AS">0301998570 Other live fish, other, other, Swordfish (Xiphias gladius)</option>
+              <option value="AS">0301998575 Other live fish, other, other, Bigeye tuna (Thunnus obesus)</option>
+              <option value="AS">0301998580 Other live fish, other, other, Sea bream (Dentex dentex, Pagellus spp.)
+              </option>
+              <option value="AS">0301998590 Other live fish, other, other, other</option>
+            </select>
+          </div>
+        </div>
 
 
-<input type="hidden" name="0-formQuestionId" value="35890"/>
-<input type="hidden" name="0-questionId" value="579"/>
-<input type="hidden" name="0-formName" value="8270EHC"/>
-<input type="hidden" name="0-questionText" value="Commodity code"/>
-<input type="hidden" name="0-questionType" value="text"/>
-<input type="hidden" name="0-questionOrder" value="1"/>
-<input type="hidden" name="0-questionScope" value="BOTH"/>
-<input type="hidden" name="questionSequence-35890" value="0"/><div class="govuk-form-group ">
-<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-1">Description of commodity</label>
-<div class="govuk-hint">For example, live fish</div>
-<input class="govuk-input govuk-input--width- form-control-3-4"
-     id="8270EHC-1"
-     name="1"
-     value=""
-     type="text"
-     
-data-qa-id="Question-8270EHC-1"/>
-</div><input type="hidden" name="1-formQuestionId" value="35891"/>
-<input type="hidden" name="1-questionId" value="757"/>
-<input type="hidden" name="1-formName" value="8270EHC"/>
-<input type="hidden" name="1-questionText" value="Description of commodity"/>
-<input type="hidden" name="1-questionType" value="text"/>
-<input type="hidden" name="1-questionOrder" value="2"/>
-<input type="hidden" name="1-questionScope" value="BOTH"/>
-<input type="hidden" name="questionSequence-35891" value="1"/><div class="govuk-form-group ">
-<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-2">Production area for frozen or processed bivalve molluscs </label>
-<div class="govuk-hint">If not applicable, leave blank</div>
-<input class="govuk-input govuk-input--width- form-control-3-4"
-     id="8270EHC-2"
-     name="2"
-     value=""
-     type="text"
-     
-data-qa-id="Question-8270EHC-2"/>
-</div><input type="hidden" name="2-formQuestionId" value="35892"/>
-<input type="hidden" name="2-questionId" value="581"/>
-<input type="hidden" name="2-formName" value="8270EHC"/>
-<input type="hidden" name="2-questionText" value="Production area for frozen or processed bivalve molluscs "/>
-<input type="hidden" name="2-questionType" value="text"/>
-<input type="hidden" name="2-questionOrder" value="3"/>
-<input type="hidden" name="2-questionScope" value="BOTH"/>
-<input type="hidden" name="questionSequence-35892" value="2"/><div class="govuk-form-group ">
-<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-3">Net weight of consignment</label>
-<div class="govuk-hint">Provide the number and the units of measurement.  For example, 500 kg</div>
-<input class="govuk-input govuk-input--width- form-control-3-4"
-     id="8270EHC-3"
-     name="3"
-     value=""
-     type="text"
-     
-data-qa-id="Question-8270EHC-3"/>
-</div><input type="hidden" name="3-formQuestionId" value="35893"/>
-<input type="hidden" name="3-questionId" value="758"/>
-<input type="hidden" name="3-formName" value="8270EHC"/>
-<input type="hidden" name="3-questionText" value="Net weight of consignment"/>
-<input type="hidden" name="3-questionType" value="text"/>
-<input type="hidden" name="3-questionOrder" value="4"/>
-<input type="hidden" name="3-questionScope" value="BOTH"/>
-<input type="hidden" name="questionSequence-35893" value="3"/><div class="govuk-form-group ">
-<label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-4">Gross weight of consignment</label>
-<div class="govuk-hint">Provide the number and the units of measurement.  For example, 560 kg</div>
-<input class="govuk-input govuk-input--width- form-control-3-4"
-     id="8270EHC-4"
-     name="4"
-     value=""
-     type="text"
-     
-data-qa-id="Question-8270EHC-4"/>
-</div><input type="hidden" name="4-formQuestionId" value="35894"/>
-<input type="hidden" name="4-questionId" value="759"/>
-<input type="hidden" name="4-formName" value="8270EHC"/>
-<input type="hidden" name="4-questionText" value="Gross weight of consignment"/>
-<input type="hidden" name="4-questionType" value="text"/>
-<input type="hidden" name="4-questionOrder" value="5"/>
-<input type="hidden" name="4-questionScope" value="BOTH"/>
-<input type="hidden" name="questionSequence-35894" value="4"/>   <div class="govuk-form-group ">
- <fieldset id="8270EHC-5" class="govuk-fieldset">
-   <legend class="govuk-fieldset__legend" for="8270EHC-5">
-     <span class="govuk-label govuk-!-font-weight-bold">Temperature of commodity</span>
-   </legend>
+        <input type="hidden" name="0-formQuestionId" value="35890" />
+        <input type="hidden" name="0-questionId" value="579" />
+        <input type="hidden" name="0-formName" value="8270EHC" />
+        <input type="hidden" name="0-questionText" value="Commodity code" />
+        <input type="hidden" name="0-questionType" value="text" />
+        <input type="hidden" name="0-questionOrder" value="1" />
+        <input type="hidden" name="0-questionScope" value="BOTH" />
+        <input type="hidden" name="questionSequence-35890" value="0" />
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-1">Description of commodity</label>
+          <div class="govuk-hint">For example, live fish</div>
+          <input class="govuk-input govuk-input--width- form-control-3-4" id="8270EHC-1" name="1" value="" type="text"
+            data-qa-id="Question-8270EHC-1" />
+        </div><input type="hidden" name="1-formQuestionId" value="35891" />
+        <input type="hidden" name="1-questionId" value="757" />
+        <input type="hidden" name="1-formName" value="8270EHC" />
+        <input type="hidden" name="1-questionText" value="Description of commodity" />
+        <input type="hidden" name="1-questionType" value="text" />
+        <input type="hidden" name="1-questionOrder" value="2" />
+        <input type="hidden" name="1-questionScope" value="BOTH" />
+        <input type="hidden" name="questionSequence-35891" value="1" />
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-2">Production area for frozen or processed
+            bivalve molluscs </label>
+          <div class="govuk-hint">If not applicable, leave blank</div>
+          <input class="govuk-input govuk-input--width- form-control-3-4" id="8270EHC-2" name="2" value="" type="text"
+            data-qa-id="Question-8270EHC-2" />
+        </div><input type="hidden" name="2-formQuestionId" value="35892" />
+        <input type="hidden" name="2-questionId" value="581" />
+        <input type="hidden" name="2-formName" value="8270EHC" />
+        <input type="hidden" name="2-questionText" value="Production area for frozen or processed bivalve molluscs " />
+        <input type="hidden" name="2-questionType" value="text" />
+        <input type="hidden" name="2-questionOrder" value="3" />
+        <input type="hidden" name="2-questionScope" value="BOTH" />
+        <input type="hidden" name="questionSequence-35892" value="2" />
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-3">Net weight of consignment</label>
+          <div class="govuk-hint">Provide the number and the units of measurement. For example, 500 kg</div>
+          <input class="govuk-input govuk-input--width- form-control-3-4" id="8270EHC-3" name="3" value="" type="text"
+            data-qa-id="Question-8270EHC-3" />
+        </div><input type="hidden" name="3-formQuestionId" value="35893" />
+        <input type="hidden" name="3-questionId" value="758" />
+        <input type="hidden" name="3-formName" value="8270EHC" />
+        <input type="hidden" name="3-questionText" value="Net weight of consignment" />
+        <input type="hidden" name="3-questionType" value="text" />
+        <input type="hidden" name="3-questionOrder" value="4" />
+        <input type="hidden" name="3-questionScope" value="BOTH" />
+        <input type="hidden" name="questionSequence-35893" value="3" />
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-4">Gross weight of consignment</label>
+          <div class="govuk-hint">Provide the number and the units of measurement. For example, 560 kg</div>
+          <input class="govuk-input govuk-input--width- form-control-3-4" id="8270EHC-4" name="4" value="" type="text"
+            data-qa-id="Question-8270EHC-4" />
+        </div><input type="hidden" name="4-formQuestionId" value="35894" />
+        <input type="hidden" name="4-questionId" value="759" />
+        <input type="hidden" name="4-formName" value="8270EHC" />
+        <input type="hidden" name="4-questionText" value="Gross weight of consignment" />
+        <input type="hidden" name="4-questionType" value="text" />
+        <input type="hidden" name="4-questionOrder" value="5" />
+        <input type="hidden" name="4-questionScope" value="BOTH" />
+        <input type="hidden" name="questionSequence-35894" value="4" />
+        <div class="govuk-form-group ">
+          <fieldset id="8270EHC-5" class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend" for="8270EHC-5">
+              <span class="govuk-label govuk-!-font-weight-bold">Temperature of commodity</span>
+            </legend>
 
 
-   <div class="govuk-radios govuk-radios">
-     <div class="govuk-radios__item">
-       <input type="radio"
-              class="govuk-radios__input"
-              id="8270EHC-5-0"
-              value="Ambient"
-              name="5"
-              data-qa-id="Question-radio-Ambient"
-              
-       
-       />
-       <label class="govuk-label govuk-radios__label" for="8270EHC-5-0">Ambient</label>
-     </div>
-     <div class="govuk-radios__item">
-       <input type="radio"
-              class="govuk-radios__input"
-              id="8270EHC-5-1"
-              value="Chilled"
-              name="5"
-              data-qa-id="Question-radio-Chilled"
-       
-       />
-       <label class="govuk-label govuk-radios__label" for="8270EHC-5-1">Chilled</label>
-     </div>
-     <p class="govuk-body">or</p>
-     <div class="govuk-radios__item">
-       <input type="radio"
-              class="govuk-radios__input"
-              id="8270EHC-5-2"
-              value="Frozen"
-              name="5"
-              data-qa-id="Question-radio-Frozen"
-       
-       />
-       <label class="govuk-label govuk-radios__label" for="8270EHC-5-2">Frozen</label>
-     </div>
-   </div>
- </fieldset>
-</div>
-
-<input type="hidden" name="5-formQuestionId" value="35895"/>
-<input type="hidden" name="5-questionId" value="583"/>
-<input type="hidden" name="5-formName" value="8270EHC"/>
-<input type="hidden" name="5-questionText" value="Temperature of commodity"/>
-<input type="hidden" name="5-questionType" value="single_select"/>
-<input type="hidden" name="5-questionOrder" value="6"/>
-<input type="hidden" name="5-questionScope" value="BOTH"/>
-<input type="hidden" name="questionSequence-35895" value="5"/><!-- @formatter:on -->
-          <div id="skip-question-box" class="govuk-form-group defra-callout ">
-            <h3 class="govuk-heading-m">You do not have to answer every question</h3>
-            <input type="hidden" id="skipQuestionText" value="I&#x27;ve answered as many questions as I can on this page">
-            <input type="hidden" id="allQuestionsAnswered" value="false">
-            <p class="govuk-body">
-              You can skip questions if you do not have the information right now. You can fill in any blanks before you submit, or leave them for your certifier to fill in.
-            </p>
-            <div id="skip_question_answers" class="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="skip_answers" name="skip_answers" type="checkbox" />
-                <label class="govuk-label govuk-checkboxes__label" for="skip_answers">
-                  I&#x27;ve answered as many questions as I can on this page
-                </label>
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="8270EHC-5-0" value="Ambient" name="5"
+                  data-qa-id="Question-radio-Ambient" />
+                <label class="govuk-label govuk-radios__label" for="8270EHC-5-0">Ambient</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="8270EHC-5-1" value="Chilled" name="5"
+                  data-qa-id="Question-radio-Chilled" />
+                <label class="govuk-label govuk-radios__label" for="8270EHC-5-1">Chilled</label>
+              </div>
+              <p class="govuk-body">or</p>
+              <div class="govuk-radios__item">
+                <input type="radio" class="govuk-radios__input" id="8270EHC-5-2" value="Frozen" name="5"
+                  data-qa-id="Question-radio-Frozen" />
+                <label class="govuk-label govuk-radios__label" for="8270EHC-5-2">Frozen</label>
               </div>
             </div>
-          </div>
+          </fieldset>
+        </div>
 
-          <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage"
-                 value="6"/>
-          <div class="govuk-grid-row margin-top-30"></div>
-          <div class="govuk-grid-column-one-half govuk-!-margin-left-0 govuk-!-padding-0">
-            <input class="govuk-button margin-top-30"
-                   type="submit"
-                   name="saveAndContinue"
-                   aria-label="save and continue"
-                   value="Save and continue"
-                   id="Button-SaveAndContinue"
-                   data-qa-id="Button-SaveAndContinue">
+        <input type="hidden" name="5-formQuestionId" value="35895" />
+        <input type="hidden" name="5-questionId" value="583" />
+        <input type="hidden" name="5-formName" value="8270EHC" />
+        <input type="hidden" name="5-questionText" value="Temperature of commodity" />
+        <input type="hidden" name="5-questionType" value="single_select" />
+        <input type="hidden" name="5-questionOrder" value="6" />
+        <input type="hidden" name="5-questionScope" value="BOTH" />
+        <input type="hidden" name="questionSequence-35895" value="5" /><!-- @formatter:on -->
+        <div id="skip-question-box" class="govuk-form-group defra-callout ">
+          <h3 class="govuk-heading-m">You do not have to answer every question</h3>
+          <input type="hidden" id="skipQuestionText" value="I&#x27;ve answered as many questions as I can on this page">
+          <input type="hidden" id="allQuestionsAnswered" value="false">
+          <p class="govuk-body">
+            You can skip questions if you do not have the information right now. You can fill in any blanks before you
+            submit, or leave them for your certifier to fill in.
+          </p>
+          <div id="skip_question_answers" class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="skip_answers" name="skip_answers" type="checkbox" />
+              <label class="govuk-label govuk-checkboxes__label" for="skip_answers">
+                I&#x27;ve answered as many questions as I can on this page
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="6" />
+        <div class="govuk-grid-row margin-top-30"></div>
+        <div class="govuk-grid-column-one-half govuk-!-margin-left-0 govuk-!-padding-0">
+          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" aria-label="save and continue"
+            value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full govuk-body">
-              <input class="link-button"
-                     type="submit"
-                     value="Save and continue later"
-                     aria-label="Save and continue later"
-                     name="saveAndResumeLater"
-                     data-qa-id="Button-SaveAndResumeLater"
-                     id="Button-SaveAndResumeLater" />
+              <input class="link-button" type="submit" value="Save and continue later"
+                aria-label="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater"
+                id="Button-SaveAndResumeLater" />
             </div>
           </div>
 
 
-          </div>
-        </form>
+        </div>
+      </form>
 
     </div>
   </div>
@@ -275,16 +249,41 @@ data-qa-id="Question-8270EHC-4"/>
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
 <script type="text/javascript">
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     var element = document.querySelector('#autocomplete-progressiveEnhancement-2');
     var cl = $('#autocomplete-progressiveEnhancement-2').attr('name');
     accessibleAutocomplete.enhanceSelectElement({
       selectElement: element,
       name: cl
-      
+    })
+
+    /*     $('#autocomplete-progressiveEnhancement-2').addEventListener('blur', function(){
+          console.log('blur');
+        })
+        $('#autocomplete-progressiveEnhancement-2').addEventListener('focus', function(){
+          console.log('focus');
+        }) */
+    $('#autocomplete-progressiveEnhancement-2').blur(function () {
+      console.log('blr');
+    })
+    $('#autocomplete-progressiveEnhancement-2').focus(function () {
+      let str = $('#autocomplete-progressiveEnhancement-2').val();
+      let array = str.split(" ");
+      console.log(array);
+      let code = array[0];
+      array = array.splice(1);
+      let title = array.join(" ");
+      console.log(code);
+      console.log(title);
+      // the component sets th display text inside a Ul/li node
+      // $('#autocomplete-progressiveEnhancement-2').val(code);
+      $('#8270EHC-1').val(title);
+    })
+    $('#autocomplete-progressiveEnhancement-2').keydown(function () {
+      console.log('key');
     })
   })
 </script>
 
 
-  {% endblock %}
+{% endblock %}
