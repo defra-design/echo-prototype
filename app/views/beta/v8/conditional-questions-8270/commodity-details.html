@@ -240,34 +240,6 @@ EHC 8270- What are the commodity details?
       selectElement: element,
       name: cl
     })
-
-    /*     $('#autocomplete-progressiveEnhancement-2').addEventListener('blur', function(){
-          console.log('blur');
-        })
-        $('#autocomplete-progressiveEnhancement-2').addEventListener('focus', function(){
-          console.log('focus');
-        }) */
-    $('#autocomplete-progressiveEnhancement-2').blur(function () {
-      console.log('blr');
-    })
-    $('#autocomplete-progressiveEnhancement-2').focus(function () {
-      console.log('focus');
-      let str = $('#autocomplete-progressiveEnhancement-2').val();
-      let array = str.split(" ");
-      console.log(array);
-      let code = array[0];
-      array = array.splice(1);
-      let title = array.join(" ");
-      console.log(code);
-      console.log(title);
-      // the component sets the display text
-      //$('#autocomplete-progressiveEnhancement-2').val(code);
-      $('#autocomplete-progressiveEnhancement-2').text("code");
-      $('#8270EHC-1').val(title);
-    })
-    $('#autocomplete-progressiveEnhancement-2').keydown(function () {
-      console.log('key');
-    })
   })
 </script>
 
