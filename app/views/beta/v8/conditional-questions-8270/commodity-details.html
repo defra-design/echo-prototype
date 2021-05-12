@@ -45,49 +45,13 @@ EHC 8270- What are the commodity details?
           <label class="govuk-label govuk-!-font-weight-bold" for="autocomplete-progressiveEnhancement-2">Commodity code</label>
           <div class="govuk-body">You can use the GOV.UK<a href="https://www.gov.uk/trade-tariff" target="_blank"> trade tariff search </a> (opens in new tab) to find this. This code is between 4 and 10 digits, for example 0308305000</div>
 
-
           <div class="govuk-form-group autocomplete-wrapper ">
             <select id="autocomplete-progressiveEnhancement-2"
               class="govuk-select form-control-3-4" id="sort" name="commodityCodeSelect">
               <option value="none"></option>
-              <option value="AF">03 Fish and crustaceans, molluscs and other aquatic invertebrates</option>
-              <option value="AX">0301 Live fish </option>
-              <option value="AL">030111000 Ornamental, freshwater</option>
-              <option value="DZ">0301190000 Ornamental, other</option>
-              <option value="AS">0301091 Other live fish, Trout</option>
-              <option value="AD">0301911000 Other live fish,(Oncorhynchus apache or Oncorhynchus chrysogaster)</option>
-              <option value="AO">03019190 Other live fish, Trout, other</option>
-              <option value="AI">0301919011 Other live fish, trout, Of the species Oncorhynchus mykiss</option>
-              <option value="AI">0301919011 Other live fish, trout, Of the species Oncorhynchus mykiss, weighing less than 1.2 kg</option>
-              <option value="AI">0301919019 Other live fish, trout, Of the species Oncorhynchus mykiss, other weight
-              </option>
-              <option value="AI">0301919090 Other live fish, trout, Other than 'Of the species Oncorhynchus mykiss'
-              </option>
-              <option value="AS">030192 Eels (Anguilla spp.)</option>
-              <option value="AS">03019210000 Eels, Of a length of less than 12 cm</option>
-              <option value="AS">03019230000 Eels, Of a length of 12 cm or more but less than 20 cm</option>
-              <option value="AS">0301929000 Eels, Of a length of 20 cm or more</option>
-              <option value="AS">0301930000 Carp</option>
-              <option value="AS">030194 Atlantic and Pacific bluefin tuna (Thunnus thynnus, Thunnus orientalis)</option>
-              <option value="AS">0301941000 Atlantic bluefin tuna (Thunnus thynnus)</option>
-              <option value="AS">0301949000 Pacific bluefin tuna (Thunnus orientalis)</option>
-              <option value="AS">0301950000 Southern bluefin tuna (Thunnus maccoyii)</option>
-              <option value="AS">030199 Other live fish, other</option>
-              <option value="AS">03019911 Other live fish, other, freshwater</option>
-              <option value="AS">03019911 Other live fish, other, freshwater, Pacific salmon, Atlantic salmon and Danube salmon</option>
-              <option value="AS">03019911 Other live fish, other, freshwater, other</option>
-              <option value="AS">03019985 Other live fish, other, other</option>
-              <option value="AS">0301998510 Other live fish, other, other, Sharks (Squalus spp.)</option>
-              <option value="AS">0301998522 Other live fish, other, other, European sea bass (Dicentrarchus labrax)
-              </option>
-              <option value="AS">0301998530 Other live fish, other, other, Porbeagle shark (Lamna nasus)</option>
-              <option value="AS">0301998540 Other live fish, other, other, Lesser or Greenland halibut (Reinhardtius hippoglossoides)</option>
-              <option value="AS">0301998550 Other live fish, other, other, Atlantic halibut (Hippoglossus hippoglossus)</option>
-              <option value="AS">0301998560 Other live fish, other, other, Gilt-head sea bream (Sparus aurata)</option>
-              <option value="AS">0301998570 Other live fish, other, other, Swordfish (Xiphias gladius)</option>
-              <option value="AS">0301998575 Other live fish, other, other, Bigeye tuna (Thunnus obesus)</option>
-              <option value="AS">0301998580 Other live fish, other, other, Sea bream (Dentex dentex, Pagellus spp.) </option>
-              <option value="AS">0301998590 Other live fish, other, other, other</option>
+              {% for option in options %}
+              <option value="{{option.code}}">{{option.code}} {{option.title}}</option>
+              {% endfor %}
             </select>
           </div>
         </div>
