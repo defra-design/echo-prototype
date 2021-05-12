@@ -792,7 +792,7 @@ else {
   //   }
   // })
 
-  router.get('/beta/v8/conditional-questions-8270/commodity-details', function (req, res) {
+
     let options = [
       {code:"0304000000",  title:"Fish fillets and other fish meat (whether or not minced), fresh, chilled or frozen"},
       {code:"0304310000",  title:"Fresh or chilled fillets of tilapias (Oreochromis spp.), catfish (Pangasius spp., Silurus spp., Clarias spp., Ictalurus spp.), carp (Cyprinus spp., Carassius spp., Ctenopharyngodon idellus, Hypophthalmichthys spp., Cirrhinus spp., Mylopharyngodon piceus, Catla catla, Labeo spp., Osteochilus hasselti, Leptobarbus hoeveni, Megalobrama spp.), eels (Anguilla spp.), Nile perch (Lates niloticus) and snakeheads (Channa spp.)"},
@@ -1086,13 +1086,26 @@ else {
       {code:"0304999965",  title:"For processing"},
       {code:"0304999969",  title:"Other"},
       {code:"0304999970",  title:"European sea bass (Dicentrarchus labrax)"},
-      {code:"0304999990",  title:"Other"}      
+      {code:"0304999990",  title:"Other", full:""}      
     ];
+
+  router.get('/beta/v8/conditional-questions-8270/commodity-details', function (req, res) {
     res.render('beta/v8/conditional-questions-8270/commodity-details', {
       options
     })
   })
 
+  router.get('/beta/v8/conditional-questions-8270/commodity-details', function (req, res) {
+    res.render('beta/v8/conditional-questions-8270/commodity-details', {
+      options
+    })
+  })
+
+  router.get('/beta/v8/conditional-questions-8270/commodity-details-codes', function (req, res) {
+    res.render('beta/v8/conditional-questions-8270/commodity-details-codes', {
+      options
+    })
+  })
 
   // this adds query to all pages and will be used if no other get routing exists to override this.
   router.get('/' + base_url + '*', function(req, res) {
