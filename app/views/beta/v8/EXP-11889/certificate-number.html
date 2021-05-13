@@ -23,49 +23,53 @@ EHC 8270- What are the commodity details?
 
 
 {% block content %}
+
 <div class="govuk-grid-row margin-top-15">
   <div class="column-full">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        What is the 12 digit number?
+        What is the Certificate Number?
       </h1>
 
-      <div class="govuk-inset-text">
-        If your certificate does not have these 12 digits, you cannot use this service.
-      </div>
-      <img src="/public/images/certificate-reference-no-qr.jpg"
+      <img src="/public/images/certificate-number-illustration-no-qr.jpg"
            class="govuk-!-margin-bottom-6 image-noflow"
-           height ="400px"
-           alt="Diagram showing location of the 12 digit number on the Export Health Certificate below the QR code">
+           height="400px"
+           alt="Diagram showing location of the certificate number on the Export Health Certificate">
 
-      <form class="review-form" method="POST">
+      <form class="review-form" method="POST" id="certificate-number-form">
         <input type="hidden" name="crumb_csrf_token" value="Du0GVciCatdUpGELaDAusOcysKPm6u8JsVAQEW7jjMC"/>
 
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Enter the 12 digit number
-            </h1>
-          </legend>
           <div class="govuk-form-group ">
-            <label class="govuk-label govuk-!-font-weight-bold" for="reference-number">
-              Enter the 12 digit number
+            <label class="govuk-label govuk-!-font-weight-bold" for="certificate-number">
+              Certificate Number
             </label>
-            <div id="reference-number-hint" class="govuk-hint">
-              The 12 digit number is on the top right corner of the EHC. For example, 2123-4567-8905
+            <div id="certificate-number-hint" class="govuk-hint">
+              Enter the 9 digit number from the certificate, for example 12/3/456789
             </div>
-            <input class="govuk-input " id="reference-number" name="referenceNumber" type="text" value="" aria-describedby="reference-number-hint reference-number-error">
+            <input class="govuk-input " id="certificate-number" name="certificateNumber" type="text" value="" aria-describedby="certificate-number-hint certificate-number-error">
           </div>
         </fieldset>
-        <input class="govuk-button"
+
+
+        <script nonce="620be36d2f7e719b6bac80ac8d57a92f">
+          function onSubmit(token) {
+            document.getElementById("certificate-number-form").submit();
+          }
+        </script>
+
+        <input class="govuk-button g-recaptcha"
                type="submit"
-               id="submit-reference-number"
+               name="saveAndContinue"
                value="Continue"
-               data-qa-id="submit-reference-number" />
+               id="submit-certificate-number"
+               data-qa-id="submit-certificate-number"
+               data-sitekey="6LeO2noaAAAAAHLxNzW3-5BoTib_I7iWrXhAwGU-"
+               data-callback='onSubmit'
+               data-action='submit'/>
       </form>
     </div>
   </div>
 </div>
-
 
 {% endblock %}

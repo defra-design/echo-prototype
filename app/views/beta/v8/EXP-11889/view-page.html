@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EHC 8270- What are the commodity details?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div>
+      <h2 class="govuk-heading-l heading-with-help">View Page</h2>
+    </div>
+
+    <form class="case-update" style="display: inline;"
+      action="/protected/forms/multiple-certificate/versions/1/pages/7779" method="POST">
+      <input type="hidden" name="crumb_csrf_token" value="ixpSqr3SIXNvTedlxROw3TlcU6PPEcBJdSjCoG-e7Z1" />
+
+      <div class="govuk-form-group margin-top-30">
+        <label class="govuk-label govuk-!-font-weight-bold" for="title">Page title</label>
+        <input class="govuk-input" id="title" name="title" data-qa-id="Input-title" value="All" disabled />
+      </div>
+
+      <input type="hidden" name="updated_id" data-qa-id="Input-title" value="">
+      <div class="govuk-form-group margin-top-30">
+        <label class="govuk-label govuk-!-font-weight-bold" for="title">Task list title (optional)</label>
+        <span class="govuk-hint">For pages with very long titles, or to group pages into a sub-section, enter a short
+          task title. Only shows on the task list. If empty the page title will show on the task list.</span>
+        <div id="task-title-container">
+          <input class="govuk-input" id="taskTitle" name="taskTitle" data-qa-id="Input-title" value=""
+            style="display: none;" disabled>
+        </div>
+      </div>
+
+      <div class="govuk-form-group margin-top-30">
+        <label class="govuk-label govuk-!-font-weight-bold" for="subtitle">Subtitle</label>
+        <input class="govuk-input" id="subtitle" name="subtitle" data-qa-id="Input-subtitle" value="" disabled />
+      </div>
+
+      <div class="govuk-form-group margin-top-30">
+        <label class="govuk-label govuk-!-font-weight-bold" for="hint">Hint</label>
+        <input class="govuk-input" id="hint" name="hint" data-qa-id="Input-hint" value="" disabled />
+      </div>
+
+      <div id="multiples-feature" class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <p class="govuk-body">Answers to questions on this page are:</p>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="application-level-page"
+                name="repeat_for_each_certificate_in_application" type="radio" value="false" disabled>
+              <label class="govuk-label govuk-radios__label" for="application-level-page">
+                the same for all certificates in this application
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-level-page"
+                name="repeat_for_each_certificate_in_application" type="radio" value="true" checked disabled>
+              <label class="govuk-label govuk-radios__label" for="certificate-level-page">
+                different for each certificate
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <input type="hidden" name="pageOrder" value="1" />
+
+    </form>
+  </div>
+</div>
+<a id="Link-cancelAndGoBack" class="govuk-link" href="/protected/forms/multiple-certificate/versions/1/pages">Cancel and
+  go
+  back</a>
+</div>
+
+{% endblock %}

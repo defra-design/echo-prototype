@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EHC 8270- What are the commodity details?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/protected/health-certificates/test one/versions/1/active/unpublish/confirm" method="GET">
+      <div class="govuk-form-group ">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-heading-xl govuk-fieldset__heading">Are you sure you want to unpublish form version 1?</h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="unpublish-form-yes" name="unpublished" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" id="label-unpublish-form" for="unpublish-form-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="unpublish-form-no" name="unpublished" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" id="label-dont-unpublish-form" for="unpublish-form-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <input class="govuk-button" id="UnpublishForm-Submit" type="submit" value="Submit" data-qa-id="Button-SubmitUnpublish">
+    </form>
+  </div>
+</div>
+
+{% endblock %}
