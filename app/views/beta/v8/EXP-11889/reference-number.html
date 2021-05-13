@@ -1,26 +1,13 @@
 {% extends "layout.html" %}
+
 {% block pageTitle %}
-EHC 8270- What are the commodity details?
+EHC Certification Portal
 {% endblock %}
+
 {% block beforeContent %}
-<style media="screen">
-
-</style>
 {% include "includes/beta-banner.html" %}
-<div class="login-nav login-border">
-  <ul class="login-nav__list">
-    <li class="login-nav__list-item" id="Nav-DisplayName"></li>
-    <li class="login-nav__list-item"> | <a href="/account-management"
-        class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount"
-        target="_blank">Manage account</a>|</li>
-    <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state"
-        id="Link-SignOut">Sign out</a></li>
-  </ul>
-</div>
-
 {% include "includes/back-link.html" %}
 {% endblock %}
-
 
 {% block content %}
 <div class="govuk-grid-row margin-top-15">
@@ -33,6 +20,7 @@ EHC 8270- What are the commodity details?
       <div class="govuk-inset-text">
         If your certificate does not have these 12 digits, you cannot use this service.
       </div>
+      <!-- WARNING: DO NOT COPY AND PASTE: img height set in prototype only -->
       <img src="/public/images/certificate-reference-no-qr.jpg"
            class="govuk-!-margin-bottom-6 image-noflow"
            height ="400px"
@@ -41,12 +29,6 @@ EHC 8270- What are the commodity details?
       <form class="review-form" method="POST">
         <input type="hidden" name="crumb_csrf_token" value="Du0GVciCatdUpGELaDAusOcysKPm6u8JsVAQEW7jjMC"/>
 
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              Enter the 12 digit number
-            </h1>
-          </legend>
           <div class="govuk-form-group ">
             <label class="govuk-label govuk-!-font-weight-bold" for="reference-number">
               Enter the 12 digit number
@@ -56,7 +38,7 @@ EHC 8270- What are the commodity details?
             </div>
             <input class="govuk-input " id="reference-number" name="referenceNumber" type="text" value="" aria-describedby="reference-number-hint reference-number-error">
           </div>
-        </fieldset>
+
         <input class="govuk-button"
                type="submit"
                id="submit-reference-number"
