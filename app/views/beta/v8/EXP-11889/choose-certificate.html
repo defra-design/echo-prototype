@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+EHC 8270- What are the commodity details?
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+{% include "includes/beta-banner.html" %}
+<div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item" id="Nav-DisplayName"></li>
+    <li class="login-nav__list-item"> | <a href="/account-management"
+        class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount"
+        target="_blank">Manage account</a>|</li>
+    <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state"
+        id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+      <input type="hidden" name="crumb_csrf_token" value="uf9geaAy5tEHop15DO4Pcnype05zMV7fAnve2KD-Kul"/>
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-xl govuk-fieldset__heading">Which certificate do you want to apply for?</h1>
+          </legend>
+          <div class="margin-top-30">
+            <p class="govuk-body" lang="en">
+              You can apply for:
+            </p>
+          </div>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-2849EHC" name="certificate" type="radio" value="/forms/2849EHC">
+              <label class="govuk-label govuk-radios__label" for="certificate-2849EHC">
+                <strong>2849EHC </strong>
+                <span class="govuk-hint govuk-!-margin-bottom-0">AE Equine Cert</span>
+              </label>
+
+            </div>
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-6969EHC" name="certificate" type="radio" value="/forms/6969EHC">
+              <label class="govuk-label govuk-radios__label" for="certificate-6969EHC">
+                <strong>6969EHC </strong>
+                <span class="govuk-hint govuk-!-margin-bottom-0">AU Meat and Dairy Cert</span>
+              </label>
+
+            </div>
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-7006EHC" name="certificate" type="radio" value="/forms/7006EHC">
+              <label class="govuk-label govuk-radios__label" for="certificate-7006EHC">
+                <strong>7006EHC </strong>
+                <span class="govuk-hint govuk-!-margin-bottom-0">Test Pre Cert</span>
+              </label>
+
+            </div>
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-8270EHC" name="certificate" type="radio" value="/forms/8270EHC">
+              <label class="govuk-label govuk-radios__label" for="certificate-8270EHC">
+                <strong>8270EHC </strong>
+                <span class="govuk-hint govuk-!-margin-bottom-0">Test EU </span>
+              </label>
+
+            </div>
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-multiple-certificate" name="certificate" type="radio" value="/forms/multiple-certificate">
+              <label class="govuk-label govuk-radios__label" for="certificate-multiple-certificate">
+                <strong>multiple-certificate </strong>
+                <span class="govuk-hint govuk-!-margin-bottom-0">multiple-certificate</span>
+              </label>
+
+            </div>
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-MultipleEHC" name="certificate" type="radio" value="/forms/MultipleEHC">
+              <label class="govuk-label govuk-radios__label" for="certificate-MultipleEHC">
+                <strong>MultipleEHC </strong>
+                <span class="govuk-hint govuk-!-margin-bottom-0">multiple</span>
+              </label>
+
+            </div>
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-TEST-EHC-dcmagywq" name="certificate" type="radio" value="/forms/TEST-EHC-dcmagywq">
+              <label class="govuk-label govuk-radios__label" for="certificate-TEST-EHC-dcmagywq">
+                <strong>TEST-EHC-dcmagywq </strong>
+                <span class="govuk-hint govuk-!-margin-bottom-0">ehc-dcmagywq</span>
+              </label>
+
+            </div>
+
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-TEST-EHC-ikywsbdi" name="certificate" type="radio" value="/forms/TEST-EHC-ikywsbdi">
+              <label class="govuk-label govuk-radios__label" for="certificate-TEST-EHC-ikywsbdi">
+                <strong>TEST-EHC-ikywsbdi </strong>
+                <span class="govuk-hint govuk-!-margin-bottom-0">ehc-ikywsbdi</span>
+              </label>
+
+            </div>
+
+
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certificate-different" name="certificate" type="radio" value="a_different_certifcate"
+                     aria-controls="conditional-certificates" aria-expanded="false">
+              <label class="govuk-label govuk-radios__label" for="certificate-different">
+                a different certificate
+              </label>
+            </div>
+            <div class="govuk-radios__conditional" id="conditional-certificates">
+              <p class="govuk-body">You will be taken to form finder. Some certificates are not currently available to apply for online</p>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <input class="govuk-button"
+             type="submit"
+             name="saveAndContinue"
+             value="Continue"
+             id="Button-SaveAndContinue"
+             data-qa-id="Button-SaveAndContinue">
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
