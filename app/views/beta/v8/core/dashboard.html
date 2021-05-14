@@ -95,9 +95,27 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     {% if data.show_downtime_notification == "yes"%}
     <div class="app-alert app-alert--warning">
-      <p class="govuk-body govuk-!-margin-bottom-4">
-        <strong>Planned maintenance </strong> on 20 December 2020 at 6pm. You will not be able to use the service at this time. <br> <a href="?show_downtime_notification=no" class="govuk-link">Dismiss notification</a>
+      <h2 class="govuk-heading-m">
+        EHC Online: Planned Period of Service Unavailability
+        <br/>
+        20:00 – 23:59, Thursday 15 April 2021 
+      </h2>
+
+      <p class="govuk-body">
+        On Thursday 15 April, between 20:00 and 23:59, there will be planned unavailability for the EHC Online service. This service downtime is to deliver essential system maintenance work and critical updates, which continue to improve the user experience of the EHC Online system.
       </p>
+      <p class="govuk-body">
+        We expect this work to be completed by 23:59, however it may extend beyond this time if unforeseen activity occurs. We aim to keep the window as short as possible, but please prepare in advance if the longer period of downtime would impact you. We appreciate this may have some impact on business and we apologise for any inconvenience.
+      </p>
+      <p class="govuk-body  govuk-!-font-weight-bold">
+        During these times you will not be able to log in or complete any activities in EHC Online. 
+      </p>
+      <p class="govuk-body govuk-!-margin-bottom-4">
+        <a href="?show_downtime_notification=no" class="govuk-link">Dismiss notification</a>
+      </p>
+<!--       <p class="govuk-body govuk-!-margin-bottom-4">
+        <strong>Planned maintenance </strong> on 20 December 2020 at 6pm. You will not be able to use the service at this time. <br> <a href="?show_downtime_notification=no" class="govuk-link">Dismiss notification</a>
+      </p> -->
     </div>
     {% endif %}
     {% if data.show_feature_notification_one == "yes"%}
