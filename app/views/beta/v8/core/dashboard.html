@@ -93,7 +93,7 @@ GOV.UK Prototype Kit
 </style>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% if data.show_downtime_notification == "yes"%}
+    {% if data.show_downtime_notification_one == "yes"%}
     <div class="app-alert app-alert--warning">
       <h2 class="govuk-heading-m">
         EHC Online: Planned Period of Service Unavailability
@@ -113,9 +113,14 @@ GOV.UK Prototype Kit
       <p class="govuk-body govuk-!-margin-bottom-4">
         <a href="?show_downtime_notification=no" class="govuk-link">Dismiss notification</a>
       </p>
-<!--       <p class="govuk-body govuk-!-margin-bottom-4">
+
+    </div>
+    {% endif %}
+    {% if data.show_downtime_notification == "yes"%}
+    <div class="app-alert app-alert--warning">
+    <p class="govuk-body govuk-!-margin-bottom-4">
         <strong>Planned maintenance </strong> on 20 December 2020 at 6pm. You will not be able to use the service at this time. <br> <a href="?show_downtime_notification=no" class="govuk-link">Dismiss notification</a>
-      </p> -->
+      </p>
     </div>
     {% endif %}
     {% if data.show_feature_notification_one == "yes"%}
