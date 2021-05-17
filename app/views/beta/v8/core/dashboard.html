@@ -153,6 +153,17 @@ GOV.UK Prototype Kit
       </p>
     </div>
     {% endif %}
+
+    {% if data.show_feature_notification_four == "yes"%}
+    <div class="app-alert-blue app-alert--warning">
+      <h3 class="govuk-heading-s">
+        EHC Online: Planned Period of Service Unavailability
+      </h3>
+      <p class="govuk-body govuk-!-margin-bottom-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sum dolor sit amet. <br> <a href="?show_feature_notification_four=no" class="govuk-link">Dismiss notification</a>
+      </p>
+    </div>
+    {% endif %}
       <h1 class="govuk-heading-xl">Your applications</h1>
       <a class="govuk-button" href="choose-certificate" style="display: inline-block;">Start a new application</a>
     </div>
