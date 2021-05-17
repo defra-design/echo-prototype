@@ -74,7 +74,7 @@ module.exports = function (router) {
     console.log("The GET is running!");
     let results = [
       { version: "3.83", user: "Robert Frost", changeType: "New version", reason: "Change \"production date\" single date input to line of free text so applicant can enter a range of dates based on user feedback", status: "Unrestricted", dateImplemented: "21 Jul 2020", datePublished: "06 Aug 2020", url:"change-detail-version" },
-      { version: "3.82", user: "Liam Bancroft", changeType: "Config change", reason: "Change to white paper: COVID measures", status: "Withdrawn", dateImplemented: "11 May 2020", datePublished: "14 May 2020", url:"change-detail-config" },
+      { version: "3.82", user: "Liam Bancroft", changeType: "Config change", reason: "Change to white paper: COVID measures", status: "Withdrawn", dateImplemented: "11 May 2020", datePublished: "14 May 2020", url:"change-detail-config-full" },
       { version: "3.82*", user: "Liam Bancroft", changeType: "New version", reason: "New function in system: Change to paper type", status: "", dateImplemented: "04 Feb 2020", datePublished: "03 Mar 2020", url:"change-detail-version" },
       { version: "3.81", user: "Robert Frost", changeType: "New version", reason: "Format of repeat question loop has changed. \"Save and review\" is no longer an option.", status: "Unrestricted", dateImplemented: "18 Dec 2019", datePublished: "19 Dec 2019", url:"change-detail-version" },
       { version: "3.7", user: "Liam Bancroft", changeType: "New form", reason: "Initial certificate creation", status: "On hold", dateImplemented: "14 Nov 2019", datePublished: "", url:"change-detail-form" },
