@@ -31,16 +31,21 @@ GOV.UK Prototype Kit
       <input class="govuk-input" id="notification-title" name="notification-title" type="text">
     </div>
  -->
-    <div class="govuk-form-group">
-      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="notification-message">
-          Message
-        </label>
-      </h2>
-      <div id="more-detail-hint" class="govuk-hint">
-        Use no more than 250 characters.
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="250">
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="with-hint">
+            Message
+          </label>
+        </h2>
+        <textarea class="govuk-textarea govuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-info more-detail-hint"></textarea>
       </div>
-      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+
+      <div id="more-detail-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+        You can enter up to 250 characters
+      </div>
+
     </div>
+
 
     <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -70,7 +75,7 @@ GOV.UK Prototype Kit
       <h2> Preview</h2>
       <div class="app-alert app-alert--warning">
         <p class="govuk-body govuk-!-margin-bottom-4" style="height:100px">
-            
+            Message preview goes here
           </p>
         </div>
     </div>
@@ -124,7 +129,7 @@ GOV.UK Prototype Kit
       </h2>
     </legend>
     <div id="waste-hint" class="govuk-hint">
-      Select all that apply.
+      Select all that apply
     </div>
     <div class="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
@@ -307,7 +312,7 @@ GOV.UK Prototype Kit
       <input type="hidden" name="name" value=""/>
 
                 <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
-                  Add a notification
+                  Submit
                 </button>
       </form>
   </div>
