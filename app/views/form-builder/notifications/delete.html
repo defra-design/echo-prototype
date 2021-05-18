@@ -23,31 +23,49 @@ GOV.UK Prototype Kit
     <div class="govuk-form-group">
       <form method="post" action="/delete-notification">
 
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-heading-l">Are you sure you want to delete the notification 'Planned downtime'?</h1>
-        </legend>
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-heading-l">Remove notification</h1>
+          </legend>
 
-        <div class="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="delete-notification-yes" name="deletenotification" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="delete-rule-yes">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="delete-notification-no" name="deletenotification" type="radio" value="No">
-            <label class="govuk-label govuk-radios__label" for="delete-rule-no">
-              No
-            </label>
-          </div>
-          </div>
-          <input type="hidden" name="name" value=""/>
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Message</th>
+                <td class="govuk-table__cell">You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.
+                  Dismiss notification</td>
 
-                    <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
-                      Save and continue
-                    </button>
-          </form>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type</th>
+                <td class="govuk-table__cell">Warning</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Audience</th>
+                <td class="govuk-table__cell">Exporters</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Start</th>
+                <td class="govuk-table__cell">18:00 17 May 2021</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">End</th>
+                <td class="govuk-table__cell">20:00 17 May 2021</td>
+              </tr>
+             </tbody>
+          </table>
+          <input type="hidden" name="name" value="" />
+          <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+            Confirm
+          </button>
+      </form>
+    </div>
   </div>
-</div>
-{% endblock %}
+  {% endblock %}
