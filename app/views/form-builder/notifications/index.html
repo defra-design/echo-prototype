@@ -22,6 +22,11 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">Manage notifications</h1>
 
+    {% if activenotifications %}
+    {% else %}
+    <p class="govuk-body">There are no notifications.</p>
+    {% endif %}
+
     <form method="get" action="/form-builder/notifications/add">
       <input type="hidden" name="name" value=""/>
       <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
@@ -58,8 +63,7 @@ GOV.UK Prototype Kit
 
   </tbody>
 </table>
-{% else %}
-<p class="govuk-body">There are no notifications.</p>
+
 {% endif %}
 <!-- <p class="govuk-body"><a href="/form-builder/notifications/add">Add a notification</a></p>
  -->
