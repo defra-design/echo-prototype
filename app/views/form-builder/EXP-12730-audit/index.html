@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Form Builder Audit
+List all health certificates
 {% endblock %}
 {% block beforeContent %}
 <style media="screen">
@@ -12,78 +12,163 @@ Form Builder Audit
       beta
     </strong>
     <span class="govuk-phase-banner__text">
-      This is a new service
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
     </span>
   </p>
 </div>
-<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l heading-with-help">Health Certificates</h1>
+    <form name="search-form" action="" method="GET">
+      <div class="border-box govuk-grid-column-full">
+        <div class="govuk-grid-column-one-half govuk-form-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="filter">Filter</label>
+            <input class="govuk-input" id="filter" type="text" name="filter" data-qa-id="TextField-filter" value="{{query.filter}}" placeholder="EHC, Status, Destination, Commodity group">
+          </div>
+        </div>
+        <div class="govuk-form-group govuk-grid-column-one-quarter">
+          <div class="govuk-label margin-top-45">
+            <button type="submit" name="name" value="" class="link-button" id="Button-Search" data-qa-id="Button-Search">
+              Search
+            </button>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sort">Sort By</label>
+          <select class="govuk-select" id="sort" name="sort" data-qa-id="Select-">
+            <option value="">Please Select</option>
+            <option value="EHC_NUMBER:DESC">EHC descending</option>
+            <option value="EHC_NUMBER:ASC">EHC ascending</option>
+            <option value="AVAILABILITY_STATUS:DESC">Status descending</option>
+            <option value="AVAILABILITY_STATUS:ASC">Status ascending</option>
+            <option value="DESTINATION_COUNTRY:DESC">Destination descending</option>
+            <option value="DESTINATION_COUNTRY:ASC">Destination ascending</option>
+            <option value="COMMODITY_GROUP:DESC">Commodity group descending</option>
+            <option value="COMMODITY_GROUP:ASC">Commodity group ascending</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    {% if query.filter %}
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">EHC</th>
+          <th class="govuk-table__header">Status</th>
+          <th class="govuk-table__header">Active version</th>
+          <th class="govuk-table__header">Destination</th>
+          <th class="govuk-table__header">Commodity Group</th>
+          <th class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="govuk-table__row" data-qa-id="Row-HealthCertificate-X005-2849EHC">
+          <td class="govuk-table__cell no-border">X005-2849EHC</td>
+          <td class="govuk-table__cell no-border">
+            <div>
+              <strong class="green-tag" data-qa-id="Field-AvailabilityStatus">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell no-border">1.2</td>
+          <td class="govuk-table__cell no-border">AE</td>
+          <td class="govuk-table__cell no-border">Equine</td>
+          <td class="govuk-table__cell actions-cell no-border" rowspan="2">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage Certificate</a>
+              </li>
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="form/versions">Manage versions</a>
+              </li>
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="status/change">Change Status</a>
+              </li>
+              <li>
+                <a class="govuk-link" id="linkManage-X005-2849EHC" href="change-history">View history</a>
+              </li>
+            </ul>
+          </td>
 
-    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">AutoEHC-2021-03-11-446</span>
-                <h1 id="versionsHeading" class="govuk-heading-l disabled">Manage EXA versions</h1>
-
-                <table class="govuk-table" aria-describedby="Document version explained">
-                    <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                        <th class="govuk-table__header" scope="col">EXA version</th>
-                        <th class="govuk-table__header" scope="col">PDF</th>
-                        <th class="govuk-table__header" scope="col">Status</th>
-                        <th class="govuk-table__header" id="EHC-document-cws">Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="govuk-table__row" data-qa-id="grid-row-version-1.0">
-                        <td class="govuk-table__cell" id="EHC-document-version-0"
-                            data-qa-id="version-text-1.0">2.56 (v1.0 cloned)
-                        </td>
-
-                        <td class="govuk-table__cell" id="EHC-document-pdf-0">
-                          exa-autoehc-2021-03-11-446.pdf
-                        </td>
-
-                        <td class="govuk-table__cell"
-                            id="EHC-document-status-0"
-                            data-qa-id="status-column">
-                            <strong class="green-tag">ACTIVE</strong>
-                        </td>
-
-                        <td class="govuk-table__cell">
-                            <div>
-                                <a href="/form-builder/conditional-routing/manage-pages/index-single-rule"
-                                   id="document-action-draft-manage-pages-1.0" class="action-link" data-qa-id="document-action-draft-manage-pages-1.0"
-                                   target="_self">View form</a>
-                            </div>
-                            <div>
-                                <a href="javascript:alert('Not in prototype');"
-                                   id="document-action-draft-manage-1.0" class="action-link" data-qa-id="document-action-draft-manage-1.0"
-                                   target="_self">Clone form</a>
-                            </div>
-                            <div>
-                                <a href="javascript:alert('Not in prototype');"
-                                   id="document-action-draft-publish-1.0" class="action-link" data-qa-id="document-action-draft-publish-1.0"
-                                   target="_self">View pages</a>
-                            </div>
-                            <div>
-                                <a href="change-history"
-                                   id="document-action-draft-delete-1.0" class="action-link" data-qa-id="document-action-draft-delete-1.0"
-                                   target="_self">View history</a>
-                            </div>
-                        </td>
-                    </tbody>
-                </table>
-                <form action="javascript:alert('Not in prototype');" method="GET">
-                    <div>
-                        <input class="govuk-button margin-top-30"
-                               type="submit"
-                               value="Create new EXA version"
-                               id="Button-CreateNewDocumentVersion"
-                               data-qa-id="Button-CreateNewEHCDocumentVersion">
-                    </div>
-                </form>
-
+        </tr>
+        <tr>
+          <td class="govuk-table__cell" colspan="5" id="friendly-url-0">https://apply-export-health-certificate-exporter-int-snd.azure.defra.cloud:443/forms/X005-2849EHC</td>
+        </tr>
+        <tr class="govuk-table__row" data-qa-id="Row-HealthCertificate-2849EHC">
+          <td class="govuk-table__cell no-border">2849EHC</td>
+          <td class="govuk-table__cell no-border">
+            <div>
+              <strong class="green-tag" data-qa-id="Field-AvailabilityStatus">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell no-border">3.1</td>
+          <td class="govuk-table__cell no-border">AE</td>
+          <td class="govuk-table__cell no-border">Equine</td>
+          <td class="govuk-table__cell actions-cell no-border" rowspan="2">
+              <ul class="govuk-list">
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage Certificate</a>
+                </li>
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="form/versions">Manage versions</a>
+                </li>
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="status/change">Change Status</a>
+                </li>
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="change-history">View history</a>
+                </li>
+              </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="govuk-table__cell" colspan="5" id="friendly-url-1">https://apply-export-health-certificate-exporter-int-snd.azure.defra.cloud:443/forms/2849EHC</td>
+        </tr>        <tr class="govuk-table__row" data-qa-id="Row-HealthCertificate-2849EHC">
+          <td class="govuk-table__cell no-border">UCD-2849EHC</td>
+          <td class="govuk-table__cell no-border">
+            <div>
+              <strong class="green-tag" data-qa-id="Field-AvailabilityStatus">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell no-border">3.5</td>
+          <td class="govuk-table__cell no-border">AE</td>
+          <td class="govuk-table__cell no-border">Equine</td>
+          <td class="govuk-table__cell actions-cell no-border" rowspan="2">
+              <ul class="govuk-list">
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="manage/manage-ehc">Manage&nbsp;Certificate</a>
+                </li>
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="form/versions">Manage versions</a>
+                </li>
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="status/change">Change Status</a>
+                </li>
+                <li>
+                  <a class="govuk-link" id="linkManage-X005-2849EHC" href="change-history">View history</a>
+                </li>
+              </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="govuk-table__cell" colspan="5" id="friendly-url-1">https://apply-export-health-certificate-exporter-int-snd.azure.defra.cloud:443/forms/UCD-2849EHC</td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+    <form action="manage/health-cert-editor" method="GET">
+      <div>
+        <input class="govuk-button margin-top-30" type="submit" id="Button-CreateNewCertificate" value="Create new certificate" data-qa-id="Button-CreateNewCertificate">
+      </div>
+    </form>
   </div>
 </div>
 {% endblock %}

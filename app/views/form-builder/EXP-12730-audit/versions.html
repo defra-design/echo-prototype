@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Form Builder Audit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">AutoEHC-2021-03-11-446</span>
+                <h1 id="versionsHeading" class="govuk-heading-l disabled">Manage EXA versions</h1>
+
+                <table class="govuk-table" aria-describedby="Document version explained">
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col">EXA version</th>
+                        <th class="govuk-table__header" scope="col">PDF</th>
+                        <th class="govuk-table__header" scope="col">Status</th>
+                        <th class="govuk-table__header" id="EHC-document-cws">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="govuk-table__row" data-qa-id="grid-row-version-1.0">
+                        <td class="govuk-table__cell" id="EHC-document-version-0"
+                            data-qa-id="version-text-1.0">2.56 (v1.0 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-0">
+                          exa-autoehc-2021-03-11-446.pdf
+                        </td>
+
+                        <td class="govuk-table__cell"
+                            id="EHC-document-status-0"
+                            data-qa-id="status-column">
+                            <strong class="green-tag">ACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="/form-builder/conditional-routing/manage-pages/index-single-rule"
+                                   id="document-action-draft-manage-pages-1.0" class="action-link" data-qa-id="document-action-draft-manage-pages-1.0"
+                                   target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype');"
+                                   id="document-action-draft-manage-1.0" class="action-link" data-qa-id="document-action-draft-manage-1.0"
+                                   target="_self">Clone form</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype');"
+                                   id="document-action-draft-publish-1.0" class="action-link" data-qa-id="document-action-draft-publish-1.0"
+                                   target="_self">View pages</a>
+                            </div>
+                            <div>
+                                <a href="change-history"
+                                   id="document-action-draft-delete-1.0" class="action-link" data-qa-id="document-action-draft-delete-1.0"
+                                   target="_self">View history</a>
+                            </div>
+                        </td>
+                    </tbody>
+                </table>
+                <form action="javascript:alert('Not in prototype');" method="GET">
+                    <div>
+                        <input class="govuk-button margin-top-30"
+                               type="submit"
+                               value="Create new EXA version"
+                               id="Button-CreateNewDocumentVersion"
+                               data-qa-id="Button-CreateNewEHCDocumentVersion">
+                    </div>
+                </form>
+
+  </div>
+</div>
+{% endblock %}
