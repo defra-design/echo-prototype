@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" data-qa-id="list-versions-SOPHIE123EHC">AutoEHC-2021-03-11-446</span>
+    <h1 id="versionsHeading" class="govuk-heading-l disabled">Change details for v23.82: config change</h1>
+
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Version history</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">New</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Previous</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Date</th>
+          <td class="govuk-table__cell">17 Apr 2021</td>
+          <td class="govuk-table__cell">11 Apr 2021</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Time</th>
+          <td class="govuk-table__cell">10:16</td>
+          <td class="govuk-table__cell">12:34</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">User</th>
+          <td class="govuk-table__cell">Rob Frost</td>
+          <td class="govuk-table__cell">Victoria Young</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h2 class="govuk-heading-m">Reason for change</h2>
+    <p class="govuk-body govuk-!-margin-bottom-9">
+      Format of repeat question loop has changed. "Save and review" is no longer an option.
+    </p>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Configuration changes</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">New</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Previous</th>
+        </tr>
+      </thead>
+      <!--
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Reason for change</th>
+          <td class="govuk-table__cell">Format of repeat question loop has changed. "Save and review" is no longer an option.</td>
+          <td class="govuk-table__cell">n/a</td>
+        </tr> -->
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Certificate title</th>
+        <td class="govuk-table__cell">UCD-6969EHC-V1</td>
+        <td class="govuk-table__cell">UCD-6969EHC</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Country or economic community</th>
+        <td class="govuk-table__cell">European Union</td>
+        <td class="govuk-table__cell">Jersey/Guernsey</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">What country does the certificate relate to?</th>
+        <td class="govuk-table__cell">
+          Austria<br />
+          Australia<br />
+          Italy<br />
+        </td>
+        <td class="govuk-table__cell">
+          Argentina<br />
+          Australia<br />
+          Canada<br />
+          China, People's Republic of<br />
+          Italy<br /></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Commodity group</th>
+        <td class="govuk-table__cell">Meat and dairy</td>
+        <td class="govuk-table__cell">Miscellaneous products</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Export Application form (EXA)</th>
+        <td class="govuk-table__cell">EXA07 - Dairy</td>
+        <td class="govuk-table__cell">EXA07 - Meat</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Which commodity type/name does this certificate relate to?</th>
+        <td class="govuk-table__cell">Dairy (Bovine)</td>
+        <td class="govuk-table__cell">Foam (Bovine);<br />Bone ash (Avian, Bovine, Caprine, Equine, Game, Mixed, Ovine,
+          Porcine, Primate, Rabbit, Rodent);<br />Laboratory (Avian, Bovine, Caprine)</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">What type of EHC certificate is this?</th>
+        <td class="govuk-table__cell">Single application</td>
+        <td class="govuk-table__cell">Block application</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">What’s the maximum number of certificates they can apply for?</th>
+        <td class="govuk-table__cell">1</td>
+        <td class="govuk-table__cell">10</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Does it need a pre-certificate?</th>
+        <td class="govuk-table__cell">No</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Does it need a certifier pre-check?</th>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">No</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Who will do the disease clearance check?</th>
+        <td class="govuk-table__cell">Certifier</td>
+        <td class="govuk-table__cell">Disease clearance check is not needed</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Does the case worker need to do any additional checks?</th>
+        <td class="govuk-table__cell">None</td>
+        <td class="govuk-table__cell">Journey Log, Approvals, Others </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Does a veterinary officer need to sign it?</th>
+        <td class="govuk-table__cell">No</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Does a veterinary officer need to countersign it?</th>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">No</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">What paper should it be printed on?</th>
+        <td class="govuk-table__cell">Plain paper with printed watermark and 12 digit check number</td>
+        <td class="govuk-table__cell">Plain paper ( if plain paper sent to certifier via email )</td>
+      </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+{% endblock %}
