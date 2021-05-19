@@ -21,6 +21,23 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Add a notification</h1>
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#message">Enter the message to be displayed</a>
+          </li>
+          <li>
+            <a href="#target-audience">Enter the target audience</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
 <form method="post" action="/form-builder/notifications/add">
 <!--   
     <div class="govuk-form-group">
@@ -32,15 +49,19 @@ GOV.UK Prototype Kit
     </div>
  -->
     <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="250">
-      <div class="govuk-form-group">
-        <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="with-hint">
+      <div class="govuk-form-group govuk-form-group--error">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="message">
             Message
           </label>
         </h2>
-        <textarea class="govuk-textarea govuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-info more-detail-hint"></textarea>
+        <span id="change-reason-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> You must enter message to be displayed
+        </span>
+        <textarea class="govuk-textarea govuk-js-character-count govuk-input--error" id="message" name="message" rows="5" aria-describedby="message-info"></textarea>
       </div>
 
-      <div id="more-detail-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+      <div id="message-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
         You can enter up to 250 characters
       </div>
 
@@ -121,16 +142,19 @@ GOV.UK Prototype Kit
   </fieldset>
 </div>
  -->
-    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="target-audience">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
         Who will see the notification?
       </h2>
     </legend>
-    <div id="waste-hint" class="govuk-hint">
+    <div id="target-audience" class="govuk-hint">
       Select all that apply
     </div>
+    <span id="change-reason-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> You must select the audience who will see the message
+    </span>
     <div class="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="notification-visibility-exporters" name="notification-visibility" type="checkbox" value="exporters">
