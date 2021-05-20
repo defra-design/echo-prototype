@@ -86,6 +86,7 @@ module.exports = function (router) {
       results
     })
   });
+
   let messagesAudit = [
     { user: "Douglas Labella", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "17 Dec 2019", dateRemoved:"-" },
     { user: "Teresa Randell", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Both", dateCreated: "11 Dec 2019", dateAmended: "15 Dec 2019", dateRemoved:"-" },
@@ -98,12 +99,34 @@ module.exports = function (router) {
     { user: "Nicholle Cranford", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020" },
     { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020" },
   ];
+
   router.get('/form-builder/notifications/audit', function (req, res) {
     console.log('audit?');
     res.render('form-builder/notifications/audit', {
       results:messagesAudit
     })
   });
+
+  router.get('/form-builder/EXP-12730-audit/reasons-for-change', function (req, res) {
+    console.log('reasons-for-change?', req.query.type.toLowerCase());
+    let response = "Why did you make these changes?";
+  
+
+    if(req.query.type.toLowerCase() === "status"){
+      response = "Why did you make this status change?";
+    }
+    if(req.query.type.toLowerCase() === "config"){
+      response = "Why did you make these config changes?";
+    }
+    if(req.query.type.toLowerCase() === "version"){
+      response = "Why did you make this version change?";
+    }
+    res.render('form-builder/EXP-12730-audit/reasons-for-change', {
+      title:response
+    })
+  });
+
+
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function (req, res) {
     console.log("default get routing page for form-builder: " + base_url + req.params[0])
