@@ -77,7 +77,7 @@ module.exports = function (router) {
       { version: "", user: "Liam Bancroft", changeType: "Config change", reason: "Change to white paper: COVID measures", status: "Withdrawn", dateImplemented: "11 May 2020", datePublished: "14 May 2020", url:"change-detail-config-full" },
       { version: "3.82", user: "Liam Bancroft", changeType: "New version", reason: "New function in system: Change to paper type", status: "", dateImplemented: "04 Feb 2020", datePublished: "03 Mar 2020", url:"change-detail-version" },
       { version: "3.81", user: "Robert Frost", changeType: "New version", reason: "Format of repeat question loop has changed. \"Save and review\" is no longer an option.", status: "Unrestricted", dateImplemented: "18 Dec 2019", datePublished: "19 Dec 2019", url:"change-detail-version" },
-      { version: "0.1", user: "Liam Bancroft", changeType: "New version", reason: "Initial certificate creation", status: "On hold", dateImplemented: "14 Nov 2019", datePublished: "", url:"change-detail-form" },
+      { version: "0.1", user: "Liam Bancroft", changeType: "New version", reason: "Initial certificate creation", status: "On hold", dateImplemented: "14 Nov 2019", datePublished: "", url:"change-detail-version" },
       { version: "", user: "Liam Bancroft", changeType: "Status change", reason: "To restrict use in private Beta", status: "On hold", dateImplemented: "19 Dec 2019", datePublished: "19 Dec 2019", url:"change-detail-status" },
       { version: "1.0", user: "Liam Bancroft", changeType: "New version", reason: "Added a question for certifying department", status: "Restricted", dateImplemented: "11 Dec 2019", datePublished: "13 Dec 2019", url:"change-detail-version" },
     ];
