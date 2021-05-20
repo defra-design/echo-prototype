@@ -20,15 +20,15 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Manage notifications</h1>
+    <h1 class="govuk-heading-xl">Manage In-service messaging</h1>
 
     {% if activenotifications %}
     {% else %}
-    <p class="govuk-body">There are no notifications.</p>
+    <p class="govuk-body">There are no in-service messages.</p>
     {% endif %}
 
     <form method="get" action="/form-builder/notifications/add">
-      <input type="hidden" name="name" value=""/>
+      <input type="hidden" name="name" value="" />
       <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
         Add new
       </button>
@@ -36,36 +36,49 @@ GOV.UK Prototype Kit
 
     {% if activenotifications %}
     <table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-<!--       <th scope="col" class="govuk-table__header">Title</th> -->
-      <th scope="col" class="govuk-table__header">Message</th>
-      <th scope="col" class="govuk-table__header">Alert type</th>
-<!--       <th scope="col" class="govuk-table__header">Services</th> -->
-      <th scope="col" class="govuk-table__header">Audience</th>
-      <th scope="col" class="govuk-table__header">Starts</th>
-      <th scope="col" class="govuk-table__header">Ends</th>
-        <th scope="col" class="govuk-table__header">Action</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-<!--       <td class="govuk-table__cell">Planned downtime</td> -->
-      <td class="govuk-table__cell">The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.</td>
-      <td class="govuk-table__cell">Information</td>
-<!--       <td class="govuk-table__cell">EHCO<br/>Plant Exports</td> -->
-      <td class="govuk-table__cell">Exporters</td>
-      <td class="govuk-table__cell">01 July 2021 at 12:01am</td>
-      <td class="govuk-table__cell">04 August 2021 at 11:59pm</td>
-      <td class="govuk-table__cell"><a href="/form-builder/notifications/edit">Edit</a><br/><a href="/form-builder/notifications/delete">Delete</td>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Message</th>
+          <th scope="col" class="govuk-table__header">Alert type</th>
+          <th scope="col" class="govuk-table__header">Audience</th>
+          <th scope="col" class="govuk-table__header">Start date</th>
+          <th scope="col" class="govuk-table__header">End date</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
 
-    </tr>
 
-  </tbody>
-</table>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
 
-{% endif %}
-<!-- <p class="govuk-body"><a href="/form-builder/notifications/add">Add a notification</a></p>
+
+          {% for item in results %}
+          <td class="govuk-table__cell">{{item.message}}</td>
+          <td class="govuk-table__cell">{{item.alert}}</td>
+          <td class="govuk-table__cell">{{item.audience}}</td>
+          <td class="govuk-table__cell">{{item.dateStart}}</td>
+          <td class="govuk-table__cell">{{item.dateEnd}}</td>
+          <td class="govuk-table__cell"><a href="/form-builder/notifications/edit">Edit</a><br /><a
+              href="/form-builder/notifications/delete">Delete</td>
+        </tr>
+        {% endfor %}
+<!-- 
+          {% for item in results %}
+          <td class="govuk-table__cell {% if not item.dateStart %}inactive{% endif %}">{{item.message}}</td>
+          <td class="govuk-table__cell {% if not item.dateStart %}inactive{% endif %}">{{item.alert}}</td>
+          <td class="govuk-table__cell {% if not item.dateStart %}inactive{% endif %}">{{item.audience}}</td>
+          <td class="govuk-table__cell {% if not item.dateStart %}inactive{% endif %}">{{item.dateStart}}</td>
+          <td class="govuk-table__cell {% if not item.dateStart %}inactive{% endif %}">{{item.dateEnd}}</td>
+          <td class="govuk-table__cell {% if not item.dateStart %}inactive{% endif %}"><a href="/form-builder/notifications/edit">Edit</a><br /><a
+              href="/form-builder/notifications/delete">Delete</td>
+        </tr>
+        {% endfor %}
+ -->
+      </tbody>
+    </table>
+
+    {% endif %}
+    <!-- <p class="govuk-body"><a href="/form-builder/notifications/add">Add a notification</a></p>
  -->
   </div>
 </div>

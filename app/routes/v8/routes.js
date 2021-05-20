@@ -161,12 +161,13 @@ res.redirect('/form-builder/disease-clearance/2/fish')
 
 
 //Downtime notification admin
+/* 
 router.get('/index-with-notifications', function (req, res) {
   req.session.activenotifications = true;
     activenotifications = req.session.activenotifications;
   res.render('form-builder/notifications/index', { activenotifications })
 })
-
+ */
 
 router.post('/form-builder/notifications/add', function (req, res) {
   res.redirect('/index-with-notifications')
@@ -198,6 +199,40 @@ router.post('/delete-notification', function (req, res) {
   }
 
 })
+
+router.get('/index-with-notifications', function (req, res) {
+  req.session.activenotifications = true;
+  activenotifications = req.session.activenotifications;
+  res.render('form-builder/notifications/index', { 
+    activenotifications,
+    results:messagesAudit
+  })
+});
+
+
+let messagesAudit = [
+  { user: "Douglas Labella", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "17 Dec 2019", dateRemoved:"-", dateStart: "04 Aug 2021 at 8:00pm ", dateEnd: "05 Aug 2021 at 12:01am " },
+  { user: "Teresa Randell", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Both", dateCreated: "11 Dec 2019", dateAmended: "15 Dec 2019", dateRemoved:"-", dateStart: "04 Aug 2021 at 8:00pm ", dateEnd: "05 Aug 2021 at 12:01am " },
+  { user: "Corl Fogleman", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "13 Dec 2019", dateRemoved:"-" , dateStart: "", dateEnd: " "},
+  { user: "Nicholle Cranford", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020", dateStart: "04 Aug 2021 at 8:00pm ", dateEnd: " " },
+  { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020", dateStart: "04 Aug 2021 at 8:00pm ", dateEnd: "" },
+  { user: "Douglas Labella", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Information", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "17 Dec 2019", dateRemoved:"-", dateStart: "16 Jul 2021 at 8:00pm ", dateEnd: "17 Jul 2021 at 12:01am " },
+  { user: "Teresa Randell", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Both", dateCreated: "11 Dec 2019", dateAmended: "15 Dec 2019", dateRemoved:"-", dateStart: "12 Jun 2021 at 8:00pm ", dateEnd: ""},
+  { user: "Corl Fogleman", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Information", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "13 Dec 2019", dateRemoved:"-" , dateStart: "09 May 2021 at 8:00pm ", dateEnd: ""},
+  { user: "Nicholle Cranford", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Apr 2020", dateStart: "", dateEnd: "" },
+  { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020", dateStart: "", dateEnd: "" },
+];
+
+
+router.get('/form-builder/notifications/audit', function (req, res) {
+  console.log('audit?');
+  res.render('form-builder/notifications/audit', {
+    results:messagesAudit
+  })
+});
+
+
+
 //Conditonal routing - send certificate to different destination dependent on commodity
 router.post('/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-details', function (req, res) {
 if (req.session.data.diseaseClearanceRequired == "RULE"){
