@@ -100,6 +100,7 @@ module.exports = function (router) {
     { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020" },
   ];
 
+
   router.get('/form-builder/notifications/audit', function (req, res) {
     console.log('audit?');
     res.render('form-builder/notifications/audit', {
@@ -107,18 +108,22 @@ module.exports = function (router) {
     })
   });
 
-  router.get('/form-builder/EXP-12730-audit/reasons-for-change', function (req, res) {
-    console.log('reasons-for-change?', req.query.type.toLowerCase());
-    let response = "Why did you make these changes?";
-  
 
-    if(req.query.type.toLowerCase() === "status"){
+  router.get('/form-builder/EXP-12730-audit/reasons-for-change', function (req, res) {
+    console.log('reasons-for-change?', req.query.type);
+    let type = "version";
+    if (req.query.type!==undefined){
+      type = req.query.type.toLowerCase();
+    }
+
+    let response = "Why did you make these changes?";
+    if(type === "status"){
       response = "Why did you make this status change?";
     }
-    if(req.query.type.toLowerCase() === "config"){
+    if(type === "config"){
       response = "Why did you make these config changes?";
     }
-    if(req.query.type.toLowerCase() === "version"){
+    if(type === "version"){
       response = "Why did you make this version change?";
     }
     res.render('form-builder/EXP-12730-audit/reasons-for-change', {
