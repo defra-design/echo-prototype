@@ -89,14 +89,14 @@ module.exports = function (router) {
   let messagesAudit = [
     { user: "Douglas Labella", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "17 Dec 2019", dateRemoved:"-" },
     { user: "Teresa Randell", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Both", dateCreated: "11 Dec 2019", dateAmended: "15 Dec 2019", dateRemoved:"-" },
-    { user: "Corl Fogleman", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Importers", dateCreated: "11 Dec 2019", dateAmended: "13 Dec 2019", dateRemoved:"-" },
+    { user: "Corl Fogleman", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "13 Dec 2019", dateRemoved:"-" },
     { user: "Nicholle Cranford", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020" },
     { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020" },
     { user: "Douglas Labella", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "17 Dec 2019", dateRemoved:"-" },
     { user: "Teresa Randell", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Both", dateCreated: "11 Dec 2019", dateAmended: "15 Dec 2019", dateRemoved:"-" },
-    { user: "Corl Fogleman", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Importers", dateCreated: "11 Dec 2019", dateAmended: "13 Dec 2019", dateRemoved:"-" },
+    { user: "Corl Fogleman", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "13 Dec 2019", dateRemoved:"-" },
     { user: "Nicholle Cranford", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020" },
-    { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020" },
+    { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020" },
   ];
   router.get('/form-builder/notifications/audit', function (req, res) {
     console.log('audit?');
