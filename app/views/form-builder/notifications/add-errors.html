@@ -27,10 +27,10 @@ GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#message">Enter the message to be displayed</a>
+            <a href="#message">You must enter the message to be displayed</a>
           </li>
           <li>
-            <a href="#target-audience">Enter the target audience</a>
+            <a href="#target-audience">You must select the audience who will see the message</a>
           </li>
         </ul>
       </div>
@@ -40,15 +40,7 @@ GOV.UK Prototype Kit
 
 
 <form method="post" action="/form-builder/notifications/add">
-<!--   
-    <div class="govuk-form-group">
-      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="notification-title">
-          Title
-        </label>
-      </h2>
-      <input class="govuk-input" id="notification-title" name="notification-title" type="text">
-    </div>
- -->
+
     <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="250">
       <div class="govuk-form-group govuk-form-group--error">
         <h2 class="govuk-label-wrapper">
@@ -57,7 +49,7 @@ GOV.UK Prototype Kit
           </label>
         </h2>
         <span id="change-reason-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> You must enter message to be displayed
+          <span class="govuk-visually-hidden">Error:</span> You must enter the message to be displayed
         </span>
         <textarea class="govuk-textarea govuk-js-character-count govuk-input--error" id="message" name="message" rows="5" aria-describedby="message-info"></textarea>
       </div>

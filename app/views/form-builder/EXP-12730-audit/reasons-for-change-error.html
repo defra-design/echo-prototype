@@ -9,11 +9,7 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">AutoEHC-2021-03-11-446</span>
-    <h1 class="govuk-heading-xl">
-      Why did you make this version change?
-    </h1>
-    <p class="govuk-body"></p>
+    
     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
         There is a problem
@@ -21,41 +17,18 @@ GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#change-reason">Enter a reason for the changes you have made</a>
+            <a href="#change-reason">You must explain why you made this change</a>
           </li>
         </ul>
       </div>
     </div>
+    
+    <span class="govuk-caption-l">AutoEHC-2021-03-11-446</span>
+    <h1 class="govuk-heading-xl">
+      Why did you make this version change?
+    </h1>  
+    <p class="govuk-body"></p>    
 
-    <!--
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Version
-        </dt>
-        <dd class="govuk-summary-list__value">
-          3.82
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Status
-        </dt>
-        <dd class="govuk-summary-list__value">
-            Unrestricted
-        </dd>
-      </div> 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Config change
-        </dd>
-      </div>
-    -->
-
-    </dl>
 
     <form action="../check-your-progress" method="POST">
 
@@ -63,7 +36,7 @@ GOV.UK Prototype Kit
         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
           <div class="govuk-form-group govuk-form-group--error">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="change-reason">
-              Explain why you made this change
+              You must explain why you made this change
               </label>
             </h2>
 
