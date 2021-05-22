@@ -111,6 +111,29 @@ module.exports = function (router) {
   });
 
 
+
+  let messagesAudit = [
+    { user: "Douglas Labella", message: "Warning. The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "17 Dec 2019", dateRemoved:"-", dateStart: "20 May 2021 at 8:00pm ", dateEnd: "27 May 2021 at 12:01am ", status:"Live", tag:"govuk-tag govuk-tag--red " },
+    { user: "Teresa Randell", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Certifiers", dateCreated: "11 Dec 2019", dateAmended: "15 Dec 2019", dateRemoved:"-", dateStart: "20 May 2021 at 8:00pm ", dateEnd: "27 May 2021 at 12:01am ", status:"Live", tag:"govuk-tag"  },
+    { user: "Corl Fogleman", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Both ", dateCreated: "11 Dec 2019", dateAmended: "13 Dec 2019", dateRemoved:"-" , dateStart: "", dateEnd: " ", status:"Draft", tag:"govuk-tag--grey" },
+    { user: "Nicholle Cranford", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020", dateStart: "04 Aug 2021 at 8:00pm ", dateEnd: " ", status:"Pending", tag:"govuk-tag--green"  },
+    { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020", dateStart: "", dateEnd: "", status:"Draft", tag:"govuk-tag--grey"  },
+    { user: "Douglas Labella", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Information", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "17 Dec 2019", dateRemoved:"-", dateStart: "16 Jul 2021 at 8:00pm ", dateEnd: "17 Jul 2021 at 12:01am ", status:"Pending", tag:"govuk-tag--green"  },
+    { user: "Teresa Randell", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Both", dateCreated: "11 Dec 2019", dateAmended: "15 Dec 2019", dateRemoved:"-", dateStart: "12 Jun 2021 at 8:00pm ", dateEnd: "", status:"Draft", tag:"govuk-tag--grey" },
+    { user: "Corl Fogleman", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Information", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "13 Dec 2019", dateRemoved:"-" , dateStart: "09 May 2021 at 8:00pm ", dateEnd: "", status:"Draft", tag:"govuk-tag--grey" },
+    { user: "Nicholle Cranford", message: "You can now request a pre-certificate if you need an official copy of the certificate before APHA processes your application.", alert: "Warning", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Apr 2020", dateStart: "", dateEnd: "", status:"Draft", tag:"govuk-tag--grey"  },
+    { user: "Lisa Kantar", message: "Planned maintenance on 20 December 2020 at 6pm. You will not be able to use the service at this time. ", alert: "Warning", audience: "Certifiers ", dateCreated: "11 Dec 2019", dateAmended: "-", dateRemoved:"1 Jan 2020", dateStart: "", dateEnd: "", status:"Draft", tag:"govuk-tag--grey"  },
+  ];
+  
+  
+  router.get('/form-builder/notifications/audit', function (req, res) {
+    console.log('audit?');
+    res.render('form-builder/notifications/audit', {
+      results:messagesAudit
+    })
+  });  
+
+
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*', function (req, res) {
     console.log("default get routing page for form-builder: " + base_url + req.params[0])

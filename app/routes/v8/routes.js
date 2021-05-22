@@ -224,15 +224,6 @@ let messagesAudit = [
 ];
 
 
-router.get('/form-builder/notifications/audit', function (req, res) {
-  console.log('audit?');
-  res.render('form-builder/notifications/audit', {
-    results:messagesAudit
-  })
-});
-
-
-
 //Conditonal routing - send certificate to different destination dependent on commodity
 router.post('/form-builder/conditional-routing/certificate-destination/new-certificate/certificate-details', function (req, res) {
 if (req.session.data.diseaseClearanceRequired == "RULE"){
