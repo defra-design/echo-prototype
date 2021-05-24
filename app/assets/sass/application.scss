@@ -947,9 +947,9 @@ h3#section-a-forms,h3#section-b-guidance {
   line-height: 1.3157894737;
 }
 
-.app-c-option-select__coGDS Transportiner {
-  height: 280px;
-  overflow-y: scroll;
+.app-c-option-select__container {
+  height: 0px;
+  overflow-y: none;
 }
 
 .checkboxes__legend--hidden {
@@ -994,6 +994,9 @@ h3#section-a-forms,h3#section-b-guidance {
   #f3f2f1;
 }
 
+.facet-tags {
+  font-family: "GDS Transport", Arial, sans-serif;
+}
 .facet-tags__wrapper:first-of-type .facet-tags__preposition:first-of-type {
   font-weight: bold;
 }
@@ -1011,7 +1014,7 @@ h3#section-a-forms,h3#section-b-guidance {
 .facet-tags__group {
   padding: 5px;
 }
-.facet-tags__coGDS Transportiner {
+.facet-tags__container {
   display: block;
 }
 .facet-tags__wrapper {
@@ -1039,7 +1042,6 @@ h3#section-a-forms,h3#section-b-guidance {
   border: 1px solid transparent;
   font-size: 16px;
   line-height: 1.25;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -1079,4 +1081,53 @@ h3#section-a-forms,h3#section-b-guidance {
 }
 .document-list__item-metadata {
   padding: 0;
+}
+
+.result-info__header {
+  display: block;
+}
+.gem-c-heading {
+  margin: 0;
+}
+
+.gem-c-subscription-links {
+  font-size: 19px;
+  line-height: 1.3157894737;
+}
+.gem-c-subscription-links {
+  color: #0b0c0c;
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.gem-c-subscription-links__item {
+  background-position: 0 35%;
+}
+.gem-c-subscription-links__item {
+  display: inline-block;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: 0 20%;
+}
+.gem-c-subscription-links__list-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+.gem-c-subscription-links__list-item--small:first-child {
+  margin-right: 10px;
+}
+.gem-c-subscription-links__list-item--small {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+.gem-c-subscription-links__list--small {
+  font-size: 16px;
+  line-height: 1.25;
 }
