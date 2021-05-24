@@ -16,21 +16,15 @@
             <fieldset class="govuk-fieldset" aria-describedby="search-field-hint">
 
               <div class="govuk-form-group">
-
-                <span id="search-field-hint" class="govuk-hint">
-                </span>
-
-                <div class="">
-                  <label class="govuk-label" for="search-field">
-                  </label>
-                  <span id="search-field-error" class="govuk-error-message hide">
-                  </span>
-                  <input data-required="true" class="govuk-input search__item search__input" id="search-field" name="q" type="text"
-                    value="{{ data['q'] }}">
+                <div class="search__item-wrapper">
+                  <input aria-controls="js-search-results-info" class="search__item search__input js-class-toggle" id="finder-keyword-search" name="keywords" title="Search" type="search" value="">
                   <div class="search__item search__submit-wrapper">
-                    <button type="submit" class="search__submit">Search</button>
+                    <button class="search__submit" type="submit">
+                      Search
+                    </button>
                   </div>
                 </div>
+
 
               </div>
             </fieldset>
