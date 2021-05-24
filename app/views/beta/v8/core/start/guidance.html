@@ -1,0 +1,143 @@
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Guidance and regulation - GOV.UK
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader({serviceName:serviceName}) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ super() }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Organisations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Department for Environment, Food & Rural Affairs</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Guidance and regulation
+    </h1>
+  </div>
+
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <label for="finder-keyword-search" class="search__label">
+      Search <span class="govuk-visually-hidden">Guidance and regulation</span>
+    </label>
+    {% include "includes/filter.html" %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    <div id="js-search-results-info" data-module="remove-filter" class="result-info">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <div class="result-info__header">
+            <h2 class="gem-c-heading govuk-heading-s" id="js-result-count">2,822 results</h2>
+
+          </div>
+        </div>
+        <div class="govuk-grid-column-two-thirds subscription-links subscription-links--desktop">
+          <section class="gem-c-subscription-links">
+            <ul class="gem-c-subscription-links__list gem-c-subscription-links__list--small">
+              <li class="gem-c-subscription-links__list-item gem-c-subscription-links__list-item--small">
+                <a class="govuk-link gem-c-subscription-links__item  gem-c-subscription-links__item--link"
+                  href="/search/guidance-and-regulation/email-signup?organisations%5B%5D=department-for-environment-food-rural-affairs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="15.75"
+                    class="gem-c-subscription-links__icon" focusable="false" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M19.687 0H1.312C.589 0 0 .587 0 1.313v13.124c0 .726.588 1.313 1.313 1.313h18.374c.725 0 1.313-.587 1.313-1.313V1.313C21 .587 20.412 0 19.687 0zm-2.625 2.625L10.5 7.875l-6.563-5.25h13.126zm1.313 10.5H2.625V3.937L10.5 10.5l7.875-6.563v9.188z">
+                    </path>
+                  </svg>
+                  Get emails
+                </a>
+              </li>
+
+              <li class="gem-c-subscription-links__list-item gem-c-subscription-links__list-item--small">
+
+                <a class="govuk-link gem-c-subscription-links__item  gem-c-subscription-links__item--link"
+                  href="/search/guidance-and-regulation.atom?organisations%5B%5D=department-for-environment-food-rural-affairs">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="gem-c-subscription-links__icon"
+                    focusable="false" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M1.996 11A2 2 0 0 0 0 12.993c0 1.101.895 1.99 1.996 1.99 1.106 0 2-.889 2-1.99a2 2 0 0 0-2-1.993zM.002 5.097V7.97c1.872 0 3.632.733 4.958 2.059A6.984 6.984 0 0 1 7.015 15h2.888c0-5.461-4.443-9.903-9.9-9.903zM.006 0v2.876c6.676 0 12.11 5.44 12.11 12.124H15C15 6.731 8.273 0 .006 0z">
+                    </path>
+                  </svg>
+                  Subscribe to feed
+                </a>
+              </li>
+            </ul>
+
+          </section>
+        </div>
+      </div>
+      <div id="js-facet-tag-wrapper" class="facet-tags__container" aria-live="assertive">
+        <span class="govuk-visually-hidden">
+          2,822 results
+          sorted by Most viewed
+        </span>
+
+        <div class="facet-tags" data-module="gem-track-click">
+          <div class="facet-tags__group">
+            <div class="facet-tags__wrapper">
+              <span class="facet-tags__preposition">From</span>
+              <span class="facet-tag">
+                <span class="facet-tag__text">Department for Environment, Food &amp; Rural Affairs (Defra)</span>
+                <button type="button" class="facet-tag__remove"
+                  aria-label="Remove filter Department for Environment, Food &amp; Rural Affairs (Defra)"
+                  data-module="remove-filter-link"
+                  data-track-label="Department for Environment, Food &amp; Rural Affairs (Defra)"
+                  data-facet="organisations" data-value="department-for-environment-food-rural-affairs"
+                  data-name="">✕</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="js-sort-options">
+      <div class="govuk-form-group sort-options gem-c-select">
+        <label for="order" class="sort-options__label govuk-label">Sort by</label>
+        <select class="js-order-results govuk-select sort-options__select" name="order" id="order" aria-controls="js-search-results-info" data-default-sort-option="most-viewed" data-relevance-sort-option="relevance" data-module="track-select-change">
+          <option value="most-viewed" selected="" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Most viewed">Most viewed</option>
+          <option value="relevance" disabled="" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Relevance">Relevance</option>
+          <option value="updated-newest" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Updated (newest)">Updated (newest)</option>
+          <option value="updated-oldest" data-track-category="dropDownClicked" data-track-action="clicked" data-track-label="Updated (oldest)">Updated (oldest)</option>
+        </select>
+      </div>
+  </div>
+
+    {% include "includes/gov-search-results.html" %}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

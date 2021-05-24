@@ -1,0 +1,507 @@
+<div class="govuk">
+
+  <form id="form" class="" action="results" method="get" novalidate>
+    <div class="">
+      <div class="">
+        <div class="">
+
+          <form id="form-sort" class="" action="results" method="post">
+            <!--
+            <input type="hidden" name=":uri" value="search">
+            <input type="hidden" name="size" value="10">
+            <input type="hidden" id="anchor" name="anchor" value="{{anchor}}">
+          -->
+
+
+            <fieldset class="govuk-fieldset" aria-describedby="search-field-hint">
+
+              <div class="govuk-form-group">
+
+                <span id="search-field-hint" class="govuk-hint">
+                </span>
+
+                <div class="">
+                  <label class="govuk-label" for="search-field">
+                  </label>
+                  <span id="search-field-error" class="govuk-error-message hide">
+                  </span>
+                  <input data-required="true" class="govuk-input search__item search__input" id="search-field" name="q" type="text"
+                    value="{{ data['q'] }}">
+                  <div class="search__item search__submit-wrapper">
+                    <button type="submit" class="search__submit">Search</button>
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </form>
+
+
+        </div>
+
+
+
+
+        <div class="app-c-option-select js-collapsible" data-module="option-select"
+          data-input-aria-controls="js-search-results-info">
+          <h2 class="app-c-option-select__heading js-container-heading">
+            <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button"
+              aria-expanded="false" id="option-select-title-type-of-support" aria-controls="types_of_support">Topic</button>
+            <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+              class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false">
+              <path
+                d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z">
+              </path>
+            </svg>
+            <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+              class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false">
+              <path
+                d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z">
+              </path>
+            </svg>
+          </h2>
+          <div role="group" aria-labelledby="option-select-title-type-of-support"
+            class="app-c-option-select__container js-options-container" id="types_of_support" tabindex="-1">
+            <!-- 
+  <div class="app-c-option-select__container-inner js-auto-height-inner">
+              <div id="checkboxes-066b100c" class="checkboxes govuk-form-group govuk-checkboxes--small"
+                data-module="govuk-checkboxes">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m checkboxes__legend--hidden">Type of
+                    support</legend>
+
+                  <ul class="govuk-checkboxes checkboxes__list">
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="types_of_support[]" id="types_of_support-finance" value="finance"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Type of support"
+                        data-track-label="Finance" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info" 
+                        {{ checked if checks['types_of_support-finance'] }}
+                        ><label for="types_of_support-finance"
+                        class="govuk-label govuk-checkboxes__label">Finance</label>
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="types_of_support[]" id="types_of_support-equity" value="equity"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Type of support"
+                        data-track-label="Equity" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"
+                        {{ checked if checks['types_of_support-equity'] }}
+                        ><label for="types_of_support-equity"
+                        class="govuk-label govuk-checkboxes__label">Equity</label>
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="types_of_support[]" id="types_of_support-grant" value="grant"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Type of support"
+                        data-track-label="Grant" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"
+                        {{ checked if checks['types_of_support-grant'] }}
+                        ><label for="types_of_support-grant"
+                        class="govuk-label govuk-checkboxes__label">Grant</label>
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="types_of_support[]" id="types_of_support-loan" value="loan"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Type of support"
+                        data-track-label="Loan" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"
+                        {{ checked if checks['types_of_support-loan'] }}>
+                        <label for="types_of_support-loan"
+                        class="govuk-label govuk-checkboxes__label">Loan</label>
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="types_of_support[]" id="types_of_support-expertise-and-advice"
+                        value="expertise-and-advice" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Type of support"
+                        data-track-label="Expertise and advice" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"
+                        {{ checked if checks['types_of_support-expertise-and-advice'] }}>
+                        <label for="types_of_support-expertise-and-advice"
+                        class="govuk-label govuk-checkboxes__label">Expertise and advice</label>
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="types_of_support[]" id="types_of_support-recognition-award"
+                        value="recognition-award" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Type of support"
+                        data-track-label="Recognition awards" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"
+                        {{ checked if checks['types_of_support-recognition-award'] }}>
+                        <label for="types_of_support-recognition-award"
+                        class="govuk-label govuk-checkboxes__label">Recognition awards</label>
+                    </li>
+                  </ul>
+                </fieldset>
+              </div>
+            </div>
+          -->
+          </div>
+        </div>
+
+
+
+        <div class="app-c-option-select js-collapsible" data-module="option-select" data-closed-on-load="true"
+          data-input-aria-controls="js-search-results-info">
+          <h2 class="app-c-option-select__heading js-container-heading">
+            <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button"
+              aria-expanded="false" id="option-select-title-business-stage" aria-controls="business_stages">Organisation</button>
+            <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+              class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false">
+              <path
+                d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z">
+              </path>
+            </svg>
+            <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+              class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false">
+              <path
+                d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z">
+              </path>
+            </svg>
+          </h2>
+          <div role="group" aria-labelledby="option-select-title-business-stage"
+            class="app-c-option-select__container js-options-container" id="business_stages" tabindex="-1">
+            <div class="app-c-option-select__container-inner js-auto-height-inner">
+
+              <div id="checkboxes-12971b3d" class="checkboxes govuk-form-group govuk-checkboxes--small"
+                data-module="govuk-checkboxes">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m checkboxes__legend--hidden">Organisation</legend>
+<!-- 
+                  <ul class="govuk-checkboxes checkboxes__list">
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="business_stages[]" id="business_stages-not-yet-trading"
+                        value="not-yet-trading" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Business stage"
+                        data-track-label="Not yet trading" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="business_stages-not-yet-trading"
+                        class="govuk-label govuk-checkboxes__label">Not yet trading</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="business_stages[]" id="business_stages-start-up" value="start-up"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Business stage"
+                        data-track-label="Start-ups (1-2 years trading)" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="business_stages-start-up"
+                        class="govuk-label govuk-checkboxes__label">Start-ups (1-2 years trading)</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="business_stages[]" id="business_stages-established"
+                        value="established" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Business stage"
+                        data-track-label="Established" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="business_stages-established"
+                        class="govuk-label govuk-checkboxes__label">Established</label>
+
+
+                    </li>
+                  </ul>
+                   -->
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="app-c-option-select js-collapsible" data-module="option-select" data-closed-on-load="true"
+          data-input-aria-controls="js-search-results-info">
+          <h2 class="app-c-option-select__heading js-container-heading">
+            <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button"
+              aria-expanded="false" id="option-select-title-industry" aria-controls="industries">World Location</button>
+            <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+              class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false">
+              <path
+                d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z">
+              </path>
+            </svg>
+            <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+              class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false">
+              <path
+                d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z">
+              </path>
+            </svg>
+          </h2>
+          <div role="group" aria-labelledby="option-select-title-industry"
+            class="app-c-option-select__container js-options-container" id="industries" tabindex="-1">
+            <div class="app-c-option-select__container-inner js-auto-height-inner">
+
+              <div id="checkboxes-5278df02" class="checkboxes govuk-form-group govuk-checkboxes--small"
+                data-module="govuk-checkboxes">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m checkboxes__legend--hidden">World Location
+                  </legend>
+<!-- 
+                  <ul class="govuk-checkboxes checkboxes__list">
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-agriculture-and-food"
+                        value="agriculture-and-food" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Agriculture and food" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-agriculture-and-food"
+                        class="govuk-label govuk-checkboxes__label">Agriculture and food</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-business-and-finance"
+                        value="business-and-finance" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Business and finance" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-business-and-finance"
+                        class="govuk-label govuk-checkboxes__label">Business and finance</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-construction" value="construction"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Construction" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-construction"
+                        class="govuk-label govuk-checkboxes__label">Construction</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-education" value="education"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Education" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-education"
+                        class="govuk-label govuk-checkboxes__label">Education</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-health" value="health"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Health" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-health"
+                        class="govuk-label govuk-checkboxes__label">Health</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-hospitality-and-catering"
+                        value="hospitality-and-catering" class="govuk-checkboxes__input"
+                        data-track-category="filterClicked" data-uncheck-track-category="filterRemoved"
+                        data-track-action="Industry" data-track-label="Hospitality and catering"
+                        data-controls="js-search-results-info" aria-controls="js-search-results-info"><label
+                        for="industries-hospitality-and-catering"
+                        class="govuk-label govuk-checkboxes__label">Hospitality and catering</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]"
+                        id="industries-information-technology-digital-and-creative"
+                        value="information-technology-digital-and-creative" class="govuk-checkboxes__input"
+                        data-track-category="filterClicked" data-uncheck-track-category="filterRemoved"
+                        data-track-action="Industry" data-track-label="IT, digital and creative"
+                        data-controls="js-search-results-info" aria-controls="js-search-results-info"><label
+                        for="industries-information-technology-digital-and-creative"
+                        class="govuk-label govuk-checkboxes__label">IT, digital and creative</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-life-sciences" value="life-sciences"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Life Sciences" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-life-sciences"
+                        class="govuk-label govuk-checkboxes__label">Life Sciences</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-manufacturing" value="manufacturing"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Manufacturing" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-manufacturing"
+                        class="govuk-label govuk-checkboxes__label">Manufacturing</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-mining" value="mining"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Mining" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-mining"
+                        class="govuk-label govuk-checkboxes__label">Mining</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-real-estate-and-property"
+                        value="real-estate-and-property" class="govuk-checkboxes__input"
+                        data-track-category="filterClicked" data-uncheck-track-category="filterRemoved"
+                        data-track-action="Industry" data-track-label="Real estate and property"
+                        data-controls="js-search-results-info" aria-controls="js-search-results-info"><label
+                        for="industries-real-estate-and-property" class="govuk-label govuk-checkboxes__label">Real
+                        estate and property</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-science-and-technology"
+                        value="science-and-technology" class="govuk-checkboxes__input"
+                        data-track-category="filterClicked" data-uncheck-track-category="filterRemoved"
+                        data-track-action="Industry" data-track-label="Science and technology"
+                        data-controls="js-search-results-info" aria-controls="js-search-results-info"><label
+                        for="industries-science-and-technology" class="govuk-label govuk-checkboxes__label">Science and
+                        technology</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-service-industries"
+                        value="service-industries" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Service industries" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-service-industries"
+                        class="govuk-label govuk-checkboxes__label">Service industries</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-transport-and-distribution"
+                        value="transport-and-distribution" class="govuk-checkboxes__input"
+                        data-track-category="filterClicked" data-uncheck-track-category="filterRemoved"
+                        data-track-action="Industry" data-track-label="Transport and distribution"
+                        data-controls="js-search-results-info" aria-controls="js-search-results-info"><label
+                        for="industries-transport-and-distribution"
+                        class="govuk-label govuk-checkboxes__label">Transport and distribution</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-travel-and-leisure"
+                        value="travel-and-leisure" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Travel and leisure" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-travel-and-leisure"
+                        class="govuk-label govuk-checkboxes__label">Travel and leisure</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-utilities-providers"
+                        value="utilities-providers" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Utilities providers" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-utilities-providers"
+                        class="govuk-label govuk-checkboxes__label">Utilities providers</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="industries[]" id="industries-wholesale-and-retail"
+                        value="wholesale-and-retail" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Industry"
+                        data-track-label="Wholesale and retail" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="industries-wholesale-and-retail"
+                        class="govuk-label govuk-checkboxes__label">Wholesale and retail</label>
+
+
+                    </li>
+                  </ul>
+                   -->
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="app-c-option-select js-collapsible" data-module="option-select" data-closed-on-load="true"
+          data-input-aria-controls="js-search-results-info">
+          <h2 class="app-c-option-select__heading js-container-heading">
+            <button class="js-container-button app-c-option-select__title app-c-option-select__button" type="button"
+              aria-expanded="false" id="option-select-title-number-of-employees" aria-controls="business_sizes">Updated</button>
+              <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+              class="app-c-option-select__icon app-c-option-select__icon--up" aria-hidden="true" focusable="false">
+              <path
+                d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z">
+              </path>
+            </svg>
+            <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+              class="app-c-option-select__icon app-c-option-select__icon--down" aria-hidden="true" focusable="false">
+              <path
+                d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z">
+              </path>
+            </svg>
+          </h2>
+          <div role="group" aria-labelledby="option-select-title-number-of-employees"
+            class="app-c-option-select__container js-options-container" id="business_sizes" tabindex="-1">
+            <div class="app-c-option-select__container-inner js-auto-height-inner">
+
+              <div id="checkboxes-4f30071c" class="checkboxes govuk-form-group govuk-checkboxes--small"
+                data-module="govuk-checkboxes">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m checkboxes__legend--hidden">Updated</legend>
+<!-- 
+                  <ul class="govuk-checkboxes checkboxes__list">
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="business_sizes[]" id="business_sizes-under-10" value="under-10"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Number of employees"
+                        data-track-label="0 to 9 employees" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="business_sizes-under-10"
+                        class="govuk-label govuk-checkboxes__label">0 to 9 employees</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="business_sizes[]" id="business_sizes-between-10-and-249"
+                        value="between-10-and-249" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Number of employees"
+                        data-track-label="10 to 249 employees" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="business_sizes-between-10-and-249"
+                        class="govuk-label govuk-checkboxes__label">10 to 249 employees</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="business_sizes[]" id="business_sizes-between-250-and-500"
+                        value="between-250-and-500" class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Number of employees"
+                        data-track-label="250 to 500 employees" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="business_sizes-between-250-and-500"
+                        class="govuk-label govuk-checkboxes__label">250 to 500 employees</label>
+
+
+                    </li>
+                    <li class="govuk-checkboxes__item">
+                      <input type="checkbox" name="business_sizes[]" id="business_sizes-over-500" value="over-500"
+                        class="govuk-checkboxes__input" data-track-category="filterClicked"
+                        data-uncheck-track-category="filterRemoved" data-track-action="Number of employees"
+                        data-track-label="More than 500 employees" data-controls="js-search-results-info"
+                        aria-controls="js-search-results-info"><label for="business_sizes-over-500"
+                        class="govuk-label govuk-checkboxes__label">More than 500 employees</label>
+
+
+                    </li>
+                  </ul>
+                   -->
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </form>
+</div>
