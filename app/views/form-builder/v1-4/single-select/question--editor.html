@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Form Question Editor</h1>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-form-group">
+      <form action="/protected/questions/0" method="POST">
+        <input type="hidden" name="crumb_csrf_token" value="VD12JJOdXI_f4wjKpE9KQT8KNKDUpDGDujePWPdIyt5" />
+
+        <fieldset class="govuk-fieldset">
+
+          <div class="govuk-form-group ">
+            <label class="govuk-label govuk-!-font-weight-bold" for="text">What is the question text?</label>
+            <input class="govuk-input " id="text" type="text" name="text" data-qa-id="TextField-questionText" value="">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="hintText">What is the question hint?</label>
+            <input class="govuk-input" id="hintText" type="text" name="hintText" data-qa-id="TextField-hintText"
+              value="">
+          </div>
+
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="questionType-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  What is the type of question?
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                
+                <!-- Single line text question -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="questionType" name="questionType" type="radio" value="TEXT"
+                  data-aria-controls="conditional-questionType">
+                  <label class="govuk-label govuk-radios__label" for="questionType">
+                    Single line text
+                  </label>
+                </div>
+                
+                <!-- Multi line text question -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="questionType" name="questionType" type="radio" value="TEXTAREA"
+                    data-aria-controls="conditional-questionType">
+                  <label class="govuk-label govuk-radios__label" for="questionType">
+                    Multi line text
+                  </label>
+                </div>
+
+                <!-- Single select question -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="questionType" name="questionType" type="radio" value="SINGLE_SELECT"
+                    data-aria-controls="conditional-questionType">
+                  <label class="govuk-label govuk-radios__label" for="questionType">
+                    Single select
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-questionType">
+                  <div class="govuk-form-group">
+                    <div class="govuk-form-group">
+                      <div class="margin-top-10">
+                        <label class="govuk-label" for="single-select-option-0">Option 1</label>
+                      </div>
+                      <input class="govuk-input" name="single-select-option-0" type="text" id="single-select-option-0"
+                        value="">
+                      <div class="margin-top-10">
+                        <label class="govuk-label" for="single-select-option-1">Option 2</label>
+                      </div>
+                      <input class="govuk-input" name="single-select-option-1" type="text" id="single-select-option-1"
+                        value="">
+                    </div>
+                    <div class="govuk-body">
+                      <button type="submit" class="link-button" id="single-select-add-option">
+                        Add option
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Custom single select question -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="questionType-2" name="questionType" type="radio" value="SINGLE_PDF_SELECT"
+                    data-aria-controls="conditional-questionType-2">
+                  <label class="govuk-label govuk-radios__label" for="questionType-2">
+                    Custom single select
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-questionType-2">
+                  <div class="govuk-form-group">
+                    <div class="margin-top-10">
+                      <label class="govuk-label" for="single-select-option-0">Option 1</label>
+                    </div>
+                    <input class="govuk-input" name="single-select-option-0" type="text" id="single-select-option-0"
+                      value="">
+                    <div class="margin-top-10">
+                      <label class="govuk-label" for="single-select-option-1">Option 2</label>
+                    </div>
+                    <input class="govuk-input" name="single-select-option-1" type="text" id="single-select-option-1"
+                      value="">
+                  </div>
+                  <div class="govuk-body">
+                    <button type="submit" class="link-button" id="single-select-add-option">
+                      Add option
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Multi select question -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="questionType-3" name="questionType" type="radio" value="MULTI_SELECT"
+                    data-aria-controls="conditional-questionType-3">
+                  <label class="govuk-label govuk-radios__label" for="questionType-3">
+                    Multi select
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-questionType-3">
+                  <div class="govuk-form-group">
+                    <div class="margin-top-10">
+                      <label class="govuk-label" for="multi-select-option-0">Option 1</label>
+                    </div>
+                    <input class="govuk-input" name="multi-select-option-0" type="text" id="multi-select-option-0"
+                      value="">
+                    <div class="margin-top-10">
+                      <label class="govuk-label" for="multi-select-option-1">Option 2</label>
+                    </div>
+                    <input class="govuk-input" name="multi-select-option-1" type="text" id="multi-select-option-1"
+                      value="">
+                  </div>
+                  <div class="govuk-body">
+                    <button type="submit" class="link-button" id="multi-select-add-option">
+                      Add option
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Date question -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="date-field" name="questionType" type="radio" value="DATE"
+                    data-aria-controls="conditional-date-field">
+                  <label class="govuk-label govuk-radios__label" for="date-field">
+                    Date
+                  </label>
+                </div>
+
+               </div>
+
+
+            </fieldset>
+          </div>
+
+
+
+          <div class="govuk-form-group ">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend">
+                <label class="govuk-label govuk-!-font-weight-bold">What is this question for?</label>
+              </legend>
+
+
+              <div class="govuk-radios">
+                <!-- EHC -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="ehcFormType" type="radio" name="formType" value="EHC" />
+                  <label class="govuk-label govuk-radios__label" for="ehcFormType">EHC</label>
+                </div>
+
+                <!-- EXA -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="exaFormType" type="radio" name="formType" value="EXA" />
+                  <label class="govuk-label govuk-radios__label" for="exaFormType">EXA</label>
+                </div>
+
+                <!-- BOTH -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="bothFormType" type="radio" name="formType" value="BOTH" />
+                  <label class="govuk-label govuk-radios__label" for="bothFormType">BOTH</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="mappedQuestion">Map question to:</label>
+            <select class="govuk-select" id="mappedQuestion" name="mappedQuestion" data-qa-id="select-mappedQuestion">
+              <option value="none">None</option>
+              <option value="ukcountryofexport">Country of export</option>
+              <option value="exportdate">Export date</option>
+              <option value="loadingaddressline1">Loading address line 1</option>
+              <option value="loadingaddressline2">Loading address line 2</option>
+              <option value="loadingaddressline3">Loading address line 3</option>
+              <option value="loadingaddressline4">Loading address line 4</option>
+              <option value="loadingaddresspostcode">Loading address postcode</option>
+              <option value="requiredbydate">Required by date</option>
+              <option value="exportertrader">Exporter/Trader</option>
+              <option value="transporter">Transporter</option>
+            </select>
+          </div>
+
+        </fieldset>
+        <input class="govuk-button margin-top-30" type="submit" value="Save" id="Button-SaveQuestion"
+          data-qa-id="Button-SaveQuestion">
+      </form>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
