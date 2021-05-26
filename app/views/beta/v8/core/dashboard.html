@@ -140,6 +140,20 @@ GOV.UK Prototype Kit
     </div>
     {% endif %}
 
+    {% if data.show_notification == "yes"%}
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          There will be planned unavailability for the EHC Online service to deliver essential system maintenance work and critical updates on Thursday 20th May between 20:00 and 23:00.
+        </p>
+      </div>
+    </div>
+    {% endif %}
     {% if data.show_downtime_notification == "yes"%}
     <div class="app-alert app-alert--warning">
     <p class="govuk-body govuk-!-margin-bottom-4">
