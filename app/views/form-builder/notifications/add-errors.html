@@ -85,56 +85,25 @@ GOV.UK Prototype Kit
     </div>
     </div>
 
-    <div class="govuk-body">
-      <h2>Preview</h2>
-      <div id="preview-display" class="app-alert-green app-alert--warning">
-        <p id="echo-preview" class="govuk-body govuk-!-margin-bottom-4" style="height:100px">
-            Your message will appear here.
-          </p>
+      <div class="govuk-body">
+        <h2>Preview</h2>
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content ">
+            <p id="echo-preview" class="govuk-notification-banner__heading">
+              Your message will appear here.
+              <br /><a class="govuk-notification-banner__link" href="javascript:alert('Not in prototype!');">Dismiss
+                this message</a>
+            </p>
+          </div>
         </div>
-    </div>
-<!-- 
-    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        Which services should show the notification?
-      </h1>
-    </legend>
-    <div id="services-show-hint" class="govuk-hint">
-      Select all that apply.
-    </div>
-    <div class="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="services-show-defraid" name="services-show" type="checkbox" value="DEFRA Identity">
-        <label class="govuk-label govuk-checkboxes__label" for="services-show-defraid">
-          DEFRA Identity
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="services-show-ehco" name="services-show" type="checkbox" value="EHCO">
-        <label class="govuk-label govuk-checkboxes__label" for="services-show-ehco">
-          EHCO
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="services-show-ipaffs" name="services-show" type="checkbox" value="IPAFFS">
-        <label class="govuk-label govuk-checkboxes__label" for="services-show-ipaffs">
-          IPAFFS
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="services-show-plant-exports" name="services-show" type="checkbox" value="plant-exports">
-        <label class="govuk-label govuk-checkboxes__label" for="services-show-plant-exports">
-          Plant exports
-        </label>
       </div>
 
-    </div>
-
-  </fieldset>
-</div>
- -->
     <div class="govuk-form-group govuk-form-group--error">
   <fieldset class="govuk-fieldset" aria-describedby="target-audience">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
