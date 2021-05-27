@@ -67,11 +67,21 @@ GOV.UK Prototype Kit
 
     <div class="govuk-body">
       <h2>Preview</h2>
-      <div id="preview-display" class="app-alert-green app-alert--warning">
-        <p id="echo-preview" class="govuk-body govuk-!-margin-bottom-4" style="height:100px">
-          The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content ">
+          <p id="echo-preview" class="govuk-notification-banner__heading">
+            The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.
+            <br /><a class="govuk-notification-banner__link" href="javascript:alert('Not in prototype!');">Dismiss
+              this message</a>
           </p>
         </div>
+      </div>
     </div>
 
     <div class="govuk-form-group">
@@ -109,6 +119,13 @@ GOV.UK Prototype Kit
         What date will the message start?
       </h1>
     </legend>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        The message will only be displayed if a start date is set
+      </strong>
+    </div>
     <div id="notification-start-hint" class="govuk-hint">
       For example, 12 11 2020
     </div>
