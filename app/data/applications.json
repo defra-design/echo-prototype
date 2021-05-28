@@ -302,7 +302,7 @@
     "certificate": "19/11/588624",
     "status": "completed",
     "tag": "green",
-    "date": "2016-07-26",
+    "date": "26 Jul 2016",
     "reference": "PO 18891 UAJS"
   },
   {
@@ -320,7 +320,7 @@
     "certificate": "20/5/661100",
     "status": "completed",
     "tag": "green",
-    "date": "2020-01-21",
+    "date": "21 Jan 2020",
     "reference": "PO 74394 Australia"
   },
   {
@@ -338,7 +338,7 @@
     "certificate": "20/3/272867",
     "status": "completed",
     "tag": "green",
-    "date": "2018-03-22",
+    "date": "22 Mar 2018",
     "reference": "PO 38224 Australia"
   },
   {
@@ -356,7 +356,7 @@
     "certificate": "19/6/377237",
     "status": "completed",
     "tag": "green",
-    "date": "2014-09-21",
+    "date": "21 Sep 2014",
     "reference": "PO 38774 Australia"
   },
   {
@@ -375,6 +375,6 @@
     "certificate": "19/10/121369",
     "status": "completed",
     "tag": "green",
-    "date": "2016-04-05",
+    "date": "5 Apr 2016",
     "reference": "PO 94184 Australia"
   }]
