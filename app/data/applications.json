@@ -99,7 +99,7 @@
 	"certificate": "19/11/350532",
 	"status": "dispatched",
 	"has_attachments": "no",
-	"tag": "turquoise",
+	"tag": "outline",
 	"date": "30 Apr 2020",
 	"reference": "PO 234222 EGGS"
 }, {
@@ -132,7 +132,7 @@
 "cert_info": "Export fresh meat and meat products to the USA",
 	"certificate": "20/10/502091",
 	"status": "completed",
-	"tag": "grey",
+	"tag": "green",
 	"date": "20 Apr 2020",
 	"reference": "PO 52402 USA"
 },{
@@ -183,7 +183,7 @@
 "PDF" : "ehc-6969ehc-8.1.pdf",
 	"certificate": "20/3/372884",
 	"status": "completed",
-	"tag": "grey",
+	"tag": "green",
 	"date": "13 Feb 2020",
 	"reference": "PO 79192 Australia"
 }, {
@@ -267,7 +267,7 @@
 	"cert_info": "Export fresh meat and meat products to the USA",
 	"certificate": "20/2/698734",
 	"status": "completed",
-	"tag": "grey",
+	"tag": "green",
 	"date": "2 Feb 2020",
 	"reference": "PO 45376 USA"
 }, {
@@ -284,7 +284,7 @@
 	"cert_info": "Export dairy and dairy products to Australia",
 	"certificate": "20/9/705421",
 	"status": "completed",
-	"tag": "grey",
+	"tag": "green",
 	"date": "17 Feb 2020",
 	"reference": "PO 345345 SJS"
 },  {
@@ -301,7 +301,7 @@
     "cert_info": "Export dairy and dairy products to Australia",
     "certificate": "19/11/588624",
     "status": "completed",
-    "tag": "grey",
+    "tag": "green",
     "date": "2016-07-26",
     "reference": "PO 18891 UAJS"
   },
@@ -319,7 +319,7 @@
     "cert_info": "Export dairy and dairy products to Australia",
     "certificate": "20/5/661100",
     "status": "completed",
-    "tag": "grey",
+    "tag": "green",
     "date": "2020-01-21",
     "reference": "PO 74394 Australia"
   },
@@ -337,7 +337,7 @@
     "cert_info": "Export dairy and dairy products to Australia",
     "certificate": "20/3/272867",
     "status": "completed",
-    "tag": "grey",
+    "tag": "green",
     "date": "2018-03-22",
     "reference": "PO 38224 Australia"
   },
@@ -355,7 +355,7 @@
     "cert_info": "Export dairy and dairy products to Australia",
     "certificate": "19/6/377237",
     "status": "completed",
-    "tag": "grey",
+    "tag": "green",
     "date": "2014-09-21",
     "reference": "PO 38774 Australia"
   },
@@ -374,7 +374,7 @@
     "cert_info": "Export dairy and dairy products to Australia",
     "certificate": "19/10/121369",
     "status": "completed",
-    "tag": "grey",
+    "tag": "green",
     "date": "2016-04-05",
     "reference": "PO 94184 Australia"
   }]
