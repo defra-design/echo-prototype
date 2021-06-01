@@ -18,6 +18,14 @@ GOV.UK Prototype Kit
           </div>
 
           <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="subtitle">Task list title (optional)</label>
+            <div id="event-name-hint" class="govuk-hint">
+              For pages with very long titles, or to group pages into a sub-section, enter a short task title. Only shows on the task list. If empty the page title will show on the task list.
+            </div>
+            <input class="govuk-input" id="subtitle" name="subtitle" data-qa-id="Input-subtitle" value="">
+          </div>
+
+          <div class="govuk-form-group margin-top-30">
             <label class="govuk-label govuk-!-font-weight-bold" for="subtitle">Subtitle</label>
             <input class="govuk-input" id="subtitle" name="subtitle" data-qa-id="Input-subtitle" value="">
           </div>
@@ -31,6 +39,9 @@ GOV.UK Prototype Kit
 
           <input class="govuk-button" type="submit" id="Button-Save-Page" value="Save page" name="save_page">
         </form>
-      </div>
+        <br/>
+        <a id="Link-cancelAndGoBack" class="govuk-link" href="/protected/forms/AutoEHC-2021-05-24-991/versions/1.0/pages">Cancel and go
+        </div>
+          back</a>
     </div>
 {% endblock %}
