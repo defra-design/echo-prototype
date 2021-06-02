@@ -23,7 +23,7 @@ GOV.UK Prototype Kit
 
         <h1 class="govuk-heading-l">Health Certificate Editor</h1>
 
-    <form class="case-update" action="../certificates?&filter=6969" method="POST">
+    <form class="case-update" action="../certificates?filter=6969" method="POST">
       <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
 
       <div class="govuk-form-group margin-top-30 ">
@@ -56,6 +56,24 @@ GOV.UK Prototype Kit
         <input class="govuk-input govuk-input--width-5 " id="maxEhc" name="maxEhc" data-qa-id="Input-maxEhc" value="10">
       </div>
 
+      <div class="govuk-form-group margin-top-30 ">
+        <fieldset id="counterSignatureFieldSet" class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend" for="counterSignatureFieldSet">
+            <label class="govuk-label">EU EHC?</label>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input type="radio" class="govuk-radios__input" id="euYes" value="YES" name="eu" data-qa-id="eu-radio-Yes">
+              <label class="govuk-label govuk-radios__label" for="euYes">Yes</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input type="radio" class="govuk-radios__input" id="euNo" value="NO" name="eu" data-qa-id="eu-radio-No" checked="">
+              <label class="govuk-label govuk-radios__label" for="euNo" id="euNoLabel">No</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
       <div class="govuk-form-group margin-top-30 ">
         <fieldset id="counterSignatureFieldSet" class="govuk-fieldset">
           <legend class="govuk-fieldset__legend" for="counterSignatureFieldSet">
@@ -94,22 +112,41 @@ GOV.UK Prototype Kit
         </fieldset>
       </div>
 
+
+      <div class="govuk-form-group margin-top-30 ">
+        <fieldset id="preCheckFieldSet" class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend" for="preCheckFieldSet">
+            <label class="govuk-label">Who will do the disease clearance checks?</label>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+            
+            <div class="govuk-radios__item">
+              <input type="radio" class="govuk-radios__input" id="clearanceCertifier" value="Certifier" name="clearance" data-qa-id="preCheck-radio-Certifier">
+              <label class="govuk-label govuk-radios__label" for="clearanceCertifier" id="preCheckAllowedYesLabel">Certifier</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input type="radio" class="govuk-radios__input" id="clearanceWorker" value="NO" name="clearance" data-qa-id="preCheckAllowed-radio-No" checked="">
+              <label class="govuk-label govuk-radios__label" for="clearanceWorker" id="clearanceWorkerLabel">Case Worker</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input type="radio" class="govuk-radios__input" id="clearanceNotReqd" value="NO" name="clearance" data-qa-id="preCheckAllowed-radio-No" checked="">
+              <label class="govuk-label govuk-radios__label" for="clearanceNotReqd" id="clearanceNotReqdLabel">Disease clearance check is not needed</label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
       <fieldset id="additonalChecksFieldSet" class="govuk-fieldset">
         <legend class="govuk-fieldset__legend" for="counterSignatureFieldSet">
-          <label class="govuk-label">Does it need additional checks?</label>
+          <label class="govuk-label">Does the case worker need to do any additional checks?</label>
         </legend>
         <div class="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="additonalChecks_diseaseClearanceRequired" name="additonalChecks_diseaseClearanceRequired" type="checkbox" value="diseaseClearanceRequired" checked="">
-            <label class="govuk-label govuk-checkboxes__label" for="additonalChecks_diseaseClearanceRequired" id="additonalChecks_label_diseaseClearanceRequired">Disease Clearance</label>
-          </div>
-
 
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="additonalChecks_journeyLog" name="additonalChecks_journeyLog" type="checkbox" value="journeyLog">
             <label class="govuk-label govuk-checkboxes__label" for="additonalChecks_journeyLog" id="additonalChecks_label_journeyLog">Journey Log</label>
           </div>
-
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="additonalChecks_approvals" name="additonalChecks_approvals" type="checkbox" value="approvals">
             <label class="govuk-label govuk-checkboxes__label" for="additonalChecks_approvals" id="additonalChecks_label_approvals">Approvals</label>
@@ -164,16 +201,21 @@ GOV.UK Prototype Kit
           <legend class="govuk-fieldset__legend" for="paperTypeFieldSet">
             <label class="govuk-label">What paper should it be printed on?</label>
           </legend>
-          <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios">
+
             <div class="govuk-radios__item">
               <input type="radio" class="govuk-radios__input" id="paperTypeCROWN_VELLUM" value="CROWN_VELLUM" name="paperType" data-qa-id="paperType-radio-CROWN_VELLUM" checked="">
               <label class="govuk-label govuk-radios__label" for="paperTypeCROWN_VELLUM" id="paperTypeCROWN_VELLUMLabel">Crown vellum watermarked paper</label>
             </div>
-
             <div class="govuk-radios__item">
               <input type="radio" class="govuk-radios__input" id="paperTypePLAIN_PAPER" value="PLAIN_PAPER" name="paperType" data-qa-id="paperType-radio-PLAIN_PAPER">
               <label class="govuk-label govuk-radios__label" for="paperTypePLAIN_PAPER" id="paperTypePLAIN_PAPERLabel">Plain paper ( if plain paper sent to certifier via email )</label>
             </div>
+            <div class="govuk-radios__item">
+              <input type="radio" class="govuk-radios__input" id="paperTypePLAIN_PAPER_SECURE" value="PLAIN_PAPER_SECURE" name="paperType" data-qa-id="paperType-radio-PLAIN_PAPER_SECURE">
+              <label class="govuk-label govuk-radios__label" for="paperTypePLAIN_PAPER_SECURE" id="paperTypePLAIN_PAPER_SECURELabel">Plain paper with printed watermark and 12 digit check number</label>
+            </div>
+
           </div>
         </fieldset>
       </div>
