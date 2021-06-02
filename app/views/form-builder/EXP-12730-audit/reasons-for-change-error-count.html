@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#change-reason">The reason for change must be 150 characters or fewer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <span class="govuk-caption-l">AutoEHC-2021-03-11-446</span>
+    <h1 class="govuk-heading-xl">
+      Why did you make this version change?
+    </h1>  
+    <p class="govuk-body"></p>    
+
+
+    <form action="../check-your-progress" method="POST">
+
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
+          <div class="govuk-form-group govuk-form-group--error">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="change-reason">
+              Explain why you made this change
+              </label>
+            </h2>
+
+            <span id="change-reason-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span>The reason for change must be 150 characters or fewer
+            </span>
+            <textarea class="govuk-textarea govuk-js-character-count  govuk-input--error" id="change-reason" name="change-reason" rows="5" aria-describedby="change-reason-info change-reason-hint"></textarea>
+          </div>
+        
+          <div id="change-reason-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 150 characters
+          </div>
+        
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+
+
+        </div>
+      </fieldset>
+      <button class="govuk-button" type="submit">Save</button>
+    </form>
+
+  </div>
+  </div>
+  {% endblock %}
