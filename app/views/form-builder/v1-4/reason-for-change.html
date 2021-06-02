@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">AutoEHC-2021-03-11-446</span>
+    <h1 class="govuk-heading-xl">
+      {{title}}
+    </h1>
+    <p class="govuk-body"></p>
+
+
+    <!--
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+         <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3.82
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+            Unrestricted
+        </dd>
+      </div> 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Config change
+        </dd>
+      </div>
+    </dl>
+  -->
+
+    <form action="../check-your-progress" method="POST">
+
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="change-reason">
+              Explain why you made this change
+              </label>
+            </h1>
+<!--             <div id="change-reason-hint" class="govuk-hint">
+              Do not include personal or financial information like your National Insurance number or credit card details.
+            </div> -->
+            <textarea class="govuk-textarea govuk-js-character-count" id="change-reason" name="change-reason" rows="5" aria-describedby="change-reason-info change-reason-hint"></textarea>
+          </div>
+        
+          <div id="change-reason-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 150 characters
+          </div>
+        
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+
+
+        </div>
+      </fieldset>
+      <button class="govuk-button" type="submit">Save</button>
+    </form>
+
+  </div>
+  </div>
+  {% endblock %}
