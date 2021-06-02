@@ -90,37 +90,130 @@ GOV.UK Prototype Kit
         font: normal normal 400 normal 19px / 25px nta, Arial, sans-serif;
     }/*#filter-input:before*/
     .govuk-details__summary:before{display: none}
+
+    .app-status-tag {
+    display: inline-block;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    color: #fff;
+    /* background-color: #1d70b8; */
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: "GDS Transport", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px
+}
+
+    .app-status-tag--blue {
+    border: 3px solid #1d70b8;
+    background-color: #1d70b8;
+    width: 90px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    }
+
+
+    .app-status-tag--grey {
+    background-color: #f3f2f1;
+    width: 90px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    border: 3px solid #f3f2f1;
+    color: #0b0c0c;
+    }
+
+    .app-status-tag--turquoise{
+      background-color: #1d70b8;
+      width: 90px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    }
+    .app-status-tag--green{
+      background-color: #00703c;
+      border: 3px solid #00703c;
+      width: 90px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    }
+    .app-status-tag--outline{
+      color: #00703c;
+      background-color: #FFF;
+      border: 3px solid #00703c;
+      width: 90px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    }
+
+    .banner-alt-color{
+      border: 5px solid #ffbf45;
+    }
+    .banner__header-alt-color{
+      color: #000;
+      background-color: #ffbf45;
+    }
 </style>
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
 
-    <div class="app-alert app-alert--warning">
-      <p class="govuk-body govuk-!-margin-bottom-4">
-        On Thursday 15 April, between 20:00 and 23:59, there will be planned unavailability for the EHC Online service. This service downtime is to deliver essential system maintenance work and critical updates, which continue to improve the user experience of the EHC Online system. We expect this work to...<br> <a href="?show_warning=no" class="govuk-link">Dismiss notification</a>
-      </p>
+    <div class="govuk-notification-banner banner-alt-color" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header banner__header-alt-color">
+        <h2 class="govuk-notification-banner__title banner__header-alt-color" id="govuk-notification-banner-title">
+          Warning
+        </h2>
+      </div>
+
+      <div class="govuk-notification-banner__content govuk-!-padding-bottom-2 govuk-!-margin-bottom-2">
+        <p class="govuk-notification-banner__heading">
+          On Thursday 15 April, between 20:00 and 23:59, there will be planned unavailability for the EHC Online service. This service downtime is to deliver essential system maintenance work and critical updates, which continue to improve the user experience of the EHC Online system. We expect this work to...
+          <br/><a class="govuk-notification-banner__link" href="?show_notification_one=no">Dismiss this message</a>
+        </p>
+      </div>
+
+    </div>
+    <div class="govuk-notification-banner " role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header ">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+
+      <div class="govuk-notification-banner__content govuk-!-padding-bottom-2 govuk-!-margin-bottom-2">
+        <p class="govuk-notification-banner__heading">
+          On Thursday 15 April, between 20:00 and 23:59, there will be planned unavailability for the EHC Online service. This service downtime is to deliver essential system maintenance work and critical updates, which continue to improve the user experience of the EHC Online system. We expect this work to...
+          <br/><a class="govuk-notification-banner__link" href="?show_notification_one=no">Dismiss this message</a>
+        </p>  <p class="govuk-notification-banner__heading">
+          On Thursday 15 April, between 20:00 and 23:59, there will be planned unavailability for the EHC Online service. This service downtime is to deliver essential system maintenance work and critical updates, which continue to improve the user experience of the EHC Online system. We expect this work to...
+          <br/><a class="govuk-notification-banner__link" href="?show_notification_one=no">Dismiss this message</a>
+        </p>
+      </div>
+
     </div>
 
-    <div class="app-alert-blue app-alert--warning">
-      <p class="govuk-body govuk-!-margin-bottom-4">
-        On Thursday 15 April, between 20:00 and 23:59, there will be planned unavailability for the EHC Online service. This service downtime is to deliver essential system maintenance work and critical updates, which continue to improve the user experience of the EHC Online system. We expect this work to...<br> <a href="?show_information=no" class="govuk-link">Dismiss notification</a>
-      </p>
+    
     </div>
-<!--     
-    <div class="app-alert-blue app-alert--warning">
-      <p class="govuk-body govuk-!-margin-bottom-4">
-        On Thursday 15 April, between 20:00 and 23:59, there will be planned unavailability for the EHC Online service. This service downtime is to deliver essential system maintenance work and critical updates, which continue to improve the user experience of the EHC Online system. We expect this work to...<br> <a href="?show_information=no" class="govuk-link">Dismiss notification</a>
-      </p>
     </div>
- -->
 
 
 
-
-
-
-
-
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+ 
 
       <h1 class="govuk-heading-xl">Your applications</h1>
       <a class="govuk-button" href="choose-certificate" style="display: inline-block;">Start a new application</a>
@@ -491,7 +584,7 @@ GOV.UK Prototype Kit
             <tr class="govuk-table__row result">
               <th id="1721147986456-appRef" class="govuk-table__cell applicationRef-column table-header" scope="row">
                 <a href="application?id={{app.index}}" class="govuk-link govuk-link--no-visited-state"> <span class="table-heading table-heading-full" aria-hidden="true">Case ID </span> {% if app.reference %}{{app.reference}}{%else%}{{app.applicationID}}{%endif%}</a>
-                {% if app.is_block =="yes" %}<br><div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Block of {{data.certificate_request_amount or "50"}} certificataes</div>{% endif %}
+                {% if app.is_block =="yes" %}<br><div class=" govuk-!-margin-top-1 govuk-!-font-weight-regular">Block of {{data.certificate_request_amount or "50"}} certificates</div>{% endif %}
               </th>
               <td id="1721147986456-group-number" class="govuk-table__cell" scope="row">
                 <span class="table-heading" aria-hidden="true">EHC </span>
