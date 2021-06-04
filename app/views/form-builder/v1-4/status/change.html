@@ -18,7 +18,7 @@ GOV.UK Prototype Kit
         <h2 class="govuk-heading-l">EHC List</h2>
       </div>
       <h3 class="govuk-heading-m heading-with-help">Select new status</h3>
-      <form class="case-update" style="display: inline;" action="../index" method="POST">
+      <form class="case-update" style="display: inline;" action="../form/reason-for-change" method="GET">
         <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
         <input type="hidden" value="2849EHC" name="ehcNumber">
 
@@ -44,7 +44,7 @@ GOV.UK Prototype Kit
         <hr>
 
         <input class="govuk-button" type="submit" id="Button-Save" value="Change this certificate status" data-qa-id="Button-Save">
-        <a class="govuk-button cancel-button margin-left-30" href="../index" id="Button-Cancel" data-qa-id="Button-Cancel">Cancel</a>
+        <a class="govuk-button cancel-button margin-left-30" href="../form/reason-for-change" id="Button-Cancel" data-qa-id="Button-Cancel">Cancel</a>
       </form>
     </div>
     </div>
