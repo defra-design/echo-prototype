@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div id="infoMessage" class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span id="infoMessageText" class="govuk-warning-text__assistive">Information</span>
+                  EXA document "EXA169 Standard" updated. EXA document version 0.1 created successfully
+                </strong>
+              </div>
+            </div>
+          </div>
+          <h1 class="govuk-heading-xl heading">Pages for form EXA169-standard Version 0.1</h1>
+        </div>
+        <div>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Order</th>
+              <th class="govuk-table__header">Page Title</th>
+              <th class="govuk-table__header">Group or task title</th>
+              <th class="govuk-table__header">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+ 
+            </tbody>
+          </table>
+
+          <a id="link-createNewPage" href="create-page" class="govuk-button">Create new page</a>
+        </div>
+      </div>
+    </div>
+{% endblock %}
