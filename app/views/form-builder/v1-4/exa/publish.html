@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l" data-qa-id="publish-form-heading">EXA-et169-standard</span>
+    <h1 class="govuk-heading-xl">Publish form version {{query.form_version or '3.2'}}</h1>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          EXA version
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{query.form_version or '3.2'}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          PDF
+        </dt>
+        <dd class="govuk-summary-list__value">
+          exa-et169-standard-{{query.form_version or '3.2'}}.pdf
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if query.status == "restricted"%}
+          <span class="govuk-tag">PRIVATE</span>
+          {% elseif query.status == "inactive" %}
+          <span class="phase-tag red-tag">INACTIVE</span>
+          {% else %}
+          <span class="phase-tag orange-tag">DRAFT</span>
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+    <form class="case-update" style="display: inline;" action="versions" method="GET">
+
+      <input class="govuk-button" type="submit" value="Submit" data-qa-id="Button-Save">
+      <a class="link-button--inline" href="versions" data-qa-id="Button-Cancel">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
