@@ -2,6 +2,10 @@
 {% block pageTitle %}
 GOV.UK Prototype Kit
 {% endblock %}
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
@@ -155,7 +159,7 @@ GOV.UK Prototype Kit
             </tbody>
           </table>
 
-          <a id="link-createNewPage" href="page-new" class="govuk-button">Create new page</a>
+          <a id="link-createNewPage" href="create-page" class="govuk-button">Create new page</a>
         </div>
       </div>
     </div>
