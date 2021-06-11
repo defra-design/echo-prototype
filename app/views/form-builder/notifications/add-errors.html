@@ -42,6 +42,9 @@ GOV.UK Prototype Kit
             <a href="#message">You must enter the message to be displayed</a>
           </li>
           <li>
+            <a href="#message">You must select the message type to be displayed</a>
+          </li>
+          <li>
             <a href="#target-audience">You must select the audience who will see the message</a>
           </li>
         </ul>
@@ -71,13 +74,16 @@ GOV.UK Prototype Kit
       </div>
 
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h2 class="govuk-fieldset__heading">
               What is the message type?
             </h2>
           </legend>
+          <span id="where-do-you-live-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select the message type to be displayed
+          </span>
 
           <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-radios__item">
