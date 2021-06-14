@@ -4,6 +4,16 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+<style>
+      .banner-alt-color{
+      border: 5px solid #ffbf45;
+    }
+    .banner__header-alt-color{
+      color: #000;
+      background-color: #ffbf45;
+    }
+</style>
+
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -20,149 +30,160 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Amend existing in-service message</h1>
-<form method="post" action="/form-builder/notifications/add">
+    <h1 class="govuk-heading-xl">Add an in-service message</h1>
+    <form method="post" action="/form-builder/notifications/add">
 
-    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
-      <div class="govuk-form-group">
-        <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="with-hint">
-            Message
-          </label>
-        </h2>
-        <textarea class="govuk-textarea govuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-info more-detail-hint">The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.
-
-        </textarea>
-      </div>
-
-      <div id="more-detail-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
-        You can enter up to 500 characters
-      </div>
-
-    </div>
-
-
-    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-        What is the message type?
-      </h2>
-    </legend>
-
-    <div class="govuk-radios govuk-radios--inline">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="notification-type-information" name="notification-type" type="radio" value="information" checked>
-        <label class="govuk-label govuk-radios__label" for="notification-type-information">
-          Information
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="notification-type-warning" name="notification-type" type="radio" value="warning">
-        <label class="govuk-label govuk-radios__label" for="notification-type-warning">
-          Warning
-        </label>
-      </div>
-    </div>
-    </div>
-
-    <div class="govuk-body">
-      <h2>Preview</h2>
-      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-        data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Important
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="message">
+              Message
+            </label>
           </h2>
+          <textarea style="resize:none" class="govuk-textarea govuk-js-character-count" id="message" name="message" rows="5"
+            aria-describedby="message-info message-hint">The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.</textarea>
         </div>
-        <div class="govuk-notification-banner__content ">
-          <p id="echo-preview" class="govuk-notification-banner__heading">
-            The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.
-            <br /><a class="govuk-notification-banner__link" href="javascript:alert('Not in prototype!');">Dismiss
-              this message</a>
-          </p>
+
+        <div id="message-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+          You can enter up to 500 characters
+        </div>
+
+      </div>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What is the message type?
+            </h2>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="notification-type-information" name="notification-type"
+                type="radio" value="information" >
+              <label class="govuk-label govuk-radios__label" for="notification-type-information">
+                Information
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="notification-type-warning" name="notification-type" type="radio"
+                value="alert">
+              <label class="govuk-label govuk-radios__label" for="notification-type-warning">
+                Alert
+              </label>
+            </div>
+          </div>
+      </div>
+
+      <div class="govuk-body">
+        <h2>Preview</h2>
+        <div class="govuk-notification-banner" role="region" 
+        id="preview-display" aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header" id="govuk-notification-banner">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Information
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content ">
+            <p id="echo-preview" class="govuk-notification-banner__heading">
+              The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.<br /><a class="govuk-notification-banner__link" href="javascript:alert('Not in prototype!');">Dismiss this message</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-        Who will see the message?
-      </h2>
-    </legend>
-    <div id="waste-hint" class="govuk-hint">
-      Select all that apply
-    </div>
-    <div class="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="notification-visibility-exporters" name="notification-visibility" type="checkbox" value="exporters" checked>
-        <label class="govuk-label govuk-checkboxes__label" for="notification-visibility-exporters">
-          Exporters
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="notification-visibility-certifiers" name="notification-visibility" type="checkbox" value="certifiers">
-        <label class="govuk-label govuk-checkboxes__label" for="notification-visibility-certifiers">
-          Certifiers
-        </label>
-      </div>
-    </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="target-audience">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Who will see the message?
+            </h2>
+          </legend>
+          <div id="target-audience" class="govuk-hint">
+            Select all that apply
+          </div>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="notification-visibility-exporters"
+                name="notification-visibility" type="checkbox" value="exporters">
+              <label class="govuk-label govuk-checkboxes__label" for="notification-visibility-exporters">
+                Exporters
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="notification-visibility-certifiers"
+                name="notification-visibility" type="checkbox" value="certifiers">
+              <label class="govuk-label govuk-checkboxes__label" for="notification-visibility-certifiers">
+                Certifiers
+              </label>
+            </div>
+          </div>
 
-  </fieldset>
-</div>
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        What date will the message start?
-      </h1>
-    </legend>
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-        The message will only be displayed if a start date is set
-      </strong>
-    </div>
-    <div id="notification-start-hint" class="govuk-hint">
-      For example, 12 11 2020
-    </div>
-    <div class="govuk-date-input" id="notification-start">
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="notification-start-day">
-            Day
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-start-day" name="notification-start-day" type="text" pattern="[0-9]*" inputmode="numeric" value="01"></div>
+        </fieldset>
       </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="notification-start-month">
-            Month
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-start-month" name="notification-start-month" type="text" pattern="[0-9]*" inputmode="numeric" value="07"></div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="notification-start-year">
-            Year
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="notification-start-year" name="notification-start-year" type="text" pattern="[0-9]*" inputmode="numeric" value="2021"></div>
-      </div>
-    </div>
 
-  </fieldset>
-</div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              What date will the message start?
+            </h1>
+          </legend>          
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              The message will only be displayed if a start date is set
+            </strong>
+          </div>
+          
+          <div id="notification-start-hint" class="govuk-hint">
+            For example, 12 11 2020
+          </div>
+          <div class="govuk-date-input" id="notification-start">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="notification-start-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-start-day"
+                  name="notification-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="notification-start-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-start-month"
+                  name="notification-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="notification-start-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="notification-start-year"
+                  name="notification-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
 
-<div class="govuk-form-group">
-<fieldset class="govuk-fieldset" aria-describedby="applicant-conditional-hint">
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="applicant-conditional-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
               What time will the message start?
             </h1>
           </legend>
+
+
           <span id="submit-date-hint" class="govuk-hint">
             For example, 9:30am or 2:50pm
           </span>
@@ -172,7 +193,8 @@ GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="notification-start-hour">
                   Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-hour" name="notification-start-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="12">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-hour"
+                  name="notification-start-hour" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -180,7 +202,8 @@ GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="notification-start-minute">
                   Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-start-minute" name="notification-start-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="01">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-start-minute"
+                  name="notification-start-minute" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -190,53 +213,59 @@ GOV.UK Prototype Kit
                 </label>
                 <select class="govuk-select govuk-input--width-" id="sort" name="notification-start-period">
                   <option value="empty"></option>
-                  <option value="am" selected>am</option>
+                  <option value="am">am</option>
                   <option value="pm">pm</option>
                 </select>
               </div>
             </div>
           </div>
         </fieldset>
-</div>
+      </div>
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        What date will the message end?
-      </h1>
-    </legend>
-    <div id="notification-end-hint" class="govuk-hint">
-      For example, 12 11 2020
-    </div>
-    <div class="govuk-date-input" id="notification-end">
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="notification-end-day">
-            Day
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-day" name="notification-end-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="notification-end-month">
-            Month
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-month" name="notification-end-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-      </div>
-      <div class="govuk-date-input__item">
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="notification-end-year">
-            Year
-          </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="notification-end-year" name="notification-end-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-      </div>
-    </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              What date will the message end?
+            </h1>
+          </legend>
+          <div id="notification-end-hint" class="govuk-hint">
+            For example, 12 11 2020
+          </div>
+          <div class="govuk-date-input" id="notification-end">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="notification-end-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-day"
+                  name="notification-end-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="notification-end-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-month"
+                  name="notification-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="notification-end-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="notification-end-year"
+                  name="notification-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
 
-  </fieldset>
-</div>
-<div class="govuk-form-group">
-<fieldset class="govuk-fieldset" aria-describedby="applicant-conditional-hint">
+        </fieldset>
+      </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="applicant-conditional-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
               What time will the message end?
@@ -251,7 +280,8 @@ GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="notification-end-hour">
                   Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-hour" name="notification-end-hour" type="text" pattern="[0-9]*" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-hour"
+                  name="notification-end-hour" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -259,7 +289,8 @@ GOV.UK Prototype Kit
                 <label class="govuk-label govuk-date-input__label" for="notification-end-minute">
                   Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-minute" name="notification-end-minute" type="text" pattern="[0-9]*" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="notification-end-minute"
+                  name="notification-end-minute" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -276,15 +307,15 @@ GOV.UK Prototype Kit
             </div>
           </div>
         </fieldset>
-</div>
+      </div>
 
 
-      <input type="hidden" name="name" value=""/>
+      <input type="hidden" name="name" value="" />
 
-                <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
-                  Submit
-                </button>
-      </form>
+      <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        Submit
+      </button>
+    </form>
   </div>
 </div>
 <script type="text/javascript">
@@ -292,26 +323,30 @@ GOV.UK Prototype Kit
 
     console.log('init');
 
-    $( "#more-detail" ).keyup(function(event) {
+    $("#message").keyup(function (event) {
       //console.log( event.which );
-      let str = $( "#more-detail" ).val() ;
+      let str = $("#message").val();
       console.log(str);
       $('#echo-preview').text(str);
       $('#echo-preview').append('<br/><a class="govuk-notification-banner__link" href="?show_feature_notification_one=no">Dismiss notification</a>')
     });
 
-    $('input[type="radio"][name="notification-type"]').click(function(){
-    	var demovalue = $(this).val();
-      console.log("Your result is "+ demovalue);
-      if(demovalue=="warning"){
-        
-        $('#preview-display').removeClass( "app-alert-green" ).addClass( "app-alert" );
-      }else{
-        $('#preview-display').removeClass( "app-alert" ).addClass( "app-alert-green" );
+    $('input[type="radio"][name="notification-type"]').click(function () {
+      var demovalue = $(this).val();
+      if (demovalue == "alert") {
+        $('#preview-display').addClass("banner-alt-color");
+        $('#govuk-notification-banner').addClass("banner__header-alt-color");
+        $('#govuk-notification-banner-title').addClass("banner__header-alt-color");
+        $('#govuk-notification-banner-title').text("Alert");
+      } else {
+        $('#preview-display').removeClass("banner-alt-color");
+        $('#govuk-notification-banner').removeClass("banner__header-alt-color");
+        $('#govuk-notification-banner-title').removeClass("banner__header-alt-color");
+        $('#govuk-notification-banner-title').text('Information');
       }
     });
 
 
   })
 </script>
-  {% endblock %}
+{% endblock %}
