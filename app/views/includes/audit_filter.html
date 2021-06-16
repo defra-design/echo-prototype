@@ -1,0 +1,199 @@
+
+<div class="govuk-grid-column-full">
+
+  <div class="derfa-filter--content">
+    <form method="get">
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h3 class="govuk-fieldset__heading">
+                  Filter by status
+                </h3>
+              </legend>
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                    Live
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                    Pending
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                    Draft
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                    Expired
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
+
+
+        <div class="govuk-grid-column-one-third ">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h3 class="govuk-fieldset__heading">
+                  Filter by date
+                </h3>
+              </legend>
+
+              <div class="" id="conditional-how-contacted-conditional-2">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                        From
+                      </h1>
+                    </legend>
+                    <span id="passport-issued-hint" class="govuk-hint">
+                    </span>
+                    <div class="govuk-date-input" id="passport-issued">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="export_form_day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="export_form_day"
+                            name="export_form_day" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="export_form_month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="export_form_month"
+                            name="export_form_month" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="export_form_year"
+                            name="export_form_year" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                        to
+                      </h1>
+                    </legend>
+                    <span id="passport-issued-hint" class="govuk-hint">
+                    </span>
+                    <div class="govuk-date-input" id="passport-issued">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="export_to_day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="export_to_day"
+                            name="export_to_day" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="export_to_month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="export_to_month"
+                            name="export_to_month" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="export_to_year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="export_to_year"
+                            name="export_to_year" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+
+
+              </div>
+
+
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Filter by user
+              </legend>
+              <p class="govuk-body">Show applications created by:</p>
+
+              <select class="govuk-select govuk-!-width-full" id="filter_name" name="filter_name">
+                <option value="All users">All users</option>
+                {% set list = []%}
+                {% for cert in data.applications %}
+                {% if not cert.name in list %}
+                <option value="{{cert.name}}" {% if cert.name==data.filter_name %}selected{%endif%}>{{cert.name}}{% if
+                  logged_in_as == cert.name %} <strong>(you)</strong>{%endif%}</option>
+                {{list.push(cert.name)}}
+                {% endif %}
+
+                {% endfor %}
+              </select>
+
+
+
+          </div>
+        </div>
+
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button"
+            name="has_filter" value="yes">
+            Apply filter
+          </button>
+          <a href="?filter_status=&has_filter=&date_range=&filter_name=&show_applications_by=me"
+            class="defra-link-button defra-link-button--inline" data-module="govuk-button">
+            Clear filters
+          </a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+</div>
