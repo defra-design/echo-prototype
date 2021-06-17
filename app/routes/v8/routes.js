@@ -209,7 +209,7 @@ router.get('/index-with-notifications', function (req, res) {
   })
 });
 
-// In-system messages
+// In-system messages dashboard
 let messagesAudit = [
   { user: "Douglas Labella", message: "Warning. The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Alert", audience: "Exporters", dateCreated: "11 Dec 2019", dateAmended: "17 Dec 2019", dateRemoved:"-", dateStart: "20 May 2021 at 8:00pm ", dateEnd: "27 May 2021 at 12:01am ", status:"Live", tag:"govuk-tag govuk-tag--red " },
   { user: "Teresa Randell", message: "The service will be unavailable from 01 August 2021 until 04 August 2021 due to maintenance.", alert: "Information", audience: "Certifiers", dateCreated: "11 Dec 2019", dateAmended: "15 Dec 2019", dateRemoved:"-", dateStart: "20 May 2021 at 8:00pm ", dateEnd: "27 May 2021 at 12:01am ", status:"Live", tag:"govuk-tag"  },

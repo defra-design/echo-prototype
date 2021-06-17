@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">In-service message history</h1>
+
+{% include "includes/audit_filter.html" %}
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">User</th>
+          <th scope="col" class="govuk-table__header">Message</th>
+          <th scope="col" class="govuk-table__header">Type</th>
+          <th scope="col" class="govuk-table__header">Audience</th>
+          <th scope="col" class="govuk-table__header">Created</th>
+          <th scope="col" class="govuk-table__header">Amended</th>
+          <th scope="col" class="govuk-table__header">Deleted</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% for item in results %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong class="{{item.tag}}">
+            {{item.status}}
+          </strong></td>
+          <td class="govuk-table__cell govuk-body-s">{{item.user}}</td>
+          <td class="govuk-table__cell govuk-body-s">{{item.message}}</td>
+          <td class="govuk-table__cell govuk-body-s">{{item.alert}}</td>
+          <td class="govuk-table__cell govuk-body-s">{{item.audience}}</td>
+          <td class="govuk-table__cell govuk-body-s">{{item.dateCreated}}</td>
+          <td class="govuk-table__cell govuk-body-s">{{item.dateAmended}}</td>
+          <td class="govuk-table__cell govuk-body-s">{{item.dateRemoved}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</div>
+{% endblock %}
