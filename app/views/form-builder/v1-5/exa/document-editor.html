@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+{% include "includes/beta-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div>
+      <h2 class="govuk-heading-l heading-with-help">EXA Document Editor</h2>
+    </div>
+
+    <form class="case-update" style="display: inline;" action="create-new"
+      method="POST">
+      <input type="hidden" name="crumb_csrf_token" value="RSJDjIXkglR1gv8Ezomu9xpEfh_-CWeabgVy9iv1bud" />
+      <input type="hidden" value="UNRESTRICTED" name="availabilityStatus" />
+
+      <div class="govuk-form-group margin-top-30">
+        <label class="govuk-label" for="title">What is the EXA title?</label>
+        <input class="govuk-input" id="title" name="title" data-qa-id="Input-title" value="AutoEHC-2021-03-11-116" />
+      </div>
+
+      <input class="govuk-button" type="submit" id="Button-Save-Create-New-Version"
+        value="Save and create a new version" data-qa-id="Button-Save-Create-New-Version"
+        name="save_create_new_version">
+      <input class="margin-left-30 govuk-button grey-button" type="submit" id="Button-Save" value="Save"
+        data-qa-id="Button-Save">
+    </form>
+  </div>
+</div>
+
+{% endblock %}

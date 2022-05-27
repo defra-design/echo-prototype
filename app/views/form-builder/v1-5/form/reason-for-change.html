@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{super()}}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">AutoEHC-2021-03-11-446</span>
+    <h1 class="govuk-heading-xl">
+      Why did you make this status change?
+    </h1>
+    <p class="govuk-body"></p>
+
+    <form action="./publish-confirm" method="POST">
+
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="change-reason">
+              Explain why you made this change
+              </label>
+            </h1>
+            <textarea class="govuk-textarea govuk-js-character-count" id="change-reason" name="change-reason" rows="5" aria-describedby="change-reason-info change-reason-hint"></textarea>
+          </div>
+        
+          <div id="change-reason-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 150 characters
+          </div>
+        
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+
+
+        </div>
+      </fieldset>
+      <button class="govuk-button" type="submit">Save</button>
+    </form>
+
+  </div>
+  </div>
+  {% endblock %}

@@ -1,0 +1,308 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div>
+      <div>
+        <span class="govuk-caption-l">2849EHC v3.2</span>
+        <h2 class="govuk-heading-l">Choose a question</h2>
+      </div>
+      <div>
+        <form action="set-question-behaviour" method="GET">
+          <div>
+            <input type="hidden" name="formName" value="2849EHC">
+            <input type="hidden" name="formVersion" value="3.2">
+            <input class="govuk-button" type="submit" value="Create a new question" id="Button-CreateNewQuestion"
+              data-qa-id="Button-CreateNewQuestion">
+          </div>
+        </form>
+      </div>
+
+      <form name="search-form" action="" method="GET">
+        <div class="border-box govuk-grid-column-full">
+
+
+          <div class="govuk-grid-column-one-half govuk-form-group">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="filter">Filter</label>
+              <input class="govuk-input" id="filter" type="text" name="filter" data-qa-id="TextField-filter" value=""
+                placeholder="ID, Type, Text">
+            </div>
+          </div>
+
+          <div class="govuk-form-group govuk-grid-column-one-quarter">
+            <div class="govuk-label margin-top-45">
+              <button type="submit" name="name" value="" class="link-button" id="Button-Search"
+                data-qa-id="Button-Search">
+                Search
+              </button>
+            </div>
+          </div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <label class="govuk-label govuk-!-font-weight-bold" for="sort">Sort By</label>
+            <select class="govuk-select" id="sort" name="sort" data-qa-id="Select-">
+              <option value="">Please Select</option>
+              <option value="ID:DESC">ID descending</option>
+              <option value="ID:ASC">ID ascending</option>
+              <option value="QUESTION_TYPE:DESC">Type descending</option>
+              <option value="QUESTION_TYPE:ASC">Type ascending</option>
+              <option value="TEXT:DESC">Text descending</option>
+              <option value="TEXT:ASC">Text ascending</option>
+            </select>
+          </div>
+
+        </div>
+      </form>
+
+      <table class="govuk-table" data-qa-id="TABLE_CHOOSE_QUESTION">
+        <thead class="govuk-table__head margin-top-30">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">ID</th>
+            <th class="govuk-table__header govuk-!-width-one-quarter">Type</th>
+            <th class="govuk-table__header govuk-!-width-one-half">Text</th>
+            <th class="govuk-table__header">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXTAREA">
+            <td class="govuk-table__cell"><strong id="QuestionID-23" class="bold questionIdHolder">23</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Multi line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-0">What are the batch numbers?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-23" data-qa-id="Link-Choose-0">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-6" class="bold questionIdHolder">6</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-1">What is the name of the exporter?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-6" data-qa-id="Link-Choose-1">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-14" class="bold questionIdHolder">14</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-2">What is the name of the premises from which the consignment will
+              be loaded?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-14" data-qa-id="Link-Choose-2">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-81" class="bold questionIdHolder">81</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-3">What is the passport number?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-81" data-qa-id="Link-Choose-3">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXTAREA">
+            <td class="govuk-table__cell"><strong id="QuestionID-95" class="bold questionIdHolder">95</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Multi line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-4">What is the address of the Collection / Storage centre?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-95" data-qa-id="Link-Choose-4">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-96" class="bold questionIdHolder">96</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-5">What are the dates of collection?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-96" data-qa-id="Link-Choose-5">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-97" class="bold questionIdHolder">97</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-6">What is the approval number of the collection/storage centre?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-97" data-qa-id="Link-Choose-6">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_MULTI_SELECT">
+            <td class="govuk-table__cell"><strong id="QuestionID-139" class="bold questionIdHolder">139</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Multi select</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-7">What is the sex of the animal?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-139" data-qa-id="Link-Choose-7">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-121" class="bold questionIdHolder">121</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-8">If required, what is the Import Permit number?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-121" data-qa-id="Link-Choose-8">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-158" class="bold questionIdHolder">158</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-9">What are the dates of production of the product?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-158" data-qa-id="Link-Choose-9">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-168" class="bold questionIdHolder">168</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-10">What are the countries the consignment will transit?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-168"
+                  data-qa-id="Link-Choose-10">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-204" class="bold questionIdHolder">204</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-11">Name of the Border Inspection Post (BIP) in the EU</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-204"
+                  data-qa-id="Link-Choose-11">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXTAREA">
+            <td class="govuk-table__cell"><strong id="QuestionID-395" class="bold questionIdHolder">395</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Multi line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-12">Farm of origin</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-395"
+                  data-qa-id="Link-Choose-12">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-396" class="bold questionIdHolder">396</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-13">County Parish Holding number</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-396"
+                  data-qa-id="Link-Choose-13">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-631" class="bold questionIdHolder">631</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-14">What is the method of delivery</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-631"
+                  data-qa-id="Link-Choose-14">
+              </form>
+            </td>
+          </tr>
+          <tr class="govuk-table__row" data-qa-id="CHOOSE_TEXT">
+            <td class="govuk-table__cell"><strong id="QuestionID-69" class="bold questionIdHolder">69</strong>
+            </td>
+            <td class="govuk-table__cell">
+              <span class="govuk-body">Single line text</span>
+            </td>
+            <td class="govuk-table__cell" id="Text-791">What is the place and country of destination?</td>
+            <td class="govuk-table__cell">
+              <form action="select-certificate-fields" method="GET">
+                <input type="hidden" name="name" value="">
+                <input type="submit" value="Choose" class="link-button" id="Link-Choose-69"
+                  data-qa-id="Link-Choose-791">
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

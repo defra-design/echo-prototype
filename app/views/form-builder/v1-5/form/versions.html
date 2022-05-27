@@ -1,0 +1,374 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Manage EHC versions
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <span class="govuk-caption-l" >2849EHC</span>
+                <h2 id="versionsHeading" class="govuk-heading-l disabled">Manage EHC versions</h2>
+
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header">EHC version</th>
+                        <th class="govuk-table__header">PDF</th>
+                        <th class="govuk-table__header">Status</th>
+                        <th class="govuk-table__header" id="EHC-document-cws">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell" id="EHC-document-version-0">1.0
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-0">
+                            ehc-2849ehc-1.0.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-0">
+                            <strong class="red-tag">INACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-inactive-view-1.0" class="action-link" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-inactive-publish-1.0" class="action-link" target="_self">Publish form</a>
+                            </div>
+                        </td>
+                    </tr><tr class="govuk-table__row">
+                        <td class="govuk-table__cell" id="EHC-document-version-1">1.1 (v1.0 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-1">
+                            ehc-2849ehc-1.1.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-1">
+                            <strong class="red-tag">INACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-inactive-view-1.1" class="action-link" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-inactive-publish-1.1" class="action-link" target="_self">Publish form</a>
+                            </div>
+                        </td>
+                    </tr><tr class="govuk-table__row">
+                        <td class="govuk-table__cell" id="EHC-document-version-2">1.2 (v1.1 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-2">
+                            ehc-2849ehc-1.2.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-2">
+                            <strong class="red-tag">INACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-inactive-view-1.2" class="action-link" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-inactive-publish-1.2" class="action-link" target="_self">Publish form</a>
+                            </div>
+                        </td>
+                    </tr><tr class="govuk-table__row" >
+                        <td class="govuk-table__cell" id="EHC-document-version-3" >11.1 (v1.2 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-3">
+                            ehc-2849ehc-11.1.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-3" >
+                            <strong class="orange-tag">DRAFT</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a  href="pages" id="document-action-draft-manage-pages-11.1" class="action-link" target="_self">Manage pages</a>
+                            </div>
+                            <div>
+                                <a href="questions" id="document-action-draft-manage-11.1" class="action-link" target="_self">Manage questions</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-draft-publish-11.1" class="action-link" target="_self">Publish form</a>
+                            </div>
+                            <div>
+                                <a href="delete" id="document-action-draft-delete-11.1" class="action-link" target="_self">Delete form</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-draft-preview-11.1" class="action-link">Preview form</a>
+                            </div>
+                            <div>
+                                <a href="manage-country" id="" class="action-link" >Manage country templates</a>
+                            </div>
+                            <div>
+                                <a href="clone" id="" class="action-link" >Clone form</a>
+                            </div>
+                        </td>
+                    </tr><tr class="govuk-table__row" >
+                        <td class="govuk-table__cell" id="EHC-document-version-4">2.7 (v1.2 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-4">
+                            ehc-2849ehc-2.7.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-4">
+                            <strong class="orange-tag">DRAFT</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="pages" id="document-action-draft-manage-pages-2.7" class="action-link" target="_self">Manage pages</a>
+                            </div>
+                            <div>
+                                <a href="questions" id="document-action-draft-manage-2.7" class="action-link" target="_self">Manage questions</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-draft-publish-2.7" class="action-link" target="_self">Publish form</a>
+                            </div>
+                            <div>
+                                <a href="delete" id="document-action-draft-delete-2.7" class="action-link" target="_self">Delete form</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-draft-preview-2.7" class="action-link">Preview form</a>
+                            </div>
+                            <div>
+                                <a href="manage-country" id="" class="action-link" >Manage country templates</a>
+                            </div>
+                            <div>
+                                <a href="clone" id="" class="action-link" >Clone form</a>
+                            </div>
+                        </td>
+                    </tr><tr class="govuk-table__row">
+                        <td class="govuk-table__cell" id="EHC-document-version-5">2.8
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-5">
+                            ehc-2849ehc-2.8.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-5">
+                            <strong class="red-tag">INACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-inactive-view-2.8" class="action-link" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="/protected/health-certificates/2849EHC/versions/2.8/publish" id="document-action-inactive-publish-2.8" class="action-link" target="_self">Publish form</a>
+                            </div>
+                        </td>
+                    </tr><tr class="govuk-table__row">
+                        <td class="govuk-table__cell" id="EHC-document-version-6">2.9 (v2.8 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-6">
+                            ehc-2849ehc-2.9.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-6">
+                            <strong class="red-tag">INACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-inactive-view-2.9" class="action-link" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-inactive-publish-2.9" class="action-link" target="_self">Publish form</a>
+                            </div>
+                        </td>
+                    </tr><tr class="govuk-table__row">
+                        <td class="govuk-table__cell" id="EHC-document-version-7">3.0 (v2.9 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-7">
+                            ehc-2849ehc-3.0.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-7" >
+                            <strong class="red-tag">INACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-inactive-view-3.0" class="action-link" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="publish?status=inactive" id="document-action-inactive-publish-3.0" class="action-link" target="_self">Publish form</a>
+                            </div>
+                        </td>
+                    </tr><tr class="govuk-table__row">
+                        <td class="govuk-table__cell" id="EHC-document-version-8">3.1 (v3.0 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-8">
+                            ehc-2849ehc-3.1.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-8">
+                            {% if query.updated=="yes" and query.updated_status != query.old_status%}<strong class="red-tag">INACTIVE</strong>{%else%}<strong class="green-tag">ACTIVE</strong>{%endif%}
+                        </td>
+
+                        <td class="govuk-table__cell">
+
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-active-view-3.1" class="action-link" target="_self">View form</a>
+                            </div>
+                            {% if query.updated=="yes" and query.updated_status != query.old_status%}
+                            <div>
+                                <a href="publish?status=inactive&version=3-1" id="" class="action-link" target="_self">Publish form</a>
+                            </div>
+                            {% else%}
+                            <div>
+                                <a href="clone" id="" class="action-link" target="_self">Clone form</a>
+                            </div>
+                            <div>
+                                <a href="pages" id="" class="action-link">View pages</a>
+                            </div>
+                            {% endif %}
+                        </td>
+                    </tr>
+
+                    <!-- #restricted -->
+                    {% if query.unpublished !="yes" %}
+                    <tr class="govuk-table__row">
+                          <td class="govuk-table__cell" id="EHC-document-version-8" >3.2 (v3.1 cloned)
+                          </td>
+
+                          <td class="govuk-table__cell " id="EHC-document-pdf-8">
+                              ehc-2849ehc-3.2.pdf
+                          </td>
+
+                          <td class="govuk-table__cell " id="EHC-document-status-8">
+                              {% if query.updated=="yes" and query.old_status=="restricted" and query.updated_status != query.old_status%}
+                              <strong class="green-tag">ACTIVE</strong>
+                              {%else%}
+                              <strong class="govuk-tag light-green-tag">PRIVATE</strong>
+                              {%endif%}
+                          </td>
+
+
+                        <td class="govuk-table__cell ">
+
+                          {% if query.old_status!="restricted" or query.updated_status == query.old_status%}
+                          <div class="">
+                            <a href="get-url"id="document-action-active-view-3.1" class="action-link" target="_self">Copy private link</a>
+                          </div>
+                          <div>
+                              <a href="publish?status=restricted&version=3.2" id="document-action-active-view-3.1" class="action-link" target="_self">Publish to everyone</a>
+                          </div>
+                          <div>
+                              <a href="unpublish" id="document-action-active-view-3.1" class="action-link" target="_self">Unpublish form</a>
+                          </div>
+                          {%endif%}
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="" class="action-link" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="clone" id="" class="action-link"  target="_self">Clone form</a>
+                            </div>
+                            <div>
+                                <a href="pages" id="" class="action-link">View pages</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell" id="EHC-document-version-6" >3.2 (v2.8 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-6">
+                            ehc-2849ehc-3.2.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-6" >
+                            <strong class="red-tag">INACTIVE</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="document-action-inactive-view-2.9" class="action-link" target="_self">View form</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-inactive-publish-2.9" class="action-link" target="_self">Publish form</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+
+                    <tr class="govuk-table__row" >
+                        <td class="govuk-table__cell" id="EHC-document-version-9" >3.3 (v3.2 cloned)
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-pdf-9">
+                            ehc-2849ehc-3.3.pdf
+                        </td>
+
+                        <td class="govuk-table__cell" id="EHC-document-status-9">
+                            {% if query.updated=="yes" and query.old_status=="draft"%}
+                            <strong class="green-tag">ACTIVE</strong>
+                            {%else%}
+                            <strong class="orange-tag">DRAFT</strong>
+                            {%endif%}
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <div>
+                                <a href="pages" id="document-action-draft-manage-pages-3.2" class="action-link" target="_self">Manage pages</a>
+                            </div>
+                            <div>
+                                <a href="questions" id="document-action-draft-manage-3.2" class="action-link" target="_self">Manage questions</a>
+                            </div>
+                            <div>
+                                <a href="publish" id="document-action-draft-publish-3.2" class="action-link" target="_self">Publish form</a>
+                            </div>
+                            <div>
+                                <a href="delete" id="delete" class="action-link" target="_self">Delete form</a>
+                            </div>
+                            <div>
+                                <a href="javascript:alert('Not in prototype!');" id="" class="action-link">Preview form</a>
+                            </div>
+                            <div>
+                                <a href="manage-country" id="" class="action-link" >Manage country templates</a>
+                            </div>
+                            <div>
+                                <a href="clone" id="" class="action-link" >Clone form</a>
+                            </div>
+                        </td>
+                    </tr></tbody>
+                </table>
+                <form action="/protected/health-certificates/2849EHC/versions/0" method="GET">
+                    <div>
+                        <input class="govuk-button margin-top-30" type="submit" value="Create new EHC version" id="Button-CreateNewDocumentVersion">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <script type="text/javascript">
+              function myFunction() {
+                var copyText = "https://apply-export-health-certificate-exporter-int-snd.azure.defra.cloud:443/forms/X005-2849EHC"
+                document.execCommand("copy");
+                alert("Copied the text: " + copyText);
+                // window.location.href = 'versions?copied_link=yes&copy_text='+copyText;
+              }
+              </script>
+{% endblock %}

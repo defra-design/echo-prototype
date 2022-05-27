@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Exports application administration
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+    <span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <div class="govuk-grid-row">
+    
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l" data-qa-id="Heading-Applications">Exports application administration</h1>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="certificates?filter=6969">Health certificates</a></li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="#">Migrate certificates to new certifier organisation</a></li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="#">Certificate movement history</a></li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="exa/exa-documents">EXA documents</a></li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="javascript:alert('Not in prototype!');">Form questions</a></li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="/form-builder/notifications/index">In-service messaging</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

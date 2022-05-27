@@ -1,0 +1,432 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Form Builder Audit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl heading-with-help">EXA Documents</h1>
+
+    <form name="search-form" action="" method="GET">
+      <div class="border-box govuk-grid-column-full">
+
+
+        <div class="govuk-grid-column-one-half govuk-form-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="filter">Filter</label>
+            <input class="govuk-input" id="filter" type="text" name="filter" data-qa-id="TextField-filter" value=""
+              placeholder="Title, Status">
+          </div>
+        </div>
+
+        <div class="govuk-form-group govuk-grid-column-one-quarter">
+          <div class="govuk-label margin-top-45">
+            <button type="submit" name="name" value="" class="link-button" id="Button-Search"
+              data-qa-id="Button-Search">
+              Search
+            </button>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-label govuk-!-font-weight-bold" for="sort">Sort By</label>
+          <select class="govuk-select" id="sort" name="sort" data-qa-id="Select-">
+            <option value="">Please Select</option>
+            <option value="title:DESC">Title descending</option>
+            <option value="title:ASC">Title ascending</option>
+            <option value="availability_status:DESC">Status descending</option>
+            <option value="availability_status:ASC">Status ascending</option>
+          </select>
+        </div>
+
+      </div>
+    </form>
+
+    <table class="govuk-table" summary="EXA Documents">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" id="titleTh">Title</th>
+          <th class="govuk-table__header" id="statusTh">Status</th>
+          <th class="govuk-table__header" id="activeVersionTh">Active version</th>
+          <th class="govuk-table__header" id="actionsTh">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-11-116
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-11-116">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            1.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-11-116"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-11-116">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-11-116">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-11-180
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-11-180">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            1.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-11-180"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-11-180">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-11-180">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-11-446
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-11-446">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            2.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-11-446"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-11-446">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-11-446">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-11-705
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-11-705">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            2.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-11-705"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-11-705">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-11-705">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-12-40
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-12-40">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            2.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-12-40"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-12-40">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-12-40">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-12-456
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-12-456">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            1.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-12-456"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-12-456">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-12-456">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-12-691
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-12-691">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            2.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-12-691"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-12-691">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-12-691">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-12-761
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-12-761">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            1.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-12-761"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-12-761">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-12-761">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-14-253
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-14-253">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            1.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-14-253"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-14-253">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-14-253">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-14-561
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-14-561">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            1.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-14-561"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-14-561">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-14-561">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-14-812
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-14-812">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            2.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-14-812"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-14-812">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-14-812">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            AutoEHC-2021-03-14-934
+          </td>
+          <td class="govuk-table__cell">
+            <div>
+              <strong class="green-tag" data-qa-id="status-autoehc-2021-03-14-934">
+                Unrestricted
+              </strong>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            2.0
+          </td>
+          <td class="govuk-table__cell">
+            <a class="govuk-link" href="document-editor">
+              Manage EXA Document
+            </a><br />
+            <a class="govuk-link" id="autoehc-2021-03-14-934"
+              href="versions"
+              data-qa-id="manageVersionsLink-autoehc-2021-03-14-934">
+              Manage Versions
+            </a><br />
+            <a class="govuk-link" href="status"
+              data-qa-id="changeStatusLink-autoehc-2021-03-14-934">
+              Change Status
+            </a><br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form action="document-editor" method="GET">
+      <div>
+        <input class="govuk-button margin-top-30" type="submit" id="Button-CreateNewEXADocument"
+          value="Create new EXA document" data-qa-id="Button-CreateNewEXADocument">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

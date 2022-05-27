@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div>
+          <h2 class="govuk-heading-l heading-with-help">Edit Page</h2>
+        </div>
+
+        <form class="case-update" style="display: inline;" action="pages" method="POST">
+          <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+
+          <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="title">Page title</label>
+            <input class="govuk-input" id="title" name="title" data-qa-id="Input-title" value="How will the horse be identified?">
+          </div>
+
+          <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="subtitle">Task list title (optional)</label>
+            <div id="event-name-hint" class="govuk-hint">
+              For pages with very long titles, or to group pages into a sub-section, enter a short task title. Only shows on the task list. If empty the page title will show on the task list.
+            </div>
+            <input class="govuk-input" id="subtitle" name="subtitle" data-qa-id="Input-subtitle" value="">
+          </div>
+
+          <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="subtitle">Subtitle</label>
+            <input class="govuk-input" id="subtitle" name="subtitle" data-qa-id="Input-subtitle" value="">
+          </div>
+
+          <div class="govuk-form-group margin-top-30">
+            <label class="govuk-label govuk-!-font-weight-bold" for="hint">Hint</label>
+            <input class="govuk-input" id="hint" name="hint" data-qa-id="Input-hint" value="">
+          </div>
+
+          <input type="hidden" name="pageOrder" value="2">
+
+          <input class="govuk-button" type="submit" id="Button-Save-Page" value="Save page" name="save_page">
+        </form>
+        <br/>
+        <a id="Link-cancelAndGoBack" class="govuk-link" href="pages">Cancel and go back</a>
+    </div>
+{% endblock %}

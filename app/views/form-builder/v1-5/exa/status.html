@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style media="screen">
+
+</style>
+{% include "includes/beta-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-caption-l">autoehc-2021-03-11-116</h2>
+        <h2 class="govuk-heading-l">EXA Document List</h2>
+      </div>
+      <h3 class="govuk-heading-m heading-with-help">Select new status</h3>
+      <form class="case-update" style="display: inline;" action="exa-documents" method="POST">
+        <input type="hidden" name="crumb_csrf_token" value="tHqzFHlMR8fdGv61rRffxpboiFBlQTXyVy5J6026StE">
+        <input type="hidden" value="2849EHC" name="ehcNumber">
+
+        <div class="govuk-form-group margin-top-30">
+          <div class="govuk-radios govuk-radios--inline">
+            <div id="availabilityStatus" class="govuk-radios__item">
+              <input id="on-hold-radio-button" class="govuk-radios__input" type="radio" name="availabilityStatus" value="ON_HOLD">
+              <label class="govuk-label govuk-radios__label" for="on-hold-radio-button">On hold</label>
+            </div>
+            <div id="availabilityStatus" class="govuk-radios__item">
+              <input id="restricted-radio-button" class="govuk-radios__input" type="radio" name="availabilityStatus" value="RESTRICTED">
+              <label class="govuk-label govuk-radios__label" for="restricted-radio-button">Restricted</label>
+            </div>
+            <div id="availabilityStatus" class="govuk-radios__item">
+              <input id="withdrawn-radio-button" class="govuk-radios__input" type="radio" name="availabilityStatus" value="WITHDRAWN">
+              <label class="govuk-label govuk-radios__label" for="withdrawn-radio-button">Withdrawn</label>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="govuk-heading-m">Are you sure you want to change the status of this EXA document?</h3>
+
+        <hr>
+
+        <input class="govuk-button" type="submit" id="Button-Save" value="Change this document status" data-qa-id="Button-Save">
+        <a class="govuk-button cancel-button margin-left-30" href="../index" id="Button-Cancel" data-qa-id="Button-Cancel">Cancel</a>
+      </form>
+    </div>
+    </div>
+{% endblock %}

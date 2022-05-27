@@ -1,0 +1,281 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<style>
+.app-link--up::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-width: 0 7px 12.124px 7px;
+    border-color: transparent transparent #1d70b8 transparent;
+}
+.app-link--up, .app-link--down {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0px;
+    padding-left: 20px;
+    color: #1d70b8 !important;
+    cursor: pointer;
+}
+.app-link--down::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -webkit-clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    border-width: 12.124px 7px 0 7px;
+    border-color: #1d70b8 transparent transparent transparent;
+}
+</style>
+{% include "includes/beta-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div>
+      <h1 class="govuk-heading-xl heading">Pages for form EXA169-standard Version 0.1</h1>
+    </div>
+    <div>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" colspan="2">Order</th>
+            <th class="govuk-table__header">Page Title</th>
+            <th class="govuk-table__header">Group or task title</th>
+            <th class="govuk-table__header">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="7606-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+              1
+            </td>
+            <td class="govuk-table__cell" width="5%">
+              <a id="17621-moveUpLink" class="govuk-link app-link--up" title="move up"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move up</span>
+                <p></p>
+              </a><br>
+              <a id="17621-moveDownLink" class="govuk-link app-link--down" title="move down"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move down</span>
+                <p></p>
+              </a>
+            </td>
+            <th id="7606-title" class="govuk-table__cell" scope="row">
+              What are the details of the horse?
+            </th>
+            <td class="govuk-table__cell  govuk-!-width-one-quarter"></td>
+            <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+              <a class="govuk-link app-link--action" href="page-view">View</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="7607-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+              2
+            </td>
+            <td class="govuk-table__cell" width="5%">
+              <a id="17621-moveUpLink" class="govuk-link app-link--up" title="move up"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move up</span>
+                <p></p>
+              </a><br>
+              <a id="17621-moveDownLink" class="govuk-link app-link--down" title="move down"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move down</span>
+                <p></p>
+              </a>
+            </td>
+            <th id="7607-title" class="govuk-table__cell" scope="row">
+              How will the horse be identified?
+            </th>
+            <td class="govuk-table__cell  govuk-!-width-one-quarter"></td>
+            <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+              <a class="govuk-link app-link--action" href="page-view">View</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="7608-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+              3
+            </td>
+            <td class="govuk-table__cell" width="5%">
+              <a id="17621-moveUpLink" class="govuk-link app-link--up" title="move up"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move up</span>
+                <p></p>
+              </a><br>
+              <a id="17621-moveDownLink" class="govuk-link app-link--down" title="move down"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move down</span>
+                <p></p>
+              </a>
+            </td>
+            <th id="7608-title" class="govuk-table__cell" scope="row">
+              Who owns the horse?
+            </th>
+            <td class="govuk-table__cell  govuk-!-width-one-quarter"></td>
+            <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+              <a class="govuk-link app-link--action" href="page-view">View</a>
+
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="7609-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+              4
+            </td>
+            <td class="govuk-table__cell" width="5%">
+              <a id="17621-moveUpLink" class="govuk-link app-link--up" title="move up"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move up</span>
+                <p></p>
+              </a><br>
+              <a id="17621-moveDownLink" class="govuk-link app-link--down" title="move down"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move down</span>
+                <p></p>
+              </a>
+            </td>
+            <th id="7609-title" class="govuk-table__cell" scope="row">
+              Where was the horse examined?
+            </th>
+            <td class="govuk-table__cell  govuk-!-width-one-quarter"></td>
+            <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+              <a class="govuk-link app-link--action" href="page-view">View</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="7610-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+              5
+            </td>
+            <td class="govuk-table__cell" width="5%">
+              <a id="17621-moveUpLink" class="govuk-link app-link--up" title="move up"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move up</span>
+                <p></p>
+              </a><br>
+              <a id="17621-moveDownLink" class="govuk-link app-link--down" title="move down"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move down</span>
+                <p></p>
+              </a>
+            </td>
+            <th id="7610-title" class="govuk-table__cell" scope="row">
+              Who is sending the consignment?
+            </th>
+            <td class="govuk-table__cell  govuk-!-width-one-quarter"></td>
+            <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+              <a class="govuk-link app-link--action" href="page-view">View</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="7611-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+              6
+            </td>
+            <td class="govuk-table__cell" width="5%">
+              <a id="17621-moveUpLink" class="govuk-link app-link--up" title="move up"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move up</span>
+                <p></p>
+              </a><br>
+              <a id="17621-moveDownLink" class="govuk-link app-link--down" title="move down"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move down</span>
+                <p></p>
+              </a>
+            </td>
+            <th id="7611-title" class="govuk-table__cell" scope="row">
+              How will the horse be transported?
+            </th>
+            <td class="govuk-table__cell  govuk-!-width-one-quarter"></td>
+            <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+              <a class="govuk-link app-link--action" href="page-view">View</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="7612-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+              7
+            </td>
+            <td class="govuk-table__cell" width="5%">
+              <a id="17621-moveUpLink" class="govuk-link app-link--up" title="move up"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move up</span>
+                <p></p>
+              </a><br>
+              <a id="17621-moveDownLink" class="govuk-link app-link--down" title="move down"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move down</span>
+                <p></p>
+              </a>
+            </td>
+            <th id="7612-title" class="govuk-table__cell" scope="row">
+              Where is the consignment being sent to?
+            </th>
+            <td class="govuk-table__cell  govuk-!-width-one-quarter"></td>
+            <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+              <a class="govuk-link app-link--action" href="page-view">View</a>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="7613-pageOrder" class="govuk-table__cell applicationRef-column" scope="row">
+              8
+            </td>
+            <td class="govuk-table__cell" width="5%">
+              <a id="17621-moveUpLink" class="govuk-link app-link--up" title="move up"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move up</span>
+                <p></p>
+              </a><br>
+              <a id="17621-moveDownLink" class="govuk-link app-link--down" title="move down"
+                href="javascript:alert('Not in prototype!');">
+                <span class="govuk-visually-hidden">move down</span>
+                <p></p>
+              </a>
+            </td>
+            <th id="7613-title" class="govuk-table__cell" scope="row">
+              Who is receiving the consignment?
+            </th>
+            <td class="govuk-table__cell  govuk-!-width-one-quarter"></td>
+            <td class="govuk-table__cell actions-column govuk-!-width-one-quarter">
+              <a class="govuk-link app-link--action" href="page-view">View</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

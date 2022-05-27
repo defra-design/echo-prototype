@@ -1,0 +1,285 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-form-group margin-top-30">
+      <span class="govuk-caption-l" data-qa-id="manage-template-form-heading">EHC 8270EHC</span>
+      <h2 class="govuk-heading-l">Manage country templates</h2>
+    </div>
+
+    <label class="govuk-label margin-top-30">Upload and manage EHC country templates in PDF format</label>
+      <div class="govuk-grid-row margin-top-10" data-qa-id="Table-CountryNameResults">
+        <div class="govuk-grid-column-full">
+          <table class="govuk-table" aria-describedby="Country Templates explained">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Country</th>
+              <th class="govuk-table__header" scope="col">Filename</th>
+              <th class="govuk-table__header" scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Andorra</td>
+              <td class="govuk-table__cell">8270 Spanish V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Andorra_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Austria</td>
+              <td class="govuk-table__cell">8270 German V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Austria_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Belgium</td>
+              <td class="govuk-table__cell">8270 French V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Belgium_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Bulgaria</td>
+              <td class="govuk-table__cell">8270 Bulgarian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Bulgaria_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Croatia</td>
+              <td class="govuk-table__cell">8270 Croatian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Croatia_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Cyprus</td>
+              <td class="govuk-table__cell">8270 Greek V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Cyprus_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Czech Republic</td>
+              <td class="govuk-table__cell">8270 Czech V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Czech" republic_template_link="" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Denmark</td>
+              <td class="govuk-table__cell">8270 Danish V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Denmark_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Estonia</td>
+              <td class="govuk-table__cell">8270 Estonian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Estonia_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Faroe Islands</td>
+              <td class="govuk-table__cell">8270 Danish V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Faroe" islands_template_link="" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Finland</td>
+              <td class="govuk-table__cell">8270 Finnish V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Finland_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">France</td>
+              <td class="govuk-table__cell">8270 French V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="France_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Germany</td>
+              <td class="govuk-table__cell">8270 German V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Germany_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Greece</td>
+              <td class="govuk-table__cell">8270 Greek V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Greece_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Greenland</td>
+              <td class="govuk-table__cell">8270 Danish V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Greenland_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Hungary</td>
+              <td class="govuk-table__cell">8270 Hungarian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Hungary_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Iceland</td>
+              <td class="govuk-table__cell">8270 English V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Iceland_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Italy</td>
+              <td class="govuk-table__cell">8270 Italian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Italy_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Latvia</td>
+              <td class="govuk-table__cell">8270 Latvian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Latvia_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Liechtenstein</td>
+              <td class="govuk-table__cell">8270 German V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Liechtenstein_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Lithuania</td>
+              <td class="govuk-table__cell">8270 Lithuanian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Lithuania_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Luxembourg</td>
+              <td class="govuk-table__cell">8270 French V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Luxembourg_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Malta</td>
+              <td class="govuk-table__cell">8270 Maltese V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Malta_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Netherlands</td>
+              <td class="govuk-table__cell">8270 Dutch V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Netherlands_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Norway</td>
+              <td class="govuk-table__cell">8270 English V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Norway_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Northern Ireland</td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <a id="Northern_ireland_template_link="" href="javascript:alert('Not in prototype!');">Add template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Poland</td>
+              <td class="govuk-table__cell">8270 Polish V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Poland_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Portugal</td>
+              <td class="govuk-table__cell">8270 Portuguese V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Portugal_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Republic of Ireland</td>
+              <td class="govuk-table__cell">8270 English V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Republic" of="" ireland_template_link="" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Romania</td>
+              <td class="govuk-table__cell">8270 Romanian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Romania_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">San Marino</td>
+              <td class="govuk-table__cell">8270 Italian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="San" marino_template_link="" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Slovakia</td>
+              <td class="govuk-table__cell">8270 Slovakian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Slovakia_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Slovenia</td>
+              <td class="govuk-table__cell">8270 Slovenian V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Slovenia_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Spain</td>
+              <td class="govuk-table__cell">8270 Spanish V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Spain_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Sweden</td>
+              <td class="govuk-table__cell">8270 Swedish V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Sweden_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" aria-colspan="">Switzerland</td>
+              <td class="govuk-table__cell">8270 French V2.pdf</td>
+              <td class="govuk-table__cell">
+                <a id="Switzerland_template_link" href="javascript:alert('Not in prototype!');">Delete template</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+</div>
+ 
+{% endblock %}
