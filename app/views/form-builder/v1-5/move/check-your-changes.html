@@ -1,0 +1,258 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your changes
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+    <span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item-new" id="Nav-DisplayName">Administration user</li>
+    <li class="login-nav__list-item-new"><a href="#" class="govuk-link login-nav__link-new govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a></li>
+    <li class="login-nav__list-item-new"><a href="/sign-out" class="govuk-link login-nav__link-new govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">    
+    <h1 class="govuk-heading-l govuk-!-padding-bottom-3">Check your changes</h1>
+    <p class="govuk-body">The certificates will be moved into the organisation you have chosen.</p>
+
+    <h2 class="govuk-heading-m">This organisation will lose the certificates</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">
+          {{data.fromOrganisationName or "Acme Ltd"}}
+          <br>
+          {% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %}
+          Sunset Cottage, Corsham, Wiltshire, SN15 8ZZ
+          {% elif data.fromOrganisationName == "Acme Ltd" %}
+          12 Valley Park, Bristol, BS12 6SW
+          {% elif data.fromOrganisationName == "Aspire Consulting Plc" %}
+          Units 1-4, Blue Park Industrial Estate, Bath, BA2 8TT
+          {% elif data.fromOrganisationName == "Baldwin Bricklaying & Sons" %}
+          Old Post Office, Kiwi Street, Derby, DE4 5YS
+          {% elif data.fromOrganisationName == "Cedarwood & Hamlin at Law" %}
+          Wharfville Tower, St Bernard's Street, London, E17 9YY
+          {% elif data.fromOrganisationName == "Clifford Bridge Construction Ltd" %}
+          Cedar Lodge, Dog Lane, Somerset, BA34 7DL
+          {% elif data.fromOrganisationName == "Coundon Court Dairy Ltd" %}
+          Moobury Farm, Cat Lane, Norwich NO9 7SQ
+          {% elif data.fromOrganisationName == "De La Salle Scaffolding" %}
+          Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
+          {% elif data.fromOrganisationName == "Drake and Keke at Law" %}
+          Sunset Lodge, Mayfair, London, E2 6GG
+          {% elif data.fromOrganisationName == "Dyson Perrins Engineering Ltd" %}
+          12-14 Abbey Row, Trowbridge, Wiltshire, SN7 9OP
+          {% elif data.fromOrganisationName == "Eppingswood & Sons Ltd" %}
+          67 Bullbrook Drive, Bracknell, Berkshire, RG10 7SW
+          {% elif data.fromOrganisationName == "Ernesford Construction" %}
+          28 Lily Brook Road, Colchester, Essex, CO9 6XX
+          {% elif data.fromOrganisationName == "Firth Park Dentistry & Partners" %}
+          Solihull House, Apple Street, Dudley, Birmingham, B6 6KL
+          {% elif data.fromOrganisationName == "Frog Field Design Ltd" %}
+          Skittle Lodge, Wyevale Lane, Todshall, Cornwall, CO3 8BN
+          {% elif data.fromOrganisationName == "Grace Plumbing and Heating Ltd" %}
+          23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW
+          {% elif data.fromOrganisationName == "Harris & Prowler Sons Ltd" %}
+          The Old Chapel, Vicar Street, Malmesbury, Wiltshire, SN13 8SD
+          {% elif data.fromOrganisationName == "Helping Me and You Consulting" %}
+          Black Sheep Farm, Drury Lane, Topplesville, Sheffield, SH7 XV
+          {% elif data.fromOrganisationName == "Henry LLS Solicitors Ltd" %}
+          Rose Cottage, Furbank Row, Taunton, Somerset, BA12 7KS
+          {% elif data.fromOrganisationName == "King's Dairy Farming Plc" %}
+          King's House, Beehive Industrial Estate, Bracknell, Berkshire, RG12 8UU
+          {% elif data.fromOrganisationName == "Leamington Hastings Produce Ltd" %}
+          117 Dog Lane, Leamington Spa, Gloucestershire, GL7 7TT
+          {% elif data.fromOrganisationName == "Lily's Flowers" %}
+          12 Greenfields Gardens, Shrewsbury, Shropshire, SY2 7QE
+          {% elif data.fromOrganisationName == "Lipson Cooperative Builders Ltd" %}
+          Robin Farm, Tweadle Lane, Box, Bath, BA15 8UL
+          {% elif data.fromOrganisationName == "Long Itchington Associates Plc" %}
+          Units 1-10, Derry Industrial Estate, Newcastle, NE2 8HH
+          {% elif data.fromOrganisationName == "Merrington Baker & Son" %}
+          149 Baker Street, Bakewell, Derby, DE16 7YY
+          {% elif data.fromOrganisationName == "Mole Catch Pest Control Ltd" %}
+          Mole Farm, Moleville, Mole Mole, MO1 6TT
+          {% elif data.fromOrganisationName == "Nettleton Apples Ltd" %}
+          Gardener's Cottage, Bull Lane, Nettleton, Wiltshire, SN10 0SD
+          {% elif data.fromOrganisationName == "Parkgate Produce Plc" %}
+          Orchard House, Units 1-2, Victoria Industrial Estate, Telford, Shropshire, TF3 5TT
+          {% elif data.fromOrganisationName == "Perrymead Consulting Ltd" %}
+          2 Cowslip Lane, Butterton, Derby, DE15 6QQ
+          {% elif data.fromOrganisationName == "Queens and Kings of Farming Ltd" %}
+          The Old Post Office, Longbottom Lane, Whitchurch, Norwich, N14 5FV
+          {% elif data.fromOrganisationName == "Radford Coffee Ltd" %}
+          Swine Farm, Swine Lane, Tettle, Newcastle, NE16 7YY
+          {% elif data.fromOrganisationName == "Ready Steady Cleaning" %}
+          19 Pountney Gardens, Cat Lane, Reading, RG9 6QX
+          {% elif data.fromOrganisationName == "Ryckborst Academy for Justice" %}
+          Mole's Corner House, Toronto Avenue, Liverpool, LP9 7HH
+          {% elif data.fromOrganisationName == "Sandwell Scaffolding Ltd" %}
+          119 Pickett's Grove, Hackney, London, E1 6AW
+          {% elif data.fromOrganisationName == "Telfer and Dwayne Pipe Repairs Ltd" %}
+          The Red Grapevine, Bull Lane, Pickerford, Northamptonshire, NO12 3QA
+          {% elif data.fromOrganisationName == "Thomas Hamlin & McGil Law" %}
+          Saul's Nail Parlour, Kentucky Avenue, Dorchester, Devon, DN82 7YY
+          {% elif data.fromOrganisationName == "Umbrella Corporation" %}
+          Secret Bunker House, Raccoon City, London, E1 8CX
+          {% elif data.fromOrganisationName == "Walls Balls & Partners" %}
+          182 Dunkville Trading Estate, Blueberry Park, Clapham, London, SW4 7BB
+          {% elif data.fromOrganisationName == "William Rutland & Sons" %}
+          6 Horseshoe Lane, Shrewsbury, Shropshire, SY1 7FD
+          {% elif data.fromOrganisationName == "YouSellAnyCar Plc" %}
+          Units 1-3, Retriever Farm Trading Estate, Hartcliffe, Bristol, BS3 6GZ
+          {% elif data.fromOrganisationName == "Zebedee Autos Ltd" %}
+          Maxwell House, Juniper Way, Reading, RG13 6IS
+          {% else %}
+          12 Valley Park, Bristol, BS12 6SW
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="duplicate-organisation?paginationRequired=true&page1=true&returnURL=check-your-changes">Change<span class="govuk-visually-hidden"> name</span></a></dd>
+      </div>
+
+    </dl>
+
+    <table class="govuk-table govuk-!-margin-bottom-9">
+      <caption class="govuk-table__caption govuk-table__caption--m">These certificates will be moved</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-summary-list__key">Case ID</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">20/100350</th>
+          <td class="govuk-table__cell">COMPLETED</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">20/100450</th>
+          <td class="govuk-table__cell">REJECTED</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">20/100550</th>
+          <td class="govuk-table__cell">COMPLETED</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">This organisation will gain the certificates</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">
+          {{data.toOrganisationName or "Ryckborst Academy for Justice"}}
+          <br>
+          {% if data.toOrganisationName == "Ace Pentura Writing Ltd" %}
+          Sunset Cottage, Corsham, Wiltshire, SN15 8ZZ
+          {% elif data.toOrganisationName == "Acme Ltd" %}
+          12 Valley Park, Bristol, BS12 6SW
+          {% elif data.toOrganisationName == "Aspire Consulting Plc" %}
+          Units 1-4, Blue Park Industrial Estate, Bath, BA2 8TT
+          {% elif data.toOrganisationName == "Baldwin Bricklaying & Sons" %}
+          Old Post Office, Kiwi Street, Derby, DE4 5YS
+          {% elif data.toOrganisationName == "Cedarwood & Hamlin at Law" %}
+          Wharfville Tower, St Bernard's Street, London, E17 9YY
+          {% elif data.toOrganisationName == "Clifford Bridge Construction Ltd" %}
+          Cedar Lodge, Dog Lane, Somerset, BA34 7DL
+          {% elif data.toOrganisationName == "Coundon Court Dairy Ltd" %}
+          Moobury Farm, Cat Lane, Norwich NO9 7SQ
+          {% elif data.toOrganisationName == "De La Salle Scaffolding" %}
+          Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
+          {% elif data.toOrganisationName == "Drake and Keke at Law" %}
+          Sunset Lodge, Mayfair, London, E2 6GG
+          {% elif data.toOrganisationName == "Dyson Perrins Engineering Ltd" %}
+          12-14 Abbey Row, Trowbridge, Wiltshire, SN7 9OP
+          {% elif data.toOrganisationName == "Eppingswood & Sons Ltd" %}
+          67 Bullbrook Drive, Bracknell, Berkshire, RG10 7SW
+          {% elif data.toOrganisationName == "Ernesford Construction" %}
+          28 Lily Brook Road, Colchester, Essex, CO9 6XX
+          {% elif data.toOrganisationName == "Firth Park Dentistry & Partners" %}
+          Solihull House, Apple Street, Dudley, Birmingham, B6 6KL
+          {% elif data.toOrganisationName == "Frog Field Design Ltd" %}
+          Skittle Lodge, Wyevale Lane, Todshall, Cornwall, CO3 8BN
+          {% elif data.toOrganisationName == "Grace Plumbing and Heating Ltd" %}
+          23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW
+          {% elif data.toOrganisationName == "Harris & Prowler Sons Ltd" %}
+          The Old Chapel, Vicar Street, Malmesbury, Wiltshire, SN13 8SD
+          {% elif data.toOrganisationName == "Helping Me and You Consulting" %}
+          Black Sheep Farm, Drury Lane, Topplesville, Sheffield, SH7 XV
+          {% elif data.toOrganisationName == "Henry LLS Solicitors Ltd" %}
+          Rose Cottage, Furbank Row, Taunton, Somerset, BA12 7KS
+          {% elif data.toOrganisationName == "King's Dairy Farming Plc" %}
+          King's House, Beehive Industrial Estate, Bracknell, Berkshire, RG12 8UU
+          {% elif data.toOrganisationName == "Leamington Hastings Produce Ltd" %}
+          117 Dog Lane, Leamington Spa, Gloucestershire, GL7 7TT
+          {% elif data.toOrganisationName == "Lily's Flowers" %}
+          12 Greenfields Gardens, Shrewsbury, Shropshire, SY2 7QE
+          {% elif data.toOrganisationName == "Lipson Cooperative Builders Ltd" %}
+          Robin Farm, Tweadle Lane, Box, Bath, BA15 8UL
+          {% elif data.toOrganisationName == "Long Itchington Associates Plc" %}
+          Units 1-10, Derry Industrial Estate, Newcastle, NE2 8HH
+          {% elif data.toOrganisationName == "Merrington Baker & Son" %}
+          149 Baker Street, Bakewell, Derby, DE16 7YY
+          {% elif data.toOrganisationName == "Mole Catch Pest Control Ltd" %}
+          Mole Farm, Moleville, Mole Mole, MO1 6TT
+          {% elif data.toOrganisationName == "Nettleton Apples Ltd" %}
+          Gardener's Cottage, Bull Lane, Nettleton, Wiltshire, SN10 0SD
+          {% elif data.toOrganisationName == "Parkgate Produce Plc" %}
+          Orchard House, Units 1-2, Victoria Industrial Estate, Telford, Shropshire, TF3 5TT
+          {% elif data.toOrganisationName == "Perrymead Consulting Ltd" %}
+          2 Cowslip Lane, Butterton, Derby, DE15 6QQ
+          {% elif data.toOrganisationName == "Queens and Kings of Farming Ltd" %}
+          The Old Post Office, Longbottom Lane, Whitchurch, Norwich, N14 5FV
+          {% elif data.toOrganisationName == "Radford Coffee Ltd" %}
+          Swine Farm, Swine Lane, Tettle, Newcastle, NE16 7YY
+          {% elif data.toOrganisationName == "Ready Steady Cleaning" %}
+          19 Pountney Gardens, Cat Lane, Reading, RG9 6QX
+          {% elif data.toOrganisationName == "Ryckborst Academy for Justice" %}
+          Mole's Corner House, Toronto Avenue, Liverpool, LP9 7HH
+          {% elif data.toOrganisationName == "Sandwell Scaffolding Ltd" %}
+          119 Pickett's Grove, Hackney, London, E1 6AW
+          {% elif data.toOrganisationName == "Telfer and Dwayne Pipe Repairs Ltd" %}
+          The Red Grapevine, Bull Lane, Pickerford, Northamptonshire, NO12 3QA
+          {% elif data.toOrganisationName == "Thomas Hamlin & McGil Law" %}
+          Saul's Nail Parlour, Kentucky Avenue, Dorchester, Devon, DN82 7YY
+          {% elif data.toOrganisationName == "Umbrella Corporation" %}
+          Secret Bunker House, Raccoon City, London, E1 8CX
+          {% elif data.toOrganisationName == "Walls Balls & Partners" %}
+          182 Dunkville Trading Estate, Blueberry Park, Clapham, London, SW4 7BB
+          {% elif data.toOrganisationName == "William Rutland & Sons" %}
+          6 Horseshoe Lane, Shrewsbury, Shropshire, SY1 7FD
+          {% elif data.toOrganisationName == "YouSellAnyCar Plc" %}
+          Units 1-3, Retriever Farm Trading Estate, Hartcliffe, Bristol, BS3 6GZ
+          {% elif data.toOrganisationName == "Zebedee Autos Ltd" %}
+          Maxwell House, Juniper Way, Reading, RG13 6IS
+          {% else %}
+          Mole's Corner House, Toronto Avenue, Liverpool, LP9 7HH
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="new-owner-organisation?paginationRequired=true&page1=true">Change<span class="govuk-visually-hidden"> name</span></a></dd>
+      </div>
+
+    </dl>
+
+    <form action="confirmation" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button class="govuk-button" data-module="govuk-button">Submit</button>
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

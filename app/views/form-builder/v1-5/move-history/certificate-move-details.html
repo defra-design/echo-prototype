@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Certificate migration details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+    <span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item-new" id="Nav-DisplayName">Administration user</li>
+    <li class="login-nav__list-item-new"><a href="#" class="govuk-link login-nav__link-new govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a></li>
+    <li class="login-nav__list-item-new"><a href="/sign-out" class="govuk-link login-nav__link-new govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">
+      {% if query.movementHistory == "1" %}
+      John Smith on 31 May 2022
+      {% elif query.movementHistory == "2" %}
+      Dwayne Pipe on 13 May 2022
+      {% elif query.movementHistory == "3" %}
+      Joan Atkinson on 10 April 2022
+      {% elif query.movementHistory == "4" %}
+      Sadio Mendy on 3 March 2022
+      {% else %}
+      Joan Atkinson on 10 April 2022
+      {% endif %}
+    </span>
+    <h1 class="govuk-heading-l govuk-!-padding-bottom-3">Certificate migration details</h1>
+
+    <h2 class="govuk-heading-m">Certificates were moved from this organisation</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">
+          {% if query.movementHistory == "1" %}
+          DeLaSalle Scaffolding Ltd
+          <br>
+          Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
+          {% elif query.movementHistory == "2" %}
+          Z Autos Ltd
+          <br>
+          Maxwell House, Juniper Way, Reading, RG13 6IS
+          {% elif query.movementHistory == "3" %}
+          Merrington's & Son
+          <br>
+          149 Baker Street, Bakewell, Derby, DE16 7YY
+          {% elif query.movementHistory == "4" %}
+          Graceee Plumbing and Heating Ltd
+          <br>
+          23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW
+          {% else %}
+          Merrington's & Son
+          <br>
+          149 Baker Street, Bakewell, Derby, DE16 7YY
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">&nbsp;</dd>
+      </div>
+
+    </dl>
+
+    <table class="govuk-table govuk-!-margin-bottom-9">
+      <caption class="govuk-table__caption govuk-table__caption--m">These certificates were moved</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-summary-list__key">Case ID</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">20/100350</th>
+          <td class="govuk-table__cell">COMPLETED</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">20/100450</th>
+          <td class="govuk-table__cell">REJECTED</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">20/100550</th>
+          <td class="govuk-table__cell">COMPLETED</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">Certificates were moved to this organisation</h2>
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">
+          {% if query.movementHistory == "1" %}
+          De La Salle Scaffolding
+          <br>
+          Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
+          {% elif query.movementHistory == "2" %}
+          Zebedee Autos Ltd
+          <br>
+          Maxwell House, Juniper Way, Reading, RG13 6IS
+          {% elif query.movementHistory == "3" %}
+          Merrington Baker & Son
+          <br>
+          149 Baker Street, Bakewell, Derby, DE16 7YY
+          {% elif query.movementHistory == "4" %}
+          Grace Plumbing and Heating Ltd
+          <br>
+          23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW
+          {% else %}
+          Merrington Baker & Son
+          <br>
+          149 Baker Street, Bakewell, Derby, DE16 7YY
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">&nbsp;</dd>
+      </div>
+
+    </dl>
+
+  </div>
+
+</div>
+{% endblock %}

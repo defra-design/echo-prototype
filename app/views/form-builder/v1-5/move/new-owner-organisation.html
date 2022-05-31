@@ -1,0 +1,1776 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {% if error %}Error: {% endif %}Which organisation will the certificates be moved to?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">beta</strong>
+    <span class="govuk-phase-banner__text">This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div>
+
+<div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item-new" id="Nav-DisplayName">Administration user</li>
+    <li class="login-nav__list-item-new"><a href="#" class="govuk-link login-nav__link-new govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a></li>
+    <li class="login-nav__list-item-new"><a href="/sign-out" class="govuk-link login-nav__link-new govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<style>
+
+  /* Search all available filter options (e.g. when filter results >= 25) */
+  .js-open .search-field-wrap {
+    display: block;
+  }
+  .search-field-wrap {
+    background-color: #dee0e2;
+    display: none;
+  }
+  .search-field-wrap .filter-searchwithin-label {
+    position: relative;
+    display: block;
+    background: transparent url('/public/images/beta/v112-0-0/icon-mag-glass.png') no-repeat 12px center;
+    background-size: 15px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+  }
+  .search-field-wrap .filter-searchwithin-label input.filter-search {
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: #0b0c0c 1px solid;
+  }
+  input.filter-search[type="text"], input.filter-search[type="search"] {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    width: 250px;
+    min-width: 0;
+    margin: 0;
+    padding: 0.25em;
+    text-transform: none;
+    border: 1px solid #bbb;
+  }
+
+  /* Checkboxes */
+  .document-checkbox-th {
+    vertical-align: top;
+    margin: 0px;
+    padding: 15px 0px 0px 0px;
+  }
+  .document-checkbox-td {
+    vertical-align: top;
+    margin: 0px;
+    padding: 15px 0px 0px 0px;
+  }
+  .document-checkbox-div {
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+  }
+  .document-checkbox-div input {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin: 0px 0px 0px 5px;
+  }
+  .document-checkbox-div [type=checkbox] + label::before {
+    width: 12px;
+    height: 12px;
+    box-sizing: initial;
+    left: 5px;
+  }
+  .document-checkbox-div [type=checkbox] + label::after {
+    width: 8px;
+    height: 3px;
+    border-width: 0 0 2px 2px;
+    top: 5px;
+    left: 8px;
+    box-sizing: initial;
+  }
+
+  /* Chris Harding (30.10.18) - Pagination */
+  .pager {
+    font-size: 16px;
+    margin-top: 1em;
+    margin-bottom: 3.25em;
+  }
+  .pager-top {
+    font-size: 16px;
+    margin-bottom: 1.25em;
+  }
+  .pager-items {
+    display: none;
+  }
+  @media (min-width: 641px) {
+    .pager-items {
+      display: inline;
+    }
+    .pager-items li {
+      display: inline;
+      margin: 0 5px;
+    }
+    .pager-items li:first-child {
+      margin-left: 0;
+    }
+    .pager-items li:last-child {
+      margin-right: 0;
+    }
+  }
+  .pager-prev, .pager-next {
+    margin-right: 10px;
+  }
+  @media (min-width: 641px) {
+    .pager-prev, .pager-next {
+      margin-right: 0;
+    }
+  }
+  @media (min-width: 641px) {
+    .pager-prev {
+      margin-right: 10px;
+    }
+  }
+  @media (min-width: 641px) {
+    .pager-next {
+      margin-left: 10px;
+    }
+  }
+  @media (min-width: 641px) {
+    .pager-controls {
+      float: right;
+    }
+  }
+
+  /* GOV.UK (Search) CSS */
+  /* LEGACY (POSSIBLY OK TO REMOVE) - START */
+  .search-section {
+    margin-bottom: 15px;
+  }
+  .search-field {
+    position: relative;
+  }
+  .search-input {
+    position: static;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+  .search-input-with-button {
+    padding-right: 50px;
+  }
+  .autocomplete__wrapper {
+    position: relative;
+    background-color: #ffffff;
+  }
+  .hidden, .js-enabled .js-hidden {
+    display: none;
+    visibility: hidden;
+  }
+  .hidden {
+    display: none;
+  }
+  .autocomplete__hint, .autocomplete__input {
+    -webkit-appearance: none;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+  .autocomplete__input {
+    background-color: transparent;
+    position: relative;
+  }
+  .autocomplete__hint, .autocomplete__input, .autocomplete__option {
+    font-size: 19px;
+    line-height: 1.25;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+  }
+  .search-input input {
+    -webkit-appearance: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    font-family: nta, Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 19px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    display: block;
+    height: 50px;
+    border-top-color: rgb(191, 193, 195);
+    border-right-color: rgb(191, 193, 195);
+    border-bottom-color: rgb(191, 193, 195);
+    border-left-color: rgb(191, 193, 195);
+    line-height: 48px;
+  }
+  .search-field-darker .search-input input {
+    border-top-color: rgb(111, 119, 123);
+    border-right-color: rgb(111, 119, 123);
+    border-bottom-color: rgb(111, 119, 123);
+    border-left-color: rgb(111, 119, 123);
+  }
+  .search-input-with-button input {
+    border-right-width: initial;
+    border-right-style: none;
+    border-right-color: initial;
+  }
+  .autocomplete__menu {
+    background-color: rgb(255, 255, 255);
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-color: rgb(11, 12, 12);
+    border-bottom-color: rgb(11, 12, 12);
+    border-left-color: rgb(11, 12, 12);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-top-width: 0px;
+    border-top-style: initial;
+    border-top-color: initial;
+    color: rgb(52, 56, 75);
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    max-height: 342px;
+    overflow-x: hidden;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    width: calc(100% - 4px);
+  }
+  .autocomplete__menu--hidden {
+    display: none;
+  }
+  .autocomplete__menu--overlay {
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 2px 6px;
+    left: 0px;
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+  }
+  [role="listbox"] {
+    min-height: 18em;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    /* background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat; */
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: white;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(170, 170, 170);
+    border-right-color: rgb(170, 170, 170);
+    border-bottom-color: rgb(170, 170, 170);
+    border-left-color: rgb(170, 170, 170);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+  }
+  .search-submit {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 50px;
+    width: 50px;
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+  .search-submit button {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: none;
+    position: absolute;
+    z-index: 4;
+    right: 0px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    border-top-width: initial;
+    border-right-width: initial;
+    border-bottom-width: initial;
+    border-left-width: initial;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-indent: -5000px;
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(43, 140, 196); */
+    background-color: #005ea5;
+    background-image: url("/public/images/search-button.png");
+    /* background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat; */
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-position-x: -12.5%;
+    background-position-y: 50%;
+  }
+  .search-submit button:hover, .search-submit button:focus {
+    background-color: #267daf;
+  }
+  button {
+    font-size: 19px;
+  }
+
+</style>
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if query.error %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          {% if query.error1 %}
+          <li><a href="#searchOrganisation">Search for an organisation</a></li>
+          {% endif %}
+          {% if query.error2 %}
+          <li><a href="#radio-1">Select the organisation that will lose the certificates</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- 40 RESULTS -->
+    {% if query.paginationRequired %}
+    <!-- Radio button SEARCH (START) -->
+    <form action="new-owner-organisation-non-javascript-post" method="get">
+      <fieldset class="govuk-fieldset{% if query.error %} after-error-summary{% endif %}">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Which organisation will the certificates be moved to?</h1>
+        </legend>
+        <p class="govuk-body">Select the organisation that will gain the certificates.</p>
+          
+        <div style="margin-bottom: 1em;" class="{% if query.error1 %}govuk-form-group--error {% endif %}search-field search-field-darker" data-checkbox-search-filter>
+            
+          <div class="search-input search-input-with-button">
+            <label class="govuk-label" for="searchOrganisation">Search for an organisation</label>
+            {% if query.error1 %}
+            <span class="govuk-error-message">Search for an organisation</span>
+            {% endif %}
+            <input autocomplete="off" class="form-control" name="searchOrganisation" id="searchOrganisation" type="text" value="" />
+          </div>
+
+          <div class="search-submit">
+            <button class="button" type="submit" id="searchOrganisationSubmit" name="searchOrganisationSubmit" value="Search organisation">Search for an organisation</button>
+          </div>
+
+        </div>
+
+      </fieldset>
+
+    </form>
+    <!-- Radio button SEARCH (END) -->
+                
+    <div class="govuk-form-group">
+      <p class="govuk-body hidden" data-clear-filter><a href="duplicate-organisation?paginationRequired=true&page1=true" id="clearSearchAndSelection">Clear search</a></p>
+    </div>
+
+    <h2 id="selectedChoiceHeading" class="govuk-heading-m hidden">0 organisations selected</h2>
+    <p data-filtered-message>40 organisations</p>
+    
+    <form method="post">
+    
+      <fieldset class="govuk-fieldset">
+        <legend id="organisationRadios" class="hidden">Select which organisation will lose the certificates</legend>
+
+        <!-- NON JS CHECKBOXES (START) -->
+        <div class="govuk-form-group{% if query.error2 %} govuk-form-group--error{% endif %}" data-non-js-checkboxes>
+          {% if query.error2 %}
+          <span class="govuk-error-message">Select the organisation that will lose the certificates</span>
+          {% endif %}
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <!-- SHOWING 1 TO 30 OF 40 ORGANISATIONS -->
+            {% if query.page1 %}
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-1" name="toOrganisationName" type="radio" data-search-value="Ace Pentura Writing Ltd, Sunset Cottage, Corsham, Wiltshire, SN15 8ZZ" value="Ace Pentura Writing Ltd"{% if data.toOrganisationName == "Ace Pentura Writing Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-1">
+                <strong>Ace Pentura Writing Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Sunset Cottage, Corsham, Wiltshire, SN15 8ZZ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-2" name="toOrganisationName" type="radio" data-search-value="Acme Ltd, 12 Valley Park, Bristol, BS12 6SW" value="Acme Ltd"{% if data.toOrganisationName == "Acme Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Acme Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-2">
+                <strong>Acme Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Acme Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>12 Valley Park, Bristol, BS12 6SW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-3" name="toOrganisationName" type="radio" data-search-value="Aspire Consulting Plc, Units 1-4, Blue Park Industrial Estate, Bath, BA2 8TT" value="Aspire Consulting Plc"{% if data.toOrganisationName == "Aspire Consulting Plc" %} checked{% endif %}{% if data.fromOrganisationName == "Aspire Consulting Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-3">
+                <strong>Aspire Consulting Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "Aspire Consulting Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Units 1-4, Blue Park Industrial Estate, Bath, BA2 8TT
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-4" name="toOrganisationName" type="radio" data-search-value="Baldwin Bricklaying & Sons, Old Post Office, Kiwi Street, Derby, DE4 5YS" value="Baldwin Bricklaying & Sons"{% if data.toOrganisationName == "Baldwin Bricklaying & Sons" %} checked{% endif %}{% if data.fromOrganisationName == "Baldwin Bricklaying & Sons" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-4">
+                <strong>Baldwin Bricklaying & Sons</strong>
+                <br>
+                {% if data.fromOrganisationName == "Baldwin Bricklaying & Sons" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Old Post Office, Kiwi Street, Derby, DE4 5YS
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-5" name="toOrganisationName" type="radio" data-search-value="Cedarwood & Hamlin at Law, Wharfville Tower, St Bernard's Street, London, E17 9YY" value="Cedarwood & Hamlin at Law"{% if data.toOrganisationName == "Cedarwood & Hamlin at Law" %} checked{% endif %}{% if data.fromOrganisationName == "Cedarwood & Hamlin at Law" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-5">
+                <strong>Cedarwood & Hamlin at Law</strong>
+                <br>
+                {% if data.fromOrganisationName == "Cedarwood & Hamlin at Law" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Wharfville Tower, St Bernard's Street, London, E17 9YY
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-6" name="toOrganisationName" type="radio" data-search-value="Clifford Bridge Construction Ltd, Cedar Farm, Dog Lane, Somerset, BA34 7DL" value="Clifford Bridge Construction Ltd"{% if data.toOrganisationName == "Clifford Bridge Construction Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Clifford Bridge Construction Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-6">
+                <strong>Clifford Bridge Construction Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Clifford Bridge Construction Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Cedar Lodge, Dog Lane, Somerset, BA34 7DL
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-7" name="toOrganisationName" type="radio" data-search-value="Coundon Court Dairy Ltd, Moobury Farm, Cat Lane, Norwich NO9 7SQ" value="Coundon Court Dairy Ltd"{% if data.toOrganisationName == "Coundon Court Dairy Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Coundon Court Dairy Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-7">
+                <strong>Coundon Court Dairy Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Coundon Court Dairy Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Moobury Farm, Cat Lane, Norwich NO9 7SQ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-8" name="toOrganisationName" type="radio" data-search-value="De La Salle Scaffolding, Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ" value="De La Salle Scaffolding"{% if data.toOrganisationName == "De La Salle Scaffolding" %} checked{% endif %}{% if data.fromOrganisationName == "De La Salle Scaffoldingd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-8">
+                <strong>De La Salle Scaffolding</strong>
+                <br>
+                {% if data.fromOrganisationName == "De La Salle Scaffolding" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-9" name="toOrganisationName" type="radio" data-search-value="Drake and Keke at Law, Sunset Lodge, Mayfair, London, E2 6GG" value="Drake and Keke at Law"{% if data.toOrganisationName == "Drake and Keke at Law" %} checked{% endif %}{% if data.fromOrganisationName == "Drake and Keke at Law" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-9">
+                <strong>Drake and Keke at Law</strong>
+                <br>
+                {% if data.fromOrganisationName == "Drake and Keke at Law" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Sunset Lodge, Mayfair, London, E2 6GG
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-10" name="toOrganisationName" type="radio" data-search-value="Dyson Perrins Engineering Ltd, 12-14 Abbey Row, Trowbridge, Wiltshire, SN7 9OP" value="Dyson Perrins Engineering Ltd"{% if data.toOrganisationName == "Dyson Perrins Engineering Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Dyson Perrins Engineering Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-10">
+                <strong>Dyson Perrins Engineering Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Dyson Perrins Engineering Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>12-14 Abbey Row, Trowbridge, Wiltshire, SN7 9OP
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-11" name="toOrganisationName" type="radio" data-search-value="Eppingswood & Sons Ltd, 67 Bullbrook Drive, Bracknell, Berkshire, RG10 7SW" value="Eppingswood & Sons Ltd"{% if data.toOrganisationName == "Eppingswood & Sons Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Eppingswood & Sons Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-11">
+                <strong>Eppingswood & Sons Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Eppingswood & Sons Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>67 Bullbrook Drive, Bracknell, Berkshire, RG10 7SW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-12" name="toOrganisationName" type="radio" data-search-value="Ernesford Construction, 28 Lily Brook Road, Colchester, Essex, CO9 6XX" value="Ernesford Construction"{% if data.toOrganisationName == "Ernesford Construction" %} checked{% endif %}{% if data.fromOrganisationName == "Ernesford Construction" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-12">
+                <strong>Ernesford Construction</strong>
+                <br>
+                {% if data.fromOrganisationName == "Ernesford Construction" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>28 Lily Brook Road, Colchester, Essex, CO9 6XX
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-13" name="toOrganisationName" type="radio" data-search-value="Firth Park Dentistry & Partners, Solihull House, Apple Street, Dudley, Birmingham, B6 6KL" value="Firth Park Dentistry & Partners"{% if data.toOrganisationName == "Firth Park Dentistry & Partners" %} checked{% endif %}{% if data.fromOrganisationName == "Firth Park Dentistry & Partners" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-13">
+                <strong>Firth Park Dentistry & Partners</strong>
+                <br>
+                {% if data.fromOrganisationName == "Firth Park Dentistry & Partners" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Solihull House, Apple Street, Dudley, Birmingham, B6 6KL
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-14" name="toOrganisationName" type="radio" data-search-value="Frog Field Design Ltd, Skittle Lodge, Wyevale Lane, Todshall, Cornwall, CO3 8BN" value="Frog Field Design Ltd"{% if data.toOrganisationName == "Frog Field Design Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Frog Field Design Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-14">
+                <strong>Frog Field Design Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Frog Field Design Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Skittle Lodge, Wyevale Lane, Todshall, Cornwall, CO3 8BN
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-15" name="toOrganisationName" type="radio" data-search-value="Grace Plumbing and Heating Ltd, 23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW" value="Grace Plumbing and Heating Ltd"{% if data.toOrganisationName == "Grace Plumbing and Heating Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Grace Plumbing and Heating Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-15">
+                <strong>Grace Plumbing and Heating Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Grace Plumbing and Heating Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-16" name="toOrganisationName" type="radio" data-search-value="Harris & Prowler Sons Ltd, The Old Chapel, Vicar Street, Malmesbury, Wiltshire, SN13 8SD" value="Harris & Prowler Sons Ltd"{% if data.toOrganisationName == "Harris & Prowler Sons Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Harris & Prowler Sons Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-16">
+                <strong>Harris & Prowler Sons Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Harris & Prowler Sons Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>The Old Chapel, Vicar Street, Malmesbury, Wiltshire, SN13 8SD
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-17" name="toOrganisationName" type="radio" data-search-value="Helping Me and You Consulting, Black Sheep Farm, Drury Lane, Topplesville, Sheffield, SH7 XV" value="Helping Me and You Consulting"{% if data.toOrganisationName == "Helping Me and You Consulting" %} checked{% endif %}{% if data.fromOrganisationName == "Helping Me and You Consulting" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-17">
+                <strong>Helping Me and You Consulting</strong>
+                <br>
+                {% if data.fromOrganisationName == "Helping Me and You Consulting" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Black Sheep Farm, Drury Lane, Topplesville, Sheffield, SH7 XV
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-18" name="toOrganisationName" type="radio" data-search-value="Henry LLS Solicitors Ltd, Rose Cottage, Furbank Row, Taunton, Somerset, BA12 7KS" value="Henry LLS Solicitors Ltd"{% if data.toOrganisationName == "Henry LLS Solicitors Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Henry LLS Solicitors Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-18">
+                <strong>Henry LLS Solicitors Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Henry LLS Solicitors Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Rose Cottage, Furbank Row, Taunton, Somerset, BA12 7KS
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-19" name="toOrganisationName" type="radio" data-search-value="King's Dairy Farming Plc, King's House, Beehive Industrial Estate, Bracknell, Berkshire, RG12 8UU" value="King's Dairy Farming Plc"{% if data.toOrganisationName == "King's Dairy Farming Plc" %} checked{% endif %}{% if data.fromOrganisationName == "King's Dairy Farming Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-19">
+                <strong>King's Dairy Farming Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "King's Dairy Farming Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>King's House, Beehive Industrial Estate, Bracknell, Berkshire, RG12 8UU
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-20" name="toOrganisationName" type="radio" data-search-value="Leamington Hastings Produce Ltd, 117 Dog Lane, Leamington Spa, Gloucestershire, GL7 7TT" value="Leamington Hastings Produce Ltd"{% if data.toOrganisationName == "Leamington Hastings Produce Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Leamington Hastings Produce Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-20">
+                <strong>Leamington Hastings Produce Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Leamington Hastings Produce Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>117 Dog Lane, Leamington Spa, Gloucestershire, GL7 7TT
+              </label>
+            </div>
+            
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-21" name="toOrganisationName" type="radio" data-search-value="Lily's Flowers, 12 Greenfields Gardens, Shrewsbury, Shropshire, SY2 7QE" value="Lily's Flowers"{% if data.toOrganisationName == "Lily's Flowers" %} checked{% endif %}{% if data.fromOrganisationName == "Lily's Flowers" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-21">
+                <strong>Lily's Flowers</strong>
+                <br>
+                {% if data.fromOrganisationName == "Lily's Flowers" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>12 Greenfields Gardens, Shrewsbury, Shropshire, SY2 7QE
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-22" name="toOrganisationName" type="radio" data-search-value="Lipson Cooperative Builders Ltd, Robin Farm, Tweadle Lane, Box, Bath, BA15 8UL" value="Lipson Cooperative Builders Ltd"{% if data.toOrganisationName == "Lipson Cooperative Builders Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Lipson Cooperative Builders Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-22">
+                <strong>Lipson Cooperative Builders Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Lipson Cooperative Builders Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Robin Farm, Tweadle Lane, Box, Bath, BA15 8UL
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-23" name="toOrganisationName" type="radio" data-search-value="Long Itchington Associates Plc, Units 1-10, Derry Industrial Estate, Newcastle, NE2 8HH" value="Long Itchington Associates Plc"{% if data.toOrganisationName == "Long Itchington Associates Plc" %} checked{% endif %}{% if data.fromOrganisationName == "Long Itchington Associates Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-23">
+                <strong>Long Itchington Associates Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "Long Itchington Associates Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Units 1-10, Derry Industrial Estate, Newcastle, NE2 8HH 
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-24" name="toOrganisationName" type="radio" data-search-value="Merrington Baker & Son, 149 Baker Street, Bakewell, Derby, DE16 7YY" value="Merrington Baker & Son"{% if data.toOrganisationName == "Merrington Baker & Son" %} checked{% endif %}{% if data.fromOrganisationName == "Merrington Baker & Son" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-24">
+                <strong>Merrington Baker & Son</strong>
+                <br>
+                {% if data.fromOrganisationName == "Merrington Baker & Son" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>149 Baker Street, Bakewell, Derby, DE16 7YY
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-25" name="toOrganisationName" type="radio" data-search-value="Mole Catch Pest Control Ltd, Mole Farm, Moleville, Mole Mole, MO1 6TT" value="Mole Catch Pest Control Ltd"{% if data.toOrganisationName == "Mole Catch Pest Control Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Mole Catch Pest Control Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-25">
+                <strong>Mole Catch Pest Control Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Mole Catch Pest Control Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Mole Farm, Moleville, Mole Mole, MO1 6TT
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-26" name="toOrganisationName" type="radio" data-search-value="Nettleton Apples Ltd, Gardener's Cottage, Bull Lane, Nettleton, Wiltshire, SN10 0SD" value="Nettleton Apples Ltd"{% if data.toOrganisationName == "Nettleton Apples Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Nettleton Apples Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-26">
+                <strong>Nettleton Apples Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Nettleton Apples Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Gardener's Cottage, Bull Lane, Nettleton, Wiltshire, SN10 0SD
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-27" name="toOrganisationName" type="radio" data-search-value="Parkgate Produce Plc, Orchard House, Units 1-2, Victoria Industrial Estate, Telford, Shropshire, TF3 5TT" value="Parkgate Produce Plc"{% if data.toOrganisationName == "Parkgate Produce Plc" %} checked{% endif %}{% if data.fromOrganisationName == "Parkgate Produce Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-27">
+                <strong>Parkgate Produce Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "Parkgate Produce Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Orchard House, Units 1-2, Victoria Industrial Estate, Telford, Shropshire, TF3 5TT
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-28" name="toOrganisationName" type="radio" data-search-value="Perrymead Consulting Ltd, 2 Cowslip Lane, Butterton, Derby, DE15 6QQ" value="Perrymead Consulting Ltd"{% if data.toOrganisationName == "Perrymead Consulting Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Perrymead Consulting Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-28">
+                <strong>Perrymead Consulting Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Perrymead Consulting Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>2 Cowslip Lane, Butterton, Derby, DE15 6QQ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-29" name="toOrganisationName" type="radio" data-search-value="Queens and Kings of Farming Ltd, The Old Post Office, Longbottom Lane, Whitchurch, Norwich, N14 5FV" value="Queens and Kings of Farming Ltd"{% if data.toOrganisationName == "Queens and Kings of Farming Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Queens and Kings of Farming Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-29">
+                <strong>Queens and Kings of Farming Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Queens and Kings of Farming Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>The Old Post Office, Longbottom Lane, Whitchurch, Norwich, N14 5FV
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-30" name="toOrganisationName" type="radio" data-search-value="Radford Coffee Ltd, Swine Farm, Swine Lane, Tettle, Newcastle, NE16 7YY" value="Radford Coffee Ltd"{% if data.toOrganisationName == "Radford Coffee Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Radford Coffee Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-30">
+                <strong>Radford Coffee Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Radford Coffee Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Swine Farm, Swine Lane, Tettle, Newcastle, NE16 7YY
+              </label>
+            </div>
+            {% elif query.page2 %}
+            <!-- SHOWING 31 TO 40 OF 40 ORGANISATIONS -->
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-31" name="toOrganisationName" type="radio" data-search-value="Ready Steady Cleaning, 19 Pountney Gardens, Cat Lane, Reading, RG9 6QX" value="Ready Steady Cleaning"{% if data.toOrganisationName == "Ready Steady Cleaning" %} checked{% endif %}{% if data.fromOrganisationName == "Ready Steady Cleaning" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-31">
+                <strong>Ready Steady Cleaning</strong>
+                <br>
+                {% if data.fromOrganisationName == "Ready Steady Cleaning" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>19 Pountney Gardens, Cat Lane, Reading, RG9 6QX
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-32" name="toOrganisationName" type="radio" data-search-value="Ryckborst Academy for Justice, Mole's Corner House, Toronto Avenue, Liverpool, LP9 7HH" value="Ryckborst Academy for Justice"{% if data.toOrganisationName == "Ryckborst Academy for Justice" %} checked{% endif %}{% if data.fromOrganisationName == "Ryckborst Academy for Justice" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-32">
+                <strong>Ryckborst Academy for Justice</strong>
+                <br>
+                {% if data.fromOrganisationName == "Ryckborst Academy for Justice" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Mole's Corner House, Toronto Avenue, Liverpool, LP9 7HH
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-33" name="toOrganisationName" type="radio" data-search-value="Sandwell Scaffolding Ltd, 119 Pickett's Grove, Hackney, London, E1 6AW" value="Sandwell Scaffolding Ltd"{% if data.toOrganisationName == "Sandwell Scaffolding Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Sandwell Scaffolding Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-33">
+                <strong>Sandwell Scaffolding Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Sandwell Scaffolding Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>119 Pickett's Grove, Hackney, London, E1 6AW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-34" name="toOrganisationName" type="radio" data-search-value="Telfer and Dwayne Pipe Repairs Ltd, The Red Grapevine, Bull Lane, Pickerford, Northamptonshire, NO12 3QA" value="Telfer and Dwayne Pipe Repairs Ltd"{% if data.toOrganisationName == "Telfer and Dwayne Pipe Repairs Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Telfer and Dwayne Pipe Repairs Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-34">
+                <strong>Telfer and Dwayne Pipe Repairs Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Telfer and Dwayne Pipe Repairs Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>The Red Grapevine, Bull Lane, Pickerford, Northamptonshire, NO12 3QA
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-35" name="toOrganisationName" type="radio" data-search-value="Thomas Hamlin & McGil Law, Saul's Nail Parlour, Kentucky Avenue, Dorchester, Devon, DN82 7YY" value="Thomas Hamlin & McGil Law"{% if data.toOrganisationName == "Thomas Hamlin & McGil Law" %} checked{% endif %}{% if data.fromOrganisationName == "Thomas Hamlin & McGil Law" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-35">
+                <strong>Thomas Hamlin & McGil Law</strong>
+                <br>
+                {% if data.fromOrganisationName == "Thomas Hamlin & McGil Law" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Saul's Nail Parlour, Kentucky Avenue, Dorchester, Devon, DN82 7YY
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-36" name="toOrganisationName" type="radio" data-search-value="Umbrella Corporation, Secret Bunker House, Raccoon City, London, E1 8CX" value="Umbrella Corporation"{% if data.toOrganisationName == "Umbrella Corporation" %} checked{% endif %}{% if data.fromOrganisationName == "Umbrella Corporation" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-36">
+                <strong>Umbrella Corporation</strong>
+                <br>
+                {% if data.fromOrganisationName == "Umbrella Corporation" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Secret Bunker House, Raccoon City, London, E1 8CX
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-37" name="toOrganisationName" type="radio" data-search-value="Walls Balls & Partners" value="Walls Balls & Partners"{% if data.toOrganisationName == "Walls Balls & Partners" %} checked{% endif %}{% if data.fromOrganisationName == "Walls Balls & Partners" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-37">
+                <strong>Walls Balls & Partners</strong>
+                <br>
+                {% if data.fromOrganisationName == "Walls Balls & Partners" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>182 Dunkville Trading Estate, Blueberry Park, Clapham, London, SW4 7BB
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-38" name="toOrganisationName" type="radio" data-search-value="William Rutland & Sons, 6 Horseshoe Lane, Shrewsbury, Shropshire, SY1 7FD" value="William Rutland & Sons"{% if data.toOrganisationName == "William Rutland & Sons" %} checked{% endif %}{% if data.fromOrganisationName == "William Rutland & Sons" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-38">
+                <strong>William Rutland & Sons</strong>
+                <br>
+                {% if data.fromOrganisationName == "William Rutland & Sons" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>6 Horseshoe Lane, Shrewsbury, Shropshire, SY1 7FD
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-39" name="toOrganisationName" type="radio" data-search-value="YouSellAnyCar Plc, Units 1-3, Retriever Farm Trading Estate, Hartcliffe, Bristol, BS3 6GZ" value="YouSellAnyCar Plc"{% if data.toOrganisationName == "YouSellAnyCar Plc" %} checked{% endif %}{% if data.fromOrganisationName == "YouSellAnyCar Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-39">
+                <strong>YouSellAnyCar Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "YouSellAnyCar Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Units 1-3, Retriever Farm Trading Estate, Hartcliffe, Bristol, BS3 6GZ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-40" name="toOrganisationName" type="radio" data-search-value="Zebedee Autos Ltd, Maxwell House, Juniper Way, Reading, RG13 6IS" value="Zebedee Autos Ltd"{% if data.toOrganisationName == "Zebedee Autos Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Zebedee Autos Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-40">
+                <strong>Zebedee Autos Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Zebedee Autos Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Maxwell House, Juniper Way, Reading, RG13 6IS
+              </label>
+            </div>
+            {% endif %}
+
+          </div>
+
+        </div>
+        <!-- NON JS CHECKBOXES (END) -->
+    
+        <!-- JS CHECKBOXES (START) -->
+        <div class="govuk-form-group{% if query.error2 %} govuk-form-group--error{% endif %} hidden" hidden aria-hidden="true" data-checkboxes>
+          {% if query.error2 %}
+          <span class="govuk-error-message">Select the organisation that will lose the certificates</span>
+          {% endif %}
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-1" name="toOrganisationName" type="radio" data-search-value="Ace Pentura Writing Ltd, Sunset Cottage, Corsham, Wiltshire, SN15 8ZZ" value="Ace Pentura Writing Ltd"{% if data.toOrganisationName == "Ace Pentura Writing Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-1">
+                <strong>Ace Pentura Writing Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Sunset Cottage, Corsham, Wiltshire, SN15 8ZZ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-2" name="toOrganisationName" type="radio" data-search-value="Acme Ltd, 12 Valley Park, Bristol, BS12 6SW" value="Acme Ltd"{% if data.toOrganisationName == "Acme Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Acme Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-2">
+                <strong>Acme Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Acme Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>12 Valley Park, Bristol, BS12 6SW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-3" name="toOrganisationName" type="radio" data-search-value="Aspire Consulting Plc, Units 1-4, Blue Park Industrial Estate, Bath, BA2 8TT" value="Aspire Consulting Plc"{% if data.toOrganisationName == "Aspire Consulting Plc" %} checked{% endif %}{% if data.fromOrganisationName == "Aspire Consulting Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-3">
+                <strong>Aspire Consulting Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "Aspire Consulting Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Units 1-4, Blue Park Industrial Estate, Bath, BA2 8TT
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-4" name="toOrganisationName" type="radio" data-search-value="Baldwin Bricklaying & Sons, Old Post Office, Kiwi Street, Derby, DE4 5YS" value="Baldwin Bricklaying & Sons"{% if data.toOrganisationName == "Baldwin Bricklaying & Sons" %} checked{% endif %}{% if data.fromOrganisationName == "Baldwin Bricklaying & Sons" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-4">
+                <strong>Baldwin Bricklaying & Sons</strong>
+                <br>
+                {% if data.fromOrganisationName == "Baldwin Bricklaying & Sons" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Old Post Office, Kiwi Street, Derby, DE4 5YS
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-5" name="toOrganisationName" type="radio" data-search-value="Cedarwood & Hamlin at Law, Wharfville Tower, St Bernard's Street, London, E17 9YY" value="Cedarwood & Hamlin at Law"{% if data.toOrganisationName == "Cedarwood & Hamlin at Law" %} checked{% endif %}{% if data.fromOrganisationName == "Cedarwood & Hamlin at Law" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-5">
+                <strong>Cedarwood & Hamlin at Law</strong>
+                <br>
+                {% if data.fromOrganisationName == "Cedarwood & Hamlin at Law" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Wharfville Tower, St Bernard's Street, London, E17 9YY
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-6" name="toOrganisationName" type="radio" data-search-value="Clifford Bridge Construction Ltd, Cedar Farm, Dog Lane, Somerset, BA34 7DL" value="Clifford Bridge Construction Ltd"{% if data.toOrganisationName == "Clifford Bridge Construction Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Clifford Bridge Construction Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-6">
+                <strong>Clifford Bridge Construction Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Clifford Bridge Construction Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Cedar Lodge, Dog Lane, Somerset, BA34 7DL
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-7" name="toOrganisationName" type="radio" data-search-value="Coundon Court Dairy Ltd, Moobury Farm, Cat Lane, Norwich NO9 7SQ" value="Coundon Court Dairy Ltd"{% if data.toOrganisationName == "Coundon Court Dairy Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Coundon Court Dairy Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-7">
+                <strong>Coundon Court Dairy Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Coundon Court Dairy Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Moobury Farm, Cat Lane, Norwich NO9 7SQ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-8" name="toOrganisationName" type="radio" data-search-value="De La Salle Scaffolding, Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ" value="De La Salle Scaffolding"{% if data.toOrganisationName == "De La Salle Scaffolding" %} checked{% endif %}{% if data.fromOrganisationName == "De La Salle Scaffoldingd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-8">
+                <strong>De La Salle Scaffolding</strong>
+                <br>
+                {% if data.fromOrganisationName == "De La Salle Scaffolding" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-9" name="toOrganisationName" type="radio" data-search-value="Drake and Keke at Law, Sunset Lodge, Mayfair, London, E2 6GG" value="Drake and Keke at Law"{% if data.toOrganisationName == "Drake and Keke at Law" %} checked{% endif %}{% if data.fromOrganisationName == "Drake and Keke at Law" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-9">
+                <strong>Drake and Keke at Law</strong>
+                <br>
+                {% if data.fromOrganisationName == "Drake and Keke at Law" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Sunset Lodge, Mayfair, London, E2 6GG
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-10" name="toOrganisationName" type="radio" data-search-value="Dyson Perrins Engineering Ltd, 12-14 Abbey Row, Trowbridge, Wiltshire, SN7 9OP" value="Dyson Perrins Engineering Ltd"{% if data.toOrganisationName == "Dyson Perrins Engineering Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Dyson Perrins Engineering Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-10">
+                <strong>Dyson Perrins Engineering Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Dyson Perrins Engineering Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>12-14 Abbey Row, Trowbridge, Wiltshire, SN7 9OP
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-11" name="toOrganisationName" type="radio" data-search-value="Eppingswood & Sons Ltd, 67 Bullbrook Drive, Bracknell, Berkshire, RG10 7SW" value="Eppingswood & Sons Ltd"{% if data.toOrganisationName == "Eppingswood & Sons Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Eppingswood & Sons Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-11">
+                <strong>Eppingswood & Sons Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Eppingswood & Sons Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>67 Bullbrook Drive, Bracknell, Berkshire, RG10 7SW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-12" name="toOrganisationName" type="radio" data-search-value="Ernesford Construction, 28 Lily Brook Road, Colchester, Essex, CO9 6XX" value="Ernesford Construction"{% if data.toOrganisationName == "Ernesford Construction" %} checked{% endif %}{% if data.fromOrganisationName == "Ernesford Construction" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-12">
+                <strong>Ernesford Construction</strong>
+                <br>
+                {% if data.fromOrganisationName == "Ernesford Construction" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>28 Lily Brook Road, Colchester, Essex, CO9 6XX
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-13" name="toOrganisationName" type="radio" data-search-value="Firth Park Dentistry & Partners, Solihull House, Apple Street, Dudley, Birmingham, B6 6KL" value="Firth Park Dentistry & Partners"{% if data.toOrganisationName == "Firth Park Dentistry & Partners" %} checked{% endif %}{% if data.fromOrganisationName == "Firth Park Dentistry & Partners" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-13">
+                <strong>Firth Park Dentistry & Partners</strong>
+                <br>
+                {% if data.fromOrganisationName == "Firth Park Dentistry & Partners" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Solihull House, Apple Street, Dudley, Birmingham, B6 6KL
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-14" name="toOrganisationName" type="radio" data-search-value="Frog Field Design Ltd, Skittle Lodge, Wyevale Lane, Todshall, Cornwall, CO3 8BN" value="Frog Field Design Ltd"{% if data.toOrganisationName == "Frog Field Design Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Frog Field Design Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-14">
+                <strong>Frog Field Design Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Frog Field Design Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Skittle Lodge, Wyevale Lane, Todshall, Cornwall, CO3 8BN
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-15" name="toOrganisationName" type="radio" data-search-value="Grace Plumbing and Heating Ltd, 23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW" value="Grace Plumbing and Heating Ltd"{% if data.toOrganisationName == "Grace Plumbing and Heating Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Grace Plumbing and Heating Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-15">
+                <strong>Grace Plumbing and Heating Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Grace Plumbing and Heating Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-16" name="toOrganisationName" type="radio" data-search-value="Harris & Prowler Sons Ltd, The Old Chapel, Vicar Street, Malmesbury, Wiltshire, SN13 8SD" value="Harris & Prowler Sons Ltd"{% if data.toOrganisationName == "Harris & Prowler Sons Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Harris & Prowler Sons Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-16">
+                <strong>Harris & Prowler Sons Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Harris & Prowler Sons Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>The Old Chapel, Vicar Street, Malmesbury, Wiltshire, SN13 8SD
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-17" name="toOrganisationName" type="radio" data-search-value="Helping Me and You Consulting, Black Sheep Farm, Drury Lane, Topplesville, Sheffield, SH7 XV" value="Helping Me and You Consulting"{% if data.toOrganisationName == "Helping Me and You Consulting" %} checked{% endif %}{% if data.fromOrganisationName == "Helping Me and You Consulting" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-17">
+                <strong>Helping Me and You Consulting</strong>
+                <br>
+                {% if data.fromOrganisationName == "Helping Me and You Consulting" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Black Sheep Farm, Drury Lane, Topplesville, Sheffield, SH7 XV
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-18" name="toOrganisationName" type="radio" data-search-value="Henry LLS Solicitors Ltd, Rose Cottage, Furbank Row, Taunton, Somerset, BA12 7KS" value="Henry LLS Solicitors Ltd"{% if data.toOrganisationName == "Henry LLS Solicitors Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Henry LLS Solicitors Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-18">
+                <strong>Henry LLS Solicitors Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Henry LLS Solicitors Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Rose Cottage, Furbank Row, Taunton, Somerset, BA12 7KS
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-19" name="toOrganisationName" type="radio" data-search-value="King's Dairy Farming Plc, King's House, Beehive Industrial Estate, Bracknell, Berkshire, RG12 8UU" value="King's Dairy Farming Plc"{% if data.toOrganisationName == "King's Dairy Farming Plc" %} checked{% endif %}{% if data.fromOrganisationName == "King's Dairy Farming Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-19">
+                <strong>King's Dairy Farming Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "King's Dairy Farming Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>King's House, Beehive Industrial Estate, Bracknell, Berkshire, RG12 8UU
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-20" name="toOrganisationName" type="radio" data-search-value="Leamington Hastings Produce Ltd, 117 Dog Lane, Leamington Spa, Gloucestershire, GL7 7TT" value="Leamington Hastings Produce Ltd"{% if data.toOrganisationName == "Leamington Hastings Produce Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Leamington Hastings Produce Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-20">
+                <strong>Leamington Hastings Produce Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Leamington Hastings Produce Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>117 Dog Lane, Leamington Spa, Gloucestershire, GL7 7TT
+              </label>
+            </div>
+            
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-21" name="toOrganisationName" type="radio" data-search-value="Lily's Flowers, 12 Greenfields Gardens, Shrewsbury, Shropshire, SY2 7QE" value="Lily's Flowers"{% if data.toOrganisationName == "Lily's Flowers" %} checked{% endif %}{% if data.fromOrganisationName == "Lily's Flowers" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-21">
+                <strong>Lily's Flowers</strong>
+                <br>
+                {% if data.fromOrganisationName == "Lily's Flowers" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>12 Greenfields Gardens, Shrewsbury, Shropshire, SY2 7QE
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-22" name="toOrganisationName" type="radio" data-search-value="Lipson Cooperative Builders Ltd, Robin Farm, Tweadle Lane, Box, Bath, BA15 8UL" value="Lipson Cooperative Builders Ltd"{% if data.toOrganisationName == "Lipson Cooperative Builders Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Lipson Cooperative Builders Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-22">
+                <strong>Lipson Cooperative Builders Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Lipson Cooperative Builders Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Robin Farm, Tweadle Lane, Box, Bath, BA15 8UL
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-23" name="toOrganisationName" type="radio" data-search-value="Long Itchington Associates Plc, Units 1-10, Derry Industrial Estate, Newcastle, NE2 8HH" value="Long Itchington Associates Plc"{% if data.toOrganisationName == "Long Itchington Associates Plc" %} checked{% endif %}{% if data.fromOrganisationName == "Long Itchington Associates Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-23">
+                <strong>Long Itchington Associates Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "Long Itchington Associates Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Units 1-10, Derry Industrial Estate, Newcastle, NE2 8HH 
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-24" name="toOrganisationName" type="radio" data-search-value="Merrington Baker & Son, 149 Baker Street, Bakewell, Derby, DE16 7YY" value="Merrington Baker & Son"{% if data.toOrganisationName == "Merrington Baker & Son" %} checked{% endif %}{% if data.fromOrganisationName == "Merrington Baker & Son" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-24">
+                <strong>Merrington Baker & Son</strong>
+                <br>
+                {% if data.fromOrganisationName == "Merrington Baker & Son" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>149 Baker Street, Bakewell, Derby, DE16 7YY
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-25" name="toOrganisationName" type="radio" data-search-value="Mole Catch Pest Control Ltd, Mole Farm, Moleville, Mole Mole, MO1 6TT" value="Mole Catch Pest Control Ltd"{% if data.toOrganisationName == "Mole Catch Pest Control Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Mole Catch Pest Control Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-25">
+                <strong>Mole Catch Pest Control Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Mole Catch Pest Control Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Mole Farm, Moleville, Mole Mole, MO1 6TT
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-26" name="toOrganisationName" type="radio" data-search-value="Nettleton Apples Ltd, Gardener's Cottage, Bull Lane, Nettleton, Wiltshire, SN10 0SD" value="Nettleton Apples Ltd"{% if data.toOrganisationName == "Nettleton Apples Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Nettleton Apples Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-26">
+                <strong>Nettleton Apples Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Nettleton Apples Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Gardener's Cottage, Bull Lane, Nettleton, Wiltshire, SN10 0SD
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-27" name="toOrganisationName" type="radio" data-search-value="Parkgate Produce Plc, Orchard House, Units 1-2, Victoria Industrial Estate, Telford, Shropshire, TF3 5TT" value="Parkgate Produce Plc"{% if data.toOrganisationName == "Parkgate Produce Plc" %} checked{% endif %}{% if data.fromOrganisationName == "Parkgate Produce Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-27">
+                <strong>Parkgate Produce Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "Parkgate Produce Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Orchard House, Units 1-2, Victoria Industrial Estate, Telford, Shropshire, TF3 5TT
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-28" name="toOrganisationName" type="radio" data-search-value="Perrymead Consulting Ltd, 2 Cowslip Lane, Butterton, Derby, DE15 6QQ" value="Perrymead Consulting Ltd"{% if data.toOrganisationName == "Perrymead Consulting Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Perrymead Consulting Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-28">
+                <strong>Perrymead Consulting Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Perrymead Consulting Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>2 Cowslip Lane, Butterton, Derby, DE15 6QQ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-29" name="toOrganisationName" type="radio" data-search-value="Queens and Kings of Farming Ltd, The Old Post Office, Longbottom Lane, Whitchurch, Norwich, N14 5FV" value="Queens and Kings of Farming Ltd"{% if data.toOrganisationName == "Queens and Kings of Farming Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Queens and Kings of Farming Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-29">
+                <strong>Queens and Kings of Farming Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Queens and Kings of Farming Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>The Old Post Office, Longbottom Lane, Whitchurch, Norwich, N14 5FV
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-30" name="toOrganisationName" type="radio" data-search-value="Radford Coffee Ltd, Swine Farm, Swine Lane, Tettle, Newcastle, NE16 7YY" value="Radford Coffee Ltd"{% if data.toOrganisationName == "Radford Coffee Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Radford Coffee Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-30">
+                <strong>Radford Coffee Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Radford Coffee Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Swine Farm, Swine Lane, Tettle, Newcastle, NE16 7YY
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-31" name="toOrganisationName" type="radio" data-search-value="Ready Steady Cleaning, 19 Pountney Gardens, Cat Lane, Reading, RG9 6QX" value="Ready Steady Cleaning"{% if data.toOrganisationName == "Ready Steady Cleaning" %} checked{% endif %}{% if data.fromOrganisationName == "Ready Steady Cleaning" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-31">
+                <strong>Ready Steady Cleaning</strong>
+                <br>
+                {% if data.fromOrganisationName == "Ready Steady Cleaning" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>19 Pountney Gardens, Cat Lane, Reading, RG9 6QX
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-32" name="toOrganisationName" type="radio" data-search-value="Ryckborst Academy for Justice, Mole's Corner House, Toronto Avenue, Liverpool, LP9 7HH" value="Ryckborst Academy for Justice"{% if data.toOrganisationName == "Ryckborst Academy for Justice" %} checked{% endif %}{% if data.fromOrganisationName == "Ryckborst Academy for Justice" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-32">
+                <strong>Ryckborst Academy for Justice</strong>
+                <br>
+                {% if data.fromOrganisationName == "Ryckborst Academy for Justice" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Mole's Corner House, Toronto Avenue, Liverpool, LP9 7HH
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-33" name="toOrganisationName" type="radio" data-search-value="Sandwell Scaffolding Ltd, 119 Pickett's Grove, Hackney, London, E1 6AW" value="Sandwell Scaffolding Ltd"{% if data.toOrganisationName == "Sandwell Scaffolding Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Sandwell Scaffolding Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-33">
+                <strong>Sandwell Scaffolding Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Sandwell Scaffolding Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>119 Pickett's Grove, Hackney, London, E1 6AW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-34" name="toOrganisationName" type="radio" data-search-value="Telfer and Dwayne Pipe Repairs Ltd, The Red Grapevine, Bull Lane, Pickerford, Northamptonshire, NO12 3QA" value="Telfer and Dwayne Pipe Repairs Ltd"{% if data.toOrganisationName == "Telfer and Dwayne Pipe Repairs Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Telfer and Dwayne Pipe Repairs Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-34">
+                <strong>Telfer and Dwayne Pipe Repairs Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Telfer and Dwayne Pipe Repairs Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>The Red Grapevine, Bull Lane, Pickerford, Northamptonshire, NO12 3QA
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-35" name="toOrganisationName" type="radio" data-search-value="Thomas Hamlin & McGil Law, Saul's Nail Parlour, Kentucky Avenue, Dorchester, Devon, DN82 7YY" value="Thomas Hamlin & McGil Law"{% if data.toOrganisationName == "Thomas Hamlin & McGil Law" %} checked{% endif %}{% if data.fromOrganisationName == "Thomas Hamlin & McGil Law" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-35">
+                <strong>Thomas Hamlin & McGil Law</strong>
+                <br>
+                {% if data.fromOrganisationName == "Thomas Hamlin & McGil Law" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Saul's Nail Parlour, Kentucky Avenue, Dorchester, Devon, DN82 7YY
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-36" name="toOrganisationName" type="radio" data-search-value="Umbrella Corporation, Secret Bunker House, Raccoon City, London, E1 8CX" value="Umbrella Corporation"{% if data.toOrganisationName == "Umbrella Corporation" %} checked{% endif %}{% if data.fromOrganisationName == "Umbrella Corporation" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-36">
+                <strong>Umbrella Corporation</strong>
+                <br>
+                {% if data.fromOrganisationName == "Umbrella Corporation" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Secret Bunker House, Raccoon City, London, E1 8CX
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-37" name="toOrganisationName" type="radio" data-search-value="Walls Balls & Partners" value="Walls Balls & Partners"{% if data.toOrganisationName == "Walls Balls & Partners" %} checked{% endif %}{% if data.fromOrganisationName == "Walls Balls & Partners" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-37">
+                <strong>Walls Balls & Partners</strong>
+                <br>
+                {% if data.fromOrganisationName == "Walls Balls & Partners" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>182 Dunkville Trading Estate, Blueberry Park, Clapham, London, SW4 7BB
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-38" name="toOrganisationName" type="radio" data-search-value="William Rutland & Sons, 6 Horseshoe Lane, Shrewsbury, Shropshire, SY1 7FD" value="William Rutland & Sons"{% if data.toOrganisationName == "William Rutland & Sons" %} checked{% endif %}{% if data.fromOrganisationName == "William Rutland & Sons" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-38">
+                <strong>William Rutland & Sons</strong>
+                <br>
+                {% if data.fromOrganisationName == "William Rutland & Sons" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>6 Horseshoe Lane, Shrewsbury, Shropshire, SY1 7FD
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-39" name="toOrganisationName" type="radio" data-search-value="YouSellAnyCar Plc, Units 1-3, Retriever Farm Trading Estate, Hartcliffe, Bristol, BS3 6GZ" value="YouSellAnyCar Plc"{% if data.toOrganisationName == "YouSellAnyCar Plc" %} checked{% endif %}{% if data.fromOrganisationName == "YouSellAnyCar Plc" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-39">
+                <strong>YouSellAnyCar Plc</strong>
+                <br>
+                {% if data.fromOrganisationName == "YouSellAnyCar Plc" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Units 1-3, Retriever Farm Trading Estate, Hartcliffe, Bristol, BS3 6GZ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-40" name="toOrganisationName" type="radio" data-search-value="Zebedee Autos Ltd, Maxwell House, Juniper Way, Reading, RG13 6IS" value="Zebedee Autos Ltd"{% if data.toOrganisationName == "Zebedee Autos Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Zebedee Autos Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-40">
+                <strong>Zebedee Autos Ltd</strong>
+                <br>
+                {% if data.fromOrganisationName == "Zebedee Autos Ltd" %}
+                <strong class="govuk-tag">selected to lose certificates</strong>
+                <br>
+                {% endif %}
+                <span class="visuallyhidden">Address: </span>Maxwell House, Juniper Way, Reading, RG13 6IS
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- JS CHECKBOXES (END) -->
+
+        <div class="govuk-form-group">
+
+          <!-- NON JS PAGING (START) -->
+          {% if query.paginationRequired %}
+          {% if query.page1 %}
+          <div class="pager" data-non-js-paging>
+
+            <div class="pager-controls">
+              <ul class="govuk-body-s pager-items">
+                <li>
+                  <span class="text-bold">1</span>
+                </li>
+                <li>
+                  <span class="hidden">Page </span>
+                  <a href="duplicate-organisation?paginationRequired=true&page2=true">2</a>
+                  <span class="hidden"> of 2</span>
+                </li>
+                <a class="pager-next" href="duplicate-organisation?paginationRequired=true&page2=true">Next</a>
+                <span class="hidden"> page</span>
+              </ul>                                
+            </div>
+
+            <div class="pager-summary govuk-body-s">
+              Showing 1 to 30 of 40 organisations
+              <span id="totalDocumentCount" style="display: none;">30</span>
+            </div>
+
+          </div>
+          {% elif query.page2 %}
+          <div class="pager">
+
+            <div class="pager-controls">                               
+              <ul class="govuk-body-s pager-items">
+                <a class="pager-next" href="duplicate-organisation?paginationRequired=true&page1=true">Previous</a>
+                <span class="hidden"> page</span>
+                &nbsp;&nbsp;
+                <li>
+                  <span class="hidden">Page </span>
+                  <a href="duplicate-organisation?paginationRequired=true&page1=true">1</a>
+                  <span class="hidden"> of 2</span>
+                </li>
+                <li>
+                  <span class="text-bold">2</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pager-summary govuk-body-s">
+              Showing 31 to 40 of 40 organisations
+              <span id="totalDocumentCount" style="display: none;">10</span>
+            </div>
+
+          </div>
+          {% endif %}
+          {% else %}
+          <div class="pager">
+
+            <div class="pager-summary govuk-body-s">
+              Showing 1 to 10 of 10 organisations
+              <span id="totalDocumentCount" style="display: none;">10</span>
+            </div>
+
+          </div>
+          {% endif %}
+          <!-- NON JS PAGING (START) -->
+
+          <!-- JS PAGING (START) -->
+          <div class="pager hidden" hidden aria-hidden="true" style="margin-top: 0;" data-paging>
+          
+              <div class="pager-controls">
+                <a class="pager-prev" href="#">Previous</a>
+                <ul class="govuk-list govuk-body-s pager-items"></ul>
+                <a class="pager-next" href="#">Next</a>
+              </div>
+
+              <div class="pager-summary govuk-body-s">
+              </div>
+
+          </div>
+          <!-- JS PAGING (END) -->
+
+        </div>
+
+      </fieldset>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </div>
+
+    </form>
+    {% else %}
+    <form method="post">
+      <fieldset class="govuk-fieldset{% if query.error %} after-error-summary{% endif %}">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Which organisation will the certificates be moved to?</h1>
+        </legend>
+        <p class="govuk-body">Select the organisation that will gain the certificates.</p>
+
+        <div class="govuk-form-group{% if query.error2 %} govuk-form-group--error{% endif %}">
+          {% if query.error2 %}
+          <span class="govuk-error-message">Select the organisation that will lose the certificates</span>
+          {% endif %}
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-1" name="toOrganisationName" type="radio" data-search-value="Ace Pentura Writing Ltd, Sunset Cottage, Corsham, Wiltshire, SN15 8ZZ" value="Ace Pentura Writing Ltd"{% if data.toOrganisationName == "Ace Pentura Writing Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-1">
+                <strong>Ace Pentura Writing Ltd</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>Sunset Cottage, Corsham, Wiltshire, SN15 8ZZ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-2" name="toOrganisationName" type="radio" data-search-value="Acme Ltd, 12 Valley Park, Bristol, BS12 6SW" value="Acme Ltd"{% if data.toOrganisationName == "Acme Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-2">
+                <strong>Acme Ltd</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>12 Valley Park, Bristol, BS12 6SW
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-3" name="toOrganisationName" type="radio" data-search-value="Aspire Consulting Plc, Units 1-4, Blue Park Industrial Estate, Bath, BA2 8TT" value="Aspire Consulting Plc"{% if data.toOrganisationName == "Aspire Consulting Plc" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-3">
+                <strong>Aspire Consulting Plc</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>Units 1-4, Blue Park Industrial Estate, Bath, BA2 8TT
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-4" name="toOrganisationName" type="radio" data-search-value="Baldwin Bricklaying & Sons, Old Post Office, Kiwi Street, Derby, DE4 5YS" value="Baldwin Bricklaying & Sons"{% if data.toOrganisationName == "Baldwin Bricklaying & Sons" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-4">
+                <strong>Baldwin Bricklaying & Sons</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>Old Post Office, Kiwi Street, Derby, DE4 5YS
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-5" name="toOrganisationName" type="radio" data-search-value="Cedarwood & Hamlin at Law, Wharfville Tower, St Bernard's Street, London, E17 9YY" value="Cedarwood & Hamlin at Law"{% if data.toOrganisationName == "Cedarwood & Hamlin at Law" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-5">
+                <strong>Cedarwood & Hamlin at Law</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>Wharfville Tower, St Bernard's Street, London, E17 9YY
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-6" name="toOrganisationName" type="radio" data-search-value="Clifford Bridge Construction Ltd, Cedar Farm, Dog Lane, Somerset, BA34 7DL" value="Clifford Bridge Construction Ltd"{% if data.toOrganisationName == "Clifford Bridge Construction Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-6">
+                <strong>Clifford Bridge Construction Ltd</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>Cedar Lodge, Dog Lane, Somerset, BA34 7DL
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-7" name="toOrganisationName" type="radio" data-search-value="Coundon Court Dairy Ltd, Moobury Farm, Cat Lane, Norwich NO9 7SQ" value="Coundon Court Dairy Ltd"{% if data.toOrganisationName == "Coundon Court Dairy Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-7">
+                <strong>Coundon Court Dairy Ltd</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>Moobury Farm, Cat Lane, Norwich NO9 7SQ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-8" name="toOrganisationName" type="radio" data-search-value="De La Salle Scaffolding, Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ" value="De La Salle Scaffolding"{% if data.toOrganisationName == "De La Salle Scaffolding" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-8">
+                <strong>De La Salle Scaffolding</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-9" name="toOrganisationName" type="radio" data-search-value="Drake and Keke at Law, Sunset Lodge, Mayfair, London, E2 6GG" value="Drake and Keke at Law"{% if data.toOrganisationName == "Drake and Keke at Law" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-9">
+                <strong>Drake and Keke at Law</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>Sunset Lodge, Mayfair, London, E2 6GG
+              </label>
+            </div>
+
+            <div class="searchable-radio govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-10" name="toOrganisationName" type="radio" data-search-value="Dyson Perrins Engineering Ltd, 12-14 Abbey Row, Trowbridge, Wiltshire, SN7 9OP" value="Dyson Perrins Engineering Ltd"{% if data.toOrganisationName == "Dyson Perrins Engineering Ltd" %} checked{% endif %}{% if data.fromOrganisationName == "Ace Pentura Writing Ltd" %} aria-disabled="true" disabled="disabled"{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="radio-10">
+                <strong>Dyson Perrins Engineering Ltd</strong>
+                <br>
+                <span class="visuallyhidden">Address: </span>12-14 Abbey Row, Trowbridge, Wiltshire, SN7 9OP
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+      </fieldset>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </div>
+
+    </form>
+    {% endif %}
+
+  </div>
+
+</div>
+
+<!-- JavaScript (START) -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+
+	$(document).ready(function() {
+
+    // Pass these parameters in (below)
+		checkboxEditing(
+      // (40) - total items (totalCheckboxesCount)
+      40,
+      // (true) - boolean whether to clear down the session data or not
+      true,
+      // (25) - how many items to show per page
+			30,
+      // 1 result
+			"organisation",
+      // 2+ results
+			"organisations"
+		)
+
+  });
+    
+</script>
+<!-- Searchable radio button choices (MYESF) -->
+<script src="/public/javascripts/checkbox-editing.js"></script>
+<!-- Dynamic search against all radion buttons (academies or schools) -->
+<script src="/public/javascripts/search-radio-buttons.js"></script>
+<!-- JavaScript (END) -->
+{% endblock %}

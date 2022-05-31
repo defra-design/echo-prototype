@@ -14,7 +14,9 @@
 
 <div class="login-nav login-border">
   <ul class="login-nav__list">
-    <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+    <li class="login-nav__list-item-new" id="Nav-DisplayName">Administration user</li>
+    <li class="login-nav__list-item-new"><a href="#" class="govuk-link login-nav__link-new govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a></li>
+    <li class="login-nav__list-item-new"><a href="/sign-out" class="govuk-link login-nav__link-new govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
   </ul>
 </div>
 {% endblock %}
@@ -25,15 +27,15 @@
   <div class="govuk-grid-row">
     
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l" data-qa-id="Heading-Applications">Exports application administration</h1>
+      <h1 class="govuk-heading-l">Exports application administration</h1>
       <ul class="govuk-list govuk-list--bullet">
         <li><a class="govuk-link" href="certificates?filter=6969">Health certificates</a></li>
       </ul>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a class="govuk-link" href="#">Migrate certificates to new certifier organisation</a></li>
+        <li><a class="govuk-link" href="move/duplicate-organisation?paginationRequired=true&page1=true">Move certificates to new certifier organisation</a></li>
       </ul>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a class="govuk-link" href="#">Certificate movement history</a></li>
+        <li><a class="govuk-link" href="move-history/certificates">Certificate movement history</a></li>
       </ul>
       <ul class="govuk-list govuk-list--bullet">
         <li><a class="govuk-link" href="exa/exa-documents">EXA documents</a></li>
