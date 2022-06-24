@@ -23,6 +23,20 @@
 {% endblock %}
 
 {% block content %}
+<style>
+
+  /* JavaScript CSS styling for nested lists (progressive enhancement) */ 
+  .govuk-list-nested-js {
+    margin-top: 10px !important;
+    margin-bottom: 0px;
+  }
+  /* Non JavaScript CSS styling for nested lists (progressive enhancement) */ 
+  .govuk-list-nested-non-js {
+    margin-top: 0px !important;
+    margin-bottom: 0px;
+  }
+
+</style>
 <div class="govuk-grid-row">
   
   <div class="govuk-grid-column-two-thirds">
@@ -48,23 +62,23 @@
         <dt class="govuk-summary-list__key">Name</dt>
         <dd class="govuk-summary-list__value">
           {% if query.movementHistory == "1" %}
-          DeLaSalle Scaffolding Ltd
+          DeLaSalle Scaffolding Ltd (343cd258-5cd9-e911-a82a-000d3a43d6e1)
           <br>
           Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
           {% elif query.movementHistory == "2" %}
-          Z Autos Ltd
+          Z Autos Ltd (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           Maxwell House, Juniper Way, Reading, RG13 6IS
           {% elif query.movementHistory == "3" %}
-          Merrington's & Son
+          Merrington's & Son (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           149 Baker Street, Bakewell, Derby, DE16 7YY
           {% elif query.movementHistory == "4" %}
-          Graceee Plumbing and Heating Ltd
+          Graceee Plumbing and Heating Ltd (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW
           {% else %}
-          Merrington's & Son
+          Merrington's & Son (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           149 Baker Street, Bakewell, Derby, DE16 7YY
           {% endif %}
@@ -74,8 +88,67 @@
 
     </dl>
 
-    <table class="govuk-table govuk-!-margin-bottom-9">
-      <caption class="govuk-table__caption govuk-table__caption--m">These certificates were moved</caption>
+    {% if query.designB == "yes" %}
+    <div class="govuk-form-group govuk-!-margin-bottom-9">
+      <h2 class="govuk-heading-m">These cases and their certificates will be moved</h2>
+      <ul class="govuk-list">
+        <li><span class="govuk-visually-hidden">Case ID </span>20/140165</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/194383</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/268539</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/277029</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/335288</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/371719</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/427436</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/495972</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/539372</li>
+        <li><span class="govuk-visually-hidden">Case ID </span>20/637709</li>
+        <li class="toggle-wrap-container govuk-visually-hidden" aria-hidden="true"><a href="#" class="govuk-link toggle-wrap" data-controls="toggle_related_items" data-expanded="false" data-toggled-text="Hide other 5 cases" role="button" aria-controls="toggle_related_items" aria-expanded="false">Show other 5 cases</a></li>
+          <ul id="toggle_related_items" class="govuk-list govuk-list-nested-non-js toggle-wrap-more" aria-live="polite" role="region" aria-hidden="false">
+          <li><span class="govuk-visually-hidden">Case ID </span>20/794823</li>
+          <li><span class="govuk-visually-hidden">Case ID </span>20/841149</li>
+          <li><span class="govuk-visually-hidden">Case ID </span>20/858251</li>
+          <li><span class="govuk-visually-hidden">Case ID </span>20/874540</li>
+          <li><span class="govuk-visually-hidden">Case ID </span>20/919623</li>
+        </ul>
+      </ul>
+    </div>
+    {% else %}
+    <h2 class="govuk-heading-m">These cases and their certificates will be moved</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Case ID</dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>20/140165</li>
+            <li>20/194383</li>
+            <li>20/268539</li>
+            <li>20/277029</li>
+            <li>20/335288</li>
+            <li>20/371719</li>
+            <li>20/427436</li>
+            <li>20/495972</li>
+            <li>20/539372</li>
+            <li>20/637709</li>
+            <li class="toggle-wrap-container govuk-visually-hidden" aria-hidden="true"><a href="#" class="govuk-link toggle-wrap" data-controls="toggle_related_items" data-expanded="false" data-toggled-text="Hide other 5 cases" role="button" aria-controls="toggle_related_items" aria-expanded="false">Show other 5 cases</a></li>
+            <ul id="toggle_related_items" class="govuk-list govuk-list-nested-non-js toggle-wrap-more" aria-live="polite" role="region" aria-hidden="false">
+              <li>20/794823</li>
+              <li>20/841149</li>
+              <li>20/858251</li>
+              <li>20/874540</li>
+              <li>20/919623</li>
+            </ul>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          &nbsp;
+        </dd>
+      </div>
+
+    </dl>
+    {% endif %}
+    <!-- <table class="govuk-table govuk-!-margin-bottom-9">
+      <caption class="govuk-table__caption govuk-table__caption--m">These certificates will be moved</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header govuk-summary-list__key">Case ID</th>
@@ -96,7 +169,7 @@
           <td class="govuk-table__cell">COMPLETED</td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
 
     <h2 class="govuk-heading-m">Certificates were moved to this organisation</h2>
     <dl class="govuk-summary-list">
@@ -105,23 +178,23 @@
         <dt class="govuk-summary-list__key">Name</dt>
         <dd class="govuk-summary-list__value">
           {% if query.movementHistory == "1" %}
-          De La Salle Scaffolding
+          De La Salle Scaffolding (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           Unit 1, Salford Trading Estate, Salford, Manchester, M6 8IQ
           {% elif query.movementHistory == "2" %}
-          Zebedee Autos Ltd
+          Zebedee Autos Ltd (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           Maxwell House, Juniper Way, Reading, RG13 6IS
           {% elif query.movementHistory == "3" %}
-          Merrington Baker & Son
+          Merrington Baker & Son (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           149 Baker Street, Bakewell, Derby, DE16 7YY
           {% elif query.movementHistory == "4" %}
-          Grace Plumbing and Heating Ltd
+          Grace Plumbing and Heating Ltd (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           23 Belle Vue Street, Shrewsbury, Shropshire, SY3 6RW
           {% else %}
-          Merrington Baker & Son
+          Merrington Baker & Son (343cd258-5cd9-e911-a82a-000d3a43d6e1
           <br>
           149 Baker Street, Bakewell, Derby, DE16 7YY
           {% endif %}
@@ -134,4 +207,9 @@
   </div>
 
 </div>
+<!-- JavaScript (START) -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<!-- Custom global behaviour -->
+<script src="/public/javascripts/custom-global-behaviour.js"></script>
+<!-- JavaScript (END) -->
 {% endblock %}
