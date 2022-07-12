@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  {% if error %}Error: {% endif %}Which organisation will lose the certificates?
+  {% if error %}Error: {% endif %}Which organisation will lose its cases?
 {% endblock %}
 
 {% block beforeContent %}
@@ -426,9 +426,9 @@
     <form action="duplicate-organisation-non-javascript-post" method="get">
       <fieldset class="govuk-fieldset{% if query.error %} after-error-summary{% endif %}">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Which organisation will lose the certificates?</h1>
+          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Which organisation will lose its cases?</h1>
         </legend>
-        <p class="govuk-body">Select the organisation that will lose the certificates.</p>
+        <p class="govuk-body">Select the organisation that will lose its cases.</p>
           
         <div style="margin-bottom: 1em;" class="{% if query.error1 %}govuk-form-group--error {% endif %}search-field search-field-darker" data-checkbox-search-filter>
             
@@ -461,7 +461,7 @@
     <form method="post">
     
       <fieldset class="govuk-fieldset">
-        <legend id="organisationRadios" class="hidden">Select the organisation that will lose the certificates</legend>
+        <legend id="organisationRadios" class="hidden">Select the organisation that will lose its cases</legend>
 
         <!-- NON JS CHECKBOXES (START) -->
         <div class="govuk-form-group{% if query.error2 %} govuk-form-group--error{% endif %}" data-non-js-checkboxes>
@@ -1467,9 +1467,9 @@
     <form method="post">
       <fieldset class="govuk-fieldset{% if query.error %} after-error-summary{% endif %}">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Which organisation will lose the certificates?</h1>
+          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Which organisation will lose its cases?</h1>
         </legend>
-        <p class="govuk-body">Select the organisation that will lose the certificates.</p>
+        <p class="govuk-body">Select the organisation that will lose its cases.</p>
 
         <div class="govuk-form-group{% if query.error2 %} govuk-form-group--error{% endif %}">
           {% if query.error2 %}
